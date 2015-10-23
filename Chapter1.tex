@@ -6,41 +6,43 @@
 \section{Einführung}
 %\subsection{Vorbemerkungen zu $\C$}
 
-Sei X ein Vektorraum, $dim X < \infty $ \newline
-\[\|x\|_{2} := \max_{\abs{z}\leq r}\{\abs{u(z)},\,\abs{v(z)}\}.\]
-\[\|x\|_{\infty} := \max_{\abs{z}\leq r}\{\abs{u(z)},\,\abs{v(z)}\}.\]
+Sei X ein Vektorraum, $dim X < \infty $ und sei $x = (x_{1},\dotsc,x_{n})^{T} \in \MdR^{n}$
+\begin{align*}
+	& \|x\|_{2} := \left(\sum_{k = 1}^{n} \|x_{i}^{2}\| \right)^{\frac{1}{2}}\\
+	& \|x\|_{\infty} := \smash{\displaystyle\max_{i = 1}^{n}}  \|x_{i}\|		
+\end{align*}
 
 Diese Normen sind äquivalent, denn:
 $\| x \|_{\infty} \leq \| x \|_{2} \leq n^{\frac{1}{2}} \| x \|_{\infty}$ \newline
 
-\begin{satz}[Satz von Heine Borel] \label{s:1-heineborell} 
+\begin{satz*}[Heine-Borel] \label{s:1-heineborell} 
 $A \subset \MdR$ beschränkt. Dann hat jede Folge $(x_{n})_{n \in \MdN} \subset A$ eine konvergente Teilfolge.
-\end{satz}
+\end{satz*}
 
 
-\begin{satz}[vgl. Analysis 1, Theorem 4.12] \label{satz1.3} Sei
-\[f(z) = \sum_{n=0}^\infty a_n(z-c)^n,\ z\in B(c,\rho),\]
-eine Potenzreihe mit Konvergenzradius $\rho > 0$. Dann ist $f\in H(B(c,\rho))$ und
-\[f^\prime(z) = \sum_{n=1}^\infty n a_n(z-c)^{n-1} =: g(z)\ (\forall z\in B(c,\rho)),\]
-\end{satz}
-\begin{proof}
-	 Wie in Analysis 1 zeigt man: $g$ hat Konvergenzradius 
-	\begin{itemize}
-		\item $p_n(w) \ra 0$, $w\ra z$ (für jedes feste $\nat{n}$)
-		\item \label{1.3ss}$|p_n(w)| \}$
-	\end{itemize}
-\end{proof}
-
-
-
-\begin{bsp} \label{bsp1.1}
-\begin{enumerate}
-\item $f(z) = \bar{z}$, $\kmplx{z}$, ist nirgends komplex differenzierbar, obwohl $f(x,y) = \cmplx{x}{-y}$ reell $C^\infty$ ist. Denn $u(x,y) = x$, $v(x,y) = -y$; also 
-\[\frac{\partial u}{\partial x}(x,y) = 1 \neq -1 = \frac{\partial v}{\partial y}(x,y),\]
-was \eqref{CR}$_1$ widerspricht.
-\item $f(z) = |z|^2 = x^2 + y^2$, $\kmplx{z}$, ist nur in $z=0$ komplex differenzierbar, denn hier ist $u(x,y) = x^2+y^2$, $v(x,y) = 0$ und somit:
-\[\frac{\partial u}{\partial x}(x,y) = 2x \stackrel{!}{=} \frac{\partial v}{\partial y}(x,y) = 0 \gdw x=0,\]
-\[\frac{\partial u}{\partial y}(x,y) = 2y \stackrel{!}{=} -\frac{\partial v}{\partial x}(x,y) = 0 \gdw y=0.\]
-\item $\displaystyle f(z) = \frac{1}{z} = \frac{\bar{z}}{|z|^2} = \underbrace{\frac{x}{x^2+y^2}}_{=u} + \i\underbrace{\frac{-y}{x^2+y^2}}_{=v}$ ist holomorph für $z\neq 0$ (Bem.~\ref{bem1.2}).
-\end{enumerate}
-\end{bsp}
+%\begin{satz}[vgl. Analysis 1, Theorem 4.12] \label{satz1.3} Sei
+%\[f(z) = \sum_{n=0}^\infty a_n(z-c)^n,\ z\in B(c,\rho),\]
+%eine Potenzreihe mit Konvergenzradius $\rho > 0$. Dann ist $f\in H(B(c,\rho))$ und
+%\[f^\prime(z) = \sum_{n=1}^\infty n a_n(z-c)^{n-1} =: g(z)\ (\forall z\in B(c,\rho)),\]
+%\end{satz}
+%\begin{beweis}
+%	 Wie in Analysis 1 zeigt man: $g$ hat Konvergenzradius 
+%	\begin{itemize}
+%		\item $p_n(w) \ra 0$, $w\ra z$ (für jedes feste $n$)
+%		\item $|p_n(w)|$
+%	\end{itemize}
+%\end{beweis}
+%
+%
+%
+%\begin{beispiel} \label{bsp1.1}
+%\begin{enumerate}
+%\item $f(z) = \bar{z}$, $\kmplx{z}$, ist nirgends komplex differenzierbar, obwohl $f(x,y) = \cmplx{x}{-y}$ reell $C^\infty$ ist. Denn $u(x,y) = x$, $v(x,y) = -y$; also 
+%\[\frac{\partial u}{\partial x}(x,y) = 1 \neq -1 = \frac{\partial v}{\partial y}(x,y),\]
+%was \eqref{CR}$_1$ widerspricht.
+%\item $f(z) = |z|^2 = x^2 + y^2$, $\kmplx{z}$, ist nur in $z=0$ komplex differenzierbar, denn hier ist $u(x,y) = x^2+y^2$, $v(x,y) = 0$ und somit:
+%\[\frac{\partial u}{\partial x}(x,y) = 2x \stackrel{!}{=} \frac{\partial v}{\partial y}(x,y) = 0 \gdw x=0,\]
+%\[\frac{\partial u}{\partial y}(x,y) = 2y \stackrel{!}{=} -\frac{\partial v}{\partial x}(x,y) = 0 \gdw y=0.\]
+%\item $\displaystyle f(z) = \frac{1}{z} = \frac{\bar{z}}{|z|^2} = \underbrace{\frac{x}{x^2+y^2}}_{=u} + \i\underbrace{\frac{-y}{x^2+y^2}}_{=v}$ ist holomorph für $z\neq 0$ (Bem.~\ref{bem1.2}).
+%\end{enumerate}
+%\end{beispiel}
