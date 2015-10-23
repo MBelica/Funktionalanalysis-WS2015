@@ -1,12 +1,37 @@
 %!TEX root = FunkAnalysis.tex
 
 
+\chapter{Räume}
 
-\chapter{Komplexe Differenzierbarkeit}
+\section{Einführung}
+%\subsection{Vorbemerkungen zu $\C$}
 
-\section{Grundlegendes}
+Sei X ein Vektorraum, $dim X < \infty $ \newline
+\[\|x\|_{2} := \max_{\abs{z}\leq r}\{\abs{u(z)},\,\abs{v(z)}\}.\]
+\[\|x\|_{\infty} := \max_{\abs{z}\leq r}\{\abs{u(z)},\,\abs{v(z)}\}.\]
 
-\subsection{Vorbemerkungen zu $\C$}
+Diese Normen sind äquivalent, denn:
+$\| x \|_{\infty} \leq \| x \|_{2} \leq n^{\frac{1}{2}} \| x \|_{\infty}$ \newline
+
+\begin{satz}[Satz von Heine Borel] \label{s:1-heineborell} 
+$A \subset \MdR$ beschränkt. Dann hat jede Folge $(x_{n})_{n \in \MdN} \subset A$ eine konvergente Teilfolge.
+\end{satz}
+
+
+\begin{satz}[vgl. Analysis 1, Theorem 4.12] \label{satz1.3} Sei
+\[f(z) = \sum_{n=0}^\infty a_n(z-c)^n,\ z\in B(c,\rho),\]
+eine Potenzreihe mit Konvergenzradius $\rho > 0$. Dann ist $f\in H(B(c,\rho))$ und
+\[f^\prime(z) = \sum_{n=1}^\infty n a_n(z-c)^{n-1} =: g(z)\ (\forall z\in B(c,\rho)),\]
+\end{satz}
+\begin{proof}
+	 Wie in Analysis 1 zeigt man: $g$ hat Konvergenzradius 
+	\begin{itemize}
+		\item $p_n(w) \ra 0$, $w\ra z$ (für jedes feste $\nat{n}$)
+		\item \label{1.3ss}$|p_n(w)| \}$
+	\end{itemize}
+\end{proof}
+
+
 
 \begin{bsp} \label{bsp1.1}
 \begin{enumerate}
