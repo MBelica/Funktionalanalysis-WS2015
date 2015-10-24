@@ -3,10 +3,7 @@
 
 \chapter{Räume}
 
-\section{Einführung}
-%\subsection{Vorbemerkungen zu $\C$}
-
-Sei X ein Vektorraum, $dim X < \infty $ und sei $x = (x_{1},\dotsc,x_{n})^{T} \in \MdR^{n}$
+Sei $X$ ein Vektorraum, $dim X < \infty $ und sei $x = (x_{1},\dotsc,x_{n})^{T} \in \MdR^{n}$
 \begin{align*}
 	& \|x\|_{2} := \left(\sum_{k = 1}^{n} \|x_{i}^{2}\| \right)^{\frac{1}{2}}\\
 	& \|x\|_{\infty} := \smash{\displaystyle\max_{i = 1}^{n}}  \|x_{i}\|		
@@ -15,34 +12,41 @@ Sei X ein Vektorraum, $dim X < \infty $ und sei $x = (x_{1},\dotsc,x_{n})^{T} \i
 Diese Normen sind äquivalent, denn:
 $\| x \|_{\infty} \leq \| x \|_{2} \leq n^{\frac{1}{2}} \| x \|_{\infty}$ \newline
 
-\begin{satz*}[Heine-Borel] \label{s:1-heineborell} 
+\begin{satz*}[Heine-Borel] \label{s:1-heineborell}  \todo{Nicht Heine-Borel!?}
 $A \subset \MdR$ beschränkt. Dann hat jede Folge $(x_{n})_{n \in \MdN} \subset A$ eine konvergente Teilfolge.
 \end{satz*}
 
+\begin{beispiel}
+$X = C[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$
+\begin{align*}
+\begin{rcases*}
+\| f \|_{2} := \left( \int_{0}^{1} \| f(t) \|^{2} dt \right)^{\frac{1}{2}} \\
+\| f \|_{\infty} :=  \smash{\displaystyle\max_{t \in [0, 1]}}  \| f(t) \|
+\end{rcases*}\text{ dabei gilt } \| f \|_{2} \leq \| f \|_{\infty} \leq \dotsc
+\end{align*}
+\newline
+Aber:$\hspace{0.5cm} f_n(t) = §BILD§, \hspace{0.5cm} \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  $ \\
+$ \| f_{n} - f_{m} \| = 1 \text{ für } n \neq m \Rightarrow $ \hyperref[s:1-heineborell]{ Satz von Heine-Borel} gilt im $\infty$-dimensionalen i.A. nicht!
+\end{beispiel}
 
-%\begin{satz}[vgl. Analysis 1, Theorem 4.12] \label{satz1.3} Sei
-%\[f(z) = \sum_{n=0}^\infty a_n(z-c)^n,\ z\in B(c,\rho),\]
-%eine Potenzreihe mit Konvergenzradius $\rho > 0$. Dann ist $f\in H(B(c,\rho))$ und
-%\[f^\prime(z) = \sum_{n=1}^\infty n a_n(z-c)^{n-1} =: g(z)\ (\forall z\in B(c,\rho)),\]
-%\end{satz}
-%\begin{beweis}
-%	 Wie in Analysis 1 zeigt man: $g$ hat Konvergenzradius 
-%	\begin{itemize}
-%		\item $p_n(w) \ra 0$, $w\ra z$ (für jedes feste $n$)
-%		\item $|p_n(w)|$
-%	\end{itemize}
-%\end{beweis}
-%
-%
-%
-%\begin{beispiel} \label{bsp1.1}
-%\begin{enumerate}
-%\item $f(z) = \bar{z}$, $\kmplx{z}$, ist nirgends komplex differenzierbar, obwohl $f(x,y) = \cmplx{x}{-y}$ reell $C^\infty$ ist. Denn $u(x,y) = x$, $v(x,y) = -y$; also 
-%\[\frac{\partial u}{\partial x}(x,y) = 1 \neq -1 = \frac{\partial v}{\partial y}(x,y),\]
-%was \eqref{CR}$_1$ widerspricht.
-%\item $f(z) = |z|^2 = x^2 + y^2$, $\kmplx{z}$, ist nur in $z=0$ komplex differenzierbar, denn hier ist $u(x,y) = x^2+y^2$, $v(x,y) = 0$ und somit:
-%\[\frac{\partial u}{\partial x}(x,y) = 2x \stackrel{!}{=} \frac{\partial v}{\partial y}(x,y) = 0 \gdw x=0,\]
-%\[\frac{\partial u}{\partial y}(x,y) = 2y \stackrel{!}{=} -\frac{\partial v}{\partial x}(x,y) = 0 \gdw y=0.\]
-%\item $\displaystyle f(z) = \frac{1}{z} = \frac{\bar{z}}{|z|^2} = \underbrace{\frac{x}{x^2+y^2}}_{=u} + \i\underbrace{\frac{-y}{x^2+y^2}}_{=v}$ ist holomorph für $z\neq 0$ (Bem.~\ref{bem1.2}).
-%\end{enumerate}
-%\end{beispiel}
+\chapter{Operatoren}
+
+Sei $N = dim X, M = dim Y$ und seien $(e_n)$ bzw. $(f_n)$ Basen von $X$ bzw. $Y$.
+Für $T : X \rightarrow Y$ gegeben durch: \\
+\[ §Komm. Diagramm§ \] \\
+Daraus folgt:
+\begin{itemize}
+	\item $T$ ist stetig
+	\item X = Y \gdw T injektiv \gdw T surjektiv (Dimensionsformel) \\
+	(Die Gleichung $Tx = y$ ist eindeutig lösbar $\gdw$ Gleichung hat für alle $y \in Y$ eine Lösung.)
+	\item Falls A selbstadjungiert ist, d.h. $A = A^{*}$, gibt es eine Basis aus Eigenvektoren $(e_{n})$ von $A$, d.h. $ T( \sum \alpha_{n} e_{n} ) = \sum \lambda_{n} \alpha_{n} e_{n}$, wobei $\lambda_{n}$ Eigenwerte sind $A =
+			\begin{pmatrix}
+				\diagentry{\lambda_{1}}\\
+				&\diagentry{\xddots}\\
+				&&\diagentry{\lambda_{n}}\\
+			\end{pmatrix} $ 
+\end{itemize}
+
+\begin{beispiel}[1]
+$X = C^{1}[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$ \\
+\end{beispiel}
