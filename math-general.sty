@@ -1,8 +1,7 @@
 \usepackage[utf8]{inputenc} 			% this is needed for umlauts
 \usepackage[ngerman]{babel} 			% this is needed for umlauts
-\usepackage[T1]{fontenc}     		% this is needed for correct output of umlauts in pdf
+\usepackage[T1]{fontenc}     			% this is needed for correct output of umlauts in pdf
 \usepackage{amsmath}
-\usepackage[colorinlistoftodos]{todonotes}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{stmaryrd}
@@ -137,13 +136,3 @@
 % Text formatting
 \newcommand{\alt}[1]{(\textit{#1})} % Alternativbegriff
 \newcommand{\begriff}[1]{\indexlabel{#1}\textbf{#1}}
-
-\DeclareMathOperator{\Mat}{Mat}
-\newcommand{\diagentry}[1]{\mathmakebox[1.8em]{#1}}
-\newcommand{\xddots}{%
-  \raise 4pt \hbox {.}
-  \mkern 6mu
-  \raise 1pt \hbox {.}
-  \mkern 6mu
-  \raise -2pt \hbox {.}
-}
