@@ -1,7 +1,8 @@
 %!TEX root = FunkAnalysis.tex
 
-
-\chapter{Räume}
+\chapter{Lineare Operatoren auf Banachräumen}
+\section{Einführung}
+\subsection{Räume}
 
 Sei $X$ ein Vektorraum, $dim X < \infty $ und sei $x = (x_{1},\dotsc,x_{n})^{T} \in \MdR^{n}$
 \begin{align*}
@@ -22,14 +23,14 @@ $X = C[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$
 \begin{rcases*}
 \| f \|_{2} := \left( \int_{0}^{1} \| f(t) \|^{2} dt \right)^{\frac{1}{2}} \\
 \| f \|_{\infty} :=  \smash{\displaystyle\max_{t \in [0, 1]}}  \| f(t) \|
-\end{rcases*}\text{ dabei gilt } \| f \|_{2} \leq \| f \|_{\infty} \leq \dotsc
+\end{rcases*}\text{ dabei gilt } \todo{anders herum?} \| f \|_{2} \leq \| f \|_{\infty} \leq \dotsc 
 \end{align*}
 \newline
 Aber:$\hspace{0.5cm} f_n(t) = §BILD§, \hspace{0.5cm} \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  $ \\
 $ \| f_{n} - f_{m} \| = 1 \text{ für } n \neq m \Rightarrow $ \hyperref[s:1-heineborell]{ Satz von Heine-Borel} gilt im $\infty$-dimensionalen i.A. nicht!
 \end{beispiel}
 
-\chapter{Operatoren}
+\subsection{Operatoren}
 
 Sei $N = dim X, M = dim Y$ und seien $(e_n)$ bzw. $(f_n)$ Basen von $X$ bzw. $Y$.
 Für $T : X \rightarrow Y$ gegeben durch: \\
@@ -39,14 +40,79 @@ Daraus folgt:
 	\item $T$ ist stetig
 	\item X = Y \gdw T injektiv \gdw T surjektiv (Dimensionsformel) \\
 	(Die Gleichung $Tx = y$ ist eindeutig lösbar $\gdw$ Gleichung hat für alle $y \in Y$ eine Lösung.)
-	\item Falls A selbstadjungiert ist, d.h. $A = A^{*}$, gibt es eine Basis aus Eigenvektoren $(e_{n})$ von $A$, d.h. $ T( \sum \alpha_{n} e_{n} ) = \sum \lambda_{n} \alpha_{n} e_{n}$, wobei $\lambda_{n}$ Eigenwerte sind $A =
+	\item Falls A selbstadjungiert ist, d.h. $A = A^{*}$, gibt es eine Basis aus Eigenvektoren $(e_{n})$ von $A$, d.h. $ T( \sum_{n=1}^{N} \alpha_{n} e_{n} ) = \sum{n=1}^{N} \lambda_{n} \alpha_{n} e_{n}$, wobei $\lambda_{n}$ Eigenwerte sind $A =
 			\begin{pmatrix}
 				\diagentry{\lambda_{1}}\\
 				&\diagentry{\xddots}\\
 				&&\diagentry{\lambda_{n}}\\
-			\end{pmatrix} $ 
+			\end{pmatrix} $ %todo summenindexes überprüfen
 \end{itemize}
 
 \begin{beispiel}[1]
-$X = C^{1}[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$ \\
+$X = C^{1}[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$ 
+$T f = f', T : X \rightarrow Y \text{ stetig.} $ \\
+(Aber: $T: C[0, 1] \rightarrow C[0, 1]$, hier ist $T$ nicht definiert.) \\
+$T$ ist nicht stetig bzgl. $\|.\|_{\infty}$-Norm, siehe:
+\[ f_{n}(t) = \frac{1}{\sqrt{n}}e^{int}, \hspace{0.5cm}  \text{dann: } \|f_{n}\| \rightarrow 0 \text{ für } t \rightarrow \infty \]	
+\[ T f_{n}(t) = i \sqrt{n} e^{int}, \hspace{0.5cm} \text{mit: } \| T f_{n} \|_{\infty} \rightarrow \infty, \text{ für } n \rightarrow \infty \]
 \end{beispiel}
+
+\begin{beispiel}[2]
+$X = L_{2} = \{ (a_{n}: \left( \sum_{n \geq 1}^{\infty} \| a_{n} \| \right)^{\frac{1}{2}} < \infty \}$	\\
+$T ( a_{1}, a_{2}, a_{3}, ...) = ( 0, a_{1}, a_{2}, a_{3}, ...)$ \\
+$T$ ist injektiv, aber nicht surjektiv
+\end{beispiel}
+
+\subsection{Anwendungen}
+
+\begin{enumerate}
+	\item Fredholm'sche Integralglechungen
+	\item Dirichletproblem
+	\item Sturm-Liouville Problem
+\end{enumerate}
+
+
+\newpage
+\section{Normierte Räume}
+
+\begin{definition}
+Sei $X$ ein Vektorraum über $\MdK \in\{ \MdR, \MdC \}$ \\
+Eine Abbildung  $\| . \| : X \rightarrow \MdR_{+}$ heißt eine Norm, wenn
+\begin{enumerate}
+	\item $ \| x \| \geq 0, \| x \| = 0 \gdw x = 0 $
+	\item $\ | \lambda x \| = | \lambda \| x \| $
+	\item $ \| x + y \| \leq \| x \| + \| y \| $
+\end{enumerate}	
+\end{definition}
+
+\begin{bemerkung} Falls $ \| . \| $ all die oben genannten Eigenschaften erfüllt außer $ \| x \| = 0 \Rightarrow x = 0 $, dann heißt $ \| . \| $ Halbnorm %TODO alle |.| mit Mittelpunkt ersetze
+\end{bemerkung}
+
+Die Menge $ U_{X} = \{ x \in X:  \|x \| \leq 1 \}$ heißt \textbf{Einheitskugel}.
+
+Eine Folge $(x_{n})$ des normierten Raums $X$ \textbf{konvergiert} gegen ein $ x \in X $, falls  $\| x_{n} - x \| \xrightarrow[n \rightarrow \infty]{} 0. $
+
+
+\begin{bemerkung}
+Für zwei Elemente $x, y \in (X, \|.\|)$	... gilt die umgekehrte Dreiecksungleichung $( | \|x\| + \|y\| | \leq \| x + y \|)$
+\end{bemerkung}
+
+\begin{beispiel}
+Sei $ X = \MdK^{n}, \hspace{0.5cm} X = ( X_{1}, \dotsc, X_{n}), \hspace{0.5cm} X_{i} = \MdK$ \\
+\begin{align*}
+	\| x \|_{p} & = \left( \sum_{j = 1}^{n} | x_{j}^{p} | \right)^{\frac{1}{p}},  1 \leq p < \infty (p = 2: \text{ Euklidische Norm}) \] \\
+	\| x \|_{\infty} & = sup_{j = 1}^{n} |x_{j}|	
+\end{align*}
+
+Beh: $\| . \| $ ist Norm auf $\MdK^n$ für $1 \leq p \leq \infty$
+
+$\| x + y \|_{\infty} = sup_{j = 1}^{k} |x_{j} + y_{j}| \leq \|x\|_{\infty} + \|y\|_{\infty} $
+Für $p \in (1, \infty), p \neq 2:$ siehe Übungsaufgabe (Fall $p = 2$ läuft über Cauchy-Schwarz)
+
+Beachte: \|x\|_{\infty} \leq  \|x\|_{\infty} \leq n \|x\|_{\infty}
+\end{beispiel}
+
+
+
+
+
