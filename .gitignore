@@ -124,3 +124,10 @@ sympy-plots-for-*.tex/
 # WinEdt
 *.bak
 *.sav
+
+# Texpad
+.texpadtmp/
+*.ps
+*.upa
+*.upb
+
