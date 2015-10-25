@@ -23,7 +23,7 @@ $X = C[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$
 \begin{rcases*}
 \| f \|_{2} := \left( \int_{0}^{1} \| f(t) \|^{2} dt \right)^{\frac{1}{2}} \\
 \| f \|_{\infty} :=  \smash{\displaystyle\max_{t \in [0, 1]}}  \| f(t) \|
-\end{rcases*}\text{ dabei gilt } \todo{anders herum?} \| f \|_{2} \leq \| f \|_{\infty} \leq \dotsc 
+\end{rcases*}\text{ dabei gilt } \| f \|_{\infty} \leq \| f \|_{2} \leq \dotsc 
 \end{align*}
 \newline
 Aber:$\hspace{0.5cm} f_n(t) = §BILD§, \hspace{0.5cm} \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  $ \\
@@ -52,7 +52,7 @@ Daraus folgt:
 $X = C^{1}[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$ 
 $T f = f', T : X \rightarrow Y \text{ stetig.} $ \\
 (Aber: $T: C[0, 1] \rightarrow C[0, 1]$, hier ist $T$ nicht definiert.) \\
-$T$ ist nicht stetig bzgl. $\|.\|_{\infty}$-Norm, siehe:
+$T$ ist nicht stetig bzgl. $\|.\|_{\infty}$-Norm, da:
 \[ f_{n}(t) = \frac{1}{\sqrt{n}}e^{int}, \hspace{0.5cm}  \text{dann: } \|f_{n}\| \rightarrow 0 \text{ für } t \rightarrow \infty \]	
 \[ T f_{n}(t) = i \sqrt{n} e^{int}, \hspace{0.5cm} \text{mit: } \| T f_{n} \|_{\infty} \rightarrow \infty, \text{ für } n \rightarrow \infty \]
 \end{beispiel}
@@ -98,10 +98,10 @@ Für zwei Elemente $x, y \in (X, \|.\|)$	... gilt die umgekehrte Dreiecksungleic
 \end{bemerkung}
 
 \begin{beispiel}
-Sei $ X = \MdK^{n}, \hspace{0.5cm} X = ( X_{1}, \dotsc, X_{n}), \hspace{0.5cm} X_{i} = \MdK$ \\
+Sei $ X = \MdK^{n}, \hspace{0.5cm} X = ( X_{1}, \dotsc, X_{n}), \hspace{0.5cm} X_{i} = \MdK$ 
 \begin{align*}
-	\| x \|_{p} & = \left( \sum_{j = 1}^{n} | x_{j}^{p} | \right)^{\frac{1}{p}},  1 \leq p < \infty (p = 2: \text{ Euklidische Norm}) \] \\
-	\| x \|_{\infty} & = sup_{j = 1}^{n} |x_{j}|	
+	\| x \|_{p} & = \left( \sum_{j = 1}^{n} |x_{j}^{p}| \right)^{\frac{1}{p}},  1 \leq p < \infty (p = 2: \text{ Euklidische Norm}) \\
+	\| x \|_{\infty} & = \hspace{0.3cm} \sup_{j = 1}^{n} |x_{j}|	
 \end{align*}
 
 Beh: $\| . \| $ ist Norm auf $\MdK^n$ für $1 \leq p \leq \infty$
@@ -109,8 +109,25 @@ Beh: $\| . \| $ ist Norm auf $\MdK^n$ für $1 \leq p \leq \infty$
 $\| x + y \|_{\infty} = sup_{j = 1}^{k} |x_{j} + y_{j}| \leq \|x\|_{\infty} + \|y\|_{\infty} $
 Für $p \in (1, \infty), p \neq 2:$ siehe Übungsaufgabe (Fall $p = 2$ läuft über Cauchy-Schwarz)
 
-Beachte: \|x\|_{\infty} \leq  \|x\|_{\infty} \leq n \|x\|_{\infty}
+Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \leq n \| x \|_{\infty}$
 \end{beispiel}
+
+\begin{definition}
+	Zwei Normen $\| . \|_{1}, \| . \|_{2}$ heißen äquivalent auf $X$, falls es $0 < m, M < \infty$ gibt, so dass für alle $ x \in X$ gilt:
+	\[ m \| x \|_{2} \leq \| x \|_{1} \leq M \| x \|_{2} \]
+\end{definition}
+ 
+\begin{satz}
+	Auf einem endlich dimensionalen Vektorraum sind alle Normen äquivalent.
+\end{satz}
+\begin{beweis}
+	Wähle eine algebraische Basis $(e_{1}, \dotsc, e_{n})$ von X, wobei $ n = dim X < \infty$. \\
+	Definiere $|\|x\|| = \left(\sum_{i = 1}^{n} |x_{i}|^2\right)^{\frac{1}{2}}$, wobei $x = \sum_{i = 1}^{n} x_{i} e_{i}$ \\
+	
+	z. z. die gegeben Norm $|\| . \||$ist äquivalent zu $\| . \|$ 
+\end{beweis}
+
+
 
 
 
