@@ -58,7 +58,7 @@ $T$ ist nicht stetig bzgl. $\|.\|_{\infty}$-Norm, da:
 \end{beispiel}
 
 \begin{beispiel}[2]
-$X = L_{2} = \{ (a_{n}: \left( \sum_{n \geq 1}^{\infty} \| a_{n} \| \right)^{\frac{1}{2}} < \infty \}$	\\
+$X = L_{2} = \{ (a_{n}): \left( \sum_{n \geq 1}^{\infty} \| a_{n} \| \right)^{\frac{1}{2}} < \infty \}$	\\
 $T ( a_{1}, a_{2}, a_{3}, ...) = ( 0, a_{1}, a_{2}, a_{3}, ...)$ \\
 $T$ ist injektiv, aber nicht surjektiv
 \end{beispiel}
@@ -88,9 +88,10 @@ Eine Abbildung  $\| . \| : X \rightarrow \MdR_{+}$ heißt eine Norm, wenn
 \begin{bemerkung} Falls $ \| . \| $ all die oben genannten Eigenschaften erfüllt außer $ \| x \| = 0 \Rightarrow x = 0 $, dann heißt $ \| . \| $ Halbnorm %TODO alle |.| mit Mittelpunkt ersetze
 \end{bemerkung}
 
-Die Menge $ U_{X} = \{ x \in X:  \|x \| \leq 1 \}$ heißt \textbf{Einheitskugel}.
-
-Eine Folge $(x_{n})$ des normierten Raums $X$ \textbf{konvergiert} gegen ein $ x \in X $, falls  $\| x_{n} - x \| \xrightarrow[n \rightarrow \infty]{} 0. $
+\begin{vereinbarung} 
+Die Menge $ U_{X} = \{ x \in X:  \|x \| \leq 1 \}$ heißt \textbf{Einheitskugel}. \\
+Eine Folge $(x_{n})$ des normierten Raums $X$ \textbf{konvergiert} gegen ein $ x \in X $, falls  $\| x_{n} - x \| \xrightarrow[n \rightarrow \infty]{} 0. $	
+\end{vereinbarung}
 
 
 \begin{bemerkung}
@@ -124,8 +125,94 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 	Wähle eine algebraische Basis $(e_{1}, \dotsc, e_{n})$ von X, wobei $ n = dim X < \infty$. \\
 	Definiere $|\|x\|| = \left(\sum_{i = 1}^{n} |x_{i}|^2\right)^{\frac{1}{2}}$, wobei $x = \sum_{i = 1}^{n} x_{i} e_{i}$ \\
 	
-	z. z. die gegeben Norm $|\| . \||$ist äquivalent zu $\| . \|$ 
+	z. z. die gegeben Norm $|\| . \||$ist äquivalent zu $\| . \|$. \\ \\
+	Beweis: \\
+	In der einen Richtung betrachte: 
+	\begin{align*}
+		\| x \| = \| \sum_{i = 1}^{n} x_{i} e_{i} \| & \leq \sum_{i = 1}^{n} |x_{i}| \|  e_{i} \| \\ 
+													& \leq \left( \sum_{i = 1}^{n} |x_{i}|^{2} \right)^\frac{1}{2}  \left( \sum_{i = 1}^{n} \| e_{i} \|^{2} \right)^\frac{1}{2} \\
+													& =: \hspace{0.75cm} \nu \hspace{1.75cm} |\| x \||		
+	\end{align*}
+	
+	Für die Umkehrung benutze die Funktion $J: \MdK^{n} \rightarrow X, \hspace{0.1cm} J(x_{1}, \dotsc, x_{n}) = \sum_{i = 1}^{n} x_{i} e_{i} $ \\
+	\begin{align*}
+ 	 \text{Die Abbildung } y & \in \MdK^{n}  \rightarrow \| Jy \| \text{ ist stetig, denn} \\
+ 	 	 \| Jy \| - \| y \|_{\MdK^{n}} & = \left( \sum_{i = 1}^{n} |y_{i}|^{2} \right)^{\frac{1}{2}}, y = (y_{1}, \dotsc, y_{n}) \\
+ 	 	 \text{und } | \| Jy \| - \| Jz \| & \leq | \| Jy - Jz \| \leq | \| J(y - z) \| \\
+ 	 	 & \leq M |\|J (y - z) \|| \\
+ 	 	 & = M \| y - z \|_{\MdK^{n}} \\
+ 	 \end{align*}
+ Daraus folgt die Stetigkeit von $ Jy \rightarrow \| Jy \| \in \MdR $ \\ \\
+	Sei $S = \{y \in \MdK^{n}: \| y \|_2 = 1 \}$. Dann ist $S$ abgeschlossen und beschränkt.
+	Die Abbildung $N := y \in S \rightarrow \| Jx \| > 0$ ist wie in (*) gezeigt stetig. Nach Analysis nimmt $N$ sein Minimum in einem Punkt $y_{0} \in S$ an. Setze
+		\begin{align*}
+			m = \inf\{\| x \| : |\| x \|| = 1\} & = \inf \{ \| Jy \|: y \in S \} \\
+												& = \| J y_{0} \| > 0 \\ \\
+			\text{Also } m \leq \| \frac{x}{ |\| x \|| } \| =  \frac{ \| x \| }{ |\| x \|| }  &\Rightarrow |\| x \|| \leq m \| x \|
+		\end{align*}
 \end{beweis}
+
+\begin{prop}
+Für zwei Normen $\| . \|_{1}, \| . \|_{2}$ auf $X$ sind äquivalent:
+\begin{enumerate}
+	\item $\| . \|_{1}, \| . \|_{2}$ sind äquivalent
+	\item Für alle $(x_{n}) \subset X$, $x \in X$ gilt $\| x_{m} - x \|_{1} \rightarrow 0 \gdw \| x_{m} - x \|_{2} \rightarrow 0 $
+	\item Für alle $(x_{n}) \subset X$ gilt $\| x_{m} |_{1} \rightarrow 0 \gdw \| x_{m} \|_{2} \rightarrow 0 $
+	\item Es gibt Konstanten $0 < m$, $M < \infty$, so dass $m U_{(X, \| . \|_{1})} \leq U_{(X, \| . \|_{2})} \leq M U_{(X, \| . \|_{1})}$
+\end{enumerate}
+\end{prop}
+\begin{beweis}
+	todo	
+\end{beweis}
+
+\begin{vereinbarung}
+Sei $\MdF = \{ (x_{n}) \in \MdK^{N}: x_{i} = 0 \text{ bis auf endlich viele } n \in N  \} $ der Folgenraum \\
+und $e_{j} = (0, \dotsc, 0, 1, 0, \dotsc, 0) $ der Einheitsvektor, wobei die $1$ an j-ter Stelle steht.
+\end{vereinbarung}
+
+\begin{beispiel}
+	\begin{itemize}
+		\item $l^{p} = \{ x = (x_{n}) \in \MdK^n: \|x\|_{p} = \left( \sum_{n = 1}^{\infty} | x_{n} |^{p}\right)^{\frac{1}{p}} < \infty \}$
+		\item $l^{\infty} = \{ x = (x_{n}) \in \MdK^n: \|x\|_{\infty} = \sup_{n \in \MdN} |x_{n}| < \infty \}$
+		\item $c_{0} = \{ x = (x_{n}) \in l^{\infty}: \lim_{n \rightarrow \infty} |x_{n}| = 0 \}$
+	\end{itemize}
+Gültigkeit der Dreiecksungleichung beweist man ähnlich wie bei $(\MdK^{n}, \| . \|_{p})$.
+\end{beispiel}
+
+\begin{lemma}
+Minkowskii-Ungleichung: $\left( \sum_{i=1}^{\infty} |x_{i} + y_{i}|^p\right)^{\frac{1}{p}} \leq\left( \sum_{i=1}^{\infty} |x_{i}|^p\right)^{\frac{1}{p}} \left( \sum_{i=1}^{\infty} |y_{i}|^p\right)^{\frac{1}{p}} $	\\
+Hölder-Ungleichung: mit $\frac{1}{p} + \frac{1}{p'} = 1 \text{ gilt } \sum_{i=1}^{\infty} |x_{i}| |y_{i}| \leq \left( \sum_{i=1}^{\infty} |x_{i}|^{p} \right)^{\frac{1}{p}} \left( \sum_{i=1}^{\infty} |y_{i}|^{p'} \right)^{\frac{1}{p'}} $	\\	
+\end{lemma}
+
+\begin{bemerkung}
+Im unendlich dimensionalen Fall sind die Normen $\| . \|_{p}$ auf $\MdF$ nicht äquivalent.	
+\end{bemerkung}
+\begin{beweis}
+todo	
+\end{beweis}
+
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Raum der stetigen Funktionen
+		\item Raum der differentierbaren Funktionen \\
+		$D^{\alpha}f(x) = \frac{ \delta^{ | \alpha | } }{ \delta x_{1}^{ \alpha_{1} } \dotsc \delta x_{n}^{ \alpha_{n} } } f(x), \text{ wobei } | \alpha | = \alpha_{1} + \dotsc + \alpha_{n} $ \\ 
+	\end{enumerate}
+\end{beispiel}
+
+\begin{definition}
+$C_{b}^{m}(\Omega) = \{ f: \Omega \rightarrow \MdR | D^{\alpha}f \text{ sind stetig in } \Omega, \text{ beschränkt auf } \Omega \text{ für alle } \alpha \in \MdN^{n}, |\alpha| \leq n \}$ \\
+mit der Norm: $\| f \|_{C_{b}^{m}} = \sum_{|\alpha| \leq m} \| D^{\alpha}f \|_{\infty}$
+\end{definition}
+
+\begin{bemerkung} \\
+Auf $C_{b}^{m}[0, 1]$ ist eine äquivalente Norm zu  $\| f \|_{C_{b}^{m}}$ gegeben durch\begin{align*} \|f\|_{0} & = \sum_{i = 0}^{m - 1} |f^{(i)}(0)| + \| f^{(m)} \|_{\infty} \\
+\text{Denn } f^{(i)}(t) = f^{(i)}(0) + \int_{0}^{t} & f^{(i + 1)}(s) ds \text{ und damit } \| f^{(i)}\|_{0} \leq | f^{(i)}(0) | + \| f^{(i + 1)}\|_{\infty}	
+\end{align*}
+
+\end{bemerkung}
+
+
 
 
 
