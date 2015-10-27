@@ -212,21 +212,45 @@ Auf $C_{b}^{m} [0, 1]$ ist eine äquivalente Norm zu  $\| f \|_{C_{b}^{m}}$ gege
 	\text{Denn } f^{(i)}(t) = f^{(i)}(0) + \int_{0}^{t} & f^{(i + 1)}(s) ds \text{ und damit } \| f^{(i)}\|_{0} \leq | f^{(i)}(0) | + \| f^{(i + 1)}\|_{\infty}	
 \end{align*}
 \end{bemerkung}
+
+\begin{beispiel}
+$X = C(\bar\Omega), \Omega \subset \MdR^{n}$ offen, beschränkt
+Definiere $\| f \|_{\MdL^{p}} = \left( \int_{\Omega} |f(u)|^{p} du \right)^{\frac{1}{p}}$
+ Betrachte $f_{k}(t) = t^k, t \in [0, 1]$, dann gilt 
+ \[ \| f \|_{\MdL^{p}} = \left( \frac{1}{kp + 1} \right)^{\frac{1}{p}} \xrightarrow[k \rightarrow \infty]{} 0, \hspace{0.25cm} p < \infty \]
+\end{beispiel}
+
+\begin{definition}[Quotientenräume]
+Sei $(X, \| \cdot \|)$ ein normierter Raum. $M \subset X$ sei abgeschlossener (d.h. für alle $(x_{n}) \in M, \| x_{n} - x \| \rightarrow 0 \Rightarrow x \in M$), linearer Unterraum. 
+
+Definiere $\hat X = X / M, \hspace{0.5cm} \hat x \in X/M: \hspace{0.25cm} \hat x = \{ y \in X: y - x \in M \} = x + M$ \\
+Dabei gilt unter anderem $\hat x_{1} + \hat x_{2} = \hat{x_{1} + x_{2}}$ und $\lambda \hat x_{1} = \hat{\lambda x_{1}}$. $\hat X$ bildet einen Vektorraum. \\
+
+Wir definieren nun eine Norm für die Äquivalenzklassen mittels $\| \hat x \|_{\hat X} : = \inf \{ \| y \|_{X}: y \in \hat X \}$
+
+Beh.: $(\hat X, \| \cdot \|_{\hat X})$ ein normierter Raum. \\
+$\| \hat x \|_{\hat X} = 0: \exists y_{n} \in \hat X \text{ mit } \| y_{n} \| \rightarrow 0, x - y_{n} \in M$
+$\Rightarrow x \in M, \hat x = 0$
+zu $\epsilon< 0$ wähle zu $\hat x_{1}, \hat x_{2} \in \hat X$ Elemente 
+
+todo
+\end{definition}
+
 \begin{beispiel}
 \begin{itemize}
-	\item höldersche Funktionen
-	\item $\Omega \subset \MdR^{n} offen$
-\end{itemize}	
+	\item hölderstetige Funktionen
+	\item Lebesgues-Integrierbare Funktionen
+\end{itemize}
 \end{beispiel}
+
 
 \newpage
 \section{Beschränkte und lineare Operatoren}
 
 \begin{definition}
 	Eine Teilmenge V eines normieren Raums $(X, \| \cdot \|)$ heißt beschränkt, falls 
-	\[ c := \sup_{x \in V} \| x \| < \infty \]
-	d.h. $V \subset c U_{(X, \| \cdot \| )}$
-\end{definition}}
+	\[ c := \sup_{x \in V} \| x \| < \infty, \text{ d.h. } V \subset c U_{(X, \| \cdot \| )} \]
+\end{definition}
 
 \begin{bemerkung}
 Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow X$ ist beschränkt, denn $x_{m} \in \{ y: \| x - y \| \leq 1 \}$ für fast alle $m$.
@@ -234,10 +258,33 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow X$ ist beschränkt, den
 
 \begin{satz}
 	Seien $X$, $Y$ normierte Räume. Füreinen linearen Operator $S: X \rightarrow Y$ sind äquivalent:
-	\begin{itemize}
+	\begin{enumerate}[label=\alph*\upshape)]
 		\item $T$ stetig, d.h. $x_{n} \rightarrow x$ impliziert $Tx_{n} \rightarrow Tx$
-	\end{itemize}	
+		\item $T$ stetig in 0
+		\item $T(U_{(X, \| \cdot \|)})$ ist beschränkt in $Y$
+		\item Es gibt ein $c < \infty$ mit $\| Tx \| \leq c \| x \|$
+	\end{enumerate}	
 \end{satz}
+\begin{beweis}
+ todo	
+\end{beweis}
+
+\begin{definition}
+	Seien $X, Y$ normierte Räume. Mit $B(X, Y)$ bezeichnen wir den Vektorraum der beschränkten, linearen Operatoren $T: X \rightarrow Y$. Ist $ X = Y$ schreiben wir auch kurz $B(X) := B(X, X)$. \\
+	
+	Für $T \in B(X, Y)$ setze
+	\begin{align*}
+		\| T \| & = \sup \{ \frac{\| Tx \|}{\| x \|}: x \in X \ {0} \}
+				& = \sup \{ \| Tx \|: \| x \| \leq 1 \}
+	\end{align*}
+	Die Norm $\| T \|$ von $T$ ist die kleinste Konstante $c$ für die die Gleichung $\| Tx s\| \leq c \| x \|$ für alle $x \in X$ gilt
+\end{definition}
+
+\begin{satz}
+ 	
+\end{satz}
+
+
 
 
 
