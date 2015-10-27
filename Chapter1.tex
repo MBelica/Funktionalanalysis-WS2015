@@ -13,7 +13,7 @@ Sei $X$ ein Vektorraum, $dim X < \infty $ und sei $x = (x_{1},\dotsc,x_{n})^{T} 
 Diese Normen sind äquivalent, denn:
 $\| x \|_{\infty} \leq \| x \|_{2} \leq n^{\frac{1}{2}} \| x \|_{\infty}$ \newline
 
-\begin{satz*}[Heine-Borel] \label{s:1-heineborell}  \todo{Nicht Heine-Borel!?}
+\begin{satz*}[Bolzano-Weierstraß] \label{s:1-bolzanoweierstrass}
 $A \subset \MdR$ beschränkt. Dann hat jede Folge $(x_{n})_{n \in \MdN} \subset A$ eine konvergente Teilfolge.
 \end{satz*}
 
@@ -26,8 +26,8 @@ $X = C[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$
 \end{rcases*}\text{ dabei gilt } \| f \|_{\infty} \leq \| f \|_{2} \leq \dotsc 
 \end{align*}
 \newline
-Aber:$\hspace{0.5cm} f_n(t) = §BILD§, \hspace{0.5cm} \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  $ \\
-$ \| f_{n} - f_{m} \| = 1 \text{ für } n \neq m \Rightarrow $ \hyperref[s:1-heineborell]{ Satz von Heine-Borel} gilt im $\infty$-dimensionalen i.A. nicht!
+Aber:$\hspace{0.25cm} f_n(t) = Bild, \hspace{0.5cm} \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  $ \\
+$ \| f_{n} - f_{m} \| = 1 \text{ für } n \neq m \Rightarrow $ \hyperref[s:1-bolzanoweierstrass]{Satz von Bolzano-Weierstraß} gilt im $\infty$-dimensionalen i.A. nicht!
 \end{beispiel}
 
 \subsection{Operatoren}
@@ -45,14 +45,14 @@ Daraus folgt:
 				\diagentry{\lambda_{1}}\\
 				&\diagentry{\xddots}\\
 				&&\diagentry{\lambda_{n}}\\
-			\end{pmatrix} $ %todo summenindexes überprüfen
+			\end{pmatrix} $
 \end{itemize}
 
 \begin{beispiel}[1]
 $X = C^{1}[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$ 
 $T f = f', T : X \rightarrow Y \text{ stetig.} $ \\
 (Aber: $T: C[0, 1] \rightarrow C[0, 1]$, hier ist $T$ nicht definiert.) \\
-$T$ ist nicht stetig bzgl. $\|.\|_{\infty}$-Norm, da:
+$T$ ist nicht stetig bzgl. $\| \cdot \|_{\infty}$-Norm, da:
 \[ f_{n}(t) = \frac{1}{\sqrt{n}}e^{int}, \hspace{0.5cm}  \text{dann: } \|f_{n}\| \rightarrow 0 \text{ für } t \rightarrow \infty \]	
 \[ T f_{n}(t) = i \sqrt{n} e^{int}, \hspace{0.5cm} \text{mit: } \| T f_{n} \|_{\infty} \rightarrow \infty, \text{ für } n \rightarrow \infty \]
 \end{beispiel}
@@ -77,7 +77,7 @@ $T$ ist injektiv, aber nicht surjektiv
 
 \begin{definition}
 Sei $X$ ein Vektorraum über $\MdK \in\{ \MdR, \MdC \}$ \\
-Eine Abbildung  $\| . \| : X \rightarrow \MdR_{+}$ heißt eine Norm, wenn
+Eine Abbildung  $\| \cdot\| \cdot \| \| : X \rightarrow \MdR_{+}$ heißt eine Norm, wenn
 \begin{enumerate}
 	\item $ \| x \| \geq 0, \| x \| = 0 \gdw x = 0 $
 	\item $\ | \lambda x \| = | \lambda \| x \| $
@@ -85,7 +85,7 @@ Eine Abbildung  $\| . \| : X \rightarrow \MdR_{+}$ heißt eine Norm, wenn
 \end{enumerate}	
 \end{definition}
 
-\begin{bemerkung} Falls $ \| . \| $ all die oben genannten Eigenschaften erfüllt außer $ \| x \| = 0 \Rightarrow x = 0 $, dann heißt $ \| . \| $ Halbnorm %TODO alle |.| mit Mittelpunkt ersetze
+\begin{bemerkung} Falls $ \| \cdot \| $ all die oben genannten Eigenschaften erfüllt außer $ \| x \| = 0 \Rightarrow x = 0 $, dann heißt $ \| \cdot \| $ Halbnorm
 \end{bemerkung}
 
 \begin{vereinbarung} 
@@ -95,7 +95,7 @@ Eine Folge $(x_{n})$ des normierten Raums $X$ \textbf{konvergiert} gegen ein $ x
 
 
 \begin{bemerkung}
-Für zwei Elemente $x, y \in (X, \|.\|)$	... gilt die umgekehrte Dreiecksungleichung $( | \|x\| + \|y\| | \leq \| x + y \|)$
+Für zwei Elemente $x, y \in (X, \| \cdot \|)$	... gilt die umgekehrte Dreiecksungleichung $( | \|x\| + \|y\| | \leq \| x + y \|)$
 \end{bemerkung}
 
 \begin{beispiel}
@@ -105,7 +105,7 @@ Sei $ X = \MdK^{n}, \hspace{0.5cm} X = ( X_{1}, \dotsc, X_{n}), \hspace{0.5cm} X
 	\| x \|_{\infty} & = \hspace{0.3cm} \sup_{j = 1}^{n} |x_{j}|	
 \end{align*}
 
-Beh: $\| . \| $ ist Norm auf $\MdK^n$ für $1 \leq p \leq \infty$
+Beh: $\| \cdot \| $ ist Norm auf $\MdK^n$ für $1 \leq p \leq \infty$
 
 $\| x + y \|_{\infty} = sup_{j = 1}^{k} |x_{j} + y_{j}| \leq \|x\|_{\infty} + \|y\|_{\infty} $
 Für $p \in (1, \infty), p \neq 2:$ siehe Übungsaufgabe (Fall $p = 2$ läuft über Cauchy-Schwarz)
@@ -114,7 +114,7 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 \end{beispiel}
 
 \begin{definition}
-	Zwei Normen $\| . \|_{1}, \| . \|_{2}$ heißen äquivalent auf $X$, falls es $0 < m, M < \infty$ gibt, so dass für alle $ x \in X$ gilt:
+	Zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ heißen äquivalent auf $X$, falls es $0 < m, M < \infty$ gibt, so dass für alle $ x \in X$ gilt:
 	\[ m \| x \|_{2} \leq \| x \|_{1} \leq M \| x \|_{2} \]
 \end{definition}
  
@@ -125,7 +125,7 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 	Wähle eine algebraische Basis $(e_{1}, \dotsc, e_{n})$ von X, wobei $ n = dim X < \infty$. \\
 	Definiere $|\|x\|| = \left(\sum_{i = 1}^{n} |x_{i}|^2\right)^{\frac{1}{2}}$, wobei $x = \sum_{i = 1}^{n} x_{i} e_{i}$ \\
 	
-	z. z. die gegeben Norm $|\| . \||$ist äquivalent zu $\| . \|$. \\ \\
+	z. z. die gegeben Norm $|\| \cdot \||$ist äquivalent zu $\| \cdot \|$. \\ \\
 	Beweis: \\
 	In der einen Richtung betrachte: 
 	\begin{align*}
@@ -153,12 +153,12 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 \end{beweis}
 
 \begin{prop}
-Für zwei Normen $\| . \|_{1}, \| . \|_{2}$ auf $X$ sind äquivalent:
+Für zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ auf $X$ sind äquivalent:
 \begin{enumerate}
-	\item $\| . \|_{1}, \| . \|_{2}$ sind äquivalent
+	\item $\| \cdot \|_{1}, \| \cdot \|_{2}$ sind äquivalent
 	\item Für alle $(x_{n}) \subset X$, $x \in X$ gilt $\| x_{m} - x \|_{1} \rightarrow 0 \gdw \| x_{m} - x \|_{2} \rightarrow 0 $
 	\item Für alle $(x_{n}) \subset X$ gilt $\| x_{m} |_{1} \rightarrow 0 \gdw \| x_{m} \|_{2} \rightarrow 0 $
-	\item Es gibt Konstanten $0 < m$, $M < \infty$, so dass $m U_{(X, \| . \|_{1})} \leq U_{(X, \| . \|_{2})} \leq M U_{(X, \| . \|_{1})}$
+	\item Es gibt Konstanten $0 < m$, $M < \infty$, so dass $m U_{(X, \| \cdot \|_{1})} \leq U_{(X, \| \cdot \|_{2})} \leq M U_{(X, \| \cdot \|_{1})}$
 \end{enumerate}
 \end{prop}
 \begin{beweis}
@@ -176,7 +176,7 @@ und $e_{j} = (0, \dotsc, 0, 1, 0, \dotsc, 0) $ der Einheitsvektor, wobei die $1$
 		\item $l^{\infty} = \{ x = (x_{n}) \in \MdK^n: \|x\|_{\infty} = \sup_{n \in \MdN} |x_{n}| < \infty \}$
 		\item $c_{0} = \{ x = (x_{n}) \in l^{\infty}: \lim_{n \rightarrow \infty} |x_{n}| = 0 \}$
 	\end{itemize}
-Gültigkeit der Dreiecksungleichung beweist man ähnlich wie bei $(\MdK^{n}, \| . \|_{p})$.
+Gültigkeit der Dreiecksungleichung beweist man ähnlich wie bei $(\MdK^{n}, \| \cdot \|_{p})$.
 \end{beispiel}
 
 \begin{lemma}
@@ -185,10 +185,10 @@ Hölder-Ungleichung: mit $\frac{1}{p} + \frac{1}{p'} = 1 \text{ gilt } \sum_{i=1
 \end{lemma}
 
 \begin{bemerkung}
-Im unendlich dimensionalen Fall sind die Normen $\| . \|_{p}$ auf $\MdF$ nicht äquivalent.	
+Im unendlich dimensionalen Fall sind die Normen $\| \cdot \|_{p}$ auf $\MdF$ nicht äquivalent.	
 \end{bemerkung}
 \begin{beweis}
-todo	
+todo
 \end{beweis}
 
 
@@ -205,12 +205,40 @@ $C_{b}^{m}(\Omega) = \{ f: \Omega \rightarrow \MdR | D^{\alpha}f \text{ sind ste
 mit der Norm: $\| f \|_{C_{b}^{m}} = \sum_{|\alpha| \leq m} \| D^{\alpha}f \|_{\infty}$
 \end{definition}
 
-\begin{bemerkung} \\
-Auf $C_{b}^{m}[0, 1]$ ist eine äquivalente Norm zu  $\| f \|_{C_{b}^{m}}$ gegeben durch\begin{align*} \|f\|_{0} & = \sum_{i = 0}^{m - 1} |f^{(i)}(0)| + \| f^{(m)} \|_{\infty} \\
-\text{Denn } f^{(i)}(t) = f^{(i)}(0) + \int_{0}^{t} & f^{(i + 1)}(s) ds \text{ und damit } \| f^{(i)}\|_{0} \leq | f^{(i)}(0) | + \| f^{(i + 1)}\|_{\infty}	
+\begin{bemerkung}
+Auf $C_{b}^{m} [0, 1]$ ist eine äquivalente Norm zu  $\| f \|_{C_{b}^{m}}$ gegeben durch
+\begin{align*}
+	\| f \|_{0} & = \sum_{i = 0}^{m - 1} |f^{(i)}(0)| + \| f^{(m)} \|_{\infty} \\
+	\text{Denn } f^{(i)}(t) = f^{(i)}(0) + \int_{0}^{t} & f^{(i + 1)}(s) ds \text{ und damit } \| f^{(i)}\|_{0} \leq | f^{(i)}(0) | + \| f^{(i + 1)}\|_{\infty}	
 \end{align*}
-
 \end{bemerkung}
+\begin{beispiel}
+\begin{itemize}
+	\item höldersche Funktionen
+	\item $\Omega \subset \MdR^{n} offen$
+\end{itemize}	
+\end{beispiel}
+
+\newpage
+\section{Beschränkte und lineare Operatoren}
+
+\begin{definition}
+	Eine Teilmenge V eines normieren Raums $(X, \| \cdot \|)$ heißt beschränkt, falls 
+	\[ c := \sup_{x \in V} \| x \| < \infty \]
+	d.h. $V \subset c U_{(X, \| \cdot \| )}$
+\end{definition}}
+
+\begin{bemerkung}
+Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow X$ ist beschränkt, denn $x_{m} \in \{ y: \| x - y \| \leq 1 \}$ für fast alle $m$.
+\end{bemerkung}
+
+\begin{satz}
+	Seien $X$, $Y$ normierte Räume. Füreinen linearen Operator $S: X \rightarrow Y$ sind äquivalent:
+	\begin{itemize}
+		\item $T$ stetig, d.h. $x_{n} \rightarrow x$ impliziert $Tx_{n} \rightarrow Tx$
+	\end{itemize}	
+\end{satz}
+
 
 
 
