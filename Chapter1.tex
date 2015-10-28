@@ -99,7 +99,7 @@ Für zwei Elemente $x, y \in (X, \| \cdot \|)$	... gilt die umgekehrte Dreiecksu
 \end{bemerkung}
 
 \begin{beispiel}
-Sei $ X = \MdK^{n}, \hspace{0.25cm} X = ( X_{1}, \dotsc, X_{n}), \hspace{0.25cm} X_{i} = \MdK$ 
+Sei $ X = \MdK^{n}, \hspace{0.5cm} X = ( X_{1}, \dotsc, X_{n}), \hspace{0.5cm} X_{i} = \MdK$ 
 \begin{align*}
 	\| x \|_{p} & = \left( \sum_{j = 1}^{n} |x_{j}^{p}| \right)^{\frac{1}{p}},  1 \leq p < \infty (p = 2: \text{ Euklidische Norm}) \\
 	\| x \|_{\infty} & = \hspace{0.3cm} \sup_{j = 1}^{n} |x_{j}|	
@@ -334,10 +334,12 @@ T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\
  \end{align*}
 \end{beispiel}
 
-\begin{beispiel}[Matrizenmultiplikation]
-$X = Y = l^{p}, e_{n} = (\delta_{n})_{m \in \MdN}, \hspace{0.25cm} T e_{j} = \sum_{i \in \MdN} a_{ij} e_{i} \text{ mit } a_{ij} \in \MdR: \left( \sum_{i = 1}^{\infty} |a_{ij}|^p \right)^{\frac{1}{p}} < \infty$ \\ \\
+\begin{beispiel}
+$X = Y = l^{p}, e_{n} = (\delta_{n})_{m \in \MdN}$	\\
+$T e_{j} = \sum_{i \in \MdN} a_{ij} e_{i} \text{ mit } a_{ij} \in \MdR: \left( \sum_{i = 1}^{\infty} |a_{ij}|^p \right)^{\frac{1}{p}} < \infty$ \\ \\
 Dann gilt $X = \sum_{j = 1}^{\infty} x_{j} e_{j}, \space{0.25cm}$ mit $x_{j} \in \MdR$, $\space{0.25cm} \| x \| = \left( \sum |x_{i}|^{p} \right)^{\frac{1}{p}}$ \\
-$\hspace{1cm} [ Tx ]_{i} = \sum_{j = 1}^{\infty} a_{ij} x_{j} $, \hspace{0.25cm} $T \in B(l^{p}) \rightarrow A = (a_{ij})_{i,j \in \MdN}$
+$\hspace{1cm} [ Tx ]_{i} = \sum_{j = 1}^{\infty} a_{ij} x_{j} $ (Matrizenmultiplikation) \\
+$T \in B(l^{p}) \rightarrow A = (a_{ij})_{i,j \in \MdN}$
 \end{beispiel}
 
 
