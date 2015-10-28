@@ -48,7 +48,7 @@ Daraus folgt:
 			\end{pmatrix} $
 \end{itemize}
 
-\begin{beispiel}[1]
+\begin{beispiel}
 $X = C^{1}[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$ 
 $T f = f', T : X \rightarrow Y \text{ stetig.} $ \\
 (Aber: $T: C[0, 1] \rightarrow C[0, 1]$, hier ist $T$ nicht definiert.) \\
@@ -57,7 +57,7 @@ $T$ ist nicht stetig bzgl. $\| \cdot \|_{\infty}$-Norm, da:
 \[ T f_{n}(t) = i \sqrt{n} e^{int}, \hspace{0.5cm} \text{mit: } \| T f_{n} \|_{\infty} \rightarrow \infty, \text{ für } n \rightarrow \infty \]
 \end{beispiel}
 
-\begin{beispiel}[2]
+\begin{beispiel}
 $X = L_{2} = \{ (a_{n}): \left( \sum_{n \geq 1}^{\infty} \| a_{n} \| \right)^{\frac{1}{2}} < \infty \}$	\\
 $T ( a_{1}, a_{2}, a_{3}, ...) = ( 0, a_{1}, a_{2}, a_{3}, ...)$ \\
 $T$ ist injektiv, aber nicht surjektiv
@@ -99,7 +99,7 @@ Für zwei Elemente $x, y \in (X, \| \cdot \|)$	... gilt die umgekehrte Dreiecksu
 \end{bemerkung}
 
 \begin{beispiel}
-Sei $ X = \MdK^{n}, \hspace{0.5cm} X = ( X_{1}, \dotsc, X_{n}), \hspace{0.5cm} X_{i} = \MdK$ 
+Sei $ X = \MdK^{n}, \hspace{0.25cm} X = ( X_{1}, \dotsc, X_{n}), \hspace{0.25cm} X_{i} = \MdK$ 
 \begin{align*}
 	\| x \|_{p} & = \left( \sum_{j = 1}^{n} |x_{j}^{p}| \right)^{\frac{1}{p}},  1 \leq p < \infty (p = 2: \text{ Euklidische Norm}) \\
 	\| x \|_{\infty} & = \hspace{0.3cm} \sup_{j = 1}^{n} |x_{j}|	
@@ -162,7 +162,7 @@ Für zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ auf $X$ sind äquivalent:
 \end{enumerate}
 \end{prop}
 \begin{beweis}
-	todo	
+	%todo	
 \end{beweis}
 
 \begin{vereinbarung}
@@ -188,7 +188,7 @@ Hölder-Ungleichung: mit $\frac{1}{p} + \frac{1}{p'} = 1 \text{ gilt } \sum_{i=1
 Im unendlich dimensionalen Fall sind die Normen $\| \cdot \|_{p}$ auf $\MdF$ nicht äquivalent.	
 \end{bemerkung}
 \begin{beweis}
-todo
+%todo
 \end{beweis}
 
 
@@ -233,7 +233,7 @@ $\| \hat x \|_{\hat X} = 0: \exists y_{n} \in \hat X \text{ mit } \| y_{n} \| \r
 $\Rightarrow x \in M, \hat x = 0$
 zu $\epsilon< 0$ wähle zu $\hat x_{1}, \hat x_{2} \in \hat X$ Elemente 
 
-todo
+%todo
 \end{definition}
 
 \begin{beispiel}
@@ -249,7 +249,7 @@ todo
 
 \begin{definition}
 	Eine Teilmenge V eines normieren Raums $(X, \| \cdot \|)$ heißt beschränkt, falls 
-	\[ c := \sup_{x \in V} \| x \| < \infty, \text{ d.h. } V \subset c U_{(X, \| \cdot \| )} \]
+	\[ c := \sup_{x \in V} \| x \| < \infty, \text{ und damit auch } V \subset c U_{(X, \| \cdot \| )} \]
 \end{definition}
 
 \begin{bemerkung}
@@ -266,7 +266,7 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow X$ ist beschränkt, den
 	\end{enumerate}	
 \end{satz}
 \begin{beweis}
- todo	
+ %todo	
 \end{beweis}
 
 \begin{definition}
@@ -274,15 +274,75 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow X$ ist beschränkt, den
 	
 	Für $T \in B(X, Y)$ setze
 	\begin{align*}
-		\| T \| & = \sup \{ \frac{\| Tx \|}{\| x \|}: x \in X \ {0} \}
+		\| T \| & = \sup \{ \frac{\| Tx \|}{\| x \|}: x \in X \ {0} \} \\
 				& = \sup \{ \| Tx \|: \| x \| \leq 1 \}
 	\end{align*}
-	Die Norm $\| T \|$ von $T$ ist die kleinste Konstante $c$ für die die Gleichung $\| Tx s\| \leq c \| x \|$ für alle $x \in X$ gilt
+	Die Norm $\| T \|$ von $T$ ist die kleinste Konstante $c$ für welche die Gleichung $\| Tx \| \leq c \| x \|$ für alle $x \in X$ gilt.
 \end{definition}
 
 \begin{satz}
- 	
+ 	$(B(X, Y), \| \cdot \|)$ ist ebenfalls ein normierter Raum und für $X = Y$ gilt für $S, T \in B(X)$:
+ 	\[ \| S \cdotp T \| \leq \| S \| \| T \| \]
 \end{satz}
+\begin{beweis}
+%todo	
+\end{beweis}
+
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $Id x = x, \hspace{0.25cm} \|  Id \| = 1$
+		\item Falls $dim X = n < \infty, Y$ normierter Raum, dann sind alle linearen Operatoren $T: X \rightarrow Y$ beschränkt.
+			Beweis: %todo
+		\item $X = C^{\infty}(0, 1), \| f \|_{\infty} = \sup_{u \in (0, 1)} |f(u)|$ \\
+		$T:X \rightarrow X, Tf = f', f_{k}(t) = e^{i 2 \pi k t} \in X, Tf_{k}(t) = 2 \pi i k f_{k}(t)$ \\ 
+		$ \| f_{k} \| = 1, \| Tf_{k} \| = 2 \pi k \rightarrow \infty $
+		\item $\MdF = \{ (x_{n}) \in \MdR^{n}: x_{n} = 0 \text{ bis auf endlich viele } n \}$ \\
+			\[ 
+			  T: \MdF \rightarrow \MdR, T( (x_{n}) ) = \sum_{n \in \MdN} n x_{n} \in \MdR
+			 \| T e_{n} \| = n \rightarrow \infty
+			\]
+	\end{enumerate}	
+\end{beispiel}
+
+\begin{beispiel}[Integraloperator]
+	$X = Y = C(\bar \Omega), \Omega \subset \MdR^{n}$ offen, beschränkt.
+	Gegeben: $k \in \bar \Omega \times \bar \Omega \rightarrow \MdR $
+	
+	Für $f \in C(\bar \Omega)$ setze: $Tf(u) = \int_{\Omega} k(u, v) f(v) dv$ \\
+	$( ( A(f_{j} )_{i} = \sum_{j = 1}^{n} a_{ij}f_{j}, A = (a_{ij})_{i,j = 1, \dotsc, n} )$  \\ \\
+	Dann ist $Tf \in C(\bar \Omega)$ (nach Lebesguesschem Konvergenzsatz) \\
+	\begin{align*}
+		|T f(u)| &\leq \int_{\Omega} |k(u, v)| |f(u)| dz \leq \int_{\Omega} |k(u, v)| du \sup_{u \in \Omega} | f(u) |
+		\sup \text{ über } u \in \Omega \text{ liefert:} \\
+		\| Tf \|_{\infty} &\leq \sup_{u \in \Omega} \int |k(u,v)| dv \| f \|_{\infty}
+		\Rightarrow \| T \| = \sup_{u \in \Omega} \int |k(u, v)| dv < \infty, \\
+		& \text{ da die Abbildung } u \in \bar \Omega \rightarrow \int |k(u, v)| dv \in \MdR \text{ stetig (nach dem Konvergenzsatz von Lebesgues)} \\
+		Beweis: 
+	\end{align*}
+\end{beispiel}
+
+\begin{beispiel}[Kompositionsoperator]
+$\Omega \subset \MdR^{n}$ offen. %todo
+\end{beispiel}
+
+\begin{beispiel}[Differentialoperatoren]
+$\Omega \subset \MdR^n$ offen, $m \in \MdN$, $X = C^{m}(\bar \Omega), Y = C_{b}(\Omega),$
+\begin{align*}
+T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\alpha} f(u), u \in \MdR, a_{\alpha} \in C{\bar \Omega} \\
+  \text{damit } & \| Tf \|_{\infty} \leq \sum_{|\alpha| \leq m} \| \|_{\infty} \| D^{\alpha} f \|_{\infty} \leq c \|f\|_{\infty}
+ \end{align*}
+\end{beispiel}
+
+\begin{beispiel}[Matrizenmultiplikation]
+$X = Y = l^{p}, e_{n} = (\delta_{n})_{m \in \MdN}, \hspace{0.25cm} T e_{j} = \sum_{i \in \MdN} a_{ij} e_{i} \text{ mit } a_{ij} \in \MdR: \left( \sum_{i = 1}^{\infty} |a_{ij}|^p \right)^{\frac{1}{p}} < \infty$ \\ \\
+Dann gilt $X = \sum_{j = 1}^{\infty} x_{j} e_{j}, \space{0.25cm}$ mit $x_{j} \in \MdR$, $\space{0.25cm} \| x \| = \left( \sum |x_{i}|^{p} \right)^{\frac{1}{p}}$ \\
+$\hspace{1cm} [ Tx ]_{i} = \sum_{j = 1}^{\infty} a_{ij} x_{j} $, \hspace{0.25cm} $T \in B(l^{p}) \rightarrow A = (a_{ij})_{i,j \in \MdN}$
+\end{beispiel}
+
+
+
+
 
 
 
