@@ -34,7 +34,8 @@ $ \| f_{n} - f_{m} \| = 1 \text{ für } n \neq m \Rightarrow $ \hyperref[s:1-bol
 
 Sei $N = dim X, M = dim Y$ und seien $(e_n)$ bzw. $(f_n)$ Basen von $X$ bzw. $Y$.
 Für $T : X \rightarrow Y$ gegeben durch: \\
-\[ §Komm. Diagramm§ \] \\
+\[ §Komm. Diagramm§ \] %Todo: Bild, komm. Diagramm \\
+wobei $x = \sum \alpha_{n} e_{n}, Tx = \sum \beta_n f_n, \beta_m = \sum_{n = 1}^{N} a_{mn} \alpha_{n}. $ %stimmen die Indizes?
 Daraus folgt:
 \begin{itemize}
 	\item $T$ ist stetig
@@ -66,9 +67,40 @@ $T$ ist injektiv, aber nicht surjektiv
 \subsection{Anwendungen}
 
 \begin{enumerate}
-	\item Fredholm'sche Integralglechungen
-	\item Dirichletproblem
-	\item Sturm-Liouville Problem
+	\item Fredholm'sche Integralglechungen \\
+	$X = C[0, 1], \hspace{0.25cm} k: [0, 1] \times [0, 1] \rightarrow \MdR$ stetig \\
+	\[ Tf(t) = \int_{0}^{1} k(t, s) f(s) ds \]
+	\textit{Analogie zum endlich dim. ('Verallg. der Matrixmultiplikation'):}  $ T(f_{j})(i) = \sum_{j = 1}^{n} a_{ij}f_{j}$ \\
+ 	$T$ ist in diesem Fall linear und stetig und es gilt die Fredholm'sche Alternative:
+	\[ \lambda \in R \verb|\| \{0\}: (\lambda Id - T)(f) = y, \hspace{0.25cm} f,g \in C[0, 1] \]
+	Dann existiert eine Lösung genau dann wenn diese eindeutig ist.
+	\item Dirichletproblem \\
+	$\Omega \subset \MdR^n$ Gebiet, offen, beschränkt, glatter Rand. Sei $g: \partial \Omega \rightarrow \MdR$ stetig \\ 
+	Gesucht ist ein $f \in C(\bar \Omega) \bigcap  C^(\Omega)$, so dass $\nabla f = \sum_{i = 1}^{n} \frac{\partial^{2} f}{\partial x_{i}^2} = 0$ in $\Omega$ und $f_{\big| \partial \Omega}= g$ \\ \\
+	\textit{Beispiel: Durch Wärmeverteilung auf dem Rand auf WV im Inneren schließen.} \\ \\
+	Lösung: Dirichletintegral $J(u) = \int_{\Omega} (\nabla u )^{2} dx$, wobei $ u \in M = \{ v \in C^{1}(\bar \Omega) | \hspace{0.25cm} v_{\big| \partial \Omega} = g \}$ \\
+	Sei $v_{0}$ das absolute Minimum von $J$, d.h. $J(v_{0}) = \inf \{ J(w): w \in M \}$ \\
+	$v \in C^{1}(\bar \Omega)$ mit $v = 0$ in einer Umgebung von $\partial U$. $\epsilon \rightarrow J(u_{0} + \epsilon v)$
+	\[ \frac{d}{d\epsilon} J(u_{0} + \epsilon v) = \int_{\Omega} \frac{d}{d\epsilon} (\nabla u_{0} + \epsilon \nabla v)^{2} dx = 2 \int_{\Omega} (\nabla u_{0} + \epsilon \nabla v)(\nabla v) dx_{\big| \epsilon = 0} = 2 \int_\Omega (\nabla u_{0}) (\nabla v) dx \]
+	Mit $0 \geq J(u_{0} + \epsilon v)- J(u_{0}) \geq 0: \hspace{0.25cm} \int (\nabla u_{0})(\nabla v) dx =^{P.I.} - \int (\nabla u_{0})v dx = 0$ \\
+	\[ \Rightarrow \nabla u_{0} = 0 \text{, außerdem } u_{0 \hspace{0.1cm} \big| \partial \Omega} = g \text{ (s.o.)} \]
+	Im allgemeinen exisitert da absolute Minimum $u_{0} \in J$ aber nicht. \\
+	Ausweg: $X = \{ f \in L^{2}(\Omega), f' \in L^{2}(\Omega) \} \supset \{f \in C(\bar \Omega), f' \in C(\bar \Omega) \} $	\\
+	In diesem Raum $X$ (Sobolevräume) gibt es ein Minimum $u_{0}$ von $J$.
+	\item Sturm-Liouville Problem \\
+	$X = C^{2}([0, 1]), Tu = (pu')' + qu$, mit $q \in C[0, 1], p \in C^{1}[0, 1]$ \\ 
+	Problem: bei gegebenen $f \in C[0, 1]$ find $u \in X$ mit $Tu = f, v(0) = 0, v'(1) = 0$ \\ \\
+	$Y = \{ f \in L^{2}[0, 1], f' \in L^{2}[0, 1] \}$ Hilbertraum. \\
+	Orthonormalbais $(e_{n})$ von $Y$ wäre: $\| e_{n} \|_{2} = 1, \int e_{n}(x) e_{m}(x) dx = 0$ für $m \neq m$ \\
+	$f \in Y: f = \sum_{n = 1}^{\infty} \alpha_{n} e_{n}$ mit $\| f \|^2 = \sum | \alpha_{n} |^2$ \\
+	Die $(e_{n})$ sind außerdem Eigenvektoren des Operatoren $T$, d.h. $Te_{n} = \lambda_{n} e_{n}$ \\
+	\[ Ty = f \Rightarrow \int Ty(x) e_{n}(x) dx = \int f(x) e_{n}(x) dx, y = \sum_{n = 1}^{\infty} \alpha_{n} e_{n} \]
+	Gesucht sind die Koeffizienten $\alpha_{n}$
+	\begin{align*}
+		\int f(x) e_{n}(x) dx & = \sum_{m} \lambda_{m} \alpha_{m} \int T e_{n}(x) e_{m}(x) dx \\
+							  & =  \lambda_{n} \alpha_{n} \int e_{n}(x) e_{n}(x) dx
+	\end{align*}
+	\[ \gdw \alpha_{n} = \frac{1}{\lambda_n} \int f(x) e_{n}(x) dx \]
 \end{enumerate}
 
 
