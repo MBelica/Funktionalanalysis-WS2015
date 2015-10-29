@@ -82,7 +82,7 @@ $T$ ist injektiv, aber nicht surjektiv
 	Sei $v_{0}$ das absolute Minimum von $J$, d.h. $J(v_{0}) = \inf \{ J(w): w \in M \}$ \\
 	$v \in C^{1}(\bar \Omega)$ mit $v = 0$ in einer Umgebung von $\partial U$. $\epsilon \rightarrow J(u_{0} + \epsilon v)$
 	\[ \frac{d}{d\epsilon} J(u_{0} + \epsilon v) = \int_{\Omega} \frac{d}{d\epsilon} (\nabla u_{0} + \epsilon \nabla v)^{2} dx = 2 \int_{\Omega} (\nabla u_{0} + \epsilon \nabla v)(\nabla v) dx_{\big| \epsilon = 0} = 2 \int_\Omega (\nabla u_{0}) (\nabla v) dx \]
-	Mit $0 \geq J(u_{0} + \epsilon v)- J(u_{0}) \geq 0: \hspace{0.25cm} \int (\nabla u_{0})(\nabla v) dx =^{P.I.} - \int (\nabla u_{0})v dx = 0$ \\
+	Mit $0 \geq J(u_{0} + \epsilon v)- J(u_{0}) \geq 0: \hspace{0.25cm} \int (\nabla u_{0})(\nabla v) dx \overset{\text{P.I.}}{{=}} - \int (\nabla u_{0})v dx = 0$ \\
 	\[ \Rightarrow \nabla u_{0} = 0 \text{, außerdem } u_{0 \hspace{0.1cm} \big| \partial \Omega} = g \text{ (s.o.)} \]
 	Im allgemeinen exisitert da absolute Minimum $u_{0} \in J$ aber nicht. \\
 	Ausweg: $X = \{ f \in L^{2}(\Omega), f' \in L^{2}(\Omega) \} \supset \{f \in C(\bar \Omega), f' \in C(\bar \Omega) \} $	\\
@@ -109,7 +109,7 @@ $T$ ist injektiv, aber nicht surjektiv
 
 \begin{definition}
 Sei $X$ ein Vektorraum über $\MdK \in\{ \MdR, \MdC \}$ \\
-Eine Abbildung  $\| \cdot\| \cdot \| \| : X \rightarrow \MdR_{+}$ heißt eine Norm, wenn
+Eine Abbildung  $\| \cdot \|: X \rightarrow \MdR_{+}$ heißt eine Norm, wenn
 \begin{enumerate}
 	\item $ \| x \| \geq 0, \| x \| = 0 \gdw x = 0 $
 	\item $\ | \lambda x \| = | \lambda \| x \| $
