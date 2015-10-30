@@ -8,7 +8,7 @@ Verständnisprobleme) - ich bitte deswegen um Verständniss.
 
 Verbesserungsvorschläge (auch wenn es nur einzelne Textsetzungsprobleme oder
 Rechtschreibfehler sind) bitte immer direkt melden oder verbessern!
-** Erst durch eure Mitarbeit, kann hieraus ein gutes Skript entstehen. **
+**Erst durch eure Mitarbeit, kann hieraus ein gutes Skript entstehen.**
 
 Den Verbesserungsvorschlag kann man
 * entweder direkt selbst umsetzen und einen pull request machen oder

@@ -1,4 +1,4 @@
-%!TEX root = FunkAnalysis.tex
+%!TEX root = Funktionalanalysis - Vorlesung.tex
 
 \chapter{Lineare Operatoren auf Banachräumen}
 \section{Einführung}
@@ -26,8 +26,10 @@ $X = C[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$
 \end{rcases*}\text{ dabei gilt } \| f \|_{\infty} \leq \| f \|_{2} \leq \dotsc 
 \end{align*}
 \newline
-Aber:$\hspace{0.25cm} f_n(t) = Bild, \hspace{0.5cm} \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  $ \\
-$ \| f_{n} - f_{m} \| = 1 \text{ für } n \neq m \Rightarrow $ \hyperref[s:1-bolzanoweierstrass]{Satz von Bolzano-Weierstraß} gilt im $\infty$-dimensionalen i.A. nicht!
+Aber bei:$\hspace{0.25cm} f_n(t) = Todo:Bild, $\\
+\[ \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  
+\hspace{0.5cm} \| f_{n} - f_{m} \| = 1 \text{ für } n \neq m \]
+$ \Rightarrow $ \hyperref[s:1-bolzanoweierstrass]{Satz von Bolzano-Weierstraß} gilt im $\infty$-dimensionalen i.A. nicht!
 \end{beispiel}
 
 \subsection{Operatoren}
@@ -250,17 +252,16 @@ Auf $C_{b}^{m} [0, 1]$ ist eine äquivalente Norm zu  $\| f \|_{C_{b}^{m}}$ gege
 \end{bemerkung}
 
 \begin{beispiel}
-$X = C(\bar\Omega), \Omega \subset \MdR^{n}$ offen, beschränkt
-Definiere $\| f \|_{\MdL^{p}} = \left( \int_{\Omega} |f(u)|^{p} du \right)^{\frac{1}{p}}$
- Betrachte $f_{k}(t) = t^k, t \in [0, 1]$, dann gilt 
+$X = C(\bar\Omega), \Omega \subset \MdR^{n}$ offen, beschränkt. \\
+Definiere $\| f \|_{\MdL^{p}} = \left( \int_{\Omega} |f(u)|^{p} du \right)^{\frac{1}{p}}$ und betrachte $f_{k}(t) = t^k, t \in [0, 1]$, dann gilt:
  \[ \| f \|_{\MdL^{p}} = \left( \frac{1}{kp + 1} \right)^{\frac{1}{p}} \xrightarrow[k \rightarrow \infty]{} 0, \hspace{0.25cm} p < \infty \]
 \end{beispiel}
 
 \begin{definition}[Quotientenräume]
-Sei $(X, \| \cdot \|)$ ein normierter Raum. $M \subset X$ sei abgeschlossener (d.h. für alle $(x_{n}) \in M, \| x_{n} - x \| \rightarrow 0 \Rightarrow x \in M$), linearer Unterraum. 
+Sei $(X, \| \cdot \|)$ ein normierter Raum. $M \subset X$ sei abgeschlossener, linearer Unterraum. \[ (\text{abgeschlossen: d.h. für alle } (x_{n}) \in M, \| x_{n} - x \| \rightarrow 0 \Rightarrow x \in M) \]
 
-Definiere $\hat X = X / M, \hspace{0.5cm} \hat x \in X/M: \hspace{0.25cm} \hat x = \{ y \in X: y - x \in M \} = x + M$ \\
-Dabei gilt unter anderem $\hat x_{1} + \hat x_{2} = \hat{x_{1} + x_{2}}$ und $\lambda \hat x_{1} = \hat{\lambda x_{1}}$. $\hat X$ bildet einen Vektorraum. \\
+Definiere $\hat X = X / M, \hspace{0.25cm} \hat x \in X/M: \hspace{0.25cm} \hat x = \{ y \in X: y - x \in M \} = x + M$ \\
+Dabei gilt unter anderem $\hat x_{1} + \hat x_{2} = \hat{x_{1} + x_{2}}$ und $\lambda \hat x_{1} = \hat{\lambda x_{1}}$; $\hat X$ bildet somit einen Vektorraum. \\
 
 Wir definieren nun eine Norm für die Äquivalenzklassen mittels $\| \hat x \|_{\hat X} : = \inf \{ \| y \|_{X}: y \in \hat X \}$
 
@@ -343,19 +344,25 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow X$ ist beschränkt, den
 
 \begin{beispiel}[Integraloperator]
 	$X = Y = C(\bar \Omega), \Omega \subset \MdR^{n}$ offen, beschränkt.
-	Gegeben: $k \in \bar \Omega \times \bar \Omega \rightarrow \MdR $
+	Gegeben sei $k \in \bar \Omega \times \bar \Omega \rightarrow \MdR $
 	
-	Für $f \in C(\bar \Omega)$ setze: $Tf(u) = \int_{\Omega} k(u, v) f(v) dv$ \\
-	$( ( A(f_{j} )_{i} = \sum_{j = 1}^{n} a_{ij}f_{j}, A = (a_{ij})_{i,j = 1, \dotsc, n} )$  \\ \\
-	Dann ist $Tf \in C(\bar \Omega)$ (nach Lebesguesschem Konvergenzsatz) \\
+	Für $f \in C(\bar \Omega)$ setze: $Tf(u) = \int_{\Omega} k(u, v) f(v) dv$, \hspace{0.25cm}
+	$( A( f_{j} )_{i} = \sum_{j = 1}^{n} a_{ij}f_{j}, A = (a_{ij})_{i,j = 1, \dotsc, n} )$ \\
+	
+	Dann ist $Tf \in C(\bar \Omega)$ (nach Lebesguesschem Konvergenzsatz)
 	\begin{align*}
-		|T f(u)| &\leq \int_{\Omega} |k(u, v)| |f(u)| dz \leq \int_{\Omega} |k(u, v)| du \sup_{u \in \Omega} | f(u) |
-		\sup \text{ über } u \in \Omega \text{ liefert:} \\
-		\| Tf \|_{\infty} &\leq \sup_{u \in \Omega} \int |k(u,v)| dv \| f \|_{\infty}
-		\Rightarrow \| T \| = \sup_{u \in \Omega} \int |k(u, v)| dv < \infty, \\
-		& \text{ da die Abbildung } u \in \bar \Omega \rightarrow \int |k(u, v)| dv \in \MdR \text{ stetig (nach dem Konvergenzsatz von Lebesgues)} \\
-		Beweis: 
-	\end{align*}
+		|T f(u)| & \leq \int_{\Omega} |k(u, v)| |f(u)| dz \\
+				 & \leq \int_{\Omega} |k(u, v)| du \sup_{u \in \Omega} | f(u) |
+	\end{align*} 				 
+	$\sup$ über $u \in \Omega$ liefert dann:
+	\begin{align*}
+		\| Tf \|_{\infty} \leq \sup_{u \in \Omega} \int |k(u,v)| dv \| f \|_{\infty} \\
+		\Rightarrow \| T \| = \sup_{u \in \Omega} \int |k(u, v)| dv < \infty,
+	\end{align*} 	
+	Die Abbildung $u \in \bar \Omega \rightarrow \int |k(u, v)| dv \in \MdR$ ist stetig nach dem Konvergenzsatz von Lebesgue. \\
+	\begin{beweis}
+		%todo	
+	\end{beweis}
 \end{beispiel}
 
 \begin{beispiel}[Kompositionsoperator]
@@ -371,10 +378,41 @@ T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\
 \end{beispiel}
 
 \begin{beispiel}[Matrizenmultiplikation]
-$X = Y = l^{p}, e_{n} = (\delta_{n})_{m \in \MdN}, \hspace{0.25cm} T e_{j} = \sum_{i \in \MdN} a_{ij} e_{i} \text{ mit } a_{ij} \in \MdR: \left( \sum_{i = 1}^{\infty} |a_{ij}|^p \right)^{\frac{1}{p}} < \infty$ \\ \\
-Dann gilt $X = \sum_{j = 1}^{\infty} x_{j} e_{j}, \hspace{0.25cm}$ mit $x_{j} \in \MdR$, $\hspace{0.25cm} \| x \| = \left( \sum |x_{i}|^{p} \right)^{\frac{1}{p}}$ \\
-$\hspace{1cm} [ Tx ]_{i} = \sum_{j = 1}^{\infty} a_{ij} x_{j} $, \hspace{0.25cm} $T \in B(l^{p}) \rightarrow A = (a_{ij})_{i,j \in \MdN}$
+Für $p \in [1, \infty]$ und $T \in B(l^{p})$ setzen wir 
+\[ e_{l} := (0, \dotsc, 0, 1, 0, \dotsc, 0), \hspace{0.25cm} l \in \MdN, \hspace{0.25cm} \text{ wobei die 1 an l-ter Stelle steht.} \]
+und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
+\[
+	\Rightarrow (Tx)_{k} = (\sum_{l = 1}^{\infty} x_{l} T e_{l})_{k} = \sum_{ l = 1}^{\infty} a_{kl}k_{l}, \hspace{0.25cm} k \in \MdN \\
+	\Rightarrow T x = A x \text{(unendliches Matrixprodukt)}
+\]
+
+ \begin{enumerate}[label=\alph*\upshape)]
+	\item Die Hills-Tanerkin-Bedingung (nur Hinreichend) \\
+	Sei $p \in (1, \infty)$ und $\frac{1}{p} + \frac{1}{q} = 1$. Setze
+	\[ c := \left( \sum_{k \geq 1} \left( \sum_{l \geq 1} |a_{kl}|^{q} \right)^{\frac{p}{q}} \right)^{\frac{1}{p}} < \infty \]
+	so definiert $T$ einen Operator $T \in B(l^{p})$ mit $\| T \| \leq c$ 
+	\begin{beweis}
+		\begin{enumerate}
+			\item Wohldefiniertheit: (\& Beschränktheit)  \\
+				Für $x \in l^{p}$ folgt
+				\begin{align*}
+					\| Tx \|_{l^{p}}^{p} &= \sum_{k \geq 1} | (Tx)_{k} |^{p} \\
+									 	 &= \sum_{k \geq 1} | \sum_{l \geq 1} |a_{kl} x_{l} |^{p} \\
+										 &\leq \sum_{k \geq 1} \left( \sum_{l \geq 1} |a_{kl}|^{q} \right)^{\frac{p}{q}} \left( \sum_{l \geq 1} |x_{l}|^{p} \right)^{\frac{p}{q}} \\
+										 &= c^{p} \|x\|_{l^{p}}^{p} < \infty
+				\end{align*}
+			\item Linearität \\
+				Wegen $c < \infty$ ist $\left( \sum_{l} |a_{kl}|^{q} \right)^{\frac{1}{q}} < \infty, \hspace{0.1cm} \forall k \in \MdN$ \\
+				Für $x \ in l^{p}$ konvergiert die Reihe nach Hölder. Damit ist $T$ offensichtlich linear.
+		\end{enumerate}
+	\end{beweis}
+
+	\item 
+ \end{enumerate}
 \end{beispiel}
+
+
+
 
 
 
