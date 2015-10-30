@@ -32,10 +32,13 @@ $ \| f_{n} - f_{m} \| = 1 \text{ für } n \neq m \Rightarrow $ \hyperref[s:1-bol
 
 \subsection{Operatoren}
 
-Sei $N = dim X, M = dim Y$ und seien $(e_n)$ bzw. $(f_n)$ Basen von $X$ bzw. $Y$.
-Für $T : X \rightarrow Y$ gegeben durch: \\
-\[ §Komm. Diagramm§ \] %Todo: Bild, komm. Diagramm \\
-wobei $x = \sum \alpha_{n} e_{n}, Tx = \sum \beta_n f_n, \beta_m = \sum_{n = 1}^{N} a_{mn} \alpha_{n}. $ %stimmen die Indizes?
+Sei $N = dim X, M = dim Y$ und seien $(e_n)$ bzw. $(f_n)$ Basen von $X$ bzw. $Y$. 	\\
+Sei $T : X \rightarrow Y$ gegeben durch: \\
+\[ \begin{xy} \xymatrix{
+	X \ar[r]^T	\ar[d]_{ \alpha_{n} \rightarrow \sum \alpha_{n} e_{n} }  &   Y \ar[d]^{ \beta_{n} \rightarrow \sum \beta_{n} f_{n} }  \\
+      	\MdR^{N} 	\ar[r]^A    				&   \MdR^{n}  				
+} \end{xy} \]
+wobei $x = \sum \alpha_{n} e_{n},\hspace{0.2cm} Tx = \sum \beta_n f_n, \hspace{0.2cm} \beta_m = \sum_{n = 1}^{N} a_{mn} \alpha_{n}. $ \\ \\
 Daraus folgt:
 \begin{itemize}
 	\item $T$ ist stetig
@@ -50,9 +53,9 @@ Daraus folgt:
 \end{itemize}
 
 \begin{beispiel}
-$X = C^{1}[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$ 
-$T f = f', T : X \rightarrow Y \text{ stetig.} $ \\
-(Aber: $T: C[0, 1] \rightarrow C[0, 1]$, hier ist $T$ nicht definiert.) \\
+$X = C^{1}[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$ \\
+$T f = f', T : X \rightarrow Y \text{ stetig.} $ (Aber: $T: C[0, 1] \rightarrow C[0, 1]$, hier ist $T$ nicht definiert.) \\
+
 $T$ ist nicht stetig bzgl. $\| \cdot \|_{\infty}$-Norm, da:
 \[ f_{n}(t) = \frac{1}{\sqrt{n}}e^{int}, \hspace{0.5cm}  \text{dann: } \|f_{n}\| \rightarrow 0 \text{ für } t \rightarrow \infty \]	
 \[ T f_{n}(t) = i \sqrt{n} e^{int}, \hspace{0.5cm} \text{mit: } \| T f_{n} \|_{\infty} \rightarrow \infty, \text{ für } n \rightarrow \infty \]
@@ -61,6 +64,7 @@ $T$ ist nicht stetig bzgl. $\| \cdot \|_{\infty}$-Norm, da:
 \begin{beispiel}
 $X = L_{2} = \{ (a_{n}): \left( \sum_{n \geq 1}^{\infty} \| a_{n} \| \right)^{\frac{1}{2}} < \infty \}$	\\
 $T ( a_{1}, a_{2}, a_{3}, ...) = ( 0, a_{1}, a_{2}, a_{3}, ...)$ \\
+
 $T$ ist injektiv, aber nicht surjektiv
 \end{beispiel}
 
@@ -70,14 +74,14 @@ $T$ ist injektiv, aber nicht surjektiv
 	\item Fredholm'sche Integralglechungen \\
 	$X = C[0, 1], \hspace{0.25cm} k: [0, 1] \times [0, 1] \rightarrow \MdR$ stetig \\
 	\[ Tf(t) = \int_{0}^{1} k(t, s) f(s) ds \]
-	\textit{Analogie zum endlich dim. ('Verallg. der Matrixmultiplikation'):}  $ T(f_{j})(i) = \sum_{j = 1}^{n} a_{ij}f_{j}$ \\
+	Analogie zum endlich dim. ('Verallg. der Matrixmultiplikation'):  $ T(f_{j})(i) = \sum_{j = 1}^{n} a_{ij}f_{j}$ \\ \\
  	$T$ ist in diesem Fall linear und stetig und es gilt die Fredholm'sche Alternative:
 	\[ \lambda \in R \verb|\| \{0\}: (\lambda Id - T)(f) = y, \hspace{0.25cm} f,g \in C[0, 1] \]
-	Dann existiert eine Lösung genau dann wenn diese eindeutig ist.
+	Dann existiert eine Lösung genau dann wenn diese eindeutig ist. \\
 	\item Dirichletproblem \\
 	$\Omega \subset \MdR^n$ Gebiet, offen, beschränkt, glatter Rand. Sei $g: \partial \Omega \rightarrow \MdR$ stetig \\ 
 	Gesucht ist ein $f \in C(\bar \Omega) \bigcap  C^(\Omega)$, so dass $\nabla f = \sum_{i = 1}^{n} \frac{\partial^{2} f}{\partial x_{i}^2} = 0$ in $\Omega$ und $f_{\big| \partial \Omega}= g$ \\ \\
-	\textit{Beispiel: Durch Wärmeverteilung auf dem Rand auf WV im Inneren schließen.} \\ \\
+	Beispiel: Durch Wärmeverteilung auf dem Rand auf WV im Inneren schließen. \\ \\
 	Lösung: Dirichletintegral $J(u) = \int_{\Omega} (\nabla u )^{2} dx$, wobei $ u \in M = \{ v \in C^{1}(\bar \Omega) | \hspace{0.25cm} v_{\big| \partial \Omega} = g \}$ \\
 	Sei $v_{0}$ das absolute Minimum von $J$, d.h. $J(v_{0}) = \inf \{ J(w): w \in M \}$ \\
 	$v \in C^{1}(\bar \Omega)$ mit $v = 0$ in einer Umgebung von $\partial U$. $\epsilon \rightarrow J(u_{0} + \epsilon v)$
@@ -86,7 +90,7 @@ $T$ ist injektiv, aber nicht surjektiv
 	\[ \Rightarrow \nabla u_{0} = 0 \text{, außerdem } u_{0 \hspace{0.1cm} \big| \partial \Omega} = g \text{ (s.o.)} \]
 	Im allgemeinen exisitert da absolute Minimum $u_{0} \in J$ aber nicht. \\
 	Ausweg: $X = \{ f \in L^{2}(\Omega), f' \in L^{2}(\Omega) \} \supset \{f \in C(\bar \Omega), f' \in C(\bar \Omega) \} $	\\
-	In diesem Raum $X$ (Sobolevräume) gibt es ein Minimum $u_{0}$ von $J$.
+	In diesem Raum $X$ (Sobolevräume) gibt es ein Minimum $u_{0}$ von $J$. \\
 	\item Sturm-Liouville Problem \\
 	$X = C^{2}([0, 1]), Tu = (pu')' + qu$, mit $q \in C[0, 1], p \in C^{1}[0, 1]$ \\ 
 	Problem: bei gegebenen $f \in C[0, 1]$ find $u \in X$ mit $Tu = f, v(0) = 0, v'(1) = 0$ \\ \\
@@ -127,7 +131,7 @@ Eine Folge $(x_{n})$ des normierten Raums $X$ \textbf{konvergiert} gegen ein $ x
 
 
 \begin{bemerkung}
-Für zwei Elemente $x, y \in (X, \| \cdot \|)$	... gilt die umgekehrte Dreiecksungleichung $( | \|x\| + \|y\| | \leq \| x + y \|)$
+Für zwei Elemente $x, y \in (X, \| \cdot \|)$ in normierten Räumen gilt die umgekehrte Dreiecksungleichung $( | \| x \| + \| y \| | \leq \| x + y \|)$
 \end{bemerkung}
 
 \begin{beispiel}
@@ -368,7 +372,7 @@ T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\
 
 \begin{beispiel}[Matrizenmultiplikation]
 $X = Y = l^{p}, e_{n} = (\delta_{n})_{m \in \MdN}, \hspace{0.25cm} T e_{j} = \sum_{i \in \MdN} a_{ij} e_{i} \text{ mit } a_{ij} \in \MdR: \left( \sum_{i = 1}^{\infty} |a_{ij}|^p \right)^{\frac{1}{p}} < \infty$ \\ \\
-Dann gilt $X = \sum_{j = 1}^{\infty} x_{j} e_{j}, \space{0.25cm}$ mit $x_{j} \in \MdR$, $\space{0.25cm} \| x \| = \left( \sum |x_{i}|^{p} \right)^{\frac{1}{p}}$ \\
+Dann gilt $X = \sum_{j = 1}^{\infty} x_{j} e_{j}, \hspace{0.25cm}$ mit $x_{j} \in \MdR$, $\hspace{0.25cm} \| x \| = \left( \sum |x_{i}|^{p} \right)^{\frac{1}{p}}$ \\
 $\hspace{1cm} [ Tx ]_{i} = \sum_{j = 1}^{\infty} a_{ij} x_{j} $, \hspace{0.25cm} $T \in B(l^{p}) \rightarrow A = (a_{ij})_{i,j \in \MdN}$
 \end{beispiel}
 
