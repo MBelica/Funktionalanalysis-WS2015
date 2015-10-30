@@ -384,7 +384,19 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
  	\[ \| S \cdotp T \| \leq \| S \| \| T \| \]
 \end{satz}
 \begin{beweis}
-%todo	
+	$\| T \| \geq 0, \hspace{0.15cm} \| T \| = 0 \hspace{0.15cm} \Rightarrow \| Tx \| = 0$ für $\| x \| \leq 1 \hspace{0.15cm} \Rightarrow \hspace{0.15cm} Tx = 0 \hspace{0.15cm} \Rightarrow \hspace{0.15cm} T = 0$ \\
+	\begin{align*}
+		\| ( T + S )(x) \| = \| Tx + Sx \| &\leq \| Tx \|_{Y} + \| Sx \|_{Y} \\
+										   &\leq \| T \| + \| S \|
+	\end{align*}
+	Nehme das Supremum über $\| x \| \leq 1$:
+	\[ \| T + S \| \leq \| T \| + \| S \| \]
+	Für
+	\begin{align*}
+		\| ( S \cdot T )(x) \|_{Y} = \| S(Tx) \|_{Y} & \leq \| S \| \| Tx \| \\
+													 & \leq \| S \| \| T \| \| x \|
+	\end{align*} \\
+	\[ \Rightarrow \| S T \| \leq \| S \| \| T \| \]
 \end{beweis}
 
 
@@ -392,7 +404,16 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $Id x = x, \hspace{0.25cm} \|  Id \| = 1$
 		\item Falls $dim X = n < \infty, Y$ normierter Raum, dann sind alle linearen Operatoren $T: X \rightarrow Y$ beschränkt.
-			Beweis: %todo
+		\begin{beweis}
+			Wähle die Basis $e_{1}, \dotsc, e_{n}$ von $X$ \\
+			Für $x = \sum_{i = 1}^{n} x_{i} e_{i}$ gilt:
+			\begin{align*}
+				\| Tx \| = \| \sum_{i = 1}^{n} x_{i} T e_{i} \| & \leq \sum_{i = 1}^{n} | x_{i} | \| T e_{i} \| \\
+				& \leq \max_{i = 1}^{n} \| T e_{i} \|_{Y} \sum_{i = 1}^{n} |x_{i}| \\
+				& \leq c \| x \|, \text{ da } \| x \| = \sum_{i = 1}^{n} |x_{i} |
+			\end{align*}	
+			Aber: Wenn $dim X = \infty, dim Y < \infty$ so gibt es viele unbeschränkte, lineare Operatoren von $X$ nach $Y$.
+		\end{beweis}
 		\item $X = C^{\infty}(0, 1), \| f \|_{\infty} = \sup_{u \in (0, 1)} |f(u)|$ \\
 		$T:X \rightarrow X, Tf = f', f_{k}(t) = e^{i 2 \pi k t} \in X, Tf_{k}(t) = 2 \pi i k f_{k}(t)$ \\ 
 		$ \| f_{k} \| = 1, \| Tf_{k} \| = 2 \pi k \rightarrow \infty $
@@ -423,12 +444,21 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
 	\end{align*} 	
 	Die Abbildung $u \in \bar \Omega \rightarrow \int |k(u, v)| dv \in \MdR$ ist stetig nach dem Konvergenzsatz von Lebesgue. \\
 	\begin{beweis}
-		%todo	
+		$ "\ \leq "\ $ ist klar \\
+		$ "\ \geq "\ $ Falls $ k(u, v) \geq 0$ dann ist $T \cdot \mathds{1} (u) = \int k(u, v) dv = \int |k(u, v)| dv$ \\
+		\[ \| T \cdot \mathds{1} \| = \sup_{u \in \Omega} \int |k(u, v)| dv \leq \| T \| \text{, d.h. } \| \mathds{1} \| = 1 \]
+		Skizze:
+		\[ \sup \int | k(u, v) | dv \sim \int | k(u_{0}, v) | dv = \int k(u_{0}, v) g(v) dv \]
+		mit $g(v) = sign(v) k(u_{0}, v), \hspace{0.25cm} g$ ist aber nicht stetig. \\
+		Ggf. Approximation des Signums durch stetige Funktionen.
 	\end{beweis}
 \end{beispiel}
 
 \begin{beispiel}[Kompositionsoperator]
-$\Omega \subset \MdR^{n}$ offen. %todo
+$\Omega \subset \MdR^{n}$ offen. 
+\[ \sigma : \bar \Omega \rightarrow \bar \Omega \text{ stetig, für } f \in C(\bar \Omega): Tf(u) = f(\sigma(u)) \]
+z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
+\[ \| Tf \|_{\infty} \leq \| f \|_{\infty}, \hspace{0.25cm} \| T \| = 1 \]
 \end{beispiel}
 
 \begin{beispiel}[Differentialoperatoren]
