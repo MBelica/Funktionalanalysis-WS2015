@@ -20,13 +20,11 @@ $A \subset \MdR$ beschränkt. Dann hat jede Folge $(x_{n})_{n \in \MdN} \subset 
 \begin{beispiel}
 $X = C[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$
 \begin{align*}
-\begin{rcases*}
-\| f \|_{2} := \left( \int_{0}^{1} \| f(t) \|^{2} dt \right)^{\frac{1}{2}} \\
-\| f \|_{\infty} :=  \smash{\displaystyle\max_{t \in [0, 1]}}  \| f(t) \|
-\end{rcases*}\text{ dabei gilt } \| f \|_{\infty} \leq \| f \|_{2} 
+\| f \|_{2} & := \left( \int_{0}^{1} \| f(t) \|^{2} dt \right)^{\frac{1}{2}} \\
+\| f \|_{\infty} & :=  \smash{\displaystyle\max_{t \in [0, 1]}}  \| f(t) \|
 \end{align*}
 \newline
-Aber bei:$\hspace{0.25cm} f_n(t) = Todo:Bild, $\\
+Dabei gilt $\| f \|_{\infty} \leq \| f \|_{2}$ , aber bei:$\hspace{0.25cm} f_n(t) = Todo:Bild$, folgt: \\
 \[ \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  
 \hspace{0.5cm} \| f_{n} - f_{m} \| = 1 \text{ für } n \neq m \]
 $ \Rightarrow $ \hyperref[s:1-bolzanoweierstrass]{Satz von Bolzano-Weierstraß} gilt im $\infty$-dimensionalen i.A. nicht!
@@ -391,11 +389,10 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
 	\end{align*}
 	Nehme das Supremum über $\| x \| \leq 1$:
 	\[ \| T + S \| \leq \| T \| + \| S \| \]
-	Für
 	\begin{align*}
 		\| ( S \cdot T )(x) \|_{Y} = \| S(Tx) \|_{Y} & \leq \| S \| \| Tx \| \\
 													 & \leq \| S \| \| T \| \| x \|
-	\end{align*} \\
+	\end{align*}
 	\[ \Rightarrow \| S T \| \leq \| S \| \| T \| \]
 \end{beweis}
 
@@ -516,9 +513,11 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 		\[ c_{\infty} := \sup_{k} \sum_{l} |a_{kl}| < \infty \]
 		und in diesem Fall ist $\| T \| = c_{\infty}$
 		\begin{beweis}
-			"\ $\Rightarrow$ "\  Sei $T \in B(l^{\infty}), k \in \MdN$. Setze dann $x^{(k)} = $
-			
-							
+			"\ $\Rightarrow$ "\  Sei $T \in B(l^{\infty}), k \in \MdN$. Setze dann $x^{(k)} = \begin{cases} \frac{|a_{kl}|}{a_{kl}} & a_{kl} \neq 0 \\ 0 & a_{kl} = 0 \end{cases}$ \\
+			dann ist $x^{(k)} \in l^{\infty}$ mit $\| x^{(k)} \|_{l^{\infty}} = 1$ und weiter
+			\begin{align*}
+				\sum_{l} |a_{kl}| = 
+			\end{align*}			
 		\end{beweis}
  \end{enumerate}
 \end{beispiel}
