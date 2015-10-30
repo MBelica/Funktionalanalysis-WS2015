@@ -23,7 +23,7 @@ $X = C[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$
 \begin{rcases*}
 \| f \|_{2} := \left( \int_{0}^{1} \| f(t) \|^{2} dt \right)^{\frac{1}{2}} \\
 \| f \|_{\infty} :=  \smash{\displaystyle\max_{t \in [0, 1]}}  \| f(t) \|
-\end{rcases*}\text{ dabei gilt } \| f \|_{\infty} \leq \| f \|_{2} \leq \dotsc 
+\end{rcases*}\text{ dabei gilt } \| f \|_{\infty} \leq \| f \|_{2} 
 \end{align*}
 \newline
 Aber bei:$\hspace{0.25cm} f_n(t) = Todo:Bild, $\\
@@ -133,7 +133,7 @@ Eine Folge $(x_{n})$ des normierten Raums $X$ \textbf{konvergiert} gegen ein $ x
 
 
 \begin{bemerkung}
-Für zwei Elemente $x, y \in (X, \| \cdot \|)$ in normierten Räumen gilt die umgekehrte Dreiecksungleichung $( | \| x \| + \| y \| | \leq \| x + y \|)$
+Für zwei Elemente $x, y \in (X, \| \cdot \|)$ in normierten Räumen gilt auch die umgekehrte Dreiecksungleichung $( | \| x \| + \| y \| | \leq \| x + y \|)$
 \end{bemerkung}
 
 \begin{beispiel}
@@ -191,20 +191,31 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 \end{beweis}
 
 \begin{prop}
-Für zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ auf $X$ sind äquivalent:
-\begin{enumerate}
-	\item $\| \cdot \|_{1}, \| \cdot \|_{2}$ sind äquivalent
-	\item Für alle $(x_{n}) \subset X$, $x \in X$ gilt $\| x_{m} - x \|_{1} \rightarrow 0 \gdw \| x_{m} - x \|_{2} \rightarrow 0 $
-	\item Für alle $(x_{n}) \subset X$ gilt $\| x_{m} |_{1} \rightarrow 0 \gdw \| x_{m} \|_{2} \rightarrow 0 $
-	\item Es gibt Konstanten $0 < m$, $M < \infty$, so dass $m U_{(X, \| \cdot \|_{1})} \leq U_{(X, \| \cdot \|_{2})} \leq M U_{(X, \| \cdot \|_{1})}$
-\end{enumerate}
+	Für zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ auf $X$ sind äquivalent:
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $\| \cdot \|_{1}, \| \cdot \|_{2}$ sind äquivalent
+		\item Für alle $(x_{n}) \subset X$, $x \in X$ gilt $\| x_{m} - x \|_{1} \rightarrow 0 \gdw \| x_{m} - x \|_{2} \rightarrow 0 $
+		\item Für alle $(x_{n}) \subset X$ gilt $\| x_{m} |_{1} \rightarrow 0 \gdw \| x_{m} \|_{2} \rightarrow 0 $
+		\item Es gibt Konstanten $0 < m$, $M < \infty$, so dass $m U_{(X, \| \cdot \|_{1})} \leq U_{(X, \| \cdot \|_{2})} \leq M U_{(X, \| \cdot \|_{1})}$
+	\end{enumerate}
+	\begin{beweis}
+		\begin{description}
+			\item[] $a) \Rightarrow b) \Rightarrow c)$ folgt direkt durch die Definition von äquivalenten Normen. 
+  			\item[] $c) \Rightarrow d)$ Annahme: Es existiert kein $M$ mit $U_{(X, \| \cdot \|_{2})} \subset M U_{(X, \| \cdot \|_{1})}$. \\
+  				Dann gibt es eine Folge $x_{n} \in U_{(X, \| \cdot \|_{2})}$ mit $\| x_{n} \|_{1} \geq n^{2}$ \\
+  				Setze $y_{n} =  \frac{1}{n} x_{n}$. Dann gilt $\| y_{n} \|_{1} \rightarrow 0$ und $\| y_{n} \|_{2} \rightarrow \infty$. \\
+  				Widerspruch zu $c)$.
+  			 \item[] $d) \Rightarrow a)$ Gegeben ist $U_{(X, \| \cdot \|_{2})} \subset M U_{(X, \| \cdot \|_{1})}$ \\
+  			 Das ist äquivalent zu $\| x \|_{2} \leq M \| x \|_{1}$ \\
+  			 Analog folgt aus $m U_{(X, \| \cdot \|_{1})} \subset U_{(X, \| \cdot \|_{2})}$ dann $m \| x \|_{1} \leq \| x \|_{2}$. \\
+  			 Also $m \| x \|_{1} \leq \| x \|_{2} \leq M \| x \|_{1}$ 
+		\end{description}
+	\end{beweis}
 \end{prop}
-\begin{beweis}
-	%todo	
-\end{beweis}
+
 
 \begin{vereinbarung}
-Sei $\MdF = \{ (x_{n}) \in \MdK^{N}: x_{i} = 0 \text{ bis auf endlich viele } n \in N  \} $ der Folgenraum \\
+Sei $\MdF = \{ (x_{n}) \in \MdK^{N}: x_{i} = 0 \text{ bis auf endlich viele } n \in N  \} $ der \textbf{Folgenraum} \\
 und $e_{j} = (0, \dotsc, 0, 1, 0, \dotsc, 0) $ der Einheitsvektor, wobei die $1$ an j-ter Stelle steht.
 \end{vereinbarung}
 
@@ -223,24 +234,32 @@ Hölder-Ungleichung: mit $\frac{1}{p} + \frac{1}{p'} = 1 \text{ gilt } \sum_{i=1
 \end{lemma}
 
 \begin{bemerkung}
-Im unendlich dimensionalen Fall sind die Normen $\| \cdot \|_{p}$ auf $\MdF$ nicht äquivalent.	
+	Im unendlich dimensionalen Fall sind die Normen $\| \cdot \|_{p}$ auf $\MdF$ nicht äquivalent.
+	\begin{beweis}
+		Sei $p > q$, setze 
+		\[ X_{n} := \sum_{j = 2^{n} + 1}^{2^{n + 1}} j^{-\frac{1}{p}}e_{j}, \hspace{0.5cm} e_{j} = ( \delta_{ij} )_{u \in \MdN} \]
+		Damit gilt $x_{n} \in \MdF$ und weiter
+		\[ \| x_{n} \|_{p} = \left( \sum_{j = 2^{n}}^{2^{n + 1}} \frac{1}{j} \right)^{\frac{1}{p}} \simeq \left( ln(2) \right)^{\frac{1}{p}} \]
+		aber $\| x_{n} \|_{q} \rightarrow \infty$, also sind $\| \cdot \|_{p}, \| \cdot \|_{q}$ keine äquivalente Normen.
+	\end{beweis}	
 \end{bemerkung}
-\begin{beweis}
-%todo
-\end{beweis}
+
 
 
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Raum der stetigen Funktionen
+		\item Raum der stetigen Funktionen \\
+		$\Omega \subset \MdR^{n}, \hspace{0.25cm} C(\Omega) = \{ f: \Omega \rightarrow \MdR \text{ | } f \text{ stetig} \}$, \hspace{0.25cm} $\| f \| = \sup_{u \in \Omega} |f(u)|$\\
+		$\Rightarrow \| f - f_{n} \| \rightarrow 0$ bedeutet gleichmäßige Konvergenz von $f_{n}$ gegen $f$ auf $\Omega$.
 		\item Raum der differentierbaren Funktionen \\
+		$\Omega \subset \MdR^{n}$ offen, $f: \Omega \rightarrow \MdR, \hspace{0.25cm} \alpha = (\alpha_{1}, \dotsc, \alpha_{m}) \in \MdN_{0}^{m}$ \\
 		$D^{\alpha}f(x) = \frac{ \delta^{ | \alpha | } }{ \delta x_{1}^{ \alpha_{1} } \dotsc \delta x_{n}^{ \alpha_{n} } } f(x), \text{ wobei } | \alpha | = \alpha_{1} + \dotsc + \alpha_{n} $ \\ 
 	\end{enumerate}
 \end{beispiel}
 
 \begin{definition}
-$C_{b}^{m}(\Omega) = \{ f: \Omega \rightarrow \MdR | D^{\alpha}f \text{ sind stetig in } \Omega, \text{ beschränkt auf } \Omega \text{ für alle } \alpha \in \MdN^{n}, |\alpha| \leq n \}$ \\
-mit der Norm: $\| f \|_{C_{b}^{m}} = \sum_{|\alpha| \leq m} \| D^{\alpha}f \|_{\infty}$
+Wir nennen $C_{b}^{m}(\Omega) = \{ f: \Omega \rightarrow \MdR | D^{\alpha}f \text{ sind stetig in } \Omega, \text{ beschränkt auf } \Omega \text{ für alle } \alpha \in \MdN^{n}, |\alpha| \leq n \}$ den \textbf{Raum der beschränkten, m-fach stetig differenzierbaren Funktionen}.  \\
+Auf $C_{b}^{m}$ definieren wir die Norm: $\| f \|_{C_{b}^{m}} = \sum_{|\alpha| \leq m} \| D^{\alpha}f \|_{\infty}$
 \end{definition}
 
 \begin{bemerkung}
@@ -262,16 +281,26 @@ Sei $(X, \| \cdot \|)$ ein normierter Raum. $M \subset X$ sei abgeschlossener, l
 
 Definiere $\hat X = X / M, \hspace{0.25cm} \hat x \in X/M: \hspace{0.25cm} \hat x = \{ y \in X: y - x \in M \} = x + M$ \\
 Dabei gilt unter anderem $\hat x_{1} + \hat x_{2} = \hat{x_{1} + x_{2}}$ und $\lambda \hat x_{1} = \hat{\lambda x_{1}}$; $\hat X$ bildet somit einen Vektorraum. \\
+Definieren wir eine Norm für die Äquivalenzklassen mittels $\| \hat x \|_{\hat X} : = \inf \{ \| y \|_{X}: y \in \hat X \}$
 
-Wir definieren nun eine Norm für die Äquivalenzklassen mittels $\| \hat x \|_{\hat X} : = \inf \{ \| y \|_{X}: y \in \hat X \}$
-
-Beh.: $(\hat X, \| \cdot \|_{\hat X})$ ein normierter Raum. \\
-$\| \hat x \|_{\hat X} = 0: \exists y_{n} \in \hat X \text{ mit } \| y_{n} \| \rightarrow 0, x - y_{n} \in M$
-$\Rightarrow x \in M, \hat x = 0$
-zu $\epsilon< 0$ wähle zu $\hat x_{1}, \hat x_{2} \in \hat X$ Elemente 
-
-%todo
+Behauptung: $(\hat X, \| \cdot \|_{\hat X})$ ein normierter Raum. \\
+Beweis: Sei $\hat x \in \hat X$ beliebig mit $\| \hat x \|_{\hat X} = 0$ \\
+ dann existiert ein $y_{n} \in \hat X \text{ mit } \| y_{n} \| \rightarrow 0$ und $x - y_{n} \in M$
+	\[ \Rightarrow x \in M, \hat x = 0 \]
+Zu $\epsilon< 0$ wähle für $\hat x_{1}, \hat x_{2} \in \hat X, y_{1}, y_{2} \in M$ mit
+	\[ \| \hat x_{1} \| \geq \| x_{i} - y_{i} \| - \epsilon \] 
+	Damit folgt:
+	\begin{align*}
+		\| \hat{x + y} \| & \leq \| x_{1} + x_{2} - y_{1} - y_{2} \| \\
+						  & \leq \| x_{1} - y_{1} \| + \| x_{2} - y_{2} \| \\
+						  & \leq \| \hat x_{1} \| + \| \hat x_{2} \| + 2 \epsilon
+	\end{align*}
 \end{definition}
+
+\begin{bemerkung}
+Ist $\| \cdot \|$ nur eine Halbnorm auf $X$, so ist $M = \{ x: \| x \| = 0 \}$ ein abgeschlossener, linearer Teilraum von $X$ und der Quotientenraum $(\hat X, \| \cdot \|_{\hat X})$ ist ein normierter Raum.
+\end{bemerkung}
+
 
 \begin{beispiel}
 \begin{itemize}
@@ -290,7 +319,7 @@ zu $\epsilon< 0$ wähle zu $\hat x_{1}, \hat x_{2} \in \hat X$ Elemente
 \end{definition}
 
 \begin{bemerkung}
-Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow X$ ist beschränkt, denn $x_{m} \in \{ y: \| x - y \| \leq 1 \}$ für fast alle $m$.
+Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, denn $x_{m} \in \{ y: \| x - y \| \leq 1 \}$ für fast alle $m$.
 \end{bemerkung}
 
 \begin{satz}
@@ -301,10 +330,10 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow X$ ist beschränkt, den
 		\item $T(U_{(X, \| \cdot \|)})$ ist beschränkt in $Y$
 		\item Es gibt ein $c < \infty$ mit $\| Tx \| \leq c \| x \|$
 	\end{enumerate}	
+	\begin{beweis}
+ 		%todo	
+	\end{beweis}
 \end{satz}
-\begin{beweis}
- %todo	
-\end{beweis}
 
 \begin{definition}
 	Seien $X, Y$ normierte Räume. Mit $B(X, Y)$ bezeichnen wir den Vektorraum der beschränkten, linearen Operatoren $T: X \rightarrow Y$. Ist $ X = Y$ schreiben wir auch kurz $B(X) := B(X, X)$. \\
@@ -388,26 +417,46 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 
  \begin{enumerate}[label=\alph*\upshape)]
 	\item Die Hills-Tanerkin-Bedingung (nur Hinreichend) \\
-	Sei $p \in (1, \infty)$ und $\frac{1}{p} + \frac{1}{q} = 1$. Setze
-	\[ c := \left( \sum_{k \geq 1} \left( \sum_{l \geq 1} |a_{kl}|^{q} \right)^{\frac{p}{q}} \right)^{\frac{1}{p}} < \infty \]
-	so definiert $T$ einen Operator $T \in B(l^{p})$ mit $\| T \| \leq c$ 
-	\begin{beweis}
-		\begin{enumerate}
-			\item Wohldefiniertheit: (\& Beschränktheit)  \\
-				Für $x \in l^{p}$ folgt
-				\begin{align*}
-					\| Tx \|_{l^{p}}^{p} &= \sum_{k \geq 1} | (Tx)_{k} |^{p} \\
+		Sei $p \in (1, \infty)$ und $\frac{1}{p} + \frac{1}{q} = 1$. Setze
+		\[ c := \left( \sum_{k \geq 1} \left( \sum_{l \geq 1} |a_{kl}|^{q} \right)^{\frac{p}{q}} \right)^{\frac{1}{p}} < \infty \]
+		so definiert $T$ einen Operator $T \in B(l^{p})$ mit $\| T \| \leq c$ 
+		\begin{beweis}
+			\begin{enumerate}
+				\item Wohldefiniertheit: (\& Beschränktheit)  \\
+					Für $x \in l^{p}$ folgt
+					\begin{align*}
+						\| Tx \|_{l^{p}}^{p} &= \sum_{k \geq 1} | (Tx)_{k} |^{p} \\
 									 	 &= \sum_{k \geq 1} | \sum_{l \geq 1} |a_{kl} x_{l} |^{p} \\
 										 &\leq \sum_{k \geq 1} \left( \sum_{l \geq 1} |a_{kl}|^{q} \right)^{\frac{p}{q}} \left( \sum_{l \geq 1} |x_{l}|^{p} \right)^{\frac{p}{q}} \\
 										 &= c^{p} \|x\|_{l^{p}}^{p} < \infty
-				\end{align*}
-			\item Linearität \\
-				Wegen $c < \infty$ ist $\left( \sum_{l} |a_{kl}|^{q} \right)^{\frac{1}{q}} < \infty, \hspace{0.1cm} \forall k \in \MdN$ \\
-				Für $x \ in l^{p}$ konvergiert die Reihe nach Hölder. Damit ist $T$ offensichtlich linear.
-		\end{enumerate}
-	\end{beweis}
-
-	\item 
+					\end{align*}
+				\item Linearität \\
+					Wegen $c < \infty$ ist $\left( \sum_{l} |a_{kl}|^{q} \right)^{\frac{1}{q}} < \infty, \hspace{0.1cm} \forall k \in \MdN$ \\
+					Für $x \in l^{p}$ konvergiert die Reihe nach Hölder. Damit ist $T$ offensichtlich linear.
+			\end{enumerate}
+		\end{beweis}
+	\item Der Fall $l^{1}$: \\
+		Es ist $T \in B(l^{1})$ genau dann wenn 
+		\[ c_{1} := \sup_{1} \sum_{k} | a_{kl} | < \infty \]
+		und in diesem Fall ist $\| T \| = c_{1}$.
+		\begin{beweis}
+			"\ $\Rightarrow$ "\  Sei $T \in B(l^{1})$. Dann gilt für $l \in \MdN$
+			\begin{align*}
+				\sum_{k} | a_{kl} | &= \sum_{k} |(Te_{l})_{k}| \\
+								  	&= \| T e_{l} \|_{l^{1}}  \\
+								  	& \leq \| T \| \| e_{l} \|_{l^1} = \| T \| < \infty 
+			\end{align*}
+			"\ $\Leftarrow$ "\  folgt genau wie in a) mit Hölder. Außerdem gilt $\| T \| < c_{1}$			
+		\end{beweis}
+	\item Der Fall $l^{\infty}$: \\
+		Es ist $T \in B(l^{\infty}$ genau dann, wenn
+		\[ c_{\infty} := \sup_{k} \sum_{l} |a_{kl}| < \infty \]
+		und in diesem Fall ist $\| T \| = c_{\infty}$
+		\begin{beweis}
+			"\ $\Rightarrow$ "\  Sei $T \in B(l^{\infty}), k \in \MdN$. Setze dann $x^{(k)} = $
+			
+							
+		\end{beweis}
  \end{enumerate}
 \end{beispiel}
 
