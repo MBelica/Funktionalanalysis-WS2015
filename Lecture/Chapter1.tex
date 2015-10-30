@@ -304,8 +304,19 @@ Ist $\| \cdot \|$ nur eine Halbnorm auf $X$, so ist $M = \{ x: \| x \| = 0 \}$ e
 
 \begin{beispiel}
 \begin{itemize}
-	\item hölderstetige Funktionen
-	\item Lebesgues-Integrierbare Funktionen
+	\item Hölderstetige Funktionen \\
+	Wenn $h_{\alpha}(f) = \sup_{u,v \in \MdR, u \neq v} \frac{\| f(u) - f(v)\|}{|u - v|^{\alpha}} < \infty \hspace{0.25cm} \left( \alpha \in (0, 1] \right)$, dann nennt man $f$ hölderstetig.
+	\[ C^{\alpha}(\Omega) := \{ f: \Omega \rightarrow \MdR: h_{\alpha}(f) < \infty \} \hspace{0.5cm} \Omega \subset \MdR^{n}, \hspace{0.25cm} \]
+	Im Moment ist $h_{\alpha}( \cdot )$ eine Halbnorm. Unter der Voraussetzung $\Omega$ zusammenhängend gilt aber weiter:
+	\[ h_{\alpha}(f) = 0 \gdw f \equiv c \text{ konstant} \]
+	Wenn z.B. $M = \{ \mathds{1} \Omega \}$ und $V = C^{\alpha}/M$ ist oben genanntes sogar ein normierter Raum.
+	\item Lebesgues-Integrierbare Funktionen \\
+	Sei $\Omega \subset \MdR^{n}$ offen, $\mathcal{L}^{p}(\Omega) = \{ f: \Omega \rightarrow \MdR : |f|^{p}$ ist lesbesgue-integrierbar auf $\Omega$  \}.
+	Wir definieren $\| f \|_{p} := \left( \int_{\Omega} |f(x)|^{p} d\mu \right)^{\frac{1}{p}}$, wobei $\| \cdot \|_{p}$ hier eine Halbnorm bildet.
+	\[ \| f \|_{p} = 0 \gdw  f(x) = 0 \text{ fast überall auf } \Omega \]
+	Wähle $M = \{ l: \Omega \rightarrow \MdR: f = 0 \text{ fast überall auf } \Omega \}$. \\ \\
+	Dann ist
+	\[ \MdL^{p}(\Omega) := \frac{\mathcal{L}^{p}(\Omega)}{M} \text{ ein normierter Raum.} \]
 \end{itemize}
 \end{beispiel}
 
@@ -330,20 +341,42 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
 		\item $T(U_{(X, \| \cdot \|)})$ ist beschränkt in $Y$
 		\item Es gibt ein $c < \infty$ mit $\| Tx \| \leq c \| x \|$
 	\end{enumerate}	
-	\begin{beweis}
- 		%todo	
-	\end{beweis}
 \end{satz}
-
+\begin{beweis}
+	\begin{description}
+		\item[] $a) \Rightarrow b)$ klar, ist ein Spezialfall.
+		\item[] $b) \Rightarrow c)$ Wäre $c)$ falsch, dann gibt es ein $x_{n} \in U_{X}$ mit 
+		\[ \| T x_{n} \geq \frac{1}{n^{2}} \| \]
+		Setze $y_{n} = \frac{1}{n} x_{n}$, dann gilt
+		\[
+			\| y_{n} \| \leq \frac{1}{n} \| x_{n} \| \rightarrow 0, \\
+			\| T(y_{n} \| = n^{2} \| T(x_{n} \| \geq \frac{n^2}{n} \rightarrow \infty 
+		 \]
+		 Widerspruch zur Voraussetzung.
+		 \item[] $c) \Rightarrow d)$ Sei $T(U_{X}) \subset U_{Y}$ \\
+		 Für $x \in X \verb|\| \{0\}, \frac{x}{\| x \|} \in U_{X}$ folgt:
+		 \begin{align*}
+		 	&T \left( \frac{x}{\| x \|} \right) \in c U_{Y} \\
+		 	\Rightarrow \| T \left( \frac{x}{\| x \|} \right) \| & \leq c
+		 	\Rightarrow \| T x \|_{Y} \leq c \| x \|_{X}			
+		 \end{align*}
+		 \item[] $d) \Rightarrow a)$ Für $x_{n} \rightarrow x$ in $X$ folgt:
+		 \begin{align*}
+		 	\| T x_{n} - T x \| & = \| T ( x_{n} - x ) \| \\
+		 						& \leq c \| x_{n} - x \| \rightarrow 0
+		 \end{align*} \[ \Rightarrow T x_{n} \rightarrow T x \text{ in } Y \]
+	\end{description}
+\end{beweis}
+	
 \begin{definition}
-	Seien $X, Y$ normierte Räume. Mit $B(X, Y)$ bezeichnen wir den Vektorraum der beschränkten, linearen Operatoren $T: X \rightarrow Y$. Ist $ X = Y$ schreiben wir auch kurz $B(X) := B(X, X)$. \\
+	Seien $X, Y$ normierte Räume. Mit $B(X, Y)$ bezeichnen wir den \textbf{Vektorraum der beschränkten, linearen Operatoren} $T: X \rightarrow Y$. Ist $ X = Y$ schreiben wir auch kurz $B(X) := B(X, X)$. \\
 	
 	Für $T \in B(X, Y)$ setze
 	\begin{align*}
 		\| T \| & = \sup \{ \frac{\| Tx \|}{\| x \|}: x \in X \ {0} \} \\
 				& = \sup \{ \| Tx \|: \| x \| \leq 1 \}
 	\end{align*}
-	Die Norm $\| T \|$ von $T$ ist die kleinste Konstante $c$ für welche die Gleichung $\| Tx \| \leq c \| x \|$ für alle $x \in X$ gilt.
+	Die Norm $\| T \|$ von $T$ ist die kleinste Konstante $c$, für welche die Gleichung $\| Tx \| \leq c \| x \|$ für alle $x \in X$ gilt.
 \end{definition}
 
 \begin{satz}
