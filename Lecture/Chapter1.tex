@@ -13,7 +13,7 @@ Sei $X$ ein Vektorraum, $dim X < \infty $ und sei $x = (x_{1},\dotsc,x_{n})^{T} 
 Diese Normen sind äquivalent, denn:
 $\| x \|_{\infty} \leq \| x \|_{2} \leq n^{\frac{1}{2}} \| x \|_{\infty}$ \newline
 
-\begin{satz*}[Bolzano-Weierstraß] \label{s:1-bolzanoweierstrass}
+\begin{satz*}[Bolzano-Weierstra{\ss}] \label{s:1-bolzanoweierstrass}
 $A \subset \MdR$ beschränkt. Dann hat jede Folge $(x_{n})_{n \in \MdN} \subset A$ eine konvergente Teilfolge.
 \end{satz*}
 
@@ -30,7 +30,7 @@ Dabei gilt $\| f \|_{\infty} \leq \| f \|_{2}$ , aber mit folgender Funktion fol
 		\includegraphics[width=160pt]{images/1.1.1-example1.png}
 	\end{figure} \[ \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  
 \hspace{0.5cm} \| f_{n} - f_{m} \| = 1 \text{ für } n \neq m \]
-$ \Rightarrow $ \hyperref[s:1-bolzanoweierstrass]{Satz von Bolzano-Weierstraß} gilt im $\infty$-dimensionalen i.A. nicht!
+$ \Rightarrow $ \hyperref[s:1-bolzanoweierstrass]{Satz von Bolzano-Weierstra{\ss}} gilt im $\infty$-dimensionalen i.A. nicht!
 \end{beispiel}
 
 \subsection{Operatoren}
@@ -84,13 +84,13 @@ $T$ ist injektiv, aber nicht surjektiv
 	\item Dirichletproblem \\
 	$\Omega \subset \MdR^n$ Gebiet, offen, beschränkt, glatter Rand. Sei $g: \partial \Omega \rightarrow \MdR$ stetig \\ 
 	Gesucht ist ein $f \in C(\bar \Omega) \bigcap  C^(\Omega)$, so dass $\nabla f = \sum_{i = 1}^{n} \frac{\partial^{2} f}{\partial x_{i}^2} = 0$ in $\Omega$ und $f_{\big| \partial \Omega}= g$ \\ \\
-	Beispiel: Durch Wärmeverteilung auf dem Rand auf WV im Inneren schließen. \\ \\
+	Beispiel: Durch Wärmeverteilung auf dem Rand auf WV im Inneren schlie{\ss}en. \\ \\
 	Lösung: Dirichletintegral $J(u) = \int_{\Omega} (\nabla u )^{2} dx$, wobei $ u \in M = \{ v \in C^{1}(\bar \Omega) | \hspace{0.25cm} v_{\big| \partial \Omega} = g \}$ \\
 	Sei $v_{0}$ das absolute Minimum von $J$, d.h. $J(v_{0}) = \inf \{ J(w): w \in M \}$ \\
 	$v \in C^{1}(\bar \Omega)$ mit $v = 0$ in einer Umgebung von $\partial U$. $\epsilon \rightarrow J(u_{0} + \epsilon v)$
 	\[ \frac{d}{d\epsilon} J(u_{0} + \epsilon v) = \int_{\Omega} \frac{d}{d\epsilon} (\nabla u_{0} + \epsilon \nabla v)^{2} dx = 2 \int_{\Omega} (\nabla u_{0} + \epsilon \nabla v)(\nabla v) dx_{\big| \epsilon = 0} = 2 \int_\Omega (\nabla u_{0}) (\nabla v) dx \]
 	Mit $0 \geq J(u_{0} + \epsilon v)- J(u_{0}) \geq 0: \hspace{0.25cm} \int (\nabla u_{0})(\nabla v) dx \overset{\text{P.I.}}{{=}} - \int (\nabla u_{0})v dx = 0$ \\
-	\[ \Rightarrow \nabla u_{0} = 0 \text{, außerdem } u_{0 \hspace{0.1cm} \big| \partial \Omega} = g \text{ (s.o.)} \]
+	\[ \Rightarrow \nabla u_{0} = 0 \text{, au{\ss}erdem } u_{0 \hspace{0.1cm} \big| \partial \Omega} = g \text{ (s.o.)} \]
 	Im allgemeinen exisitert da absolute Minimum $u_{0} \in J$ aber nicht. \\
 	Ausweg: $X = \{ f \in L^{2}(\Omega), f' \in L^{2}(\Omega) \} \supset \{f \in C(\bar \Omega), f' \in C(\bar \Omega) \} $	\\
 	In diesem Raum $X$ (Sobolevräume) gibt es ein Minimum $u_{0}$ von $J$. \\
@@ -100,7 +100,7 @@ $T$ ist injektiv, aber nicht surjektiv
 	$Y = \{ f \in L^{2}[0, 1], f' \in L^{2}[0, 1] \}$ Hilbertraum. \\
 	Orthonormalbais $(e_{n})$ von $Y$ wäre: $\| e_{n} \|_{2} = 1, \int e_{n}(x) e_{m}(x) dx = 0$ für $m \neq m$ \\
 	$f \in Y: f = \sum_{n = 1}^{\infty} \alpha_{n} e_{n}$ mit $\| f \|^2 = \sum | \alpha_{n} |^2$ \\
-	Die $(e_{n})$ sind außerdem Eigenvektoren des Operatoren $T$, d.h. $Te_{n} = \lambda_{n} e_{n}$ \\
+	Die $(e_{n})$ sind au{\ss}erdem Eigenvektoren des Operatoren $T$, d.h. $Te_{n} = \lambda_{n} e_{n}$ \\
 	\[ Ty = f \Rightarrow \int Ty(x) e_{n}(x) dx = \int f(x) e_{n}(x) dx, y = \sum_{n = 1}^{\infty} \alpha_{n} e_{n} \]
 	Gesucht sind die Koeffizienten $\alpha_{n}$
 	\begin{align*}
@@ -116,7 +116,7 @@ $T$ ist injektiv, aber nicht surjektiv
 
 \begin{definition}
 Sei $X$ ein Vektorraum über $\MdK \in\{ \MdR, \MdC \}$ \\
-Eine Abbildung  $\| \cdot \|: X \rightarrow \MdR_{+}$ heißt eine Norm, wenn
+Eine Abbildung  $\| \cdot \|: X \rightarrow \MdR_{+}$ hei{\ss}t eine Norm, wenn
 \begin{enumerate}
 	\item $ \| x \| \geq 0, \| x \| = 0 \gdw x = 0 $
 	\item $\ | \lambda x \| = | \lambda \| x \| $
@@ -124,11 +124,11 @@ Eine Abbildung  $\| \cdot \|: X \rightarrow \MdR_{+}$ heißt eine Norm, wenn
 \end{enumerate}	
 \end{definition}
 
-\begin{bemerkung} Falls $ \| \cdot \| $ all die oben genannten Eigenschaften erfüllt außer $ \| x \| = 0 \Rightarrow x = 0 $, dann heißt $ \| \cdot \| $ Halbnorm
+\begin{bemerkung} Falls $ \| \cdot \| $ all die oben genannten Eigenschaften erfüllt au{\ss}er $ \| x \| = 0 \Rightarrow x = 0 $, dann hei{\ss}t $ \| \cdot \| $ Halbnorm
 \end{bemerkung}
 
 \begin{vereinbarung} 
-Die Menge $ U_{X} = \{ x \in X:  \|x \| \leq 1 \}$ heißt \textbf{Einheitskugel}. \\
+Die Menge $ U_{X} = \{ x \in X:  \|x \| \leq 1 \}$ hei{\ss}t \textbf{Einheitskugel}. \\
 Eine Folge $(x_{n})$ des normierten Raums $X$ \textbf{konvergiert} gegen ein $ x \in X $, falls  $\| x_{n} - x \| \xrightarrow[n \rightarrow \infty]{} 0. $	
 \end{vereinbarung}
 
@@ -153,7 +153,7 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 \end{beispiel}
 
 \begin{definition}
-	Zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ heißen äquivalent auf $X$, falls es $0 < m, M < \infty$ gibt, so dass für alle $ x \in X$ gilt:
+	Zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ hei{\ss}en äquivalent auf $X$, falls es $0 < m, M < \infty$ gibt, so dass für alle $ x \in X$ gilt:
 	\[ m \| x \|_{2} \leq \| x \|_{1} \leq M \| x \|_{2} \]
 \end{definition}
  
@@ -251,7 +251,7 @@ Hölder-Ungleichung: mit $\frac{1}{p} + \frac{1}{p'} = 1 \text{ gilt } \sum_{i=1
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Raum der stetigen Funktionen \\
 		$\Omega \subset \MdR^{n}, \hspace{0.25cm} C(\Omega) = \{ f: \Omega \rightarrow \MdR \text{ | } f \text{ stetig} \}$, \hspace{0.25cm} $\| f \| = \sup_{u \in \Omega} |f(u)|$\\
-		$\Rightarrow \| f - f_{n} \| \rightarrow 0$ bedeutet gleichmäßige Konvergenz von $f_{n}$ gegen $f$ auf $\Omega$.
+		$\Rightarrow \| f - f_{n} \| \rightarrow 0$ bedeutet gleichmä{\ss}ige Konvergenz von $f_{n}$ gegen $f$ auf $\Omega$.
 		\item Raum der differentierbaren Funktionen \\
 		$\Omega \subset \MdR^{n}$ offen, $f: \Omega \rightarrow \MdR, \hspace{0.25cm} \alpha = (\alpha_{1}, \dotsc, \alpha_{m}) \in \MdN_{0}^{m}$ \\
 		$D^{\alpha}f(x) = \frac{ \delta^{ | \alpha | } }{ \delta x_{1}^{ \alpha_{1} } \dotsc \delta x_{n}^{ \alpha_{n} } } f(x), \text{ wobei } | \alpha | = \alpha_{1} + \dotsc + \alpha_{n} $ \\ 
@@ -326,7 +326,7 @@ Ist $\| \cdot \|$ nur eine Halbnorm auf $X$, so ist $M = \{ x: \| x \| = 0 \}$ e
 \section{Beschränkte und lineare Operatoren}
 
 \begin{definition}
-	Eine Teilmenge V eines normieren Raums $(X, \| \cdot \|)$ heißt beschränkt, falls 
+	Eine Teilmenge V eines normieren Raums $(X, \| \cdot \|)$ hei{\ss}t beschränkt, falls 
 	\[ c := \sup_{x \in V} \| x \| < \infty, \text{ und damit auch } V \subset c U_{(X, \| \cdot \| )} \]
 \end{definition}
 
@@ -509,7 +509,7 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 								  	&= \| T e_{l} \|_{l^{1}}  \\
 								  	& \leq \| T \| \| e_{l} \|_{l^1} = \| T \| < \infty 
 			\end{align*}
-			"\ $\Leftarrow$ "\  folgt genau wie in a) mit Hölder. Außerdem gilt $\| T \| < c_{1}$			
+			"\ $\Leftarrow$ "\  folgt genau wie in a) mit Hölder. Au{\ss}erdem gilt $\| T \| < c_{1}$			
 		\end{beweis}
 	\item Der Fall $l^{\infty}$: \\
 		Es ist $T \in B(l^{\infty})$ genau dann, wenn
@@ -519,11 +519,93 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 			"\ $\Rightarrow$ "\  Sei $T \in B(l^{\infty})$.  Für $k \in \MdN$ setze dann $x^{(k)} = \begin{cases} \frac{|a_{kl}|}{a_{kl}} & a_{kl} \neq 0 \\ 0 & a_{kl} = 0 \end{cases}$ \\
 			dann ist $x^{(k)} \in l^{\infty}$ mit $\| x^{(k)} \|_{l^{\infty}} = 1$ und weiter
 			\begin{align*}
-				\sum_{l} |a_{kl}| = 
+				\sum_{l} |a_{kl}| & = | \sum_{l = 1}^{\infty} a_{nl} x_{l}^{(k)} | \\
+								  & = | ( T x^{(k)} )_{k} | \\
+								  & \leq \| T x^{(k)} \|_{\infty} \\
+								  & \leq \| T \| \| x^{(k)} \|_{l^{\infty}} = \| T \|
 			\end{align*}			
+			\[ \Rightarrow c_{\infty} \leq \| T \| \]
+			"\ $\Leftarrow$ "\ folgt genau wie in a) mit Hölder. Au{\ss}erdem gilt $\| T \| < \infty$ 
+		\end{beweis}
+	\item Interpolation \\
+		Ist $T \in B(l^{1}) \cap B(l^{\infty})$, dann ist $T \in B(l^{p})$ für alle $p \in (1, \infty)$ mit $\| T \| \leq c_{1}^{\frac{1}{p}} c_{\infty}^{\frac{1}{q}}$, wobei $\frac{1}{p} + \frac{1}{q} = 1$
+		\begin{beweis}
+		 Für $x \in l^{p}$ setzen wir $y_{k} := |(T x)_{k}|^{p - 1}, \hspace{0.25cm} k \in \MdN$ \\
+		 \[ \Rightarrow \| y \|_{l^{q}} = \left( \sum_{k \geq 1}  \right)^\frac{1}{q} \]	
+		 Damit folgt
+		 \begin{align*}
+		 	\| Tx \|_{l^{p}}^{p} & = \sum_{k \geq 1 } y_{k} | (Tx)_{k} | \leq \sum_{k \geq 1} \sum_{l \geq 1} y_{k} |a_{kl}| |x_{l}| \\
+		 	& = \sum_{k \geq 1} \sum_{l \geq 1} |a_{kl}|^{\frac{1}{p}} |a_{kl}|^{\frac{1}{q}} |y_{k}| |x_{l}| \\
+		 	& \leq \left( \sum_{k \geq 1} \sum_{l \geq 1} |a_{kl}| |y_{k}|^{q} \right)^{\frac{1}{q}} \left( \sum_{k \geq 1} \sum_{l \geq 1} |a_{kl}| |x_{l}|^p \right)^{\frac{1}{p}} \\
+		 	& \leq c_{\infty}^{\frac{1}{q}} \| y \|_{l^{q}} c_{1}^{\frac{1}{p}} \| x \|_{l^{p}} \\
+		 	& =  c_{\infty}^{\frac{1}{q}} c_{1}^{\frac{1}{p}}  \| x \|_{l^{p}} \| Tx \|_{l^{p}}^{p - 1} 
+		 \end{align*}
+		 \[ \Rightarrow \| Tx \|_{l^{p}} \leq c_{1}^{\frac{1}{p}} c_{\infty}^{\frac{1}{q}} \| x \|_{l^{p}} \text{ und } \| T\| \leq c_{1}^{\frac{1}{p}} c_{\infty}^{\frac{1}{q}} \]
 		\end{beweis}
  \end{enumerate}
 \end{beispiel}
+
+\begin{definition}
+	Seien $X, Y$ normierte Vektorräume und $T: X \rightarrow Y$ linear.
+	\begin{enumerate}[label=\alph*\upshape)]
+
+		\item $T$ hei{\ss}t \textbf{isometrie}, falls $ \| Tx \|_{Y} = \| x \|_{X} \hspace{0.25cm} \forall x \in X $
+		\item $T$ hei{\ss}t \textbf{stetige Einbettung}, falls $T$ stetig und injektiv ist
+		\item $T$ hei{\ss}t \textbf{isomorphe Einbettung}, falls $T$ injektiv ist und ein $c > 0$ existiert mit
+			\[ \frac{1}{c} \| x \|_{X} \leq \| Tx \|_{Y} \leq c \| x \|_{x} \]
+			In diesem Fall identifizieren wir oft $X$ mit dem Bild von $T$ in $Y$, $X \cong T(X) \subset Y$ 
+		\item $T$ hei{\ss}t \textbf{Isomorphismus}, falls $T$ bijektiv und stetig ist und $T^{-1}: Y \rightarrow X$ ebenfalls stetig ist.
+			(d.h. falls $\exists c > 0: \frac{1}{c} \| Y \|_{Y} \leq \| T^{-1}y \|_{X} \leq c \| y \|_{Y}$ ) \\
+			In diesem Fall Identifizieren wir $X \cong Y$ und sagen $X$ und $Y$ sind isomorph. \\
+			(da $X, Y$ normierte Vektorräume sind, fordern wir $T, T^{-1}$ stetig)
+	\end{enumerate}
+\end{definition}
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Seien $(X, \| \cdot \|_{1})$ und $(X, \| \cdot \|_{2})$ normierte Vektorräume. Dann gilt
+			\[ \| \cdot \|_{1} \backsim \| \cdot \|_{2} \gdw I: (X, \| \cdot \|_{1}) \rightarrow (X, \| \cdot \|_{2}), Ix = x \text{ ist isomorph} \]
+		\item $I: c_{0} \hookrightarrow l^{\infty}, I x = x$ ist isometrische Einbettung
+	\end{enumerate}
+\end{beispiel}
+
+\begin{definition}
+ Sei $X$ ein normierter Vektorreaum der Raum
+ \[ X' = B(X, \MdK) \]	
+ hei{\ss}t Dualruam von $X$ oder Raum der linearen Funktionalen.
+\end{definition}
+
+\begin{beispiel}
+	Sei $X = l^{p}$ für $p \in (1, \infty)$ und $\frac{1}{p} + \frac{1}{q} = 1$ \\
+	Die Abbildung
+	\[ \Phi_{p} : l^{p} \rightarrow (l^{p})', \hspace{0.25cm} [\Phi_{p}(x)](y) = \sum_{n = 1}^{\infty} x_{n} y_{n}, \hspace{0.25cm} x \in l^{p}, y \in l^{q}  \]
+	Ist ein isometrischer Isomorphismus, d.h.  $(l^{p})' \cong l^{q}, \hspace{0.25cm}$ (insbesondere $(l^{2})' \cong l^{2}$)
+	
+	\begin{beweis}
+		%todo	
+	\end{beweis}
+\end{beispiel}
+
+\begin{bemerkung}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Analog zu obigem zeigt man $(l^{1})' \cong l^{\infty}$ und $(c_{0})' \cong l^{1}$
+		\item Eine ähnliche Aussage gilt auch für $\mathcal{L}^{p}$-Räumen auf einem Ma{\ss}raum $(\Omega, \mathcal{A}, \mu):$
+			Hier gilt:
+			\[ \mathcal{L}^{p}(\Omega, \mu)' \cong \mathcal{L}^{q}(\Omega, \mu) \]
+			wobei $p \in [1, \infty), \hspace{0.25cm} \frac{1}{p} + \frac{1}{q} = 1$ %todo: hier steht etwas, was ich bei mir nicht lesen kann
+	\end{enumerate}	
+\end{bemerkung}
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item %todo
+		\item % todo
+	\end{enumerate}	
+\end{beispiel}
+
+
+
+
 
 
 
