@@ -24,8 +24,11 @@ $X = C[0, 1] = \{ f : [0, 1] \rightarrow \MdR: \text{ stetig auf } [0, 1] \}$
 \| f \|_{\infty} & :=  \smash{\displaystyle\max_{t \in [0, 1]}}  \| f(t) \|
 \end{align*}
 \newline
-Dabei gilt $\| f \|_{\infty} \leq \| f \|_{2}$ , aber bei:$\hspace{0.25cm} f_n(t) = Todo:Bild$, folgt: \\
-\[ \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  
+Dabei gilt $\| f \|_{\infty} \leq \| f \|_{2}$ , aber mit folgender Funktion folgt zum Beispiel:$\hspace{0.25cm} f_n(t) = $ \\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=160pt]{images/1.1.1-example1.png}
+	\end{figure} \[ \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  
 \hspace{0.5cm} \| f_{n} - f_{m} \| = 1 \text{ für } n \neq m \]
 $ \Rightarrow $ \hyperref[s:1-bolzanoweierstrass]{Satz von Bolzano-Weierstraß} gilt im $\infty$-dimensionalen i.A. nicht!
 \end{beispiel}
@@ -472,7 +475,7 @@ Für $p \in [1, \infty]$ und $T \in B(l^{p})$ setzen wir
 und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 \[
 	\Rightarrow (Tx)_{k} = (\sum_{l = 1}^{\infty} x_{l} T e_{l})_{k} = \sum_{ l = 1}^{\infty} a_{kl}k_{l}, \hspace{0.25cm} k \in \MdN \\
-	\Rightarrow T x = A x \text{(unendliches Matrixprodukt)}
+	\Rightarrow T x = A x \text{ (unendliches Matrixprodukt)}
 \]
 
  \begin{enumerate}[label=\alph*\upshape)]
@@ -482,7 +485,7 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 		so definiert $T$ einen Operator $T \in B(l^{p})$ mit $\| T \| \leq c$ 
 		\begin{beweis}
 			\begin{enumerate}
-				\item Wohldefiniertheit: (\& Beschränktheit)  \\
+				\item Wohldefiniertheit: (und Beschränktheit)  \\
 					Für $x \in l^{p}$ folgt
 					\begin{align*}
 						\| Tx \|_{l^{p}}^{p} &= \sum_{k \geq 1} | (Tx)_{k} |^{p} \\
@@ -509,11 +512,11 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 			"\ $\Leftarrow$ "\  folgt genau wie in a) mit Hölder. Außerdem gilt $\| T \| < c_{1}$			
 		\end{beweis}
 	\item Der Fall $l^{\infty}$: \\
-		Es ist $T \in B(l^{\infty}$ genau dann, wenn
+		Es ist $T \in B(l^{\infty})$ genau dann, wenn
 		\[ c_{\infty} := \sup_{k} \sum_{l} |a_{kl}| < \infty \]
 		und in diesem Fall ist $\| T \| = c_{\infty}$
 		\begin{beweis}
-			"\ $\Rightarrow$ "\  Sei $T \in B(l^{\infty}), k \in \MdN$. Setze dann $x^{(k)} = \begin{cases} \frac{|a_{kl}|}{a_{kl}} & a_{kl} \neq 0 \\ 0 & a_{kl} = 0 \end{cases}$ \\
+			"\ $\Rightarrow$ "\  Sei $T \in B(l^{\infty})$.  Für $k \in \MdN$ setze dann $x^{(k)} = \begin{cases} \frac{|a_{kl}|}{a_{kl}} & a_{kl} \neq 0 \\ 0 & a_{kl} = 0 \end{cases}$ \\
 			dann ist $x^{(k)} \in l^{\infty}$ mit $\| x^{(k)} \|_{l^{\infty}} = 1$ und weiter
 			\begin{align*}
 				\sum_{l} |a_{kl}| = 
