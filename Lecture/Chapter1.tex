@@ -28,7 +28,7 @@ Dabei gilt $\| f \|_{\infty} \leq \| f \|_{2}$ , aber mit folgender Funktion fol
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=160pt]{images/1.1.1-example1.png}
-	\end{figure} \[ \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  
+	\end{figure} \[ \text{gilt } \hspace{0.25cm} \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  
 \hspace{0.5cm} \| f_{n} - f_{m} \| = 1 \text{ für } n \neq m \]
 $ \Rightarrow $ \hyperref[s:1-bolzanoweierstrass]{Satz von Bolzano-Weierstra{\ss}} gilt im $\infty$-dimensionalen i.A. nicht!
 \end{beispiel}
@@ -516,7 +516,7 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 		\[ c_{\infty} := \sup_{k} \sum_{l} |a_{kl}| < \infty \]
 		und in diesem Fall ist $\| T \| = c_{\infty}$
 		\begin{beweis}
-			"\ $\Rightarrow$ "\  Sei $T \in B(l^{\infty})$.  Für $k \in \MdN$ setze dann $x^{(k)} = \begin{cases} \frac{|a_{kl}|}{a_{kl}} & a_{kl} \neq 0 \\ 0 & a_{kl} = 0 \end{cases}$ \\
+			"\ $\Rightarrow$ "\  Sei $T \in B(l^{\infty})$.  Für $k \in \MdN$ setze dann $x^{(k)} = s\begin{cases} \frac{|a_{kl}|}{a_{kl}} & a_{kl} \neq 0 \\ 0 & a_{kl} = 0 \end{cases}$ \\
 			dann ist $x^{(k)} \in l^{\infty}$ mit $\| x^{(k)} \|_{l^{\infty}} = 1$ und weiter
 			\begin{align*}
 				\sum_{l} |a_{kl}| & = | \sum_{l = 1}^{\infty} a_{nl} x_{l}^{(k)} | \\
@@ -582,7 +582,39 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 	Ist ein isometrischer Isomorphismus, d.h.  $(l^{p})' \cong l^{q}, \hspace{0.25cm}$ (insbesondere $(l^{2})' \cong l^{2}$)
 	
 	\begin{beweis}
-		%todo	
+		Nach Hölder konvergiert die Reihe $[\Phi_{p}(x)](y)$ absolut mit 
+		\[ | [\Phi_{p}(x)](y) | \leq \sum_{n} |x_{n} y_{n}| \leq \| x \|_{l^{q}} \| y \|_{l^{p}} \]
+		Da $\Phi_{p}(x)$ linear in $Y$ ist, folgt $\Phi_{p}(x) \in (l^{p})'$ mit
+		\[ \| \Phi_{p}(x) \|_{(l^{p})'} \leq \| x \|_{l^{q}} \]
+		Es bleibt zu zeigen, dass $ \| \Phi_{p}(x) \|_{(l^{p})'} \geq \| x \|_{l^{q}} $ und $\Phi_{p}$ surjektiv ist.
+		Sei $Y \in (l^{p})'$, dann setze $x_{n} := y'(e_{n}), n \in \MdN$ und $x = (x_{n})_{n \geq 1}$
+		Setze au{\ss}erdem
+		\[ z_{n} := \begin{cases} \frac{|x_{n}|}{x_{n}} & x_{n} \neq 0 \\ 0 & x_{n} = 0 \end{cases}, \hspace{0.25cm} n \ \in \MdN \]
+		Dann gilt
+		\begin{align*}
+			\sum_{n=1}^{N} |x_{n}|^{q} & = \sum_{n = 1}^{N} x_{n} z_{n} \\
+			& = \sum_{n = 1}^{N} y'(e_{n}) z_{n} = y'\left(\sum_{n = 1}^{N} z_{n} e_{n} \right) \\
+			& \leq \| y' \|_{(l^{p})'} \| \sum_{n = 1}^{N} z_{n} e_{n} \|_{l^{p}} \\
+			& = \left( \sum_{n = 1}^{N} |x_{n}|^{(q - 1)p} \right)^{\frac{1}{p}} \\
+			& = \left( \sum_{n = 1}^{N} |x_{n}|^{q}\right)^{\frac{1}{p}}
+		\end{align*}
+		\[ \Rightarrow \left( \sum_{n = 1}^{N} |x_{n}|^{q} \right)^{1-\frac{1}{p}} \leq \| y \|_{(l^{p})'}, \text{ wobei } 1 - \frac{1}{p} = \frac{1}{q} \]
+		\[ \xRightarrow{n \rightarrow \infty} \| x \|_{l^{q}} \leq \| y' \|_{l^{\infty}} < \infty, \text{ d.h. } x \in
+		l^{q} \label{eq:1.3-ineqlqlinf} \]
+		Da für $y \in l^{p}$
+		\[ \| y - \sum_{n = 1}^{N} y_{n} e_{n} \|_{l^{p}}^{p} = \sum_{n \geq N + 1} |y_{n}|^{p} \rightarrow 0 \text{ für } N \rightarrow \infty \]
+		folgt
+		\[ | y' (y) - \sum_{n = 1}^{N} y' ( y_{n} e_{n} ) | \leq \| y' \| \| y - \sum_{n = 1}^{\infty} y_{n} e_{n} \|_{l^{p}}  \rightarrow 0 \hspace{0.5cm} (N \rightarrow \infty) \]
+		und damit \\
+		\begin{align*}
+			[ \Phi_{p} (x) ](y) & = \sum_{n = 1}^{\infty} x_{n} y_{n} \\
+			& = \sum_{n = 1}^{\infty} y'(y_{n} e_{n}) \hspace{0.25cm} \forall y \in l^{p} \\
+			& = y'(y)			
+		\end{align*}
+		d.h. $ \Phi_{p}(x) = y'$ und damit $\Phi_{p}$ surjektiv.
+		Außerdem gilt nach \eqref{eq:1.3-ineqlqlinf}
+		\[ \| \Phi_{p}(x) \|_{(l^{p})'} \geq \| x \|_{(l^{q})'} \]
+		womit die Behauptung gezeigt ist.
 	\end{beweis}
 \end{beispiel}
 
@@ -592,16 +624,31 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 		\item Eine ähnliche Aussage gilt auch für $\mathcal{L}^{p}$-Räumen auf einem Ma{\ss}raum $(\Omega, \mathcal{A}, \mu):$
 			Hier gilt:
 			\[ \mathcal{L}^{p}(\Omega, \mu)' \cong \mathcal{L}^{q}(\Omega, \mu) \]
-			wobei $p \in [1, \infty), \hspace{0.25cm} \frac{1}{p} + \frac{1}{q} = 1$ %todo: hier steht etwas, was ich bei mir nicht lesen kann
+			wobei $p \in [1, \infty), \hspace{0.25cm} \frac{1}{p} + \frac{1}{q} = 1$ bezüglich der Dualität: $[\Phi_{p}(f)](g) (= <f, g>) = \int_{\Omega} f(x) g(x) d\mu(x)$ 
 	\end{enumerate}	
 \end{bemerkung}
 
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item %todo
-		\item % todo
+		\item Sei $K \subset \MdR^{n}$ kompakt, $x \in K$. Dann definieren wir
+			\[ \delta_{x}(f) := f(x) \text{ für } f \in C(K) \]
+			Wir versetzen $C(X)$ mit der Supremumsnorm. Dann gilt:
+			\[ |\delta_{x}(f) = | f(x) | \leq \| f \|_{\infty} \]
+			und offensichtlich ist $\delta_{x}$ linear, d.h. $\delta_{x} \in ( C(K) )'$ mit $\| \delta_{x} \| \leq 1s$
+		\item Sei $K \subset \MdR^{n}$ kompakt und $\mu$ ein endliches Ma{\ss} auf $\mathcal{B}(K)$. Dann definieren wir 
+			\[ \delta_{\mu}(f) = \int_{K} f(x) d\mu(x) \text{für} f \in C(K) \]
+			Dann gilt
+			\[ | \delta_{\mu} (f) | \leq \mu(K) \| f \| _{\infty} \]
+			Da $\delta_{\mu}$ linear ist, gilt $\delta_{\mu}\in (C(K))'$ mit
+			\[ \| \delta_{\mu} \leq \mu (K) \| \]
+			In diesem Sinne sind Ma{\ss}e Elemente von $(C()K))'$
 	\end{enumerate}	
 \end{beispiel}
+
+\begin{bemerkung}
+	Man kann zeigen, dass $(C(K))' \cong M(K)$, wobei $M(K)$ die Menge der 'regulären' Borelma{\ss}e versehen mit der Variationsnorm ist. Die Dualität ist gegeben durch
+	\[ (T u)(f) = \int_{K} f(x) d\mu(x) \]
+\end{bemerkung}
 
 
 
