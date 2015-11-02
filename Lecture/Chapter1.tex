@@ -13,7 +13,7 @@ Sei $X$ ein Vektorraum, $dim X < \infty $ und sei $x = (x_{1},\dotsc,x_{n})^{T} 
 Diese Normen sind äquivalent, denn:
 $\| x \|_{\infty} \leq \| x \|_{2} \leq n^{\frac{1}{2}} \| x \|_{\infty}$ \newline
 
-\begin{satz*}[Bolzano-Weierstra{\ss}] \label{s:1-bolzanoweierstrass}
+\begin{satz*}[Bolzano-Weierstra{\ss}] \index{Bolzano-Weierstrass} \label{s:1-bolzanoweierstrass}
 $A \subset \MdR$ beschränkt. Dann hat jede Folge $(x_{n})_{n \in \MdN} \subset A$ eine konvergente Teilfolge.
 \end{satz*}
 
@@ -74,14 +74,14 @@ $T$ ist injektiv, aber nicht surjektiv
 \subsection{Anwendungen}
 
 \begin{enumerate}
-	\item Fredholm'sche Integralglechungen \\
+	\item Fredholm'sche Integralglechungen \index{Fredholm'sche Integralglechung} \\
 	$X = C[0, 1], \hspace{0.25cm} k: [0, 1] \times [0, 1] \rightarrow \MdR$ stetig \\
 	\[ Tf(t) = \int_{0}^{1} k(t, s) f(s) ds \]
 	Analogie zum endlich dim. ('Verallg. der Matrixmultiplikation'):  $ T(f_{j})(i) = \sum_{j = 1}^{n} a_{ij}f_{j}$ \\ \\
  	$T$ ist in diesem Fall linear und stetig und es gilt die Fredholm'sche Alternative:
 	\[ \lambda \in R \verb|\| \{0\}: (\lambda Id - T)(f) = y, \hspace{0.25cm} f,g \in C[0, 1] \]
 	Dann existiert eine Lösung genau dann wenn diese eindeutig ist. \\
-	\item Dirichletproblem \\
+	\item Dirichletproblem \index{Dirichletproblem}\\
 	$\Omega \subset \MdR^n$ Gebiet, offen, beschränkt, glatter Rand. Sei $g: \partial \Omega \rightarrow \MdR$ stetig \\ 
 	Gesucht ist ein $f \in C(\bar \Omega) \bigcap  C^(\Omega)$, so dass $\nabla f = \sum_{i = 1}^{n} \frac{\partial^{2} f}{\partial x_{i}^2} = 0$ in $\Omega$ und $f_{\big| \partial \Omega}= g$ \\ \\
 	Beispiel: Durch Wärmeverteilung auf dem Rand auf WV im Inneren schlie{\ss}en. \\ \\
@@ -94,7 +94,7 @@ $T$ ist injektiv, aber nicht surjektiv
 	Im allgemeinen exisitert da absolute Minimum $u_{0} \in J$ aber nicht. \\
 	Ausweg: $X = \{ f \in L^{2}(\Omega), f' \in L^{2}(\Omega) \} \supset \{f \in C(\bar \Omega), f' \in C(\bar \Omega) \} $	\\
 	In diesem Raum $X$ (Sobolevräume) gibt es ein Minimum $u_{0}$ von $J$. \\
-	\item Sturm-Liouville Problem \\
+	\item Sturm-Liouville Problem \index{Sturm-Liouville Problem} \\
 	$X = C^{2}([0, 1]), Tu = (pu')' + qu$, mit $q \in C[0, 1], p \in C^{1}[0, 1]$ \\ 
 	Problem: bei gegebenen $f \in C[0, 1]$ find $u \in X$ mit $Tu = f, v(0) = 0, v'(1) = 0$ \\ \\
 	$Y = \{ f \in L^{2}[0, 1], f' \in L^{2}[0, 1] \}$ Hilbertraum. \\
@@ -114,9 +114,9 @@ $T$ ist injektiv, aber nicht surjektiv
 \newpage
 \section{Normierte R{\"a}ume}
 
-\begin{definition}
+\begin{definition} \index{Norm}
 Sei $X$ ein Vektorraum über $\MdK \in\{ \MdR, \MdC \}$ \\
-Eine Abbildung  $\| \cdot \|: X \rightarrow \MdR_{+}$ hei{\ss}t eine Norm, wenn
+Eine Abbildung  $\| \cdot \|: X \rightarrow \MdR_{+}$ hei{\ss}t eine \textbf{Norm}, wenn
 \begin{enumerate}
 	\item $ \| x \| \geq 0, \| x \| = 0 \gdw x = 0 $
 	\item $\ | \lambda x \| = | \lambda \| x \| $
@@ -127,7 +127,7 @@ Eine Abbildung  $\| \cdot \|: X \rightarrow \MdR_{+}$ hei{\ss}t eine Norm, wenn
 \begin{bemerkung} Falls $ \| \cdot \| $ all die oben genannten Eigenschaften erfüllt au{\ss}er $ \| x \| = 0 \Rightarrow x = 0 $, dann hei{\ss}t $ \| \cdot \| $ Halbnorm
 \end{bemerkung}
 
-\begin{vereinbarung} 
+\begin{vereinbarung}  \index{Einheitskugel}  \index{Konvergenz}
 Die Menge $ U_{X} = \{ x \in X:  \|x \| \leq 1 \}$ hei{\ss}t \textbf{Einheitskugel}. \\
 Eine Folge $(x_{n})$ des normierten Raums $X$ \textbf{konvergiert} gegen ein $ x \in X $, falls  $\| x_{n} - x \| \xrightarrow[n \rightarrow \infty]{} 0. $	
 \end{vereinbarung}
@@ -152,12 +152,12 @@ Für $p \in (1, \infty), p \neq 2:$ siehe Übungsaufgabe (Fall $p = 2$ läuft ü
 Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \leq n \| x \|_{\infty}$
 \end{beispiel}
 
-\begin{definition}
+\begin{definition} \index{Äquivalenz von Normen}
 	Zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ hei{\ss}en äquivalent auf $X$, falls es $0 < m, M < \infty$ gibt, so dass für alle $ x \in X$ gilt:
 	\[ m \| x \|_{2} \leq \| x \|_{1} \leq M \| x \|_{2} \]
 \end{definition}
  
-\begin{satz}
+\begin{satz} 
 	Auf einem endlich dimensionalen Vektorraum sind alle Normen äquivalent.
 \end{satz}
 \begin{beweis}
@@ -215,12 +215,12 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 \end{prop}
 
 
-\begin{vereinbarung}
+\begin{vereinbarung} \index{Folgenraum}
 Sei $\MdF = \{ (x_{n}) \in \MdK^{N}: x_{i} = 0 \text{ bis auf endlich viele } n \in N  \} $ der \textbf{Folgenraum} \\
 und $e_{j} = (0, \dotsc, 0, 1, 0, \dotsc, 0) $ der Einheitsvektor, wobei die $1$ an j-ter Stelle steht.
 \end{vereinbarung}
 
-\begin{beispiel}
+\begin{beispiel} \index{l$^{p}$-Raum} \index{l$^{\infty}$-Raum} \index{c$_{0}$-Raum}
 	\begin{itemize}
 		\item $l^{p} = \{ x = (x_{n}) \in \MdK^n: \|x\|_{p} = \left( \sum_{n = 1}^{\infty} | x_{n} |^{p}\right)^{\frac{1}{p}} < \infty \}$
 		\item $l^{\infty} = \{ x = (x_{n}) \in \MdK^n: \|x\|_{\infty} = \sup_{n \in \MdN} |x_{n}| < \infty \}$
@@ -229,7 +229,7 @@ und $e_{j} = (0, \dotsc, 0, 1, 0, \dotsc, 0) $ der Einheitsvektor, wobei die $1$
 Gültigkeit der Dreiecksungleichung beweist man ähnlich wie bei $(\MdK^{n}, \| \cdot \|_{p})$.
 \end{beispiel}
 
-\begin{lemma}
+\begin{lemma} \index{Minkowskii-Ungleichung} \index{Hölder-Ungleichung}
 Minkowskii-Ungleichung: $\left( \sum_{i=1}^{\infty} |x_{i} + y_{i}|^p\right)^{\frac{1}{p}} \leq\left( \sum_{i=1}^{\infty} |x_{i}|^p\right)^{\frac{1}{p}} \left( \sum_{i=1}^{\infty} |y_{i}|^p\right)^{\frac{1}{p}} $	\\
 Hölder-Ungleichung: mit $\frac{1}{p} + \frac{1}{p'} = 1 \text{ gilt } \sum_{i=1}^{\infty} |x_{i}| |y_{i}| \leq \left( \sum_{i=1}^{\infty} |x_{i}|^{p} \right)^{\frac{1}{p}} \left( \sum_{i=1}^{\infty} |y_{i}|^{p'} \right)^{\frac{1}{p'}} $	\\	
 \end{lemma}
@@ -249,16 +249,16 @@ Hölder-Ungleichung: mit $\frac{1}{p} + \frac{1}{p'} = 1 \text{ gilt } \sum_{i=1
 
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Raum der stetigen Funktionen \\
+		\item Raum der stetigen Funktionen \index{Raum der stetigen Funktionen} \\
 		$\Omega \subset \MdR^{n}, \hspace{0.25cm} C(\Omega) = \{ f: \Omega \rightarrow \MdR \text{ | } f \text{ stetig} \}$, \hspace{0.25cm} $\| f \| = \sup_{u \in \Omega} |f(u)|$\\
 		$\Rightarrow \| f - f_{n} \| \rightarrow 0$ bedeutet gleichmä{\ss}ige Konvergenz von $f_{n}$ gegen $f$ auf $\Omega$.
-		\item Raum der differentierbaren Funktionen \\
+		\item Raum der differentierbaren Funktionen \index{Raum der differentierbaren Funktionen} \\
 		$\Omega \subset \MdR^{n}$ offen, $f: \Omega \rightarrow \MdR, \hspace{0.25cm} \alpha = (\alpha_{1}, \dotsc, \alpha_{m}) \in \MdN_{0}^{m}$ \\
 		$D^{\alpha}f(x) = \frac{ \delta^{ | \alpha | } }{ \delta x_{1}^{ \alpha_{1} } \dotsc \delta x_{n}^{ \alpha_{n} } } f(x), \text{ wobei } | \alpha | = \alpha_{1} + \dotsc + \alpha_{n} $ \\ 
 	\end{enumerate}
 \end{beispiel}
 
-\begin{definition}
+\begin{definition} \index{Raum der beschränkten, m-fach stetig differenzierbaren Funktionen}
 Wir nennen $C_{b}^{m}(\Omega) = \{ f: \Omega \rightarrow \MdR | D^{\alpha}f \text{ sind stetig in } \Omega, \text{ beschränkt auf } \Omega \text{ für alle } \alpha \in \MdN^{n}, |\alpha| \leq n \}$ den \textbf{Raum der beschränkten, m-fach stetig differenzierbaren Funktionen}.  \\
 Auf $C_{b}^{m}$ definieren wir die Norm: $\| f \|_{C_{b}^{m}} = \sum_{|\alpha| \leq m} \| D^{\alpha}f \|_{\infty}$
 \end{definition}
@@ -277,7 +277,7 @@ Definiere $\| f \|_{\MdL^{p}} = \left( \int_{\Omega} |f(u)|^{p} du \right)^{\fra
  \[ \| f \|_{\MdL^{p}} = \left( \frac{1}{kp + 1} \right)^{\frac{1}{p}} \xrightarrow[k \rightarrow \infty]{} 0, \hspace{0.25cm} p < \infty \]
 \end{beispiel}
 
-\begin{definition}[Quotientenräume]
+\begin{definition}[Quotientenräume] \index{Quotientenräume}
 Sei $(X, \| \cdot \|)$ ein normierter Raum. $M \subset X$ sei abgeschlossener, linearer Unterraum. \[ (\text{abgeschlossen: d.h. für alle } (x_{n}) \in M, \| x_{n} - x \| \rightarrow 0 \Rightarrow x \in M) \]
 
 Definiere $\hat X = X / M, \hspace{0.25cm} \hat x \in X/M: \hspace{0.25cm} \hat x = \{ y \in X: y - x \in M \} = x + M$ \\
@@ -305,13 +305,13 @@ Ist $\| \cdot \|$ nur eine Halbnorm auf $X$, so ist $M = \{ x: \| x \| = 0 \}$ e
 
 \begin{beispiel}
 \begin{itemize}
-	\item Hölderstetige Funktionen \\
+	\item Hölderstetige Funktionen \index{Hölderstetige Funktionen} \\
 	Wenn $h_{\alpha}(f) = \sup_{u,v \in \MdR, u \neq v} \frac{\| f(u) - f(v)\|}{|u - v|^{\alpha}} < \infty \hspace{0.25cm} \left( \alpha \in (0, 1] \right)$, dann nennt man $f$ hölderstetig.
 	\[ C^{\alpha}(\Omega) := \{ f: \Omega \rightarrow \MdR: h_{\alpha}(f) < \infty \} \hspace{0.5cm} \Omega \subset \MdR^{n}, \hspace{0.25cm} \]
 	Im Moment ist $h_{\alpha}( \cdot )$ eine Halbnorm. Unter der Voraussetzung $\Omega$ zusammenhängend gilt aber weiter:
 	\[ h_{\alpha}(f) = 0 \gdw f \equiv c \text{ konstant} \]
 	Wenn z.B. $M = \{ \mathds{1} \Omega \}$ und $V = C^{\alpha}/M$ ist oben genanntes sogar ein normierter Raum.
-	\item Lebesgues-Integrierbare Funktionen \\
+	\item Lebesgues-Integrierbare Funktionen \index{Lebesgues-Integrierbare Funktionen} \\
 	Sei $\Omega \subset \MdR^{n}$ offen, $\mathcal{L}^{p}(\Omega) = \{ f: \Omega \rightarrow \MdR : |f|^{p}$ ist lesbesgue-integrierbar auf $\Omega$  \}.
 	Wir definieren $\| f \|_{p} := \left( \int_{\Omega} |f(x)|^{p} d\mu \right)^{\frac{1}{p}}$, wobei $\| \cdot \|_{p}$ hier eine Halbnorm bildet.
 	\[ \| f \|_{p} = 0 \gdw  f(x) = 0 \text{ fast überall auf } \Omega \]
@@ -325,8 +325,8 @@ Ist $\| \cdot \|$ nur eine Halbnorm auf $X$, so ist $M = \{ x: \| x \| = 0 \}$ e
 \newpage
 \section{Beschr{\"a}nkte und lineare Operatoren}
 
-\begin{definition}
-	Eine Teilmenge V eines normieren Raums $(X, \| \cdot \|)$ hei{\ss}t beschränkt, falls 
+\begin{definition} \index{beschränkt}
+	Eine Teilmenge V eines normieren Raums $(X, \| \cdot \|)$ hei{\ss}t \textbf{beschränkt}, falls 
 	\[ c := \sup_{x \in V} \| x \| < \infty, \text{ und damit auch } V \subset c U_{(X, \| \cdot \| )} \]
 \end{definition}
 
@@ -369,7 +369,7 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
 	\end{description}
 \end{beweis}
 	
-\begin{definition}
+\begin{definition} \index{Vektorraum der beschränkten, linearen Operatoren}
 	Seien $X, Y$ normierte Räume. Mit $B(X, Y)$ bezeichnen wir den \textbf{Vektorraum der beschränkten, linearen Operatoren} $T: X \rightarrow Y$. Ist $ X = Y$ schreiben wir auch kurz $B(X) := B(X, X)$. \\
 	
 	Für $T \in B(X, Y)$ setze
@@ -425,7 +425,7 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
 	\end{enumerate}	
 \end{beispiel}
 
-\begin{beispiel}[Integraloperator]
+\begin{beispiel}[Integraloperator] \index{Integraloperator}
 	$X = Y = C(\bar \Omega), \Omega \subset \MdR^{n}$ offen, beschränkt.
 	Gegeben sei $k \in \bar \Omega \times \bar \Omega \rightarrow \MdR $
 	
@@ -454,14 +454,14 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
 	\end{beweis}
 \end{beispiel}
 
-\begin{beispiel}[Kompositionsoperator]
+\begin{beispiel}[Kompositionsoperator] \index{Kompositionsoperator}
 $\Omega \subset \MdR^{n}$ offen. 
 \[ \sigma : \bar \Omega \rightarrow \bar \Omega \text{ stetig, für } f \in C(\bar \Omega): Tf(u) = f(\sigma(u)) \]
 z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 \[ \| Tf \|_{\infty} \leq \| f \|_{\infty}, \hspace{0.25cm} \| T \| = 1 \]
 \end{beispiel}
 
-\begin{beispiel}[Differentialoperatoren]
+\begin{beispiel}[Differentialoperatoren] \index{Differentialoperatoren}
 $\Omega \subset \MdR^n$ offen, $m \in \MdN$, $X = C^{m}(\bar \Omega), Y = C_{b}(\Omega),$
 \begin{align*}
 T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\alpha} f(u), u \in \MdR, a_{\alpha} \in C{\bar \Omega} \\
@@ -469,7 +469,7 @@ T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\
  \end{align*}
 \end{beispiel}
 
-\begin{beispiel}[Matrizenmultiplikation]
+\begin{beispiel}[Matrizenmultiplikation] \index{Matrizenmultiplikation}
 Für $p \in [1, \infty]$ und $T \in B(l^{p})$ setzen wir 
 \[ e_{l} := (0, \dotsc, 0, 1, 0, \dotsc, 0), \hspace{0.25cm} l \in \MdN, \hspace{0.25cm} \text{ wobei die 1 an l-ter Stelle steht.} \]
 und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
@@ -549,12 +549,12 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 	Seien $X, Y$ normierte Vektorräume und $T: X \rightarrow Y$ linear.
 	\begin{enumerate}[label=\alph*\upshape)]
 
-		\item $T$ hei{\ss}t \textbf{isometrie}, falls $ \| Tx \|_{Y} = \| x \|_{X} \hspace{0.25cm} \forall x \in X $
-		\item $T$ hei{\ss}t \textbf{stetige Einbettung}, falls $T$ stetig und injektiv ist
-		\item $T$ hei{\ss}t \textbf{isomorphe Einbettung}, falls $T$ injektiv ist und ein $c > 0$ existiert mit
+		\item $T$ hei{\ss}t \textbf{Isometrie}, \index{Isometrie} falls $ \| Tx \|_{Y} = \| x \|_{X} \hspace{0.25cm} \forall x \in X $
+		\item $T$ hei{\ss}t \textbf{stetige Einbettung}, \index{stetige Einbettung} falls $T$ stetig und injektiv ist
+		\item $T$ hei{\ss}t \textbf{isomorphe Einbettung}, \index{isomorphe Einbettung} falls $T$ injektiv ist und ein $c > 0$ existiert mit
 			\[ \frac{1}{c} \| x \|_{X} \leq \| Tx \|_{Y} \leq c \| x \|_{x} \]
 			In diesem Fall identifizieren wir oft $X$ mit dem Bild von $T$ in $Y$, $X \cong T(X) \subset Y$ 
-		\item $T$ hei{\ss}t \textbf{Isomorphismus}, falls $T$ bijektiv und stetig ist und $T^{-1}: Y \rightarrow X$ ebenfalls stetig ist.
+		\item $T$ hei{\ss}t \textbf{Isomorphismus}, \index{Isomorphismuss} falls $T$ bijektiv und stetig ist und $T^{-1}: Y \rightarrow X$ ebenfalls stetig ist.
 			(d.h. falls $\exists c > 0: \frac{1}{c} \| Y \|_{Y} \leq \| T^{-1}y \|_{X} \leq c \| y \|_{Y}$ ) \\
 			In diesem Fall Identifizieren wir $X \cong Y$ und sagen $X$ und $Y$ sind isomorph. \\
 			(da $X, Y$ normierte Vektorräume sind, fordern wir $T, T^{-1}$ stetig)
@@ -569,10 +569,10 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 	\end{enumerate}
 \end{beispiel}
 
-\begin{definition}
+\begin{definition} \index{Dualraum}
  Sei $X$ ein normierter Vektorreaum der Raum
  \[ X' = B(X, \MdK) \]	
- hei{\ss}t Dualruam von $X$ oder Raum der linearen Funktionalen.
+ hei{\ss}t \textbf{Dualruam} von $X$ oder Raum der linearen Funktionalen.
 \end{definition}
 
 \begin{beispiel}
