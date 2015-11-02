@@ -12,7 +12,7 @@ Rechtschreibfehler sind) bitte immer direkt melden oder verbessern!
 
 Den Verbesserungsvorschlag kann man
 * entweder direkt selbst umsetzen und einen pull request machen oder
-* mir per Email (updpw@student.kit.edu) schicken.
+* mir per Email (ProxiStyx@hmamail.com) schicken.
 
 Ich werde dann versuchen sowohl die Vorlesung, als auch eure Verbesserungsvorschläge zeitnah einzuarbeiten.
 
