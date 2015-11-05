@@ -80,7 +80,7 @@ $T$ ist injektiv, aber nicht surjektiv
 	Analogie zum endlich dim. ('Verallg. der Matrixmultiplikation'):  $ T(f_{j})(i) = \sum_{j = 1}^{n} a_{ij}f_{j}$ \\ \\
  	$T$ ist in diesem Fall linear und stetig und es gilt die Fredholm'sche Alternative:
 	\[ \lambda \in R \verb|\| \{0\}: (\lambda Id - T)(f) = y, \hspace{0.25cm} f,g \in C[0, 1] \]
-	Dann existiert eine Lösung genau dann wenn diese eindeutig ist. \\
+	Dann existiert eine Lösung genau dann, wenn diese eindeutig ist. \\
 	\item Dirichletproblem \index{Dirichletproblem}\\
 	$\Omega \subset \MdR^n$ Gebiet, offen, beschränkt, glatter Rand. Sei $g: \partial \Omega \rightarrow \MdR$ stetig \\ 
 	Gesucht ist ein $f \in C(\bar \Omega) \bigcap  C^(\Omega)$, so dass $\nabla f = \sum_{i = 1}^{n} \frac{\partial^{2} f}{\partial x_{i}^2} = 0$ in $\Omega$ und $f_{\big| \partial \Omega}= g$ \\ \\
@@ -351,7 +351,7 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
 		Setze $y_{n} = \frac{1}{n} x_{n}$, dann gilt
 		\[
 			\| y_{n} \| \leq \frac{1}{n} \| x_{n} \| \rightarrow 0, \\
-			\| T(y_{n} \| = n^{2} \| T(x_{n} \| \geq \frac{n^2}{n} \rightarrow \infty 
+			\| T(y_{n} \| = n^{2} \| T(x_{n}) \| \geq \frac{n^2}{n} \rightarrow \infty 
 		 \]
 		 Widerspruch zur Voraussetzung.
 		 \item[] $c) \Rightarrow d)$ Sei $T(U_{X}) \subset U_{Y}$ \\
@@ -465,7 +465,7 @@ z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 $\Omega \subset \MdR^n$ offen, $m \in \MdN$, $X = C^{m}(\bar \Omega), Y = C_{b}(\Omega),$
 \begin{align*}
 T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\alpha} f(u), u \in \MdR, a_{\alpha} \in C{\bar \Omega} \\
-  \text{damit } & \| Tf \|_{\infty} \leq \sum_{|\alpha| \leq m} \| \|_{\infty} \| D^{\alpha} f \|_{\infty} \leq c \|f\|_{\infty}
+  \text{damit } & \| Tf \|_{\infty} \leq \sum_{|\alpha| \leq m} \| a_{\alpha} \|_{\infty} \| D^{\alpha} f \|_{\infty} \leq c \|f\|_{\infty}
  \end{align*}
 \end{beispiel}
 
@@ -499,7 +499,7 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 			\end{enumerate}
 		\end{beweis}
 	\item Der Fall $l^{1}$: \\
-		Es ist $T \in B(l^{1})$ genau dann wenn 
+		Es ist $T \in B(l^{1})$ genau dann, wenn 
 		\[ c_{1} := \sup_{1} \sum_{k} | a_{kl} | < \infty \]
 		und in diesem Fall ist $\| T \| = c_{1}$.
 		\begin{beweis}
@@ -516,7 +516,7 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 		\[ c_{\infty} := \sup_{k} \sum_{l} |a_{kl}| < \infty \]
 		und in diesem Fall ist $\| T \| = c_{\infty}$
 		\begin{beweis}
-			"\ $\Rightarrow$ "\  Sei $T \in B(l^{\infty})$.  Für $k \in \MdN$ setze dann $x^{(k)} = s\begin{cases} \frac{|a_{kl}|}{a_{kl}} & a_{kl} \neq 0 \\ 0 & a_{kl} = 0 \end{cases}$ \\
+			"\ $\Rightarrow$ "\  Sei $T \in B(l^{\infty})$.  Für $k \in \MdN$ setze dann $x^{(k)} = \begin{cases} \frac{|a_{kl}|}{a_{kl}} & a_{kl} \neq 0 \\ 0 & a_{kl} = 0 \end{cases}$ \\
 			dann ist $x^{(k)} \in l^{\infty}$ mit $\| x^{(k)} \|_{l^{\infty}} = 1$ und weiter
 			\begin{align*}
 				\sum_{l} |a_{kl}| & = | \sum_{l = 1}^{\infty} a_{nl} x_{l}^{(k)} | \\
@@ -633,13 +633,13 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 		\item Sei $K \subset \MdR^{n}$ kompakt, $x \in K$. Dann definieren wir
 			\[ \delta_{x}(f) := f(x) \text{ für } f \in C(K) \]
 			Wir versetzen $C(X)$ mit der Supremumsnorm. Dann gilt:
-			\[ |\delta_{x}(f) = | f(x) | \leq \| f \|_{\infty} \]
-			und offensichtlich ist $\delta_{x}$ linear, d.h. $\delta_{x} \in ( C(K) )'$ mit $\| \delta_{x} \| \leq 1s$
+			\[ |\delta_{x}(f)| = | f(x) | \leq \| f \|_{\infty} \]
+			und offensichtlich ist $\delta_{x}$ linear, d.h. $\delta_{x} \in ( C(K) )'$ mit $\| \delta_{x} \| \leq 1$
 		\item Sei $K \subset \MdR^{n}$ kompakt und $\mu$ ein endliches Ma{\ss} auf $\mathcal{B}(K)$. Dann definieren wir 
-			\[ \delta_{\mu}(f) = \int_{K} f(x) d\mu(x) \text{für} f \in C(K) \]
+			\[ \delta_{\mu}(f) = \int_{K} f(x) d\mu(x) \text{ für } f \in C(K) \]
 			Dann gilt
 			\[ | \delta_{\mu} (f) | \leq \mu(K) \| f \| _{\infty} \]
-			Da $\delta_{\mu}$ linear ist, gilt $\delta_{\mu}\in (C(K))'$ mit $\| \delta_{\mu} \leq \mu (K) \|$. In diesem Sinne sind Ma{\ss}e Elemente von $(C(K))'$
+			Da $\delta_{\mu}$ linear ist, gilt $\delta_{\mu}\in (C(K))'$ mit $\delta_{\mu} \leq \| \mu (K) \|$. In diesem Sinne sind Ma{\ss}e Elemente von $(C(K))'$
 	\end{enumerate}	
 \end{beispiel}
 
