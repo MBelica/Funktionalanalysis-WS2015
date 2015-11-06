@@ -649,6 +649,60 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 \end{bemerkung}
 
 
+\newpage
+
+\section{Metrische R{\"a}ume}
+
+\begin{definition} \index{Metrik}
+	Sei $M$ eine nichtleere Menge. Eine Abbildung $d: M \times M \rightarrow \MdR$ hei{\ss}t \textbf{Metrik} auf $M$, falls $\forall x, y, z \in M:$
+		\begin{enumerate}
+			\item $d(x, y) \geq 0, \hspace{0.25cm} d(x, y) = 0 \gdw x = y $  (positive Definitheit)
+			\item $d(x, y) = d(y, x)$  (Symmetrie)
+			\item $d(x, z) \leq d(x, y) + d(y, z)$  (Dreiecksungleichung)
+		\end{enumerate}	
+	Das Tupel $(M, d)$ nennen wir dann einen metrischen Raum. 
+\end{definition}
+
+\begin{lemma}
+	Eine Folge $(x_{n})_{n \geq 1} \subset M$ konvergiert gegen $x \in M$, falls
+	\[ d(x_{n}, x) \rightarrow 0 \hspace{0.5cm} \text{für } n \rightarrow \infty \]
+\end{lemma}
+ 
+Notation: $x = \lim_{n \rightarrow \infty} x_{n}$ (in $M$)
+
+\begin{bemerkung}
+Der Grenzwert einer konvergenten Folge ist stets eindeutig, denn: \\
+Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \in M$ und $\lim_{n \rightarrow \infty} x_{n} = y \in M$, dann folgt: 
+	\begin{align*}
+		d(x, y) & \leq d(x, x_{n}) + d(x_{n}, y) \\
+				& \rightarrow 0 \text{ für } n \rightarrow \infty
+	\end{align*}
+	d.h. $d(x, y) = 0 \Rightarrow x = y$
+\end{bemerkung}
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Sei $X$ ein normierter Vektorraum und $M \subset X$ (nichtleere) Teilmenge. \\
+		Dann definieren wir $d(x, y) := \| x - y\|, \hspace{0.25cm} x, y \in M$ eine Metrik auf $M$ \\
+		Ein Unterschied hier: Eine Norm setzt eine lineare Struktur auf $X$ voraus, eine Metrik macht auch Sinn auf nicht-linearen Teilmengen.
+		\index{diskrete Metrix}
+		\item Sei $M$ eine nichtleere Menge, dann definieren wir die \textbf{diskrete Metrik} auf $M$ durch
+			\[ d(x, y) := \begin{cases}1 &, x \neq y \\ 0 &, x = y\end{cases} \]
+			Dann ist $(M, d)$ ein metrischer Raum und es gilt: 
+				\[ x_{n} \rightarrow x \text{ in } M \gdw \exists N \in \MdN \text{ mit } x_{n} = x \hspace{0.25cm} \forall n \geq N \]
+	\end{enumerate}	
+\end{beispiel}
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]	
+		\item Sei $X$ ein Vektorraum und $p_{j}$ für $j \in \MdN$ Halbnormen auf $X$ mit der Eigenschaft, dass für jedes $x \in X \ {0}$ ein $K \in \MdN$ exisitert mit $p_{K} > 0$. Dann definieren wir
+	\end{enumerate}
+
+\end{beispiel}
+
+
+
+
 
 
 
