@@ -655,11 +655,11 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 
 \begin{definition} \index{Metrik}
 	Sei $M$ eine nichtleere Menge. Eine Abbildung $d: M \times M \rightarrow \MdR$ hei{\ss}t \textbf{Metrik} auf $M$, falls $\forall x, y, z \in M:$
-		\begin{enumerate}
-			\item $d(x, y) \geq 0, \hspace{0.25cm} d(x, y) = 0 \gdw x = y $  (positive Definitheit)
-			\item $d(x, y) = d(y, x)$  (Symmetrie)
-			\item $d(x, z) \leq d(x, y) + d(y, z)$  (Dreiecksungleichung)
-		\end{enumerate}	
+		\begin{description}
+			\item[$\hspace{0.5cm} (M1) \hspace{0.1cm} $] $d(x, y) \geq 0, \hspace{0.25cm} d(x, y) = 0 \gdw x = y $  (positive Definitheit)
+			\item[$\hspace{0.5cm} (M2) \hspace{0.1cm} $] $d(x, y) = d(y, x)$  (Symmetrie)
+			\item[$\hspace{0.5cm} (M3) \hspace{0.1cm} $] $d(x, z) \leq d(x, y) + d(y, z)$  (Dreiecksungleichung)
+		\end{description}
 	Das Tupel $(M, d)$ nennen wir dann einen metrischen Raum. 
 \end{definition}
 
@@ -685,7 +685,7 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 		\item Sei $X$ ein normierter Vektorraum und $M \subset X$ (nichtleere) Teilmenge. \\
 		Dann definieren wir $d(x, y) := \| x - y\|, \hspace{0.25cm} x, y \in M$ eine Metrik auf $M$ \\
 		Ein Unterschied hier: Eine Norm setzt eine lineare Struktur auf $X$ voraus, eine Metrik macht auch Sinn auf nicht-linearen Teilmengen.
-		\index{diskrete Metrix}
+		\index{diskrete Metrix} \label{bsp:1-diskreteMetrik}
 		\item Sei $M$ eine nichtleere Menge, dann definieren wir die \textbf{diskrete Metrik} auf $M$ durch
 			\[ d(x, y) := \begin{cases}1 &, x \neq y \\ 0 &, x = y\end{cases} \]
 			Dann ist $(M, d)$ ein metrischer Raum und es gilt: 
@@ -695,10 +695,159 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]	
-		\item Sei $X$ ein Vektorraum und $p_{j}$ für $j \in \MdN$ Halbnormen auf $X$ mit der Eigenschaft, dass für jedes $x \in X \ {0}$ ein $K \in \MdN$ exisitert mit $p_{K} > 0$. Dann definieren wir
+		\item Sei $X$ ein Vektorraum und $p_{j}$ für $j \in \MdN$ Halbnormen auf $X$ mit der Eigenschaft, dass für jedes $x \in X \ {0}$ ein $K \in \MdN$ exisitert mit $p_{K} > 0$. Dann definiert
+			\[ p := \sum_{j \geq 1} 2^{-j} \frac{p_{j}(x - y)}{1 + p_{j}(x -y)}, \hspace{0.5cm} x, y \in X \]
+			eine Metrik auf $X$ mit
+			\[ d(x_{n}, x) \rightarrow 0 \gdw p_{j}(x_{n}, x) \rightarrow 0 \hspace{0.25cm} (n \rightarrow  \infty) \hspace{0.25cm} \forall j \in \MdN \]
+			Beweis siehe Übung
+		\item Für $X = \MdK^{\MdN} = \{ (x_{n})_{n \geq 1}: x_{n} \in \MdK \}$ und $p_{j}(x) := |x_{j}|, j \in \MdN$ definiert also
+			\[ d(x, y) = \sum_{j = 1}^{\infty} 2^{-j} \frac{|x_{j} - y_{j}|}{1 + |x_{j} - y_{j}|} \text{ gerade die komponentenweise Konvergenz auf } X \]
+		\item In $l^{\infty}$ entspricht die Konvergenz bezüglich $\| \cdot \|_{l^{\infty}}$ gerade der gleichmä{\ss}igen Konvergenz der Folge $x_{n} := (x_{n_{i}})_(i \in \MdN)$ gegen $x := (x_{i})_(i \in \MdN)$
+			\[ \| x_{n} - x \|_{l^{\infty}} = \sup | x_{n_{i}} - x_{i} | \rightarrow 0 \hspace{0.5cm} (n \rightarrow \infty) \]
+			d.h. in $C[a, b]$ entspricht die Konvergenz bezüglich $\| \cdot \|_{\infty}$ ebenfalls die gleichmä{\ss}ige Konvergenz von Funktionen
+			\begin{align*}
+				f_{n} \rightarrow f \text{ in } [a, b] & \gdw \| f_{n} - f \|_{\infty} = \sup_{t \in [a, b]} |f_{n}(t) - f(t) | \rightarrow 0 \\
+				& \gdw f_{n} \rightarrow f \text{ gleichmä{\ss}ig.}
+			\end{align*}
 	\end{enumerate}
-
 \end{beispiel}
+
+\begin{definition} \index{abgeschlossen} \index{offen}
+	Sei $(M, d)$ ein metrischer Raum
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Eine Teilmenge $A \subset M$ hei{\ss}t \textbf{abgeschlossen} (in $M$), falls für alle in $M$ konvergenten Folgen $(x_{n})_{n \geq 1} \subset A$ der Grenzwert von $(x_{n})$ in $A$ liegt
+		\item Eine Teilmenge $U \subset M$ hei{\ss}t \textbf{offen} (in $M$), falls zu jedem $x \in U$ ein $\epsilon > 0$ exisitert, sodass
+			\[ \{ y \in M: d(x, y) < \epsilon \} \subset U \]
+	\end{enumerate}
+\end{definition}
+
+\begin{bemerkung}
+	\begin{enumerate}[label=\alph*\upshape)] 
+		\item Wir benutzen die Bezeichnungen
+			\begin{align*}
+				K(x, r) & := \{ y \in M: d(x, y) < r \} \hspace{0.25cm} \text{\textbf{ offene Kugel}} \\
+				\bar K(x, r) & := \{ y \in M: d(x, y) \leq r \} \hspace{0.25cm}  \text{\textbf{ abgeschlossene Kugel}}
+			\end{align*}
+			für $x \in M, r > 0$. Man sieht leicht, dass $K(x, r)$ offen und $\bar K(x, r)$ abgeschlossen ist.
+		\begin{beweis}
+			\begin{enumerate}
+			\item Sei $y \in K(x, r)$ und wähle $\rho := r - d(x, y) > 0$ \\
+				Wir zeigen: $K(y, \rho) \subset K(x, r)$ (Dann ist $K(x, r)$ offen). Sei dazu $z \in K(y, \rho)$. Dann folgt 
+				\begin{align*}
+					d(x, y) \leq d(x, z) + d(z,y) & \leq r - \rho + d(z, y) \\
+												  & \leq r - \rho + \rho = r \\ \\
+								\Rightarrow z \in K(x, r)
+				\end{align*} 
+				Da $z$ beliebig war, folgt die Behauptung.
+			\item Sei $(y_{n})_{n \geq 1} \subset \bar K(x, r)$ eine beliebige Folge mit $ \lim_{n \rightarrow \infty} y_{n} = y \in M$. Wir müssen zeigen, dass $y \in \bar K(x, r)$ (Dann ist $\bar K(x, r)$ abgeschlossen). \\
+				\begin{align*}
+					d(x, y) & \leq d(x, y_{n}) + d(y_{n}, y) \\
+							& \leq r + d(y_{n}, y) \rightarrow r \\ \\
+						& \Rightarrow d(x, y) \leq r, \text{ d.h.} y \in \bar K(x, r).
+				\end{align*} 
+			\end{enumerate}	
+		\end{beweis}
+		\item $\emptyset, M$ sind sowohl offen, als auch abgeschlossen (in $M$)
+		\item Bezüglich der diskreten Metrik $d$ aus Beispiel \eqref{bsp:1-diskreteMetrik} ist $\{x\} \subset M$ offen für jedes $x \in M$, da
+			\[ K(x, r) = \{ x \} \subset \{ x \} \text{ für } r \in (0, 1] \]
+	\end{enumerate}	
+\end{bemerkung}
+
+Wir fassen als nächstes die grundlegenden Eigenschaften offener und abgeschlossener Mengen zusammen.
+
+\begin{prop}
+	Sei $(M, d)$ ein metrischer Raum und $I$ eine beliebige Indexmenge
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $A \subset M$ ist abgeschlossen in $M$ genau dann, wenn $U = M \ A$ offen ist
+		\item Für eine beliebige Familie von abgeschlossenen Mengen $(A_{i})_{i \in I}$ sind 
+			\[ A := \bigcap_{i \in I} A_{i} \hspace{0.5cm} \text{ und } \hspace{0.5cm} A_{i_{1}} \cup \dotsc \cup A_{i_{N}} \hspace{0.25cm} (i_{1}, \dotsc, i_{N} \in I) \]
+			abgeschlossen in $M$.
+		\item Für eine beliebige Familie offenere Mengen $(U_{i})_{i \in I}$ sind
+			\[ U := \bigcup_{i \in I} U_{i} \hspace{0.5cm} \text{ und } \hspace{0.5cm} U_{i_{1}} \cap \dotsc \cap U_{i_{N}} \hspace{0.25cm} (i_{1}, \dotsc, i_{N} \in I) \] 
+			offen in $M$.
+	\end{enumerate}
+	\begin{beweis}
+		\begin{enumerate}[label=\alph*\upshape)]
+			\item Todo: missing in my notes if you have it just send me an email %todo
+			\item folgt aus a) \& c), da
+				\[ M \ \bigcap_{i \in I} A_{i} = \bigcup_{i \in I} M \ A_{i} \]
+			\item Sei $x \in U$. Dann exisitert ein $U_{i_{0}}$ mit $x \in U_{i_{0}}$
+			\[ \Rightarrow \exists r > 0: K(x, r) \subset U_{i_{0}} \subset U, \text{ d.h. } U \text{ ist offen.}  \]
+			Sei $x \in U_{i_{1}} \cap \dotsc \cap U_{i_{N}}.$ Dann existieren $r_{1}, \dotsc, r_{N} > 0$ mit
+			\[ K(x, r_{n} \subset U_{i_{n}} \hspace{0.5cm} n = 1, \dotsc, N \]
+			Setze $r := \min \{ r_{1}, \dotsc, r_{n} \} > 0$. Dann ist $K(x, r) \subset U_{i_{n}} \hspace{0.25cm} \forall n \in \{ 1, \dotsc, N \}$
+			\[ \Rightarrow K(x, r) \subset U_{i_{1}} \cap \dotsc \cap U_{i_{N}} \text{ ist offen.} \]
+		\end{enumerate}	
+	\end{beweis}
+\end{prop}
+
+\begin{definition}
+	Sei $(M, d)$ ein metrischer Raum und $V \subset M$. Dann heißt 
+	\begin{enumerate}[label=\alph*\upshape)] \index{Abschluss} \index{Innere} \index{Rand}
+		\item $\bar V := \bigcap \{ A \subset M: A$ ist abgeschlossen mit $V \subset A \} $ der \textbf{Abschluss} von $V$.
+		\item $\circ V := \bigcup \{ U \subset M: U$ ist offen mit $U \subset V \}$ das \textbf{Innere} von $V$. %todo circ
+		\item $ \partial V := \bar V \ \circ V$ der \textbf{Rand} von $V$. % \circ
+	\end{enumerate}
+\end{definition}
+
+Hierfür gelten die folgenden Eigenschaften:
+
+\begin{prop}
+	Sei $(M, d)$ ein metrischer Raum und $V \subset M$
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item
+			\begin{enumerate}
+				\item $\bar V$ ist die kleinste abgeschlossene Menge, due $V$ enthält
+				\item $V$ ist abgeschlossen $\gdw V = \bar V$
+				\item $\bar V = \{ x \in M: \exists (x_{n}) \subset V$ mit $\lim_{n \rightarrow \infty} x_{n} = x \} =: \tilde V$ %todo tilde above
+			\end{enumerate} 
+		\item 
+			\begin{enumerate}
+				\item $\circ V$ ist die grö{\ss}te offene Teilmenge von $V$. %todo circ above
+				\item $V$ ist offen $\gdw V = \circ V$ %todo circ above
+				\item $\circ V = \{ x \in M: \exists \epsilon > 0$ mit $K(x, \epsilon) \subset V \} = \tilde \tilde V$ %todo tilde tilde above
+			\end{enumerate} 
+		\item
+			\begin{enumerate}
+				\item $\partial V$ ist abgeschlossen
+				\item $\partial V = \{ x \in M: \exists (x_{n}) \subset V, (y_{n}) \subset M \ V$ mit $ \lim_{n \rightarrow \infty} x_{n} = \lim_{n \rightarrow \infty} y_{n} = x \}$
+			\end{enumerate} 
+	\end{enumerate}	
+	\begin{beweis}
+		\begin{enumerate}[label=\alph*\upshape)]
+			\item
+				\begin{enumerate}
+					\item Nach Definition gilt 
+					\item folgt aus (i)
+					\item %todo
+				\end{enumerate} 
+			\item 
+				\begin{enumerate}
+					\item zeigt man wie a) (i)
+					\item folgt aus (i)
+					\item %todo
+				\end{enumerate} 
+			\item
+				\begin{enumerate}
+					\item %todo
+					\item %todo
+				\end{enumerate} 
+		\end{enumerate}	
+	\end{beweis}
+\end{prop}
+
+\begin{definition}
+	Sei $(M, d)$ ein metrischer Raum
+	\begin{enumerate}[label=\alph*\upshape)] \index{dicht} \index{seperabel}
+		\item Eine Menge $V \subset M$ hei{\ss}t \textbf{dicht} in M, falls $\bar V = M$, d.h. jeder Punkt in $M$ ist Grenzwert einer Folge aus $V$.
+		\item $M$ hei{\ss}t \textbf{seperabel}, falls es eine abzählbare Teilmenge $V \subset M$ gibt, die dicht in $M$ liegt.
+	\end{enumerate}
+\end{definition}
+
+\begin{bemerkung}
+
+
+
 
 
 
