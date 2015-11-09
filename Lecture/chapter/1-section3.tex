@@ -1,0 +1,360 @@
+%!TEX root = Funktionalanalysis - Vorlesung.tex
+
+\section{Beschr{\"a}nkte und lineare Operatoren}
+
+\begin{definition} \index{beschränkt}
+	Eine Teilmenge V eines normieren Raums $(X, \| \cdot \|)$ hei{\ss}t \textbf{beschränkt}, falls 
+	\[ c := \sup_{x \in V} \| x \| < \infty, \text{ und damit auch } V \subset c U_{(X, \| \cdot \| )} \]
+\end{definition}
+
+\begin{bemerkung}
+Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, denn $x_{m} \in \{ y: \| x - y \| \leq 1 \}$ für fast alle $m$.
+\end{bemerkung}
+
+\begin{satz}
+	Seien $X$, $Y$ normierte Räume. Füreinen linearen Operator $S: X \rightarrow Y$ sind äquivalent:
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $T$ stetig, d.h. $x_{n} \rightarrow x$ impliziert $Tx_{n} \rightarrow Tx$
+		\item $T$ stetig in 0
+		\item $T(U_{(X, \| \cdot \|)})$ ist beschränkt in $Y$
+		\item Es gibt ein $c < \infty$ mit $\| Tx \| \leq c \| x \|$
+	\end{enumerate}	
+\end{satz}
+\begin{beweis}
+	\begin{description}
+		\item[] $a) \Rightarrow b)$ klar, ist ein Spezialfall.
+		\item[] $b) \Rightarrow c)$ Wäre $c)$ falsch, dann gibt es ein $x_{n} \in U_{X}$ mit 
+		\[ \| T x_{n} \geq \frac{1}{n^{2}} \| \]
+		Setze $y_{n} = \frac{1}{n} x_{n}$, dann gilt
+		\[
+			\| y_{n} \| \leq \frac{1}{n} \| x_{n} \| \rightarrow 0, \\
+			\| T(y_{n} \| = n^{2} \| T(x_{n}) \| \geq \frac{n^2}{n} \rightarrow \infty 
+		 \]
+		 Widerspruch zur Voraussetzung.
+		 \item[] $c) \Rightarrow d)$ Sei $T(U_{X}) \subset U_{Y}$ \\
+		 Für $x \in X \verb|\| \{0\}, \frac{x}{\| x \|} \in U_{X}$ folgt:
+		 \begin{align*}
+		 	&T \left( \frac{x}{\| x \|} \right) \in c U_{Y} \\
+		 	\Rightarrow \| T \left( \frac{x}{\| x \|} \right) \| & \leq c
+		 	\Rightarrow \| T x \|_{Y} \leq c \| x \|_{X}			
+		 \end{align*}
+		 \item[] $d) \Rightarrow a)$ Für $x_{n} \rightarrow x$ in $X$ folgt:
+		 \begin{align*}
+		 	\| T x_{n} - T x \| & = \| T ( x_{n} - x ) \| \\
+		 						& \leq c \| x_{n} - x \| \rightarrow 0
+		 \end{align*} \[ \Rightarrow T x_{n} \rightarrow T x \text{ in } Y \]
+	\end{description}
+\end{beweis}
+	
+\begin{definition} \index{Vektorraum der beschränkten, linearen Operatoren}
+	Seien $X, Y$ normierte Räume. Mit $B(X, Y)$ bezeichnen wir den \textbf{Vektorraum der beschränkten, linearen Operatoren} $T: X \rightarrow Y$. Ist $ X = Y$ schreiben wir auch kurz $B(X) := B(X, X)$. \\
+	
+	Für $T \in B(X, Y)$ setze
+	\begin{align*}
+		\| T \| & = \sup \{ \frac{\| Tx \|}{\| x \|}: x \in X \ {0} \} \\
+				& = \sup \{ \| Tx \|: \| x \| \leq 1 \}
+	\end{align*}
+	Die Norm $\| T \|$ von $T$ ist die kleinste Konstante $c$, für welche die Gleichung $\| Tx \| \leq c \| x \|$ für alle $x \in X$ gilt.
+\end{definition}
+
+\begin{satz}
+ 	$(B(X, Y), \| \cdot \|)$ ist ebenfalls ein normierter Raum und für $X = Y$ gilt für $S, T \in B(X)$:
+ 	\[ \| S \cdotp T \| \leq \| S \| \| T \| \]
+\end{satz}
+\begin{beweis}
+	$\| T \| \geq 0, \hspace{0.15cm} \| T \| = 0 \hspace{0.15cm} \Rightarrow \| Tx \| = 0$ für $\| x \| \leq 1 \hspace{0.15cm} \Rightarrow \hspace{0.15cm} Tx = 0 \hspace{0.15cm} \Rightarrow \hspace{0.15cm} T = 0$ \\
+	\begin{align*}
+		\| ( T + S )(x) \| = \| Tx + Sx \| &\leq \| Tx \|_{Y} + \| Sx \|_{Y} \\
+										   &\leq \| T \| + \| S \|
+	\end{align*}
+	Nehme das Supremum über $\| x \| \leq 1$:
+	\[ \| T + S \| \leq \| T \| + \| S \| \]
+	\begin{align*}
+		\| ( S \cdot T )(x) \|_{Y} = \| S(Tx) \|_{Y} & \leq \| S \| \| Tx \| \\
+													 & \leq \| S \| \| T \| \| x \|
+	\end{align*}
+	\[ \Rightarrow \| S T \| \leq \| S \| \| T \| \]
+\end{beweis}
+
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $Id x = x, \hspace{0.25cm} \|  Id \| = 1$
+		\item Falls $dim X = n < \infty, Y$ normierter Raum, dann sind alle linearen Operatoren $T: X \rightarrow Y$ beschränkt.
+		\begin{beweis}
+			Wähle die Basis $e_{1}, \dotsc, e_{n}$ von $X$ \\
+			Für $x = \sum_{i = 1}^{n} x_{i} e_{i}$ gilt:
+			\begin{align*}
+				\| Tx \| = \| \sum_{i = 1}^{n} x_{i} T e_{i} \| & \leq \sum_{i = 1}^{n} | x_{i} | \| T e_{i} \| \\
+				& \leq \max_{i = 1}^{n} \| T e_{i} \|_{Y} \sum_{i = 1}^{n} |x_{i}| \\
+				& \leq c \| x \|, \text{ da } \| x \| = \sum_{i = 1}^{n} |x_{i} |
+			\end{align*}	
+			Aber: Wenn $dim X = \infty, dim Y < \infty$ so gibt es viele unbeschränkte, lineare Operatoren von $X$ nach $Y$.
+		\end{beweis}
+		\item $X = C^{\infty}(0, 1), \| f \|_{\infty} = \sup_{u \in (0, 1)} |f(u)|$ \\
+		$T:X \rightarrow X, Tf = f', f_{k}(t) = e^{i 2 \pi k t} \in X, Tf_{k}(t) = 2 \pi i k f_{k}(t)$ \\ 
+		$ \| f_{k} \| = 1, \| Tf_{k} \| = 2 \pi k \rightarrow \infty $
+		\item $\MdF = \{ (x_{n}) \in \MdR^{n}: x_{n} = 0 \text{ bis auf endlich viele } n \}$ \\
+			\[ 
+			  T: \MdF \rightarrow \MdR, T( (x_{n}) ) = \sum_{n \in \MdN} n x_{n} \in \MdR
+			 \| T e_{n} \| = n \rightarrow \infty
+			\]
+	\end{enumerate}	
+\end{beispiel}
+
+\begin{beispiel}[Integraloperator] \index{Integraloperator}
+	$X = Y = C(\bar \Omega), \Omega \subset \MdR^{n}$ offen, beschränkt.
+	Gegeben sei $k \in \bar \Omega \times \bar \Omega \rightarrow \MdR $
+	
+	Für $f \in C(\bar \Omega)$ setze: $Tf(u) = \int_{\Omega} k(u, v) f(v) dv$, \hspace{0.25cm}
+	$( A( f_{j} )_{i} = \sum_{j = 1}^{n} a_{ij}f_{j}, A = (a_{ij})_{i,j = 1, \dotsc, n} )$ \\
+	
+	Dann ist $Tf \in C(\bar \Omega)$ (nach Lebesguesschem Konvergenzsatz)
+	\begin{align*}
+		|T f(u)| & \leq \int_{\Omega} |k(u, v)| |f(u)| dz \\
+				 & \leq \int_{\Omega} |k(u, v)| du \sup_{u \in \Omega} | f(u) |
+	\end{align*} 				 
+	$\sup$ über $u \in \Omega$ liefert dann:
+	\begin{align*}
+		\| Tf \|_{\infty} \leq \sup_{u \in \Omega} \int |k(u,v)| dv \| f \|_{\infty} \\
+		\Rightarrow \| T \| = \sup_{u \in \Omega} \int |k(u, v)| dv < \infty,
+	\end{align*} 	
+	Die Abbildung $u \in \bar \Omega \rightarrow \int |k(u, v)| dv \in \MdR$ ist stetig nach dem Konvergenzsatz von Lebesgue. \\
+	\begin{beweis}
+		$ "\ \leq "\ $ ist klar \\
+		$ "\ \geq "\ $ Falls $ k(u, v) \geq 0$ dann ist $T \cdot \mathds{1} (u) = \int k(u, v) dv = \int |k(u, v)| dv$ \\
+		\[ \| T \cdot \mathds{1} \| = \sup_{u \in \Omega} \int |k(u, v)| dv \leq \| T \| \text{, d.h. } \| \mathds{1} \| = 1 \]
+		Skizze:
+		\[ \sup \int | k(u, v) | dv \sim \int | k(u_{0}, v) | dv = \int k(u_{0}, v) g(v) dv \]
+		mit $g(v) = sign(v) k(u_{0}, v), \hspace{0.25cm} g$ ist aber nicht stetig. \\
+		Ggf. Approximation des Signums durch stetige Funktionen.
+	\end{beweis}
+\end{beispiel}
+
+\begin{beispiel}[Kompositionsoperator] \index{Kompositionsoperator}
+$\Omega \subset \MdR^{n}$ offen. 
+\[ \sigma : \bar \Omega \rightarrow \bar \Omega \text{ stetig, für } f \in C(\bar \Omega): Tf(u) = f(\sigma(u)) \]
+z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
+\[ \| Tf \|_{\infty} \leq \| f \|_{\infty}, \hspace{0.25cm} \| T \| = 1 \]
+\end{beispiel}
+
+\begin{beispiel}[Differentialoperatoren] \index{Differentialoperatoren}
+$\Omega \subset \MdR^n$ offen, $m \in \MdN$, $X = C^{m}(\bar \Omega), Y = C_{b}(\Omega),$
+\begin{align*}
+T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\alpha} f(u), u \in \MdR, a_{\alpha} \in C{\bar \Omega} \\
+  \text{damit } & \| Tf \|_{\infty} \leq \sum_{|\alpha| \leq m} \| a_{\alpha} \|_{\infty} \| D^{\alpha} f \|_{\infty} \leq c \|f\|_{\infty}
+ \end{align*}
+\end{beispiel}
+
+\begin{beispiel}[Matrizenmultiplikation] \index{Matrizenmultiplikation}
+Für $p \in [1, \infty]$ und $T \in B(l^{p})$ setzen wir 
+\[ e_{l} := (0, \dotsc, 0, 1, 0, \dotsc, 0), \hspace{0.25cm} l \in \MdN, \hspace{0.25cm} \text{ wobei die 1 an l-ter Stelle steht.} \]
+und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
+\[
+	\Rightarrow (Tx)_{k} = (\sum_{l = 1}^{\infty} x_{l} T e_{l})_{k} = \sum_{ l = 1}^{\infty} a_{kl}k_{l}, \hspace{0.25cm} k \in \MdN \\
+	\Rightarrow T x = A x \text{ (unendliches Matrixprodukt)}
+\]
+
+ \begin{enumerate}[label=\alph*\upshape)]
+	\item Die Hills-Tanerkin-Bedingung (nur Hinreichend) \\
+		Sei $p \in (1, \infty)$ und $\frac{1}{p} + \frac{1}{q} = 1$. Setze
+		\[ c := \left( \sum_{k \geq 1} \left( \sum_{l \geq 1} |a_{kl}|^{q} \right)^{\frac{p}{q}} \right)^{\frac{1}{p}} < \infty \]
+		so definiert $T$ einen Operator $T \in B(l^{p})$ mit $\| T \| \leq c$ 
+		\begin{beweis}
+			\begin{enumerate}
+				\item Wohldefiniertheit: (und Beschränktheit)  \\
+					Für $x \in l^{p}$ folgt
+					\begin{align*}
+						\| Tx \|_{l^{p}}^{p} &= \sum_{k \geq 1} | (Tx)_{k} |^{p} \\
+									 	 &= \sum_{k \geq 1} | \sum_{l \geq 1} |a_{kl} x_{l} |^{p} \\
+										 &\leq \sum_{k \geq 1} \left( \sum_{l \geq 1} |a_{kl}|^{q} \right)^{\frac{p}{q}} \left( \sum_{l \geq 1} |x_{l}|^{p} \right)^{\frac{p}{q}} \\
+										 &= c^{p} \|x\|_{l^{p}}^{p} < \infty
+					\end{align*}
+				\item Linearität \\
+					Wegen $c < \infty$ ist $\left( \sum_{l} |a_{kl}|^{q} \right)^{\frac{1}{q}} < \infty, \hspace{0.1cm} \forall k \in \MdN$ \\
+					Für $x \in l^{p}$ konvergiert die Reihe nach Hölder. Damit ist $T$ offensichtlich linear.
+			\end{enumerate}
+		\end{beweis}
+	\item Der Fall $l^{1}$: \\
+		Es ist $T \in B(l^{1})$ genau dann, wenn 
+		\[ c_{1} := \sup_{1} \sum_{k} | a_{kl} | < \infty \]
+		und in diesem Fall ist $\| T \| = c_{1}$.
+		\begin{beweis}
+			"\ $\Rightarrow$ "\  Sei $T \in B(l^{1})$. Dann gilt für $l \in \MdN$
+			\begin{align*}
+				\sum_{k} | a_{kl} | &= \sum_{k} |(Te_{l})_{k}| \\
+								  	&= \| T e_{l} \|_{l^{1}}  \\
+								  	& \leq \| T \| \| e_{l} \|_{l^1} = \| T \| < \infty 
+			\end{align*}
+			"\ $\Leftarrow$ "\  folgt genau wie in a) mit Hölder. Au{\ss}erdem gilt $\| T \| < c_{1}$			
+		\end{beweis}
+	\item Der Fall $l^{\infty}$: \\
+		Es ist $T \in B(l^{\infty})$ genau dann, wenn
+		\[ c_{\infty} := \sup_{k} \sum_{l} |a_{kl}| < \infty \]
+		und in diesem Fall ist $\| T \| = c_{\infty}$
+		\begin{beweis}
+			"\ $\Rightarrow$ "\  Sei $T \in B(l^{\infty})$.  Für $k \in \MdN$ setze dann $x^{(k)} = \begin{cases} \frac{|a_{kl}|}{a_{kl}} & a_{kl} \neq 0 \\ 0 & a_{kl} = 0 \end{cases}$ \\
+			dann ist $x^{(k)} \in l^{\infty}$ mit $\| x^{(k)} \|_{l^{\infty}} = 1$ und weiter
+			\begin{align*}
+				\sum_{l} |a_{kl}| & = | \sum_{l = 1}^{\infty} a_{nl} x_{l}^{(k)} | \\
+								  & = | ( T x^{(k)} )_{k} | \\
+								  & \leq \| T x^{(k)} \|_{\infty} \\
+								  & \leq \| T \| \| x^{(k)} \|_{l^{\infty}} = \| T \|
+			\end{align*}			
+			\[ \Rightarrow c_{\infty} \leq \| T \| \]
+			"\ $\Leftarrow$ "\ folgt genau wie in a) mit Hölder. Au{\ss}erdem gilt $\| T \| < \infty$ 
+		\end{beweis}
+	\item Interpolation \\
+		Ist $T \in B(l^{1}) \cap B(l^{\infty})$, dann ist $T \in B(l^{p})$ für alle $p \in (1, \infty)$ mit $\| T \| \leq c_{1}^{\frac{1}{p}} c_{\infty}^{\frac{1}{q}}$, wobei $\frac{1}{p} + \frac{1}{q} = 1$
+		\begin{beweis}
+		 Für $x \in l^{p}$ setzen wir $y_{k} := |(T x)_{k}|^{p - 1}, \hspace{0.25cm} k \in \MdN$ \\
+		 \[ \Rightarrow \| y \|_{l^{q}} = \left( \sum_{k \geq 1}  \right)^\frac{1}{q} \]	
+		 Damit folgt
+		 \begin{align*}
+		 	\| Tx \|_{l^{p}}^{p} & = \sum_{k \geq 1 } y_{k} | (Tx)_{k} | \leq \sum_{k \geq 1} \sum_{l \geq 1} y_{k} |a_{kl}| |x_{l}| \\
+		 	& = \sum_{k \geq 1} \sum_{l \geq 1} |a_{kl}|^{\frac{1}{p}} |a_{kl}|^{\frac{1}{q}} |y_{k}| |x_{l}| \\
+		 	& \leq \left( \sum_{k \geq 1} \sum_{l \geq 1} |a_{kl}| |y_{k}|^{q} \right)^{\frac{1}{q}} \left( \sum_{k \geq 1} \sum_{l \geq 1} |a_{kl}| |x_{l}|^p \right)^{\frac{1}{p}} \\
+		 	& \leq c_{\infty}^{\frac{1}{q}} \| y \|_{l^{q}} c_{1}^{\frac{1}{p}} \| x \|_{l^{p}} \\
+		 	& =  c_{\infty}^{\frac{1}{q}} c_{1}^{\frac{1}{p}}  \| x \|_{l^{p}} \| Tx \|_{l^{p}}^{p - 1} 
+		 \end{align*}
+		 \[ \Rightarrow \| Tx \|_{l^{p}} \leq c_{1}^{\frac{1}{p}} c_{\infty}^{\frac{1}{q}} \| x \|_{l^{p}} \text{ und } \| T\| \leq c_{1}^{\frac{1}{p}} c_{\infty}^{\frac{1}{q}} \]
+		\end{beweis}
+ \end{enumerate}
+\end{beispiel}
+
+\begin{definition}
+	Seien $X, Y$ normierte Vektorräume und $T: X \rightarrow Y$ linear.
+	\begin{enumerate}[label=\alph*\upshape)]
+
+		\item $T$ hei{\ss}t \textbf{Isometrie}, \index{Isometrie} falls $ \| Tx \|_{Y} = \| x \|_{X} \hspace{0.25cm} \forall x \in X $
+		\item $T$ hei{\ss}t \textbf{stetige Einbettung}, \index{stetige Einbettung} falls $T$ stetig und injektiv ist
+		\item $T$ hei{\ss}t \textbf{isomorphe Einbettung}, \index{isomorphe Einbettung} falls $T$ injektiv ist und ein $c > 0$ existiert mit
+			\[ \frac{1}{c} \| x \|_{X} \leq \| Tx \|_{Y} \leq c \| x \|_{x} \]
+			In diesem Fall identifizieren wir oft $X$ mit dem Bild von $T$ in $Y$, $X \cong T(X) \subset Y$ 
+		\item $T$ hei{\ss}t \textbf{Isomorphismus}, \index{Isomorphismuss} falls $T$ bijektiv und stetig ist und $T^{-1}: Y \rightarrow X$ ebenfalls stetig ist.
+			(d.h. falls $\exists c > 0: \frac{1}{c} \| Y \|_{Y} \leq \| T^{-1}y \|_{X} \leq c \| y \|_{Y}$ ) \\
+			In diesem Fall Identifizieren wir $X \cong Y$ und sagen $X$ und $Y$ sind isomorph. \\
+			(da $X, Y$ normierte Vektorräume sind, fordern wir $T, T^{-1}$ stetig)
+	\end{enumerate}
+\end{definition}
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Seien $(X, \| \cdot \|_{1})$ und $(X, \| \cdot \|_{2})$ normierte Vektorräume. Dann gilt
+			\[ \| \cdot \|_{1} \backsim \| \cdot \|_{2} \gdw I: (X, \| \cdot \|_{1}) \rightarrow (X, \| \cdot \|_{2}), Ix = x \text{ ist isomorph} \]
+		\item $I: c_{0} \hookrightarrow l^{\infty}, I x = x$ ist isometrische Einbettung
+	\end{enumerate}
+\end{beispiel}
+
+\begin{definition} \index{Dualraum}
+ Sei $X$ ein normierter Vektorreaum der Raum
+ \[ X' = B(X, \MdK) \]	
+ hei{\ss}t \textbf{Dualruam} von $X$ oder Raum der linearen Funktionalen.
+\end{definition}
+
+\begin{beispiel}
+	Sei $X = l^{p}$ für $p \in (1, \infty)$ und $\frac{1}{p} + \frac{1}{q} = 1$ \\
+	Die Abbildung
+	\[ \Phi_{p} : l^{p} \rightarrow (l^{p})', \hspace{0.25cm} [\Phi_{p}(x)](y) = \sum_{n = 1}^{\infty} x_{n} y_{n}, \hspace{0.25cm} x \in l^{p}, y \in l^{q}  \]
+	Ist ein isometrischer Isomorphismus, d.h.  $(l^{p})' \cong l^{q}, \hspace{0.25cm}$ (insbesondere $(l^{2})' \cong l^{2}$)
+	
+	\begin{beweis}
+		Nach Hölder konvergiert die Reihe $[\Phi_{p}(x)](y)$ absolut mit 
+		\[ | [\Phi_{p}(x)](y) | \leq \sum_{n} |x_{n} y_{n}| \leq \| x \|_{l^{q}} \| y \|_{l^{p}} \]
+		Da $\Phi_{p}(x)$ linear in $Y$ ist, folgt $\Phi_{p}(x) \in (l^{p})'$ mit
+		\[ \| \Phi_{p}(x) \|_{(l^{p})'} \leq \| x \|_{l^{q}} \]
+		Es bleibt zu zeigen, dass $ \| \Phi_{p}(x) \|_{(l^{p})'} \geq \| x \|_{l^{q}} $ und $\Phi_{p}$ surjektiv ist.
+		Sei $Y \in (l^{p})'$, dann setze $x_{n} := y'(e_{n}), n \in \MdN$ und $x = (x_{n})_{n \geq 1}$
+		Setze au{\ss}erdem
+		\[ z_{n} := \begin{cases} \frac{|x_{n}|}{x_{n}} & x_{n} \neq 0 \\ 0 & x_{n} = 0 \end{cases}, \hspace{0.25cm} n \ \in \MdN \]
+		Dann gilt
+		\begin{align*}
+			\sum_{n=1}^{N} |x_{n}|^{q} & = \sum_{n = 1}^{N} x_{n} z_{n} \\
+			& = \sum_{n = 1}^{N} y'(e_{n}) z_{n} = y'\left(\sum_{n = 1}^{N} z_{n} e_{n} \right) \\
+			& \leq \| y' \|_{(l^{p})'} \| \sum_{n = 1}^{N} z_{n} e_{n} \|_{l^{p}} \\
+			& = \left( \sum_{n = 1}^{N} |x_{n}|^{(q - 1)p} \right)^{\frac{1}{p}} \\
+			& = \left( \sum_{n = 1}^{N} |x_{n}|^{q}\right)^{\frac{1}{p}}
+		\end{align*}
+		\[ \Rightarrow \left( \sum_{n = 1}^{N} |x_{n}|^{q} \right)^{1-\frac{1}{p}} \leq \| y \|_{(l^{p})'}, \text{ wobei } 1 - \frac{1}{p} = \frac{1}{q} \]
+		\[ \xRightarrow{n \rightarrow \infty} \| x \|_{l^{q}} \leq \| y' \|_{l^{\infty}} < \infty, \text{ d.h. } x \in
+		l^{q} \label{eq:1.3-ineqlqlinf} \]
+		Da für $y \in l^{p}$
+		\[ \| y - \sum_{n = 1}^{N} y_{n} e_{n} \|_{l^{p}}^{p} = \sum_{n \geq N + 1} |y_{n}|^{p} \rightarrow 0 \text{ für } N \rightarrow \infty \]
+		folgt
+		\[ | y' (y) - \sum_{n = 1}^{N} y' ( y_{n} e_{n} ) | \leq \| y' \| \| y - \sum_{n = 1}^{\infty} y_{n} e_{n} \|_{l^{p}}  \rightarrow 0 \hspace{0.5cm} (N \rightarrow \infty) \]
+		und damit \\
+		\begin{align*}
+			[ \Phi_{p} (x) ](y) & = \sum_{n = 1}^{\infty} x_{n} y_{n} \\
+			& = \sum_{n = 1}^{\infty} y'(y_{n} e_{n}) \hspace{0.25cm} \forall y \in l^{p} \\
+			& = y'(y)			
+		\end{align*}
+		d.h. $ \Phi_{p}(x) = y'$ und damit $\Phi_{p}$ surjektiv.
+		Au{\ss}erdem gilt nach \eqref{eq:1.3-ineqlqlinf}
+		\[ \| \Phi_{p}(x) \|_{(l^{p})'} \geq \| x \|_{(l^{q})'} \]
+		womit die Behauptung gezeigt ist.
+	\end{beweis}
+\end{beispiel}
+
+\begin{bemerkung}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Analog zu obigem zeigt man $(l^{1})' \cong l^{\infty}$ und $(c_{0})' \cong l^{1}$
+		\item Eine ähnliche Aussage gilt auch für $\mathcal{L}^{p}$-Räumen auf einem Ma{\ss}raum $(\Omega, \mathcal{A}, \mu):$
+			Hier gilt:
+			\[ \mathcal{L}^{p}(\Omega, \mu)' \cong \mathcal{L}^{q}(\Omega, \mu) \]
+			wobei $p \in [1, \infty), \hspace{0.25cm} \frac{1}{p} + \frac{1}{q} = 1$ bezüglich der Dualität: $[\Phi_{p}(f)](g) (= <f, g>) = \int_{\Omega} f(x) g(x) d\mu(x)$ 
+	\end{enumerate}	
+\end{bemerkung}
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Sei $K \subset \MdR^{n}$ kompakt, $x \in K$. Dann definieren wir
+			\[ \delta_{x}(f) := f(x) \text{ für } f \in C(K) \]
+			Wir versetzen $C(X)$ mit der Supremumsnorm. Dann gilt:
+			\[ |\delta_{x}(f)| = | f(x) | \leq \| f \|_{\infty} \]
+			und offensichtlich ist $\delta_{x}$ linear, d.h. $\delta_{x} \in ( C(K) )'$ mit $\| \delta_{x} \| \leq 1$
+		\item Sei $K \subset \MdR^{n}$ kompakt und $\mu$ ein endliches Ma{\ss} auf $\mathcal{B}(K)$. Dann definieren wir 
+			\[ \delta_{\mu}(f) = \int_{K} f(x) d\mu(x) \text{ für } f \in C(K) \]
+			Dann gilt
+			\[ | \delta_{\mu} (f) | \leq \mu(K) \| f \| _{\infty} \]
+			Da $\delta_{\mu}$ linear ist, gilt $\delta_{\mu}\in (C(K))'$ mit $\delta_{\mu} \leq \| \mu (K) \|$. In diesem Sinne sind Ma{\ss}e Elemente von $(C(K))'$
+	\end{enumerate}	
+\end{beispiel}
+
+\begin{bemerkung}
+	Man kann zeigen, dass $(C(K))' \cong M(K)$, wobei $M(K)$ die Menge der 'regulären' Borelma{\ss}e versehen mit der Variationsnorm ist. Die Dualität ist gegeben durch
+	\[ (T u)(f) = \int_{K} f(x) d\mu(x) \]
+\end{bemerkung}
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
