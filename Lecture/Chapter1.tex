@@ -785,8 +785,8 @@ Wir fassen als nächstes die grundlegenden Eigenschaften offener und abgeschloss
 	Sei $(M, d)$ ein metrischer Raum und $V \subset M$. Dann heißt 
 	\begin{enumerate}[label=\alph*\upshape)] \index{Abschluss} \index{Innere} \index{Rand}
 		\item $\bar V := \bigcap \{ A \subset M: A$ ist abgeschlossen mit $V \subset A \} $ der \textbf{Abschluss} von $V$.
-		\item $\circ V := \bigcup \{ U \subset M: U$ ist offen mit $U \subset V \}$ das \textbf{Innere} von $V$. %todo circ
-		\item $ \partial V := \bar V \ \circ V$ der \textbf{Rand} von $V$. % \circ
+		\item $\mathring V := \bigcup \{ U \subset M: U$ ist offen mit $U \subset V \}$ das \textbf{Innere} von $V$. 
+		\item $ \partial V := \bar V \ \mathring V$ der \textbf{Rand} von $V$.
 	\end{enumerate}
 \end{definition}
 
@@ -799,13 +799,13 @@ Hierfür gelten die folgenden Eigenschaften:
 			\begin{enumerate}
 				\item $\bar V$ ist die kleinste abgeschlossene Menge, due $V$ enthält
 				\item $V$ ist abgeschlossen $\gdw V = \bar V$
-				\item $\bar V = \{ x \in M: \exists (x_{n}) \subset V$ mit $\lim_{n \rightarrow \infty} x_{n} = x \} =: \tilde V$ %todo tilde above
+				\item $\bar V = \{ x \in M: \exists (x_{n}) \subset V$ mit $\lim_{n \rightarrow \infty} x_{n} = x \} =: \tilde V$
 			\end{enumerate} 
 		\item 
 			\begin{enumerate}
-				\item $\circ V$ ist die grö{\ss}te offene Teilmenge von $V$. %todo circ above
-				\item $V$ ist offen $\gdw V = \circ V$ %todo circ above
-				\item $\circ V = \{ x \in M: \exists \epsilon > 0$ mit $K(x, \epsilon) \subset V \} = \tilde \tilde V$ %todo tilde tilde above
+				\item $\mathring V$ ist die grö{\ss}te offene Teilmenge von $V$.
+				\item $V$ ist offen $\gdw V = \mathring V$
+				\item $\mathring V = \{ x \in M: \exists \epsilon > 0$ mit $K(x, \epsilon) \subset V \} =: \hat V$
 			\end{enumerate} 
 		\item
 			\begin{enumerate}
@@ -853,17 +853,17 @@ Hierfür gelten die folgenden Eigenschaften:
 
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Sei $X$ ein normierter Vektorraum, $x \in X, r > 0$	. Dann gilt
+		\item Sei $X$ ein normierter Vektorraum, $x \in X, r > 0$. Dann gilt
 			\begin{align*}
-				\bar K(x, r) & = \bar{K(x, r)} \\
-				\bar K(x, r)^{\circ} & = K(x, r) \\
-				\partial \bar K(x, r) & = \partial K(x, r) (= \{ y \in X: \| x - y \| = r \} )
+				\bar K(x, r) & = \overline{K(x, r)} \\
+				\overset{\circ}{\bar K(x, r)} & = K(x, r) \\
+				\partial \bar K(x, r) & = \partial K(x, r) (= \{ y \in X: \| x - y \| = r \} )		
 			\end{align*}
 			\begin{beweis} %todo verweise (2x)
-				Da $ \bar K(x, r)$ abgeschlossen ist mit $K(x, r) \subset \bar K(x, r)$ folgt aus Proposition 4.8  a) (i) $\bar{K(x, r)} \subset \bar K(x, r)$. \\
-				Sei umgekehrt $y \in \bar K(x, r)$ und $y_{n} = y - \frac{1}{n} (y - x), n \in \MdN$. Dann ist $y_{n} \in K(x, r)$ mit $\lim_{n \rightarrow \infty} y_{n} = y$, d.h. $y \in \bar{K(x, r)}$ nach Proposition 4.8 a) (iii).
+				Da $ \bar K(x, r)$ abgeschlossen ist mit $K(x, r) \subset \bar K(x, r)$ folgt aus Proposition 4.8  a) (i) $\overline{K(x, r)} \subset \bar K(x, r)$. \\
+				Sei umgekehrt $y \in \bar K(x, r)$ und $y_{n} = y - \frac{1}{n} (y - x), n \in \MdN$. Dann ist $y_{n} \in K(x, r)$ mit $\lim_{n \rightarrow \infty} y_{n} = y$, d.h. $y \in \overline{K(x, r)}$ nach Proposition 4.8 a) (iii).
 			\end{beweis} %todo: verweis
-		\item Da $K(x, r)$ offen ist mit $K(x, r) \subset \bar K(x, r)$ folgt mit Proposition 4.9 b) (ii): $K(x, r) \subset \bar K(x, r)^{\circ}$ \\
+		\item Da $K(x, r)$ offen ist mit $K(x, r) \subset \bar K(x, r)$ folgt mit Proposition 4.9 b) (ii): $K(x, r) \subset \overset{\circ}{\bar K(x, r)}$ \\
 			Sei umgekehrt 
 		\item 3 %todo
 		\item 4 %todo
@@ -886,7 +886,7 @@ Hierfür gelten folgende Eigenschaften:
 		\item Ist $g$ stetig in $x_{0}$, $f$ stetig in $g(x_{0})$, dann ist auch 
 			\[ f \circ g: K \rightarrow N \text{ stetig in } x_{0} \]
 		\item $f$ ist stetig in $x_{0} \in M$ genau dann, wenn 
-			\[ \forall \epsilon > 0 \exists \delta > 0 \forall x \in M \text{ mit } d_{M}(x, x_{0}) < \delta \text{ gilt } d_{N}(f(x), f(x_{0}))s < \epsilon \]
+			\[ \forall \epsilon > 0 \hspace{0.15cm} \exists \delta > 0 \hspace{0.15cm} \forall x \in M \text{ mit } d_{M}(x, x_{0}) < \delta \text{ gilt } d_{N}(f(x), f(x_{0})) < \epsilon \]
 		\item Die folgenden Aussagen sind äquivalent:
 			\begin{enumerate}
 				\item $f$ ist stetig auf $M$
@@ -921,7 +921,7 @@ Hierfür gelten folgende Eigenschaften:
 			\end{align*}
 			Dann sind $A$ und $S$ stetig.
 		\item Sei $X = C[0, 1], t_{0} \in [0, 1], \psi : X \rightarrow \MdK, \psi(f) = f(t_{0})$ \\	% todo verweis 
-		Nach Beispiel 3.15 ist $\psi$ stetig. D.h. ist $A \subset \MdK$ offen (abgeschlossen), so ist $\psi(A)$ offen (abgeschlossen).
+		Nach Beispiel 3.15 ist $\psi$ stetig. D.h. ist $A \subset \MdK$ offen (abgeschlossen), so ist $\psi(A)$ offen (abgeschlossen) nach Prop 4.13. %verweis y
 	\end{enumerate}	
 \end{beispiel}
 
