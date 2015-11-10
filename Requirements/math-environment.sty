@@ -16,20 +16,20 @@
 \newtheorem{wichtigerhilfssatz}[satz]{Hilfssatz}
 
 
-\theoremstyle{nonumberbreak}
+
 \newframedtheorem{axiom}[satz]{Axiom}
 \renewtheorem{satz*}{Satz}
-\newtheorem{plaindefinition}{Definition}
-\newtheorem{hilfssatz}{Hilfssatz}
-
+\newtheorem{plaindefinition}[satz]{Definition}
+\newtheorem{hilfssatz}[satz]{Hilfssatz}
 \newenvironment{definition}{\begin{plaindefinition}}{\end{plaindefinition}}	
 \newenvironment{definition*}{\begin{plaindefinition*}}{\end{plaindefinition*}}
 \theoremsymbol{\ensuremath{_\blacksquare}}
-\newtheorem{beweis}{Beweis}
-\theoremsymbol{}
-\newtheorem{beispiel}{Beispiel}
 
-\theoremstyle{nonumberplain}
+\theoremsymbol{}
+\newtheorem{beispiel}[satz]{Beispiel}
+
+\theoremstyle{nonumberbreak}
+\newtheorem{beweis}{Beweis}
 \theoremseparator{:}
 \newtheorem{vereinbarung}{Vereinbarung}
 \newtheorem{bemerkung}{Bemerkung}
