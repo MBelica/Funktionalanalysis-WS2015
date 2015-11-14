@@ -20,21 +20,20 @@
 \usepackage{dsfont}
 \usepackage{acronym}
 \usepackage[bookmarks,bookmarksnumbered,hypertexnames=false,pdfpagelayout=OneColumn,colorlinks]{hyperref}
-
+% added for current lecture
+\usepackage[arrow, matrix, curve]{xy}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{float}
 \usepackage{etex}
 \reserveinserts{28}
 \let\cleardoublepage\clearpage
-\usepackage[arrow, matrix, curve]{xy}
-\usepackage{float}
-
+\DeclareUnicodeCharacter{00A0}{ }
 % Pagelayout
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2ex}
-
-
 % Styles
 \def\ds{\displaystyle}
-
 % Sets
 \def\MdR{\ensuremath{\mathbb{R}}}
 \def\mdr{\ensuremath{\mathbb{R}}}
@@ -56,7 +55,6 @@
 \def\MdD{\mathbb{D}}
 \def\natn{\ensuremath{n\in\MdN}}
 \def\BV{\text{BV}}
-
 % Symbols
 \def\ep{\varepsilon}
 \def\vp{\varphi}
@@ -105,7 +103,6 @@
 \def\ole{\varolessthan}
 \def\ul{\mathrm{d}}
 \newcommand{\ud}{\mathrm{d}}
-
 % Strange Symbols
 \def\folgt{\ensuremath{\implies}}
 \def\equizu{\ensuremath{\iff}}
@@ -123,6 +120,9 @@
 \newcommand{\gleichwegen}[1]{\ensuremath{\DOTSB\;\stackrel{#1}{=}\;}}
 \newcommand{\da}{\mathrel{\mbox{$\coloneqq$}}}
 \newcommand{\ad}{\mathrel{\mbox{$\eqqcolon$}}}
+
+\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert#1\right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+\newcommand{\QR}[2]{\raisebox{1ex}{\ensuremath{#1}}\ensuremath{\mkern-8mu}\bigg/\ensuremath{\mkern-8mu}\raisebox{-1ex}{\ensuremath{#2}}}
 
 % Abbreviations
 \def\ffa{\text{ f\/fa }}
