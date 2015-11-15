@@ -4,11 +4,124 @@
 
 \begin{definition}
 	Sei $(M, d)$ ein metrischer Raum.
-	\begin{enumerate}[label=\alph*\upshape)]
-		\item $x_{n} \in M$ hei{\ss}t Cauchy-Folge	
+	\begin{enumerate}[label=\alph*\upshape)] \index{Cauchy-Folge} \index{vollständig} \index{Banachraum}
+		\item $x_{n} \in M$ hei{\ss}t \textbf{Cauchy-Folge}, falls es zu jedem $\epsilon > 0$ ein $n_{0} \in \MdN$ gibt, sodass $\forall m, n \geq n_{0}$ gilt:
+			\[ d(x_{n}, x_{m}) \leq \epsilon \]
+		\item $(M, d)$ hei{\ss}t \textbf{vollständig}, falls jede Cauchyfolge $(x_{n}) \subset M$ einen Grenzwert \uline{in M} hat:
+			\[ \lim_{n \rightarrow \infty} x_{n} = x \quad x \in M \]
+		\item Ein normierter Raum $(X, \| \cdot \|)$, der vollständig ist bezüglich $d(x, y) = \| x - y \|$ heißt \textbf{Banachraum}.
 	\end{enumerate}
 \end{definition}
 
+\begin{bemerkung}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Jede konvergenzte Folge in $(M, d)$ ist eine Cauchy-Folge:
+			\[ \text{Sei } \lim_{n \rightarrow \infty} x_{n} = x: \quad d(x_{n}, x_{m}) \leq d(x_{n}, x) + d(x, x_{m}) \rightarrow 0 \]
+		\item \uline{Aber:} nicht jede Cauchy-Folge eines normierten Raums $X$ konvergiert in $X$
+			\begin{beispiel*}
+				$X = C[0, 2], \quad \| f \|_{1} = \int_{0}^{2} | f(t) | dt, \quad
+				f_{n}(x) = \begin{cases}x^{n} & \text{ für } x \in [0, 1] \\ 1 & \text{ für } x \in [1, 2]\end{cases}$	
+				\[ f_{n}(x) \rightarrow f(x) = \begin{cases} 0 & \text{ für } x \in [0, 1) \\ 1 & \text{ für } x \in [1, 2] \end{cases} \quad \text{ für feste } x \in [0, 2] \]
+				Nach dem Satz von Lebesgue folgt $\| f - f_{n} \|_{1} \rightarrow 0$ für $n \rightarrow \infty$, aber $f \notin C[0, 2]$ \\
+				Demnach ist $f_{n}$ zwar eine Cauchy-Folge, aber $f_{n}$ konvergiert nicht gegen $f$ in $X$ bezüglich der $\| \cdot \|_{1}$-Norm.
+			\end{beispiel*}
+	\end{enumerate}	
+\end{bemerkung}
+
+\begin{prop}
+	Sei $X$ ein metrischer Raum, $Y$ ei Banachraum.
+	\[ C(x, Y) = \{ f : X \rightarrow Y: f \text{ stetig} \}, \quad \| f \|_{\infty} = \sup_{x \in X} \| f(x) \|_{Y} \]
+	Dann ist $C(X, Y)$ ein (linearer) Banachraum.
+\end{prop}
+
+\begin{beispiel*}
+	$\Omega \subseteq \MdR^{n}, \quad C(\Omega, \MdR)$
+	\begin{beweis}
+		Sei $(f_{n})$ eine Cauchy-Folge in $C(X, Y)$. \\
+		Für alle $x \in X$:
+		\[ \| f_{n}(x) - f_{m}(x) \|_{Y} \leq \| f_{n} - f_{m} \|_{\infty} \xrightarrow[n, m \rightarrow \infty]{} 0 \]
+		Für alle $x \in X$: $(f(x))_{n \in \MdN}$ ist eine Cauchy-Folge in $Y$.
+		da $Y$ vollständig ist, existiert $f(x) := \lim_{n \rightarrow \infty} f_{n}(x)$ in Y. \\ \\
+		z.z. $f \in C(X, Y), \quad \| f - f_{n} \|_{\infty} \rightarrow 0$. \\
+		Zu $\epsilon > 0$ gibt es ein $n_{0}$, sodass für alle $x \in X$:
+		\[ \| f_{n}(x) - f_{m}(x) \|_{Y} \leq \| f_{n} - f_{m} \|_{\infty} \leq \epsilon \]
+		Für jedes $x \in X$ fest folgt für $m \rightarrow \infty$:
+		 \[ \| f_{n}(x) - f(x) \| \leq \epsilon \quad \text{ für } n \geq n_{0} \]
+		 \[ \Rightarrow \| f_{n} - f \|_{\infty} \leq \epsilon \text{ für } n \geq n_{0} \quad  \text{ nehme das Supremum über } x \in X \]
+		 $f \in C(X, Y)$, da der gleichmä{\ss}ige Limes stetiger Funktionen stetig ist.
+	\end{beweis}
+\end{beispiel*}
+
+\begin{beispiel}
+	Sei $\Omega \subseteq \MdR^{n}$ offen und beschränkt. $C^{m}(\bar \Omega)$ ist vollständig bezüglich der Supremums-Norm.	
+	\begin{beweis}
+		Für $C^{1}(\bar \Omega)$ gilt $\| f \|_{C^{1}} = \| f \|_{\infty} + \sum_{i = 1}^{n}  \| \frac{\partial}{\partial x_{i}} f \|_{\infty}$. \\
+		 Sei $(f_{j}) \subset F$ in $C^{1}(\bar \Omega)$.
+		 %todo: missing
+	\end{beweis}
+\end{beispiel}
+
+\begin{prop}
+	Hier fehlt etwas % todo: compelte missing parts	
+\end{prop}
+
+
+\begin{satz}
+	Sei $X$ ein normiert Raum, $Y$ ein Banachraum.
+	Dann ist $B(X, Y)$ mit der Operatornorm vollständig. \\
+	Insbesondere: $X' = B(X, \MdK)$ ist immer  vollständig.
+\end{satz}
+\begin{beweis}
+	Sei $(T_{n}) \subset B(X, Y)$ eine Cauchy-Folge bezüglich der Operatornorm. Sei $x \in X$
+	\[ \| T_{n} x - T_{m} \|_{Y} \leq \| T_{n} - T_{m} \| \|x\|_{X} \]
+	Also $(T_{n}x)_{n \in \MdN}$ eine Cauchy-Folge in $Y$ für alle $x \in X$. Definiere $T x : = \lim_{n \rightarrow \infty} T_{n} x$ \\
+	z.z. $T \in B(X, Y),$ $s\| T_{n} - T \| \rightarrow 0$ \\
+	\[ T_{n} (x + y)  = T_{n} x + T_{n} y \xrightarrow[n \rightarrow \infty]{} T(x + y) = Tx + Ty \]
+	\begin{align*}
+		\| Tx - T_{n}x \| & \overset{Norm \text{ } stetig}{=} \lim_{m \rightarrow \infty} \| T_{m} x - T_{n} x \| \\
+		 & \leq \lim_{m \rightarrow \infty} \| T_{n} - T_{m} \| \| x \| \\
+		 & \leq \epsilon \| x \| \text{ für n gro{\ss} genug.}
+	\end{align*}
+	Wobei $\| T - T_{n} \| \leq \epsilon$ für $n$ gro{\ss} genug.
+	Also für $\| x \| \leq 1$:
+	\[ \| T x \| \leq \| T_{n} x \| + \epsilon \leq \| T_{n} \| + \epsilon  \]
+	\[ \Rightarrow \| T \| \leq \| T_{n} \| + \epsilon, \quad \text{ also } T \in B(X, Y) \]
+\end{beweis}
+
+\begin{bemerkung}[Exponentialfunktion]
+	$A \in B(X)$, $X$ Banachraum
+	\begin{itemize}
+		\item Frage: $e^{tA}$
+		\item Idee: $e^{tA} = \sum_{n = 0}^{\infty} \frac{1}{n!} t^{n} A^{n}$
+		\item Setze $s_{m} = \sum_{n = 0}^{m}	 \frac{1}{n!} t^{n} A^{n}$
+	\end{itemize}
+	z. z. $s_{m}$ ist eine Cauchy-Folge in $B(X)$ \\
+	Seien $k, m \in \MdN, k > 0$
+	\begin{align*}
+		\| s_{k} - s_{m} \| & \leq \sum_{n = m +1}^{k} \| \frac{1}{n!} t^{n} A^{n} \| \\
+			& \leq \sum_{n = m +1}^{k}  \frac{1}{n!} | t^{n} | \| A^{n} \| \xrightarrow[k, m \rightarrow \infty]{} 0
+	\end{align*}
+	Da $B(X)$ vollständig ist, ist $e^{tA} = \lim_{m \rightarrow \infty} s_{m}$ in $B(X)$.
+\end{bemerkung}
+
+\begin{prop}[Neumann'sche Reihe]
+	Sei $A \in B(X)$, $X$ ein Banachraum mit $\| A \| < 1$. \\
+	Dann ist $Id - A$ invertierbar und 
+	\[ \left( Id - A \right)^{-1} = \sum_{n = 0}^{\infty} A^{n} \]
+	\begin{beweis}
+		$S_{m} = \sum_{n = 0}^{m} A^{n}$ ist eine Cauchy-Folge in $B(X)$, denn für
+		\begin{align*}
+		k > m: \quad \| S_{k} - S_{m} \| & \leq \sum_{n = m + 1}^{k} \| A^{n} \| \\
+			& \leq \sum_{n = m + 1}^{k} \| A \|^{n} \rightarrow 0 \text{ für } m, n \rightarrow \infty \text{, da} \| A \| < 1
+		\end{align*}
+		$R := \lim_{m \rightarrow \infty} S_{m}$ existiert in $B(X)$, da $B(X)$ vollständig.
+		\[ S_{m} \]
+		mit
+		\[ \Rightarrow \]
+	\end{beweis}
+\end{prop}
+
+	
 \newpage
 
 
