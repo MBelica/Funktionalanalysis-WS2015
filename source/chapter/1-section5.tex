@@ -16,7 +16,7 @@
 \begin{bemerkung}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Jede konvergenzte Folge in $(M, d)$ ist eine Cauchy-Folge:
-			\[ \text{Sei } \lim_{n \rightarrow \infty} x_{n} = x: \quad d(x_{n}, x_{m}) \leq d(x_{n}, x) + d(x, x_{m}) \rightarrow 0 \]
+			\[ \text{Sei } \lim_{n \rightarrow \infty} x_{n} = x: \quad d(x_{n}, x_{m}) \leq d(x_{n}, x) + d(x, x_{m}) \xrightarrow[n, m \rightarrow \infty]{} 0 \]
 		\item \uline{Aber:} nicht jede Cauchy-Folge eines normierten Raums $X$ konvergiert in $X$
 			\begin{beispiel*}
 				$X = C[0, 2], \quad \| f \|_{1} = \int_{0}^{2} | f(t) | dt, \quad
@@ -93,18 +93,18 @@
 	\begin{itemize}
 		\item Frage: $e^{tA}$
 		\item Idee: $e^{tA} = \sum_{n = 0}^{\infty} \frac{1}{n!} t^{n} A^{n}$
-		\item Setze $s_{m} = \sum_{n = 0}^{m}	 \frac{1}{n!} t^{n} A^{n}$
+		\item Setze $S_{m} = \sum_{n = 0}^{m}	 \frac{1}{n!} t^{n} A^{n}$
 	\end{itemize}
-	z. z. $s_{m}$ ist eine Cauchy-Folge in $B(X)$ \\
+	z. z. $S_{m}$ ist eine Cauchy-Folge in $B(X)$ \\
 	Seien $k, m \in \MdN, k > 0$
 	\begin{align*}
-		\| s_{k} - s_{m} \| & \leq \sum_{n = m +1}^{k} \| \frac{1}{n!} t^{n} A^{n} \| \\
+		\| S_{k} - S_{m} \| & \leq \sum_{n = m +1}^{k} \| \frac{1}{n!} t^{n} A^{n} \| \\
 			& \leq \sum_{n = m +1}^{k}  \frac{1}{n!} | t^{n} | \| A^{n} \| \xrightarrow[k, m \rightarrow \infty]{} 0
 	\end{align*}
-	Da $B(X)$ vollständig ist, ist $e^{tA} = \lim_{m \rightarrow \infty} s_{m}$ in $B(X)$.
+	Da $B(X)$ vollständig ist, ist $e^{tA} = \lim_{m \rightarrow \infty} S_{m}$ in $B(X)$.
 \end{bemerkung}
 
-\begin{prop}[Neumann'sche Reihe]
+\begin{prop}[Neumann'sche Reihe] \label{prop:1-5.8-NMR}
 	Sei $A \in B(X)$, $X$ ein Banachraum mit $\| A \| < 1$. \\
 	Dann ist $Id - A$ invertierbar und 
 	\[ \left( Id - A \right)^{-1} = \sum_{n = 0}^{\infty} A^{n} \]
@@ -115,13 +115,64 @@
 			& \leq \sum_{n = m + 1}^{k} \| A \|^{n} \rightarrow 0 \text{ für } m, n \rightarrow \infty \text{, da} \| A \| < 1
 		\end{align*}
 		$R := \lim_{m \rightarrow \infty} S_{m}$ existiert in $B(X)$, da $B(X)$ vollständig.
-		\[ S_{m} \]
-		mit
-		\[ \Rightarrow \]
+		\[ S_{m} (Id - A) = (Id - A) S_{m} = Id - A^{m} \]
+		mit $\| A^{m} \| \leq \| A \|^{m} \rightarrow 0 \text{ für } m \rightarrow \infty$
+		\[ \Rightarrow R (Id - A) = (Id - A) R = Id, \quad R = (Id - A)^{-1} \]
 	\end{beweis}
 \end{prop}
 
-	
+\begin{kor}
+	$X$ sei ein Banachraum und $J: X \rightarrow X$ ein (surjektiver) Isomorphismus. \\
+	Für $A \in B(X)$ und $\| A \| < \| J^{-1} \|^{-1}$ ist auch $J - A$ ein Isomorphismus \\ \\
+	Insbesondere: $G = \{ T \in B(X): T \text{ stetig und invertierbar} \}$ ist eine offene Menge in $B(X)$.
+	\begin{beweis}
+		Da $J - A = J (Id - J^{-}A) $ folgt:
+		\[ \| J^{-1} A \| \leq \| J^{-1} \| \underbrace{\| A \|}_{< \| J^{-1} \|^{-1}} < 1 \]
+		Nach \hyperref[prop:1-5.8-NMR]{5.8} ist $(Id - J^{-1} A)$ invertierbar mit
+			\begin{align*}
+				(J - A)^{-1} & = (Id - J^{-1} A)^{-1} J^{-1} \\
+					& = \sum_{n = 0}^{\infty} (J^{-1} A)^{n} J^{-1}
+			\end{align*}
+	\end{beweis}
+\end{kor}
+
+\begin{prop} \label{prop:1-5.10}
+	Sei $X$ ein normierter Raum, $Y$ ein Banachraum und $D \subset X$ ein dichter Teilraum. \\
+	Jeder linearere Operator $T: X \rightarrow Y$ mit
+		\[ \| T x \|_{Y} \leq M \| x \|_{X}, \quad \text{ für alle } x \in D \]
+	lässt sich zu einem eindeutig bestimmten Operator $ \tilde T \in B(X, Y)$ mit $\| \tilde T \| \leq c$ fortsetzen.	
+\end{prop}
+
+\begin{prop} % todo: really a prop?
+	Sei $X$ ein normierter Banachraum, $D \subset X$ dicht in $X$ und sei eine Folge $T_{n} \in B(X, Y)$, wobei $(T_{n} x)$ eine Cauchy-Folge für jedes $x \in D$ sei. \\
+		Dann gibt es genau einen Operator $T \in B(X, Y)$ mit
+		\[ \lim_{n \rightarrow \infty} T_{n} x = T x \]
+	\begin{beweis}
+		Setze für $x \in D$: $Tx = \lim_{n \rightarrow \infty} T_{n}(x)$, da $Y$ vollständig. \\
+		Dieses $T: X \rightarrow Y$ ist linear. \\
+		Nach \hyperref[prop:1-5.10]{5.10} gibt es genau ein $\tilde T \in B(X, Y)$ mit $\tilde T x = T x$ für $x \in D$, $\| \tilde T \| \leq M$, denn für $x \in D$:
+		\[ \| T x \| \leq \limsup \| T_{n} x \| \leq M \| x \| \]
+		z. z. $\tilde T x = \lim_{n \rightarrow \infty} T_{n} x$ für alle $x \in X$. \\
+		Zu $\epsilon > 0$ wähle $y \in D$ mit $\| x - y \| \leq \frac{\epsilon}{2 M}$. Dann:
+		\begin{align*}
+			\| \tilde T x - T_{n} x \| & \leq \| \tilde T x - T y \| + \| T y - T_{n} y \| +  \| T_{n} y - T_{n} x \| \\
+				& \leq \| \tilde T \| \| x - y \| + \| T y - T_{n} y \| + \| T_{n} \| \| x - y\| 
+		\end{align*}
+		\[ \limsup_{n \rightarrow \infty}  \| \tilde T x - T_{n} x \| \leq M \frac{\epsilon}{2 M} + \limsup_{n \rightarrow \infty} \| T y - T_{n} y \| + M \frac{\epsilon}{2 M} \leq \epsilon + 0 \]
+	\end{beweis}
+\end{prop}
+
+\begin{beispiel}
+	$e_{n} (t) = e^{2 \pi n i t} = \cos(2 \pi n t) + i \sin(2 \pi n t), \quad D = \{ (\alpha_{n}) \in L^{2}(\MdZ):$ Nur endlich viele $\alpha_{n} \neq 0 \}$
+	\[ T : \begin{cases} D \rightarrow L^{2}[0, 1] \\ (\alpha_{n}) \rightarrow \sum_{n \in \MdZ} \alpha_{n} e_{n} \end{cases} \]
+	Wie kann man man unendlich Reihen $\sum_{n \in \MdZ} \alpha_{n} e_{n}$ definieren? \\
+	Ohne Beweis aus der Fourieranalysis:
+	\begin{itemize}
+		\item Es gibt $(\alpha_{n}) \in \MdC^{2}$, so dass $\sum_{n \in \MdZ} \alpha_{n} e_{n}(t)$ nicht für alle $t \in [0, 1]$ konvergent
+		\item Für alle $(\alpha_{n}) \in \MdC^{2}$ konvergiert $\sum_{n \in \MdZ} \alpha_{n} e_{n}(t)$ punktweise für fast alle t $t \in [0, 1]$
+	\end{itemize}
+\end{beispiel}
+
 \newpage
 
 
