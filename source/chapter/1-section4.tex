@@ -227,7 +227,7 @@ Hierfür gelten die folgenden Eigenschaften:
 					\item Da $K(x, r)$ offen ist mit $K(x, r) \subset \bar K(x, r)$ folgt mit \hyperref[prop:1-4.8.b2]{Proposition 4.8 b) (ii)}: 
 						\[ K(x, r) \subset \bar K(x, r)^{\circ} \]
 						Sei umgekehrt $y \in \bar K(x, r)^{\circ}$. Dann existiert ein $\epsilon > 0$ mit $K(y, \epsilon) \subseteq \bar K(x, r)$. \\
-						Angenommen $\| x - y \| = r$. Setze in diesem Fall $z := y + \frac{\epsilon}{2 r} (y - x)$. Dann gilt $z \in K(y, \epsilon$, aber $z \notin \bar K(x, r)$, was zu einem Widerspruch führt. \\
+						Angenommen $\| x - y \| = r$. Setze in diesem Fall $z := y + \frac{\epsilon}{2 r} (y - x)$. Dann gilt $z \in K(y, \epsilon)$, aber $z \notin \bar K(x, r)$, was zu einem Widerspruch führt. \\
 						Also ist $\| x - y \| \leq r$, d.h. $y \in K(x, r)$.
 					\item Aussage über Rand folgt aus \hyperref[bsp:1-4.11.a.i]{i)} und \hyperref[bsp:1-4.11.a.ii]{ii)}		
 				\end{enumerate}
@@ -254,7 +254,7 @@ Hierfür gelten die folgenden Eigenschaften:
 						Für $\epsilon \in (0, \min \{0, \min \{ c_{1} - a, b - c_{2} \})$ gilt dann $K(f, \epsilon) \subseteq A$, d.h. $A$ ist offen.
 					% todo: drawing & what is t_0 
 					\item Da Konvergenz bezüglich $\| \cdot \|_{\infty}$ punktweise Konvergenz impliziert, folgt direkt
-						\[ \bar A \subset \{ f \in X: f(t_{0} \in [a, b] \} \]
+						\[ \bar A \subset \{ f \in X: f(t_{0}) \in [a, b] \} \]
 						Ist umgekehrt $f \in X$ mit $f(t_{0}) \in [a, b]$, so definieren wir
 						\[ f_{n}(t) = \begin{cases} a + \frac{1}{n} &, f(t) \leq a + \frac{1}{n} \\ b - \frac{1}{n} &, f(t) \geq b - \frac{1}{n} \\ f(t) &, \text{ sonst.}  \end{cases}   \]
 						\[ \Rightarrow f_{n} \in A \text{ mit } \| f_{n} - f \|_{\infty} \rightarrow 0 \text{ } (n \rightarrow \infty) \text{, d.h. } f \in \bar A \]
@@ -263,8 +263,8 @@ Hierfür gelten die folgenden Eigenschaften:
 			\end{beweis}
 		\item Sei $X$ ein normierter Vektorraum und $Y \subseteq X$ abzählbar mit $\overline{lin Y} = X$. Dann ist $X$ separabel.
 			\begin{beweis}
-				Wir definieren % todo: what is that ... + i ...
-				\[ lin_{\MdQ} Y = \{ y = \sum_{i = 1}^{n} q_{j} y_{j} : q_{j} \in \MdQ \quad (q_{j} \in \MdQ + i \MdQ ), y_{j} \in Y, n \in \MdN \} \]
+				Wir definieren
+				\[ lin_{\MdQ} Y := \{ y = \sum_{i = 1}^{n} q_{j} y_{j} : q_{j} \in \MdQ \quad (q_{j} \in \MdQ + i \MdQ ), y_{j} \in Y, n \in \MdN \} \]
 				Dann ist $lin Y$ abzählbar, da $Y$ abzählbar ist. Sei nun $\epsilon > 0$ beliebig, $x \in X$. \\
 				Nach Voraussetzung existiert dann ein $y \in lin Y$ mit $\| x - y \| < \epsilon$ \\
 				Zu diesem $y$ finden wir ein $z \in lin_{\MdQ} Y$ mit $\| y - z \| < \epsilon$
@@ -275,7 +275,6 @@ Hierfür gelten die folgenden Eigenschaften:
 			\[ D = lin \{ e_{k}, k \in \MdK \} \text{ dicht in allen Räumen liegt.} \]
 		\item Der Raum $\ell^{\infty}$ ist nicht separabel: \\
 			Die Menge $\Omega$ der $\{0, 1\}$-wertigen Folgen ist überabzählbar. Für $x, y \in \Omega$ mit $x \neq y$ gilt $\| x - y \|_{\infty} = 1$ \\
-			% todo: ist it really 1/4 as radius for the balls (three times)
 			Angenommen: $\overline{ \{v_{k}, k \in \MdN \} } = \ell^{\infty}$. Dann
 			\[ \Omega \subseteq \bigcup_{k \in \MdN} K \left( v_{k}, \frac{1}{4} \right) \]
 			Wegen $\| x - y\|_{\ell^{\infty}} = 1$ $\forall x, y \in \Omega$ kann aber in jeder Kugel $K(v_{k}, \frac{1}{4})$ nur ein Element auf $\Omega$ liegen. 

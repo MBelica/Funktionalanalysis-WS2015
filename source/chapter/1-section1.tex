@@ -86,7 +86,7 @@ $T$ ist injektiv, aber nicht surjektiv
 	Beispiel: Durch Wärmeverteilung auf dem Rand auf die Wärmeverteilung im Inneren schlie{\ss}en. \\ \\
 	Lösung: Dirichletintegral $J(u) = \int_{\Omega} (\nabla u )^{2} dx$, wobei $ u \in M = \{ v \in C^{1}(\bar \Omega) | \hspace{0.25cm} v_{\big| \partial \Omega} = g \}$ \\
 	Sei $v_{0}$ das absolute Minimum von $J$, d.h. $J(v_{0}) = \inf \{ J(w): w \in M \}$ \\
-	$v \in C^{1}(\bar \Omega)$ mit $v = 0$ in einer Umgebung von $\partial U$. $\epsilon \rightarrow J(u_{0} + \epsilon v)$ %todo was war das?
+	$v \in C^{1}(\bar \Omega)$ mit $v = 0$ in einer Umgebung von $\partial U$. $\epsilon \rightarrow J(u_{0} + \epsilon v)$:
 	\[ \frac{d}{d\epsilon} J(u_{0} + \epsilon v) = \int_{\Omega} \frac{d}{d\epsilon} (\nabla u_{0} + \epsilon \nabla v)^{2} dx = 2 \int_{\Omega} (\nabla u_{0} + \epsilon \nabla v)(\nabla v) dx_{\big| \epsilon = 0} = 2 \int_\Omega (\nabla u_{0}) (\nabla v) dx \]
 	Mit $0 \geq J(u_{0} + \epsilon v)- J(u_{0}) \geq 0: \hspace{0.25cm} \int (\nabla u_{0})(\nabla v) dx \overset{\text{P.I.}}{{=}} - \int (\nabla u_{0})v dx = 0$ \\
 	\[ \Rightarrow \nabla u_{0} = 0 \text{, au{\ss}erdem } u_{0 \hspace{0.1cm} \big| \partial \Omega} = g \text{ (s.o.)} \]
