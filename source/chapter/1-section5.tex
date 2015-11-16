@@ -57,13 +57,44 @@
 	\begin{beweis}
 		Für $C^{1}(\bar \Omega)$ gilt $\| f \|_{C^{1}} = \| f \|_{\infty} + \sum_{i = 1}^{n}  \| \frac{\partial}{\partial x_{i}} f \|_{\infty}$. \\
 		 Sei $(f_{j}) \subset F$ in $C^{1}(\bar \Omega)$.
-		 %todo: missing
+		 \[ \Rightarrow (f_{j})_{j \in \MdN}, \quad (\frac{\partial}{\partial x_{j}} f_{j})_{j \in \MdN}, \quad i = 1, \dotsc, n \text{ Cauchy-Folgen in } C(\bar \Omega) \]
+		 Da $C(\bar \Omega)$ vollständig ist, existieren für $i \in \{ 1, \dotsc, n \} $
+		 	\begin{align*}
+		 		f & = \lim_{j \rightarrow \infty} f_{j} \\
+		 		g_{i} & = \lim_{j \rightarrow \infty} \frac{\partial}{\partial x_{i}} f_{j}
+		 	\end{align*}
+		 in $C(\bar \Omega)$. Setze $g = (g_{1}, \dotsc, g_{n})$ \\ \\
+		 z. z. $f \in C^{1}(\bar \Omega)$ und $g = \nabla f$ \\
+		 Beweis: zu $u \in \Omega$ und $v$ nahe bei $u$ wähle
+		 \[ u_{t} = (1 - t) u + t v \]
+		 \begin{align*}
+		 	| f_{k}(v) - f_{k} (u) - \nabla f_{k}(u) (v - u) | & = | \int_{0}^{1} [ \nabla f_{k} (u_{t}) - \nabla f_{k} (u) ] (v - u) dt \\
+		 		& \leq  \int_{0}^{1} | \nabla f_{k} (u_{t}) - \nabla f_{k} (u) | dt (v - u) \\
+		 		& \leq \left[ \int_{0}^{1} | \nabla f_{k}(u_{t}) - g(u_{t}) | dt + \int_{0}^{1} | g(u_{t}) - g(u) | dt + \int_{0}^{1} | g(u) - \nabla f_{k}(u) | dt \right] |v - u| \\
+		 		& \leq \left[ z \| \nabla f_{k} - g \|_{\infty} + \sup_{0 \leq t \leq 1} | g(u_{t}) - g(u) | \right] |v - u|
+ 		 \end{align*}
+ 		 \begin{align*}
+ 		 	\text{für } k \rightarrow \infty: | f(v) - f(u) - g(u)(v - u) | & \leq \sup_{t \in [0, 1]} | g(u_{t}) - g(u) | |v - u| \\
+ 		 		& \rightarrow 0 \text{ für } v \rightarrow u \text{ (da g gleichmä{\ss}ig stetig)}
+ 		 \end{align*} 
 	\end{beweis}
 \end{beispiel}
 
-\begin{prop}
-	Hier fehlt etwas % todo: compelte missing parts	
-\end{prop}
+\begin{bemerkung}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $\| \cdot \|_{1}, \| \cdot \|_{2}$ seien äquivalente Normen auf $X$. Ist $X$ bezüglich $\| \cdot \|_{1}$, so auch bezüglich $\| \cdot \|_{2}$.
+			\begin{beweis}
+				Äquivalente Normen haben gleiche Cauchy-Folgen.
+			\end{beweis}
+			Bsp.: $C^{1}[0, 1]$, $\vertiii{f} = |f(0)| + \sup_{t \in [0, 1]} | f'(t) |$. Früher: $\vertiii{\cdot} \tilde \| \cdot \|_{\infty} \Rightarrow \left( C[0, 1], \vertiii{\cdot} \right)$ ist vollständig.
+		\item Abgeschlossene Teilmengen von 	Banachräumen sind vollständige metrische Räume bezüglich $d(x, y) = \| x - y\|$
+			\begin{beweis}
+				$(x_{n}) \subset M$, Cauchy-Folge in $X \Rightarrow \lim_{n \rightarrow \infty} x_{n} = x \in X \xRightarrow[M abg.]{} x \in M$ existiert.	
+			\end{beweis}
+			Bsp.: $X = C([0, 1], \MdC), M = \{ f \in X: |f ( t )| = 1 \}$ ist ein vollständiger metrischer Raum.
+	\end{enumerate}
+\end{bemerkung}
+
 
 
 \begin{satz}
@@ -143,7 +174,7 @@
 	lässt sich zu einem eindeutig bestimmten Operator $ \tilde T \in B(X, Y)$ mit $\| \tilde T \| \leq c$ fortsetzen.	
 \end{prop}
 
-\begin{prop} % todo: really a prop?
+\begin{kor} \label{kor:1-5.11}
 	Sei $X$ ein normierter Banachraum, $D \subset X$ dicht in $X$ und sei eine Folge $T_{n} \in B(X, Y)$, wobei $(T_{n} x)$ eine Cauchy-Folge für jedes $x \in D$ sei. \\
 		Dann gibt es genau einen Operator $T \in B(X, Y)$ mit
 		\[ \lim_{n \rightarrow \infty} T_{n} x = T x \]
@@ -160,7 +191,7 @@
 		\end{align*}
 		\[ \limsup_{n \rightarrow \infty}  \| \tilde T x - T_{n} x \| \leq M \frac{\epsilon}{2 M} + \limsup_{n \rightarrow \infty} \| T y - T_{n} y \| + M \frac{\epsilon}{2 M} \leq \epsilon + 0 \]
 	\end{beweis}
-\end{prop}
+\end{kor}
 
 \begin{beispiel}
 	$e_{n} (t) = e^{2 \pi n i t} = \cos(2 \pi n t) + i \sin(2 \pi n t), \quad D = \{ (\alpha_{n}) \in L^{2}(\MdZ):$ Nur endlich viele $\alpha_{n} \neq 0 \}$
@@ -168,10 +199,28 @@
 	Wie kann man man unendlich Reihen $\sum_{n \in \MdZ} \alpha_{n} e_{n}$ definieren? \\
 	Ohne Beweis aus der Fourieranalysis:
 	\begin{itemize}
-		\item Es gibt $(\alpha_{n}) \in \MdC^{2}$, so dass $\sum_{n \in \MdZ} \alpha_{n} e_{n}(t)$ nicht für alle $t \in [0, 1]$ konvergent
+		\item Es gibt $(\alpha_{n}) \in \MdC^{2}$, so dass $\sum_{n \in \MdZ} \alpha_{n} e_{n}(t)$ nicht für alle $t \in [0, 1]$ konvergent.
 		\item Für alle $(\alpha_{n}) \in \MdC^{2}$ konvergiert $\sum_{n \in \MdZ} \alpha_{n} e_{n}(t)$ punktweise für fast alle t $t \in [0, 1]$
+		\item $\int_{0}^{1} e_{n} \overline e_{m} dt = \delta_{n, m}$
 	\end{itemize}
+	Für $(\alpha_{n}) \in D$ wie in der Linearen Algebra folgt:
+	\begin{align*}
+		\| \sum_{n} \alpha_{n} e_{n}(t) \|_{L^{2}[0, 1]}^{2} & = \int (\sum_{n} \alpha_{n} e_{n}(t)) \overline{(\sum_{m} \alpha_{m} e_{m}(t))} dt \\
+		& = \sum_{n, m} \alpha_{n} \alpha_{m} \int e_{n}(t) \overline{e_{m}(t)} dt \\
+		& = \sum_{n} |\alpha_{n}|^2
+	\end{align*}
+	D.h. $\| T (\alpha_{n}) \| \leq 1 \left( \sum_{n} |\alpha_{n}|^2 \right)^{\frac{1}{2}} = \| \alpha_{n} \|_{L^{2}}$, $(M = 1)$. Nach \hyperref[prop:1-5.10]{5.10} gibt es dann ein $\tilde T: \ell^{2}[0, 1] \rightarrow L^{2}(0, 1)$ mit $\| \tilde T \| \leq 1$ \\ \\
+	\uline{Zusatz:} $T_{m}((\alpha_{n})) = \sum_{n = m}^{\infty} \alpha_{n} e_{n}$. $T_{m}: \ell^{2} \rightarrow L^{2}[0, 1],$ $\| Tm \| \leq 1$ \\
+	Für $(\alpha_{n}) \in \ell^{2}$ gilt: $T (\alpha_{n}) = \lim_{m \rightarrow \infty} T_{m}(\alpha_{n})$. \\
+	Nach \hyperref[kor:1-5.11]{Kor. 11}: $T_{m}(\alpha_{n}) \rightarrow T (\alpha_{n})$ in $L^{2}[0, 1]$ für alle $(\alpha_{n}) \in \ell^{2}$. Damit konvergiert die Partialsumme der Fourierreihen in $L^{2}[0, 1]$.
 \end{beispiel}
+
+\begin{prop}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item upcoming
+	\end{enumerate}	
+\end{prop}
+
 
 \newpage
 

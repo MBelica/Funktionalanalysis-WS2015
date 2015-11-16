@@ -1,39 +1,36 @@
 \usepackage[utf8]{inputenc} 			% this is needed for umlauts
 \usepackage[ngerman]{babel} 			% this is needed for umlauts
-\usepackage[T1]{fontenc}     		% this is needed for correct output of umlauts in pdf
-\usepackage{amsmath}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{stmaryrd}
-\usepackage{verbatim}
-\usepackage{ifthen}
-\usepackage[framed,amsmath,thmmarks,hyperref]{ntheorem}
-\usepackage{framed}
-\usepackage{pstricks}
-\usepackage{slashed}
-\usepackage{makeidx}
-\usepackage{wasysym}
-\usepackage{mathrsfs}
-\usepackage{mathtools}
-\usepackage{enumitem}
-\usepackage{dsfont}
+\usepackage[T1]{fontenc}     			% this is needed for correct output of umlauts in pdf
 \usepackage{acronym}
-\usepackage[bookmarks,bookmarksnumbered,hypertexnames=false,pdfpagelayout=OneColumn,colorlinks]{hyperref}
-% added for current lecture
-\usepackage[arrow, matrix, curve]{xy}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{enumitem}
+\usepackage{etex}
+\usepackage{float}
+\usepackage{framed}
 \usepackage{graphicx}
 \usepackage{grffile}
-\usepackage{float}
-\usepackage{etex}
+\usepackage[bookmarks,bookmarksnumbered,hypertexnames=false,pdfpagelayout=OneColumn,colorlinks]{hyperref}
+\usepackage{ifthen}
+\usepackage{makeidx}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage[framed,amsmath,thmmarks,hyperref]{ntheorem}
+\usepackage{pstricks}
+\usepackage{slashed}
+\usepackage{stmaryrd}
 \usepackage{ulem}
+\usepackage{verbatim}
+\usepackage{wasysym}
+\usepackage[arrow, matrix, curve]{xy}
+
 \reserveinserts{28}
 \let\cleardoublepage\clearpage
-% Pagelayout
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2ex}
-% Styles
-\def\ds{\displaystyle}
+
 % Sets
 \def\MdR{\ensuremath{\mathbb{R}}}
 \def\mdr{\ensuremath{\mathbb{R}}}
@@ -102,7 +99,7 @@
 \def\K{\mathcal{K}}
 \def\ole{\varolessthan}
 \def\ul{\mathrm{d}}
-\newcommand{\ud}{\mathrm{d}}
+
 % Strange Symbols
 \def\folgt{\ensuremath{\implies}}
 \def\equizu{\ensuremath{\iff}}
@@ -121,25 +118,22 @@
 \newcommand{\da}{\mathrel{\mbox{$\coloneqq$}}}
 \newcommand{\ad}{\mathrel{\mbox{$\eqqcolon$}}}
 
-\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert#1\right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
-\newcommand{\QR}[2]{\raisebox{1ex}{\ensuremath{#1}}\ensuremath{\mkern-8mu}\bigg/\ensuremath{\mkern-8mu}\raisebox{-1ex}{\ensuremath{#2}}}
-
 % Abbreviations
 \def\ffa{\text{ f\/fa }}
 
 % Common formulars
 \newcommand{\reihe}[1]{\sum_{n=1}^{\infty}{#1}}
 \newcommand{\reihenull}[1]{\sum_{n=0}^{\infty}{#1}}
-\def\areihe{\reihe{a_n}}
+\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert#1\right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+\newcommand{\QR}[2]{\raisebox{1ex}{\ensuremath{#1}}\ensuremath{\mkern-8mu}\bigg/\ensuremath{\mkern-8mu}\raisebox{-1ex}{\ensuremath{#2}}}
 
 % Enumeration
 \renewcommand{\labelenumi}{(\arabic{enumi})}
 \renewcommand{\labelenumii}{(\roman{enumii})}
 
-% Definitionindexes
-\newcommand{\indexlabel}[1]{\index{#1}}
 % Text formatting
-\newcommand{\alt}[1]{(\textit{#1})} % Alternativbegriff
+\newcommand{\alt}[1]{(\textit{#1})}
+\newcommand{\indexlabel}[1]{\index{#1}}
 \newcommand{\begriff}[1]{\indexlabel{#1}\textbf{#1}}
 
 \DeclareMathOperator{\Mat}{Mat}
