@@ -2,9 +2,9 @@
 
 \chapter{Normierte R{\"a}ume}
 
-\begin{definition} \index{Norm}
+\begin{definition}
 Sei $X$ ein Vektorraum über $\MdK \in\{ \MdR, \MdC \}$. \\
-Eine Abbildung  $\| \cdot \|: X \rightarrow \MdR_{+}$ hei{\ss}t eine \textbf{Norm}, wenn
+Eine Abbildung  $\| \cdot \|: X \rightarrow \MdR_{+}$ hei{\ss}t eine \begriff{Norm}, wenn
 \begin{enumerate}
 	\item $ \| x \| \geq 0, \| x \| = 0 \gdw x = 0 $
 	\item $\ | \lambda x \| = | \lambda \| x \| $
@@ -15,9 +15,9 @@ Eine Abbildung  $\| \cdot \|: X \rightarrow \MdR_{+}$ hei{\ss}t eine \textbf{Nor
 \begin{bemerkung} Falls $ \| \cdot \| $ all die oben genannten Eigenschaften erfüllt au{\ss}er $ \| x \| = 0 \Rightarrow x = 0 $, dann hei{\ss}t $ \| \cdot \| $ Halbnorm.
 \end{bemerkung}
 
-\begin{vereinbarung}  \index{Einheitskugel}  \index{Konvergenz}
-Die Menge $ U_{X} = \{ x \in X:  \|x \| \leq 1 \}$ hei{\ss}t \textbf{Einheitskugel}. \\
-Eine Folge $(x_{n})$ des normierten Raums $X$ \textbf{konvergiert} gegen ein $ x \in X $, falls  $\| x_{n} - x \| \xrightarrow[n \rightarrow \infty]{} 0. $	
+\begin{vereinbarung}
+Die Menge $ U_{X} = \{ x \in X:  \|x \| \leq 1 \}$ hei{\ss}t \begriff{Einheitskugel}. \\
+Eine Folge $(x_{n})$ des normierten Raums $X$ \begriff{konvergiert} gegen ein $ x \in X $, falls  $\| x_{n} - x \| \xrightarrow[n \rightarrow \infty]{} 0. $	
 \end{vereinbarung}
 
 
@@ -40,8 +40,8 @@ Für $p \in (1, \infty), p \neq 2:$ siehe Übungsaufgabe (Fall $p = 2$ läuft ü
 Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \leq n \| x \|_{\infty}$
 \end{beispiel}
 
-\begin{definition} \index{Äquivalenz von Normen}
-	Zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ hei{\ss}en äquivalent auf $X$, falls es $0 < m, M < \infty$ gibt, so dass für alle $ x \in X$ gilt:
+\begin{definition}
+	Zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ hei{\ss}en \begriff{äquivalent} auf $X$, falls es $0 < m, M < \infty$ gibt, so dass für alle $ x \in X$ gilt:
 	\[ m \| x \|_{2} \leq \| x \|_{1} \leq M \| x \|_{2} \]
 \end{definition}
  
@@ -102,8 +102,8 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 \end{prop}
 
 
-\begin{vereinbarung} \index{Folgenraum}
-Sei $\MdF = \{ (x_{n}) \in \MdK^{\MdN}: x_{i} = 0 \text{ bis auf endlich viele } n \in \MdN \} $ der \textbf{Folgenraum} \\
+\begin{vereinbarung}
+Sei $\MdF = \{ (x_{n}) \in \MdK^{\MdN}: x_{i} = 0 \text{ bis auf endlich viele } n \in \MdN \} $ der \begriff{Folgenraum} \\
 und $e_{j} = (0, \dotsc, 0, 1, 0, \dotsc, 0) $ der Einheitsvektor, wobei die $1$ an j-ter Stelle steht.
 \end{vereinbarung}
 
@@ -116,9 +116,9 @@ und $e_{j} = (0, \dotsc, 0, 1, 0, \dotsc, 0) $ der Einheitsvektor, wobei die $1$
 Gültigkeit der Dreiecksungleichung beweist man ähnlich wie bei $(\MdK^{n}, \| \cdot \|_{p})$.
 \end{beispiel}
 
-\begin{lemma} \index{Minkowskii-Ungleichung} \index{Hölder-Ungleichung}
-Minkowskii-Ungleichung: $\left( \sum_{i=1}^{\infty} |x_{i} + y_{i}|^p\right)^{\frac{1}{p}} \leq\left( \sum_{i=1}^{\infty} |x_{i}|^p\right)^{\frac{1}{p}} \left( \sum_{i=1}^{\infty} |y_{i}|^p\right)^{\frac{1}{p}} $	\\
-Hölder-Ungleichung: mit $\frac{1}{p} + \frac{1}{p'} = 1 \text{ gilt } \sum_{i=1}^{\infty} |x_{i}| |y_{i}| \leq \left( \sum_{i=1}^{\infty} |x_{i}|^{p} \right)^{\frac{1}{p}} \left( \sum_{i=1}^{\infty} |y_{i}|^{p'} \right)^{\frac{1}{p'}} $	\\	
+\begin{lemma}
+\begriff{Minkowskii-Ungleichung}: $\left( \sum_{i=1}^{\infty} |x_{i} + y_{i}|^p\right)^{\frac{1}{p}} \leq\left( \sum_{i=1}^{\infty} |x_{i}|^p\right)^{\frac{1}{p}} \left( \sum_{i=1}^{\infty} |y_{i}|^p\right)^{\frac{1}{p}} $	\\
+\begriff{Hölder-Ungleichung}: mit $\frac{1}{p} + \frac{1}{p'} = 1 \text{ gilt } \sum_{i=1}^{\infty} |x_{i}| |y_{i}| \leq \left( \sum_{i=1}^{\infty} |x_{i}|^{p} \right)^{\frac{1}{p}} \left( \sum_{i=1}^{\infty} |y_{i}|^{p'} \right)^{\frac{1}{p'}} $	\\	
 \end{lemma}
 
 \begin{bemerkung}
@@ -145,8 +145,8 @@ Hölder-Ungleichung: mit $\frac{1}{p} + \frac{1}{p'} = 1 \text{ gilt } \sum_{i=1
 	\end{enumerate}
 \end{beispiel}
 
-\begin{definition} \index{Raum der beschränkten, m-fach stetig differenzierbaren Funktionen}
-Wir nennen $C_{b}^{m}(\Omega) = \{ f: \Omega \rightarrow \MdR | D^{\alpha}f \text{ sind stetig in } \Omega, \text{ beschränkt auf } \Omega \text{ für alle } \alpha \in \MdN^{n}, |\alpha| \leq m \}$ den \textbf{Raum der beschränkten, m-fach stetig differenzierbaren Funktionen}.  \\
+\begin{definition}
+Wir nennen $C_{b}^{m}(\Omega) = \{ f: \Omega \rightarrow \MdR | D^{\alpha}f \text{ sind stetig in } \Omega, \text{ beschränkt auf } \Omega \text{ für alle } \alpha \in \MdN^{n}, |\alpha| \leq m \}$ den \begriff{Raum der beschränkten, m-fach stetig differenzierbaren Funktionen}.  \\
 Auf $C_{b}^{m}$ definieren wir die Norm: $\| f \|_{C_{b}^{m}} = \sum_{|\alpha| \leq m} \| D^{\alpha}f \|_{\infty}$
 \end{definition}
 
@@ -164,7 +164,7 @@ Definiere $\| f \|_{L^{p}} = \left( \int_{\Omega} |f(u)|^{p} du \right)^{\frac{1
  \[ \| f \|_{L^{p}} = \left( \frac{1}{kp + 1} \right)^{\frac{1}{p}} \xrightarrow[k \rightarrow \infty]{} 0, \hspace{0.25cm} p < \infty \]
 \end{beispiel}
 
-\begin{definition}[Quotientenräume] \label{def:1-2.15} \index{Quotientenräume}
+\begin{definition}[\begriff{Quotientenräume}] \label{def:1-2.15}
 Sei $(X, \| \cdot \|)$ ein normierter Raum. $M \subset X$ sei abgeschlossener, linearer Unterraum. \[ (\text{abgeschlossen: d.h. für alle } (x_{n}) \in M, \| x_{n} - x \| \rightarrow 0 \Rightarrow x \in M) \]
 
 Definiere $\hat X = X / M, \hspace{0.25cm} \hat x \in X/M: \hspace{0.25cm} \hat x = \{ y \in X: y - x \in M \} = x + M$ \\

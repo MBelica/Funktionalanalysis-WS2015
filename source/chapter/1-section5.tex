@@ -4,12 +4,12 @@
 
 \begin{definition}
 	Sei $(M, d)$ ein metrischer Raum.
-	\begin{enumerate}[label=\alph*\upshape)] \index{Cauchy-Folge} \index{vollständig} \index{Banachraum}
-		\item $x_{n} \in M$ hei{\ss}t \textbf{Cauchy-Folge}, falls es zu jedem $\epsilon > 0$ ein $n_{0} \in \MdN$ gibt, sodass $\forall m, n \geq n_{0}$ gilt:
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $x_{n} \in M$ hei{\ss}t \begriff{Cauchy-Folge}, falls es zu jedem $\epsilon > 0$ ein $n_{0} \in \MdN$ gibt, sodass $\forall m, n \geq n_{0}$ gilt:
 			\[ d(x_{n}, x_{m}) \leq \epsilon \]
-		\item $(M, d)$ hei{\ss}t \textbf{vollständig}, falls jede Cauchyfolge $(x_{n}) \subset M$ einen Grenzwert \uline{in M} hat:
+		\item $(M, d)$ hei{\ss}t \begriff{vollständig}, falls jede Cauchyfolge $(x_{n}) \subset M$ einen Grenzwert \uline{in M} hat:
 			\[ \lim_{n \rightarrow \infty} x_{n} = x \quad x \in M \]
-		\item Ein normierter Raum $(X, \| \cdot \|)$, der vollständig ist bezüglich $d(x, y) = \| x - y \|$ heißt \textbf{Banachraum}.
+		\item Ein normierter Raum $(X, \| \cdot \|)$, der vollständig ist bezüglich $d(x, y) = \| x - y \|$ heißt \begriff{Banachraum}.
 	\end{enumerate}
 \end{definition}
 
@@ -281,7 +281,7 @@ Sei $X$ ein normierter Vektorraum, $M \subset X$ beliebig, $d(x, y) := \| x - y 
 	Sei $(M,d)$ ein metrische Raum, $x_{0} \in M$ fest, $X$ definiert wie in \hyperref[def:1-5.15]{5.15}: \\ \\
 	Zu $x \in M$ definiere $F_{x} \in X'$ durch $F_{x}(f) = f(x)$ für $f: M \rightarrow \MdR$ in $X$. \\
 	Dann ist $x \in M \rightarrow F_{x} \in X'$ eine Abbildung, die eine isometrische Einbettung von $M$ nach $X'$ gibt, d.h. 
-	\[ d(x, y) = \| Fx - Fy \|_{X'} \]
+	\[ d(x, y) = \| F_{x} - F_{y} \|_{X'} \]
 \end{satz}
 \begin{beweis}
 	Für die eine Richtung betrachten wir:

@@ -2,9 +2,9 @@
 
 \chapter{Metrische R{\"a}ume}
 
-\begin{definition} \index{Metrik}
+\begin{definition}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item 	Sei $M$ eine nichtleere Menge. Eine Abbildung $d: M \times M \rightarrow 		\MdR$ hei{\ss}t \textbf{Metrik} auf $M$, falls $\forall x, y, z \in M:$
+		\item Sei $M$ eine nichtleere Menge. Eine Abbildung $d: M \times M \rightarrow 	\MdR$ hei{\ss}t \begriff{Metrik} auf $M$, falls $\forall x, y, z \in M:$
 			\begin{description}
 				\item[$\hspace{0.5cm} (M1) \hspace{0.1cm} $] $d(x, y) \geq 0, \hspace{0.25cm} d(x, y) = 0 \gdw x = y $  (positive Definitheit)
 				\item[$\hspace{0.5cm} (M2) \hspace{0.1cm} $] $d(x, y) = d(y, x)$  (Symmetrie)
@@ -32,7 +32,7 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 		\item Sei $X$ ein normierter Vektorraum und $M \subset X$ (nichtleere) Teilmenge. \\
 		Dann definiert $d(x, y) := \| x - y\|, \hspace{0.25cm} x, y \in M$ eine Metrik auf $M$ \\
 		Ein Unterschied hier: Eine Norm setzt eine lineare Struktur auf $X$ voraus, eine Metrik macht auch Sinn auf nicht-linearen Teilmengen.
-		\item \index{diskrete Metrix} \label{bsp:1-diskreteMetrik} Sei $M$ eine nichtleere Menge, dann definieren wir die \textbf{diskrete Metrik} auf $M$ durch
+		\item \label{bsp:1-diskreteMetrik} Sei $M$ eine nichtleere Menge, dann definieren wir die \begriff{diskrete Metrik} auf $M$ durch
 			\[ d(x, y) := \begin{cases}1 &, x \neq y \\ 0 &, x = y\end{cases} \]
 			Dann ist $(M, d)$ ein metrischer Raum und es gilt: 
 				\[ x_{n} \rightarrow x \text{ in } M \gdw \exists N \in \MdN \text{ mit } x_{n} = x \hspace{0.25cm} \forall n \geq N \]
@@ -58,11 +58,11 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 	\end{enumerate}
 \end{beispiel}
 
-\begin{definition} \index{abgeschlossen} \index{offen} \label{def:1-4.4}
+\begin{definition} \label{def:1-4.4}
 	Sei $(M, d)$ ein metrischer Raum.
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Eine Teilmenge $A \subset M$ hei{\ss}t \textbf{abgeschlossen} (in $M$), falls für alle in $M$ konvergenten Folgen $(x_{n})_{n \geq 1} \subset A$ der Grenzwert von $(x_{n})$ in $A$ liegt
-		\item Eine Teilmenge $U \subset M$ hei{\ss}t \textbf{offen} (in $M$), falls zu jedem $x \in U$ ein $\epsilon > 0$ existiert, sodass
+		\item Eine Teilmenge $A \subset M$ hei{\ss}t \begriff{abgeschlossen} (in $M$), falls für alle in $M$ konvergenten Folgen $(x_{n})_{n \geq 1} \subset A$ der Grenzwert von $(x_{n})$ in $A$ liegt
+		\item Eine Teilmenge $U \subset M$ hei{\ss}t \begriff{offen} (in $M$), falls zu jedem $x \in U$ ein $\epsilon > 0$ existiert, sodass
 			\[ \{ y \in M: d(x, y) < \epsilon \} \subset U \]
 	\end{enumerate}
 \end{definition}
@@ -135,10 +135,10 @@ Wir fassen als Nächstes die grundlegenden Eigenschaften offener und abgeschloss
 
 \begin{definition} \label{def:1-4.7-abschinnrand}
 	Sei $(M, d)$ ein metrischer Raum und $V \subset M$. Dann hei{\ss}t 
-	\begin{enumerate}[label=\alph*\upshape)] \index{Abschluss} \index{Innere} \index{Rand}
-		\item $\bar V := \bigcap \{ A \subset M: A$ ist abgeschlossen mit $V \subset A \} $ der \textbf{Abschluss} von $V$.
-		\item $\mathring V := \bigcup \{ U \subset M: U$ ist offen mit $U \subset V \}$ das \textbf{Innere} von $V$. 
-		\item $ \partial V := \bar V \setminus \mathring V$ der \textbf{Rand} von $V$.
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $\bar V := \bigcap \{ A \subset M: A$ ist abgeschlossen mit $V \subset A \} $ der \begriff{Abschluss} von $V$.
+		\item $\mathring V := \bigcup \{ U \subset M: U$ ist offen mit $U \subset V \}$ das \begriff{Innere} von $V$. 
+		\item $ \partial V := \bar V \setminus \mathring V$ der \begriff{Rand} von $V$.
 	\end{enumerate}
 \end{definition}
 
@@ -197,18 +197,16 @@ Hierfür gelten die folgenden Eigenschaften:
 
 \begin{definition} \label{def:1-4.9}
 	Sei $(M, d)$ ein metrischer Raum
-	\begin{enumerate}[label=\alph*\upshape)] \index{dicht} \index{seperabel}
-		\item Eine Menge $V \subset M$ hei{\ss}t \textbf{dicht} in M, falls $\bar V = M$, d.h. jeder Punkt in $M$ ist Grenzwert einer Folge aus $V$.
-		\item $M$ hei{\ss}t \textbf{seperabel}, falls es eine abzählbare Teilmenge $V \subset M$ gibt, die dicht in $M$ liegt.
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Eine Menge $V \subset M$ hei{\ss}t \begriff{dicht} in M, falls $\bar V = M$, d.h. jeder Punkt in $M$ ist Grenzwert einer Folge aus $V$.
+		\item $M$ hei{\ss}t \begriff{seperabel}, falls es eine abzählbare Teilmenge $V \subset M$ gibt, die dicht in $M$ liegt.
 	\end{enumerate}
 \end{definition}
 
 \begin{bemerkung}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\index{relative Offenheit}  
 		\item All die Begriffe und Bezeichnungen aus \hyperref[def:1-4.4-abgoff]{Definition 4.4}, \hyperref[bem:1-4.5]{Bemerkung 4.5}, \hyperref[def:1-4.7-abschinnrand]{Definition 4.7} und \hyperref[def:1-4.9]{Definition 4.9} werden wir auch in normieren Räumen benutzen bzgl. der kanonischen Metrik $d(x, y) = \| x - y\|$
-		\index{relative Abgeschlossenheit}
-		\item Sei $(M, d)$ ein metrischer Rauam, $U \subset M$. Dann ist auch $(U, d)$ ein metrischer Raum. Für $V \subset U$ muss man dann aber unterscheiden bzgl. Abgeschlossenheit (bzw. Offenheit) von $V$ in $U$ oder in $M$. Man sagt dann, dass $V$ \textbf{relativ offen} bzw. \textbf{relativ abeschlossen} in $U$ ist.
+		\item Sei $(M, d)$ ein metrischer Rauam, $U \subset M$. Dann ist auch $(U, d)$ ein metrischer Raum. Für $V \subset U$ muss man dann aber unterscheiden bzgl. Abgeschlossenheit (bzw. Offenheit) von $V$ in $U$ oder in $M$. Man sagt dann, dass $V$ \begriff{relativ offen} bzw. \begriff{relativ abeschlossen} in $U$ ist.
 	\end{enumerate}	
 \end{bemerkung}
 
@@ -295,12 +293,12 @@ Hierfür gelten die folgenden Eigenschaften:
 
 Schlie{\ss}lich betrachten wir Stetigkeit:
 
-\begin{definition} \index{stetig}
+\begin{definition}
 	Seien $(M, d_{M}), (N, d_{N})$ metrische Räume. \\
 	Eine Abbildung $f: M \rightarrow N$ hei{\ss}t \textbf{stetig in $x_{0} \in M$}, falls für alle $(x_{n}) \subset M$ gilt
 	\[ x_{n} \rightarrow x_{0} \text{ in } M \Rightarrow f(x_{n}) \rightarrow f(x_{0}) \text{ in } N \]
 	\[ (d_{M}(x_{n}, x_{0}) \rightarrow 0 \hspace{0.25cm} (n \rightarrow \infty) \hspace{0.5cm} \Rightarrow \hspace{0.5cm} d_{N}(f(x_{n}), f(x_{0})) \rightarrow \hspace{0.25cm} (n \rightarrow \infty)) \]
-	Die Abbildung $f$ hei{\ss}t \textbf{stetig auf $M$}, falls $f$ in jedem Punkt von $M$ stetig ist.
+	Die Abbildung $f$ hei{\ss}t \begriff{stetig} \textbf{auf $M$}, falls $f$ in jedem Punkt von $M$ stetig ist.
 \end{definition}
 
 Hierfür gelten folgende Eigenschaften:
