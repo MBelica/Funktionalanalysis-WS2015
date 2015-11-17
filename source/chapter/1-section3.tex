@@ -235,7 +235,7 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 			\[ \text{d.h. falls } \exists c > 0: \frac{1}{c} \| x \|_{X} \leq \| T x \|_{Y} \leq c \| x \|_{X} \]
 			\[ \text{(daraus folgt dann auch für }T^{-1}: Y \rightarrow X \text{ aus der ersten Ungleichung } \]
 			\[ \| T^{-1}y \|_{X} \leq c \| T (T^{-1}y) \|_{Y} = c \| y \|_{Y}, \text{d.h. } T^{-1} \text{ ist stetig.)}\]
-			In diesem Fall Identifizieren wir $X \cong Y$ und sagen $X$ und $Y$ sind isomorph. (da $X, Y$ normierte Vektorräume sind, fordern wir im Gegensatz zur Linearen Algebra, dass $T, T^{-1}$ zusätzlich stetig)
+			In diesem Fall Identifizieren wir $X \cong Y$ und sagen $X$ und $Y$ sind isomorph (da $X, Y$ normierte Vektorräume sind, fordern wir im Gegensatz zur Linearen Algebra, dass $T, T^{-1}$ zusätzlich stetig sind).
 	\end{enumerate}
 \end{definition}
 
@@ -272,7 +272,7 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 		\begin{align*}
 			\sum_{n=1}^{N} |x_{n}|^{q} & = \sum_{n = 1}^{N} x_{n} z_{n} \\
 			& = \sum_{n = 1}^{N} y'(e_{n}) z_{n} = y'\left(\sum_{n = 1}^{N} z_{n} e_{n} \right) \\
-			& \leq \| y' \|_{(\ell^{p})'} \| \underbrace{ \sum_{n = 1}^{N} z_{n} e_{n} }_{= \left( \sum_{n = 1}^{N} |x_{n}|^{(q - 1)p} \right)^{\frac{1}{p}}} \|_{\ell^{p}} \\
+			& \leq \| y' \|_{(\ell^{p})'} \underbrace{ \|  \sum_{n = 1}^{N} z_{n} e_{n} \|_{\ell^{p}} }_{= \left( \sum_{n = 1}^{N} |x_{n}|^{(q - 1)p} \right)^{\frac{1}{p}}} \\
 			& = \left( \sum_{n = 1}^{N} |x_{n}|^{q}\right)^{\frac{1}{p}}
 		\end{align*}
 		\[ \text{Also zusammen: } \left( \sum_{n = 1}^{N} |x_{n}|^{q} \right)^{1-\frac{1}{p}} \leq \| y \|_{(\ell^{p})'}, \text{ wobei } 1 - \frac{1}{p} = \frac{1}{q} \]
@@ -286,8 +286,8 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 		und damit \\
 		\begin{align*}
 			[ \Phi_{p} (x) ](y) & = \sum_{n = 1}^{\infty} x_{n} y_{n} \\
-			& = \sum_{n = 1}^{\infty} y'(y_{n} e_{n}) \hspace{0.25cm} \forall y \in \ell^{p} \\
-			& = y'(y)			
+			& = \sum_{n = 1}^{\infty} y'(y_{n} e_{n}) \hspace{0.25cm} \\
+			& = y'(y) \forall y \in \ell^{p} 		
 		\end{align*}
 		d.h. $ \Phi_{p}(x) = y'$ und damit $\Phi_{p}$ surjektiv.
 		Au{\ss}erdem gilt nach \eqref{eq:1.3-ineqlqlinf}
@@ -299,10 +299,10 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 \begin{bemerkung*}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Analog zu obigem zeigt man $(\ell^{1})' \cong \ell^{\infty}$ und $(c_{0})' \cong \ell^{1}$
-		\item Eine ähnliche Aussage gilt auch für $L^{p}$-Räumen auf einem Ma{\ss}raum $(\Omega, \mathcal{A}, \mu):$
+		\item Eine ähnliche Aussage gilt auch für $L^{p}$-Räume auf einem Ma{\ss}raum $(\Omega, \mathcal{A}, \mu):$
 			Hier gilt:
 			\[ L^{p}(\Omega, \mu)' \cong L^{q}(\Omega, \mu) \]
-			wobei $p \in [1, \infty), \hspace{0.25cm} \frac{1}{p} + \frac{1}{q} = 1$ bezüglich der Dualität: $[\Phi_{p}(f)](g) (= \langle f, g \rangle ) = \int_{\Omega} f(x) g(x) d\mu(x)$ 
+			bezüglich der Dualität $[\Phi_{p}(f)](g) (= \langle f, g \rangle ) = \int_{\Omega} f(x) g(x) d\mu(x)$ wobei $p \in [1, \infty),$ $\frac{1}{p} + \frac{1}{q} = 1$
 	\end{enumerate}	
 \end{bemerkung*}
 

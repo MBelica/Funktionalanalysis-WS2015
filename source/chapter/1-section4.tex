@@ -39,10 +39,10 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 	\end{enumerate}	
 \end{beispiel}
 
-\begin{beispiel}
+\begin{beispiel}  \label{bsp:1-4.3}
 	\begin{enumerate}[label=\alph*\upshape)]	
-		\item Sei $X$ ein Vektorraum und $p_{j}$ für $j \in \MdN$ Halbnormen auf $X$ mit der Eigenschaft, dass für jedes $x \in X \setminus {0}$ ein $K \in \MdN$ exisitert mit $p_{K} > 0$. Dann definiert
-			\[ p := \sum_{j \geq 1} 2^{-j} \frac{p_{j}(x - y)}{1 + p_{j}(x -y)}, \hspace{0.5cm} x, y \in X \]
+		\item Sei $X$ ein Vektorraum und $p_{j}$ für $j \in \MdN$ Halbnormen auf $X$ mit der Eigenschaft, dass für jedes $x \in X \setminus \{ 0 \}$ ein $K \in \MdN$ exisitert mit $p_{K} > 0$. Dann definiert
+			\[ d(x, y) := \sum_{j \geq 1} 2^{-j} \frac{p_{j}(x - y)}{1 + p_{j}(x -y)}, \hspace{0.5cm} x, y \in X \]
 			eine Metrik auf $X$ mit
 			\[ d(x_{n}, x) \rightarrow 0 \gdw p_{j}(x_{n} - x) \rightarrow 0 \hspace{0.25cm} (n \rightarrow  \infty) \hspace{0.25cm} \forall j \in \MdN \]
 			Beweis siehe Übung
@@ -58,7 +58,7 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 	\end{enumerate}
 \end{beispiel}
 
-\begin{definition} \index{abgeschlossen} \index{offen} \label{def:1-4.4-abgoff}
+\begin{definition} \index{abgeschlossen} \index{offen} \label{def:1-4.4}
 	Sei $(M, d)$ ein metrischer Raum.
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Eine Teilmenge $A \subset M$ hei{\ss}t \textbf{abgeschlossen} (in $M$), falls für alle in $M$ konvergenten Folgen $(x_{n})_{n \geq 1} \subset A$ der Grenzwert von $(x_{n})$ in $A$ liegt
@@ -114,7 +114,7 @@ Wir fassen als Nächstes die grundlegenden Eigenschaften offener und abgeschloss
 	\end{enumerate}
 	\begin{beweis}
 		\begin{enumerate}[label=\alph*\upshape)]
-			\item Sei $U$ nicht offen. Dann existiert ein $X_{0} \in U$ und  ein $x_{n} \in K(x_{0}, \frac{1}{n})$ mit $x_{n} \notin U$, d.h. $x_{n} \in U^{c} = A \forall n \in \MdN$. \\
+			\item Sei $U$ nicht offen. Dann existiert ein $x_{0} \in U$ und  ein $x_{n} \in K(x_{0}, \frac{1}{n})$ mit $x_{n} \notin U$, d.h. $x_{n} \in U^{c} = A \forall n \in \MdN$. \\
 				Da $d(x_{n}, x_{0}) \leq \frac{1}{n} \rightarrow 0$ und $x_{0} \notin A$, ist $A$ nicht abgeschlossen. \\ \\
 				Sei umgekehrt $A$ nicht abgeschlossen. Dann existiert eine Folge $(x_{n})_{n \geq 1} \subset A$ mit $\lim_{n \rightarrow \infty} x_{n} = x \notin A$, d.h. $x \in U$. \\
 				Für beliebige $\epsilon > 0$ existiert dann ein $N_{\epsilon} \in \MdN$ mit $d(x_{n}, x) < \epsilon$  $\forall n \geq N_{\epsilon}$ \\	
@@ -169,12 +169,12 @@ Hierfür gelten die folgenden Eigenschaften:
 		\begin{enumerate}[label=\alph*\upshape)]
 			\item
 				\begin{enumerate}
-					\item \label{prop:1-4.8.a1-proof} Nach Definition gilt $V \subseteq \bar V$ und $\bar V$ ist nach \hyperref[prop:1-4.8]{Proposition 4.7}. \\
+					\item \label{prop:1-4.8.a1-proof} Nach Definition gilt $V \subseteq \bar V$ und $\bar V$ ist nach \hyperref[prop:1-4.8]{Proposition 4.7} abgeschlossen. \\
 						Falls $V \subseteq A \subseteq \bar V$ und $A$ abgeschlossen, dann gilt $\bar V \subseteq A$ nach der Definition von $\bar V$, d.h. $A = \bar V$.
 					\item folgt aus \hyperref[prop:1-4.8.a1]{(i)}
-					\item Per definition ist $\tilde V$ abgeschlossen, denn zu $(x_{n}) \subseteq \tilde V$ mit $\lim_{n \rightarrow \infty} x_{n} = x \in M$ existieren Folgen $(x_{n, m})_{m \geq 1}$ mit  $\lim_{m \rightarrow \infty} x_{n, m} = x_{n}$. \\
-						Dann folgt aber für $(x_{n, m})_{n \geq 1} \subseteq V$:
-						\[ d(x, x_{n, m}) \leq d(x, x_{n}) + d(x_{n}, x_{n, m}) \rightarrow 0 \text{ für } n \rightarrow \infty \]
+					\item Per Definition ist $\tilde V$ abgeschlossen, denn zu $(x_{n}) \subseteq \tilde V$ mit $\lim_{n \rightarrow \infty} x_{n} = x \in M$ existieren Folgen $(x_{n, m})_{m \geq 1}$ mit  $\lim_{m \rightarrow \infty} x_{n, m} = x_{n}$. \\
+						Dann folgt aber für $(x_{n, n})_{n \geq 1} \subseteq V$:
+						\[ d(x, x_{n, n}) \leq d(x, x_{n}) + d(x_{n}, x_{n, n}) \rightarrow 0 \text{ für } n \rightarrow \infty \]
 						d.h. $x \in \tilde V$. Sei nun $A \subseteq M$ abgeschlossen mit $V \subseteq A$. Dann gilt nach \hyperref[def:1-4.4-abgoff]{Definition 4.4} $\tilde V \subseteq A$ und nach \hyperref[prop:1-4.8.a1]{(i)} damit $\bar V = \tilde V$.
 				\end{enumerate} 
 			\item 
@@ -182,14 +182,14 @@ Hierfür gelten die folgenden Eigenschaften:
 					\item zeigt man wie \hyperref[prop:1-4.8.a1-proof]{a) (i)}
 					\item folgt aus \hyperref[prop:1-4.8.b1]{(i)}
 					\item $\hat V$ ist per Definition offen, denn zu $x \in \hat V$ existiert ein $\epsilon > 0$ mit  $K(x, \epsilon) \subseteq V$. \\
-						 Dann existiert aber zu jedem $y \in K(x, \epsilon)$ und $\delta > 0$ mit $K(y, \delta) \subseteq K(x, \epsilon) \subseteq V$, d.h. $y \in \hat V$. $\Rightarrow K(x, \epsilon) \subseteq \hat V$ \\
+						 Dann existiert aber zu jedem $y \in K(x, \epsilon)$ ein $\delta > 0$ mit $K(y, \delta) \subseteq K(x, \epsilon) \subseteq V$, d.h. $y \in \hat V$. $\Rightarrow K(x, \epsilon) \subseteq \hat V$ \\
 						 Falls nun $U \subseteq V$ offen, so ist nach \hyperref[def:1-4.4-abgoff]{Definition 4.4} $U \subset \hat V$ und somit $\mathring V = \hat V$ nach \hyperref[prop:1-4.8.b1]{(i)}
 				\end{enumerate} 
 			\item
 				\begin{enumerate}
-					\item Da $\partial V = \bar V_{n}(V^{\circ})^{c}$ ist $\partial V$ als Schnitz zweier abgeschlossenen Mengen wieder abgeschlossen.
-					\item Nach \hyperref[def:1-4.7-abschinnrand]{Definition 4.6} gilt $\overset{\circ}{V}^{c} = \overline{V^{c}}$ \quad (und $\left( \bar V \right)^{c} = \left( V^{c} \right)^{\circ}$) \\
-						Damit folgt die Behauptung auf $\partial V = \bar V_{n} \bar V^{c}$ und \hyperref[prop:1-4.8.a1]{a)}
+					\item Da $\partial V = \overline{V} \cap (\mathring{V})^{c}$ ist $\partial V$ als Schnitz zweier abgeschlossenen Mengen wieder abgeschlossen.
+					\item Nach \hyperref[def:1-4.7-abschinnrand]{Definition 4.6} gilt $(\mathring{V})^{c} = \overline{V^{c}}$ \quad (und $\left( \bar V \right)^{c} = \left( V^{c} \right)^{\circ}$) \\
+						Damit folgt die Behauptung auf $\partial V = \bar V_{n} \cap \bar V^{c}$ und \hyperref[prop:1-4.8.a1]{a)}
 				\end{enumerate} 
 		\end{enumerate}	
 	\end{beweis}
@@ -222,13 +222,13 @@ Hierfür gelten die folgenden Eigenschaften:
 			\end{enumerate}
 			\begin{beweis}
 				\begin{enumerate}
-					\item Da $ \bar K(x, r)$ abgeschlossen ist mit $K(x, r) \subset \bar K(x, r)$ folgt aus Proposition \hyperref[prop:1-4.8.a1]{Proposition 4.8  a) (i)} $\overline{K(x, r)} \subset \bar K(x, r)$.
+					\item Da $ \bar K(x, r)$ abgeschlossen ist mit $K(x, r) \subset \bar K(x, r)$ folgt aus \hyperref[prop:1-4.8.a1]{Proposition 4.8  a) (i)} $\overline{K(x, r)} \subset \bar K(x, r)$.
 						Sei umgekehrt $y \in \bar K(x, r)$ und $y_{n} = y - \frac{1}{n} (y - x), n \in \MdN$. Dann ist $y_{n} \in K(x, r)$ mit $\lim_{n \rightarrow \infty} y_{n} = y$, d.h. $y \in \overline{K(x, r)}$ nach \hyperref[prop:1-4.8.a3]{Proposition 4.8 a) (iii)}.
 					\item Da $K(x, r)$ offen ist mit $K(x, r) \subset \bar K(x, r)$ folgt mit \hyperref[prop:1-4.8.b2]{Proposition 4.8 b) (ii)}: 
 						\[ K(x, r) \subset \bar K(x, r)^{\circ} \]
 						Sei umgekehrt $y \in \bar K(x, r)^{\circ}$. Dann existiert ein $\epsilon > 0$ mit $K(y, \epsilon) \subseteq \bar K(x, r)$. \\
 						Angenommen $\| x - y \| = r$. Setze in diesem Fall $z := y + \frac{\epsilon}{2 r} (y - x)$. Dann gilt $z \in K(y, \epsilon)$, aber $z \notin \bar K(x, r)$, was zu einem Widerspruch führt. \\
-						Also ist $\| x - y \| \leq r$, d.h. $y \in K(x, r)$.
+						Also ist $\| x - y \| < r$, d.h. $y \in K(x, r)$.
 					\item Aussage über Rand folgt aus \hyperref[bsp:1-4.11.a.i]{i)} und \hyperref[bsp:1-4.11.a.ii]{ii)}		
 				\end{enumerate}
 			\end{beweis}
@@ -241,22 +241,31 @@ Hierfür gelten die folgenden Eigenschaften:
 			offen mit
 			\begin{align*}
 				\bar A & = \{ f \in X: f(t) \in [a, b] \quad \forall t \in [0, 1] \} \\
-				\partial A & = \{ f \in \bar A: \exists t \in [0, 1] \text{ mit } f(t) \in (a, b) \}
+				\partial A & = \{ f \in \bar A: \exists t \in [0, 1] \text{ mit } f(t) \in \{ a, b \} \}
 			\end{align*}
 			\begin{beweis}
 				\begin{enumerate} 
-					% todo: drawing
-					\item Sei $f \in A$ beliebig. Da $f$ stetig auf $[0, 1]$ existieren $t_{1}, t_{2} \in [0, 1]$ mit
+ 					\item Sei $f \in A$ beliebig. \\ 		
+						Da $f$ stetig auf $[0, 1]$ existieren $t_{1}, t_{2} \in [0, 1]$ mit
 						\begin{align*}
 							f(t_{1}) & = \min_{t \in [0, 1]} f(t) =: c_{1} > a \\
 							f(t_{2}) & = \max_{t \in [0, 1]} f(t) =: c_{2} < b
 						\end{align*}
-						Für $\epsilon \in (0, \min \{0, \min \{ c_{1} - a, b - c_{2} \})$ gilt dann $K(f, \epsilon) \subseteq A$, d.h. $A$ ist offen.
-					% todo: drawing & what is t_0 
+						\begin{figure}[h]
+  							\begin{center}
+   								\includegraphics[width=0.48\textwidth]{images/bsp-4.11.c.i}					
+  							\end{center}
+						\end{figure}					
+						Für $\epsilon \in (0, \min\{c_1 - a, b - c_2\})$ gilt dann $K(f, \epsilon) \subseteq A$, d.h. $A$ ist offen.
 					\item Da Konvergenz bezüglich $\| \cdot \|_{\infty}$ punktweise Konvergenz impliziert, folgt direkt
-						\[ \bar A \subset \{ f \in X: f(t_{0}) \in [a, b] \} \]
-						Ist umgekehrt $f \in X$ mit $f(t_{0}) \in [a, b]$, so definieren wir
+						\[ \overline{A} \subseteq \{ f\in X \colon f(t) \in [a, b] \quad \forall t \in [a,b] \}. \]
+						Ist umgekehrt $f \in X$ mit $f(t) \in [a, b]$ für alle $t \in [0,1]$, so definieren wir
 						\[ f_{n}(t) = \begin{cases} a + \frac{1}{n} &, f(t) \leq a + \frac{1}{n} \\ b - \frac{1}{n} &, f(t) \geq b - \frac{1}{n} \\ f(t) &, \text{ sonst.}  \end{cases}   \]
+						\begin{figure}[h]
+  							\begin{center}
+   								\includegraphics[width=0.48\textwidth]{images/bsp-4.11.c.ii}					
+  							\end{center}
+						\end{figure}		
 						\[ \Rightarrow f_{n} \in A \text{ mit } \| f_{n} - f \|_{\infty} \rightarrow 0 \text{ } (n \rightarrow \infty) \text{, d.h. } f \in \bar A \]
 					\item Aussage über $\partial A$ folgt aus \hyperref[bsp:1-4.11.b]{i)} und \hyperref[bsp:1-4.11.b]{ii)}
 				\end{enumerate}
@@ -268,7 +277,7 @@ Hierfür gelten die folgenden Eigenschaften:
 				Dann ist $lin Y$ abzählbar, da $Y$ abzählbar ist. Sei nun $\epsilon > 0$ beliebig, $x \in X$. \\
 				Nach Voraussetzung existiert dann ein $y \in lin Y$ mit $\| x - y \| < \epsilon$ \\
 				Zu diesem $y$ finden wir ein $z \in lin_{\MdQ} Y$ mit $\| y - z \| < \epsilon$
-				\[ \Rightarrow \| x - z \| < 2 \epsilon, \quad \text{d.h. } lin_{\MdQ} Y = X \]
+				\[ \Rightarrow \| x - z \| < 2 \epsilon, \quad \text{d.h. } \overline{lin_{\MdQ} Y} = X \]
 			\end{beweis}
 		\item $C[0, 1]$ ist separabel, da $ lin \{ t^{n}, n \in \MdN \} $ dicht in $C[0, 1]$ liegt nach dem Approximationssatz von Weierstrass.
 		\item Die Räume $\ell^{p}, p \in [1, \infty)$ und $c_{0}$ sind separabel, da
@@ -313,7 +322,7 @@ Hierfür gelten folgende Eigenschaften:
 	\begin{beweis}		
 		\begin{enumerate}[label=\alph*\upshape)]	
 			\item Folgt direkt aus der Definition
-			\item $" \Rightarrow "$: Annahme, das $\epsilon$-$\delta$-Kriterium gilt nicht. Dann existiert eine $\epsilon > 0$ und für jedes $n \in \MdN$ ein $x_{n} \in K(x_{0}, \frac{1}{n}) mit d_{M}(f(x_{n}), f(x_{0})) \geq \epsilon$. \\
+			\item $" \Rightarrow "$: Annahme, das $\epsilon$-$\delta$-Kriterium gilt nicht. Dann existiert eine $\epsilon > 0$ und für jedes $n \in \MdN$ ein $x_{n} \in K(x_{0}, \frac{1}{n})$ mit $d_{M}(f(x_{n}), f(x_{0})) \geq \epsilon$. \\
 				Dann gilt aber $d_{M}(x_{n}, x_{0}) < \frac{1}{n} \rightarrow 0$ für $n \rightarrow \infty$ und $d_{N}(f(x_{n}, f(x_{0})) \geq \epsilon \not\rightarrow 0$ für $n \rightarrow \infty$, d.h. $f$ ist nicht stetig in $x_{0}$. \\ \\
 				$" \Leftarrow "$: Es gelte das $\epsilon$-$\delta$-Kriterium. Sei $(x_{n}) \subseteq M$ mit $x_{n} \rightarrow x_{0}, \epsilon > 0$. \\
 				Dann gilt $d_{N}(f(x_{n}), f(x_{0})) < \epsilon$ für $n$ gro{\ss} genug. Da $\epsilon > 0$ beliebig, folgt $d_{N}(f(x_{n}), f(f_{0})) \rightarrow 0$ für $n \rightarrow \infty$.

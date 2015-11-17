@@ -70,7 +70,8 @@
 		 \begin{align*}
 		 	| f_{k}(v) - f_{k} (u) - \nabla f_{k}(u) (v - u) | & = | \int_{0}^{1} [ \nabla f_{k} (u_{t}) - \nabla f_{k} (u) ] (v - u) dt \\
 		 		& \leq  \int_{0}^{1} | \nabla f_{k} (u_{t}) - \nabla f_{k} (u) | dt (v - u) \\
-		 		& \leq \left[ \int_{0}^{1} | \nabla f_{k}(u_{t}) - g(u_{t}) | dt + \int_{0}^{1} | g(u_{t}) - g(u) | dt + \int_{0}^{1} | g(u) - \nabla f_{k}(u) | dt \right] |v - u| \\
+		 		& \leq \left[ \int_{0}^{1} | \nabla f_{k}(u_{t}) - g(u_{t}) | dt + \int_{0}^{1} | g(u_{t}) - g(u) | dt + \int_{0}^{1} | g(u) - \nabla f_{k}(u) | dt \right] \\
+		 		&  \hspace{5cm} \cdot |v - u| \\
 		 		& \leq \left[ z \| \nabla f_{k} - g \|_{\infty} + \sup_{0 \leq t \leq 1} | g(u_{t}) - g(u) | \right] |v - u|
  		 \end{align*}
  		 \begin{align*}
@@ -86,7 +87,7 @@
 			\begin{beweis}
 				Äquivalente Normen haben gleiche Cauchy-Folgen.
 			\end{beweis}
-			Bsp.: $C^{1}[0, 1]$, $\vertiii{f} = |f(0)| + \sup_{t \in [0, 1]} | f'(t) |$. Früher: $\vertiii{\cdot} \tilde \| \cdot \|_{\infty} \Rightarrow \left( C[0, 1], \vertiii{\cdot} \right)$ ist vollständig.
+			Bsp.: $C^{1}[0, 1]$, $\vertiii{f} = |f(0)| + \sup_{t \in [0, 1]} | f'(t) |$. Früher: $\vertiii{\cdot} \sim \| \cdot \|_{\infty} \Rightarrow \left( C[0, 1], \vertiii{\cdot} \right)$ ist vollständig.
 		\item Abgeschlossene Teilmengen von 	Banachräumen sind vollständige metrische Räume bezüglich $d(x, y) = \| x - y\|$
 			\begin{beweis}
 				$(x_{n}) \subset M$, Cauchy-Folge in $X \Rightarrow \lim_{n \rightarrow \infty} x_{n} = x \in X \xRightarrow[M abg.]{} x \in M$ existiert.	
