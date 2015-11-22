@@ -249,21 +249,68 @@ Hierfür gelten die folgenden Eigenschaften:
 							f(t_{1}) & = \min_{t \in [0, 1]} f(t) =: c_{1} > a \\
 							f(t_{2}) & = \max_{t \in [0, 1]} f(t) =: c_{2} < b
 						\end{align*}
-						\begin{figure}[h]
-  							\begin{center}
-   								\includegraphics[width=0.48\textwidth]{images/bsp-4.11.c.i}					
-  							\end{center}
-						\end{figure}					
+						\begin{center}
+						  \begin{figure}[H]
+							\pgfmathdeclarefunction{expfct}{1}{ \pgfmathparse{((x*sin(1/2*(deg(3*x)))+( #1*0.25 ))}}									\begin{center}		
+							\begin{tikzpicture}
+								\begin{axis}[
+									domain=-2:4,	
+    								samples=101,
+    								height=5cm,
+    								width=10cm
+								]
+							
+									\addplot [thin, smooth, name path global=first] {expfct(0)};
+									\addplot [color=blue, dashed] {expfct(1)};
+									\addplot [color=blue, dashed] {expfct(-1)};
+								\end{axis}
+							\end{tikzpicture}
+													\end{center}
+							\caption{$\epsilon$-Kugel um $f$ bzgl. $\| \cdot \|_{\infty}$}
+						  \end{figure}													
+						\end{center}
+															
 						Für $\epsilon \in (0, \min\{c_1 - a, b - c_2\})$ gilt dann $K(f, \epsilon) \subseteq A$, d.h. $A$ ist offen.
 					\item Da Konvergenz bezüglich $\| \cdot \|_{\infty}$ punktweise Konvergenz impliziert, folgt direkt
 						\[ \overline{A} \subseteq \{ f\in X \colon f(t) \in [a, b] \quad \forall t \in [a,b] \}. \]
 						Ist umgekehrt $f \in X$ mit $f(t) \in [a, b]$ für alle $t \in [0,1]$, so definieren wir
 						\[ f_{n}(t) = \begin{cases} a + \frac{1}{n} &, f(t) \leq a + \frac{1}{n} \\ b - \frac{1}{n} &, f(t) \geq b - \frac{1}{n} \\ f(t) &, \text{ sonst.}  \end{cases}   \]
-						\begin{figure}[h]
-  							\begin{center}
-   								\includegraphics[width=0.48\textwidth]{images/bsp-4.11.c.ii}					
-  							\end{center}
-						\end{figure}		
+						\begin{center}
+							\begin{figure}[H]
+								\begin{tikzpicture}
+										
+								\end{tikzpicture}
+							\end{figure}
+						\end{center}
+						
+						\begin{center}
+						  \begin{figure}[H]
+							\pgfmathdeclarefunction{expfct}{1}{ \pgfmathparse{((x*sin(1/2*(deg(3*x)))+( #1*0.25 )))}}	
+							
+							\pgfmathdeclarefunction{expfct2}{1}{ \pgfmathparse{ (and(expfct(#1)<=0.75, expfct(#1)>=-2.75)*expfct(#1)) + (and(expfct(#1)>0.75, expfct(#1)<=5.75)*0.75) + (and(expfct(#1)<-2.75, expfct(#1)>=-5.75)*-2.75)}}
+							\begin{center}		
+							  \begin{tikzpicture}
+								\begin{axis}[
+									domain=0:4,	
+    								samples=101,
+    								height=5cm,
+    								width=10cm
+								]
+								
+	    							\addplot [thin, dashed, smooth] {1.25} node [pos=1.25,pin={1:$b$},inner sep=0pt] {};
+
+									\addplot [color=blue, thin, smooth, name path global=first] {expfct(0)};
+									\addplot [color=red, thin, smooth, name path global=first] {expfct2(0)};
+									
+									\addplot [thin, dashed, smooth] {-3.25} node [pos=-3.25,pin={1:$a$},inner sep=0pt] {};	
+
+								\end{axis}
+							  \end{tikzpicture}
+							\end{center}
+							\caption{\textcolor{blue}{$f$} bzw. \textcolor{red}{$f_{n}$} für konkretes $n \in \MdN$}
+						  \end{figure}													
+						\end{center}
+							
 						\[ \Rightarrow f_{n} \in A \text{ mit } \| f_{n} - f \|_{\infty} \rightarrow 0 \text{ } (n \rightarrow \infty) \text{, d.h. } f \in \bar A \]
 					\item Aussage über $\partial A$ folgt aus \hyperref[bsp:1-4.11.b]{i)} und \hyperref[bsp:1-4.11.b]{ii)}
 				\end{enumerate}
@@ -396,3 +443,4 @@ Hierfür gelten folgende Eigenschaften:
 
 
 
+trrrrrrrrr
