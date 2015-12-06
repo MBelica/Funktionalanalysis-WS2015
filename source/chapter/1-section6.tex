@@ -2,24 +2,40 @@
 
 \chapter{Kompakte Mengen}
 
-\begin{definition}
+\begin{definition} \index{kompakt} \index{relativ kompakt}
 	Sei $(M, d)$ ein metrischer Raum. Eine Menge $K \subseteq M$ hei{\ss}t (folgen-)\begriff{kompakt}, falls es in jeder Folge $(x_{n}) \subset M$ eine Teilfolge $(x_{n_{k}})$ und ein $x \in K$ gibt, so dass 
 		\[ \lim_{k \rightarrow \infty} x_{n_{k}} = x \]
 		$K \subseteq M$ hei{\ss}t \begriff{relativ kompakt}, falls $\overline{K}$ in $M$ kompakt ist.
 \end{definition}
 
-\begin{nfsatz}
-	Sei $X$ ein normierter Raum. Dann ist
+\begin{satz}
+	Sei $X$ ein normierter Vektorraum. Dann ist
 	\[ \overline{U_{x}} = \{ x \in X: \| x \| \leq 1 \} \]
 	genau dann kompakt wenn $dim X < \infty$.
-\end{nfsatz}
+\end{satz}
+ 	\begin{beweis}
+		$"\Rightarrow"$ $X \cong \MdK^{d}$, $d = \dim X$, $U_X$ ist abgeschlossen, beschränkt $\xRightarrow[Borell]{Heine-} U_{X}$ ist kompakt. \\ \\
+		$"\Leftarrow"$ Sei $\dim X = \infty$. Wähle $x_1 \in X$ mig $\| x_1 \| = 1$. \\
+		Nach \eqref{lemma:6.3-riesz} mit $ Y = \overline{span}\{ x_{1} \}$ finde zu $\delta = \frac{1}{2}$ ein $x_{2} \in X, \| x_{2} \| = 1$ und $\| x_{2} - x_{1} \| \geq \frac{1}{2}$ \\
+		Wieder nach \eqref{lemma:6.3-riesz} mit $ Y = \overline{span}\{ x_{1}, x_{2} \}$ finde zu $\delta = \frac{1}{2}$ ein $x_{3} \in X, \| x_{3} \| = 1$ und $\| x_{3} - x_{j} \| \geq \frac{1}{2}$ für $j = 1, 2$ \\
+		Induktiv erhält man eine Folge $x_{i} \in X$ mit $\| x_{i} \| = 1$ und $\| x_{i} - x_{j} \| \geq \frac{1}{2}$ für $j = 1, \dotsc, i - 1$.
+		Dieses Folge $(x_{i})_{i \geq 1}$ hat keine Teilfolge, die eine Cauchy-Folge ist und demnach ist $U_{X}$ nicht relativ kompakt in $X$. 
+	\end{beweis}
 
-\begin{lemma}[Riesz]
-	Sei $Y$ ein abgeschlossener Teilraum von $X$ und $X \neq Y$. Zu $\delta \in (0, 1)$ existiert ein $x_{\delta} \in X \setminus Y$, sodass $\| x \| = 1$,
-	\[ \| x{\delta} - y\| \geq 1 - \delta \quad \text{ für alle } y \in Y \]
+\begin{lemma}[Riesz] \label{lemma:6.3-riesz} \index{Riesz}
+	Sei $Y$ ein abgeschlossener Teilraum von $X$ und $X \neq Y$. Zu $\delta \in (0, 1)$ existiert ein $x_{\delta} \in X \setminus Y$, sodass
+	\[ \| x \| = 1, \quad \| x_{\delta} - y\| \geq 1 - \delta \quad \text{ für alle } y \in Y \]
 \end{lemma}
 \begin{beweis}
-	% todo proof
+	Sei $x \in X \setminus Y$ und $d := \inf \{ \| x - y \|: y \in Y \} > 0$, da $Y$ ein abgeschlossener Teilraum ist. \\
+	Da $ d < \frac{d}{1 - \delta}$ gibt es ein $y_{\delta} \in Y$ mit $\| x - y_{\delta} \| < \frac{d}{1 -  \delta}$. \\ 
+	Setze $x_{\delta} = \frac{x - y_{\delta}}{\| x - y_{\delta} \|}$, damit gilt $\| x_{\delta} \| = 1$ und weiter 
+	\begin{align*}
+		\| x_{\delta} - y \| & = \| \frac{x}{\| x - y_{\delta} \|} - \frac{y_\delta}{\| x - y_{\delta} - y\|} \|	\\
+			& = \frac{1}{\| x - y_{\delta} \|} \| x - \underbrace{y_{\delta} - \| x - y_{\delta} \| y}_{\leq y} \| \\
+			& \geq \frac{d}{\| x - y_{\delta} \|} \\
+			& \geq 1 - \delta
+	\end{align*}
 \end{beweis}
 
 \begin{beispiel}
@@ -29,37 +45,80 @@
 	%todo drawing
 	(Kompakte Mengen lassen sich gut durch endliche Mengen approximieren)
 \end{beispiel}
+\begin{beweis}
+	siehe Übung.	
+\end{beweis}
 
-\begin{satz}
+\begin{satz} \label{satz:6.5}
 	Sei $(M, d)$ ein metrischer Raum . Für $k \subset M$ sind folgende Aussagen äquivalent:
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item $K$ ist (folgen-)kompakt
+		\label{satz:6.5a}
+		\item $K$ ist (folgen-)kompakt 
+		\label{satz:6.5b}
 		\item $K$ ist vollständig und total beschränkt, d.h. für alle $\epsilon > 0$ gibt es endlich viele $x_{1}, \dotsc, x_{m} \in M$ so dass
 			\[ K \subset \bigcup_{j = 1}^{m} K(x_{j}, \epsilon) \]
+		\label{satz:6.5c}
 		\item Jede Überdeckung von $K$ durch offene Mengen $U_{j}, j \in J$ mit $K \subset \bigcup_{j \in J} U_{j}$ besitzt eine endliche Teilüberdeckung, d.h. $j_{1}, \dotsc, j_{m}$ mit
 			\[ K \subset \bigcup_{k = 1}^{m} U_{j_{k}} \]
 	\end{enumerate}
 \end{satz}
 \begin{beweis}
-	% todo proof
+	$a) \Rightarrow  b)$ (indirekt) \pdfcomment{I guess that the completeness of K can be skipped since the limit of our subsequence would not have to exist in K and therefore K would not have to be compact; therefore this part of the  indirect proof seems simple enough to be skipped or am I wrong?} \\
+	Angenommen $b)$ ist falsch. Dann gibt es ein $\epsilon > 0$, so dass für alle $x_{1}, \dotsc, x_{n}, n \in \MdN$ gilt:
+	\[ K \not\subset K(x_{1}, \epsilon) \cup \dotsc \cup K(x_{n}, \epsilon) \]
+	Um einen Widerspruch zu erhalten konstruieren wir eine Folge ohne konvergente Teilfolge: \\
+	Wähle $y_{1} \in K$ beliebig, dann gilt nach Voraussetzung $K \not\subset K(y_{1}, \epsilon)$.
+	Wähle weiter $y_{2} \in K \setminus K(y_{1}, \epsilon)$ beliebig, dann gilt $K \not\subset K(y_{1}, \epsilon) \cup K(y_{2}, \epsilon)$. \\
+	Induktiv erhält man eine Folge $y_{j} \in K$ mit $y_{j} \notin \{ K(y_{1}, \epsilon) \cup \dotsc \cup K(y_{j - 1}, \epsilon \}$. \\
+	D.h. $\|y_{j} - y_{k} \| \geq \epsilon$ für $k = 1, \dotsc, j - 1$. D.h. $y_{j}$ hat keine konvergente Teilfolge, was ein Widerspruch zu $a)$ ist. \\ \\
+	$b) \Rightarrow c)$ (indirekt) \\
+	Sei $c)$ falsch, d.h. es gibt eine offene Überdeckung $K \subset \bigcup_{j \in J} U_{j}$ ohne endliche Teilüberdeckung.
+	Zu $\epsilon_{1}$ gibt es nach $b)$ aber endlich viele $x_{1}^{1}, ..., x_{m}^{1} \in K$, so dass 
+	\[ K \subset \bigcup_{j = 1}^{m} K(x_{j}^{1}, \epsilon_{1}) \]
+	Setze der Kürze halber $y_{1} := x_{j_{0}}^{1}$. Nun gibt es eine dieser Kugeln $K(y_{1}, \epsilon_{1})$, sodass $\underbrace{K \cap K(y_{1}, 1)}_{=: L_{1}}$ nicht durch endlich viele der $U_{j}$ überdeckt werden kann. \\
+	Nach $B)$ gibt es aber auch zu $\epsilon_{2} = \frac{1}{2}$ endlich viele $x_{1}^{2}, \dotsc, x_{m'}^{2}$, sodass 
+	\[ L_{1} \subset K(x_{1}^{2}, \epsilon_{2}) \cup \dotsc \cup K(x_{m'}^{2}, \epsilon_{2}). \] 
+	Wieder muss es nach Voraussetzung eine dieser Kugeln $K(y_{2}, \epsilon_{2})$ geben, sodass $\underbrace{K \cap K(y_{1}, \epsilon_{1}) \cap K(y_{2}, \epsilon_{2})}_{=: L_{2}}$ sich nicht durch endlich viele der $U_{j}$ überdecken lässt. \\
+	Induktiv finden wir zu $\epsilon_{l} = \frac{1}{2^{l - 1}}$ eine Folge $y_{l} \in K$, so dass
+	\[ L_{l} := K \cap K(y_{1}, \epsilon_{1}) \cap \dotsc \cap K(y_{l}, \epsilon_{l}) \]
+	sich nicht durch endlich viele der $U_{j}$ überdecken lässt. \\
+	Nun ist aber $L_{l} \subset K(y_{l - 1}, \epsilon_{l - 1}) \cap K(y_{l}, \epsilon_{l}) \neq \emptyset$. Mit $z \in K(y_{l - 1}, \epsilon_{l - 1}) \cap K(y_{l}, \epsilon_{l})$ gilt
+	\[ d(y_{l}, y_{l - 1}) \leq d(y_{l}, z) + d(z, y_{l - 1}) \leq \frac{1}{2^{l - 1}} + \frac{1}{2^{l - 2}} \leq \frac{1}{2^{l - 3}}. \]
+	Für $n < m$: $d(y_{n}, y_{m}) \leq \sum_{l = n}^{m} \frac{1}{2^{l}} \xrightarrow[n, m \rightarrow \infty]{} 0$, d.h. $(y_{n})_{n \geq 1}$ ist Cauchy-Folge in $K$. \\
+	Da $K$ vollständig ist nach $b)$, gilt $y := \lim_{l \rightarrow \infty} y_{l} \in K$.
+	Wähle $n$ so gro{\ss}, dass $d(y_{n}, y) < \frac{\delta}{2}, 2^{1-n} < \frac{\delta}{2}$. \\
+	\[ \Rightarrow L_{n} = K \cap K(y_{1}, 1) \cap \dotsc \cap K(y_{n}, \frac{1}{2^{n - 1 ?}} \subset K(y_{n}, 	\frac{1}{2^{n - 1}} \subset K(y, \delta) \subset U_{i_{0}} \]
+	Was jedoch Widerspruch zur Konstruktion der $L_{n}$ wäre. \\ \\
+	$c) \Rightarrow a)$ (indirekt) \\
+	Angenommen $a)$ wäre falsch. D.h. es gibt eine Folge $(x_{n})_{n \geq 1} \subset K$ ohne konvergente Teilfolge. Sei o.B.d.A. $|K| = \infty$. Zu jedem $y \in K$ gibt es ein $	\epsilon(y)$, so dass $K(y, \epsilon(y))$ nur endlich viele der $x_{n}$ enthält. $K \subset \bigcup_{y \in K} K(y, \epsilon(y))$, wobei alle $K(y, \epsilon(y))$ offen sind. \\
+	Nach $c)$ existiert eine endliche Teilüberdeckung, so dass $K \subset K(y_{1}, \epsilon(y_{1})) \cup \dotsc \cup K(y_{n}, \epsilon(y_{n}))$.
+	$\Rightarrow (x_{n})$ besteht nur aus endlich vielen Elementen und hat damit eine konvergente Teilfolge, was ein Widerspruch zur Wahl von $(x_{n})$ ist.
 \end{beweis}
 
-\begin{prop}
+\begin{prop} \label{prop:6.6}
 	Sei $(M, d)$ ein metrischer Raum.
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Eine kompakte Teilmenge $K \subset M$ ist immer vollständig und abgeschlossen in $M$.
 		\item Eine abgeschlossene Teilmenge eine kompakten Raums ist kompakt.
-		\item Jede kompakte Menge in $M$ ist seperabel.
+		\item Jede kompakte Menge in $M$ ist separabel.
 		\item Eine kompakte Teilmenge eines normierten Raums ist beschränkt.
 	\end{enumerate}
 	\begin{beweis}
-		% todo proof
+		\begin{enumerate}[label=\alph*\upshape)]
+			\item siehe \hyperref[satz:6.5b]{6.5 b)}
+			\item Nach Definition
+			\item Nach \hyperref[satz:6.5b]{6.5 b)} gibt es zu $n \in \MdN$ eine endliche Menge $L_{n}$ mit:
+				\[ \inf{\| y - x \| : x \in L_{n}} \leq \frac{1}{n} \text{ für alle } x \in K. \]
+				Dann ist $L = \bigcup_{n \geq 1} L_{n}$ abzählbar und $L$ ist dicht in $K$ (d.h. $\overline{L} = K$), also ist $K$ separabel.
+			\item Falls $K$ unbeschränkt ist, dann gibt es $x_{n} \in K$ mit $\|x_{n}\| \geq n, n \in \MdN$. \\
+				$(x_{n})$ kann dann keine konvergente Teilfolge besitzen.
+		\end{enumerate}
 	\end{beweis}
 
 \end{prop}
 
-\begin{satz}[Arzela-Ascoli]
-	Sei (S, d) ein kompakter, metrischer Raum
+\begin{satz}[Arzelà-Ascoli] \index{Arzelà-Ascoli}
+	Sei $(S, d)$ ein kompakter, metrischer Raum
 	\[ C(S) = \{ d : S \rightarrow \MdK \text{ stetig} \} \]
 	$\| f \|_{\infty} = \sup_{s \in S} | f(s) |$. Eine Teilmenge $M \subset C(S)$ ist kompakt, genau dann wenn gilt
 		\begin{enumerate}[label=\alph*\upshape)]
@@ -70,7 +129,32 @@
 		\end{enumerate}
 \end{satz}
 \begin{beweis}
-	% todo proof
+	$"\Rightarrow"$ Sei $M$ kompakt $\Rightarrow$ a,b) nach \hyperref[prop:6.6]{6.6} \\
+	z.z. $M$ ist gleichgradig stetig: \\
+	Nach \hyperref[satz:6.5b]{6.5 b)} ist $M$ totalbeschränkt. Damit gibt es zu $\epsilon > 0$ $x_{1}, \dotsc, x_{m}$, so dass zu $x \in M$ ein $x_{i}$ existiert mit $\| x - x_{i} \|_{M} \leq \epsilon$ $(*)$ \\
+	Da stetige Funktionen auf kompakten Mengen gleichmä{\ss}ig stetig sind, sind$x_{1}, \dotsc, x_{m} \in M$ gleichmä{\ss}ig stetig und damit folgt 
+	\[ \exists \delta_{1}, \dotsc, \delta_{m} \text{ mit } d(s, t) < \delta_{i} \Rightarrow |x_{i}(t) - x_{i}(s)| < \epsilon, \text{ } i = 1, \dotsc, m \quad (**) \]
+	Definiere $\delta := \min(\delta_{1}, \dotsc, \delta_{m}) > 0$, dann gilt für $x \in M$:
+	\begin{align*}
+		| x(t) - x(s) | & \leq \underbrace{| x(t) - x_{i}(s) |}_{\leq \| x - x_{i} \| \leq \epsilon \text{ nach } (*) } + \underbrace{| x_{i}(t) - x_{i}(s) |}_{\leq \epsilon \text{ nach } (**) } + \underbrace{| x_{i}(s) - x(s) |}_{\leq \epsilon} \\
+						& \leq 3 \epsilon \text{ für } d(s, t) < \delta 
+	\end{align*} \\
+	$"\Leftarrow"$ Nach \hyperref[prop:6.6]{6.6} ist $S$ separabel. Sei also $(S_{n})$ eine dichte Folge in $S$. Sei weiter eine Folge $(x_{n}) \subset M$ gegeben. \\
+	Da $M$ beschränkt in $C(S)$ ist, gibt es ein $C < \infty$ mit $| x_{n}(s) | <\leq C$ für alle $s \in S, n \in \MdN$. Also ist für festes $m$ $(x_{n}(s_{m}))_{n \in \MdN}$ beschränkt und hat somit eine konvergente Teilfolge. \\
+	\[ \exists N_{1} \subseteq \MdN \text{ mit } |N_{1}| = \infty \text{ so, dass } (x_{n}(s_{1}))_{n \in N_{1}} \text{ konvergiert.}  \]
+	\[ \exists N_{2} \subseteq N_{1} \text{ mit } |N_{2}| = \infty \text{ so, dass } (x_{n}(s_{2}))_{n \in N_{2}} \text{ konvergiert.}  \]	
+	Induktiv gibt es $N_{1} \supset N_{2} \supset \dotsc \supset N_{l} \supset \dotsc$ mit $|N_{l}| = \infty$ so, dass $(x_{n}(s_{m}))_{n \in N_{m}}$ konvergiert. \\
+	Wähle $n_{j} \in N_{j}$ mit $n_{j} \rightarrow \infty$ für $j \rightarrow \infty$. Dann gilt: $(x_{n_{j}}(s_{m}))_{j \in \MdN}$ konvergiert in $\MdK$ für jedes $m \in \MdN$. $(**)$ \\
+	z.z. $(x_{n_{j}})$ konvergiert gleichmä{\ss}ig auf $S$. \\
+	Zu $\epsilon > 0$ wähle $\delta$ wie in der Definition für gleichgradige Stetigkeit.
+	Da die Überdeckung $S = \bigcup_{n = 1}^{\infty} K(s_{n}, \delta)$ kompakt ist, gibt es eine endliche Teilüberdeckung $S' = K(s_1, \delta) \cup \dotsc \cup K(s_{m}, \delta)$. \\
+	Setze zur Abkürzung $x_{j} = x_{n_{j}}$ und $s_{k} = s_{n_{k}}$. \\
+	Zum bereits gewählten $\epsilon > 0$ gibt es ein $i_{0}$ mit 
+	\[ | x_{j}(s_{k}) - x_{i}(s_{k}) | \leq \epsilon \quad i, j \geq i_{0}, k = 1, \dotsc, m \]
+	Dann gilt ebenfalls für $i, j \geq i_{0}, s \in S$: \\
+	\[ | x_{j}(s) - x_{i}(s) | \leq \underbrace{| x(t) - x_{i}(s) |}_{\overset{\leq \epsilon}{\text{(wg. glgrd. Stetigkeit)}}} + \underbrace{| x_{j}(s_{k}) - x_{i}(s_{k}) |}_{\leq \epsilon} + \underbrace{| x_{i}(s_{k}) - x_{i}(s) |}_{\overset{\leq \epsilon}{\text{(wg. glgrd. Stetigkeit)}}} \leq 3 \epsilon \]
+	\[ \Rightarrow \| x_{j} - x_{i}\|_{\infty} \leq 3 \epsilon \text{ d. h. } x_{j} \text{ ist eine Cauchy-Folge in } C(S). \]
+	\[ \Rightarrow x = \lim_{j \rightarrow \infty} x_{j} \text{ existiert mit } x \in M \]
 \end{beweis}
 
 \newpage
@@ -104,3 +188,4 @@
 
 
 
+	
