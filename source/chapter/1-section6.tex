@@ -8,7 +8,7 @@
 		$K \subseteq M$ hei{\ss}t \begriff{relativ kompakt}, falls $\overline{K}$ in $M$ kompakt ist.
 \end{definition}
 
-\begin{satz}
+\begin{satz} \label{satz-6.2}
 	Sei $X$ ein normierter Vektorraum. Dann ist
 	\[ \overline{U_{x}} = \{ x \in X: \| x \| \leq 1 \} \]
 	genau dann kompakt wenn $dim X < \infty$.
@@ -38,11 +38,10 @@
 	\end{align*}
 \end{beweis}
 
-\begin{beispiel}
+\begin{beispiel} \label{bsp:6.4}
 	Sei $X = \ell^{p}$ für $1 \leq p < \infty$ gilt: \\
 	$M \subset \ell^{p}$ ist kompakt genau dann, wenn
 	\[ \sup \{ \sum_{ n = 1}^{\infty} |x_{n}|^{p} : x = (x_{m}) \in M \} \xrightarrow[k \rightarrow \infty]{} 0 \]	
-	%todo drawing
 	(Kompakte Mengen lassen sich gut durch endliche Mengen approximieren)
 \end{beispiel}
 \begin{beweis}
@@ -63,7 +62,7 @@
 	\end{enumerate}
 \end{satz}
 \begin{beweis}
-	$a) \Rightarrow  b)$ (indirekt) \pdfcomment{I guess that the completeness of K can be skipped since the limit of our subsequence would not have to exist in K and therefore K would not have to be compact; therefore this part of the  indirect proof seems simple enough to be skipped or am I wrong?} \\
+	$a) \Rightarrow  b)$ (indirekt) \\
 	Angenommen $b)$ ist falsch. Dann gibt es ein $\epsilon > 0$, so dass für alle $x_{1}, \dotsc, x_{n}, n \in \MdN$ gilt:
 	\[ K \not\subset K(x_{1}, \epsilon) \cup \dotsc \cup K(x_{n}, \epsilon) \]
 	Um einen Widerspruch zu erhalten konstruieren wir eine Folge ohne konvergente Teilfolge: \\
@@ -117,7 +116,7 @@
 
 \end{prop}
 
-\begin{satz}[Arzelà-Ascoli] \index{Arzelà-Ascoli}
+\begin{satz}[Arzelà-Ascoli] \index{Arzelà-Ascoli} \label{satz-6.7-arzelaascoli}
 	Sei $(S, d)$ ein kompakter, metrischer Raum
 	\[ C(S) = \{ d : S \rightarrow \MdK \text{ stetig} \} \]
 	$\| f \|_{\infty} = \sup_{s \in S} | f(s) |$. Eine Teilmenge $M \subset C(S)$ ist kompakt, genau dann wenn gilt
@@ -156,6 +155,8 @@
 	\[ \Rightarrow \| x_{j} - x_{i}\|_{\infty} \leq 3 \epsilon \text{ d. h. } x_{j} \text{ ist eine Cauchy-Folge in } C(S). \]
 	\[ \Rightarrow x = \lim_{j \rightarrow \infty} x_{j} \text{ existiert mit } x \in M \]
 \end{beweis}
+
+%todo sth missing here
 
 \newpage
 

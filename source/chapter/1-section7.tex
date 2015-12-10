@@ -2,6 +2,151 @@
 
 \chapter{Kompakte Operatoren}
 
+\begin{definition}  \label{def:7.1-kompktOperator} \index{kompakter Operator}
+	Sei $X$ ein normierter Raum, Y ein Banachraum. Ein linearer Operator $T : X \rightarrow Y$ hei{\ss}t kompakt, falls $T(U_{X})$ relativ kompakt ist in $Y$.
+\end{definition}
+
+\begin{vereinbarung}
+	$K(X, Y) =$ Raum der linearen, kompakten Operatoren von $X$ nach $Y$.
+\end{vereinbarung}
+
+\begin{bemerkung*}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $T \in K(X, Y) \gdw$ jede beschränkte Folge $(x_{n}) \subset X$ besitzt eine Teilfolge $(x_{n_{k}})$ mit $T(x_{n_{k}})$ ist Cauchy-Folge in $Y$.
+		\item $K(X, Y) \subset B(X, Y)$, da die kompakte Menge $\overline{T(U_{X})}$ beschränkt in $Y$ ist.
+	\end{enumerate}	
+\end{bemerkung*}
+
+\begin{beispiel*}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $Id_{X} \in K(X, X) \gdw \dim X < \infty$ (nach \hyperref[satz-6.2]{6.2}).
+		\item Endlich dimensionale Operatoren sind kompakt
+			\[ X \xrightarrow[]{T} T(X) \subset Y_{0} \subset Y \text{ mit } \dim Y_{0} < \infty \]	
+	\end{enumerate}			
+\end{beispiel*}
+
+\begin{beispiel} \label{bsp:7.2}
+	$X = \ell^{p}, 1 \leq p < \infty.$ $Q_{n} \in B(\ell^{p}): Q_{n}(x_{j}) := (0, \dotsc, 0, x_{n + 1}, x_{n + 2}, \dotsc)$ \\
+	Behauptung: 
+	\[ T \in B(\ell^{p}) \text{ kompakt  } \gdw \| Q_{n} T \| \xrightarrow[n \rightarrow \infty]{} 0 \]
+	\[ \gdw \sup_{\|x\|_{p} \leq 1} \left( \sum_{j = n + 1}^{\infty} (Tx)_{j} \right)^{\frac{1}{p}} \xrightarrow[n \rightarrow \infty]{} 0 \gdw T(U_{X}) \text{ ist relativ kompakt in } \ell^{p} \text{ nach } \hyperref[bsp:6.4]{6.4} \]
+	
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $T(x_{j}) = (\lambda_{j} x_{j})_{j \in \MdN}$ mit $\lambda_{j} \in \MdK$ Diagonaloperator \\
+			$T$ ist kompakt $\gdw \lambda_{j} \rightarrow 0$, für $j \rightarrow \infty$.
+			\begin{beweis}
+				Da $Q_{n} \in B(\ell^{p})$ gilt:
+				\begin{align*}
+					 \| Q_{n} T(X_{j}) \| & = \| (0, \dotsc, 0, \lambda_{n + 1}, x_{n + 1}, \lambda_{n + 2}, x_{n + 2}, \dotsc ) \|_{\ell^{p}} \\
+										 & = \left( \sum_{j = 1}^{\infty} |\lambda_{j}|^{p} |x_{j}|^{p} \right)^{\frac{1}{p}} \\
+										 & \leq 	\sup_{j = n + 1}^{\infty} |\lambda_{j}| \|x \|_{\ell^{p}}			
+				\end{align*}
+				\[ \Rightarrow \sup_{\| x \| \leq 1} \| Q_{n} T x \| \xrightarrow[n \rightarrow \infty]{} 0, \text{ falls } \lambda_{j} \rightarrow 0 \]
+				Sei umgekehrt: $\lambda_{j} \rightarrow 0, \text{ dann } \exists \lambda_{j_{k}} \rightarrow \lambda \neq 0 $
+				\[ T(e_{i_{k}}) = \lambda_{i_{k}} e_{i_{k}}, T(\lambda_{j_{k}}) \approx \lambda e_{j_{k}} \text{ hat keine konvergente Teilfolge.} \]
+			\end{beweis}
+		\item $T(x_{i})= (0, x_{1}, x_{2}, x_{3}, \dotsc)$, $"$Shift$"$ \\
+			Isometrie! $\| T(x_{j}) \| = \| x_{i} \| \Rightarrow$ nicht kompakt.
+		\item $\left[ T(x_{j}) \right]_{i} = \sum_{j = 1}^{\infty} a_{ij} x_{j},$ $T \in B(\ell^{p})$, falls $\left( \sum_{i} \left( \sum_{j} | a_{ij} |^{p'} \right)^{\frac{p}{p'}} \right)^{\frac{1}{p}} < \infty, \frac{1}{p} + \frac{1}{p^{'}} = 1. $\\
+			Diese Hille-Tamerkin-Operatoren sind kompakt.
+			\begin{beweis}
+				\[ \| \left[ Q_{n} T(x_{j}) \right]_{i} \| \leq \left( \sum_{j = n + 1}^{\infty} \left( \sum_{j} |a_{ij}|^{p'} \right)^{\frac{p}{p'}} \right)^{\frac{1}{p}} \rightarrow 0, n \rightarrow \infty \]
+			\end{beweis}
+
+	\end{enumerate}
+\end{beispiel}
+
+\begin{beispiel} \label{bsp:7.3}
+	Sei $X = C(\Omega)$, mit $\Omega \subset \MdR^{d}$ kompakt. Für $k : \Omega \times \Omega \rightarrow \MdK$, ist der Integraloperator
+	\[ (Tx)(u) = \int_{\Omega} k(u, v) x(v) dv \quad \text{komapkt.} \]
+	\begin{beweis}
+		Wir führen den Beweis mittels Arzèla-Ascoli. Beachte
+		\[ \exists M \text{ mit } |k(u, v)| \leq M \text{ für } u, v \in \Omega \]
+		$k : \Omega \times \Omega \rightarrow \MdK$ ist gleichmä{\ss}ig stetig, da $\Omega \times \Omega$ kompakt ist.
+		\[ \forall \epsilon > 0 \exists \delta > 0 \| (u_1, v_1) - (u_2, v_2) \|_{\MdR^{2d}} < \delta \Rightarrow |k(u_1, v_1) - k(u_2, v_2)| < \epsilon \]
+		Dann gilt $T(U_{C(\Omega)})$ ist beschränkt, denn
+		\[ |Tx(u)| \leq \int_{\Omega} |k(u, v)| |x(v)| dv \leq M \underbrace{v_{0}(\Omega)}_{< \infty} \| x \|_{\infty} \]
+		Für $x \in U_{C(\Omega)}: \| Tx \|_{\infty} \leq M v_{0}(\Omega) < \infty$ \\
+		Damit ist $T(U_{C(\Omega)})$ gleichgradig stetig, da
+		\[ |Tx(v_1) - Tx(v_2)| \leq \int_{\Omega} \left( k(u_1, v) - k(u_2, v) \right) x(v) dv \leq v_{0}(\Omega) \sup_{v \in \Omega} | k(u_1, v) - k(u_2, v) | \underbrace{\| x \|_{\infty}}_{ \leq 1 } \]
+		Sei $\epsilon > 0$. Wähle $\delta > 0$ bzgl. glw. Stetigkeit: dann folgt für 	$|u_1 - u_2| < \delta$:
+		\[ Tx(u_1) - Tx(u_2) | \leq v_{0}(\Omega) \epsilon, \quad \forall x \in U_{C(\Omega)} \]
+		Dann nur noch Arzèla-Ascoli mit der gezeigten gleichgradigen Stetigkeit anwenden.
+	\end{beweis}
+\end{beispiel}
+
+\begin{beispiel} \label{bsp:7.4}
+	$j : C^{1}[0, 1] \hookrightarrow C[0, 1]$, $j$ Inklusion. Dann $j \in K(C^{1}[0, 1], C[0, 1])$.
+	\begin{beweis}
+		$j(U_{C^{1}[0, 1]})$ ist relativ kompakt in $C[0, 1]$ nach \hyperref[]{6.9}. (auch nach \hyperref[satz-6.7-arzelaascoli]{Arzèla-Ascoli}).
+	\end{beweis}
+\end{beispiel}
+
+\begin{satz} \label{satz:7-5}
+	Seien $X, Y$ und $Z$ Banachräume.
+	\begin{enumerate}[label=\alph*\upshape)]
+		\label{satz:7-5a}
+		\item $K(X, Y)$ ist ist ein linearer, \textit{abgeschlossener} Teilraum von $B(X, Y)$.
+		\item Seien $T \in B(X, Y), S \in B(Y, Z)$ und entweder $T$ oder $S$ kompakt. Dann ist $S \circ T \in K(X, Z)$. \\
+			Insbesondere: $K(X) = K(X, X)$ ist ein Ideal in $B(X)$.
+	\end{enumerate}
+\end{satz}
+
+\begin{beweis}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $S, T \in K(X, Y). \lambda \in \MdK \quad \Rightarrow \lambda T \in K(X, Y).$ \\
+			Zu $(x_j) \in U_X$ wähle $x_{n_{k}}$ und $x_{n_{l}}$ so, dass $T(x_{n_{k}})$ und $S(x_{n_{ö}})$ jeweils Cauchy-Folgen sind. \\
+			\[ \Rightarrow (S + T) x_{k_{j}} = S x_{k_{j}} + T x_{k_{j}} \text{ ist Cauchy-Folge.} \] 
+			z.z.: $K(X, Y)$ ist abgeschlossen in $B(X, Y)$. \\
+			Seien $T_{n} \in K(X, Y), T \in B(X, Y)$ mit $\| T_{n} - T \| \rightarrow 0$. \\ \\
+			z.z.: $T \in K(X, Y)$. \\
+			Sei $\epsilon > 0$. Wähle $n_{0}$ so, dass $\| T - T_{n} \| \leq \epsilon$ für $n \geq n_{0}$. \\
+			Da $T_{n_{0}}(U_{X})$ relativ kompakt ist, gibt es zu $\epsilon > 0, y_{1}, \dotsc, y_{j} \in T_{n_{0}}(U_{X}):$
+			\[ T_{n_{0}}(U_{X}) \subset K(y_{1}, \epsilon) \cup \dotsc \cup K(y_{m}, \epsilon) \]
+			Sei $x \in U_{X}$. Wähle $j_{0}$ mit $\| T_{n_{0}} x - y_{j_{0}} \|_{Y} \leq \epsilon$.
+			\[ \| T x - y_{j_{0}} \| \leq \underbrace{\| T x - T_{n_{0}} x \|}_{\leq \underbrace{\| T - T_{n_{0}} \| }_{\leq \epsilon} \underbrace{\| x \|}_{\leq 1}} + \underbrace{\| T_{n_{0}} - y_{j_{0}} \|}_{\leq \epsilon} \leq 2 \epsilon \]
+			d.h. $T(U_{X}) \subset \bigcup_{j = 1}^{n} K(y_{j}, 2 \epsilon)$, d.h. $T(U_{X})$ ist relativ kompakt.
+		\item $\| x_{n} \|_{X} \leq 1, S$ kompakt $\Rightarrow \exists n_{k}: S( T x_{n_{k}} ) $ ist eine Cauchy-Folge. 
+			\[ \Rightarrow S( T x_{n_{k}} ) \text{ist Cauchy-Folge, da } S \text{stetig ist.} \] 
+	\end{enumerate}	
+\end{beweis}
+
+\begin{kor} \label{kor:7.6}
+	Seien $X, Y$ Banachräume, $T \in B(X, Y)$. \\
+	Falls es endlich dimensionale Operatoren $T_{n} \in B(X, Y)$ gibt, dann ist $T \in K(X, Y)$.
+	\begin{beweis}
+		Bemerkung nach \hyperref[def:7.1-kompktOperator]{7.1}, \hyperref[satz:7-5a]{7.5 a)}	
+	\end{beweis}
+\end{kor}
+
+\begin{beispiel*}
+	$X = \ell^{p}, T \in B(\ell^{p})$ ist kompakt $\gdw \| Q_{n} T \| \rightarrow 0$. \\
+	$P_{n} = Id - Q_{n}, P_{n}(x_{j}) = (x_{1}, \dotsc, x_{n}, 0, \dotsc), P_{n}$ endlich dimensional. \\
+	\[ T \in B(\ell^{p}) \gdw \| P_{n} T - T \| = \| Q_{n} T \| \rightarrow 0 \]
+	\[ T \in K(\ell^{p}) \gdw T \text{ ist limes von endlichen Operatoren in der Operatornorm.} \]
+\end{beispiel*}
+
+\begin{satz}
+	Seien $X, Y$ Banachräume und $X$ habe die \begriff{Approximationseigenschaft} (d.h. es existieren endlich dimensionale Operatoren $S_{n} \in B(X): S_{n} x \rightarrow x, \quad \forall x \in X$). \\ \\
+	Dann gilt: $K(X, Y) = \overline{F(X, Y)}$ in der Operatornorm, wobei $F(X, Y) = \{ T \in B(X, Y): \dim T(X) < \infty \}$.
+\end{satz}
+\begin{beweis}
+	Für $T \in K(X, Y)$ setze $T_{n} = S_{n} T \in F(X, Y)$. \\
+	Wegen \hyperref[kor:7.6]{7.6} bleibt z.z.: $\| T - T_{n} \| \rightarrow 0$. \\
+	Da $T(U_{X})$ relativ kompakt ist, d.h. zu $\epsilon > 0$ gibt es $y_{1}, \dotsc, y_{m}$ so, dass
+	\[ T(U_{X}) \subset \bigcup_{j = 1}^{m} K(y_{j}, \epsilon) \]
+	Aufgrund der Approximationseigenschaft gibt es ein $n_{0}$ so, dass  $\| S_{n} y_{j} - y_{j} \| \leq \epsilon$ für $n \geq n_{0}, j = 1, \dotsc, m$. Zu $x \in U_{X}$ wähle $j_{0}$ mit $\| Tx - y_{j_{0}} \| \leq \epsilon$ und damit
+	\begin{align*}
+		\| T_{n} x - T x \| & \leq \| S_{n} T x - S_{n} y_{j_{0}} \| + \| S_{n} y_{j_{0}} - y_{j_{0}} \| + \| y_{j_{0}}- Tx \| \\
+			& \leq \| S_{n} \| \underbrace{\| T x - y_{j} \|}_{\leq \epsilon} + \epsilon + \epsilon \\
+			& \leq \left( \underbrace{\sup_{n} \| S_{n} \|}_{< \infty \text{(beschr.!)}} + 2 \right) \epsilon \\
+			& = \left( c' + 2 \right) \epsilon \quad \text{ für } n \geq n_{0}. \\ \\
+			\Rightarrow \| T_{n} - T \| \leq c \epsilon \quad \text{ für } n \geq n_{0}
+	\end{align*}
+	\[  \]
+\end{beweis}
+
+
 \newpage
 
 
