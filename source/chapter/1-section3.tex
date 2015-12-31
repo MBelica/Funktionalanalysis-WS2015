@@ -277,7 +277,7 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 		\end{align*}
 		\[ \text{Also zusammen: } \left( \sum_{n = 1}^{N} |x_{n}|^{q} \right)^{1-\frac{1}{p}} \leq \| y \|_{(\ell^{p})'}, \text{ wobei } 1 - \frac{1}{p} = \frac{1}{q} \]
 		\begin{align}
-			\xRightarrow{N \rightarrow \infty} \| x \|_{\ell^{q}} \leq \| y' \|_{\ell^{\infty}} < \infty, \text{ d.h. } x \in \ell^{q} \label{eq:1.3-ineqlqlinf}			
+			\xRightarrow{N \rightarrow \infty} \| x \|_{\ell^{q}} \leq \| y' \|_{\ell^{\infty}} < \infty, \text{ d.h. } x \in \ell^{q} \label{eq:3.14-proof-ineqlqlinf}			
 		\end{align} 
 		Da für $y \in \ell^{p}$
 		\[ \| y - \sum_{n = 1}^{N} y_{n} e_{n} \|_{\ell^{p}}^{p} = \sum_{n \geq N + 1} |y_{n}|^{p} \rightarrow 0 \text{ für } N \rightarrow \infty \]
@@ -290,7 +290,7 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 			& = y'(y) \forall y \in \ell^{p} 		
 		\end{align*}
 		d.h. $ \Phi_{p}(x) = y'$ und damit $\Phi_{p}$ surjektiv.
-		Au{\ss}erdem gilt nach \eqref{eq:1.3-ineqlqlinf}
+		Au{\ss}erdem gilt nach \eqref{eq:3.14-proof-ineqlqlinf}
 		\[ \| \Phi_{p}(x) \|_{(\ell^{p})'} \geq \| x \|_{\ell^{q}}, \]
 		womit die Behauptung gezeigt ist.
 	\end{beweis}
@@ -306,7 +306,7 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 	\end{enumerate}	
 \end{bemerkung*}
 
-\begin{beispiel} \label{bsp:1-3.15}
+\begin{beispiel} \label{bsp:3.15}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Sei $K \subset \MdR^{n}$ kompakt, $x \in K$. Dann definieren wir
 			\[ \delta_{x}(f) := f(x) \text{ für } f \in C(K) \]

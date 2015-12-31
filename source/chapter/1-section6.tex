@@ -16,13 +16,13 @@
  	\begin{beweis}
 		$"\Rightarrow"$ $X \cong \MdK^{d}$, $d = \dim X$, $U_X$ ist abgeschlossen, beschränkt $\xRightarrow[Borell]{Heine-} U_{X}$ ist kompakt. \\ \\
 		$"\Leftarrow"$ Sei $\dim X = \infty$. Wähle $x_1 \in X$ mig $\| x_1 \| = 1$. \\
-		Nach \eqref{lemma:6.3-riesz} mit $ Y = \overline{span}\{ x_{1} \}$ finde zu $\delta = \frac{1}{2}$ ein $x_{2} \in X, \| x_{2} \| = 1$ und $\| x_{2} - x_{1} \| \geq \frac{1}{2}$ \\
-		Wieder nach \eqref{lemma:6.3-riesz} mit $ Y = \overline{span}\{ x_{1}, x_{2} \}$ finde zu $\delta = \frac{1}{2}$ ein $x_{3} \in X, \| x_{3} \| = 1$ und $\| x_{3} - x_{j} \| \geq \frac{1}{2}$ für $j = 1, 2$ \\
+		Nach \eqref{lemma:6.3-Riesz} mit $ Y = \overline{span}\{ x_{1} \}$ finde zu $\delta = \frac{1}{2}$ ein $x_{2} \in X, \| x_{2} \| = 1$ und $\| x_{2} - x_{1} \| \geq \frac{1}{2}$ \\
+		Wieder nach \eqref{lemma:6.3-Riesz} mit $ Y = \overline{span}\{ x_{1}, x_{2} \}$ finde zu $\delta = \frac{1}{2}$ ein $x_{3} \in X, \| x_{3} \| = 1$ und $\| x_{3} - x_{j} \| \geq \frac{1}{2}$ für $j = 1, 2$ \\
 		Induktiv erhält man eine Folge $x_{i} \in X$ mit $\| x_{i} \| = 1$ und $\| x_{i} - x_{j} \| \geq \frac{1}{2}$ für $j = 1, \dotsc, i - 1$.
 		Dieses Folge $(x_{i})_{i \geq 1}$ hat keine Teilfolge, die eine Cauchy-Folge ist und demnach ist $U_{X}$ nicht relativ kompakt in $X$. 
 	\end{beweis}
 
-\begin{lemma}[Riesz] \label{lemma:6.3-riesz} \index{Riesz}
+\begin{lemma}[Riesz] \label{lemma:6.3-Riesz} \index{Riesz}
 	Sei $Y$ ein abgeschlossener Teilraum von $X$ und $X \neq Y$. Zu $\delta \in (0, 1)$ existiert ein $x_{\delta} \in X \setminus Y$, sodass
 	\[ \| x \| = 1, \quad \| x_{\delta} - y\| \geq 1 - \delta \quad \text{ für alle } y \in Y \]
 \end{lemma}
@@ -116,7 +116,7 @@
 
 \end{prop}
 
-\begin{satz}[Arzelà-Ascoli] \index{Arzelà-Ascoli} \label{satz-6.7-arzelaascoli}
+\begin{satz}[Arzelà-Ascoli] \index{Arzelà-Ascoli} \label{satz:6.7-ArzelaAscoli}
 	Sei $(S, d)$ ein kompakter, metrischer Raum
 	\[ C(S) = \{ d : S \rightarrow \MdK \text{ stetig} \} \]
 	$\| f \|_{\infty} = \sup_{s \in S} | f(s) |$. Eine Teilmenge $M \subset C(S)$ ist kompakt, genau dann wenn gilt

@@ -136,7 +136,7 @@
 	Da $B(X)$ vollständig ist, ist $e^{tA} = \lim_{m \rightarrow \infty} S_{m}$ in $B(X)$.
 \end{bemerkung}
 
-\begin{prop}[Neumann'sche Reihe] \label{prop:1-5.8-NMR}
+\begin{prop}[Neumann'sche Reihe] \label{prop:5.8-NeumannscheReihe}
 	Sei $A \in B(X)$, $X$ ein Banachraum mit $\| A \| < 1$. \\
 	Dann ist $Id - A$ invertierbar und 
 	\[ \left( Id - A \right)^{-1} = \sum_{n = 0}^{\infty} A^{n} \]
@@ -160,7 +160,7 @@
 	\begin{beweis}
 		Da $J - A = J (Id - J^{-1}A) $ folgt:
 		\[ \| J^{-1} A \| \leq \| J^{-1} \| \underbrace{\| A \|}_{< \| J^{-1} \|^{-1}} < 1 \]
-		Nach \hyperref[prop:1-5.8-NMR]{5.8} ist $(Id - J^{-1} A)$ invertierbar mit
+		Nach \hyperref[prop:5.8-NeumannscheReihe]{5.8} ist $(Id - J^{-1} A)$ invertierbar mit
 			\begin{align*}
 				(J - A)^{-1} & = (Id - J^{-1} A)^{-1} J^{-1} \\
 					& = \sum_{n = 0}^{\infty} (J^{-1} A)^{n} J^{-1}
@@ -168,21 +168,21 @@
 	\end{beweis}
 \end{kor}
 
-\begin{prop} \label{prop:1-5.10}
+\begin{prop} \label{prop:5.10}
 	Sei $X$ ein normierter Raum, $Y$ ein Banachraum und $D \subset X$ ein dichter Teilraum. \\
 	Jeder linearere Operator $T: X \rightarrow Y$ mit
 		\[ \| T x \|_{Y} \leq M \| x \|_{X}, \quad \text{ für alle } x \in D \]
 	lässt sich zu einem eindeutig bestimmten Operator $ \tilde T \in B(X, Y)$ mit $\| \tilde T \| \leq c$ fortsetzen.	
 \end{prop}
 
-\begin{kor} \label{kor:1-5.11}
+\begin{kor} \label{kor:5.11}
 	Sei $X$ ein normierter Banachraum, $D \subset X$ dicht in $X$ und sei eine Folge $T_{n} \in B(X, Y)$, wobei $(T_{n} x)$ eine Cauchy-Folge für jedes $x \in D$ sei. \\
 		Dann gibt es genau einen Operator $T \in B(X, Y)$ mit
 		\[ \lim_{n \rightarrow \infty} T_{n} x = T x \]
 	\begin{beweis}
 		Setze für $x \in D$: $Tx = \lim_{n \rightarrow \infty} T_{n}(x)$, da $Y$ vollständig. \\
 		Dieses $T: X \rightarrow Y$ ist linear. \\
-		Nach \hyperref[prop:1-5.10]{5.10} gibt es genau ein $\tilde T \in B(X, Y)$ mit $\tilde T x = T x$ für $x \in D$, $\| \tilde T \| \leq M$, denn für $x \in D$:
+		Nach \hyperref[prop:5.10]{5.10} gibt es genau ein $\tilde T \in B(X, Y)$ mit $\tilde T x = T x$ für $x \in D$, $\| \tilde T \| \leq M$, denn für $x \in D$:
 		\[ \| T x \| \leq \limsup \| T_{n} x \| \leq M \| x \| \]
 		z. z. $\tilde T x = \lim_{n \rightarrow \infty} T_{n} x$ für alle $x \in X$. \\
 		Zu $\epsilon > 0$ wähle $y \in D$ mit $\| x - y \| \leq \frac{\epsilon}{2 M}$. Dann:
@@ -210,13 +210,13 @@
 		& = \sum_{n, m} \alpha_{n} \alpha_{m} \int e_{n}(t) \overline{e_{m}(t)} dt \\
 		& = \sum_{n} |\alpha_{n}|^2
 	\end{align*}
-	D.h. $\| T (\alpha_{n}) \| \leq 1 \left( \sum_{n} |\alpha_{n}|^2 \right)^{\frac{1}{2}} = \| \alpha_{n} \|_{L^{2}}$, $(M = 1)$. Nach \hyperref[prop:1-5.10]{5.10} gibt es dann ein $\tilde T: \ell^{2}[0, 1] \rightarrow L^{2}(0, 1)$ mit $\| \tilde T \| \leq 1$ \\ \\
+	D.h. $\| T (\alpha_{n}) \| \leq 1 \left( \sum_{n} |\alpha_{n}|^2 \right)^{\frac{1}{2}} = \| \alpha_{n} \|_{L^{2}}$, $(M = 1)$. Nach \hyperref[prop:5.10]{5.10} gibt es dann ein $\tilde T: \ell^{2}[0, 1] \rightarrow L^{2}(0, 1)$ mit $\| \tilde T \| \leq 1$ \\ \\
 	\uline{Zusatz:} $T_{m}((\alpha_{n})) = \sum_{n = m}^{\infty} \alpha_{n} e_{n}$. $T_{m}: \ell^{2} \rightarrow L^{2}[0, 1],$ $\| Tm \| \leq 1$ \\
 	Für $(\alpha_{n}) \in \ell^{2}$ gilt: $T (\alpha_{n}) = \lim_{m \rightarrow \infty} T_{m}(\alpha_{n})$. \\
-	Nach \hyperref[kor:1-5.11]{Kor. 11}: $T_{m}(\alpha_{n}) \rightarrow T (\alpha_{n})$ in $L^{2}[0, 1]$ für alle $(\alpha_{n}) \in \ell^{2}$. Damit konvergiert die Partialsumme der Fourierreihen in $L^{2}[0, 1]$.
+	Nach \hyperref[kor:5.11]{Kor. 11}: $T_{m}(\alpha_{n}) \rightarrow T (\alpha_{n})$ in $L^{2}[0, 1]$ für alle $(\alpha_{n}) \in \ell^{2}$. Damit konvergiert die Partialsumme der Fourierreihen in $L^{2}[0, 1]$.
 \end{beispiel}
 
-\begin{lemma} \label{lemma:1-5.13}
+\begin{lemma} \label{lemma:5.13}
 	Für einen normierten Raum $(X, \| \cdot \|)$ sind äquivalent:
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $X$ ist vollständig
@@ -258,7 +258,7 @@
 $\MdQ \rightarrow \MdR, \quad C[0, 1], \quad \int_{0}^{1} |f(t)| dt \rightarrow L^{1}[0, 1]$ \\
 Sei $X$ ein normierter Vektorraum, $M \subset X$ beliebig, $d(x, y) := \| x - y \|$, wobei $x, y \in M$ und damit $(M, d)$ ein metrischer Raum.
 
-\begin{definition} \label{def:1-5.15}
+\begin{definition} \label{def:5.15-Lipschitz}
 	$f: M \rightarrow \MdR$ hei{\ss}t \begriff{Lipschitz}, falls:
 	\[ \sup_{x, y \notin M, x \neq y} \frac{|f(x) - f(y)|}{d(x, y)} = \underbrace{\| f \|_{L}}_{Lipschitz-Konstante} < \infty \]
 \end{definition}
@@ -278,7 +278,7 @@ Sei $X$ ein normierter Vektorraum, $M \subset X$ beliebig, $d(x, y) := \| x - y 
 \end{bemerkung}
 
 \begin{satz}
-	Sei $(M,d)$ ein metrische Raum, $x_{0} \in M$ fest, $X$ definiert wie in \hyperref[def:1-5.15]{5.15}: \\ \\
+	Sei $(M,d)$ ein metrische Raum, $x_{0} \in M$ fest, $X$ definiert wie in \hyperref[def:5.15-Lipschitz]{5.15}: \\ \\
 	Zu $x \in M$ definiere $F_{x} \in X'$ durch $F_{x}(f) = f(x)$ für $f: M \rightarrow \MdR$ in $X$. \\
 	Dann ist $x \in M \rightarrow F_{x} \in X'$ eine Abbildung, die eine isometrische Einbettung von $M$ nach $X'$ gibt, d.h. 
 	\[ d(x, y) = \| F_{x} - F_{y} \|_{X'} \]

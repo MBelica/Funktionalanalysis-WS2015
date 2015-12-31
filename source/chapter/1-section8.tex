@@ -6,7 +6,7 @@ Sei $x = (x_{1}, x_{2}, \dotsc) \in \ell^{p}, x_{m} = (x_{1}, \dotsc, x_{m}, \do
 \[ \text{Dann }\|  x - x_{m} \| \rightarrow 0 \text{ für } m \rightarrow \infty. \]
 \\
 Betrachten wir $L^{p}(\Omega)$, mit z.B. $\Omega = \MdR^{d}$ und die Integraloperatoren $T :	L^{p}(\Omega) \rightarrow L^{p}(\Omega)$
-	\[ T f(u) = \int k(u, v) f(v) dv \quad (*) \label{eq:8-beschrOperatorinLp} \]
+	\[ T f(u) = \int k(u, v) f(v) dv \quad (*) \label{eq:8.0-BeschrOperatorInLp} \]
 wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 
 \begin{satz} \label{satz:8.1}
@@ -15,7 +15,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 		\sup_{u \in \Omega} & \int_{\Omega} |k(u, v)| dv \leq C_{1} < \infty \text{ und} \\
 		\sup_{v \in \Omega} & \int_{\Omega} |k(u, v)| du \leq C_{2} < \infty
 	\end{align*}
-	Dann wird durch \hyperref[eq:8-beschrOperatorinLp]{$(*)$} ein beschränkter Operator $T : L^{p}(\Omega) \rightarrow L^{p}(\Omega)$ mit
+	Dann wird durch \hyperref[eq:8.0-BeschrOperatorInLp]{$(*)$} ein beschränkter Operator $T : L^{p}(\Omega) \rightarrow L^{p}(\Omega)$ mit
 	\[ \| T \|_{L^{p} \rightarrow L^{p}} \leq C_{1}^{\frac{1}{p'}} C_{1}^{\frac{1}{p}}, \quad \frac{1}{p'} + \frac{1}{p} = 1   \]
 	und $1 \leq p \leq \infty$.
 \end{satz}
@@ -98,7 +98,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 	2. Beweis
 	\[ D = C_{0}(\Omega) = \{ f \in C(\Omega), \{ t: f(t) \neq 0 \} \text{ kompakt} \} \text{ "Man wei{\ss}", dass } D \text{ dicht in } L^{p}(\Omega) \text{ ist.} \]
 	Dann gilt zu zeigen: Für $f \in C_{0}(\Omega)$ gilt $\| \mathds{E}_{\mathcal{A}_{m}} f - f \|_{L^{p}} \rightarrow 0$ für $m \rightarrow \infty$. \\
-		Annahme $f \in C(K(0, r_{m})), f$ gleichmä{\ss}ig stetig, supp$f \subset K(0, r_{m})$ für $m$ gro{\ss} genug
+		Annahme $f \in C(K(0, r_{m})), f$ gleichmä{\ss}ig stetig, $\operatorname{supp}(f) \subset K(0, r_{m})$ für $m$ gro{\ss} genug
 	\begin{align*}
 		\| \mathds{E}_{\mathcal{A}_{m}} f - f \|_{L^{p}}^{p} & =  \int_{\Omega} | \sum_{n} \left( \mathds{E}_{\mathcal{A}_{m}} f - f \right) \mathds{1}_{A_{m, n}}(s) |^{p} ds \\
 		& = \sum_{n} \int \left| \left( \mathds{E}_{\mathcal{A}_{m}} f - f \right) \mathds{1}_{A_{m, n}}(s) \right|^{p} ds	 \\
@@ -126,11 +126,11 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 	Wähle $S_{n} = \mathds{E}_{\mathcal{A}_{n}}$.
 \end{beweis}
 
-\begin{satz}[Young] \label{satz:8.5-young}
+\begin{satz}[Young] \label{satz:8.5-Young}
 	Für $k \in L^{1}(\MdR^{d})$ setze für $f \in L^{p}(\MdR^{d})$
-	\[ (k \ast f) (u) = \int_{\MdR^{d}} k(u - v) f(v) dv \quad (*) \label{eq:8.5-young} \]
+	\[ (k \ast f) (u) = \int_{\MdR^{d}} k(u - v) f(v) dv \quad (*) \label{eq:8.5-Young} \]
 	$k \ast f$ hei{\ss}t \begriff{Faltung} von $k$ und $f$. \\
-	Dann definiert \hyperref[eq:8.5-young]{$(*)$} einen beschränkten Operator $T f = k \ast f$ von $L^{p}(\MdR^{d})$ nach $L^{p}(\MdR^{d})$ für $1 \leq p \leq \infty$ und $\|T\|_{L^{p} \rightarrow L^{p}} \leq \|k\|_{L^{1}}$.
+	Dann definiert \hyperref[eq:8.5-Young]{$(*)$} einen beschränkten Operator $T f = k \ast f$ von $L^{p}(\MdR^{d})$ nach $L^{p}(\MdR^{d})$ für $1 \leq p \leq \infty$ und $\|T\|_{L^{p} \rightarrow L^{p}} \leq \|k\|_{L^{1}}$.
 \end{satz}
 
 \begin{beweis}
@@ -143,7 +143,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 \end{beweis}
 
 \begin{bemerkung*}
-	$D \subseteq L^{p}(\MdR^{d})$ dicht, z.B.: $D = \{ f \in L^{\infty}(\MdR^{d}): supp f$ comp. $\}$ % todo check if thats right
+	$D \subseteq L^{p}(\MdR^{d})$ dicht, z.B.: $D = \{ f \in L^{\infty}(\MdR^{d}): \operatorname{supp}(f)$ comp. $\}$ % todo check if thats right
 	$f \in D: \int_{\MdR^{d}} k(u - v) f(v) dv$ existiert als Lebesgueintegral für alle $f \in D$. \\
 	Nach \hyperref[satz:8.1]{Satz 8.1} gilt $\| T f \|_{L^{p}} \leq \| k \|_{L{1}} \cdot \| f \|_{L^{p}}$ für $f \in D$. \\
 	$T$ ist die \begriff{stetige Fortsetzung} von $T_{\big| D}$ auf ganz $L^{p}(\MdR^{d})$.
@@ -171,9 +171,9 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 		\label{bem:8.7ii}
 		\item $\int_{\MdR^{d} \setminus B(0, r)} \phi_{\epsilon}(u) du \xrightarrow[\epsilon \rightarrow 0]{} 0$
 		\label{bem:8.7iii}
-		\item $supp$ $\phi \subset B(0, r) \Rightarrow supp$ $\phi_{\epsilon} \subset B(0, \epsilon)$
+		\item $\operatorname{supp}(\phi) \subset B(0, r) \Rightarrow \operatorname{supp}(\phi_{\epsilon}) \subset B(0, \epsilon)$
 		\label{bem:8.7iv}
-		\item $\| \phi_{\epsilon} \ast f \|_{L^{p}} \leq 1 \| f \|_{L^{p}} \quad$ (nach \hyperref[satz:8.5-young]{8.5})
+		\item $\| \phi_{\epsilon} \ast f \|_{L^{p}} \leq 1 \| f \|_{L^{p}} \quad$ (nach \hyperref[satz:8.5-Young]{8.5})
 	\end{enumerate}
 \end{bemerkung}
 
@@ -183,8 +183,8 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 \end{satz}
 
 \begin{beweis}
-	Sei $D = \{ f \in C(\MdR^{d}): supp f \text{ kompakt } \}$, $D \subset L^{p}(\MdR^{d})$ dicht. \\
-	Für $f \in D$, $supp f \subset B(0, r_{0})$
+	Sei $D = \{ f \in C(\MdR^{d}): \operatorname{supp}(f) \text{ kompakt } \}$, $D \subset L^{p}(\MdR^{d})$ dicht. \\
+	Für $f \in D$, $\operatorname{supp}(f) \subset B(0, r_{0})$
 	\begin{align*}
 		\phi_{\epsilon} \ast f(u) - f(u) & = \int_{\MdR^{d}} \phi_{\epsilon}(u - v) \left[ f(v) - f(u) \right] dv \quad (\text{da } \int \phi_{\epsilon}(u) du = 1 ) \\
 		& = \int \phi_{\epsilon}(h) \left[ f(u - h) - f(u) \right] dh
@@ -203,21 +203,21 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 		\item $T_{\epsilon} f \xrightarrow[\epsilon \rightarrow 0]{} f$ in $L^{p}$ für alle $f \in D$
 		\item \textbf{$D$ ist dicht in $L^{p}$}
 	\end{itemize}
-	$\Rightarrow$ Behauptung nach \hyperref[kor:1-5.11]{Korollar 5.11} % todo: check if it is really 5.11, in my notes there is kor 5.10 mentioned but 5.10 is a prop
+	$\Rightarrow$ Behauptung nach \hyperref[prop:1-5.10]{Proposition 5.10} 
 \end{beweis}
 
 \begin{kor} \label{kor:8.9}
-	Sei $\Omega \subseteq \MdR^{d}$ offen. Dann liegt $C_{c}^{\infty}(\Omega) = \{ f : f $ ist unendlich oft differenzierbar und $supp$ ist kompakt. $\}$ dicht in $L^{p}(\Omega)$.
+	Sei $\Omega \subseteq \MdR^{d}$ offen. Dann liegt $C_{c}^{\infty}(\Omega) = \{ f : f $ ist unendlich oft differenzierbar und $\operatorname{supp}(f)$ ist kompakt. $\}$ dicht in $L^{p}(\Omega)$.
 	\begin{beweis}
-		Sei $C_{\delta}, \delta > 0$ eine approximative Eins und $C \in C^{\infty}(\MdR^{d})$, $supp$ $C \leq B(0, 1)$. \\
+		Sei $\phi_{\delta}, \delta > 0$ eine approximative Eins und $\phi \in C^{\infty}(\MdR^{d})$, $\operatorname{supp}(\phi) \leq B(0, 1)$. \\
 		Gegeben $f \in L^{p}(\Omega), \epsilon > 0$ wähle $g \in L^{\infty}(\Omega)$ mit
 		\begin{itemize}
-			\item $supp$ $g = \overline{\{ x \in \Omega: g(x) \neq 0 \}} =: A \subseteq \Omega$, $A$ kompakt
+			\item $\operatorname{supp}(g) = \overline{\{ x \in \Omega: g(x) \neq 0 \}} =: A \subseteq \Omega$, $A$ kompakt
 			\item $\| f - g \|_{L^{p}} \leq \epsilon$
 		\end{itemize}
 		\[ \delta_{0} = \inf \{ |t - s| : t \in \MdR^{d} \setminus \Omega, s \in A \} \]
-		Da $supp$ $C_{\delta} \subset B(0, \delta)$ nach \hyperref[bem:8.7ii]{8.7 ii)}
-		\[ \Rightarrow supp \text{ } g \ast C_{\delta} \leq A + V(0, \frac{delta_{0}}{2} \subset \Omega \text{ für } \delta < \frac{\delta_{0}}{2} \]
+		Da $\operatorname{supp}(\phi_{\delta}) \subset B(0, \delta)$ nach \hyperref[bem:8.7ii]{8.7 ii)}
+		\[ \Rightarrow \operatorname{supp}(g) \ast \phi_{\delta} \leq A + V(0, \frac{delta_{0}}{2} \subset \Omega \text{ für } \delta < \frac{\delta_{0}}{2} \]
 		denn $g \ast C_{\delta}(u) = \int C_{\delta}(u - v) g(v) dv \neq 0$ nur wenn $v \in A$ und $\| u - v ^] < \delta$. \\
 		Also $g \ast \phi_{\delta} \in C_{c}(\Omega)$. Zu zeigen: $g \ast \phi_{\delta} \in C^{\infty}(\Omega)$
 		\[ D_{u}^{\alpha}(\phi_{\delta} \ast g)(u) = \int_{A} \left[ D_{u}^{\alpha} C_{\delta}(u - v) \right] \underbrace{g(v)}_{\text{beschränkt}} gv \]

@@ -39,7 +39,7 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 	\end{enumerate}	
 \end{beispiel}
 
-\begin{beispiel}  \label{bsp:1-4.3}
+\begin{beispiel}  \label{bsp:4.3}
 	\begin{enumerate}[label=\alph*\upshape)]	
 		\item Sei $X$ ein Vektorraum und $p_{j}$ für $j \in \MdN$ Halbnormen auf $X$ mit der Eigenschaft, dass für jedes $x \in X \setminus \{ 0 \}$ ein $K \in \MdN$ exisitert mit $p_{K} > 0$. Dann definiert
 			\[ d(x, y) := \sum_{j \geq 1} 2^{-j} \frac{p_{j}(x - y)}{1 + p_{j}(x -y)}, \hspace{0.5cm} x, y \in X \]
@@ -58,7 +58,7 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 	\end{enumerate}
 \end{beispiel}
 
-\begin{definition} \label{def:1-4.4}
+\begin{definition} \label{def:4.4-AbgeschlossenOffen}
 	Sei $(M, d)$ ein metrischer Raum.
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Eine Teilmenge $A \subset M$ hei{\ss}t \begriff{abgeschlossen} (in $M$), falls für alle in $M$ konvergenten Folgen $(x_{n})_{n \geq 1} \subset A$ der Grenzwert von $(x_{n})$ in $A$ liegt
@@ -67,7 +67,7 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 	\end{enumerate}
 \end{definition}
 
-\begin{bemerkung} \label{bem:1-4.5}
+\begin{bemerkung} \label{bem:4.5}
 	\begin{enumerate}[label=\alph*\upshape)] 
 		\item Wir benutzen die Bezeichnungen
 			\begin{align*}
@@ -133,7 +133,7 @@ Wir fassen als Nächstes die grundlegenden Eigenschaften offener und abgeschloss
 	\end{beweis}
 \end{prop}
 
-\begin{definition} \label{def:1-4.7-abschinnrand}
+\begin{definition} \label{def:4.7-AbschlussInnereRand}
 	Sei $(M, d)$ ein metrischer Raum und $V \subset M$. Dann hei{\ss}t 
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\bar V := \bigcap \{ A \subset M: A$ ist abgeschlossen mit $V \subset A \} $ der \begriff{Abschluss} von $V$.
@@ -144,58 +144,58 @@ Wir fassen als Nächstes die grundlegenden Eigenschaften offener und abgeschloss
 
 Hierfür gelten die folgenden Eigenschaften:
 
-\begin{prop} \label{prop:1-4.8}
+\begin{prop} \label{prop:4.8}
 	Sei $(M, d)$ ein metrischer Raum und $V \subset M$
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item
 			\begin{enumerate}
-				\item \label{prop:1-4.8.a1} $\bar V$ ist die kleinste abgeschlossene Menge, die $V$ enthält.
-				\item \label{prop:1-4.8.a2} $V$ ist abgeschlossen $\gdw V = \bar V$
-				\item \label{prop:1-4.8.a3} $\bar V = \{ x \in M: \exists (x_{n}) \subset V$ mit $\lim_{n \rightarrow \infty} x_{n} = x \} =: \tilde V$
+				\item \label{prop:4.8.a1} $\bar V$ ist die kleinste abgeschlossene Menge, die $V$ enthält.
+				\item \label{prop:4.8.a2} $V$ ist abgeschlossen $\gdw V = \bar V$
+				\item \label{prop:4.8.a3} $\bar V = \{ x \in M: \exists (x_{n}) \subset V$ mit $\lim_{n \rightarrow \infty} x_{n} = x \} =: \tilde V$
 			\end{enumerate} 
 		\item 
 			\begin{enumerate}
-				\item \label{prop:1-4.8.b1} $\mathring V$ ist die grö{\ss}te offene Teilmenge von $V$.
-				\item \label{prop:1-4.8.b2} $V$ ist offen $\gdw V = \mathring V$
-				\item \label{prop:1-4.8.b3} $\mathring V = \{ x \in M: \exists \epsilon > 0$ mit $K(x, \epsilon) \subset V \} =: \hat V$
+				\item \label{prop:4.8.b1} $\mathring V$ ist die grö{\ss}te offene Teilmenge von $V$.
+				\item \label{prop:4.8.b2} $V$ ist offen $\gdw V = \mathring V$
+				\item \label{prop:4.8.b3} $\mathring V = \{ x \in M: \exists \epsilon > 0$ mit $K(x, \epsilon) \subset V \} =: \hat V$
 			\end{enumerate} 
 		\item
 			\begin{enumerate}
-				\item \label{prop:1-4.8.c1} $\partial V$ ist abgeschlossen.
-				\item \label{prop:1-4.8.c2} $\partial V = \{ x \in M: \exists (x_{n}) \subset V, (y_{n}) \subset M \ V$ mit $ \lim_{n \rightarrow \infty} x_{n} = \lim_{n \rightarrow \infty} y_{n} = x \}$
+				\item \label{prop:4.8.c1} $\partial V$ ist abgeschlossen.
+				\item \label{prop:4.8.c2} $\partial V = \{ x \in M: \exists (x_{n}) \subset V, (y_{n}) \subset M \ V$ mit $ \lim_{n \rightarrow \infty} x_{n} = \lim_{n \rightarrow \infty} y_{n} = x \}$
 			\end{enumerate} 
 	\end{enumerate}	
 	\begin{beweis}
 		\begin{enumerate}[label=\alph*\upshape)]
 			\item
 				\begin{enumerate}
-					\item \label{prop:1-4.8.a1-proof} Nach Definition gilt $V \subseteq \bar V$ und $\bar V$ ist nach \hyperref[prop:1-4.8]{Proposition 4.7} abgeschlossen. \\
+					\item \label{prop:4.8.a1-proof} Nach Definition gilt $V \subseteq \bar V$ und $\bar V$ ist nach \hyperref[prop:4.8]{Proposition 4.7} abgeschlossen. \\
 						Falls $V \subseteq A \subseteq \bar V$ und $A$ abgeschlossen, dann gilt $\bar V \subseteq A$ nach der Definition von $\bar V$, d.h. $A = \bar V$.
-					\item folgt aus \hyperref[prop:1-4.8.a1]{(i)}
+					\item folgt aus \hyperref[prop:4.8.a1]{(i)}
 					\item Per Definition ist $\tilde V$ abgeschlossen, denn zu $(x_{n}) \subseteq \tilde V$ mit $\lim_{n \rightarrow \infty} x_{n} = x \in M$ existieren Folgen $(x_{n, m})_{m \geq 1}$ mit  $\lim_{m \rightarrow \infty} x_{n, m} = x_{n}$. \\
 						Dann folgt aber für $(x_{n, n})_{n \geq 1} \subseteq V$:
 						\[ d(x, x_{n, n}) \leq d(x, x_{n}) + d(x_{n}, x_{n, n}) \rightarrow 0 \text{ für } n \rightarrow \infty \]
-						d.h. $x \in \tilde V$. Sei nun $A \subseteq M$ abgeschlossen mit $V \subseteq A$. Dann gilt nach \hyperref[def:1-4.4-abgoff]{Definition 4.4} $\tilde V \subseteq A$ und nach \hyperref[prop:1-4.8.a1]{(i)} damit $\bar V = \tilde V$.
+						d.h. $x \in \tilde V$. Sei nun $A \subseteq M$ abgeschlossen mit $V \subseteq A$. Dann gilt nach \hyperref[def:4.4-AbgeschlossenOffen-abgoff]{Definition 4.4} $\tilde V \subseteq A$ und nach \hyperref[prop:4.8.a1]{(i)} damit $\bar V = \tilde V$.
 				\end{enumerate} 
 			\item 
 				\begin{enumerate}
-					\item zeigt man wie \hyperref[prop:1-4.8.a1-proof]{a) (i)}
-					\item folgt aus \hyperref[prop:1-4.8.b1]{(i)}
+					\item zeigt man wie \hyperref[prop:4.8.a1-proof]{a) (i)}
+					\item folgt aus \hyperref[prop:4.8.b1]{(i)}
 					\item $\hat V$ ist per Definition offen, denn zu $x \in \hat V$ existiert ein $\epsilon > 0$ mit  $K(x, \epsilon) \subseteq V$. \\
 						 Dann existiert aber zu jedem $y \in K(x, \epsilon)$ ein $\delta > 0$ mit $K(y, \delta) \subseteq K(x, \epsilon) \subseteq V$, d.h. $y \in \hat V$. $\Rightarrow K(x, \epsilon) \subseteq \hat V$ \\
-						 Falls nun $U \subseteq V$ offen, so ist nach \hyperref[def:1-4.4-abgoff]{Definition 4.4} $U \subset \hat V$ und somit $\mathring V = \hat V$ nach \hyperref[prop:1-4.8.b1]{(i)}
+						 Falls nun $U \subseteq V$ offen, so ist nach \hyperref[def:4.4-AbgeschlossenOffen-abgoff]{Definition 4.4} $U \subset \hat V$ und somit $\mathring V = \hat V$ nach \hyperref[prop:4.8.b1]{(i)}
 				\end{enumerate} 
 			\item
 				\begin{enumerate}
 					\item Da $\partial V = \overline{V} \cap (\mathring{V})^{c}$ ist $\partial V$ als Schnitz zweier abgeschlossenen Mengen wieder abgeschlossen.
-					\item Nach \hyperref[def:1-4.7-abschinnrand]{Definition 4.6} gilt $(\mathring{V})^{c} = \overline{V^{c}}$ \quad (und $\left( \bar V \right)^{c} = \left( V^{c} \right)^{\circ}$) \\
-						Damit folgt die Behauptung auf $\partial V = \bar V_{n} \cap \bar V^{c}$ und \hyperref[prop:1-4.8.a1]{a)}
+					\item Nach \hyperref[def:4.7-AbschlussInnereRand]{Definition 4.6} gilt $(\mathring{V})^{c} = \overline{V^{c}}$ \quad (und $\left( \bar V \right)^{c} = \left( V^{c} \right)^{\circ}$) \\
+						Damit folgt die Behauptung auf $\partial V = \bar V_{n} \cap \bar V^{c}$ und \hyperref[prop:4.8.a1]{a)}
 				\end{enumerate} 
 		\end{enumerate}	
 	\end{beweis}
 \end{prop}
 
-\begin{definition} \label{def:1-4.9}
+\begin{definition} \label{def:4.9-DichtSeperabel}
 	Sei $(M, d)$ ein metrischer Raum
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Eine Menge $V \subset M$ hei{\ss}t \begriff{dicht} in M, falls $\bar V = M$, d.h. jeder Punkt in $M$ ist Grenzwert einer Folge aus $V$.
@@ -205,36 +205,36 @@ Hierfür gelten die folgenden Eigenschaften:
 
 \begin{bemerkung}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item All die Begriffe und Bezeichnungen aus \hyperref[def:1-4.4-abgoff]{Definition 4.4}, \hyperref[bem:1-4.5]{Bemerkung 4.5}, \hyperref[def:1-4.7-abschinnrand]{Definition 4.7} und \hyperref[def:1-4.9]{Definition 4.9} werden wir auch in normieren Räumen benutzen bzgl. der kanonischen Metrik $d(x, y) = \| x - y\|$
+		\item All die Begriffe und Bezeichnungen aus \hyperref[def:4.4-AbgeschlossenOffen-abgoff]{Definition 4.4}, \hyperref[bem:4.5]{Bemerkung 4.5}, \hyperref[def:4.7-AbschlussInnereRand]{Definition 4.7} und \hyperref[def:4.9-DichtSeperabel]{Definition 4.9} werden wir auch in normieren Räumen benutzen bzgl. der kanonischen Metrik $d(x, y) = \| x - y\|$
 		\item Sei $(M, d)$ ein metrischer Rauam, $U \subset M$. Dann ist auch $(U, d)$ ein metrischer Raum. Für $V \subset U$ muss man dann aber unterscheiden bzgl. Abgeschlossenheit (bzw. Offenheit) von $V$ in $U$ oder in $M$. Man sagt dann, dass $V$ \begriff{relativ offen} bzw. \begriff{relativ abeschlossen} in $U$ ist.
 	\end{enumerate}	
 \end{bemerkung}
 
-\begin{beispiel} \label{bsp:1-4.11}
+\begin{beispiel} \label{bsp:4.11}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item \label{bsp:1-4.11.a} Sei $X$ ein normierter Vektorraum (!), $x \in X, r > 0$. Dann gilt
+		\item \label{bsp:4.11.a} Sei $X$ ein normierter Vektorraum (!), $x \in X, r > 0$. Dann gilt
 			\begin{enumerate}
-				\item $\bar K(x, r) = \overline{K(x, r)}$ \label{bsp:1-4.11.a.i}
-				\item $\bar K(x, r)^{\circ} = K(x, r)$ \label{bsp:1-4.11.a.ii}
-				\item $\partial \bar K(x, r) = \partial K(x, r) (= \{ y \in X: \| x - y \| = r \} ) $	\label{bsp:1-4.11.a.iii}
+				\item $\bar K(x, r) = \overline{K(x, r)}$ \label{bsp:4.11.a.i}
+				\item $\bar K(x, r)^{\circ} = K(x, r)$ \label{bsp:4.11.a.ii}
+				\item $\partial \bar K(x, r) = \partial K(x, r) (= \{ y \in X: \| x - y \| = r \} ) $	\label{bsp:4.11.a.iii}
 			\end{enumerate}
 			\begin{beweis}
 				\begin{enumerate}
-					\item Da $ \bar K(x, r)$ abgeschlossen ist mit $K(x, r) \subset \bar K(x, r)$ folgt aus \hyperref[prop:1-4.8.a1]{Proposition 4.8  a) (i)} $\overline{K(x, r)} \subset \bar K(x, r)$.
-						Sei umgekehrt $y \in \bar K(x, r)$ und $y_{n} = y - \frac{1}{n} (y - x), n \in \MdN$. Dann ist $y_{n} \in K(x, r)$ mit $\lim_{n \rightarrow \infty} y_{n} = y$, d.h. $y \in \overline{K(x, r)}$ nach \hyperref[prop:1-4.8.a3]{Proposition 4.8 a) (iii)}.
-					\item Da $K(x, r)$ offen ist mit $K(x, r) \subset \bar K(x, r)$ folgt mit \hyperref[prop:1-4.8.b2]{Proposition 4.8 b) (ii)}: 
+					\item Da $ \bar K(x, r)$ abgeschlossen ist mit $K(x, r) \subset \bar K(x, r)$ folgt aus \hyperref[prop:4.8.a1]{Proposition 4.8  a) (i)} $\overline{K(x, r)} \subset \bar K(x, r)$.
+						Sei umgekehrt $y \in \bar K(x, r)$ und $y_{n} = y - \frac{1}{n} (y - x), n \in \MdN$. Dann ist $y_{n} \in K(x, r)$ mit $\lim_{n \rightarrow \infty} y_{n} = y$, d.h. $y \in \overline{K(x, r)}$ nach \hyperref[prop:4.8.a3]{Proposition 4.8 a) (iii)}.
+					\item Da $K(x, r)$ offen ist mit $K(x, r) \subset \bar K(x, r)$ folgt mit \hyperref[prop:4.8.b2]{Proposition 4.8 b) (ii)}: 
 						\[ K(x, r) \subset \bar K(x, r)^{\circ} \]
 						Sei umgekehrt $y \in \bar K(x, r)^{\circ}$. Dann existiert ein $\epsilon > 0$ mit $K(y, \epsilon) \subseteq \bar K(x, r)$. \\
 						Angenommen $\| x - y \| = r$. Setze in diesem Fall $z := y + \frac{\epsilon}{2 r} (y - x)$. Dann gilt $z \in K(y, \epsilon)$, aber $z \notin \bar K(x, r)$, was zu einem Widerspruch führt. \\
 						Also ist $\| x - y \| < r$, d.h. $y \in K(x, r)$.
-					\item Aussage über Rand folgt aus \hyperref[bsp:1-4.11.a.i]{i)} und \hyperref[bsp:1-4.11.a.ii]{ii)}		
+					\item Aussage über Rand folgt aus \hyperref[bsp:4.11.a.i]{i)} und \hyperref[bsp:4.11.a.ii]{ii)}		
 				\end{enumerate}
 			\end{beweis}
-		\item Die Aussagen in \hyperref[bsp:1-4.11.a]{a)} sind im Allgemeinen falsch für metrische Räume. \\
+		\item Die Aussagen in \hyperref[bsp:4.11.a]{a)} sind im Allgemeinen falsch für metrische Räume. \\
 			Sei $M$ nichtleer mit mindestens 2 Elementen und $d$ die diskrete Metrik, dann gilt:
 			\[ K(x, 1) = \{ x \}, \quad \bar K(x, 1) = M, \quad \overline{K(x, 1)} = \{ x \} \]
 			$\Rightarrow \overline{K(x, 1)} \subsetneq \bar K(x, 1)$
-		\item \label{bsp:1-4.11.b} Sei $X = C[0, 1]$ und $a, b > 0$ mit $a < b$. Dann ist die Menge
+		\item \label{bsp:4.11.b} Sei $X = C[0, 1]$ und $a, b > 0$ mit $a < b$. Dann ist die Menge
 			\[ A := \{ f \in X: f(t) \in (a, b) \quad \forall t \in [0, 1] \} \]
 			offen mit
 			\begin{align*}
@@ -312,7 +312,7 @@ Hierfür gelten die folgenden Eigenschaften:
 						\end{center}
 							
 						\[ \Rightarrow f_{n} \in A \text{ mit } \| f_{n} - f \|_{\infty} \rightarrow 0 \text{ } (n \rightarrow \infty) \text{, d.h. } f \in \bar A \]
-					\item Aussage über $\partial A$ folgt aus \hyperref[bsp:1-4.11.b]{i)} und \hyperref[bsp:1-4.11.b]{ii)}
+					\item Aussage über $\partial A$ folgt aus \hyperref[bsp:4.11.b]{i)} und \hyperref[bsp:4.11.b]{ii)}
 				\end{enumerate}
 			\end{beweis}
 		\item Sei $X$ ein normierter Vektorraum und $Y \subseteq X$ abzählbar mit $\overline{lin Y} = X$. Dann ist $X$ separabel.
@@ -350,12 +350,12 @@ Schlie{\ss}lich betrachten wir Stetigkeit:
 
 Hierfür gelten folgende Eigenschaften:
 
-\begin{prop} \label{prop:1-4.13}
+\begin{prop} \label{prop:4.13}
 	Sei $(K,d_{K}), (M, d_{M})$ und $(N, d_{N})$ metrische Räume und $f: M \rightarrow N, g: K \rightarrow M$. Dann gilt:
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Ist $g$ stetig in $x_{0}$, $f$ stetig in $g(x_{0})$, dann ist auch 
 			\[ f \circ g: K \rightarrow N \text{ stetig in } x_{0} \]
-		\item \label{prop:1-4.13.b} $f$ ist stetig in $x_{0} \in M$ genau dann, wenn 
+		\item \label{prop:4.13.b} $f$ ist stetig in $x_{0} \in M$ genau dann, wenn 
 			\[ \forall \epsilon > 0 \hspace{0.15cm} \exists \delta > 0 \hspace{0.15cm} \forall x \in M \text{ mit } d_{M}(x, x_{0}) < \delta \text{ gilt } d_{N}(f(x), f(x_{0})) < \epsilon \]
 		\item Die folgenden Aussagen sind äquivalent:
 			\begin{enumerate}
@@ -380,7 +380,7 @@ Hierfür gelten folgende Eigenschaften:
 				Das bedeutet gerade
 				\[ \forall \epsilon > 0 \text{ } \exists \delta > 0: \forall x \in M \text{ mit } d_{M}(x_{0}, x) < \delta \text{ gilt auch} \]
 				\[ d_{N}(f(x_{0}), f(x)) < \epsilon \]
-				Nach \hyperref[prop:1-4.13.b]{b)} bedeutet dies gerade, dass $f$ stetig in $x_{0}$ ist.
+				Nach \hyperref[prop:4.13.b]{b)} bedeutet dies gerade, dass $f$ stetig in $x_{0}$ ist.
 		\end{enumerate}
 	\end{beweis}
 \end{prop}
@@ -407,7 +407,7 @@ Hierfür gelten folgende Eigenschaften:
 			\end{align*}
 			Dann sind $A$ und $S$ stetig.
 		\item Sei $X = C[0, 1], t_{0} \in [0, 1], \psi : X \rightarrow \MdK, \psi(f) = f(t_{0})$ \\
-		Nach \hyperref[bsp:1-3.15]{Beispiel 3.15} ist $\psi$ stetig. D.h. ist $A \subset \MdK$ offen (abgeschlossen), so ist $\psi^{-1}(A)$ offen (abgeschlossen) nach \hyperref[prop:1-4.13]{Proposition 4.13}.
+		Nach \hyperref[bsp:1-3.15]{Beispiel 3.15} ist $\psi$ stetig. D.h. ist $A \subset \MdK$ offen (abgeschlossen), so ist $\psi^{-1}(A)$ offen (abgeschlossen) nach \hyperref[prop:4.13]{Proposition 4.13}.
 	\end{enumerate}	
 \end{beispiel}
 
