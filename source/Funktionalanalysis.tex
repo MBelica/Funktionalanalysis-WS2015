@@ -1,6 +1,7 @@
 \documentclass[a4paper,twoside,DIV15,BCOR12mm]{scrbook}
 
 % todo: rewrite all refs
+% todo: replace all supp with \operatorname{supp}(f)
 
 \usepackage{Analysis}
 
@@ -17,6 +18,8 @@
 
 \makeindex
 
+\renewcommand*\thesection{\arabic{section}}
+
 \usepackage{pdfcomment}	
 \usepackage{pgfplots}
 \usetikzlibrary{intersections}
@@ -28,7 +31,9 @@
 
 \input{Titlepage}
 \input{Preface}
+
 \tableofcontents 
+\newpage
 
 \input{chapter/1-section1}
 \input{chapter/1-section2}
@@ -38,11 +43,12 @@
 \input{chapter/1-section6}
 \input{chapter/1-section7}
 \input{chapter/1-section8}
+\input{chapter/1-section9}
 
 \appendix
 \input{Abbreviations}
 
-\newpage
+
 
 \renewcommand{\indexname}{Stichwortverzeichnis}
 \addcontentsline{toc}{section}{Stichwortverzeichnis}

@@ -1,0 +1,81 @@
+%!TEX root = Funktionalanalysis - Vorlesung.tex
+
+\chapter*{Elemente der Operatortheorie} \addcontentsline{toc}{chapter}{Elemente der Operatortheorie} \setcounter{section}{8}
+
+\section{Der Satz von Baire und der Satz von Banach-Steinhaus}
+
+\begin{satz}[Satz von Bair]
+	Sei $(M, d)$ ein vollständiger metrischer Raum und seien $U_{n}, n \in \MdN$ offen und dicht in $M$.
+	\[ \text{Dann ist } \bigcap_{n \in \MdN} U_{n} \text{ dicht in } M. \]
+\end{satz}
+
+\begin{beweis}
+	Der Kürze halber definieren wir $D := \bigcap_{n \in \MdN} U_{n}$. \\ \\
+	Zu zeigen gilt, dass zu jeder Kugel $K(x_{0}, \epsilon), x_{0} \in M, \epsilon > 0$.
+	Beweis: 
+	\begin{itemize}
+		\item $U_{1} \cap K(x_{0}, \epsilon)$ ist offen und nichtleer, da $U_{1}$ dicht ist. Also existiert ein $x_{1} \in U_{1}$ und $\epsilon_{1} > 0$ mit $\epsilon_{1} < \frac{1}{2} \epsilon$ so, dass $K( x_{1}, 2 \epsilon_{1}) \subset U_{1} \cap K(x_{0}, \epsilon)$
+			\[ \Rightarrow \overline{K(x_{1}, \epsilon)} \subseteq U_{1} \cap K(x_{0}, \epsilon) \]
+		\item Nun ist $U_{2} \cap K(x_{1}, \epsilon_{1})$  offen und nichtleer, da $U_{1}$ dicht ist. Also existiert ein $x_{2} \in U_{2}$ und ein $\epsilon_{2} < \frac{1}{2} \epsilon_{1}$ mit
+			\[ \overline{K(x_{2}, \epsilon_{2})} \subset K(x_{2}, 2 \epsilon_{2}) \subset U_{2} \cap K(x_{1}, \epsilon_{1}) \subset U_{2} \cap U_{1} \cap K(x_{0}, \epsilon) \]
+		\item Induktiv findet man Folgen $\epsilon_{n} > 0, x_{n}$ mit
+			\begin{enumerate}[label=(\roman*\upshape)]
+				\item $\epsilon_{n} < \frac{1}{2} \epsilon_{n - 1}$ und damit $\epsilon_{n} \leq \frac{1}{2^{n}} \epsilon$
+				\label{satz:9.1-proof-ii}
+				\item $\overline{K(x_{n}, \epsilon_{n})} \subset U_{n} \cap K(x_{n - 1}, \epsilon_{n - 1}) \subset \dotsc \subset U_{n} \cap \dotsc \cap U_{1} \cap K(x_{0}, \epsilon)$
+			\end{enumerate}
+	\end{itemize}
+	Insbesondere für $n > N$:
+	\[ d(x_{n}, x_{N}) \leq \sum_{j = N + 1}^{n} d(x_{j}, x_{j - 1}) \leq \sum_{j = N + 1}^{n} \epsilon_{n} \leq \left( \sum_{j = N + 1}^{\infty} \frac{1}{2^{j}} \right) \epsilon \]
+	d.h. $(x_{n})$ ist eine Cauchy-Folge und da $M$ vollständig ist, existiert $\lim_{n \rightarrow \infty} x_{n} =: x$ in $M$. \\
+	Mit \hyperref[satz:9.1-proof-ii]{ii} gilt: $x_{n} \in \overline{K(x_{N}, \epsilon_{N})}$ für $n \geq N$
+	\[ \Rightarrow x = \lim_{n} x_{n} \in \overline{K(x_{N}, \epsilon_{N})} \subset U_{N} \cap \dotsc \cap U_{1} \cap K(x_{0}, \epsilon) \text{ für alle } N \]
+	\[ \Rightarrow x \in \underbrace{\bigcap_{n = 1}^{\infty} U_{n}}_{= D} \cap K(x_{0}, \epsilon) \]
+\end{beweis}
+
+\begin{definition} \label{def:9.2}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\label{def:9.2a}
+		\item Eine Teilmenge $L$ eines metrischen Raums $M$ hei{\ss}t \begriff{nirgends dicht}, falls $\overline{L}$ keine inneren Punkte enthält.
+		\label{def:9.2b}
+		\item Eine Teilmenge $L$, die sich als Vereinigung von einer Folge von nirgends dichten Mengen $L_{n}$ darstellen lässt, d.h. $L = \bigcup_{n \in \MdN} L_{n}$ hei{\ss}t von \begriff{1. Kategorie}.
+		\label{def:9.2c}
+		\item $L$ hei{\ss}t von \begriff{2. Kategorie}, falls $L$ nicht von erster Kategorie ist.
+	\end{enumerate}
+\end{definition}
+
+\begin{bemerkung*}
+	\begin{itemize}
+		\item Ist $L$ nirgends dicht, dann ist $M \setminus \overline{L}$ dicht in $M$
+		\item Ist $L$ nirgends dicht oder von Kategorie 1, dann ist $L$ $"$dünn$"$, $"$voller Löcher$"$.
+	\end{itemize}	
+\end{bemerkung*}
+
+\begin{kor}[Kategoriensatz von Baire] \label{kor:9.3-katsatzvonbaire}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item In einem vollständigen metrischen Raum $(M, d)$ liegt das Komplement einer Menge $L$ von 1. Kategorie stets dicht. Insbesondere:
+		\item Ein vollständig metrischer Raum ist von 2. Kategorie
+		\item Sei $(M, d)$ vollständig und $M_{n}, n \in \MdN$ eine Folge abgeschlossener Mengen mit $M = \bigcup_{n \in \MdN} M_{n}$. Dann enthält mindestens ein $M_{n}$ eine Kugel
+	\end{enumerate}	
+\end{kor}
+
+\begin{beweis}
+	todo % todo: do proof	
+\end{beweis}
+
+\begin{satz}
+	$E = \{ x \in C[0, 1]:$ $x$ ist in keinem Punkt von $[0, 1]$ differenzierbar $\}$ ist dicht in $(C[0, 1], \| \cdot \|_{\infty})$. \\
+	Insbesondere:
+ 		\begin{itemize}
+			\item $E \neq \emptyset$
+			\item $C^{1}[0, 1]$ ist von 1. Kategorie in $C[0, 1]$, also $C^{1}[0, 1] \subset C[0, 1]$ dicht
+		\end{itemize}
+\end{satz}
+
+\begin{beweis}
+	todo % todo: do proof	
+\end{beweis}
+
+
+
+
