@@ -112,7 +112,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 
 \begin{beispiel*}
 	$ \Omega = \MdR, \mathcal{A}_{m} = \{ [\frac{n - 1}{2^{m}}, \frac{n}{2^{m}}): -2^{2m}, \dotsc, 0, \dotsc, 2^{2m} \}, r_{m} = 2^{m}$.
-	% todo bild zeichnen
+	% todo missing sth at 7.6: draw image, example on desktop
 \end{beispiel*}
 
 \begin{kor*} 
@@ -143,7 +143,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 \end{beweis}
 
 \begin{bemerkung*}
-	$D \subseteq L^{p}(\MdR^{d})$ dicht, z.B.: $D = \{ f \in L^{\infty}(\MdR^{d}): \operatorname{supp}(f)$ comp. $\}$ % todo check if thats right
+	$D \subseteq L^{p}(\MdR^{d})$ dicht, z.B.: $D = \{ f \in L^{\infty}(\MdR^{d}): \operatorname{supp}(f)$ comp. $\}$ % todo missing sth at 8.5.5: check if thats right
 	$f \in D: \int_{\MdR^{d}} k(u - v) f(v) dv$ existiert als Lebesgueintegral für alle $f \in D$. \\
 	Nach \hyperref[satz:8.1]{Satz 8.1} gilt $\| T f \|_{L^{p}} \leq \| k \|_{L{1}} \cdot \| f \|_{L^{p}}$ für $f \in D$. \\
 	$T$ ist die \begriff{stetige Fortsetzung} von $T_{\big| D}$ auf ganz $L^{p}(\MdR^{d})$.
@@ -215,16 +215,36 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 			\item $\operatorname{supp}(g) = \overline{\{ x \in \Omega: g(x) \neq 0 \}} =: A \subseteq \Omega$, $A$ kompakt
 			\item $\| f - g \|_{L^{p}} \leq \epsilon$
 		\end{itemize}
-		\[ \delta_{0} = \inf \{ |t - s| : t \in \MdR^{d} \setminus \Omega, s \in A \} \]
+		\[ \delta_{0} = \inf \{ |t - s| : t \in \MdR^{d} \setminus \Omega, s \in A \} \quad \text{Abstand von } A \text{ und } \Omega^{c} \]
+
+		\def\side{0.58}
+		\begin{figure}[H]
+			\centering		
+			\begin{tikzpicture}
+				\draw[fill=gray!45] (0,0) circle (\side*1.4142*1.45);
+				\draw[fill=white] (-\side,-\side) rectangle (\side,\side) node[pos=.5] {A};
+			\end{tikzpicture}
+			\hskip 0pt \parbox{4pt}{ $\Omega^{c}$ }
+		\end{figure}
+		
 		Da $\operatorname{supp}(\phi_{\delta}) \subset B(0, \delta)$ nach \hyperref[bem:8.7ii]{8.7 ii)}
-		\[ \Rightarrow \operatorname{supp}(g) \ast \phi_{\delta} \leq A + V(0, \frac{delta_{0}}{2} \subset \Omega \text{ für } \delta < \frac{\delta_{0}}{2} \]
-		denn $g \ast C_{\delta}(u) = \int C_{\delta}(u - v) g(v) dv \neq 0$ nur wenn $v \in A$ und $\| u - v ^] < \delta$. \\
+		\[ \Rightarrow \operatorname{supp}(g \ast \phi_{\delta} ) \subset A + B\left(0, \frac{\delta_{0}}{2}\right) \subset \Omega \text{ für } \delta < \frac{\delta_{0}}{2} \]
+		(mit $A + B := \{ x + y : x \in A, y \in B\}$), denn $g \ast \phi_{\delta}(u) = \int \phi_{\delta}(u - v) g(v) dv \neq 0$ nur wenn $v \in A$ und $\| u - v \| < \delta$. \\
 		Also $g \ast \phi_{\delta} \in C_{c}(\Omega)$. Zu zeigen: $g \ast \phi_{\delta} \in C^{\infty}(\Omega)$
-		\[ D_{u}^{\alpha}(\phi_{\delta} \ast g)(u) = \int_{A} \left[ D_{u}^{\alpha} C_{\delta}(u - v) \right] \underbrace{g(v)}_{\text{beschränkt}} gv \]
+		\[ D_{u}^{\alpha}(\phi_{\delta} \ast g)(u) = \int_{A} \left[ D_{u}^{\alpha} \phi_{\delta}(u - v) \right] \underbrace{g(v)}_{\text{beschränkt}} gv \]
 		d.h. $\phi_{\delta} \ast g \in C	^{\infty}$; in einfachen Worten bedeutet das, dass $C_{\delta} \ast g$ alle guten Eigenschaften von $\phi$ $"$erbt$"$, auch wenn $g$ $"$schlecht$"$ ist. \\
-		\[ \| f - \phi_{\delta} \ast g \|_{L^{p}} \leq \underbrace{\| f - g \|}_{\leq \epsilon} + \underbrace{\| g - C_{\delta} \ast g \|_{L^{p}}}_{\leq \epsilon} \text{ für } \epsilon \text{ klein genug nach } \hyperref[satz:8.8]{8.8} \]
+		\[ \| f - \phi_{\delta} \ast g \|_{L^{p}} \leq \underbrace{\| f - g \|}_{\leq \epsilon} + \underbrace{\| g - \phi_{\delta} \ast g \|_{L^{p}}}_{\leq \epsilon} \text{ für } \epsilon \text{ klein genug nach } \hyperref[satz:8.8]{8.8} \]
 	\end{beweis}
 \end{kor}
+
+\begin{bemerkung*}
+	Es gilt:
+	\begin{itemize}
+		\item $\operatorname{supp}(f) \subset A, \operatorname{supp}(g) \subset B \quad \Rightarrow  \quad \operatorname{supp}(f + g) \subset A + B $
+		\item $f \ast g = g \ast f$
+	\end{itemize}	
+\end{bemerkung*}
+
 
 \begin{kor} \label{kor:8.10}
 	Sei $\Omega \subseteq \MdR^{d}$ offen. Sei $f \in L^{p}(\Omega), p \in [1, \infty)$ mit $\int f(u) g(u) du = 0$ für alle $g \in C_{c}^{\infty}(\Omega)$. Dann ist $f = 0$.

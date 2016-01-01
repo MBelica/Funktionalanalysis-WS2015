@@ -1,7 +1,7 @@
 %!TEX root = Funktionalanalysis - Vorlesung.tex
 \chapter*{Einf{\"u}hrung} \addcontentsline{toc}{chapter}{Einf{\"u}hrung}
   
-\section{Elemente}
+\section{Themengebiete}
 
 \subsection{R{\"a}ume}
 Sei $X$ ein Vektorraum, $dim X < \infty $ und sei $x = (x_{1},\dotsc,x_{n})^{T} \in \MdR^{n}$
@@ -14,23 +14,37 @@ Diese Normen sind äquivalent, denn:
 $\| x \|_{\infty} \leq \| x \|_{2} \leq n^{\frac{1}{2}} \| x \|_{\infty}$ \newline
 
 \begin{satz}[Bolzano-Weierstra{\ss}] \index{Bolzano-Weierstrass} \label{satz:1.1-BolzanoWeierstrass}
-$A \subset \MdR$ beschränkt. Dann hat jede Folge $(x_{n})_{n \in \MdN} \subset A$ eine konvergente Teilfolge.
+Sei $A \subset \MdR^{n}$ beschränkt. Dann hat jede Folge $(x_{n})_{n \in \MdN} \subset A$ eine konvergente Teilfolge.
 \end{satz}
 
 \begin{beispiel}
-$X = C[0, 1] = \{ f : [0, 1] \rightarrow \MdR: f \text{ stetig auf } [0, 1] \}$
-\begin{align*}
-\| f \|_{2} & := \left( \int_{0}^{1} \| f(t) \|^{2} dt \right)^{\frac{1}{2}} \\
-\| f \|_{\infty} & :=  \smash{\displaystyle\max_{t \in [0, 1]}}  \| f(t) \|
-\end{align*}
-\newline
-Dabei gilt $\| f \|_{\infty} \leq \| f \|_{2}$ , aber mit folgender Funktion folgt zum Beispiel:$\hspace{0.25cm} f_n(t) = $ \\
+	Betrachte $X = C[0, 1] = \{ f : [0, 1] \rightarrow \MdR: f \text{ stetig auf } [0, 1] \} $ mit $\| f \|_{\infty} :=  \smash{\displaystyle\max_{t \in [0, 1]}}  \| f(t) \|$. \\ 
+	Sei weiter $f_{n} : t \rightarrow t^{n}$, damit gilt $\| f_{n} \|_{\infty} \leq 1 \quad \forall n \in \MdN$.
+
+	
 	\begin{figure}[H]
-		\centering
-		\includegraphics[width=160pt]{images/1.1.1-example1.png}
-	\end{figure} \[ \text{gilt } \hspace{0.25cm} \| f_n \|_{\infty} = 1, \hspace{0.5cm} \| f_n \|_{2} \xrightarrow[n \rightarrow \infty]{} 0  
-\hspace{0.5cm} \| f_{n} - f_{m} \| = 1 \text{ für } n \neq m \]
-$ \Rightarrow $ \hyperref[satz:1.1-BolzanoWeierstrass]{Satz von Bolzano-Weierstra{\ss}} gilt im $\infty$-dimensionalen i.A. nicht!
+		\pgfmathdeclarefunction{expfct}{1}{ \pgfmathparse{(x^( #1 ))}}	
+		\begin{center}					
+			\begin{tikzpicture}
+				\begin{axis}[
+					domain=0:1,
+					samples=101,
+    				height=5cm,
+    				width=10cm
+				]
+					\addplot [color= blue, thin, dashed, smooth] {expfct(3)};
+					\addplot [color= blue, thin, dashed, smooth] {expfct(8)};
+					\addplot [color= blue, thin, dashed, smooth] {expfct(20)};
+					\addplot [color= blue, thin, dashed, smooth] {expfct(50)};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{$f_{n}$ für $n = 3, 8, 20$ und $50$}
+		\end{center}
+	\end{figure}					
+	Die Folge $(f_{n})_{n \geq 1}$ besitzt damit aber in $X$ keine konvergente Teilfolge, da die Grenzfunktion
+		\[ f = \begin{cases} 0 & x \in [0, 1) \\ 1 & x = 1 \end{cases} \]
+	nicht in $X$ liegt.
+	$ \Rightarrow $ \hyperref[satz:1.1-BolzanoWeierstrass]{Satz von Bolzano-Weierstra{\ss}} gilt im $\infty$-dimensionalen i.A. nicht!
 \end{beispiel}
 
 \subsection{Operatoren}
