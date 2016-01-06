@@ -2,16 +2,20 @@
 
 \chapter*{Elemente der Operatortheorie} \addcontentsline{toc}{chapter}{Elemente der Operatortheorie} \setcounter{section}{8}
 
+
+
 \section{Der Satz von Baire und der Satz von Banach-Steinhaus}
 
-\begin{satz}[Satz von Baire]
+
+
+\begin{satz}[Satz von Baire] \label{satz:9.1-baire}
 	Sei $(M, d)$ ein vollständiger metrischer Raum und seien $U_{n}, n \in \MdN$ offen und dicht in $M$.
 	\[ \text{Dann ist } \bigcap_{n \in \MdN} U_{n} \text{ dicht in } M. \]
 \end{satz}
 
 \begin{beweis}
-	Der Kürze halber definieren wir $D := \bigcap_{n \in \MdN} U_{n}$. \\ \\
-	Zu zeigen gilt, dass zu jeder Kugel $K(x_{0}, \epsilon), x_{0} \in M, \epsilon > 0$.
+    Der Kürze halber definieren wir $D := \bigcap_{n \in \MdN} U_{n}$. \\ \\
+    Zu zeigen gilt, dass zu jeder Kugel $K(x_{0}, \epsilon), x_{0} \in M, \epsilon > 0$.
 	Beweis: 
 	\begin{itemize}
 		\item $U_{1} \cap K(x_{0}, \epsilon)$ ist offen und nichtleer, da $U_{1}$ dicht ist. Also existiert ein $x_{1} \in U_{1}$ und $\epsilon_{1} > 0$ mit $\epsilon_{1} < \frac{1}{2} \epsilon$ so, dass $K( x_{1}, 2 \epsilon_{1}) \subset U_{1} \cap K(x_{0}, \epsilon)$
@@ -33,6 +37,7 @@
 	\[ \Rightarrow x \in \underbrace{\bigcap_{n = 1}^{\infty} U_{n}}_{= D} \cap K(x_{0}, \epsilon) \]
 \end{beweis}
 
+
 \begin{definition} \label{def:9.2}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\label{def:9.2a}
@@ -44,12 +49,14 @@
 	\end{enumerate}
 \end{definition}
 
+
 \begin{bemerkung*}
 	\begin{itemize}
 		\item Ist $L$ nirgends dicht, dann ist $M \setminus \overline{L}$ dicht in $M$
 		\item Ist $L$ nirgends dicht oder von Kategorie 1, dann ist $L$ $"$dünn$"$, $"$voller Löcher$"$.
 	\end{itemize}	
 \end{bemerkung*}
+
 
 \begin{kor}[Kategoriensatz von Baire] \label{kor:9.3-KategoriensatzVonBaire}
 	\begin{enumerate}[label=\alph*\upshape)]
@@ -60,8 +67,13 @@
 \end{kor}
 
 \begin{beweis}
-	todo % todo missing sth at 9.3: add proof
+	$L = \bigcup_{n \in \MdN} L_{n}$, $L_{n}$ nirgends dicht. \\
+	Damit gilt $L^{c} = \left( \bigcup_{n \in \MdN} L_{n} \right)^{c} = \bigcap_{n \in \MdN} L_{n}^{c} \supset \bigcap_{n \in \MdN} \overline{L_{n}}^{c}$, mit $\overline{L_{n}}^{c}$ offen. \\
+	Da $L_{n}$ nirgends dicht ist, ist daher $\overline{L_{n}}^{c}$ dicht in $M$ \\
+	Nach \hyperref[satz:9.1-baire]{9.1} ist auch $\bigcap_{n \in \MdN} \overline{L_{n}}^{c}$ dicht in $M$ und da $\bigcap_{n \in \MdN} \overline{L_{n}}^{c} \subset L^{c}$, ist auch $L^{c}$  dicht in $M$. \\ \\
+	$a) \Rightarrow b) \Rightarrow c)$ nach Definition.
 \end{beweis}
+
 
 \begin{satz}
 	$E = \{ x \in C[0, 1]:$ $x$ ist in keinem Punkt von $[0, 1]$ differenzierbar $\}$ ist dicht in $(C[0, 1], \| \cdot \|_{\infty})$. \\
@@ -73,9 +85,91 @@
 \end{satz}
 
 \begin{beweis}
-	todo % todo missing sth at 9.4: add proof
+	Betrachte 
+	\[ E_{n} = \{ x \in C[0, 1]: \sup_{0 < |h| \leq \frac{1}{n}} \left| \frac{x(t + h) - x(t)}{h} \right| > n, \text{ für alle } t \in [0, 1] \}, \]
+	dann ist $\bigcap E_{n} \subset E$. Wir wolle nun zeigen, dass 
+	\begin{enumerate}[label=\roman*\upshape)]
+		\item $E_{n}$ sind offen in $C[0, 1]$ für alle $n$
+		\item $E_{n}$ sind dicht in $C[0, 1]$ für alle $n$
+	\end{enumerate}
+	Damit können den \hyperref[satz:9.1-baire]{Satz von Baire} anwenden und erhalten dass $\bigcap_{n \in \MdN} E_{n}$ und damit auch die Menge $E$ dicht in $C[0, 1]$ ist. \\
+	\begin{enumerate}[label=\roman*\upshape)]
+		\item Sei $n \in \MdN$ und $x \in E_{n}$ fest. \\
+			Zu jedem $t \in [0, 1]$ wähle $f_{t}$ definiert durch
+			\[ \sup_{0 < |h| \leq \frac{1}{n}} \left| \frac{x(t + h) - x(t)}{h} \right| = n + 2 \delta_{t} \]
+			$\Rightarrow \left| \frac{x(s + h_{t}) - x(s)}{h_{t}} \right| > n + \delta_{t}$ für $s \in U_{t}$, $0 < |h_{t}| \leq \frac{1}{n} $ \\
+			Da $x$ stetig ist, gibt es zu $t$ eine kleine Umgebung $U_{t}$ mit
+			\[ \left| \frac{x(s + h_{t}) - x(s)}{h_{t}} \right| > n + \delta_{t} \text{ für } s \in U_{t}, \quad 0 < |h_{t}| \leq \frac{1}{n} \]
+			Da $[0, 1]$ kompakt und $[0, 1] = \bigcup_{t \in [0, 1]} U_{t}$ gibt es endlich viele $U_{t_{1}}, \dotsc, U_{t_{n}}$ mit $[0, 1] \subset U_{t_{1}} \cup \dotsc \cup U_{t_{n}}$ \\
+			Setze $\delta := \min \{ \delta_{t_{1}}, \dotsc, \delta_{t_{1}} \} > 0, \quad h := \min \{ h_{t_{1}}, \dotsc, h_{t_{n}} \}$. \\
+			Wähle nun ein $\epsilon$ mit $0 < \epsilon < \frac{1}{2} h \delta$. \\
+			Zu zeigen bleibt $K(x, \epsilon) \subset E_{n}$: \\
+			Sei $y \in C[0, 1]$ mit $\| x - y \|_{\infty} < \epsilon$. Zu $t \in [0, 1]$ wähle $i \in \{ 1, \dotsc, n \}$ mit $t \in U_{i}$. \\
+			Dann:
+			\begin{align*}
+				\left| \frac{y(t + h_{t_{i}}) - y(t)}{h_{t_{i}}} \right| & \overset{\triangle-\text{Ungl.}}{\geq} \left| \frac{x(t + h_{t_{i}}) - x(t)}{h_{t_{i}}} \right| - 2 \frac{\| x - y \|_{\infty}}{|h_{t_{i}}|} \\
+				& \overset{t \in U_{t_{i}}}{>} n + \delta - 2 \frac{\epsilon}{n} \\
+				& > n \quad \text{nach Wahl von } \epsilon
+			\end{align*}
+			$\Rightarrow x \in E_{n}, K(x, \epsilon) \subseteq E_{n} \Rightarrow A_{n}$ offen, $n \in \MdN$.
+		\item Wir wollen noch zeigen, dass $U_{n}$ dicht in $C[0, 1]$ ist. \\
+			Sei $V \subset C[0, 1]$ offen, $V \neq \emptyset$. Nach dem Approximationssatz von Weierstra{\ss} gibt es ein Polynom $p$ mit $p \in V, \epsilon > 0: \| x - p \|_{\infty} \leq \epsilon \Rightarrow x \in V$. \\
+			Sei weiter $y_{m}$ eine Sägezahnfunktion mit $y_{m}: [0, 1] \rightarrow [0, \epsilon]$ und der Steigung $\pm m$.
+			Dann ist $x := p + {m} \in K(p, \epsilon)$. \\
+			Wähle zu $n$ die Zahl $m \in \MdN$ so, dass $m > n + \| p \|_{\infty}$. \\
+			Für $t \in [0, 1], 0 < | n | \leq \frac{1}{n}$ gilt:
+			\[ \left| \frac{x_{m}(t + h) - x(t)}{h} \right| \overset{\triangle-\text{Ungl.}}{\geq} \left| \frac{y_{m}(t + h) - y(t)}{h} \right| - \underbrace{\left| \frac{p(t + h) _ p(t)}{h} \right|}_{\leq{\| p' \|_{\infty}} \text{nach MWS}}  \]
+			\[ \Rightarrow \sup_{0 < |h| \leq \frac{1}{n}} \left| \frac{x_{m}(t + h) - x_{m}(t)}{h} \right| \geq m - \| p' \|_{\infty} \overset{\text{nach Wahl}}{\underset{\text{von }m}{\geq}} n \] \\
+			Damit ist $x_{m} \in E_{n}$ und sogar $x_{m} \in E_{n} \cap V$ \\ \\
+			$\Rightarrow E_{n} \cap V \neq \emptyset \quad \Rightarrow E_{n} \text{ dicht.}$
+	\end{enumerate}	
 \end{beweis}
 
 
+\begin{satz}[Banach-Steinhaus] \label{satz:9.5-Banach-Steinhaus} \index{Banach-Steinhaus}
+	Sei $X$ ein Banachraum, $Y$ ein normierter Raum, $I$ eine Indexmenge und $(T_{i})_{i} \in B(X, Y)$.
+	Falls: 
+	\[ \sup_{i \in I} \| T_{i} x \| = C(X) < \infty \quad \forall x \in X \]
+	Dann:
+	\[ \sup_{i \in I} \| T_{i} \| = \sup_{i \in I} \sup_{\| x \| \leq 1} \| T_{i} x \| < \infty. \]
+\end{satz}
+
+\begin{beweis}
+	siehe Werner % todo missing sth at 9.5: add proof	
+\end{beweis}
 
 
+\begin{bemerkung}  \label{bem:9.6}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Aus $C(X)$ kann man $\sup_{i \in I} \| T_{i} \|$ nicht herleiten (\hyperref[satz:9.3-KategoriensatzVonBaire]{Baire} ist nicht konstruktiv).
+		\item Die Vollständigkeit von $X$ ist notwendig.
+	\end{enumerate}	
+\end{bemerkung}
+
+
+\begin{beispiel*}
+Sei $F = \{ (x_{n})_{n}: x_{n} = 0$ für alle, bis auf endlich viele $n \}$ mit $\| (x_{n})_{n} \|_{p} = \sup_{n \in \MdN} | x_{n} |$. \\
+Betrachte $T_{k} (x_{n})_{n} = k x_{k}$, dann gilt $\| T_{k} \| = k$ und $\sup_{k \in \MdN} \| T_{k} \| = \infty$ \\
+Aber $\sup_{k \in \MdN} \| T_{k} (x_{n})_{n} \| = \sup_{k \in \MdN} \| k x_{k} \| < \infty$, da $\sup$ nur über endlich viele Werte genommen wird.
+\end{beispiel*}
+
+
+\begin{kor} \label{kor:9.7}
+	Sei $X$ ein Banachraum, $Y$ normiert und $(T_{n})_{n} \subset B(X, Y)$ derart, dass
+	\[ \lim_{n \rightarrow \infty} T_{n} x =: y \text{ existiert für alle } x \in X \]
+	Dann ist $T_{x} := y_{x}$ linear und $T \in B(X, Y)$
+	\begin{beweis}
+		$T$ ist linear, da $\lim$ und $T_{n}$ jeweils linear sind. \\
+		$(T_{n} x)_{n}$ ist beschränkt $\xRightarrow[\text{Steinhaus}]{\text{Banach-}} \sup_{n \in \MdN} \| T_{n} \| < \infty$ \\
+		\[ \| T x \| = \lim_{n \rightarrow \infty} \| T_{n} x \| \leq \sup_{n \in \MdN} \|T_{n} \| \cdot \|x \| \]
+		\[ \Rightarrow T \in B(X, Y) \text{ mit } \| T \| \leq \sup_{n \in \MdN} \| T_{n} \|. \]
+	\end{beweis}
+\end{kor} 
+Frage: $T_{n} \xrightarrow[n \rightarrow \infty]{} T$ in $B(x, Y)$? Nein! \\
+\begin{beispiel*}
+	$X = Y = \ell^{p}, \quad T_{k} (x_{n})_{n} = (x_{1}, \dotsc, x_{k}, 0, \dotsc)$ \\
+	\[ \| T_{k} (x_{n})_{n} - I (x_{n})_{n} \| = \left( \sum_{n = k + q}^{\infty} | x_{n} |^{p} \right)^{\frac{1}{p}} \xrightarrow[n \rightarrow \infty]{} 0 \quad \text{(Identität ist punktweiser Gw.)} \]
+	Aber: $\| T_{k} - I \| \geq \|(T_{k} - I)\underbrace{(0, \dotsc, 0, 1, 0, \dotsc)	}_{1 \text{ an } k+1-\text{ter Stelle}} \|_{\ell^{p}} = 1 \xrightarrow[k \rightarrow \infty]{} 0$
+\end{beispiel*}
+
+\newpage

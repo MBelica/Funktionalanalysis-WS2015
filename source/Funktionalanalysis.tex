@@ -2,6 +2,8 @@
 
 \usepackage{Analysis}
 
+% tikz images somehow not displayed
+
 %standard setup
 \author{Prof. Dr. Lutz Weis}
 \publishers{Martin Belica}
@@ -14,13 +16,18 @@
 
 \makeindex
 
-\newsavebox{\mydate} \begin{lrbox}{\mydate} \begin{tabular}{c} Wintersemester 2015 \\[2cm] \begin{tikzpicture}[transform shape] \foreach \number in {1,...,8}{ \mycount=\number \advance\mycount by -1 \multiply\mycount by 45 \advance\mycount by 0 \node[draw,circle,inner sep=0.0001cm] (N-\number) at (\the\mycount:4.5cm) {}; } \foreach \number in {9,...,16}{ \mycount=\number \advance\mycount by -1 \multiply\mycount by 45 \advance\mycount by 22.5 \node[draw,circle,inner sep=0.0001cm] (N-\number) at (\the\mycount:4.5cm) {}; } \foreach \number in {1,...,15}{ \mycount=\number \advance\mycount by 1 \foreach \numbera in {\the\mycount,...,16}{ \path (N-\number) edge[->,bend right=3] (N-\numbera)  edge[<-,bend left=3] (N-\numbera); } } \end{tikzpicture} \end{tabular} \end{lrbox}
+\newsavebox{\mydate} \begin{lrbox}{\mydate} \begin{tabular}{c} 
+	Wintersemester 2015 
+	\\[2cm] \begin{tikzpicture}[transform shape] \foreach \number in {1,...,8}{ \mycount=\number \advance\mycount by -1 \multiply\mycount by 45 \advance\mycount by 0 \node[draw,circle,inner sep=0.0001cm] (N-\number) at (\the\mycount:4.5cm) {}; } \foreach \number in {9,...,16}{ \mycount=\number \advance\mycount by -1 \multiply\mycount by 45 \advance\mycount by 22.5 \node[draw,circle,inner sep=0.0001cm] (N-\number) at (\the\mycount:4.5cm) {}; } \foreach \number in {1,...,15}{ \mycount=\number \advance\mycount by 1 \foreach \numbera in {\the\mycount,...,16}{ \path (N-\number) edge[->,bend right=3] (N-\numbera)  edge[<-,bend left=3] (N-\numbera); } } \end{tikzpicture}
+\end{tabular} \end{lrbox}
 \date{\usebox\mydate}
 
 \begin{document}
 
 \pagenumbering{arabic}
 \setcounter{page}{1}
+
+
 
 \input{Titlepage}
 \input{Preface}
@@ -37,6 +44,8 @@
 \input{chapter/1-section7}
 \input{chapter/1-section8}
 \input{chapter/1-section9}
+\input{chapter/1-section10}
+\input{chapter/1-section11}
 
 \appendix
 \input{Abbreviations}

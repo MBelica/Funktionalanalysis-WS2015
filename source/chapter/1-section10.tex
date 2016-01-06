@@ -1,0 +1,77 @@
+%!TEX root = Funktionalanalysis - Vorlesung.tex
+
+\section{Satz von der offenen Abbildung}
+
+
+
+\begin{definition} \label{def:10.1-offAbbildung}
+	Eine Abbildung zwischen metrischen Räumen heißt \begriff{offen}, wenn offene Mengen auf offene Mengen abgebildet werden.
+\end{definition}
+
+
+\begin{lemma} \label{lemma:10.2}
+	Seien $X, Y$ normiert und $T: X \rightarrow Y$ ein linearer Operator. \\
+	Dann sind äquivalent:
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $T$ ist offen
+		\item $\exists \epsilon > 0: K_{y}(0, \epsilon) \subset T(K_{x}(0, 1))$
+	\end{enumerate}
+\end{lemma}
+
+\begin{beweis}
+	$"\Rightarrow":$ $T(K_{X}(0, 1))$ ist offen und $T(0) = 0$. \\
+	$"\Leftarrow":$ Sei $U \subset X$ offen, $x \in U, \epsilon > 0: K_{X}(x, \epsilon) \subset \overline{U}$.
+	\begin{align*}
+		& \Rightarrow T( K_{X}(x, \epsilon)) \subset T(y) \\
+		& \Rightarrow T_{X} + \epsilon T(K_{X}(0, 1)) = Tx + T(K_{X}(0, \epsilon) \subset T(U)
+	\end{align*}
+	Nach $b)$ $\exists \delta > 0: K_{Y}(0, \delta) \subset T(K_{X}(0, 1))$
+	\begin{align*}
+		& \Rightarrow K_{Y}(Tx, \epsilon \delta) = T x + \epsilon K_{Y}(0, \delta) \subset T(U) \\
+		& \Rightarrow T(U) \text{ ist offen}
+	\end{align*}	
+\end{beweis}
+
+
+\begin{satz}[von der offenen Abbildung] \index{Satz von der offenen Abbildung}  \label{satz:10.3-offeneAbbildung}
+	Seien $X, Y$ Banachräume und $T \in B(X, Y)$. \\
+	Dann gilt:
+	\[ T \text{ surjektiv} \gdw T \text{ offen} \]
+\end{satz}
+
+\begin{beweis}
+	$"\Rightarrow":$ Nach \hyperref[lemma:10.2]{Lemma 10.2} $\exists \epsilon > 0: K_{Y}(0, \epsilon) \subset T(K_{X}(0, 1)) $
+	\begin{align*}
+		& \Rightarrow K_{Y}(0, R) \subset T(K_{X}(0, \frac{R}{\epsilon})) \quad \forall R > 0 \\
+		& \Rightarrow Y \subset T(X)
+	\end{align*}
+	$"\Leftarrow":$ siehe Werner (S. 154f). % todo: missing sth at 10.3: add proof
+\end{beweis}
+
+
+\begin{kor} \label{kor:10.4}
+	Seien $X, Y$ Banachräume und $T \in B(X, Y)$ bijektv. Dann ist $T^{-1} \in B(Y, X)$	
+\end{kor}
+
+\begin{beweis}
+	Nach \hyperref[satz:10.3-offeneAbbildung]{10.3} ist $T$ offen, d.h. ist $U \subset X$ offen, so ist auch $T(U)$ offen in $Y$. \\
+	\[ \Rightarrow T(U) = \left( T^{-1} \right)^{-1}(U) \text{ offen} \]
+	\[ \Rightarrow \text{ Urbilder offener Mengen sind offen unter } T^{-1} \Rightarrow T^{-1} \text{ ist stetig} \] 
+	
+	Die Inverser linearer Operatoren ist bekanntlich linear.	
+\end{beweis}
+
+
+\begin{kor}
+	Sei $X$	ein Vektorraum, der mit $\| \cdot \|, \vertiii{\cdot}$ ausgestattet ein Banachraum wird. \\
+	Gibt es ein $c > 0: \| x \| \leq c \cdot \vertiii{x}$ $\forall x \in X$, dann sind die Normen äquivalent (d.h. $\exists \hat{c} $ mit $\hat{c} \cdot \vertiii{x} \leq \| x \|$ $\forall x \in X$). 
+\end{kor}
+
+\begin{beweis}
+	Nach Voraussetzung ist $I : (X, \vertiii{\cdot}) \rightarrow (X, \| \cdot \|)$ beschränkt. \\
+	$\xRightarrow[\ref{kor:10.4}]{} I : (X, \| \cdot \|) \rightarrow (X, \vertiii{\cdot})$ beschränkt.
+\end{beweis}
+
+
+
+\newpage

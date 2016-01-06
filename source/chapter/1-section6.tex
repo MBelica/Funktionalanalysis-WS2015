@@ -99,7 +99,7 @@
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Eine kompakte Teilmenge $K \subset M$ ist immer vollständig und abgeschlossen in $M$.
 		\item Eine abgeschlossene Teilmenge eine kompakten Raums ist kompakt.
-		\item Jede kompakte Menge in $M$ ist separabel.
+		\item Jede kompakte Menge in $M$ ist seperabel.
 		\item Eine kompakte Teilmenge eines normierten Raums ist beschränkt.
 	\end{enumerate}
 	\begin{beweis}
@@ -108,7 +108,7 @@
 			\item Nach Definition
 			\item Nach \hyperref[satz:6.5b]{6.5 b)} gibt es zu $n \in \MdN$ eine endliche Menge $L_{n}$ mit:
 				\[ \inf{\| y - x \| : x \in L_{n}} \leq \frac{1}{n} \text{ für alle } x \in K. \]
-				Dann ist $L = \bigcup_{n \geq 1} L_{n}$ abzählbar und $L$ ist dicht in $K$ (d.h. $\overline{L} = K$), also ist $K$ separabel.
+				Dann ist $L = \bigcup_{n \geq 1} L_{n}$ abzählbar und $L$ ist dicht in $K$ (d.h. $\overline{L} = K$), also ist $K$ seperabel.
 			\item Falls $K$ unbeschränkt ist, dann gibt es $x_{n} \in K$ mit $\|x_{n}\| \geq n, n \in \MdN$. \\
 				$(x_{n})$ kann dann keine konvergente Teilfolge besitzen.
 		\end{enumerate}
@@ -138,7 +138,7 @@
 		| x(t) - x(s) | & \leq \underbrace{| x(t) - x_{i}(s) |}_{\leq \| x - x_{i} \| \leq \epsilon \text{ nach } (*) } + \underbrace{| x_{i}(t) - x_{i}(s) |}_{\leq \epsilon \text{ nach } (**) } + \underbrace{| x_{i}(s) - x(s) |}_{\leq \epsilon} \\
 						& \leq 3 \epsilon \text{ für } d(s, t) < \delta 
 	\end{align*} \\
-	$"\Leftarrow"$ Nach \hyperref[prop:6.6]{6.6} ist $S$ separabel. Sei also $(S_{n})$ eine dichte Folge in $S$. Sei weiter eine Folge $(x_{n}) \subset M$ gegeben. \\
+	$"\Leftarrow"$ Nach \hyperref[prop:6.6]{6.6} ist $S$ seperabel. Sei also $(S_{n})$ eine dichte Folge in $S$. Sei weiter eine Folge $(x_{n}) \subset M$ gegeben. \\
 	Da $M$ beschränkt in $C(S)$ ist, gibt es ein $C < \infty$ mit $| x_{n}(s) | <\leq C$ für alle $s \in S, n \in \MdN$. Also ist für festes $m$ $(x_{n}(s_{m}))_{n \in \MdN}$ beschränkt und hat somit eine konvergente Teilfolge. \\
 	\[ \exists N_{1} \subseteq \MdN \text{ mit } |N_{1}| = \infty \text{ so, dass } (x_{n}(s_{1}))_{n \in N_{1}} \text{ konvergiert.}  \]
 	\[ \exists N_{2} \subseteq N_{1} \text{ mit } |N_{2}| = \infty \text{ so, dass } (x_{n}(s_{2}))_{n \in N_{2}} \text{ konvergiert.}  \]	

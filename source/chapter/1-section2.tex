@@ -2,20 +2,27 @@
 
 \chapter*{Kompakte Operatoren} \addcontentsline{toc}{chapter}{Kompakte Operatoren} \setcounter{section}{1}
 
+
+
 \section{Normierte R{\"a}ume}
 
+
+
 \begin{definition}
-Sei $X$ ein Vektorraum über $\MdK \in\{ \MdR, \MdC \}$. \\
-Eine Abbildung  $\| \cdot \|: X \rightarrow \MdR_{+}$ hei{\ss}t eine \begriff{Norm}, wenn
-\begin{enumerate}
-	\item $ \| x \| \geq 0, \| x \| = 0 \gdw x = 0 $
-	\item $\ | \lambda x \| = | \lambda \| x \| $
-	\item $ \| x + y \| \leq \| x \| + \| y \| $
-\end{enumerate}	
+	Sei $X$ ein Vektorraum über $\MdK \in\{ \MdR, \MdC \}$. \\
+	Eine Abbildung  $\| \cdot \|: X \rightarrow \MdR_{+}$ hei{\ss}t eine \begriff{Norm}, wenn
+	\begin{enumerate}
+		\item $ \| x \| \geq 0, \| x \| = 0 \gdw x = 0 $
+		\item $\ | \lambda x \| = | \lambda \| x \| $
+		\item $ \| x + y \| \leq \| x \| + \| y \| $
+	\end{enumerate}	
 \end{definition}
 
-\begin{bemerkung} Falls $ \| \cdot \| $ all die oben genannten Eigenschaften erfüllt au{\ss}er $ \| x \| = 0 \Rightarrow x = 0 $, dann hei{\ss}t $ \| \cdot \| $ Halbnorm.
+
+\begin{bemerkung}
+	Falls $ \| \cdot \| $ all die oben genannten Eigenschaften erfüllt au{\ss}er $ \| x \| = 0 \Rightarrow x = 0 $, dann hei{\ss}t $ \| \cdot \| $ Halbnorm.
 \end{bemerkung}
+
 
 \begin{vereinbarung}
 Die Menge $ U_{X} = \{ x \in X:  \|x \| \leq 1 \}$ hei{\ss}t \begriff{Einheitskugel}. \\
@@ -27,6 +34,7 @@ Eine Folge $(x_{n})$ des normierten Raums $X$ \begriff{konvergiert} gegen ein $ 
 Für zwei Elemente $x, y \in (X, \| \cdot \|)$ in normierten Räumen gilt auch die umgekehrte Dreiecksungleichung $( | \| x \| + \| y \| | \leq \| x + y \|)$
 \end{bemerkung}
 
+
 \begin{beispiel}
 Sei $ X = \MdK^{n}, \hspace{0.25cm} x = ( x_{1}, \dotsc, x_{n}), \hspace{0.25cm} x_{i} \in \MdK$ 
 \begin{align*}
@@ -34,7 +42,7 @@ Sei $ X = \MdK^{n}, \hspace{0.25cm} x = ( x_{1}, \dotsc, x_{n}), \hspace{0.25cm}
 	\| x \|_{\infty} & = \hspace{0.3cm} \sup_{j = 1}^{n} |x_{j}|	
 \end{align*}
 
-Beh: $\| \cdot \| $ ist Norm auf $\MdK^n$ für $1 \leq p \leq \infty$
+Beh.: $\| \cdot \| $ ist Norm auf $\MdK^n$ für $1 \leq p \leq \infty$
 
 $\| x + y \|_{\infty} = sup_{j = 1}^{k} |x_{j} + y_{j}| \leq \|x\|_{\infty} + \|y\|_{\infty} $
 Für $p \in (1, \infty), p \neq 2:$ siehe Übungsaufgabe (Fall $p = 2$ läuft über Cauchy-Schwarz)
@@ -42,14 +50,17 @@ Für $p \in (1, \infty), p \neq 2:$ siehe Übungsaufgabe (Fall $p = 2$ läuft ü
 Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \leq n \| x \|_{\infty}$
 \end{beispiel}
 
+
 \begin{definition}
 	Zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ hei{\ss}en \begriff{äquivalent} auf $X$, falls es $0 < m, M < \infty$ gibt, so dass für alle $ x \in X$ gilt:
 	\[ m \| x \|_{2} \leq \| x \|_{1} \leq M \| x \|_{2} \]
 \end{definition}
  
+ 
 \begin{satz} 
 	Auf einem endlich dimensionalen Vektorraum sind alle Normen äquivalent.
 \end{satz}
+
 \begin{beweis}
 	Wähle eine algebraische Basis $(e_{1}, \dotsc, e_{n})$ von X, wobei $ n = dim X < \infty$. \\
 	Definiere $ \vertiii{x} = \left(\sum_{i = 1}^{n} |x_{i}|^2\right)^{\frac{1}{2}}$, wobei $x = \sum_{i = 1}^{n} x_{i} e_{i}$ \\
@@ -80,6 +91,7 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 		\end{align*}
 \end{beweis}
 
+
 \begin{prop}
 	Für zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ auf $X$ sind äquivalent:
 	\begin{enumerate}[label=\alph*\upshape)]
@@ -109,6 +121,7 @@ Sei $\MdF = \{ (x_{n}) \in \MdK^{\MdN}: x_{i} = 0 \text{ bis auf endlich viele }
 und $e_{j} = (0, \dotsc, 0, 1, 0, \dotsc, 0) $ der Einheitsvektor, wobei die $1$ an j-ter Stelle steht.
 \end{vereinbarung}
 
+
 \begin{beispiel} \index{l$^{p}$-Raum} \index{l$^{\infty}$-Raum} \index{c$_{0}$-Raum}
 	\begin{itemize}
 		\item $\ell^{p} = \{ x = (x_{n}) \in \MdK^{\MdN}: \|x\|_{p} = \left( \sum_{n = 1}^{\infty} | x_{n} |^{p}\right)^{\frac{1}{p}} < \infty \}$
@@ -118,10 +131,12 @@ und $e_{j} = (0, \dotsc, 0, 1, 0, \dotsc, 0) $ der Einheitsvektor, wobei die $1$
 Gültigkeit der Dreiecksungleichung beweist man ähnlich wie bei $(\MdK^{n}, \| \cdot \|_{p})$.
 \end{beispiel}
 
+
 \begin{lemma}
 \begriff{Minkowskii-Ungleichung}: $\left( \sum_{i=1}^{\infty} |x_{i} + y_{i}|^p\right)^{\frac{1}{p}} \leq\left( \sum_{i=1}^{\infty} |x_{i}|^p\right)^{\frac{1}{p}} \left( \sum_{i=1}^{\infty} |y_{i}|^p\right)^{\frac{1}{p}} $	\\
 \begriff{Hölder-Ungleichung}: mit $\frac{1}{p} + \frac{1}{p'} = 1 \text{ gilt } \sum_{i=1}^{\infty} |x_{i}| |y_{i}| \leq \left( \sum_{i=1}^{\infty} |x_{i}|^{p} \right)^{\frac{1}{p}} \left( \sum_{i=1}^{\infty} |y_{i}|^{p'} \right)^{\frac{1}{p'}} $	\\	
 \end{lemma}
+
 
 \begin{bemerkung}
 	Im unendlich dimensionalen Fall sind die Normen $\| \cdot \|_{p}$ auf $\MdF$ nicht äquivalent.
@@ -135,36 +150,39 @@ Gültigkeit der Dreiecksungleichung beweist man ähnlich wie bei $(\MdK^{n}, \| 
 \end{bemerkung}
 
 
-
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Raum der stetigen Funktionen \index{Raum der stetigen Funktionen} \\
 		$\Omega \subset \MdR^{n}, \hspace{0.25cm} C(\Omega) = \{ f: \Omega \rightarrow \MdR \text{ | } f \text{ stetig} \}$, \hspace{0.25cm} $\| f \|_{\infty} = \sup_{u \in \Omega} |f(u)|$\\
 		$\Rightarrow \| f - f_{n} \|_{\infty} \rightarrow 0$ bedeutet gleichmä{\ss}ige Konvergenz von $f_{n}$ gegen $f$ auf $\Omega$.
-		\item Raum der differentierbaren Funktionen \index{Raum der differentierbaren Funktionen} \\
+		\item Raum der differenzierbaren Funktionen \index{Raum der differenzierbaren Funktionen} \\
 		$\Omega \subset \MdR^{n}$ offen, $f: \Omega \rightarrow \MdR, \hspace{0.25cm} \alpha = (\alpha_{1}, \dotsc, \alpha_{m}) \in \MdN_{0}^{m}$ \\
 		$D^{\alpha}f(x) = \frac{ \delta^{ | \alpha | } }{ \delta x_{1}^{ \alpha_{1} } \dotsc \delta x_{n}^{ \alpha_{n} } } f(x), \text{ wobei } | \alpha | = \alpha_{1} + \dotsc + \alpha_{n} $ \\ 
 	\end{enumerate}
 \end{beispiel}
+
 
 \begin{definition}
 Wir nennen $C_{b}^{m}(\Omega) = \{ f: \Omega \rightarrow \MdR | D^{\alpha}f \text{ sind stetig in } \Omega, \text{ beschränkt auf } \Omega \text{ für alle } \alpha \in \MdN^{n}, |\alpha| \leq m \}$ den \begriff{Raum der beschränkten, m-fach stetig differenzierbaren Funktionen}.  \\
 Auf $C_{b}^{m}$ definieren wir die Norm: $\| f \|_{C_{b}^{m}} = \sum_{|\alpha| \leq m} \| D^{\alpha}f \|_{\infty}$
 \end{definition}
 
+
 \begin{bemerkung}
-Auf $C_{b}^{m} [0, 1]$ ist eine äquivalente Norm zu  $\| f \|_{C_{b}^{m}}$ gegeben durch
-\begin{align*}
-	\| f \|_{0} & = \sum_{i = 0}^{m - 1} |f^{(i)}(0)| + \| f^{(m)} \|_{\infty} \\
-	\text{Denn } f^{(i)}(t) = f^{(i)}(0) + \int_{0}^{t} & f^{(i + 1)}(s) ds \text{ und damit } \| f^{(i)}\|_{\infty} \leq | f^{(i)}(0) | + \| f^{(i + 1)}\|_{\infty}	
-\end{align*}
+	Auf $C_{b}^{m} [0, 1]$ ist eine äquivalente Norm zu  $\| f \|_{C_{b}^{m}}$ gegeben durch
+	\begin{align*}
+		\| f \|_{0} & = \sum_{i = 0}^{m - 1} |f^{(i)}(0)| + \| f^{(m)} \|_{\infty} \\
+		\text{Denn } f^{(i)}(t) = f^{(i)}(0) + \int_{0}^{t} & f^{(i + 1)}(s) ds \text{ und damit } \| f^{(i)}\|_{\infty} \leq | f^{(i)}(0) | + \| f^{(i + 1)}\|_{\infty}	
+	\end{align*}
 \end{bemerkung}
+
 
 \begin{beispiel}
 $X = C(\bar\Omega), \Omega \subset \MdR^{n}$ offen, beschränkt. \\
 Definiere $\| f \|_{L^{p}} = \left( \int_{\Omega} |f(u)|^{p} du \right)^{\frac{1}{p}}$ und betrachte $f_{k}(t) = t^k, t \in [0, 1]$, dann gilt:
  \[ \| f \|_{L^{p}} = \left( \frac{1}{kp + 1} \right)^{\frac{1}{p}} \xrightarrow[k \rightarrow \infty]{} 0, \hspace{0.25cm} p < \infty \]
 \end{beispiel}
+
 
 \begin{definition}[\begriff{Quotientenräume}] \label{def:2.15-Quotientenraeume}
 Sei $(X, \| \cdot \|)$ ein normierter Raum. $M \subset X$ sei abgeschlossener, linearer Unterraum. \[ (\text{abgeschlossen: d.h. für alle } (x_{n}) \in M, \| x_{n} - x \| \rightarrow 0 \Rightarrow x \in M) \]
@@ -187,28 +205,31 @@ Zu $\epsilon > 0$ wähle für $\hat x_{1}, \hat x_{2} \in \hat X, y_{1}, y_{2} \
 	\end{align*}
 \end{definition}
 
+
 \begin{bemerkung}
-Ist $\| \cdot \|$ nur eine Halbnorm auf $X$, so ist $M = \{ x: \| x \| = 0 \}$ ein abgeschlossener, linearer Teilraum von $X$ und der Quotientenraum $(\hat X, \| \cdot \|_{\hat X})$ ist ein normierter Raum.
+	Ist $\| \cdot \|$ nur eine Halbnorm auf $X$, so ist $M = \{ x: \| x \| = 0 \}$ ein abgeschlossener, linearer Teilraum von $X$ und der Quotientenraum $(\hat X, \| \cdot \|_{\hat X})$ ist ein normierter Raum.
 \end{bemerkung}
 
 
 \begin{beispiel}
-\begin{itemize}
+	\begin{itemize}
 	\item Hölderstetige Funktionen \index{Hölderstetige Funktionen} \\
 	Wenn $h_{\alpha}(f) = \sup_{u,v \in \MdR, u \neq v} \frac{\| f(u) - f(v)\|}{|u - v|^{\alpha}} < \infty \hspace{0.25cm} \left( \alpha \in (0, 1] \right)$, dann nennt man $f$ hölderstetig.
 	\[ C^{\alpha}(\Omega) := \{ f: \Omega \rightarrow \MdR: h_{\alpha}(f) < \infty \} \hspace{0.5cm} \Omega \subset \MdR^{n}, \hspace{0.25cm} \]
 	Im Moment ist $h_{\alpha}( \cdot )$ eine Halbnorm. Unter der Voraussetzung $\Omega$ zusammenhängend gilt aber weiter:
 	\[ h_{\alpha}(f) = 0 \gdw f \equiv c \text{ konstant} \]
 	Wenn z.B. $M = \{ \mathds{1} \Omega \}$ und $V = C^{\alpha}/M$ ist oben genanntes sogar ein normierter Raum.
-	\item Lebesgues-Integrierbare Funktionen \index{Lebesgues-Integrierbare Funktionen} \\
+	\item Lebesgues-Integrierbare Funktionen \index{Lebesgue-Integrierbare Funktionen} \\
 	Sei $\Omega \subset \MdR^{n}$ offen, $\mathcal{L}^{p}(\Omega) = \{ f: \Omega \rightarrow \MdR : |f|^{p}$ ist Lesbesgue-integrierbar auf $\Omega$  \}.
 	Wir definieren $\| f \|_{p} := \left( \int_{\Omega} |f(x)|^{p} d\mu \right)^{\frac{1}{p}}$, wobei $\| \cdot \|_{p}$ hier eine Halbnorm bildet.
 	\[ \| f \|_{p} = 0 \gdw  f(x) = 0 \text{ fast überall auf } \Omega \]
 	Wähle $M = \{ f: \Omega \rightarrow \MdR: f = 0 \text{ fast überall auf } \Omega \}$. \\ \\
 	Dann ist 
 	\[ L^{p}(\Omega) := \QR{ \mathcal{L}^{p}(\Omega) }{ M } \text{ ein normierter Raum.} \]
-\end{itemize}
+	\end{itemize}
 \end{beispiel}
+
+
 
 \newpage
 

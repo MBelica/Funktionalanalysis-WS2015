@@ -2,6 +2,8 @@
 
 \section{Approximation von $L^{p}$ Funktionen}
 
+
+
 Sei $x = (x_{1}, x_{2}, \dotsc) \in \ell^{p}, x_{m} = (x_{1}, \dotsc, x_{m}, \dotsc)$. \\
 \[ \text{Dann }\|  x - x_{m} \| \rightarrow 0 \text{ für } m \rightarrow \infty. \]
 \\
@@ -52,17 +54,19 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 			\begin{align*}
 				\left( \int_{\Omega} T_{1}[|g|^{p'}](v) dv \right)^{\frac{1}{p'}} \left( \int_{\Omega} T_{2} [|f|^{p}] dv \right)^{\frac{1}{p}} & = \| T_{1}[|g|^{p'}] \|_{L^{1}}^{\frac{1}{p'}} \| T_{2}[|f|^{p}] \|_{L^{1}}^{\frac{1}{p}} \\
 				& \leq \underbrace{\| T_{1} \|_{L^{1} \rightarrow L^{1}}^{\frac{1}{p'}}}_{\leq C_{1}^{\frac{1}{p'}}} \underbrace{\||g|^{p'}\|_{L^{1}}^{\frac{1}{p'}}}_{= \|g\|_{L^{p'}}} \underbrace{\| T_{2} \|_{L^{1} \rightarrow L^{1}}^{\frac{1}{p}}}_{\leq C_{2}^{\frac{1}{p}}} \underbrace{\||f|^{p}\|_{L^{1}}^{\frac{1}{p}}}_{\| f \|_{L^{p}}} \\
-				& \leq C_{1}^{\frac{1}{p'}} C_{2}^{\frac{1}{p}} \| f \|_{L^{p}} \| g \|_{L^{p'}}
-			\end{align*}
-			Wir wollen noch zeigen, dass $\| g \|_{L^{p'}} \leq 1$, da wir dann die richtige Abschätzung auf einer dichten Teilmenge gefunden haben.
-			\[ \| g \|_{L^{p'}} = \left( \int | T f(u) |^{p} du \right)^{- \frac{1}{p'}} \left( \int |T f(u)|^{(p-1)p'} du \right)^{\frac{1}{p'}} = 1 \quad \text{da } (p - 1) p' = p \]
-	\end{itemize}	
+            & \leq C_{1}^{\frac{1}{p'}} C_{2}^{\frac{1}{p}} \| f \|_{L^{p}} \| g \|_{L^{p'}}
+            \end{align*}
+            Wir wollen noch zeigen, dass $\| g \|_{L^{p'}} \leq 1$, da wir dann die richtige Abschätzung auf einer dichten Teilmenge gefunden haben.
+            \[ \| g \|_{L^{p'}} = \left( \int | T f(u) |^{p} du \right)^{- \frac{1}{p'}} \left( \int |T f(u)|^{(p-1)p'} du \right)^{\frac{1}{p'}} = 1 \quad \text{da } (p - 1) p' = p \]
+    \end{itemize}	
 \end{beweis}
 
-\begin{definition}[Bedingter Erwartungsoptor] \index{Bedingter Erwartungsoptor}
+
+\begin{definition}[Bedingter Erwartungsoperator] \index{Bedingter Erwartungsoperator}
 	Sei $\mathcal{A} = \{ A_{n} \}_{n \in \MdN}$ eine Partition von $\Omega$ in paarweise disjunkte, messbare Mengen $A_{n}$ mit $0 < \mu(A_{n}) < \infty$. Setze
 	\[ \mathds{E}_{\mathcal{A}}(f)(s) = \sum_{n} \left[ \frac{1}{\mu(A_{n})} \int_{A_{n}} f(t) dt \right] \mathds{1}_{A_{n}}(s) \] 
 \end{definition}
+
 
 \begin{kor}
 	\begin{enumerate}[label=\alph*\upshape)]
@@ -84,6 +88,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 		\end{enumerate}
 	\end{beweis}
 \end{kor}
+
 
 \begin{satz} 
 	Sei $\mathcal{A}_{m} = \{ A_{n, m} : n = 1, \dotsc, m_{n} \}$ eine Zerlegung von $ \Omega \cap K(0, r_{m}), \Omega \subset \MdR^{d} r_{m} \rightarrow \infty$ und $\mathcal{A}_{m} \subset \mathcal{A}_{m + 1}, r_{m} \rightarrow \infty$.
@@ -110,10 +115,12 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 	\end{align*}
 \end{beweis}
 
+
 \begin{beispiel*}
 	$ \Omega = \MdR, \mathcal{A}_{m} = \{ [\frac{n - 1}{2^{m}}, \frac{n}{2^{m}}): -2^{2m}, \dotsc, 0, \dotsc, 2^{2m} \}, r_{m} = 2^{m}$.
 	% todo missing sth at 7.6: draw image, example on desktop
 \end{beispiel*}
+
 
 \begin{kor*} 
 	Für $X = L^{p}(\Omega), 1 \leq p < \infty$ gilt:
@@ -125,6 +132,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 	\[ \exists S_{n} \in \mathcal{F}(x), \| S_{n} \| \leq 1, S_{n} f \rightarrow f \text{ in } L^{p} \text{ für } n \rightarrow \infty \]
 	Wähle $S_{n} = \mathds{E}_{\mathcal{A}_{n}}$.
 \end{beweis}
+
 
 \begin{satz}[Young] \label{satz:8.5-Young}
 	Für $k \in L^{1}(\MdR^{d})$ setze für $f \in L^{p}(\MdR^{d})$
@@ -142,6 +150,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 	Wende \hyperref[satz:8.1]{Satz 8.1} an: $\| T \| \leq \| k \|_{L^{1}}$
 \end{beweis}
 
+
 \begin{bemerkung*}
 	$D \subseteq L^{p}(\MdR^{d})$ dicht, z.B.: $D = \{ f \in L^{\infty}(\MdR^{d}): \operatorname{supp}(f)$ comp. $\}$ % todo missing sth at 8.5.5: check if thats right
 	$f \in D: \int_{\MdR^{d}} k(u - v) f(v) dv$ existiert als Lebesgueintegral für alle $f \in D$. \\
@@ -149,10 +158,12 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 	$T$ ist die \begriff{stetige Fortsetzung} von $T_{\big| D}$ auf ganz $L^{p}(\MdR^{d})$.
 \end{bemerkung*}
 
+
 \begin{definition}
 	Sei $\phi \in L^{1}(\MdR^{d})$ mit $\phi \geq 0$ und $\int_{\MdR^{d}} \phi(u) du = 1$. Dann hei{\ss}t $\phi_{\epsilon}(u) = \epsilon^{-d} \phi(\epsilon^{-1} u), \epsilon > 0$,	\begriff{approximative Eins}. \\
 	Notation: $\phi_{\epsilon} \ast f(u) = \int \phi_{\epsilon}(u - v) f(v) dv$.
 \end{definition}
+
 
 \begin{beispiel*}
 	$\phi(u) = \frac{1}{|B(0, 1)|} \cdot \mathds{1}_{B(0, 1)}(u), \phi \geq 0, \int \phi du = 1	$ \\
@@ -163,6 +174,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 	\end{align*}
 	Vermutung: $\phi_{\epsilon} \ast f(u) \xrightarrow[\epsilon \rightarrow 0]{} f(u)$. In welchem Sinne jedoch ist noch unklar.
 \end{beispiel*}
+
 
 \begin{bemerkung} \label{bem:8.7}
 	\begin{enumerate}[label=\roman*\upshape)]
@@ -176,6 +188,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 		\item $\| \phi_{\epsilon} \ast f \|_{L^{p}} \leq 1 \| f \|_{L^{p}} \quad$ (nach \hyperref[satz:8.5-Young]{8.5})
 	\end{enumerate}
 \end{bemerkung}
+
 
 \begin{satz}\label{satz:8.8}
 	Sei $(\phi_{\epsilon})_{\epsilon > 0}$ eine approximative Eins. Dann gilt für alle $f \in L^{p}(\MdR^{d}), 1 \leq p < \infty$
@@ -205,6 +218,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 	\end{itemize}
 	$\Rightarrow$ Behauptung nach \hyperref[prop:1-5.10]{Proposition 5.10} 
 \end{beweis}
+
 
 \begin{kor} \label{kor:8.9}
 	Sei $\Omega \subseteq \MdR^{d}$ offen. Dann liegt $C_{c}^{\infty}(\Omega) = \{ f : f $ ist unendlich oft differenzierbar und $\operatorname{supp}(f)$ ist kompakt. $\}$ dicht in $L^{p}(\Omega)$.
@@ -237,6 +251,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 	\end{beweis}
 \end{kor}
 
+
 \begin{bemerkung*}
 	Es gilt:
 	\begin{itemize}
@@ -264,7 +279,6 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 	\end{beweis}
 
 \end{kor}
-
 
 \newpage
 

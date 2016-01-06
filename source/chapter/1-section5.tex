@@ -7,7 +7,7 @@
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $x_{n} \in M$ hei{\ss}t \begriff{Cauchy-Folge}, falls es zu jedem $\epsilon > 0$ ein $n_{0} \in \MdN$ gibt, sodass $\forall m, n \geq n_{0}$ gilt:
 			\[ d(x_{n}, x_{m}) \leq \epsilon \]
-		\item $(M, d)$ hei{\ss}t \begriff{vollständig}, falls jede Cauchyfolge $(x_{n}) \subset M$ einen Grenzwert \uline{in M} hat:
+		\item $(M, d)$ hei{\ss}t \begriff{vollständig}, falls jede Cauchy-Folge $(x_{n}) \subset M$ einen Grenzwert \uline{in M} hat:
 			\[ \lim_{n \rightarrow \infty} x_{n} = x \quad x \in M \]
 		\item Ein normierter Raum $(X, \| \cdot \|)$, der vollständig ist bezüglich $d(x, y) = \| x - y \|$ heißt \begriff{Banachraum}.
 	\end{enumerate}
@@ -15,7 +15,7 @@
 
 \begin{bemerkung}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Jede konvergenzte Folge in $(M, d)$ ist eine Cauchy-Folge:
+		\item Jede konvergente Folge in $(M, d)$ ist eine Cauchy-Folge:
 			\[ \text{Sei } \lim_{n \rightarrow \infty} x_{n} = x: \quad d(x_{n}, x_{m}) \leq d(x_{n}, x) + d(x, x_{m}) \xrightarrow[n, m \rightarrow \infty]{} 0 \]
 		\item \uline{Aber:} nicht jede Cauchy-Folge eines normierten Raums $X$ konvergiert in $X$
 			\begin{beispiel*}

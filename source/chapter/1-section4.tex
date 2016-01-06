@@ -41,7 +41,7 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 
 \begin{beispiel}  \label{bsp:4.3}
 	\begin{enumerate}[label=\alph*\upshape)]	
-		\item Sei $X$ ein Vektorraum und $p_{j}$ für $j \in \MdN$ Halbnormen auf $X$ mit der Eigenschaft, dass für jedes $x \in X \setminus \{ 0 \}$ ein $K \in \MdN$ exisitert mit $p_{K} > 0$. Dann definiert
+		\item Sei $X$ ein Vektorraum und $p_{j}$ für $j \in \MdN$ Halbnormen auf $X$ mit der Eigenschaft, dass für jedes $x \in X \setminus \{ 0 \}$ ein $K \in \MdN$ existiert mit $p_{K} > 0$. Dann definiert
 			\[ d(x, y) := \sum_{j \geq 1} 2^{-j} \frac{p_{j}(x - y)}{1 + p_{j}(x -y)}, \hspace{0.5cm} x, y \in X \]
 			eine Metrik auf $X$ mit
 			\[ d(x_{n}, x) \rightarrow 0 \gdw p_{j}(x_{n} - x) \rightarrow 0 \hspace{0.25cm} (n \rightarrow  \infty) \hspace{0.25cm} \forall j \in \MdN \]
@@ -122,7 +122,7 @@ Wir fassen als Nächstes die grundlegenden Eigenschaften offener und abgeschloss
 				\Rightarrow \forall \epsilon > 0 $ ist $ K(x, \epsilon) \not\subset U, $ d.h. $U$ ist nicht offen.
 			\item folgt aus a) \& c), da
 				\[ M \setminus \bigcap_{i \in I} A_{i} = \bigcup_{i \in I} M \setminus A_{i} \]
-			\item Sei $x \in U$. Dann exisitert ein $U_{i_{0}}$ mit $x \in U_{i_{0}}$
+			\item Sei $x \in U$. Dann existiert ein $U_{i_{0}}$ mit $x \in U_{i_{0}}$
 			\[ \Rightarrow \exists r > 0: K(x, r) \subset U_{i_{0}} \subset U, \text{ d.h. } U \text{ ist offen.}  \]
 			Sei $x \in U_{i_{1}} \cap \dotsc \cap U_{i_{N}}.$ Dann existieren $r_{1}, \dotsc, r_{N} > 0$ mit
 			\[ K(x, r_{n}) \subset U_{i_{n}} \hspace{0.5cm} n = 1, \dotsc, N \]
@@ -206,7 +206,7 @@ Hierfür gelten die folgenden Eigenschaften:
 \begin{bemerkung}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item All die Begriffe und Bezeichnungen aus \hyperref[def:4.4-AbgeschlossenOffen-abgoff]{Definition 4.4}, \hyperref[bem:4.5]{Bemerkung 4.5}, \hyperref[def:4.7-AbschlussInnereRand]{Definition 4.7} und \hyperref[def:4.9-DichtSeperabel]{Definition 4.9} werden wir auch in normieren Räumen benutzen bzgl. der kanonischen Metrik $d(x, y) = \| x - y\|$
-		\item Sei $(M, d)$ ein metrischer Rauam, $U \subset M$. Dann ist auch $(U, d)$ ein metrischer Raum. Für $V \subset U$ muss man dann aber unterscheiden bzgl. Abgeschlossenheit (bzw. Offenheit) von $V$ in $U$ oder in $M$. Man sagt dann, dass $V$ \begriff{relativ offen} bzw. \begriff{relativ abeschlossen} in $U$ ist.
+		\item Sei $(M, d)$ ein metrischer Raum, $U \subset M$. Dann ist auch $(U, d)$ ein metrischer Raum. Für $V \subset U$ muss man dann aber unterscheiden bzgl. Abgeschlossenheit (bzw. Offenheit) von $V$ in $U$ oder in $M$. Man sagt dann, dass $V$ \begriff{relativ offen} bzw. \begriff{relativ abgeschlossen} in $U$ ist.
 	\end{enumerate}	
 \end{bemerkung}
 
@@ -315,7 +315,7 @@ Hierfür gelten die folgenden Eigenschaften:
 					\item Aussage über $\partial A$ folgt aus \hyperref[bsp:4.11.b]{i)} und \hyperref[bsp:4.11.b]{ii)}
 				\end{enumerate}
 			\end{beweis}
-		\item Sei $X$ ein normierter Vektorraum und $Y \subseteq X$ abzählbar mit $\overline{lin Y} = X$. Dann ist $X$ separabel.
+		\item Sei $X$ ein normierter Vektorraum und $Y \subseteq X$ abzählbar mit $\overline{lin Y} = X$. Dann ist $X$ seperabel.
 			\begin{beweis}
 				Wir definieren
 				\[ lin_{\MdQ} Y := \{ y = \sum_{i = 1}^{n} q_{j} y_{j} : q_{j} \in \MdQ \quad (q_{j} \in \MdQ + i \MdQ ), y_{j} \in Y, n \in \MdN \} \]
@@ -324,10 +324,10 @@ Hierfür gelten die folgenden Eigenschaften:
 				Zu diesem $y$ finden wir ein $z \in lin_{\MdQ} Y$ mit $\| y - z \| < \epsilon$
 				\[ \Rightarrow \| x - z \| < 2 \epsilon, \quad \text{d.h. } \overline{lin_{\MdQ} Y} = X \]
 			\end{beweis}
-		\item $C[0, 1]$ ist separabel, da $ lin \{ t^{n}, n \in \MdN \} $ dicht in $C[0, 1]$ liegt nach dem Approximationssatz von Weierstrass.
-		\item Die Räume $\ell^{p}, p \in [1, \infty)$ und $c_{0}$ sind separabel, da
+		\item $C[0, 1]$ ist seperabel, da $ lin \{ t^{n}, n \in \MdN \} $ dicht in $C[0, 1]$ liegt nach dem Approximationssatz von Weierstrass.
+		\item Die Räume $\ell^{p}, p \in [1, \infty)$ und $c_{0}$ sind seperabel, da
 			\[ D = lin \{ e_{k}, k \in \MdK \} \text{ dicht in allen Räumen liegt.} \]
-		\item Der Raum $\ell^{\infty}$ ist nicht separabel: \\
+		\item Der Raum $\ell^{\infty}$ ist nicht seperabel: \\
 			Die Menge $\Omega$ der $\{0, 1\}$-wertigen Folgen ist überabzählbar. Für $x, y \in \Omega$ mit $x \neq y$ gilt $\| x - y \|_{\infty} = 1$ \\
 			Angenommen: $\overline{ \{v_{k}, k \in \MdN \} } = \ell^{\infty}$. Dann
 			\[ \Omega \subseteq \bigcup_{k \in \MdN} K \left( v_{k}, \frac{1}{4} \right) \]
