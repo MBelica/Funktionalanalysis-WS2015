@@ -11,13 +11,40 @@ Formel: $x = (\lambda I - A)^{-1}$ ist Lösung, falls $(\lambda I - A)^{-1}$ exi
 
 
 \begin{definition}
-	Sei $X$ ein Banachraum über $\MdC$	
+	Sei $X$ ein Banachraum über $\MdC$, $X \supset D(A) \rightarrow X$ linear und abgeschlossen.
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $\lambda \in \MdC$ gehört zur \begriff{Resolventenmenge} von $A$, $\lambda \in \rho(A)$, falls
+			\[ \lambda I - A : D(A) \rightarrow X \text{ bijektiv, d.h. } (\lambda I - A)^{-1}: X \rightarrow D(A) \text{ linear} \]
+		\item $\sigma(A) = \MdC \setminus \rho(A)$ hei{\ss}t \begriff{Spektrum} von $A$
+		\item $\lambda \in \rho(A) \rightarrow R(\lambda, A) = (\lambda - A)^{-1}$ hei{\ss}t \begriff{Resolventenfunktion} von A
+	\end{enumerate}	
 \end{definition}
 
 
+\begin{erinnerung}
+	$A$ abgeschlossen $\gdw$ ... todo % todo missing sth at 13.1: add rep	
+\end{erinnerung}
+
+
 \begin{bemerkung}
-	$A$ ist abgeschlossen, falls	
+	$A$ ist abgeschlossen, falls $\lambda \in \rho(A)$, so ist $R(\lambda, A) \in B(X)$ und $R(\lambda, A): X \rightarrow A): X \rightarrow (D(A), \| \cdot \|_{A})$ ein Isomorphismus.
 \end{bemerkung}
+
+\begin{beweis}
+	$(\lambda - A): (D(A), \| \cdot \|_{A}) \rightarrow A$ ist bijektiv und stetig, denn $\|(\lambda - A)x \| \leq \max(1, |\lambda|) (\|x\| + \|Ax\|) = c \| x \|_{A}$ \\
+	Nach dem \hyperref[satz:10.3-offeneAbbildung]{Satz der offenen Abbildung} ist
+		\[ R(\lambda, A): X \rightarrow (D(A), \| \cdot \|_{A}) \]
+	ein Isomorphismus: $X \xrightarrow[]{R(\lambda, A)} (D(A), \| \cdot \|_{A}) \subset X$. Also $R(\lambda, A) \in B(X)$.
+\end{beweis}
+
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $X = \MdC^{d}, A \in B(X) \equalhat M(d, d)$
+			\[ \sigma(A) = \{ \lambda \text{ Eigenwerte von A} \} \]
+		\item Sei $\alpha_{n} \in \MdC,$ $X = \ell^{p}, 1 \leq p < \infty$
+	\end{enumerate}
+\end{beispiel}
 
 
 

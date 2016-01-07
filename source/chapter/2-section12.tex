@@ -111,14 +111,13 @@ Beobachtung:
 				\[ \frac{1}{t} x(t) \leftarrow \frac{1}{t} x_{n_{k}}(t) = A x_{n_{k}} \xrightarrow[]{k \rightarrow \infty} y(t) \text{ fast überall für } t \in [0, 1] \]
 				$\Rightarrow y(t) = \frac{1}{t} x(t)$ fast überall $\Rightarrow A x = y, x \in D_{2}$ \\
 				Behauptung: $A$ ist nicht abgeschlossen auf $D_{1}$ \\
-				Beweis: $x_{n}(t) = \begin{cases} t & \text{ auf } (\frac{1}{n}, 1) \\ 0 & \text{ auf } [0, \frac{1}{n}]\end{cases},$ $y(t) = 1, \forall t \in [0, 1]$ \\
-					\[ \Rightarrow x(t) = t \quad t \in [0, 1] \]
-					Dann
+				Beweis: $x_{n}(t) = \begin{cases} t & \text{ auf } (\frac{1}{n}, 1) \\ 0 & \text{ auf } [0, \frac{1}{n}]\end{cases},$ $y(t) = 1, \forall t \in [0, 1]$ $\Rightarrow x(t) = t,$ $t \in [0, 1]$ \\ \\
+					Dann gilt:
 					\begin{align*}
 						\| x_{n} - x \|_{L^{p}} & = \left( \int_{0}^{\frac{1}{n}} t^{p} dt \right)^{\frac{1}{p}} \xrightarrow[]{n \rightarrow \infty} 0 \\
 						\| A x_{n} - y \|_{L^{p}} & = \left( \int_{0}^{\frac{1}{n}} 1 dt \right)^{\frac{1}{p}} \xrightarrow[]{n \rightarrow \infty} 0 
 					\end{align*}
-					Aber $x \neq D_{1} \Rightarrow A$ ist nicht abgeschlossen.
+					Aber $x \notin D_{1} \Rightarrow A$ ist nicht abgeschlossen.
 			\end{beweis}
 	\end{enumerate}
 \end{beispiel}
