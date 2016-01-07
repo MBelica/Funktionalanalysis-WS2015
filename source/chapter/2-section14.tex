@@ -8,6 +8,87 @@ Sei $X$ ein Banachraum, $T \in B(X)$. Spezialfall: $\dim X < \infty$
 
 Grundlegende Aussagen zur Lösungstheorie linearer Gleichungen:
 	\[ \lambda x = T x = y \quad (*) \label{eq:14.0-linereGleichung} \]
+\begin{enumerate}[label=\roman*\upshape)] 
+	\label{item:14.0i}
+	\item Für ein festes $\lambda \in \MdC$ hat \hyperref[eq:14.0-linereGleichung]{$(*)$} für $y \in X$ eine (eindeutig bestimmte) Lösung genau dann, wenn $\lambda x - T x = 0$ nur die triviale Lösung hat (folgt aus der Dimensionsformel).
+	\label{item:14.0ii}
+	\item Bis auf endlich viele Eigenwerte $\lambda \in \sigma(T)$ hat \hyperref[eq:14.0-linereGleichung]{$(*)$} stets eine eindeutig bestimmte Lösung.
+\end{enumerate}
+
+\textbf{Idee:} Kompakte Operatoren lassen sich durch endlich dimensionale Operatoren $"$approximieren$"$.
+
+\textbf{Ziel:}
+\begin{itemize}
+	\item \hyperref[item:14.0i]{i)} bleibt richtig! (Variante der Fredholm Alternative)
+	\item Die Ausnahmemenge in \hyperref[item:14.0ii]{ii)} besteht zwar nicht mehr nur aus endlich vielen Eigenwerten, aber höchstens eine Nullfolge von Eigenwerten der $\{ 0 \}$
+\end{itemize}
+
+\begin{satz} \label{satz:14.1}
+	Sei $X$ ein Banchraum, $K \in K(X)$ (d.h. $K \in B(X)$ kompakt bzw. $K(U_{X})$ ist relativ kompakt in $X$), dann hat $I - K$ ein abgeschlossenen Bildraum und 
+		\[ \dim \kernn(I  - K) = \operatorname{codim}(I - K)(X) \left[ = \dim \QR{ X }{ (I - K)(X) }  \right] < \infty \]
+		Insbesondere: $I - K$ injektiv $\gdw I - K$ surjektiv
+\end{satz}
+
+\begin{beweis}
+	siehe Werner VI.2 S.263ff% todo: add proof at 14.1 
+\end{beweis}
+
+
+\begin{lemma} \label{lemma:14.2}
+	Zu jedem endlich dimensionalen $F \in B(X)$ ($\dim F(X) < \infty$) gibt es eine Zerlegung
+		\[ X = X_{0} \oplus X_{1}, \quad \dim X_{1} < \infty \quad \text{und} \quad F(X_{1}) \subset X_{1}, \quad F_{\big| X_{0}} = 0 \]
+\end{lemma}
+
+
+\begin{satz}  \label{satz:14.3}
+	Sei $dim X = \infty$, $K \in B(X)$ kompakt, dann ist $0 \in \sigma(K)$ und $\sigma(K)$ ist endlich oder besteht aus einer Nullfolge. \\
+	Jedes $\lambda \in \sigma(K), \lambda \neq 0$ ist ein Eigenwert mit endlich dimensionalem Eigenraum.
+\end{satz}
+
+\begin{beweis}
+	Wäre $0 \in \rho(K)$ dann wäre $I = \underbrace{K}_{kompakt} \underbrace{K^{-1}}_{beschr.}$ kompakt. \\
+		$\Rightarrow$ Einheitskugel kompakt $\xRightarrow[\ref{satz-6.2}]{} \dim X < \infty$. Widerspruch. \\
+	$\Rightarrow 0 \in \sigma(K)$. \\ \\
+	Sei $\lambda \in \sigma(K) \setminus \{ 0 \}$, dann gilt nach \hyperref[satz:14.1]{14.1} $\dim \kernn(I - \lambda^{-1}K) = \operatorname{codim} \bild (I- \lambda^{-1}K) \quad (Ü*) \label{eq:14.3.5-lambdaInSigmas}$ \\
+	Entweder ist $I - \lambda^{-1}K$ nicht injektiv oder nicht surjektiv (da $\lambda \in \sigma(K)$). \\
+	Nach \hyperref[eq:14.3.5-lambdaInSigmas]{$(*)$} ist in jedem Fall $\kernn(I - \lambda^{-1}K) \neq \{ 0 \}$, d.h. in jedem Fall ist $\lambda$ ein Eigenwert it endlich dimensionalem Eigenraum $\kernn (I - \lambda^{-1}K)$. \\
+	Zu zeigen bleibt noch, dass für alle $\epsilon > 0$ liegen in $\{ \lambda : |\lambda| \geq \epsilon \}$ höchstens endlich viele Spektralwerte. \\
+	Indirekter Beweis: Zu $\epsilon > 0$ gibt es eine Filge von verschiedenen Eigenwerten $(\lambda_{n})$, wobei $|\lambda_{n} \geq \epsilon$, mit Eigenvektoren $(u_{n})$. \\
+	Setze $U_{n} = \operatorname{span}(u_{1}, \dotsc, u_{n}), U_{n - 1} \subsetneq U_{n}$, denn Eigenvektoren zu verschiedenen Eigenwerten sind linear unabhängig. \\
+	Nach dem \hyperref[lemma:6.4-Riesz]{Lemma von Riesz 6.3} gibt es Vektoren $u_{n} \in U_{n}$ mit $\| u_{n} \| = 1, \| u_{n} - x\| \geq \frac{1}{2}$, für alle $x \in U_{n - 1}$. \\
+	Sei $m < n: K u_{n} - K u_{m} = \lambda_{n} (v_{n} - x)$ mit $x = \lambda_{n}^{-1} (\lambda_{n} u_{n} - K u_{n} + \underbrace{K u_{m}}_{\in U_{m-1}, \text{ s.u.}})$ \\ \\
+	$K(U_{n} \subset U_{n}$, d.h. $K U_{m} \in U_{m} \subset U_{n - 1}, m < n$ \\
+	$u_{n} \in U_{n}$ kann man schreiben als $u_{n} = \alpha u_{n} + y, y \in U_{n - 1}, \alpha \in \MdK$
+	\begin{align*}
+		\Rightarrow \lambda_{n} u_{n} - K u_{n} & = \alpha u_{n} + \lambda_{n} y - K(\alpha u_{n}) - K(y) \\
+			& = \alpha \lambda_{n} u_{n} - \alpha \lambda_{n} u_{n} + \lambda_{n} y - K(y) \in U_{n - 1}
+	\end{align*}
+	Also $x \in U_{n - 1}, \| K u_{n} - K u_{m}\| = |\lambda_{n}| \underbrace{\| u_{n} - x \|}_{\geq \frac{1}{2}} \geq \frac{\epsilon}{2} \quad \forall n, m$ \\
+	d.h. $K u_{n}$ hat keine Chauchy-Teilfolge, was ein Widerspruch ist zu $K \in K(X)$.
+\end{beweis}
+
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $X = \ell^{p}, 1 \leq p < \infty$. Gegeben $\lambda_{} \in \MdC \setminus \{ 0 \}, | \lambda_{n} | \rightarrow 0:$
+			\[ A(x_{n} = (\lambda_{n} x_{n}) \text{ für } (x_{n}) \in \ell^{p} \]
+			Da $| y_{n} | \rightarrow 0$ gilt: $A \in K(\ell^{p})$ ($U(U_{\ell^{p}})$ kompakt). \\
+			$\lambda_{n}$ Eigenwerte mit Eigenraum zum Eigenwert $\lambda_{n} = \operatorname{span}\{ e_{m}: \lambda = \lambda_{m} \}$ endlich dimensional \\
+			$0 \in \sigma(A)$, aber kein Eigenwert, da $A$ injektiv.
+		\item Sei $X = C[0, 1]$, $k: \{ (s, t) \in [0, 1]^{2}: s \leq t \} \rightarrow \MdR_{+}$ stetig. \\
+			\begriff{Volterraoperator}: $V x(t) = \int_{0}^{t} k(t, s) x(s) ds$ komapkt. \\
+			Nach \hyperref[]{13.10} $\sigma(V) = \{ 0 \}$. % todo: add ref at 14.4 since I skipped that
+			Falls z.B. $k(s, t) \equiv 1$ ist $0$ kein Eigenwert, da 
+			\[ V x(t) = \int_{0}^{t} x(s) ds = 0 x(t) \]
+			$\Rightarrow x(t) = 0, t \in [0, 1]$, d.h. $V$ ist injektiv.
+	\end{enumerate}	
+\end{beispiel}
+
+
+\begin{satz}
+	Sei $X \supset D(A) \xrightarrow[]{A} X$ ein abgeschlossener, linearer Operator, $\rho(A) \neq \emptyset$, $(D(A), \| \cdot \|_{A}) \hookrightarrow X$ kompakt. \\
+	Dann besteht $\sigma(A)$ aus endlich vielen Eigenwerten oder einer Folge von Eigenwerten mit $|\lambda_{n}| \rightarrow \infty$ und die zugehörigen Eigenräume sind endlich dimensional.
+\end{satz}
 
 
 

@@ -42,9 +42,82 @@ Formel: $x = (\lambda I - A)^{-1}$ ist Lösung, falls $(\lambda I - A)^{-1}$ exi
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $X = \MdC^{d}, A \in B(X) \equalhat M(d, d)$
 			\[ \sigma(A) = \{ \lambda \text{ Eigenwerte von A} \} \]
-		\item Sei $\alpha_{n} \in \MdC,$ $X = \ell^{p}, 1 \leq p < \infty$
+		\item Sei $\alpha_{n} \in \MdC,$ $X = \ell^{p}, 1 \leq p < \infty, A(x_{n}) = (\alpha_{n} x_{n}),$ $(x_{n}) \in D(A) = \{ (x_{n}): \sum_{n \geq 1} | \alpha_{n} x_{n} |^{p} < \infty \}$. \\
+			Falls $(\alpha_{n})$ beschränkt ist, dann ist $D(A) = \ell^{p}, A \in B(\ell^{p})$. \\
+			Für allgemeine $(\alpha_{n}) \subset \MdC$ ist $A$ nur abgeschlossen (Übung). \\
+			Dann ist $\sigma(A) = \overline{\{ \alpha_{n}, n \in \MdN \}}^{c}$, da $A(e_{n}) - \alpha_{n}(e_{n}) = 0$ ($e_{n}$ n-ter Einheitsvektor) \\ \\
+			Beweis: $(\lambda I - A)(x_{n}) = ((\lambda - \alpha) x_{n})$ \\
+			Formal: $(\lambda I - A)^{-1}(x_{n}) = ((\lambda - \alpha_{n})^{-1}x_{n})$
+			\begin{align*}
+				\| (\lambda - A)^{-1} \| \underset{\text{Übung}}{=} \sup_{n} | \lambda - \alpha_{n} |^{n} = \frac{1}{d(\lambda, \overline{(\alpha_{n})})} < \infty & \gdw d(\lambda, \overline{(\alpha_{n})}) > 0 \\
+				& \gdw \lambda \notin \overline{(\alpha_{n})}
+			\end{align*}
+			$\Rightarrow \lambda \in \rho(A) \gdw \lambda \in \overline{\{\alpha_{n}\}}, $ $ $ $ \lambda \in \sigma(A) \gdw \lambda \in \overline{(\alpha_{n})}$ \\ \\
+			\textbf{Folgerung:} Jede abgeschlossene Menge $S \subseteq \MdC$ kann das	 Spektrum eines abgeschlossenen Operators sein. Insbesondere: $\sigma(A)$ kann überabzählbar sein. Das Spektrum $\sigma(A)$ besteht im Allgemeinen nicht nur aus Eigenwerten.
+			\begin{beweis}
+				Gegeben $M \subset \MdC$ abgeschlossen, wähle dichte Folge $\alpha_{n} \in M$, d.h. $\{ \alpha_{n} \} = M$ \\
+				Wähle $X = \ell^{p},$ $A(x_{n}) = (\alpha_{n} x_{n}),$ $\sigma(A) = \overline{\{ \alpha_{n} \}} = M$.
+			\end{beweis}
+			Falls $\lambda \in \overline{\{ \lambda_{n} \}} \setminus \{ \lambda_{n} \}$ dann ist $\lambda$ kein Eigenwert von $A$.
+		\item Sei $X = \ell^{p}$, $e_{n}$ Einheitsvektoren.
+			\[ A (e_{1}) = 0, A (e_{n}) = e_{n - 1}, n > 1 \Rightarrow A(x_{1}, x_{2}, x_{3}, \dotsc) = (x_{2}, x_{2}, x_{3}, \dotsc) \]
+			\[ B (e_{n}) = e_{n + 1}, n \geq 1 \Rightarrow B(x_{1}, x_{2}, x_{3}, \dotsc) = (0, x_{1}, x_{2}, x_{3}, \dotsc) \]
+			Übung: $\sigma(A) = \sigma(B) = \{ \lambda : | \lambda | \leq 1 \}$
 	\end{enumerate}
 \end{beispiel}
+
+
+\begin{satz}[Resolventendarstellung]
+	Sei $X \supset D(A) \xrightarrow[]{A} X$ abgeschlossen, $X$ ein Banachraum. \\
+	Für $\lambda:{0} \in \rho(A)$ und $\lambda \in \MdC$ mit $|\lambda - \lambda_{0}| < \frac{1}{\| R(\lambda_{0}, A) \|}$ ist auch \\
+		\[ \lambda \in \rho(A) \text{ und } R(\lambda, A) = \sum_{n \geq 0} (\lambda_{0} - \lambda)^{n} R(\lambda_{0}, A)^{n + 1}. \] \\
+	Insbesondere ist $\rho(A)$ offen und $\sigma(A)$ abgeschlossen.
+\end{satz}
+
+\begin{beweis}
+	\begin{align*}
+		 (\lambda - A) = (\lambda_{0} + \lambda) + (\lambda_{0} - A) & = (\lambda_{0} - A)\left[I - (\lambda_{0} - \lambda) R(\lambda_{0}, A)\right] \\
+		 & = (\lambda_{0} - A)(I - S) \quad \text{ mit } S = (\lambda_{0} - \lambda)R(\lambda_{0}, A)
+	\end{align*}	
+	\[ \Rightarrow \| S \| \leq | \lambda_{0} - \lambda| \| R(\lambda_{0}, A) \| \overset{Vor.}{<} 1. \text{ Nach dem Satz über die Neumannsche Reihe: } (I - S)^{-1} = \sum_{n \geq 0} S^{n} \]
+	Dann ist $(\lambda - A)$ ein Produkt von invertierbaren Operatoren $(\lambda_{0} - A)$ und $(I - S)$, d.h. 
+	\begin{align*}
+		(\lambda - A)^{-1} & = (I - S)^{-1}(\lambda_{0} - A)^{-1} \\
+			& = \sum_{n \geq 0} \underbrace{(\lambda_{0} - \lambda)^{n}R(\lambda_{0}, A)^{n}}_{= S^{n}} R(\lambda_{0}, A) \\
+			& = \sum_{n \geq 0} (\lambda_{0} - \lambda)^{n} R(\lambda_{0}, A)^{n + 1}
+	\end{align*} 
+\end{beweis}
+
+
+\begin{satz}[Resolventengleichung] \index{Resolventengleichung}
+	Sei $A$ ein abgeschlossener Operator auf $X$. Für $\lambda, \mu \in \rho(A)$ gilt:
+		\[ R(\lambda, A) - R(\mu, A) = (\mu - \lambda) R(\lambda, A) R(\mu, A) \]
+	Insbesondere ist $\lambda \in \rho(A) \rightarrow R(\lambda, A) \in B(X)$ eine komplex differenzierbare Abbildung und 
+		\[ \frac{d}{d \lambda} R(\lambda, A) = - R(\lambda, A)^{2} \]
+\end{satz}
+
+\begin{beweis}
+	\begin{align*}
+		R( \lambda, A) - R( \mu, A) & = R( \lambda, A) \left[ I - (\lambda - A) R(\mu, A) \right]	\\
+			& = R( \lambda, A) \left[ \mu - A - \lambda + A \right] R(\mu, A)
+	\end{align*}
+	$\Rightarrow$ Behauptung. (Idee: $\frac{1}{\lambda - a} - \frac{1}{\mu - a} = \frac{\mu - \lambda}{(\lambda - a)(\mu - a)}$)
+	\begin{align*}
+		\frac{d}{dx} R(\lambda, A) & = \lim_{\mu \rightarrow \lambda} \frac{R(\mu, A) - R(\lambda, A)}{\mu - \lambda} \\
+				& \overset{s.o.}{=} \lim_{\mu \rightarrow \lambda} \left[ - R( \lambda, A) R(\mu, A) \right] \\
+				& = - R(\lambda, A)^{2}, \text{ denn } \lambda \in \rho(A) \rightarrow R(\lambda, A) \in B(X) \text{ ist stetig als Potenzreihe.} 		
+	\end{align*}
+\end{beweis}
+
+
+\begin{satz}
+	Falls $A \in B(X)$, dann ist $\sigma(A)$ nichtleer und kompakt mit $\sigma(A) \subset \{ \lambda : |\lambda| \leq \| A \| \}$ \\
+	\[ \text{Für } \lambda > \| A \| \text{ gilt: } R(\lambda, A) = \sum_{n \geq 0} \lambda^{-n-1} A^{n} \]
+\end{satz}
+
+\begin{beweis}
+	Für $| \lambda | > \| A \|$ gilt:
+\end{beweis}
 
 
 
