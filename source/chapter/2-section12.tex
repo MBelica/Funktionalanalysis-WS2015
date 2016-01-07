@@ -1,0 +1,128 @@
+%!TEX root = Funktionalanalysis - Vorlesung.tex
+
+\section{Abgeschlossene Operatoren}
+
+
+
+Sei $X$ ein Banachraum, $D(A)$ ein dichter Untervektorraum und 
+$A: D(A) \rightarrow X$ linear
+
+
+\begin{erinnerung}
+	Gilt $\| A x \| \leq c \| x \|$ $\forall x \in D(A)$, so lässt sich $A$ zu einem beschränkten Operator fortsetzen $A \in B(X)$	
+\end{erinnerung}
+
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Sei $X = C[0, 1],$ $D(A) = C^{1}([0, 1]),$ $Ax = x'$ \\
+			Behauptung: $A$ ist nicht beschränkt \\
+			$\lambda > 0, x_{\lambda}(t) = e	^{i \lambda t} \quad t \in [0, 1] \Rightarrow A x_{\lambda}(t) = i \lambda e^{i \lambda t}$ \\
+			$\Rightarrow \| x_{\lambda} \|_{\infty} = 1,$ $\| A x_{\lambda} \|_{\infty} = \lambda \xrightarrow[]{\lambda \rightarrow \infty} \infty \Rightarrow A$ ist nicht beschränkt auf $D(A)$.
+		\item $X = L	^{p}[0, 1],$ $B x(t) = \frac{1}{t} x(t)$.
+			\[ D(B) = \{ x \in L^{p}([0, 1]): \exists \epsilon(x), x = 0 \text{ fast überall auf } [0, \epsilon] \}\] %todo: check at 12.1 if it is really x = 0
+			$B$ bildet nach $X$ ab, denn $\| B x \|_{L^{p}} = \left( \int_{\epsilon}^{1} t^{-p} |x(t)|^{p} dt \right)^{\frac{1}{p}} \leq \frac{1}{\epsilon(x)} \| x \|_{L^{p}}$ \\ \\
+			z.B.: $x_{\lambda} = \mathds{1}_{[\frac{1}{\lambda}, 1]} \Rightarrow \| x_{\lambda}\|_{L^{p}} = \left( \int_{\frac{1}{\lambda}}^{1} |x_{\lambda}(t)|^{p} dt \right)^{\frac{1}{p}} = \left( \int_{\frac{1}{\lambda}}^{1} dt \right)^{\frac{1}{p}} < 1$
+			\[ \| B x_{\lambda} \| = \left( \int_{\frac{1}{\lambda}}^{1} t^{-p} dt \right) \xrightarrow[]{\lambda \rightarrow \infty} \infty \]
+			$\Rightarrow B$ ist unbeschränkt auf $D(B)$.
+	\end{enumerate}
+\end{beispiel}
+
+
+Beobachtung:
+\begin{itemize}
+	\item $A, B$ lassen sich nicht auf $X$ fortsetzen
+	\item Es gibt viele Möglichkeiten $D(A), D(B)$ zu wählen; $D(A) = C^{\infty}[0, 1]$ ist genauso möglich.
+\end{itemize}
+
+
+\begin{definition}
+	Auf $D(A)$ definieren wir die \begriff{Graphennorm}
+	\[ \| x \|_{A} := \|x \| + \| A \| \quad \forall x \in D \]
+	Insbesondere: $A: (D(A), \| \cdot \|_{A}) \rightarrow X$ stetig, denn $\| X \| \leq \|x \| + \| A x \| = \| x \|_{A}$
+\end{definition}
+
+
+\begin{satz} \label{satz:12.3}
+	Es sind äquivalent
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $\left( D(A), \| \cdot \|_{A} \right)$ ist ein Banachraum
+		\item $\operatorname{graph}(A) = \{ (x, A x): x \in D(A) \} \subset X \times X$ ist abgeschlossen
+		\item Wenn $(x_{n})_{n} \subset D(A): \begin{cases}
+			x_{n} \xrightarrow[]{n \rightarrow \infty} x & \text{ in } X \\ A x_{n} \xrightarrow[]{n \rightarrow \infty} y & \text{ in } X \end{cases}$, $ $ so ist $x \in D(A), A x = y$
+	\end{enumerate}
+\end{satz}
+
+\begin{beweis}
+	$a) \Rightarrow b)$ $J: D(A) \rightarrow X \times X, J(x) = (x, Ax)$. Dann gilt
+		\[ \| (x, Ax) \|_{X \times X} = \| x \| + \| A x \| = \| x \|_{A} \Rightarrow J \text{ ist Isometrie (erhält Vollständigkeit)} \]
+		$\Rightarrow \operatorname{graph}(A) = \bild(J)$ ist vollständig $\Rightarrow \operatorname{graph}(A)$ ist abgeschlossen. \\ \\
+	$b) \Rightarrow c)$ Sei $(x_{n})_{n} \subset D(A)$ mit $x_{n} \xrightarrow[]{n \rightarrow \infty} x$ und $Ax_{n} \xrightarrow[]{n \rightarrow \infty} y$ in $X$.
+		\[ \Rightarrow (x_{n}, A x_{n}) \xrightarrow[]{n \rightarrow \infty} (x, y) \text{ in } X \times X \]
+		$\xRightarrow[]{A \text{abg.}} (x, y) \in \operatorname{graph}(A) \Rightarrow x \in D(A), Ax = y$. \\ \\
+	$c) \Rightarrow a)$ Sei $(x_{n})_{n}$ eine Cauchy-Folge in $D(A)$. Es folgt, dass $(x_{n})_{n}$ und $(A x_{n})_{n}$ auch Cauchy-Folgen in X sind. \\
+	Da $X$ vollständig ist folgt, dass  $\exists x, y \in X$ mit $x_{n} \xrightarrow[]{n \rightarrow \infty} x$ und $A x_{n} \xrightarrow[]{n \rightarrow \infty} y$ \\
+	\[ \xRightarrow[]{c)} x \in D(A) \text{ und } A x = y \Rightarrow \|x_{n} - x \|_{A} = \| x - x_{n} \| + \| y - A x_{n} \| \xrightarrow[]{n \rightarrow \infty} 0 \]
+\end{beweis}
+
+
+\begin{definition}
+	$A$ hei{\ss}t abgeschlossen, wenn $a) - c)$ aus \hyperref[satz:12.3]{12.3} erfüllt sind	
+\end{definition}
+
+
+\begin{bemerkung}[Abgeschlossen vs. stetig]
+	\begin{align*}
+		A \text{ stetig: } & x_{n} \xrightarrow[]{n \rightarrow \infty} x \Rightarrow Ax_{} \xrightarrow[]{n \rightarrow \infty} y, Ax = y \\
+		A \text{ abgeschlossen: } & x_{n} \xrightarrow[]{n \rightarrow \infty} x, A x_{n} \xrightarrow[]{n \rightarrow \infty} y \Rightarrow Ax = y
+	\end{align*}
+\end{bemerkung}
+
+
+\begin{satz}[Satz vom abgeschlossenen Graphen] \index{Satz vom abgeschlossenen Graphen} \label{satz:12.6-abgeschlossenenGraphen}
+	Ist $A$ abgeschlossen und $D(A) = X$, so ist $A$ stetig auf $X$.
+\end{satz}
+
+\begin{beweis}
+	$(X, \| \cdot \|_{A})$ und $(X, \| \cdot \|)$ sind Banachräume. Au{\ss}erdem gilt $\| x \|_{X} \leq \| x \|_{A}$ $\forall x \in X$ \\
+	\[ \xRightarrow[]{10.6} \exists c > 0: \| x \|_{A} \leq c \| x \| \forall x \in X \] % todo: check at 12.6.5: it refers to 10.6 but that is missing in my notes
+	$\Rightarrow \| x \| + \| A x \| \leq c \| x \|$ $x \in X $ $\Rightarrow \| A x \| \leq c \| x \|$ $x \in X \Rightarrow A$ stetig. 
+\end{beweis}
+
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $X = C[0, 1], D(A) = C^{1}[0, 1], A x = x'$ \\
+			Behauptung: $A$ ist abgeschlossen.
+			\begin{beweis}
+				$\| x \|_{A} = \| x \|_{\infty} + \| x' \|_{\infty} =  \| x \|_{C^{1}}$
+				\[ \left( D(A), \| \cdot \|_{A} \right) = \left( C^{1}[0, 1], \| \cdot \|_{C^{1}} \right) \]
+				$\Rightarrow D(A)$ ist vollständig.
+			\end{beweis}
+		\item $X = L^{p}[0, 1], A x(t) = \frac{1}{t} x(t), t \in [0, 1]$
+			\begin{align*}
+				D_{1}(A) & = \{ f \in L^{p}[0, 1]: \exists \epsilon > 0, f = 0 \text{ fast überall auf } [0, \epsilon] \} \\
+				D_{2}(A) & = \{ f \in L^{p}[0, 1]: t \rightarrow \frac{1}{t} f(t) \in L^{p}\left([0, 1]\right) \}
+			\end{align*}
+			Behauptung: $A$ ist auf $D_{2}$ abgeschlossen.
+			\begin{beweis}[Beweisverfahren Klausurrelevant!]
+				$(x_{n})_{n} \subset D_{2}:$ $x_{n} \xrightarrow[]{n \rightarrow \infty} x$ in $L^{p}[0, 1]$ und $A x_{n} \xrightarrow[]{n \rightarrow \infty} y$ in $L^{p}[0, 1]$ \\
+				$\Rightarrow \exists (x_{n_{k}})_{k} \subset D_{2}:$ $x_{n_{k}} \xrightarrow[]{k \rightarrow \infty} x$ fast überall und $A x_{n_{k}} \xrightarrow[]{k \rightarrow \infty} y$ fast überall.
+				\[ \frac{1}{t} x(t) \leftarrow \frac{1}{t} x_{n_{k}}(t) = A x_{n_{k}} \xrightarrow[]{k \rightarrow \infty} y(t) \text{ fast überall für } t \in [0, 1] \]
+				$\Rightarrow y(t) = \frac{1}{t} x(t)$ fast überall $\Rightarrow A x = y, x \in D_{2}$ \\
+				Behauptung: $A$ ist nicht abgeschlossen auf $D_{1}$ \\
+				Beweis: $x_{n}(t) = \begin{cases} t & \text{ auf } (\frac{1}{n}, 1) \\ 0 & \text{ auf } [0, \frac{1}{n}]\end{cases},$ $y(t) = 1, \forall t \in [0, 1]$ \\
+					\[ \Rightarrow x(t) = t \quad t \in [0, 1] \]
+					Dann
+					\begin{align*}
+						\| x_{n} - x \|_{L^{p}} & = \left( \int_{0}^{\frac{1}{n}} t^{p} dt \right)^{\frac{1}{p}} \xrightarrow[]{n \rightarrow \infty} 0 \\
+						\| A x_{n} - y \|_{L^{p}} & = \left( \int_{0}^{\frac{1}{n}} 1 dt \right)^{\frac{1}{p}} \xrightarrow[]{n \rightarrow \infty} 0 
+					\end{align*}
+					Aber $x \neq D_{1} \Rightarrow A$ ist nicht abgeschlossen.
+			\end{beweis}
+	\end{enumerate}
+\end{beispiel}
+
+
+
+\newpage
