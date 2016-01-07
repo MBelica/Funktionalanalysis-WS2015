@@ -67,7 +67,7 @@ Formel: $x = (\lambda I - A)^{-1}$ ist Lösung, falls $(\lambda I - A)^{-1}$ exi
 \end{beispiel}
 
 
-\begin{satz}[Resolventendarstellung]
+\begin{satz}[Resolventendarstellung] \label{satz:13.4-Resolventendarstellung}
 	Sei $X \supset D(A) \xrightarrow[]{A} X$ abgeschlossen, $X$ ein Banachraum. \\
 	Für $\lambda:{0} \in \rho(A)$ und $\lambda \in \MdC$ mit $|\lambda - \lambda_{0}| < \frac{1}{\| R(\lambda_{0}, A) \|}$ ist auch \\
 		\[ \lambda \in \rho(A) \text{ und } R(\lambda, A) = \sum_{n \geq 0} (\lambda_{0} - \lambda)^{n} R(\lambda_{0}, A)^{n + 1}. \] \\
@@ -116,7 +116,75 @@ Formel: $x = (\lambda I - A)^{-1}$ ist Lösung, falls $(\lambda I - A)^{-1}$ exi
 \end{satz}
 
 \begin{beweis}
-	Für $| \lambda | > \| A \|$ gilt:
+	Für $| \lambda | > \| A \|$ gilt: $\lambda - A = \lambda [I - S]$ mit $S = \frac{A}{\lambda}, \| S \| \leq \frac{\| A \|}{| \lambda |} < 1$ nach Voraussetzung. \\
+	Nach Neumann: 
+	\begin{align*}
+		(I - S)^{-1} & = \sum_{n = 0}^{\infty} S^{n} (\lambda - A)^{-1} \\
+			& = \lambda^{-1} [I - S]^{-1} \\
+			& = \lambda^{-1} \sum_{n = 0}^{\infty} \left( \frac{A}{\lambda} \right)^{n} \\
+			& = \sum_{n = 0}^{\infty} \lambda^{-n-1} A^{n}
+	\end{align*}
+	Also: $\sigma(A) \subset \{ \lambda: |\lambda| \leq \|A\| \}, \sigma(A)$ beschränkt, abgeschlossen $\Rightarrow \sigma(A)$ kompakt. \\
+	Wir müssen noch zeigen, dass $\sigma(A) \neq \emptyset$. \\
+	Nach \hyperref[bem:8.7]{Bemerkung 8.7} gibt es in jedem Banachraum $X$ $x \in X, x' \in X'$ mit $x'(x) \neq 0$ $(*)$ \label{eq:13.6.5-DualAbbildungAuf0} \\
+	Indirekter Beweis für $\sigma(A) \neq \emptyset$. \\
+	Annahme $\sigma(A) = \emptyset$ bzw. $\rho(A) = \MdC$ \\
+	$\Rightarrow \lambda \in \MdC \rightarrow r(\lambda) = x'[R(\lambda, A)x] \in \MdC$ mit $x, x'$ wie in \hyperref[eq:13.6.5-DualAbbildungAuf0]{$(*)$}. \\
+	$r(\lambda)$ ist holomorph auf $\MdC$, denn lokal gilt:
+		\[ r(\lambda) = \sum_{n = 0}^{\infty} (\lambda_{0} - \lambda)^{n} \underbrace{x'[R(\lambda, A) x]}_{\in \MdC}, \quad |\lambda - \lambda_{0}| \overset{\ref{satz:13.4-Resolventendarstellung}}{<} \frac{1}{\| R(\lambda_{0}, A)\|} \]
+	Wir definieren $\Gamma = \{ \lambda: |\lambda| = 2 \| A \| \}$. \\
+	Nach dem Cauchischen Integralsatz: $0 = \int_{\Gamma} r(x) d\lambda$
+	\[ \lambda \in \Gamma, |\lambda| > \| A \|, R(\lambda, A) = \sum_{n = 0}^{\infty} \lambda^{-n-1} A^{n} \]
+	\[ \Rightarrow r(\lambda) = x'(R(\lambda, A)x) = \sum_{n = 0}^{\infty} \lambda^{-n-1} x'(A^{n}x) \]
+	Dann ist $0 = \int_{\Gamma} r(\lambda) d\lambda = \int_{\Gamma} \left[ \sum_{n = 0}^{\infty} \lambda^{-n-1} x'(A^{n}x) \right] dx$
+	\[ 0 = \sum_{n = 0}^{\infty} \underbrace{\left[ \int_{\Gamma} \lambda^{-n-1} d\lambda \right]}_{= 0, \text{ für } n > 0, = 2 \pi i,  \text{ für } n = 0} x'(A^{n} x) \]
+	$\Rightarrow \sigma(A) \neq \emptyset$.
+\end{beweis}
+
+
+\begin{bemerkung} \label{bem:13.7}
+	Für $X = L^{p}(\Omega)$ ist \hyperref[eq:13.6.5-DualAbbildungAuf0]{$(*)$} erfüllt. $x \in L^{p}(\Omega), x \neq 0, x'(w) = |x(w)|^{p-1} \operatorname{sign}(w), w \in \Omega$ \\
+	Dann ist 
+	\[ x'(x) = \int | x(w) |^{p} dw \neq 0, x' \in L^{p'}, \int |x'|^{p'} dw = \int |x(w)^{(p-1)p'} dw \]
+	Allgemein folgt \hyperref[eq:13.6.5-DualAbbildungAuf0]{$(*)$} aus dem Satz von Hahn-Banach. %todo: add link at 13.7 as soon as I've added Hahn-Banach
+\end{bemerkung}
+
+
+\begin{definition} \label{def:13.8-Spektralradius}
+	Für $A \in B(X)$ hei{\ss}t $r(A) = \sup \{ | \lambda |: \lambda \in \sigma(A) \}Q$ der \begriff{Spektralradius} von $A$.
+\end{definition}
+
+
+\begin{satz} \label{satz:13.9}
+	Für $A \in B(X)$ ist $r(A) = \lim_{n \rightarrow \infty} \| A^{n} \|^{\frac{1}{n}} = \inf{n \in \MdN} \| A^{n} \|^{\frac{1}{n}}$ \\ \\
+	Hilfssatz: Ist $a_{n} \in \MdR$ mit $0 \leq a_{n + m} \leq a_{n} \cdot a_{m}, n,m \in \MdN$, dann gilt $\lim_{n \rightarrow \infty} a_{n}^{\frac{1}{n}} = \inf_{n \in \MdN} a_{n}^{\frac{1}{n}}$
+\end{satz}
+
+\begin{beweis} % todo at 13.9.5 add proof
+	Beweis des Hilfsatzes: \\
+	todo \\ \\ 
+	
+	Beweis von \hyperref[satz:13.9]{13.9}: \\
+	todo \\ \\ 
+	
+	Wie in der Funktionentheorie zeigt man, dass wegen \hyperref[]{$(??)$} $R(\lambda, A)$ im grö{\ss}ten Kreis, der zum Holomorphie-Gebiet von $\frac{1}{\lambda} \in \rho(A) \rightarrow R(\frac{1}{\lambda}, A)$ gehört, dort als die Potenzreihe in \hyperref[]{$(??)$} dargestellt werden kann. \\ % todo at 13.10: where exactly do those two refs point at
+	Also $\lim_{n} \|A^{n} \|^{\frac{1}{n}} = r(A)$
+\end{beweis}
+
+
+Im Allgemeinen gilt $r(A) < \| A \|$.
+
+
+\begin{beispiel}
+	Sei $X = C[0, 1]$ und  $Q = \{ (s, t) \in [0, 1]^{2}: s \leq t \}$, betrachte $k: Q \rightarrow \MdR$ stetig.  \\
+	Wir definieren einen Volterraoperator $V: C[0, 1] \rightarrow C[0, 1]$ durch 
+		\[ (V x)(t) = \int_{0}^{t} k(t, s) x(s) ds, t \in [0, 1], x \in C[0, 1] \]
+	Behauptung: $V \in B(C[0, 1]), \| V \| = \sup_{t \in [0, 1]} \int_{0}^{t} k(t, s) ds > 0,$ $r(v) = 0,$ $\sigma(v) = \{ 0 \}$, d.h. \\
+	\[ (\lambda - v)x = y \text{ ist für alle } y \in C[0, 1], \lambda \neq 0, \text{ eine eindeutige Lösung } x = (\lambda - A)^{-1} y \in C[0, 1] \]
+\end{beispiel}
+
+\begin{beweis}
+	todo % todo at 13.10.5 add proof
 \end{beweis}
 
 
