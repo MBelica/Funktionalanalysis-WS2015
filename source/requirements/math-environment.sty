@@ -1,39 +1,58 @@
-% Strukturierung
-\theoremstyle{break}
-% Kursiv find ich nicht schön:
-\theorembodyfont{\normalfont}
+% Regular theorems
+	% Structuring and style
+	\theoremstyle{break}
+	\theorembodyfont{\normalfont}
+	\theoremsymbol{}
+	\theoremseparator{} 	
 
-\newframedtheorem{satz}{Satz}[section]
-\newframedtheorem{lemma}[satz]{Lemma}
-\newtheorem{anwendung}[satz]{Anwendung}
-\newtheorem{prop}[satz]{Proposition}
+	% Framed
+	\newframedtheorem{satz}{Satz}[section]
+	\newframedtheorem{lemma}[satz]{Lemma}
+	\newframedtheorem{axiom}[satz]{Axiom}
+	
+	% Unframed	
+	\newtheorem{anwendung}[satz]{Anwendung}
+	\newtheorem{prop}[satz]{Proposition}
+	\newtheorem{definition}[satz]{Definition}
+	\newtheorem{hilfssatz}[satz]{Hilfssatz}
+	\newtheorem{kor}[satz]{Korollar}
+	\newtheorem{bemerkung}[satz]{Bemerkung}
+	\newtheorem{beispiel}[satz]{Beispiel}
+	\newtheorem{folgerung}[satz]{Folgerung}
 
-\newframedtheorem{axiom}[satz]{Axiom}
-\newtheorem{plaindefinition}[satz]{Definition}
-\newtheorem{hilfssatz}[satz]{Hilfssatz}
-\newtheorem{nfsatz}[satz]{Satz}
-\newtheorem{kor}[satz]{Korollar}
-\newenvironment{definition}{\begin{plaindefinition}}{\end{plaindefinition}}	
-\newtheorem{bemerkung}[satz]{Bemerkung}
-\newtheorem{beispiel}[satz]{Beispiel}
 
-\theoremstyle{nonumberbreak}
-\theoremsymbol{\ensuremath{_\blacksquare}}
-\newtheorem{beweis}{Beweis}
-\theoremsymbol{}
-\renewtheorem{satz*}{Satz}
-\renewtheorem{kor*}{Korollar}
-\renewtheorem{beispiel*}{Beispiel}
-\renewtheorem{bemerkung*}{Bemerkung}
-\newenvironment{definition*}{\begin{plaindefinition*}}{\end{plaindefinition*}}
-\theoremseparator{:}
-\newtheorem{vereinbarung}{Vereinbarung}
-\newtheorem{motivation}{Motivation}
-\newtheorem{schreibweisen}{Schreibweisen}
-\newtheorem{erinnerung}{Erinnerung}
-\newtheorem{vorbetrachtungen}{Vorbetrachtungen}
+% Proofs
+	% Structuring and style
+	\theoremstyle{nonumberbreak}
+	\theorembodyfont{\normalfont}
+	\theoremsymbol{\ensuremath{_\square}}
+	\theoremseparator{} 	
+	
+	\newtheorem{beweis}{Beweis}
 
-\theoremstyle{break}
-\theoremseparator{} 
-\newtheorem{folgerung}[satz]{Folgerung}
-\newtheorem{folgerungen}[satz]{Folgerungen}
+
+% Unnumbered theorems
+	% Structuring and style
+	\theoremstyle{nonumberbreak}
+	\theorembodyfont{\normalfont}
+	\theoremsymbol{}
+	\theoremseparator{} 	
+	
+	\renewtheorem{satz*}{Satz}
+	\renewtheorem{kor*}{Korollar}
+	\renewtheorem{beispiel*}{Beispiel}
+	\renewtheorem{bemerkung*}{Bemerkung}
+
+
+% Simple theorems
+	% Structuring and style
+	\theoremstyle{nonumberbreak}
+	\theorembodyfont{\normalfont}
+	\theoremsymbol{}
+	\theoremseparator{:}
+	
+	\newtheorem{vereinbarung}{Vereinbarung}
+	\newtheorem{motivation}{Motivation}
+	\newtheorem{schreibweise}{Schreibweise}
+	\newtheorem{erinnerung}{Erinnerung}
+	\newtheorem{vorbetrachtung}{Vorbetrachtung}

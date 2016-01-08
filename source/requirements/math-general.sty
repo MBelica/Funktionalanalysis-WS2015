@@ -1,10 +1,12 @@
-\usepackage[utf8]{inputenc} 			% this is needed for umlauts
-\usepackage[ngerman]{babel} 			% this is needed for umlauts
-\usepackage[T1]{fontenc}     			% this is needed for correct output of umlauts in pdf
+% Add packages
+\usepackage[utf8]{inputenc} 	% this is needed for umlauts
+\usepackage[ngerman]{babel} 	% this is needed for umlauts
+\usepackage[T1]{fontenc} 	% this is needed for correct output of umlauts in pdf
 \usepackage{acronym}
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{chngcntr}
 \usepackage{dsfont}
 \usepackage{enumitem}
 \usepackage{etex}
@@ -18,7 +20,12 @@
 \usepackage{mathrsfs}
 \usepackage{mathtools}
 \usepackage[framed,amsmath,thmmarks,hyperref]{ntheorem}
+\usepackage{pdfcomment}	
+\usepackage{pgfplots}
 \usepackage{pstricks}
+\usepackage{scrlayer-scrpage}
+\usepackage{scalerel,amssymb}
+\usepackage{setspace}
 \usepackage{slashed}
 \usepackage{stmaryrd}
 \usepackage{ulem}
@@ -26,44 +33,25 @@
 \usepackage{wasysym}
 \usepackage[arrow, matrix, curve]{xy}
 
-\renewcommand*\thesection{\arabic{section}}
-\usepackage{pdfcomment}	
-\usepackage{pgfplots}
+% Add tikz libraries
 \usetikzlibrary{intersections}
 \usetikzlibrary[topaths]
-\newcount\mycount
-\usepackage{pgfplots}
-\usepackage{setspace}
-\usepackage{scrlayer-scrpage}
-\usepackage{chngcntr}
-\usepackage{scalerel,amssymb}
 
-\reserveinserts{28}
-\let\cleardoublepage\clearpage
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{2ex}
+% Removes common mistake occurring with broken unicode character 
+\DeclareUnicodeCharacter{00A0}{ }
 
 % Sets
-\def\MdR{\ensuremath{\mathbb{R}}}
-\def\mdr{\ensuremath{\mathbb{R}}}
-\def\imdr{\ensuremath{\overline\mdr}}
-\def\ifb{\ensuremath{\overline\fb}}
-\def\MdQ{\ensuremath{\mathbb{Q}}}
-\def\mdq{\ensuremath{\mathbb{Q}}}
-\def\MdZ{\ensuremath{\mathbb{Z}}}
-\def\mdz{\ensuremath{\mathbb{Z}}}
-\def\MdN{\ensuremath{\mathbb{N}}}
-\def\mdn{\ensuremath{\mathbb{N}}}
-\def\MdK{\ensuremath{\mathbb{K}}}
-\def\MdF{\ensuremath{\mathbb{F}}}
-\def\mdk{\ensuremath{\mathbb{K}}}
 \def\MdC{\ensuremath{\mathbb{C}}}
-\def\mdc{\ensuremath{\mathbb{C}}}
-\def\MdM{\ensuremath{\mathbb{M}}}
+\def\MdD{\ensuremath{\mathbb{D}}}
+\def\MdF{\ensuremath{\mathbb{F}}}
+\def\MdK{\ensuremath{\mathbb{K}}}
 \def\MdL{\ensuremath{\mathbb{L}}}
-\def\MdD{\mathbb{D}}
-\def\natn{\ensuremath{n\in\MdN}}
-\def\BV{\text{BV}}
+\def\MdM{\ensuremath{\mathbb{M}}}
+\def\MdN{\ensuremath{\mathbb{N}}}
+\def\MdQ{\ensuremath{\mathbb{Q}}}
+\def\MdR{\ensuremath{\mathbb{R}}}
+\def\MdZ{\ensuremath{\mathbb{Z}}}
+
 % Symbols
 \def\ep{\varepsilon}
 \def\vp{\varphi}
@@ -88,89 +76,44 @@
 \def\cp{\mathcal{P}}
 \def\T{\mathscr{T}}
 \def\H{\mathscr{H}}
-\newcommand{\F}{\mathcal{F}}
-\newcommand{\MM}{\mathcal{M}}
+\def\F{\mathcal{F}}
+\def\MM{\mathcal{M}}
 
+% Operators 
+\def\gdw{\ensuremath{\iff}}
 \def\grad{\mathop{\rm grad}\nolimits}
 \def\rot{\mathop{\rm rot}\nolimits}
 \def\divv{\mathop{\rm div}\nolimits}
 \def\supp{\mathop{\rm supp}\nolimits}
-
 \def\kernn{\mathop{\rm Kern}\nolimits}
 \def\bild{\mathop{\rm Bild}\nolimits}
-
 \def\diag{\mathop{\rm diag}\nolimits}
 \def\spur{\mathop{\rm Spur}\nolimits}
 \def\Re{\mathop{\rm Re}\nolimits}
 \def\Im{\mathop{\rm Im}\nolimits}
-
 \def\Arg{\text{Arg}}
 \def\Log{\text{Log}}
-
 \def\L{\mathcal{L}}
 \def\K{\mathcal{K}}
 \def\ole{\varolessthan}
 
-% Strange Symbols
-\def\folgt{\ensuremath{\implies}}
-\def\equizu{\ensuremath{\iff}}
-\def\gdw{\equizu}
-\def\gdwnach{\equizunach}
-\def\gdwwegen{\equizuwegen}
-\newcommand{\folgtnach}[1]{\ensuremath{\DOTSB\;\xRightarrow{\text{#1}}\;}}
-\newcommand{\folgtwegen}[1]{\ensuremath{\DOTSB\;\xRightarrow{#1}\;}}
-\newcommand{\equizunach}[1]{\ensuremath{\DOTSB\;\xLeftrightarrow{\text{#1}}\;}}
-\newcommand{\equizuwegen}[1]{\ensuremath{\DOTSB\;\xLeftrightarrow{#1}\;}}
-\newcommand{\tonach}[1]{\ensuremath{\DOTSB\;\xrightarrow{\text{#1}}\;}}
-\newcommand{\towegen}[1]{\ensuremath{\DOTSB\;\xrightarrow{#1}\;}}
-\newcommand{\tomit}[1]{\ensuremath{\DOTSB\;\xrightarrow{#1}\;}}
+% Common formulars
+\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert#1\right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+\newcommand{\QR}[2]{\raisebox{1ex}{\ensuremath{#1}}\ensuremath{\mkern-8mu}\bigg/\ensuremath{\mkern-8mu}\raisebox{-1ex}{\ensuremath{#2}}}
+\newcommand\equalhat{\let\savearraystretch\arraystretch\renewcommand\arraystretch{0.3}\begin{array}{c}\stretchto{\scalerel*[\widthof{=}]{\wedge}{\rule{1ex}{3ex}}}{0.5ex}\\ =\end{array}\let\arraystretch\savearraystretch}
+\newcommand{\diagentry}[1]{\mathmakebox[1.8em]{#1}}
+\newcommand{\xddots}{\raise 4pt \hbox {.}\mkern 6mu\raise 1pt \hbox {.}\mkern 6mu\raise -2pt \hbox {.}}
+\newcommand{\begriff}[1]{\index{#1}\textbf{#1}}
 \newcommand{\gleichnach}[1]{\ensuremath{\DOTSB\;\stackrel{\text{#1}}{=}\;}}
 \newcommand{\gleichwegen}[1]{\ensuremath{\DOTSB\;\stackrel{#1}{=}\;}}
 \newcommand{\da}{\mathrel{\mbox{$\coloneqq$}}}
 \newcommand{\ad}{\mathrel{\mbox{$\eqqcolon$}}}
 
-% Abbreviations
-\def\ffa{\text{ f\/fa }}
-
-% Common formulars
-\newcommand{\reihe}[1]{\sum_{n=1}^{\infty}{#1}}
-\newcommand{\reihenull}[1]{\sum_{n=0}^{\infty}{#1}}
-\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert#1\right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
-\newcommand{\QR}[2]{\raisebox{1ex}{\ensuremath{#1}}\ensuremath{\mkern-8mu}\bigg/\ensuremath{\mkern-8mu}\raisebox{-1ex}{\ensuremath{#2}}}
-
-% Enumeration
-\renewcommand{\labelenumi}{(\arabic{enumi})}
-\renewcommand{\labelenumii}{(\roman{enumii})}
-
-% Text formatting
-\newcommand{\alt}[1]{(\textit{#1})}
-\newcommand{\indexlabel}[1]{\index{#1}}
-\newcommand{\begriff}[1]{\indexlabel{#1}\textbf{#1}}
-
-\DeclareUnicodeCharacter{00A0}{ }
-\DeclareMathOperator{\Mat}{Mat}
-\newcommand{\diagentry}[1]{\mathmakebox[1.8em]{#1}}
-\newcommand{\xddots}{%
-  \raise 4pt \hbox {.}
-  \mkern 6mu
-  \raise 1pt \hbox {.}
-  \mkern 6mu
-  \raise -2pt \hbox {.}
-}
-
-
-\newcommand\equalhat{%
-\let\savearraystretch\arraystretch
-\renewcommand\arraystretch{0.3}
-\begin{array}{c}
-\stretchto{
-    \scalerel*[\widthof{=}]{\wedge}
-    {\rule{1ex}{3ex}}%
-}{0.5ex}\\ 
-=%
-\end{array}
-\let\arraystretch\savearraystretch
-}
-
-
+% Miscellaneous
+\newcount\mycount
+\reserveinserts{28}
+\let\cleardoublepage\clearpage
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2ex}
+\renewcommand*\thesection{\arabic{section}}
 \counterwithin{figure}{section}
