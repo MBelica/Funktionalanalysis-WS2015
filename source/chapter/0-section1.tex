@@ -27,20 +27,14 @@ Sei $A \subset \MdR^{n}$ beschränkt. Dann hat jede Folge $(x_{n})_{n \in \MdN} 
 \begin{beispiel}
 	Betrachte $X = C[0, 1] = \{ f : [0, 1] \rightarrow \MdR: f \text{ stetig auf } [0, 1] \} $ mit $\| f \|_{\infty} :=  \smash{\displaystyle\max_{t \in [0, 1]}}  \| f(t) \|$. \\ 
 	Sei weiter $f_{n} : t \rightarrow t^{n}$, damit gilt $\| f_{n} \|_{\infty} \leq 1 \quad \forall n \in \MdN$.	
-	\begin{figure}[H]
-		\pgfmathdeclarefunction{xnfct}{1}{ \pgfmathparse{(x^( #1 ))}}	
+	\begin{figure}[H]	
 		\begin{center}					
 			\begin{tikzpicture}
-				\begin{axis}[
-					domain=0:1,
-					samples=101,
-    				height=5cm,
-    				width=10cm
-				]
-					\addplot [color= blue, thin, dashed, smooth] {xnfct(3)};
-					\addplot [color= blue, thin, dashed, smooth] {xnfct(8)};
-					\addplot [color= blue, thin, dashed, smooth] {xnfct(20)};
-					\addplot [color= blue, thin, dashed, smooth] {xnfct(50)};
+				\begin{axis}[domain=0:1, samples=101, height=5cm, width=10cm]
+					\addplot [color=blue, thin, dashed, smooth] { ( x^(3) ) };
+					\addplot [color=blue, thin, dashed, smooth] { ( x^(8) ) };
+					\addplot [color=blue, thin, dashed, smooth] { ( x^(20) ) };
+					\addplot [color=blue, thin, dashed, smooth] { ( x^(50) ) };
 				\end{axis}
 			\end{tikzpicture}
 			\caption{$f_{n}$ für $n = 3, 8, 20$ und $50$}

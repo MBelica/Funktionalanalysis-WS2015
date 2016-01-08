@@ -32,6 +32,11 @@
 \usetikzlibrary{intersections}
 \usetikzlibrary[topaths]
 \newcount\mycount
+\usepackage{pgfplots}
+\usepackage{setspace}
+\usepackage{scrlayer-scrpage}
+\usepackage{chngcntr}
+\usepackage{scalerel,amssymb}
 
 \reserveinserts{28}
 \let\cleardoublepage\clearpage
@@ -152,7 +157,7 @@
   \mkern 6mu
   \raise -2pt \hbox {.}
 }
-\usepackage{scalerel,amssymb}
+
 
 \newcommand\equalhat{%
 \let\savearraystretch\arraystretch
@@ -166,3 +171,6 @@
 \end{array}
 \let\arraystretch\savearraystretch
 }
+
+
+\counterwithin{figure}{section}
