@@ -20,7 +20,7 @@ $A: D(A) \rightarrow X$ linear
 			$\lambda > 0, x_{\lambda}(t) = e	^{i \lambda t} \quad t \in [0, 1] \Rightarrow A x_{\lambda}(t) = i \lambda e^{i \lambda t}$ \\
 			$\Rightarrow \| x_{\lambda} \|_{\infty} = 1,$ $\| A x_{\lambda} \|_{\infty} = \lambda \xrightarrow[]{\lambda \rightarrow \infty} \infty \Rightarrow A$ ist nicht beschränkt auf $D(A)$.
 		\item $X = L	^{p}[0, 1],$ $B x(t) = \frac{1}{t} x(t)$.
-			\[ D(B) = \{ x \in L^{p}([0, 1]): \exists \epsilon(x), x = 0 \text{ fast überall auf } [0, \epsilon] \}\] %todo: check at 12.1 if it is really x = 0
+			\[ D(B) = \{ x \in L^{p}([0, 1]): \exists \epsilon(x), x = 0 \text{ fast überall auf } [0, \epsilon] \}\]
 			$B$ bildet nach $X$ ab, denn $\| B x \|_{L^{p}} = \left( \int_{\epsilon}^{1} t^{-p} |x(t)|^{p} dt \right)^{\frac{1}{p}} \leq \frac{1}{\epsilon(x)} \| x \|_{L^{p}}$ \\ \\
 			z.B.: $x_{\lambda} = \mathds{1}_{[\frac{1}{\lambda}, 1]} \Rightarrow \| x_{\lambda}\|_{L^{p}} = \left( \int_{\frac{1}{\lambda}}^{1} |x_{\lambda}(t)|^{p} dt \right)^{\frac{1}{p}} = \left( \int_{\frac{1}{\lambda}}^{1} dt \right)^{\frac{1}{p}} < 1$
 			\[ \| B x_{\lambda} \| = \left( \int_{\frac{1}{\lambda}}^{1} t^{-p} dt \right) \xrightarrow[]{\lambda \rightarrow \infty} \infty \]

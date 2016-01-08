@@ -1,0 +1,175 @@
+%!TEX root = Funktionalanalysis - Vorlesung.tex
+
+
+\chapter*{Operatoren auf Hilberträumen} \addcontentsline{toc}{chapter}{Operatoren auf Hilberträumen} \setcounter{section}{14}
+
+
+
+\section{Hilberträume}
+
+
+
+\begin{definition} \label{def:15.1-Skalarprodukt}
+	Sei $X$ ein Vektorraum über $\MdK$. Eine Abbildung
+	\[ \langle \cdot, \cdot \rangle : X \times X \rightarrow \MdK \]
+	hei{\ss}t \begriff{Skalarprodukt}, falls für $x, y \in X, \lambda \in \MdK$ gilt:
+	\begin{description}
+	 	\label{def:15.1i}
+	 	\item[$\hspace{0.5cm} (S1) \hspace{0.1cm} $] $\langle x_{1} + x_{2}, y \rangle = \langle x_{1}, y \rangle + \langle x_{2}, y \rangle$ \\
+			 $~\hspace{0.6cm} \langle x, y_{1} + y_{2} \rangle = \langle x, y_{1} \rangle + \langle x, y_{2} \rangle$
+ 		\label{def:15.1ii}
+	 	\item[$\hspace{0.5cm} (S2) \hspace{0.1cm} $] $\langle \lambda x, y \rangle = \lambda \langle x, y \rangle,$ $\langle x, \lambda y \rangle = \overline{\lambda} \langle x, y \rangle$
+ 		\label{def:15.1iii}
+	 	\item[$\hspace{0.5cm} (S3) \hspace{0.1cm} $] $\langle x, y \rangle = \overline{\langle y, x \rangle }$
+ 		\label{def:15.1iv}
+	 	\item[$\hspace{0.5cm} (S4) \hspace{0.1cm} $] $\langle x, y \rangle \geq 0, \quad \langle x, x \rangle = 0 \gdw x = 0$
+	\end{description}
+\end{definition}
+
+
+\begin{prop} \label{prop:15.2}
+	Sei $X$ ein Vektor mit Skalarprodukt $\langle \cdot, \cdot \rangle$
+	\begin{enumerate}[label=\alph*\upshape)] \label{prop:15.2a}
+		\item Für $x, y \in X$ gilt die \begriff{Cauchy-Schwarz-Ungleichung}
+			\[ | \langle x, y \rangle | \leq \langle x, x \rangle \cdot \langle y, y \rangle \] \label{prop:15.2b}
+		\item $\| x \| = \langle x, x \rangle$ definiert eine Norm auf $X$
+			Insbesondere: $\langle x, y \rangle \leq \| x \| \cdot \| y \|$
+	\end{enumerate}	
+\end{prop}
+
+\begin{bemerkung*}
+	\[ \langle x + y, x + y \rangle = \| x\|^{2} + 2 \Re \langle x, y \rangle + \| y \|^{2} \quad (*) \label{eq:15.2-*} \]
+\end{bemerkung*}
+
+\begin{beweis} % todo at 15.2.5: somewhere was a ()^{1/2} 
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Für $\lambda \in \MdK$ gilt:
+			\[ 0 \leq \langle x + \lambda y, x + \lambda y \rangle = \langle x, x \rangle + \overline{\lambda} \langle x, y \rangle + \lambda \langle x, y \rangle + |\lambda|^{2} \langle y, y \rangle \]
+			Für $\lambda := - \frac{\langle x, y \rangle}{\langle y, y \rangle}$ folgt:
+			\[ 0 \leq \langle x, y \rangle - \frac{|\langle x,y \rangle|^{2}}{\langle y, y \rangle} - \frac{|\langle x, y \rangle|^{2}}{\langle y, y \rangle} + \frac{|\langle x, y \rangle|^{2}}{\langle y, y \rangle} \]
+			\[ \gdw 0 \leq \langle x, x \rangle \cdot \langle y, y \rangle + |\langle x, y \rangle|^{2} \Rightarrow \text{Behauptung } a) \]
+		\item $\| x \| \geq 0, \quad \| x \| = 0 \gdw x = 0$ folgt aus \hyperref[def:15.1iv]{$(S4)$} \\
+			\begin{align*}
+				\| x + y \|^{2} = \langle x + y, x + y \rangle & \overset{\hyperref[def:15.1-Skalarprodukt]{(S1), (S2)}}{=} \langle x, x \rangle + \langle x, y \rangle + \overline{\langle x, y \rangle} + \langle y, y \rangle \\
+						& = \| x \|^{2} + 2 \Re \langle x, y \rangle + \| y \|^{2}
+			\end{align*}
+			Damit ist auch \hyperref[eq:15.2-*]{$(*)$} gezeigt.
+			\begin{align*}
+				\| x + y \|^{2} & \leq \| x \|^{2} + \| x \| \cdot \| y \| + \| y \|^{2} \\
+						& \overset{\hyperref[prop:15.2a]{a)}}{=} \left( \| x \| + \| y \| \right)^{2}
+			\end{align*}
+			$\Rightarrow$ Die Dreiecksungleichung gilt für $\| \cdot \|$.
+	\end{enumerate}	
+\end{beweis}
+
+
+\begin{bemerkung} \label{bem:15.3}
+	Man kann aus der in \hyperref[prop:15.2b]{$b)$} definierten Norm das Skalarprodukt zurückgewinnen durch:
+	\begin{align*}
+		\text{Falls } \MdK = \MdR: &  \langle x, y \rangle = \frac{1}{4} \left( \| x + y \|^{2} - \| x - y \|^{2} \right) \\
+		\text{Falls } \MdK = \MdC: &  \langle x, y \rangle = \frac{1}{4} \left( \| x + y \|^{2} - \| x - y \|^{2} + i \| x + i y\|^{2} - i \| x - iy\|^{2} \right)
+	\end{align*}
+\end{bemerkung}
+
+
+\begin{definition}
+	Ein metrischer Raum $(X, \| \cdot \|)$ hei{\ss}t \begriff{Prä-Hilbertraum}, falls es ein Skalarprodukt $\langle \cdot, \cdot \rangle$ auf $X \times X$ gibt mit
+		\[ \| x \| = \langle x, x \rangle^{\frac{1}{2}} \]
+	Falls $(X, \| \cdot \|)$ au{\ss}erdem noch vollständig ist, dann hei{\ss}t $X$ ein \begriff{Hilbertraum}.	
+\end{definition}
+
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $\MdC$ mit $\langle x, y \rangle = \sum_{i = 1}^{n} x_{i} \overline{y_{i}}$ für $x = (x_{i}), y = (y_{i}) \in \MdC^{n}$ \\
+			\[ \| x \| = \left( \sum | x_{i}|^{2} \right)^{\frac{1}{2}} \]
+		\item $X = \ell^{2}, x = (x_{i})_{i \in \MdN} \in \ell{2}, y = (y_{i})_{i \in \MdN} \in \ell^{2}$ \\
+			\[ \langle x, y \rangle = \sum_{\i \in \MdN} x_{i} \overline{y_{i}},  \quad \|x \| = \left( \sum_{i = 1}^{\infty} |x_{i}|^{2} \right)^{\frac{1}{2}} \]
+			$X = \ell^{p}$ ist kein Hilbertraum für $n \neq 2$ (Übung).
+		\item $X = C(\Omega), \Omega \subset \MdR^{n}$ beschränkt und abgeschlossen \\
+			\[ \langle x, y \rangle = \int_{\Omega} x(u) \overline{y(u)} du \]
+			Dann ist $(X, \langle \cdot, \cdot \rangle)$ ist ein Prä-Hilbertraum, aber nicht vollständig. \\
+			$(L^{2}(\Omega), \langle \cdot, \cdot \rangle)$ ist ein Hilbertraum, da vollständig.
+	\end{enumerate}	
+\end{beispiel}
+
+
+\begin{bemerkung*}
+	$L^{p}(\Omega)$ ist kein Hilbertraum für $n \neq 2$.
+\end{bemerkung*}
+
+
+\begin{satz} \label{satz:15.6}
+	Ein normierter Raum $(X, \| \cdot \|)$ ist genau dann ein Prä-Hilbertraum, falls die sogenannte \begriff{Prallelogramm-Gleichung} gilt, d.h.
+	\[ \forall x, y \in X: \quad \|x + y \|^{2} + \| x - y \|^{2} = 2 \| x \|^{2} + 2 \| y \|^{2} \quad (P) \label{eq:15.6-rallelogrammGleichung} \]
+\end{satz}
+
+\begin{beweis}
+	Nehmen wir an $(X, \| \cdot \|)$ sei ein Prä-Hilbertraum $\Rightarrow$ \hyperref[eq:15.6-rallelogrammGleichung]{$(P)$} gilt (einfaches nachrechnen mit \hyperref[eq:15.2-*]{$(*)$}). \\
+	Angenommen es gilt \hyperref[eq:15.6-rallelogrammGleichung]{$(P)$} und sei o.B.d.A $\MdK = \MdR$ (der Fall $\MdC$ absolut analog) 
+	\[  \langle x, y \rangle := \frac{1}{4} \left( \| x + y \|^{2} - \| x - y \|^{2} \right) \]
+	Überprüfe die Eigenschaften des Skalarproduktes:
+	\begin{enumerate}[label=\roman*\upshape)]
+		\item Zu zeigen: $\langle x_{1} + x_{2}, y \rangle = \langle x_{1}, y \rangle + \langle x_{2}, y \rangle$
+			\begin{align*}
+				\langle x_{1} + x_{2}, y \rangle & = \frac{1}{4} \left( \| x_{1} + x_{2} + y \|^{2} - \| x_{1} + x_{2} - y \|^{2} \right) \quad (1) \\
+				\langle x_{1}, y \rangle + \langle x_{2}, y \rangle & = \frac{1}{4} \left( \| x_{1} + y \|^{2} + \| x_{2} + y \|^{2} - \| x_{1} - y \|^{2} - \| x_{2} - y \|^{2} \right) \quad (2)
+			\end{align*}
+			Wir müssen also zeigen, dass $(1) = (2)$. \\
+			Nach \hyperref[eq:15.6-rallelogrammGleichung]{$(P)$} folgt:
+			\begin{align*}
+				\| x_{1} + x_{2} + y \|^{2} & = 2 \| x_{1} + y \|^{2} + 2 \| x_{2} \|^{2} - \| x_{1} - x_{2} + y \|^{2} \\
+				\| x_{1} + x_{2} + y \|^{2} & = 2 \| x_{2} + y \|^{2} + 2 \| x_{1} \|^{2} - \| - x_{1} + x_{2} + y \|^{2} \\
+			\end{align*}
+			Addieren dieser beiden Gleichungen liefert
+			\[ \| x_{1} + x_{2} + y \|^{2} =  \| x_{1} + y \|^{2} + \| x_{2} \|^{2} + \| x_{2} + y \|^{2} +  \| x_{1} \|^{2} - \frac{1}{2} \left( \| x_{1} - x_{2} + y \|^{2} + \| - x_{1} + x_{2} + y \|^{2} \right) \]
+			Ersetze $y$ durch $(-y)$:
+			\[ \| x_{1} + x_{2} - y \|^{2} =  \| x_{1} - y \|^{2} + \| x_{2} \|^{2} + \| x_{2} - y \|^{2} +  \| x_{1} \|^{2} - \frac{1}{2} \left( \| x_{1} - x_{2} - y \|^{2} + \| - x_{1} + x_{2} - y \|^{2} \right) \]
+			Subtrahieren der letzten beiden Zeilen liefert damit:
+			\[ \| x_{1} + x_{2} + y \|^{2} - \| x_{1} + x_{2} - y \|^{2} = \| x_{1} + y \|^{2} + \| x_{2} + y \|^{2} - \| x_{1} - y \|^{2} - \| x_{2} - y \| ^{2} \]
+			Dividieren durch $4$ liefert gerade die Behauptung.
+		\item klar, da $\MdK = \MdR$, mit $\langle x, x \rangle = \| x \|$.
+		\item Aussage $\lambda \langle x, y \rangle = \langle \lambda x, y \rangle$ gilt falls $\lambda \in \MdN$ (nach \hyperref[def:15.1i]{$(S1)$}) \\
+			Nach Definition okay für $\lambda = 0, \lambda = -1$ und damit auch für $\lambda \in \MdZ$
+			Für $\lambda \in \MdQ$, setze $\lambda = \frac{m}{n}$ mit $m, n \in \MdZ, n \neq 0$ 
+			\[ n \langle \lambda x, y \rangle = \langle n \lambda x, y \rangle = \langle m x, y \rangle = m \langle x, y \rangle \]
+			\[ \langle \lambda x, y \rangle = \frac{m}{n} \langle x, y \rangle = \lambda \langle x, y \rangle, \quad \lambda \in \MdQ \]
+			$\lambda : \MdR \rightarrow \langle \lambda x, y \rangle, \lambda : \MdR \rightarrow \lambda \langle x, y \rangle$ sind stetige Funktionen auf $\MdR$, die auf dichten Teilmenge von $\MdQ$ übereinstimmen.
+	\end{enumerate}
+\end{beweis}
+
+
+\begin{satz}[Beste Approximation] \label{satz:15.7-besteApproximation}
+	Sei $X$ ein Hilbertraum und $K$ eine konvexe und abgeschlossene Teilmenge von $X$.
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Zu jedem $x \in X$ gibt es genau ein $y_{0} \in K$ so, dass
+			\[ \| x - y_{0} \| = \inf \{ \| x - y \|: y \in K \} \]
+		\item Dieses $y_{0} \in K$ ist charakterisiert durch die Ungleichung 
+			\[ \Re \langle x - y_{0}, y - y_{0} \rangle \leq 0 \]
+	\end{enumerate}
+\end{satz}
+
+\begin{beweis}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Da Aussage invariant ist gegenüber von Translationen ist, sei o.B.d.A. $x = 0$ und $0 \notin K$. \\ \\
+			Existenz: Setze $d := \inf \{ \| y \| : y \in K \}$ \\
+			Wähle eine Folge $y_{n} \in K$ mit $\lim_{n} \| y_{n} \| = d$; wir wollen zeigen, dass dann $(y_{n})$ eine Cauchy-Folge in $X$ ist. \\
+			Da $K$ konvex ist, gilt $\frac{y_{n} + y_{m}}{2} \in K: \| \frac{y_{n} + y_{m}}{2} \| \geq d$. Mit \hyperref[eq:15.6-rallelogrammGleichung]{$(P)$} folgt:
+			\[ d^{2} \leq \| \frac{y_{n} + y_{m}}{2} \|^{2} + \| \frac{y_{n} - y_{m}}{2} \|^{2} \overset{\hyperref[eq:15.6-rallelogrammGleichung]{$(P)$}}{=} \frac{1}{2} \| y_{n} \|^{2} + \frac{1}{2} \| y_{m} \|^{2} \xrightarrow[n, m \rightarrow \infty]{} d^{2} \]
+			Also $\| y_{n} - y_{m} \| \xrightarrow[n, m \rightarrow \infty]{} 0$, d.h. $(y_{n})$ ist eine Cauchy-Folge, $\lim_{n \rightarrow \infty} y_{n} = y_{0}$ existiert in $X$ und $y_{0} \in K$, da $K$ abgeschlossen ist. \\
+			Demnach $y_{0} \in K, \| y_{0} \| = \lim_{n} \| y_{n} \| = d = \inf \{ \| y \| : y \in K \}$. \\ \\
+			Eindeutigkeit: Seien $y_{1}, y_{2} \in K$, $\|y_{1} \| = \|y_{2} \| = d, y_{1} \neq y_{2}$ \\
+			Mit \hyperref[eq:15.6-rallelogrammGleichung]{$(P)$} gilt:
+			\[ \left| \frac{y_{0} + y_{1}}{2} \right|^{2} < \left| \frac{y_{0} + y_{1}}{2} \right|^{2} + \left| \frac{y_{0} - y_{1}}{2} \right|^{2} \overset{\hyperref[eq:15.6-rallelogrammGleichung]{$(P)$}}{=} \frac{1}{2} \| y_{0} \|^{2} + \frac{1}{2} \| y_{1} \|^{2} = d^{2} \]
+			Also $\frac{y_{0} + y_{1}}{2} \in K$ und $ \| \frac{y_{0} + y_{1}}{2} \| < d$, was ein Widerspruch zur Definition von $D$ ist
+	\end{enumerate}
+\end{beweis}
+
+
+\begin{vereinbarung}
+	Das Element $y_{0} \in K$ im Satz hei{\ss}t das \begriff{Element bester Approximation} von $x$ zu $K$.
+\end{vereinbarung}
+
+
+
+\newpage
