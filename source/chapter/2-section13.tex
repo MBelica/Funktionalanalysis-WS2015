@@ -22,8 +22,8 @@ Formel: $x = (\lambda I - A)^{-1}$ ist Lösung, falls $(\lambda I - A)^{-1}$ exi
 
 
 \begin{erinnerung}
-	$A$ abgeschlossen $\gdw$ ... todo % todo missing sth at 13.1: add rest
-\end{erinnerung}
+	$A$ abgeschlossen $\gdw$ $(x_{n})_{n} \subset D(A): \begin{cases}
+			x_{n} \xrightarrow[]{n \rightarrow \infty} x & \text{ in } X \\ A x_{n} \xrightarrow[]{n \rightarrow \infty} y & \text{ in } X \end{cases}$, $ $ so ist $x \in D(A), A x = y$\end{erinnerung}
 
 
 \begin{bemerkung}
@@ -184,7 +184,13 @@ Im Allgemeinen gilt $r(A) < \| A \|$.
 \end{beispiel}
 
 \begin{beweis}
-	todo % todo at 13.10.5 add proof
+	$\| V x \|_{\infty} = \sup_{7 \in [0, 1]} \int_{0}^{t} k(t, s) x(s) ds \leq \underbrace{\sup_{t \in [0, 1]} \int_{0}^{t} k(t, s) ds}_{=: K} \| x \|_{\infty} \Rightarrow \| V \| \leq K$ \\
+	\[ \| \mathds{1}_{\infty} = 1, \quad \| V \mathds{1} \|_{\infty} = \sup_{t \in [0, 1]} \int_{0}^{t} k(t, s) ds \quad \Rightarrow \quad \| V \| = K \]
+	Wir müssen zeigen, dass $r(V) = \lim_{n \rightarrow \infty} \| V^{n} \|^{\frac{1}{n}} = 0$. \\
+	$V^{n}$ hat die Form $V^{n} x(t) = \int_{0}^{t} k^{n}(t, s) x(s) ds$, mit
+	\begin{align*}
+		\left( V^{n + 1} x \right)(t) & = a
+	\end{align*}
 \end{beweis}
 
 

@@ -1,35 +1,24 @@
-\usepackage[utf8]{inputenc} % this is needed for umlauts
-\usepackage[T1]{fontenc} 	% this is needed for correct output of umlauts in pdf
-\usepackage{acronym}		% this is needed for the Acronym at the end
-\usepackage{amsfonts}		% 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{chngcntr}		% this is needed for corrected numbering of figures
-\usepackage{dsfont}			% this is needed for example for mathds
-\usepackage{enumitem}		% this is needed for enumerations
-\usepackage{etex}			% this is needed for count which is used by some figures
-\usepackage{float}			% this is needed for figure floating
-\usepackage{framed}			% this is needed for framed theorems
-\usepackage{graphicx}
-\usepackage{grffile}
-\usepackage[bookmarks,bookmarksnumbered,hypertexnames=false,pdfpagelayout=OneColumn,colorlinks]{hyperref}
-\usepackage{ifthen}	
-\usepackage{makeidx}
-\usepackage{mathrsfs}
-\usepackage{mathtools}
-\usepackage[framed,amsmath,thmmarks,hyperref]{ntheorem}
-\usepackage{pdfcomment}	
-\usepackage{pgfplots}
-\usepackage{pstricks}
-\usepackage{scrlayer-scrpage}
-\usepackage{scalerel,amssymb}
-\usepackage{setspace}
-\usepackage{slashed}
-\usepackage{stmaryrd}
-\usepackage{ulem}
-\usepackage{verbatim}
-\usepackage{wasysym}
-\usepackage[arrow, matrix, curve]{xy}
+% Add packages
+\usepackage[utf8]{inputenc} 			% umlauts
+\usepackage[T1]{fontenc} 				% correct output of umlauts in pdf
+\usepackage{acronym}					% the Acronym at the end
+\usepackage{amsmath}					% extended math enviroments
+\usepackage{chngcntr}					% corrected numbering of figures
+\usepackage{dsfont}						% example for mathds
+\usepackage{enumitem}					% enumerations
+\usepackage{etex}						% count which is used by some figures
+\usepackage{float}						% figure floating
+\usepackage{framed}						% framed theorems
+\usepackage[bookmarks,bookmarksnumbered,hypertexnames=false,pdfpagelayout=OneColumn,colorlinks]{hyperref}		% hyperref throughout the document
+\usepackage{makeidx}					% the index
+\usepackage{mathtools}					% advanced math tools
+\usepackage[framed,amsmath,thmmarks,hyperref]{ntheorem} % advanced theorems
+\usepackage{pgfplots}					% tikz
+\usepackage{pstricks}					% polygons etc.
+\usepackage{scrlayer-scrpage} 			% markleft
+\usepackage{scalerel,amssymb} 			% header, footer and amssymbols
+\usepackage{ulem}						% underlined text
+\usepackage[arrow, matrix, curve]{xy} 	% xy-plots
 
 % Add tikz libraries
 \usetikzlibrary{intersections}
@@ -49,35 +38,31 @@
 \def\MdQ{\ensuremath{\mathbb{Q}}}
 \def\MdR{\ensuremath{\mathbb{R}}}
 \def\MdZ{\ensuremath{\mathbb{Z}}}
-
-% Symbols
-\def\ep{\varepsilon}
-\def\vp{\varphi}
-\def\H{\text{H}} 					% set of accumulation values	
-\def\esssup{\text{ess sup}}			% ess Supremum
-\def\Z{\ensuremath{\mathfrak{Z}}}
-\def\fa{\mathfrak{A}}
-\def\fb{\mathfrak{B}}
-\def\fc{\mathfrak{C}}
-\def\fd{\mathfrak{D}}
-\def\fe{\mathfrak{E}}
-\def\fl{\mathfrak{L}}
-\def\fm{\mathfrak{M}}
-\def\cn{\mathcal{N}}
-\def\M{\mathfrak{M}}
-\def\fr{\mathfrak{R}}
-\def\cd{\mathcal{D}}
-\def\ce{\mathcal{E}}
-\def\cf{\mathcal{F}}
-\def\ci{\mathcal{I}}
-\def\co{\mathcal{O}}
-\def\cp{\mathcal{P}}
-\def\T{\mathscr{T}}
-\def\H{\mathscr{H}}
-\def\F{\mathcal{F}}
-\def\MM{\mathcal{M}}
+\def\cd{\ensuremath{\mathcal{D}}}
+\def\ce{\ensuremath{\mathcal{E}}}
+\def\cf{\ensuremath{\mathcal{F}}}
+\def\ci{\ensuremath{\mathcal{I}}}
+\def\ck{\ensuremath{\mathcal{K}}}
+\def\cl{\ensuremath{\mathcal{L}}}
+\def\MM{\ensuremath{\mathcal{M}}}
+\def\cn{\ensuremath{\mathcal{N}}}
+\def\co{\ensuremath{\mathcal{O}}}
+\def\cp{\ensuremath{\mathcal{P}}}
+\def\fa{\ensuremath{\mathfrak{A}}}
+\def\fb{\ensuremath{\mathfrak{B}}}
+\def\fc{\ensuremath{\mathfrak{C}}}
+\def\fd{\ensuremath{\mathfrak{D}}}
+\def\fe{\ensuremath{\mathfrak{E}}}
+\def\fl{\ensuremath{\mathfrak{L}}}
+\def\fm{\ensuremath{\mathfrak{M}}}
+\def\fr{\ensuremath{\mathfrak{R}}}
+\def\fz{\ensuremath{\mathfrak{Z}}}
+\def\scrt{\ensuremath{\mathscr{T}}}
+\def\scrh{\ensuremath{\mathscr{H}}}
 
 % Operators 
+\def\H{\text{H}} 					% set of accumulation values	
+\def\esssup{\text{ess sup}}			% ess Supremum
 \def\gdw{\ensuremath{\iff}}
 \def\grad{\mathop{\rm grad}\nolimits}
 \def\rot{\mathop{\rm rot}\nolimits}
@@ -91,8 +76,6 @@
 \def\Im{\mathop{\rm Im}\nolimits}
 \def\Arg{\text{Arg}}
 \def\Log{\text{Log}}
-\def\L{\mathcal{L}}
-\def\K{\mathcal{K}}
 \def\ole{\varolessthan}
 
 % Common formulars

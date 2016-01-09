@@ -17,7 +17,7 @@ Sei $X$ ein Vektorraum, $dim X < \infty $ und sei $x = (x_{1},\dotsc,x_{n})^{T} 
 \end{align*}	
 
 Diese Normen sind äquivalent, denn:
-$\| x \|_{\infty} \leq \| x \|_{2} \leq n^{\frac{1}{2}} \| x \|_{\infty}$ \newline
+$\| x \|_{\infty} \leq \| x \|_{2} \leq n^{\frac{1}{2}} \| x \|_{\infty}$ 
 
 \begin{satz}[Bolzano-Weierstra{\ss}] \index{Bolzano-Weierstrass} \label{satz:1.1-BolzanoWeierstrass}
 Sei $A \subset \MdR^{n}$ beschränkt. Dann hat jede Folge $(x_{n})_{n \in \MdN} \subset A$ eine konvergente Teilfolge.
@@ -61,12 +61,13 @@ Daraus folgt:
 	\item $T$ ist stetig
 	\item X = Y \gdw T injektiv \gdw T surjektiv (Dimensionsformel) \\
 	(Die Gleichung $Tx = y$ ist eindeutig lösbar $\gdw$ Gleichung hat für alle $y \in Y$ eine Lösung.)
-	\item Falls A selbstadjungiert ist, d.h. $A = A^{*}$, gibt es eine Basis aus Eigenvektoren $(e_{n})$ von $A$, d.h. $ T( \sum_{n=1}^{N} \alpha_{n} e_{n} ) = \sum_{n=1}^{N} \lambda_{n} \alpha_{n} e_{n}$, wobei $\lambda_{n}$ Eigenwerte sind, d.h. $A =
+	\item Falls A selbstadjungiert ist, d.h. $A = A^{*}$, gibt es eine Basis aus Eigenvektoren $(e_{n})$ von $A$, d.h. $ T( \sum_{n=1}^{N} \alpha_{n} e_{n} ) = \sum_{n=1}^{N} \lambda_{n} \alpha_{n} e_{n}$, wobei $\lambda_{n}$ Eigenwerte sind, d.h. 
+		\[ A =
 			\begin{pmatrix}
 				\diagentry{\lambda_{1}}\\
 				&\diagentry{\xddots}\\
 				&&\diagentry{\lambda_{n}}\\
-			\end{pmatrix} $
+			\end{pmatrix} \]
 \end{itemize}
 
 
