@@ -230,16 +230,20 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 		\end{itemize}
 		\[ \delta_{0} = \inf \{ |t - s| : t \in \MdR^{d} \setminus \Omega, s \in A \} \quad \text{Abstand von } A \text{ und } \Omega^{c} \]
 
-		\def\side{0.58}
 		\begin{figure}[H]
 			\centering		
 			\begin{tikzpicture}
-				\draw[fill=gray!45] (0,0) circle (\side*1.4142*1.45);
-				\draw[fill=white] (-\side,-\side) rectangle (\side,\side) node[pos=.5] {A};
+			 \begin{axis}[axis x line=none, axis y line=none]
+				\addplot[mark=none, black!60, smooth cycle, thick, fill=gray!40] coordinates {(1,1) (2,0.5) (3,1.5) (3,2) (3.5,3) (3.2, 5) (2.2, 4.7) (1.5, 4.2) (1.1, 3.9) (0.9, 2.5)};
+				\node[black!75] at (axis cs:2.8,3.75) [anchor=south] {$\Omega$};
+				\addplot[mark=none, black!60, thick, fill=white!30] coordinates {(2.5,1.5) (2.5,3.5) (1.5,3.5) (1.5,1.5) (2.5,1.5)};
+				\node[black!75] at (axis cs:2,2.25) [anchor=south] {$A$};
+				\addplot[dashed] coordinates {(2.5,1.5) (2.7,1.1)};
+				\node[black!75] at (axis cs:2.7,1.175) [anchor=south] {$\delta_{0}$};
+			 \end{axis}
 			\end{tikzpicture}
-			\hskip 0pt \parbox{4pt}{ $\Omega^{c}$ }
 		\end{figure}
-		
+			
 		Da $\supp(\phi_{\delta}) \subset B(0, \delta)$ nach \hyperref[bem:8.7ii]{8.7 ii)}
 		\[ \Rightarrow \supp(g \ast \phi_{\delta} ) \subset A + B\left(0, \frac{\delta_{0}}{2}\right) \subset \Omega \text{ für } \delta < \frac{\delta_{0}}{2} \]
 		(mit $A + B := \{ x + y : x \in A, y \in B\}$), denn $g \ast \phi_{\delta}(u) = \int \phi_{\delta}(u - v) g(v) dv \neq 0$ nur wenn $v \in A$ und $\| u - v \| < \delta$. \\
