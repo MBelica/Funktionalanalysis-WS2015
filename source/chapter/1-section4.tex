@@ -17,15 +17,17 @@
 	\end{enumerate}
 \end{definition}
 
+
 \begin{bemerkung*}
-Der Grenzwert einer konvergenten Folge ist stets eindeutig, denn: \\
-Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \in M$ und $\lim_{n \rightarrow \infty} x_{n} = y \in M$, dann folgt: 
+	Der Grenzwert einer konvergenten Folge ist stets eindeutig, denn: \\
+	Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \in M$ und $\lim_{n \rightarrow \infty} x_{n} = y \in M$, dann folgt: 
 	\begin{align*}
 		d(x, y) & \leq d(x, x_{n}) + d(x_{n}, y) \\
 				& \rightarrow 0 \text{ für } n \rightarrow \infty
 	\end{align*}
 	d.h. $d(x, y) = 0 \Rightarrow x = y$
 \end{bemerkung*}
+
 
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
@@ -38,6 +40,7 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 				\[ x_{n} \rightarrow x \text{ in } M \gdw \exists N \in \MdN \text{ mit } x_{n} = x \hspace{0.25cm} \forall n \geq N \]
 	\end{enumerate}	
 \end{beispiel}
+
 
 \begin{beispiel}  \label{bsp:4.3}
 	\begin{enumerate}[label=\alph*\upshape)]	
@@ -58,6 +61,7 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 	\end{enumerate}
 \end{beispiel}
 
+
 \begin{definition} \label{def:4.4-AbgeschlossenOffen}
 	Sei $(M, d)$ ein metrischer Raum.
 	\begin{enumerate}[label=\alph*\upshape)]
@@ -66,6 +70,7 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 			\[ \{ y \in M: d(x, y) < \epsilon \} \subset U \]
 	\end{enumerate}
 \end{definition}
+
 
 \begin{bemerkung} \label{bem:4.5}
 	\begin{enumerate}[label=\alph*\upshape)] 
@@ -99,7 +104,9 @@ Sei $(x_{n})_{n \geq  1} \subset M$ mit $\lim_{n \rightarrow \infty} x_{n} = x \
 	\end{enumerate}	
 \end{bemerkung}
 
+
 Wir fassen als Nächstes die grundlegenden Eigenschaften offener und abgeschlossener Mengen zusammen.
+
 
 \begin{prop}
 	Sei $(M, d)$ ein metrischer Raum und $I$ eine beliebige Indexmenge
@@ -133,6 +140,7 @@ Wir fassen als Nächstes die grundlegenden Eigenschaften offener und abgeschloss
 	\end{beweis}
 \end{prop}
 
+
 \begin{definition} \label{def:4.7-AbschlussInnereRand}
 	Sei $(M, d)$ ein metrischer Raum und $V \subset M$. Dann hei{\ss}t 
 	\begin{enumerate}[label=\alph*\upshape)]
@@ -142,7 +150,9 @@ Wir fassen als Nächstes die grundlegenden Eigenschaften offener und abgeschloss
 	\end{enumerate}
 \end{definition}
 
+
 Hierfür gelten die folgenden Eigenschaften:
+
 
 \begin{prop} \label{prop:4.8}
 	Sei $(M, d)$ ein metrischer Raum und $V \subset M$
@@ -195,6 +205,7 @@ Hierfür gelten die folgenden Eigenschaften:
 	\end{beweis}
 \end{prop}
 
+
 \begin{definition} \label{def:4.9-DichtSeperabel}
 	Sei $(M, d)$ ein metrischer Raum
 	\begin{enumerate}[label=\alph*\upshape)]
@@ -203,12 +214,14 @@ Hierfür gelten die folgenden Eigenschaften:
 	\end{enumerate}
 \end{definition}
 
+
 \begin{bemerkung}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item All die Begriffe und Bezeichnungen aus \hyperref[def:4.4-AbgeschlossenOffen-abgoff]{Definition 4.4}, \hyperref[bem:4.5]{Bemerkung 4.5}, \hyperref[def:4.7-AbschlussInnereRand]{Definition 4.7} und \hyperref[def:4.9-DichtSeperabel]{Definition 4.9} werden wir auch in normieren Räumen benutzen bzgl. der kanonischen Metrik $d(x, y) = \| x - y\|$
 		\item Sei $(M, d)$ ein metrischer Raum, $U \subset M$. Dann ist auch $(U, d)$ ein metrischer Raum. Für $V \subset U$ muss man dann aber unterscheiden bzgl. Abgeschlossenheit (bzw. Offenheit) von $V$ in $U$ oder in $M$. Man sagt dann, dass $V$ \begriff{relativ offen} bzw. \begriff{relativ abgeschlossen} in $U$ ist.
 	\end{enumerate}	
 \end{bemerkung}
+
 
 \begin{beispiel} \label{bsp:4.11}
 	\begin{enumerate}[label=\alph*\upshape)]
@@ -313,7 +326,9 @@ Hierfür gelten die folgenden Eigenschaften:
 	\end{enumerate}
 \end{beispiel}
 
+
 Schlie{\ss}lich betrachten wir Stetigkeit:
+
 
 \begin{definition}
 	Seien $(M, d_{M}), (N, d_{N})$ metrische Räume. \\
@@ -323,7 +338,9 @@ Schlie{\ss}lich betrachten wir Stetigkeit:
 	Die Abbildung $f$ hei{\ss}t \begriff{stetig} \textbf{auf $M$}, falls $f$ in jedem Punkt von $M$ stetig ist.
 \end{definition}
 
+
 Hierfür gelten folgende Eigenschaften:
+
 
 \begin{prop} \label{prop:4.13}
 	Sei $(K,d_{K}), (M, d_{M})$ und $(N, d_{N})$ metrische Räume und $f: M \rightarrow N, g: K \rightarrow M$. Dann gilt:
@@ -360,6 +377,7 @@ Hierfür gelten folgende Eigenschaften:
 	\end{beweis}
 \end{prop}
 
+
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Sind $(M_{1}, d_{1}$ und $(M_{2}, d_{2})$ metrische Räume, so definiert
@@ -385,5 +403,7 @@ Hierfür gelten folgende Eigenschaften:
 		Nach \hyperref[bsp:1-3.15]{Beispiel 3.15} ist $\psi$ stetig. D.h. ist $A \subset \MdK$ offen (abgeschlossen), so ist $\psi^{-1}(A)$ offen (abgeschlossen) nach \hyperref[prop:4.13]{Proposition 4.13}.
 	\end{enumerate}	
 \end{beispiel}
+
+
 
 \newpage

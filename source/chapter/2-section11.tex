@@ -14,8 +14,8 @@ Frage: Wann ist $P$ beschränkt?
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $X = L^{p}(\MdR), $ $\Omega \subset \MdR: $ $\mu(\Omega) > 0, \mu(\MdR \setminus \Omega) > 0$
-			\[ P f := \mathds{1}_{\Omega} f \Rightarrow P^{2} f = \mathds{1}_{\Omega}^{2} f = \mathds{1}_{\Omega} f = P f \]
-			$\| P f \|_{L^{p}} = \left( \int | \mathds{1}_{\Omega} |^{p} \right)^{\frac{1}{p}} = \left( \int_{\Omega} | f |^{p} \right)^{\frac{1}{p}} \leq \| f \|_{L^{p}}$ $\Rightarrow P$ ist beschränkt.
+			\[ P f := \1_{\Omega} f \Rightarrow P^{2} f = \1_{\Omega}^{2} f = \1_{\Omega} f = P f \]
+			$\| P f \|_{L^{p}} = \left( \int | \1_{\Omega} |^{p} \right)^{\frac{1}{p}} = \left( \int_{\Omega} | f |^{p} \right)^{\frac{1}{p}} \leq \| f \|_{L^{p}}$ $\Rightarrow P$ ist beschränkt.
 		\item $X = L^{p}[0, 1]^{2},$ mit $1 \leq p < \infty, \quad P f(x, y) := \int_{0}^{1} f(s, y) ds$
 			\[ \Rightarrow P^{2} f (x, y) = \int_{0}^{1} \int_{0}^{1} f(s, y) ds dt = \int_{0}^{1} f(s, y) ds = P f(x, y) \]
 			\begin{align*}
@@ -45,7 +45,7 @@ Frage: Wann ist $P$ beschränkt?
 \end{erinnerung}
 
 
-\begin{satz}
+\begin{satz} \label{satz:11.4}
 	Sei $X$ ein Banachraum, $M \subset X$ ein abgeschlossener Untervektorraum. Dann sind folgende Aussagen äquivalent:
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Es gibt eine stetige Projektion $P: X \rightarrow X$ mit $P(X) = M$
@@ -81,7 +81,7 @@ Frage: Wann ist $P$ beschränkt?
 
 \begin{beispiel*}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item $X = L^{p}(\MdR)$ $\Omega \subseteq \MdR,$ $P f = \mathds{1}_{\Omega} f$
+		\item $X = L^{p}(\MdR)$ $\Omega \subseteq \MdR,$ $P f = \1_{\Omega} f$
 			\begin{align*}
 				M & = P(X) = \{ f \in L^{p}(\MdR): f = 0 \text{ fast überall auf } \Omega^{c} \} \\
 				N & = \kernn(f) = \{ f \in L^{p}(\MdR): f = 0 \text{ fast überall auf } \Omega \}

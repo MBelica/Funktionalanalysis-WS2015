@@ -10,12 +10,14 @@
 	$K(X, Y) =$ Raum der linearen, kompakten Operatoren von $X$ nach $Y$.
 \end{vereinbarung}
 
+
 \begin{bemerkung*}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $T \in K(X, Y) \gdw$ jede beschränkte Folge $(x_{n}) \subset X$ besitzt eine Teilfolge $(x_{n_{k}})$ mit $T(x_{n_{k}})$ ist Cauchy-Folge in $Y$.
 		\item $K(X, Y) \subset B(X, Y)$, da die kompakte Menge $\overline{T(U_{X})}$ beschränkt in $Y$ ist.
 	\end{enumerate}	
 \end{bemerkung*}
+
 
 \begin{beispiel*}
 	\begin{enumerate}[label=\alph*\upshape)]
@@ -24,6 +26,7 @@
 			\[ X \xrightarrow[]{T} T(X) \subset Y_{0} \subset Y \text{ mit } \dim Y_{0} < \infty \]	
 	\end{enumerate}			
 \end{beispiel*}
+
 
 \begin{beispiel} \label{bsp:7.2}
 	$X = \ell^{p}, 1 \leq p < \infty.$ $Q_{n} \in B(\ell^{p}): Q_{n}(x_{j}) := (0, \dotsc, 0, x_{n + 1}, x_{n + 2}, \dotsc)$ \\
@@ -56,6 +59,7 @@
 	\end{enumerate}
 \end{beispiel}
 
+
 \begin{beispiel} \label{bsp:7.3}
 	Sei $X = C(\Omega)$, mit $\Omega \subset \MdR^{d}$ kompakt. Für $k : \Omega \times \Omega \rightarrow \MdK$, ist der Integraloperator
 	\[ (Tx)(u) = \int_{\Omega} k(u, v) x(v) dv \quad \text{kompakt.} \]
@@ -75,12 +79,14 @@
 	\end{beweis}
 \end{beispiel}
 
+
 \begin{beispiel} \label{bsp:7.4}
 	$j : C^{1}[0, 1] \hookrightarrow C[0, 1]$, $j$ Inklusion. Dann $j \in K(C^{1}[0, 1], C[0, 1])$.
 	\begin{beweis}
 		$j(U_{C^{1}[0, 1]})$ ist relativ kompakt in $C[0, 1]$ nach \hyperref[]{6.9}. (auch nach \hyperref[satz-6.7-arzelaascoli]{Arzèla-Ascoli}).
 	\end{beweis}
 \end{beispiel}
+
 
 \begin{satz} \label{satz:7-5}
 	Seien $X, Y$ und $Z$ Banachräume.
@@ -111,6 +117,7 @@
 	\end{enumerate}	
 \end{beweis}
 
+
 \begin{kor} \label{kor:7.6}
 	Seien $X, Y$ Banachräume, $T \in B(X, Y)$. \\
 	Falls es endlich dimensionale Operatoren $T_{n} \in B(X, Y)$ gibt, dann ist $T \in K(X, Y)$.
@@ -119,6 +126,7 @@
 	\end{beweis}
 \end{kor}
 
+
 \begin{beispiel*}
 	$X = \ell^{p}, T \in B(\ell^{p})$ ist kompakt $\gdw \| Q_{n} T \| \rightarrow 0$. \\
 	$P_{n} = Id - Q_{n}, P_{n}(x_{j}) = (x_{1}, \dotsc, x_{n}, 0, \dotsc), P_{n}$ endlich dimensional. \\
@@ -126,10 +134,12 @@
 	\[ T \in K(\ell^{p}) \gdw T \text{ ist limes von endlichen Operatoren in der Operatornorm.} \]
 \end{beispiel*}
 
+
 \begin{satz} \label{satz:7.7}
 	Seien $X, Y$ Banachräume und $X$ habe die \begriff{Approximationseigenschaft} (d.h. es existieren endlich dimensionale Operatoren $S_{n} \in B(X): S_{n} x \rightarrow x, \quad \forall x \in X$). \\ \\
 	Dann gilt: $K(X, Y) = \overline{F(X, Y)}$ in der Operatornorm, wobei $F(X, Y) = \{ T \in B(X, Y): \dim T(X) < \infty \}$.
 \end{satz}
+
 \begin{beweis}
 	Für $T \in K(X, Y)$ setze $T_{n} = S_{n} T \in F(X, Y)$. \\
 	Wegen \hyperref[kor:7.6]{7.6} bleibt z.z.: $\| T - T_{n} \| \rightarrow 0$. \\
@@ -141,42 +151,10 @@
 			& \leq \| S_{n} \| \underbrace{\| T x - y_{j} \|}_{\leq \epsilon} + \epsilon + \epsilon \\
 			& \leq \left( \underbrace{\sup_{n} \| S_{n} \|}_{< \infty \text{(beschr.!)}} + 2 \right) \epsilon \\
 			& = \left( c' + 2 \right) \epsilon \quad \text{ für } n \geq n_{0}. \\ \\
-			\Rightarrow \| T_{n} - T \| \leq c \epsilon \quad \text{ für } n \geq n_{0}
+			\Rightarrow \| T_{n} - T \| \leq c \epsilon \quad \text{ für } n \geq n_{0} \text{ und eine Konstante } C.
 	\end{align*}
-	\[  \]
 \end{beweis}
 
-sth missing here % todo missing sth at 7.8: whole rest of chapter
+
 
 \newpage
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	

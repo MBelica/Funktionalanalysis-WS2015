@@ -8,7 +8,7 @@ nn%!TEX root = Funktionalanalysis - Vorlesung.tex
 
 
 
-\begin{satz}[Satz von Baire] \label{satz:9.1-baire}
+\begin{satz}[Satz von Baire] \label{satz:9.1-baire} \index{Baire}
 	Sei $(M, d)$ ein vollständiger metrischer Raum und seien $U_{n}, n \in \MdN$ offen und dicht in $M$.
 	\[ \text{Dann ist } \bigcap_{n \in \MdN} U_{n} \text{ dicht in } M. \]
 \end{satz}
@@ -135,7 +135,11 @@ nn%!TEX root = Funktionalanalysis - Vorlesung.tex
 \end{satz}
 
 \begin{beweis}
-	siehe Werner % todo missing sth at 9.5: add proof	
+	Betrachte die Menge $E_{n} := \{ x \in X: \sup \| T_{i} x \| \leq n\}$. Dann ist $E_{n}$ abgeschlossen, denn $E_{n} = \bigcap_{i \in \MdN} \{ x \in I: \| T_{i} x \| \leq n \}$. Außerdem ist $E_{n}$ symmetrisch, d.h. $x \in E_{n} \gdw -x \in E_{n}$ und konvex, denn für $x_{1}, x_{2} \in E_{n}$ gilt
+		\[ \sup \| T_{i} \left( \frac{1}{2} x_{1} + \frac{1}{2} x_{2} \right) \| \leq \frac{1}{2} \sup \| T_{i} x_{1} \| + \frac{1}{2} \sup \| T_{i} x_{2} \| \leq n \quad \text{also } \frac{1}{2} x_{1} + \frac{1}{2} x_{2} \in E_{n} \]
+		Es gilt $X = \sum_{n = 1}^{\infty} E_{n}$, nach \hyperref[satz:9.1-baire]{Baire} existiert dann ein $N \in \MdN, x \in E_{N}, \epsilon > 0$ mit $K(x, \epsilon) \subset E_{N} \Rightarrow K(-x, \epsilon) \subseteq E_{n}$ \\
+		Sei $z \in X: \| z \| < \epsilon$. $z = \frac{1}{2} (x + z) + \frac{1}{2} (z - x) \in \frac{1}{2} E_{N} + \frac{1}{2} E_{N} \subseteq E_{N}$. 
+		\[ \Rightarrow \sup_{i \in \MdN} \sup_{\| z \| \leq 1} \| T_{i} z \| = \sup_{i \in \MdN} \sup_{\| z \| < \epsilon} \| T_{i} \frac{z}{\epsilon} \| \leq \sup_{i \in \MdN} \sup_{z \in E_{N}} \frac{1}{\epsilon} \| T_{i} z \| \leq \frac{N}{\epsilon} \]	
 \end{beweis}
 
 
@@ -171,5 +175,7 @@ Frage: $T_{n} \xrightarrow[n \rightarrow \infty]{} T$ in $B(x, Y)$? Nein! \\
 	\[ \| T_{k} (x_{n})_{n} - I (x_{n})_{n} \| = \left( \sum_{n = k + q}^{\infty} | x_{n} |^{p} \right)^{\frac{1}{p}} \xrightarrow[n \rightarrow \infty]{} 0 \quad \text{(Identität ist punktweiser Gw.)} \]
 	Aber: $\| T_{k} - I \| \geq \|(T_{k} - I)\underbrace{(0, \dotsc, 0, 1, 0, \dotsc)	}_{1 \text{ an } k+1-\text{ter Stelle}} \|_{\ell^{p}} = 1 \xrightarrow[k \rightarrow \infty]{} 0$
 \end{beispiel*}
+
+
 
 \newpage

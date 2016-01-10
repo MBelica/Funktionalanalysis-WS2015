@@ -1,6 +1,10 @@
 %!TEX root = Funktionalanalysis - Vorlesung.tex
 
+
+
 \section{Kompakte Mengen}
+
+
 
 \begin{definition} \index{kompakt} \index{relativ kompakt}
 	Sei $(M, d)$ ein metrischer Raum. Eine Menge $K \subseteq M$ hei{\ss}t (folgen-)\begriff{kompakt}, falls es in jeder Folge $(x_{n}) \subset M$ eine Teilfolge $(x_{n_{k}})$ und ein $x \in K$ gibt, so dass 
@@ -8,24 +12,28 @@
 		$K \subseteq M$ hei{\ss}t \begriff{relativ kompakt}, falls $\overline{K}$ in $M$ kompakt ist.
 \end{definition}
 
+
 \begin{satz} \label{satz-6.2}
 	Sei $X$ ein normierter Vektorraum. Dann ist
 	\[ \overline{U_{x}} = \{ x \in X: \| x \| \leq 1 \} \]
 	genau dann kompakt, wenn $dim X < \infty$.
 \end{satz}
- 	\begin{beweis}
-		$"\Rightarrow"$ $X \cong \MdK^{d}$, $d = \dim X$, $U_X$ ist abgeschlossen, beschränkt $\xRightarrow[Borell]{Heine-} U_{X}$ ist kompakt. \\ \\
-		$"\Leftarrow"$ Sei $\dim X = \infty$. Wähle $x_1 \in X$ mig $\| x_1 \| = 1$. \\
-		Nach \eqref{lemma:6.3-Riesz} mit $ Y = \overline{span}\{ x_{1} \}$ finde zu $\delta = \frac{1}{2}$ ein $x_{2} \in X, \| x_{2} \| = 1$ und $\| x_{2} - x_{1} \| \geq \frac{1}{2}$ \\
-		Wieder nach \eqref{lemma:6.3-Riesz} mit $ Y = \overline{span}\{ x_{1}, x_{2} \}$ finde zu $\delta = \frac{1}{2}$ ein $x_{3} \in X, \| x_{3} \| = 1$ und $\| x_{3} - x_{j} \| \geq \frac{1}{2}$ für $j = 1, 2$ \\
-		Induktiv erhält man eine Folge $x_{i} \in X$ mit $\| x_{i} \| = 1$ und $\| x_{i} - x_{j} \| \geq \frac{1}{2}$ für $j = 1, \dotsc, i - 1$.
-		Dieses Folge $(x_{i})_{i \geq 1}$ hat keine Teilfolge, die eine Cauchy-Folge ist und demnach ist $U_{X}$ nicht relativ kompakt in $X$. 
-	\end{beweis}
+ 
+\begin{beweis}
+	$"\Rightarrow"$ $X \cong \MdK^{d}$, $d = \dim X$, $U_X$ ist abgeschlossen, beschränkt $\xRightarrow[Borell]{Heine-} U_{X}$ ist kompakt. \\ \\
+	$"\Leftarrow"$ Sei $\dim X = \infty$. Wähle $x_1 \in X$ mig $\| x_1 \| = 1$. \\
+	Nach \eqref{lemma:6.3-Riesz} mit $ Y = \overline{span}\{ x_{1} \}$ finde zu $\delta = \frac{1}{2}$ ein $x_{2} \in X, \| x_{2} \| = 1$ und $\| x_{2} - x_{1} \| \geq \frac{1}{2}$ \\
+	Wieder nach \eqref{lemma:6.3-Riesz} mit $ Y = \overline{span}\{ x_{1}, x_{2} \}$ finde zu $\delta = \frac{1}{2}$ ein $x_{3} \in X, \| x_{3} \| = 1$ und $\| x_{3} - x_{j} \| \geq \frac{1}{2}$ für $j = 1, 2$ \\
+	Induktiv erhält man eine Folge $x_{i} \in X$ mit $\| x_{i} \| = 1$ und $\| x_{i} - x_{j} \| \geq \frac{1}{2}$ für $j = 1, \dotsc, i - 1$.
+	Dieses Folge $(x_{i})_{i \geq 1}$ hat keine Teilfolge, die eine Cauchy-Folge ist und demnach ist $U_{X}$ nicht relativ kompakt in $X$. 
+\end{beweis}
+
 
 \begin{lemma}[Riesz] \label{lemma:6.3-Riesz} \index{Riesz}
 	Sei $Y$ ein abgeschlossener Teilraum von $X$ und $X \neq Y$. Zu $\delta \in (0, 1)$ existiert ein $x_{\delta} \in X \setminus Y$, sodass
 	\[ \| x \| = 1, \quad \| x_{\delta} - y\| \geq 1 - \delta \quad \text{ für alle } y \in Y \]
 \end{lemma}
+
 \begin{beweis}
 	Sei $x \in X \setminus Y$ und $d := \inf \{ \| x - y \|: y \in Y \} > 0$, da $Y$ ein abgeschlossener Teilraum ist. \\
 	Da $ d < \frac{d}{1 - \delta}$ gibt es ein $y_{\delta} \in Y$ mit $\| x - y_{\delta} \| < \frac{d}{1 -  \delta}$. \\ 
@@ -38,15 +46,18 @@
 	\end{align*}
 \end{beweis}
 
+
 \begin{beispiel} \label{bsp:6.4}
 	Sei $X = \ell^{p}$ für $1 \leq p < \infty$ gilt: \\
 	$M \subset \ell^{p}$ ist kompakt genau dann, wenn
 	\[ \sup \{ \sum_{ n = 1}^{\infty} |x_{n}|^{p} : x = (x_{m}) \in M \} \xrightarrow[k \rightarrow \infty]{} 0 \]	
 	(Kompakte Mengen lassen sich gut durch endliche Mengen approximieren)
 \end{beispiel}
+
 \begin{beweis}
 	siehe Übung.	
 \end{beweis}
+
 
 \begin{satz} \label{satz:6.5}
 	Sei $(M, d)$ ein metrischer Raum . Für $k \subset M$ sind folgende Aussagen äquivalent:
@@ -61,6 +72,7 @@
 			\[ K \subset \bigcup_{k = 1}^{m} U_{j_{k}} \]
 	\end{enumerate}
 \end{satz}
+
 \begin{beweis}
 	$a) \Rightarrow  b)$ (indirekt) \\
 	Angenommen $b)$ ist falsch. Dann gibt es ein $\epsilon > 0$, so dass für alle $x_{1}, \dotsc, x_{n}, n \in \MdN$ gilt:
@@ -102,19 +114,20 @@
 		\item Jede kompakte Menge in $M$ ist seperabel.
 		\item Eine kompakte Teilmenge eines normierten Raums ist beschränkt.
 	\end{enumerate}
-	\begin{beweis}
-		\begin{enumerate}[label=\alph*\upshape)]
-			\item siehe \hyperref[satz:6.5b]{6.5 b)}
-			\item Nach Definition
-			\item Nach \hyperref[satz:6.5b]{6.5 b)} gibt es zu $n \in \MdN$ eine endliche Menge $L_{n}$ mit:
-				\[ \inf{\| y - x \| : x \in L_{n}} \leq \frac{1}{n} \text{ für alle } x \in K. \]
-				Dann ist $L = \bigcup_{n \geq 1} L_{n}$ abzählbar und $L$ ist dicht in $K$ (d.h. $\overline{L} = K$), also ist $K$ seperabel.
-			\item Falls $K$ unbeschränkt ist, dann gibt es $x_{n} \in K$ mit $\|x_{n}\| \geq n, n \in \MdN$. \\
-				$(x_{n})$ kann dann keine konvergente Teilfolge besitzen.
-		\end{enumerate}
-	\end{beweis}
-
 \end{prop}
+
+\begin{beweis}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item siehe \hyperref[satz:6.5b]{6.5 b)}
+		\item Nach Definition
+		\item Nach \hyperref[satz:6.5b]{6.5 b)} gibt es zu $n \in \MdN$ eine endliche Menge $L_{n}$ mit:
+			\[ \inf{\| y - x \| : x \in L_{n}} \leq \frac{1}{n} \text{ für alle } x \in K. \]
+			Dann ist $L = \bigcup_{n \geq 1} L_{n}$ abzählbar und $L$ ist dicht in $K$ (d.h. $\overline{L} = K$), also ist $K$ seperabel.
+		\item Falls $K$ unbeschränkt ist, dann gibt es $x_{n} \in K$ mit $\|x_{n}\| \geq n, n \in \MdN$. \\
+			$(x_{n})$ kann dann keine konvergente Teilfolge besitzen.
+	\end{enumerate}
+\end{beweis}
+
 
 \begin{satz}[Arzelà-Ascoli] \index{Arzelà-Ascoli} \label{satz:6.7-ArzelaAscoli}
 	Sei $(S, d)$ ein kompakter, metrischer Raum
@@ -127,6 +140,7 @@
 				\[ \forall \epsilon > 0 \text{ } \exists \delta > 0 \text{ } \forall x \in M: d(s, t) < \delta \Rightarrow | x(s) - x(t) | < \epsilon \]
 		\end{enumerate}
 \end{satz}
+
 \begin{beweis}
 	$"\Rightarrow"$ Sei $M$ kompakt $\Rightarrow$ a,b) nach \hyperref[prop:6.6]{6.6} \\
 	z.z. $M$ ist gleichgradig stetig: \\
@@ -153,39 +167,42 @@
 	Dann gilt ebenfalls für $i, j \geq i_{0}, s \in S$: \\
 	\[ | x_{j}(s) - x_{i}(s) | \leq \underbrace{| x(t) - x_{i}(s) |}_{\overset{\leq \epsilon}{\text{(wg. glgrd. Stetigkeit)}}} + \underbrace{| x_{j}(s_{k}) - x_{i}(s_{k}) |}_{\leq \epsilon} + \underbrace{| x_{i}(s_{k}) - x_{i}(s) |}_{\overset{\leq \epsilon}{\text{(wg. glgrd. Stetigkeit)}}} \leq 3 \epsilon \]
 	\[ \Rightarrow \| x_{j} - x_{i}\|_{\infty} \leq 3 \epsilon \text{ d. h. } x_{j} \text{ ist eine Cauchy-Folge in } C(S). \]
-	\[ \Rightarrow x = \lim_{j \rightarrow \infty} x_{j} \text{ existiert mit } x \in M \]
+	\[ \Rightarrow \text{Da } C(S) \text{ vollständig ist und } M \text{ abgeschlossen, existiert } x = \lim_{j \rightarrow \infty} x_{j} \text{ mit } x \in M \]
 \end{beweis}
 
-something is missing here % todo missing sth at 6.8: whole rest of chapter
+
+\begin{beispiel}
+	$K = \{ d \in C^{1}[0, 1]: \| f' \|_{\infty} \leq 1, | f(0) | \leq 1 \}$ \\
+	$K$ ist nicht kompakt in $C^{1}[0, 1]$, aber $K$ ist kompakt in $C[0, 1]$.	
+\end{beispiel}
+
+\begin{beweis}
+	$U_{C^{1}[0, 1]} \subset K$ ist nicht kompakt, da $\dim C^{1}[0, 1] = \infty$ nach \hyperref[satz:6.2]{6.2}. Aber $K \subseteq C[0, 1]$ ist kompakt nach \hyperref[satz:6.7-ArzelaAscoli]{6.7}, denn 
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $f \in K: f(t) = f(0) + \int_{0}^{t} f'(u) du \rightarrow |f(t) \leq |f(0)| + \| f' \|_{\infty}$
+		\item $K$ ist abgeschlossen nach Definition
+		\item $f \in K, s < t \in [0, 1]: |f(s) - f(t)| = | \int_{s}^{t} f'(u) du | \leq |t-s| \|f'\|_{\infty} \leq | t - s| < \epsilon$ für $\delta = \epsilon$
+	\end{enumerate}
+\end{beweis}
+
+
+\begin{kor}
+	Sei $X$ ein Banachraum. Für $K \subseteq X$ sind äquivalent
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $K$ relativ kompakt (d.h. $\overline{K}$ ist kompakt)
+		\item Jede Folge $(x_{k}) \subseteq K$ hat eine Cauchy-Teilfolge
+		\item $\forall \epsilon > 0$ $\exists y_{1}, \dotsc, y_{m} \in K$ mit $K \subseteq K(y_{1}, \epsilon) \cup \dotsc \cup K(y_{m}, \epsilon)$
+	\end{enumerate}
+\end{kor}
+
+\begin{beweis}
+	$"a) \Rightarrow b)"$ und $"a) \Rightarrow c)"$ klar nach \hyperref[satz:6.5]{6.5}. \\ \\
+	$"b) \Rightarrow a)"$ Sei $(x_{n} \subseteq K$ mit einer Cauchy-Teilfolge $(x_{n_{k}})$. \\
+		\[ \text{Da } X \text{ vollständig ist, existiert } \lim_{n \rightarrow \infty} x_{n_{k}} = x \in X \Rightarrow x \in \overline{K} \Rightarrow \overline{K} \text{ kompakt.} \]
+	$"c) \Rightarrow a)"$ Da $X$ vollständig ist, ist $\overline{K}$ vollständig. Zu $\epsilon > 0$ wähle $y_{1}, \dotsc, y_{m} \in K$ mit 
+		\[ K \subseteq \bigcup_{j = 1}^{m} K(y_{j}, \epsilon) \Rightarrow \overline{K} \subseteq \bigcup_{j = 1}^{m} \overline{K(y_{j}, \epsilon)} \subseteq \bigcup_{j = 1}^{m} K(y_{j}, 2\epsilon) \]
+\end{beweis}
+
+
+
 \newpage
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	

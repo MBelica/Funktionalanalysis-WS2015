@@ -40,12 +40,22 @@
 \end{satz}
 
 \begin{beweis}
-	$"\Rightarrow":$ Nach \hyperref[lemma:10.2]{Lemma 10.2} $\exists \epsilon > 0: K_{Y}(0, \epsilon) \subset T(K_{X}(0, 1)) $
+	$"\Leftarrow":$ Nach \hyperref[lemma:10.2]{Lemma 10.2} $\exists \epsilon > 0: K_{Y}(0, \epsilon) \subset T(K_{X}(0, 1)) $
 	\begin{align*}
 		& \Rightarrow K_{Y}(0, R) \subset T(K_{X}(0, \frac{R}{\epsilon})) \quad \forall R > 0 \\
 		& \Rightarrow Y \subset T(X)
 	\end{align*}
-	$"\Leftarrow":$ siehe Werner (S. 154f). % todo: missing sth at 10.3: add proof
+	$"\Rightarrow":$ Behauptung: $\exists \epsilon > 0: K_{y}(0, \epsilon) \subseteq \overline{T(K_{X}(0,1))}$. \\
+	Beweis: Definiere $E_{n} := \overline{T(K_{X}(0, n))}$, dann ist $E_{n}$ abgeschlossen, symmetrisch und konvex, da Kugeln um $0$ symmetrisch und konvex sind und $T$ linear ist. \\
+	Nach Voraussetzung ist $Y = \bigcup_{n = 1}^{\infty} E_{n}$, mit \hyperref[satz:9.1-baire]{Baire} folgt $\exists N \in \MdN, y \in E_{N}, \hat \epsilon > 0: K(y, \hat \epsilon) \subseteq E_{N}$. Sei $z \in Y$ mit $\| z \| < \hat \epsilon$ und $z = \frac{1}{2} (z + y) + \frac{1}{2} (z - y) \in E_{N}$
+		\[ \Rightarrow K_{Y}(0, \hat \epsilon) \subseteq \overline{T(K_{X}(0, N))} \Rightarrow K_{Y}(0, \frac{\hat \epsilon}{N}) \subseteq \overline{T(K_{X}(0, 1))} \quad \Rightarrow \quad \text{Behauptung mit } \epsilon = \frac{\hat \epsilon}{N}  \]
+		Behauptung: $\exists \delta > 0: K_{Y}(0, \delta) \subseteq T(K_{X}(0, 1))$ \\
+		Beweis: Wenn $\hat y \in K_{Y}(0, \epsilon)$ gibt es ein $\hat x \in K_{X}(0, 1)$ mit $\| \hat y - T \hat x \| \leq \frac{\epsilon}{2}$. \\
+		Au{\ss}erdem ist $2 (\hat y - T \hat x) \subset K_{Y}(0, \epsilon)$. Induktiv wählen wir auf diese Art zu $y \in K_{Y}(0, \epsilon): y_{0} = y, y_{k + 1} = 2 ( y_{k} - T x_{k})$ für $k \in \MdN$. \\
+		Es gilt $(y_{k}) \subseteq K_{Y}(0, \epsilon)$ und $(x_{k}) \subseteq K_{X}(0, 1)$, damit folgt
+		\[ T \left( \sum_{k = 0}^{N} 2^{-K} x_{k} \right) = \sum_{k = 0}^{N} 2^{-k} y_{k} - 2^{-(k+1)} y_{k+1} = y_{0} 2^{0} - 2^{-(N+1)} y_{N+1} \quad (*) \label{eq:10.3.5} \]
+		Wegen $\| \sum_{k = 0}^{N} 2^{-k} x_{k} \| \leq \sum_{k = 0}^{N} 2^{-k} \leq 2$ ist $\left( \sum_{k = 0}^{N} x_{k} \right)_{N}$ eine Cauchy-Folge mit Grenzwert $x \in K_{X}(0, 2) \subseteq X \xRightarrow[]{\hyperref[eq:10.3.5]{(*)}} T(x) = \lim_{N \rightarrow \infty} y - 2^{-(N+1)} y_{N+1} = y$. 
+		\[ K_{Y} \left( 0, \epsilon \right) \subseteq T \left( K_{X}(0, 2) \right) \Rightarrow K_{Y} \left( 0, \frac{\epsilon}{2} \right) \subseteq T \left( K_{X}(0, 1) \right) \quad \Rightarrow \quad \text{Behauptung für } \delta = \frac{\epsilon}{2} \]
 \end{beweis}
 
 

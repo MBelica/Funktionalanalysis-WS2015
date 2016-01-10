@@ -7,9 +7,11 @@
 	\[ c := \sup_{x \in V} \| x \| < \infty, \text{ und damit auch } V \subset c U_{(X, \| \cdot \| )} . \]
 \end{definition}
 
+
 \begin{bemerkung}
-Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, denn $x_{m} \in \{ y: \| x - y \| \leq 1 \}$ für fast alle $m$.
+	Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, denn $x_{m} \in \{ y: \| x - y \| \leq 1 \}$ für fast alle $m$.
 \end{bemerkung}
+
 
 \begin{satz}
 	Seien $X$, $Y$ normierte Räume. Für einen linearen Operator $S: X \rightarrow Y$ sind äquivalent:
@@ -20,6 +22,7 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
 		\item Es gibt ein $c < \infty$ mit $\| Tx \| \leq c \| x \|$
 	\end{enumerate}	
 \end{satz}
+
 \begin{beweis}
 	\begin{description}
 		\item[] $a) \Rightarrow b)$ klar, ist ein Spezialfall.
@@ -46,6 +49,7 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
 	\end{description}
 \end{beweis}
 	
+	
 \begin{definition}
 	Seien $X, Y$ normierte Räume. Mit $B(X, Y)$ bezeichnen wir den \begriff{Vektorraum der beschränkten, linearen Operatoren} $T: X \rightarrow Y$. Ist $ X = Y$ schreiben wir auch kurz $B(X) := B(X, X)$. \\
 	
@@ -57,10 +61,12 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
 	Die Norm $\| T \|$ von $T$ ist die kleinste Konstante $c$, für welche die Gleichung $\| Tx \| \leq c \| x \|$ für alle $x \in X$ gilt.
 \end{definition}
 
+
 \begin{satz}
  	$(B(X, Y), \| \cdot \|)$ ist ebenfalls ein normierter Raum und für $X = Y$ gilt für $S, T \in B(X)$:
  	\[ \| S \cdotp T \| \leq \| S \| \| T \| \]
 \end{satz}
+
 \begin{beweis}
 	$\| T \| \geq 0, \hspace{0.15cm} \| T \| = 0 \hspace{0.15cm} \Rightarrow \| Tx \| = 0$ für $\| x \| \leq 1 \hspace{0.15cm} \Rightarrow \hspace{0.15cm} Tx = 0 \hspace{0.15cm} \Rightarrow \hspace{0.15cm} T = 0$ \\
 	\begin{align*}
@@ -102,6 +108,7 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
 	\end{enumerate}	
 \end{beispiel}
 
+
 \begin{beispiel}[Integraloperator] \index{Integraloperator}
 	$X = Y = C(\bar \Omega), \Omega \subset \MdR^{n}$ offen, beschränkt.
 	Gegeben sei $k \in \bar \Omega \times \bar \Omega \rightarrow \MdR $
@@ -122,14 +129,15 @@ Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, den
 	Die Abbildung $u \in \bar \Omega \rightarrow \int |k(u, v)| dv \in \MdR$ ist stetig nach dem Konvergenzsatz von Lebesgue. \\
 	\begin{beweis}
 		$ "\ \leq "\ $ ist klar \\
-		$ "\ \geq "\ $ Falls $ k(u, v) \geq 0$ dann ist $T \cdot \mathds{1} (u) = \int k(u, v) dv = \int |k(u, v)| dv$ \\
-		\[ \| T \cdot \mathds{1} \| = \sup_{u \in \Omega} \int |k(u, v)| dv \leq \| T \| \text{, d.h. } \| \mathds{1} \| = 1 \]
+		$ "\ \geq "\ $ Falls $ k(u, v) \geq 0$ dann ist $T \cdot \1 (u) = \int k(u, v) dv = \int |k(u, v)| dv$ \\
+		\[ \| T \cdot \1 \| = \sup_{u \in \Omega} \int |k(u, v)| dv \leq \| T \| \text{, d.h. } \| \1 \| = 1 \]
 		Skizze:
 		\[ \sup \int | k(u, v) | dv \sim \int | k(u_{0}, v) | dv = \int k(u_{0}, v) g(v) dv \]
 		mit $g(v) = sign(v) k(u_{0}, v), \hspace{0.25cm} g$ ist aber nicht stetig. \\
 		Ggf. Approximation des Signums durch stetige Funktionen.
 	\end{beweis}
 \end{beispiel}
+
 
 \begin{beispiel}[Kompositionsoperator] \index{Kompositionsoperator}
 $\Omega \subset \MdR^{n}$ offen. 
@@ -139,27 +147,23 @@ z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 \end{beispiel}
 
 \begin{beispiel}[Differentialoperatoren] \index{Differentialoperatoren}
-$\Omega \subset \MdR^n$ offen, $m \in \MdN$, $X = C^{m}(\bar \Omega), Y = C_{b}(\Omega),$
-\begin{align*}
-T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\alpha} f(u), u \in \MdR, a_{\alpha} \in C{\bar \Omega} \\
-  \text{damit } & \| Tf \|_{\infty} \leq \sum_{|\alpha| \leq m} \| a_{\alpha} \|_{\infty} \| D^{\alpha} f \|_{\infty} \leq c \|f\|_{\infty}
- \end{align*}
+	$\Omega \subset \MdR^n$ offen, $m \in \MdN$, $X = C^{m}(\bar \Omega), Y = C_{b}(\Omega),$
+	\begin{align*}
+		T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\alpha} f(u), u \in \MdR, a_{\alpha} \in C{\bar \Omega} \\
+  		\text{damit } & \| Tf \|_{\infty} \leq \sum_{|\alpha| \leq m} \| a_{\alpha} \|_{\infty} \| D^{\alpha} f \|_{\infty} \leq c \|f\|_{\infty}	
+  	\end{align*}
 \end{beispiel}
 
 \begin{beispiel}[Matrizenmultiplikation] \index{Matrizenmultiplikation}
-Für $p \in [1, \infty]$ und $T \in B(\ell^{p})$ setzen wir 
-\[ e_{l} := (0, \dotsc, 0, 1, 0, \dotsc), \hspace{0.25cm} l \in \MdN, \hspace{0.25cm} \text{ wobei die 1 an l-ter Stelle steht.} \]
-und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
-\[
-	\Rightarrow (Tx)_{k} = (\sum_{l = 1}^{\infty} x_{l} T e_{l})_{k} = \sum_{ l = 1}^{\infty} a_{kl}k_{l}, \hspace{0.25cm} k \in \MdN \\
-	\Rightarrow T x = A x \text{ (unendliches Matrixprodukt)}
-\]
-
- \begin{enumerate}[label=\alph*\upshape)]
-	\item Die Hille-Tamarkin-Bedingung (nur hinreichend) \\
-		Sei $p \in (1, \infty)$ und $\frac{1}{p} + \frac{1}{q} = 1$. Setze
-		\[ c := \left( \sum_{k \geq 1} \left( \sum_{l \geq 1} |a_{kl}|^{q} \right)^{\frac{p}{q}} \right)^{\frac{1}{p}} < \infty \]
-		so definiert $T$ einen Operator $T \in B(\ell^{p})$ mit $\| T \| \leq c$ 
+	Für $p \in [1, \infty]$ und $T \in B(\ell^{p})$ setzen wir 
+	\[ e_{l} := (0, \dotsc, 0, 1, 0, \dotsc), \hspace{0.25cm} l \in \MdN, \hspace{0.25cm} \text{ wobei die 1 an l-ter Stelle steht.} \]
+	und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
+	\[ \Rightarrow (Tx)_{k} = (\sum_{l = 1}^{\infty} x_{l} T e_{l})_{k} = \sum_{ l = 1}^{\infty} a_{kl}k_{l}, \hspace{0.25cm} k \in \MdN \quad \Rightarrow \quad T x = A x \text{ (unendliches Matrixprodukt)} \]
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Die Hille-Tamarkin-Bedingung (nur hinreichend) \\
+			Sei $p \in (1, \infty)$ und $\frac{1}{p} + \frac{1}{q} = 1$. Setze
+			\[ c := \left( \sum_{k \geq 1} \left( \sum_{l \geq 1} |a_{kl}|^{q} \right)^{\frac{p}{q}} \right)^{\frac{1}{p}} < \infty \]
+			so definiert $T$ einen Operator $T \in B(\ell^{p})$ mit $\| T \| \leq c$ 
 		\begin{beweis}
 			\begin{enumerate}
 				\item Wohldefiniertheit: (und Beschränktheit)  \\
@@ -239,6 +243,7 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 	\end{enumerate}
 \end{definition}
 
+
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Seien $(X, \| \cdot \|_{1})$ und $(X, \| \cdot \|_{2})$ normierte Vektorräume. Dann gilt
@@ -247,10 +252,11 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 	\end{enumerate}
 \end{beispiel}
 
-\begin{definition}
- Sei $X$ ein normierter Vektorraum. Der Raum
- \[ X' = B(X, \MdK) \]	
- hei{\ss}t \begriff{Dualraum} von $X$ oder Raum der linearen Funktionalen.
+
+\begin{definition}	
+	Sei $X$ ein normierter Vektorraum. Der Raum
+ 		\[ X' = B(X, \MdK) \]	
+ 	hei{\ss}t \begriff{Dualraum} von $X$ oder Raum der linearen Funktionalen.
 \end{definition}
 
 \begin{beispiel}
@@ -296,15 +302,17 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 	\end{beweis}
 \end{beispiel}
 
+
 \begin{bemerkung*}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Analog zu obigem zeigt man $(\ell^{1})' \cong \ell^{\infty}$ und $(c_{0})' \cong \ell^{1}$
-		\item Eine ähnliche Aussage gilt auch für $L^{p}$-Räume auf einem Ma{\ss}raum $(\Omega, \mathcal{A}, \mu):$
+		\item Eine ähnliche Aussage gilt auch für $L^{p}$-Räume auf einem Ma{\ss}raum $(\Omega, \ca, \mu):$
 			Hier gilt:
 			\[ L^{p}(\Omega, \mu)' \cong L^{q}(\Omega, \mu) \]
 			bezüglich der Dualität $[\Phi_{p}(f)](g) (= \langle f, g \rangle ) = \int_{\Omega} f(x) g(x) d\mu(x)$ wobei $p \in [1, \infty),$ $\frac{1}{p} + \frac{1}{q} = 1$
 	\end{enumerate}	
 \end{bemerkung*}
+
 
 \begin{beispiel} \label{bsp:3.15}
 	\begin{enumerate}[label=\alph*\upshape)]
@@ -313,7 +321,7 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 			Wir versetzen $C(K)$ mit der Supremumsnorm. Dann gilt:
 			\[ |\delta_{x}(f)| = | f(x) | \leq \| f \|_{\infty} \]
 			und offensichtlich ist $\delta_{x}$ linear, d.h. $\delta_{x} \in ( C(K) )'$ mit $\| \delta_{x} \| \leq 1$.
-		\item Sei $K \subset \MdR^{n}$ kompakt und $\mu$ ein endliches Ma{\ss} auf $\mathcal{B}(K)$. Dann definieren wir 
+		\item Sei $K \subset \MdR^{n}$ kompakt und $\mu$ ein endliches Ma{\ss} auf $\cb(K)$. Dann definieren wir 
 			\[ \delta_{\mu}(f) = \int_{K} f(x) d\mu(x) \text{ für } f \in C(K) \]
 			Dann gilt
 			\[ | \delta_{\mu} (f) | \leq \mu(K) \| f \| _{\infty}. \]
@@ -321,41 +329,12 @@ und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 	\end{enumerate}	
 \end{beispiel}
 
+
 \begin{bemerkung}
 	Man kann zeigen, dass $(C(K))' \cong M(K)$, wobei $M(K)$ die Menge der 'regulären' Borelma{\ss}e versehen mit der Variationsnorm ist. Die Dualität ist gegeben durch
 	\[ (T \mu)(f) = \int_{K} f(x) d\mu(x) \]
 \end{bemerkung}
 
+
+
 \newpage
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

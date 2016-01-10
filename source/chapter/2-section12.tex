@@ -22,7 +22,7 @@ $A: D(A) \rightarrow X$ linear
 		\item $X = L	^{p}[0, 1],$ $B x(t) = \frac{1}{t} x(t)$.
 			\[ D(B) = \{ x \in L^{p}([0, 1]): \exists \epsilon(x), x = 0 \text{ fast überall auf } [0, \epsilon] \}\]
 			$B$ bildet nach $X$ ab, denn $\| B x \|_{L^{p}} = \left( \int_{\epsilon}^{1} t^{-p} |x(t)|^{p} dt \right)^{\frac{1}{p}} \leq \frac{1}{\epsilon(x)} \| x \|_{L^{p}}$ \\ \\
-			z.B.: $x_{\lambda} = \mathds{1}_{[\frac{1}{\lambda}, 1]} \Rightarrow \| x_{\lambda}\|_{L^{p}} = \left( \int_{\frac{1}{\lambda}}^{1} |x_{\lambda}(t)|^{p} dt \right)^{\frac{1}{p}} = \left( \int_{\frac{1}{\lambda}}^{1} dt \right)^{\frac{1}{p}} < 1$
+			z.B.: $x_{\lambda} = \1_{[\frac{1}{\lambda}, 1]} \Rightarrow \| x_{\lambda}\|_{L^{p}} = \left( \int_{\frac{1}{\lambda}}^{1} |x_{\lambda}(t)|^{p} dt \right)^{\frac{1}{p}} = \left( \int_{\frac{1}{\lambda}}^{1} dt \right)^{\frac{1}{p}} < 1$
 			\[ \| B x_{\lambda} \| = \left( \int_{\frac{1}{\lambda}}^{1} t^{-p} dt \right) \xrightarrow[]{\lambda \rightarrow \infty} \infty \]
 			$\Rightarrow B$ ist unbeschränkt auf $D(B)$.
 	\end{enumerate}
@@ -47,7 +47,7 @@ Beobachtung:
 	Es sind äquivalent
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\left( D(A), \| \cdot \|_{A} \right)$ ist ein Banachraum
-		\item $\operatorname{graph}(A) = \{ (x, A x): x \in D(A) \} \subset X \times X$ ist abgeschlossen
+		\item $\ograph(A) = \{ (x, A x): x \in D(A) \} \subset X \times X$ ist abgeschlossen
 		\item Wenn $(x_{n})_{n} \subset D(A): \begin{cases}
 			x_{n} \xrightarrow[]{n \rightarrow \infty} x & \text{ in } X \\ A x_{n} \xrightarrow[]{n \rightarrow \infty} y & \text{ in } X \end{cases}$, $ $ so ist $x \in D(A), A x = y$
 	\end{enumerate}
@@ -55,11 +55,11 @@ Beobachtung:
 
 \begin{beweis}
 	$a) \Rightarrow b)$ $J: D(A) \rightarrow X \times X, J(x) = (x, Ax)$. Dann gilt
-		\[ \| (x, Ax) \|_{X \times X} = \| x \| + \| A x \| = \| x \|_{A} \Rightarrow J \text{ ist Isometrie (erhält Vollständigkeit)} \]
-		$\Rightarrow \operatorname{graph}(A) = \bild(J)$ ist vollständig $\Rightarrow \operatorname{graph}(A)$ ist abgeschlossen. \\ \\
+		\[ \| (x, Ax) \|_{X \times X} = \| x \| + \| A x \| = \| x \|_{A} \Rightarrow J \text{ ist Isometrie (erhält Vollständigkeit)}  \]
+		$\Rightarrow \ograph(A) = \bild(J)$ ist vollständig $\Rightarrow \ograph(A)$ ist abgeschlossen. \\ \\
 	$b) \Rightarrow c)$ Sei $(x_{n})_{n} \subset D(A)$ mit $x_{n} \xrightarrow[]{n \rightarrow \infty} x$ und $Ax_{n} \xrightarrow[]{n \rightarrow \infty} y$ in $X$.
 		\[ \Rightarrow (x_{n}, A x_{n}) \xrightarrow[]{n \rightarrow \infty} (x, y) \text{ in } X \times X \]
-		$\xRightarrow[]{A \text{abg.}} (x, y) \in \operatorname{graph}(A) \Rightarrow x \in D(A), Ax = y$. \\ \\
+		$\xRightarrow[]{A \text{abg.}} (x, y) \in \ograph(A) \Rightarrow x \in D(A), Ax = y$. \\ \\
 	$c) \Rightarrow a)$ Sei $(x_{n})_{n}$ eine Cauchy-Folge in $D(A)$. Es folgt, dass $(x_{n})_{n}$ und $(A x_{n})_{n}$ auch Cauchy-Folgen in X sind. \\
 	Da $X$ vollständig ist folgt, dass  $\exists x, y \in X$ mit $x_{n} \xrightarrow[]{n \rightarrow \infty} x$ und $A x_{n} \xrightarrow[]{n \rightarrow \infty} y$ \\
 	\[ \xRightarrow[]{c)} x \in D(A) \text{ und } A x = y \Rightarrow \|x_{n} - x \|_{A} = \| x - x_{n} \| + \| y - A x_{n} \| \xrightarrow[]{n \rightarrow \infty} 0 \]
@@ -85,7 +85,7 @@ Beobachtung:
 
 \begin{beweis}
 	$(X, \| \cdot \|_{A})$ und $(X, \| \cdot \|)$ sind Banachräume. Au{\ss}erdem gilt $\| x \|_{X} \leq \| x \|_{A}$ $\forall x \in X$ \\
-	\[ \xRightarrow[]{10.6} \exists c > 0: \| x \|_{A} \leq c \| x \| \forall x \in X \] % todo: check at 12.6.5: it refers to 10.6 but that is missing in my notes
+	\[ \xRightarrow[]{\hyperref[kor:10.5]{10.5}} \exists c > 0: \| x \|_{A} \leq c \| x \| \forall x \in X \]
 	$\Rightarrow \| x \| + \| A x \| \leq c \| x \|$ $x \in X $ $\Rightarrow \| A x \| \leq c \| x \|$ $x \in X \Rightarrow A$ stetig. 
 \end{beweis}
 

@@ -1,6 +1,10 @@
 %!TEX root = Funktionalanalysis - Vorlesung.tex
 
+
+
 \section{Vollst{\"a}ndigkeit}
+
+
 
 \begin{definition}
 	Sei $(M, d)$ ein metrischer Raum.
@@ -12,6 +16,7 @@
 		\item Ein normierter Raum $(X, \| \cdot \|)$, der vollständig ist bezüglich $d(x, y) = \| x - y \|$ heißt \begriff{Banachraum}.
 	\end{enumerate}
 \end{definition}
+
 
 \begin{bemerkung}
 	\begin{enumerate}[label=\alph*\upshape)]
@@ -28,11 +33,13 @@
 	\end{enumerate}	
 \end{bemerkung}
 
+
 \begin{prop}
 	Sei $X$ ein metrischer Raum, $Y$ ei Banachraum.
 	\[ C(x, Y) = \{ f : X \rightarrow Y: f \text{ stetig} \}, \quad \| f \|_{\infty} = \sup_{x \in X} \| f(x) \|_{Y} \]
 	Dann ist $C(X, Y)$ ein (linearer) Banachraum.
 \end{prop}
+
 
 \begin{beispiel*}
 	$\Omega \subseteq \MdR^{n}, \quad C(\Omega, \MdR)$
@@ -51,6 +58,7 @@
 		 $f \in C(X, Y)$, da der gleichmä{\ss}ige Limes stetiger Funktionen stetig ist.
 	\end{beweis}
 \end{beispiel*}
+
 
 \begin{beispiel}
 	Sei $\Omega \subseteq \MdR^{n}$ offen und beschränkt. $C^{m}(\bar \Omega)$ ist vollständig bezüglich der Supremums-Norm.	
@@ -81,6 +89,7 @@
 	\end{beweis}
 \end{beispiel}
 
+
 \begin{bemerkung}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\| \cdot \|_{1}, \| \cdot \|_{2}$ seien äquivalente Normen auf $X$. Ist $X$ bezüglich $\| \cdot \|_{1}$, so auch bezüglich $\| \cdot \|_{2}$.
@@ -97,12 +106,12 @@
 \end{bemerkung}
 
 
-
 \begin{satz}
 	Sei $X$ ein normiert Raum, $Y$ ein Banachraum.
 	Dann ist $B(X, Y)$ mit der Operatornorm vollständig. \\
 	Insbesondere: $X' = B(X, \MdK)$ ist immer  vollständig.
 \end{satz}
+
 \begin{beweis}
 	Sei $(T_{n}) \subset B(X, Y)$ eine Cauchy-Folge bezüglich der Operatornorm. Sei $x \in X$
 	\[ \| T_{n} x - T_{m} \|_{Y} \leq \| T_{n} - T_{m} \| \|x\|_{X} \]
@@ -120,6 +129,7 @@
 	\[ \Rightarrow \| T \| \leq \| T_{n} \| + \epsilon, \quad \text{ also } T \in B(X, Y) \]
 \end{beweis}
 
+
 \begin{bemerkung}[Exponentialfunktion]
 	$A \in B(X)$, $X$ Banachraum
 	\begin{itemize}
@@ -135,6 +145,7 @@
 	\end{align*}
 	Da $B(X)$ vollständig ist, ist $e^{tA} = \lim_{m \rightarrow \infty} S_{m}$ in $B(X)$.
 \end{bemerkung}
+
 
 \begin{prop}[Neumann'sche Reihe] \label{prop:5.8-NeumannscheReihe}
 	Sei $A \in B(X)$, $X$ ein Banachraum mit $\| A \| < 1$. \\
@@ -153,7 +164,8 @@
 	\end{beweis}
 \end{prop}
 
-\begin{kor}
+
+\begin{kor} \label{kor:5.9}
 	$X$ sei ein Banachraum und $J: X \rightarrow X$ ein (surjektiver) Isomorphismus. \\
 	Für $A \in B(X)$ und $\| A \| < \| J^{-1} \|^{-1}$ ist auch $J - A$ ein Isomorphismus \\ \\
 	Insbesondere: $G = \{ T \in B(X): T \text{ stetig und invertierbar} \}$ ist eine offene Menge in $B(X)$.
@@ -168,12 +180,14 @@
 	\end{beweis}
 \end{kor}
 
+
 \begin{prop} \label{prop:5.10}
 	Sei $X$ ein normierter Raum, $Y$ ein Banachraum und $D \subset X$ ein dichter Teilraum. \\
 	Jeder linearere Operator $T: X \rightarrow Y$ mit
 		\[ \| T x \|_{Y} \leq M \| x \|_{X}, \quad \text{ für alle } x \in D \]
 	lässt sich zu einem eindeutig bestimmten Operator $ \tilde T \in B(X, Y)$ mit $\| \tilde T \| \leq c$ fortsetzen.	
 \end{prop}
+
 
 \begin{kor} \label{kor:5.11}
 	Sei $X$ ein normierter Banachraum, $D \subset X$ dicht in $X$ und sei eine Folge $T_{n} \in B(X, Y)$, wobei $(T_{n} x)$ eine Cauchy-Folge für jedes $x \in D$ sei. \\
@@ -193,6 +207,7 @@
 		\[ \limsup_{n \rightarrow \infty}  \| \tilde T x - T_{n} x \| \leq M \frac{\epsilon}{2 M} + \limsup_{n \rightarrow \infty} \| T y - T_{n} y \| + M \frac{\epsilon}{2 M} \leq \epsilon + 0 \]
 	\end{beweis}
 \end{kor}
+
 
 \begin{beispiel}
 	$e_{n} (t) = e^{2 \pi n i t} = \cos(2 \pi n t) + i \sin(2 \pi n t), \quad D = \{ (\alpha_{n}) \in L^{2}(\MdZ):$ Nur endlich viele $\alpha_{n} \neq 0 \}$
@@ -216,6 +231,7 @@
 	Nach \hyperref[kor:5.11]{Kor. 11}: $T_{m}(\alpha_{n}) \rightarrow T (\alpha_{n})$ in $L^{2}[0, 1]$ für alle $(\alpha_{n}) \in \ell^{2}$. Damit konvergiert die Partialsumme der Fourierreihen in $L^{2}[0, 1]$.
 \end{beispiel}
 
+
 \begin{lemma} \label{lemma:5.13}
 	Für einen normierten Raum $(X, \| \cdot \|)$ sind äquivalent:
 	\begin{enumerate}[label=\alph*\upshape)]
@@ -225,6 +241,7 @@
 			hat einen Limes in $X$.
 	\end{enumerate}	
 \end{lemma}
+
 \begin{beweis}
 	$a) \Rightarrow b)$	$y_{n} = \sum_{m = 1}^{n} x_{m}$ ist eine Cauchy-Folge in $X$, denn für $l > n$:
 		\[ \| y_{l} - y_{n} \| = \| \sum_{m = n + 1}^{l} x_{m} \| \leq \sum_{m = n + 1}^{l} \| x_{m} \| \xrightarrow[n, l \rightarrow \infty]{} 0 \]
@@ -238,6 +255,7 @@
 		$\sum_{j = 0}^{k} x_{j} \overset{Teleskopsumme}{=} x_{n_{k}} \Rightarrow $ die Folge $(x_{n_{k}})_{k \in \MdN}$ konvergiert in $X$. \\
 		$(x_{n})$ ist eine Cauchy-Folge $\Rightarrow \lim_{n \rightarrow \infty} x_{n}$ existiert in $X$.
 \end{beweis}
+
 
 \begin{kor}
 	Sei $X$ ein Banachraum und $M \subset X$ ein abgeschlossener, linearer Teilraum. \\
@@ -254,14 +272,18 @@
 	\end{beweis}
 \end{kor}
 
-\subsection{Anhang zu Kapitel 5: Vervollständigung}
+
+\subsection*{Anhang zu Kapitel 5: Vervollständigung}
+
 $\MdQ \rightarrow \MdR, \quad C[0, 1], \quad \int_{0}^{1} |f(t)| dt \rightarrow L^{1}[0, 1]$ \\
 Sei $X$ ein normierter Vektorraum, $M \subset X$ beliebig, $d(x, y) := \| x - y \|$, wobei $x, y \in M$ und damit $(M, d)$ ein metrischer Raum.
+
 
 \begin{definition} \label{def:5.15-Lipschitz}
 	$f: M \rightarrow \MdR$ hei{\ss}t \begriff{Lipschitz}, falls:
 	\[ \sup_{x, y \notin M, x \neq y} \frac{|f(x) - f(y)|}{d(x, y)} = \underbrace{\| f \|_{L}}_{Lipschitz-Konstante} < \infty \]
 \end{definition}
+
 
 \begin{bemerkung}
 	Sei $(M, d)$ ein metrischer Raum, $x_{0} \in M$ fest. \\
@@ -277,12 +299,14 @@ Sei $X$ ein normierter Vektorraum, $M \subset X$ beliebig, $d(x, y) := \| x - y 
 	\end{beweis}
 \end{bemerkung}
 
-\begin{satz}
+
+\begin{satz} \label{satz:5-17}
 	Sei $(M,d)$ ein metrische Raum, $x_{0} \in M$ fest, $X$ definiert wie in \hyperref[def:5.15-Lipschitz]{5.15}: \\ \\
 	Zu $x \in M$ definiere $F_{x} \in X'$ durch $F_{x}(f) = f(x)$ für $f: M \rightarrow \MdR$ in $X$. \\
 	Dann ist $x \in M \rightarrow F_{x} \in X'$ eine Abbildung, die eine isometrische Einbettung von $M$ nach $X'$ gibt, d.h. 
 	\[ d(x, y) = \| F_{x} - F_{y} \|_{X'} \]
 \end{satz}
+
 \begin{beweis}
 	Für die eine Richtung betrachten wir:
 	\begin{align*}
@@ -301,56 +325,84 @@ Sei $X$ ein normierter Vektorraum, $M \subset X$ beliebig, $d(x, y) := \| x - y 
 	$F_{x_{0}} = 0$ in $X', \| F_{x} \|_{X'} = \| F_{x} - F_{x_{0}} \| = d(x, x_{0}) < \infty$
 \end{beweis}
 
+
+\begin{definition}
+	Sei $(M, d)$ ein metrischer Raum. Ein vollständiger metrischer Raum $(\hat M, \hat d)$ hei{\ss}t \begriff{Vervollständigung} von $(M, d)$, falls es eine Einbettung $J : M \rightarrow \hat M$ gibt mit:
+	\begin{enumerate}[label=\roman*\upshape)]
+		\item $\hat d (J(x), J(y)) = d(x, y)$ für alle $x, y \in M$ (Isometrie)
+		\item J(M) ist dicht in $\hat{M}$
+	\end{enumerate}
+\end{definition}
+
+
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]	
-		\item $M =$ Polynome auf $[0, 1]$
-		\item missing example b
-		\item missing example c	
+		\item $M =$ Polynome auf $[0, 1]$, $d(p, q) = \sup_{t \in [0, 1]} |p(t) - q(t)| = \| p - q \|_{\infty}$
+			\[ \hat M = C[0, 1], \quad \hat d(f, g)= \| f - g \|_{\infty} \quad \text{ist Vervollständigung} \]
+		\item $M = C[0, 1]$, $d(f, g) = \|f - g\|_{2} = \left( \int_{0}^{1} |f(t) - g(t)|^{2} dt \right)^{\frac{1}{2}}$
+			\[ \hat M = L^{2}[0, 1], \quad \hat d(f, g) = d(f, g) \quad \text{ist Vervollständigung} \]
+		\item $M = \{ (x_{n}): x_{n} \in \MdR, x_{n} = 0$ für fast alle $n \in \MdN \}$, $d((x_{n}), (y_{n})) = \left( \sum |x_{n} - y_{n}|^{p} \right)^{\frac{1}{p}},$ $1 \leq p < \infty$
+			\[ \hat M = \ell^{p}, \quad \hat d((x_{n}), (y_{n})) = d((x_{n}), (y_{n}) \quad \text{ist Vervollständigung} \]
 	\end{enumerate}
-\end{beispiel} % todo missing sth at 5.18: add examples
+\end{beispiel}
+
 
 \begin{satz}
 	Zu jedem metrischen Raum $(M, d)$ gibt es eine Vervollständigung, die bis auf Isometrie eindeutig bestimmt ist.
 \end{satz}
+
 \begin{beweis}
-	missing proof %todo missing sth at 5.19: proof
+	Existenz: Zu $(M, d)$ konstruieren wie in \hyperref[satz:5-17]{5.17} den Banachraum $X$ und die Einbettung 
+		\[ J : \begin{cases} M \rightarrow X' \\ x \rightarrow F x\end{cases} \]
+		mit $d(x, y) = \| Fx - Fy \| = \| J(x) - J(y) \|$. \\
+		Setze $ \hat M = \overline{J(M)}^{X'} \equalhat$ Abschluss von $J(M)$ in $X'$, damit ist $\hat M$ als abgeschlossene Teilmenge des vollständigen Raumes $X'$ auch vollständig: $J(M)$ dicht in $\hat M$ nach Definition. \\
+		Somit ist $\hat M$ mit $\hat d(f, g) = \|f - h \|_{X'}$ eine Vervollständigung von $(M, d)$. \\ \\
+	Eindeutigkeit: Für $(M, d) = (X, \| \cdot \|)$ ein normierter Vektorraum seien $(X_{1}, d_{1}), (X_{2}, d_{2})$ zwei Vervollständigungen von $X, \| \cdot \|)$ mit isometrischen Einbettungen $J_{1} : X \rightarrow X_{1}$, $J_{2} : X \rightarrow X_{2}$ wobei $J_{2} J_{1}^{-1}: J_{1}(x) \rightarrow X_{2}$ stetig ist. \\
+		Nach \hyperref[prop:5.10]{Proposition 5.10} hat also $J_{2} J_{1}^{-1}$ eine stetige Fortsetzung $U_{1} : X_{1} \rightarrow X_{2}$ mit 
+			\[ \| U_{1} \| \leq \| J_{2} J_{1}^{-1} \| = 1. \]
+		Ebenso hat $J_{2} J_{1}^{-1}$ eine stetige Fortsetzung $U_{2}: X_{2} \rightarrow X_{1}$ mit 
+			\[ \| U_{2} \| \leq \| J_{1} J_{2}^{-1} \| = 1. \]
+		Wobei 
+		\[ \left( U_{2} U_{1} \right)|_{J_{1}(X)} = Id_{X_{1}}, \quad \left( U_{1} U_{2} \right)|_{J_{2}(X)} = Id_{X_{2}} \]
+		Wegen der Eindeutigkeit der Fortsetzung gilt damit 
+		\[ U_{2} U_{1} = Id_{X_{1}} \quad U_{1} U_{2} = Id_{X_{2}} \quad \Rightarrow \quad U_{1} = U_{2}^{-1} \]
+		und mit $\| U_{1} \| = \| U_{2} \| = 1$ folgt $X_{1} \overset{iso}{\sim} X_{2}$.
 \end{beweis}
 
+
 \begin{bemerkung}
-Alternativer Beweis der Existenz der Vervollständigung (nach Cantor) für einen normierten Raum $(X, \| \cdot \|)$:
-	missing a part + proof % todo missing sth at 5.20: proof
+Alternativer Beweis der Existenz der Vervollständigung nach Cantor für einen normierten Vektorraum: \\ \\
+	Sei $(X, \| \cdot \|9$ ein normierter Vektorraum, definiere 
+	\[ CF(X) := \{ (x_{n}) \in X^{\MdN}: (x_{n}) \text{ ist Cauchy-Folge in } X \} \quad \text{und} \quad \mu((x_{n})) := \overline{\lim} \| x_{n} \| \]
+	Dann ist $p$ eine Halbnorm auf $CF(X)$. Setze $M := \{(x_{n}) \in CF(X): p(x_{n}) = 0 \} = \{ (x_{n}) \in CF(X): \| x_{n} \| \rightarrow 0 \}$
+	Wähle als Kandidaten für die Vervollständigung $\hat X = \QR{CF(X)}{M}$
+	\begin{enumerate}[label=\roman*\upshape)]
+		\item Vollständig, d.h. gegen $x_{k} = (x_{k, j}) \in CF(X)$ mit: $\forall \epsilon > 0$ $\exists k_{\epsilon} \in \MdN: p(x_{n} - x_{m}) \leq \epsilon$ für $n, m \geq k_{0}$ gibt es ein $x = (x_{j}) \in CF(X)$ mit $p(x - x_{k}) \rightarrow 0$
+		\item $M$ ist abgeschlossen in $CF(X)$ und $\QR{CF(X)}{M}$ ist ein Banachraum.
+		\item $J: X \rightarrow \QR{CF(X)}{M}, J(x) = (x)_{j \in \MdN}$ erfüllt $p\left(J(x)\right) = \| x \|$ und $J(X)$ ist dicht in $\QR{CF(X)}{M}$.
+	\end{enumerate} 
 \end{bemerkung}
+
+\begin{beweis}
+	\begin{enumerate}[label=\roman*\upshape)]
+		\item Sei $x_{k} = (x_{k, j})$ eine Cauchy-Folge in $CF(X)$. Wähle für jedes $k$ ein $j_{k}$ mit $\| x_{k, i} - x_{k, j} \| \leq \frac{1}{k}$ für $i, j \geq j_{k}$. Setze $x = (x_{k, j_{k}})$:
+			\begin{align*}
+				\| x_{k, j_{k}} - x_{l, j_{k}} \| & \leq \| x_{k, j_{k}} - x_{k, j} \| + \| x_{k, j} - x_{l, j} \| \| x_{l, j} - x_{l, j_{l}} \| \\
+				& \leq \frac{1}{k} + \| x_{l, j} - x_{k, j} \| + \frac{1}{l} \quad \text{für }j \geq j_{l}, j \geq \\ 
+				~ \\
+				\Rightarrow \overline{\lim}_{k, l \rightarrow \infty} \| x_{k, j_{k}} - x_{l, j_{l}} \| & \leq \lim_{k, l \rightarrow \infty} \left( \frac{1}{l} + \frac{1}{k} \right) + \overline{\lim}_{k, l \rightarrow \infty} \| x_{l, j} - x_{k, j} \| \\
+				& \leq \overline{\lim}_{k, l \rightarrow \infty} p(x_{l} - x_{k}) = 0, \text{ d.h. } x \in CF(X). \\ 
+				~ \\
+				p(x_{l} - x) & = \overline{\lim}_{k \rightarrow \infty} \| x_{l, k} - x_{k, j_{k}} \| \\
+				& \leq \overline{\lim}_{k \rightarrow \infty} \left( \| x_{l, k} - x_{l, j_{l}} \| + \| x_{l, j_{l}} - x_{k, j_{k}} \right) \\
+				& \leq \frac{1}{l} + \overline{\lim}_{k \rightarrow \infty} \| x_{l, j_{l}} - x_{k, j_{k}} \| \xrightarrow[]{k \geq j_{l}} 0 \quad \text{für } l \rightarrow \infty.
+			\end{align*}
+			Also $\lim_{l \rightarrow \infty} x_{l} = x$ in $CF(X)$.
+		\item vgl. \hyperref[lemma:5.13]{Lemma 5.13}
+		\item $p(J(x)) = \overline{\lim} \| x_{n} \| = \| x \|$. Gegeben $x = (x_{j}) \in CF(X)$ und $\epsilon > 0$ wähle $j_{0}$ mit $\| x_{i} - x_{j} \| \leq \epsilon$ für $i, j \geq j_{0}$. Für $J(x_{j_{0}})$ gilt: $p(J(x_{j_{0}}) - x) = \overline{\lim} \| x_{j_{0}} - x_{j} \| \leq \epsilon$.
+	\end{enumerate}	
+\end{beweis}
+
 
 
 \newpage
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	

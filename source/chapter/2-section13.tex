@@ -67,7 +67,7 @@ Formel: $x = (\lambda I - A)^{-1}$ ist Lösung, falls $(\lambda I - A)^{-1}$ exi
 \end{beispiel}
 
 
-\begin{satz}[Resolventendarstellung] \label{satz:13.4-Resolventendarstellung}
+\begin{satz}[Resolventendarstellung] \label{satz:13.4-Resolventendarstellung} \index{Resolventendarstellung}
 	Sei $X \supset D(A) \xrightarrow[]{A} X$ abgeschlossen, $X$ ein Banachraum. \\
 	Für $\lambda:{0} \in \rho(A)$ und $\lambda \in \MdC$ mit $|\lambda - \lambda_{0}| < \frac{1}{\| R(\lambda_{0}, A) \|}$ ist auch \\
 		\[ \lambda \in \rho(A) \text{ und } R(\lambda, A) = \sum_{n \geq 0} (\lambda_{0} - \lambda)^{n} R(\lambda_{0}, A)^{n + 1}. \] \\
@@ -79,7 +79,7 @@ Formel: $x = (\lambda I - A)^{-1}$ ist Lösung, falls $(\lambda I - A)^{-1}$ exi
 		 (\lambda - A) = (\lambda_{0} + \lambda) + (\lambda_{0} - A) & = (\lambda_{0} - A)\left[I - (\lambda_{0} - \lambda) R(\lambda_{0}, A)\right] \\
 		 & = (\lambda_{0} - A)(I - S) \quad \text{ mit } S = (\lambda_{0} - \lambda)R(\lambda_{0}, A)
 	\end{align*}	
-	\[ \Rightarrow \| S \| \leq | \lambda_{0} - \lambda| \| R(\lambda_{0}, A) \| \overset{Vor.}{<} 1. \text{ Nach dem Satz über die Neumannsche Reihe: } (I - S)^{-1} = \sum_{n \geq 0} S^{n} \]
+	\[ \Rightarrow \| S \| \leq | \lambda_{0} - \lambda| \| R(\lambda_{0}, A) \| \overset{Vor.}{<} 1. \text{ Nach dem \hyperref[prop:5.8-NeumannscheReihe]{Satz über die Neumannsche Reihe}: } (I - S)^{-1} = \sum_{n \geq 0} S^{n} \]
 	Dann ist $(\lambda - A)$ ein Produkt von invertierbaren Operatoren $(\lambda_{0} - A)$ und $(I - S)$, d.h. 
 	\begin{align*}
 		(\lambda - A)^{-1} & = (I - S)^{-1}(\lambda_{0} - A)^{-1} \\
@@ -110,7 +110,7 @@ Formel: $x = (\lambda I - A)^{-1}$ ist Lösung, falls $(\lambda I - A)^{-1}$ exi
 \end{beweis}
 
 
-\begin{satz}
+\begin{satz} \label{satz:13.6}
 	Falls $A \in B(X)$, dann ist $\sigma(A)$ nichtleer und kompakt mit $\sigma(A) \subset \{ \lambda : |\lambda| \leq \| A \| \}$ \\
 	\[ \text{Für } \lambda > \| A \| \text{ gilt: } R(\lambda, A) = \sum_{n \geq 0} \lambda^{-n-1} A^{n} \]
 \end{satz}
@@ -143,10 +143,10 @@ Formel: $x = (\lambda I - A)^{-1}$ ist Lösung, falls $(\lambda I - A)^{-1}$ exi
 
 
 \begin{bemerkung} \label{bem:13.7}
-	Für $X = L^{p}(\Omega)$ ist \hyperref[eq:13.6.5-DualAbbildungAuf0]{$(*)$} erfüllt. $x \in L^{p}(\Omega), x \neq 0, x'(w) = |x(w)|^{p-1} \operatorname{sign}(w), w \in \Omega$ \\
+	Für $X = L^{p}(\Omega)$ ist \hyperref[eq:13.6.5-DualAbbildungAuf0]{$(*)$} erfüllt. $x \in L^{p}(\Omega), x \neq 0, x'(w) = |x(w)|^{p-1} \sign(w), w \in \Omega$ \\
 	Dann ist 
 	\[ x'(x) = \int | x(w) |^{p} dw \neq 0, x' \in L^{p'}, \int |x'|^{p'} dw = \int |x(w)^{(p-1)p'} dw \]
-	Allgemein folgt \hyperref[eq:13.6.5-DualAbbildungAuf0]{$(*)$} aus dem Satz von Hahn-Banach. %todo: add link at 13.7 as soon as I've added Hahn-Banach
+	Allgemein folgt \hyperref[eq:13.6.5-DualAbbildungAuf0]{$(*)$} aus dem \hyperref[satz:x-1-hahn-banach]{Satz von Hahn-Banach}. 
 \end{bemerkung}
 
 
@@ -160,22 +160,26 @@ Formel: $x = (\lambda I - A)^{-1}$ ist Lösung, falls $(\lambda I - A)^{-1}$ exi
 	Hilfssatz: Ist $a_{n} \in \MdR$ mit $0 \leq a_{n + m} \leq a_{n} \cdot a_{m}, n,m \in \MdN$, dann gilt $\lim_{n \rightarrow \infty} a_{n}^{\frac{1}{n}} = \inf_{n \in \MdN} a_{n}^{\frac{1}{n}}$
 \end{satz}
 
-\begin{beweis} % todo at 13.9.5 add proof
-	Beweis des Hilfsatzes: \\
-	todo \\ \\ 
-	
-	Beweis von \hyperref[satz:13.9]{13.9}: \\
-	todo \\ \\ 
-	
-	Wie in der Funktionentheorie zeigt man, dass wegen \hyperref[]{$(??)$} $R(\lambda, A)$ im grö{\ss}ten Kreis, der zum Holomorphie-Gebiet von $\frac{1}{\lambda} \in \rho(A) \rightarrow R(\frac{1}{\lambda}, A)$ gehört, dort als die Potenzreihe in \hyperref[]{$(??)$} dargestellt werden kann. \\ % todo at 13.10: where exactly do those two refs point at
-	Also $\lim_{n} \|A^{n} \|^{\frac{1}{n}} = r(A)$
+\begin{beweis}
+	Beweis des Hilfssatzes: \\
+	Zu $\epsilon > 0$ wähle $N \in \MdN$ mit $(a_{N})^{\frac{1}{N}} \leq a + \epsilon$. Setze $b = b(\epsilon) = \max \{ a_{1}, \dotsc, a_{N} \}$. \\
+	Jedes $n \in \MdN$ lässt sich schreiben als $n = k \cdot N + r, k \in \MdN, r \in \{ 1, \dotsc, N - 1 \}$. \\
+	Damit folgt:
+		\[ (a_{n})^{\frac{1}{n}} = a_{k N + r}^{\frac{1}{n}} \leq (a_{N}^{k} a_{r})^{\frac{1}{n}} \leq (a + \epsilon)^{\frac{k N}{n}} \cdot b^{\frac{1}{n}} = (a + \epsilon)(a + \epsilon)^{- \frac{r}{n}} b^{\frac{1}{n}} < a + 2 \epsilon \text{ für } n \text{ gro{\ss} genug.} \]
+	Beweis von \hyperref[satz:13.9]{13.9}: $a_{n} := \| A^{n} \|$ erfüllt
+	 \[ a_{n + m} = \| A^{n + m} \| = \| A^{n} A^{m} \| \leq \|A^{n}\| \cdot \|A^{m}\| = a_{n} \cdot a_{m} \Rightarrow \lim_{n \rightarrow \infty} \| A^{n} \|^{\frac{1}{n}} = \inf_{n} \| A^{n} \|^{\frac{1}{n}} \]
+	Nach \hyperref[satz:13.6]{13.6} gilt für $\left| \frac{1}{\lambda} \right| > \| A \|$ die Darstellung: $R(\frac{1}{\lambda}, A) = \sum_{n \geq 0} \lambda^{n +1} A^{n} (*) \label{eq:13.9.5-*}$ \\ 
+	Nach dem Wurzelkriterium konvergiert diese Reihe falls $\overline{\lim_{n \rightarrow \infty}} \| \lambda^{n + 1} A^{n} \|^{\frac{1}{n}} = |\lambda| \lim_{n \rightarrow \infty} \| A^{n} \|^{\frac{1}{n}} < 1$, d.h. $| \lambda | < \left[ \lim_{n \rightarrow \infty} \| A^{n} \|^{\frac{1}{n}} \right]^{-1}$
+	\[ \Rightarrow R( \frac{1}{\lambda}, A) \in B(X) \text{ für } |\frac{1}{\lambda} > \lim_{n \rightarrow \infty} \| A^{n} \|^{\frac{1}{n}}. \]
+	Also $\sigma(A) \subset \{ \lambda: |\lambda| < \lim \| A^{n} \|^{\frac{1}{n}} \}, \quad r(A) \leq \lim_{n \rightarrow \infty} \| A^{n} \|^{\frac{1}{n}} \leq \|A\|$. \\ \\
+	Wie in der Funktionentheorie zeigt man, dass wegen \hyperref[eq:13.9.5-*]{$(*)$} $R(\lambda, A)$ im grö{\ss}ten Kreis, der zum Holomorphie-Gebiet von $\frac{1}{\lambda} \in \rho(A) \rightarrow R(\frac{1}{\lambda}, A)$ gehört, dort als die Potenzreihe in \hyperref[eq:13.9.5-*]{$(*)$} dargestellt werden kann. \\
+	Also $\lim_{n \rightarrow \infty} \|A^{n} \|^{\frac{1}{n}} = r(A)$
 \end{beweis}
-
 
 Im Allgemeinen gilt $r(A) < \| A \|$.
 
 
-\begin{beispiel}
+\begin{beispiel} \label{bsp:13.10}
 	Sei $X = C[0, 1]$ und  $Q = \{ (s, t) \in [0, 1]^{2}: s \leq t \}$, betrachte $k: Q \rightarrow \MdR$ stetig.  \\
 	Wir definieren einen Volterraoperator $V: C[0, 1] \rightarrow C[0, 1]$ durch 
 		\[ (V x)(t) = \int_{0}^{t} k(t, s) x(s) ds, t \in [0, 1], x \in C[0, 1] \]
@@ -185,7 +189,7 @@ Im Allgemeinen gilt $r(A) < \| A \|$.
 
 \begin{beweis}
 	$\| V x \|_{\infty} = \sup_{7 \in [0, 1]} \int_{0}^{t} k(t, s) x(s) ds \leq \underbrace{\sup_{t \in [0, 1]} \int_{0}^{t} k(t, s) ds}_{=: K} \| x \|_{\infty} \Rightarrow \| V \| \leq K$ \\
-	\[ \| \mathds{1}_{\infty} = 1, \quad \| V \mathds{1} \|_{\infty} = \sup_{t \in [0, 1]} \int_{0}^{t} k(t, s) ds \quad \Rightarrow \quad \| V \| = K \]
+	\[ \| \1 \|_{\infty} = 1, \quad \| V \1 \|_{\infty} = \sup_{t \in [0, 1]} \int_{0}^{t} k(t, s) ds \quad \Rightarrow \quad \| V \| = K \]
 	Wir müssen zeigen, dass $r(V) = \lim_{n \rightarrow \infty} \| V^{n} \|^{\frac{1}{n}} = 0$. \\
 	$V^{n}$ hat die Form $V^{n} x(t) = \int_{0}^{t} k^{n}(t, s) x(s) ds$, mit
 	\begin{align*}
