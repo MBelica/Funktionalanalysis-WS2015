@@ -46,7 +46,7 @@
 		& \Rightarrow Y \subset T(X)
 	\end{align*}
 	$"\Rightarrow":$ Behauptung: $\exists \epsilon > 0: K_{y}(0, \epsilon) \subseteq \overline{T(K_{X}(0,1))}$. \\
-	Beweis: Definiere $E_{n} := \overline{T(K_{X}(0, n))}$, dann ist $E_{n}$ abgeschlossen, symmetrisch und konvex, da Kugeln um $0$ symmetrisch und konvex sind und $T$ linear ist. \\
+	Beweis: Definiere $E_{n} \coloneqq \overline{T(K_{X}(0, n))}$, dann ist $E_{n}$ abgeschlossen, symmetrisch und konvex, da Kugeln um $0$ symmetrisch und konvex sind und $T$ linear ist. \\
 	Nach Voraussetzung ist $Y = \bigcup_{n = 1}^{\infty} E_{n}$, mit \hyperref[satz:9.1-baire]{Baire} folgt $\exists N \in \MdN, y \in E_{N}, \hat \epsilon > 0: K(y, \hat \epsilon) \subseteq E_{N}$. Sei $z \in Y$ mit $\| z \| < \hat \epsilon$ und $z = \frac{1}{2} (z + y) + \frac{1}{2} (z - y) \in E_{N}$
 		\[ \Rightarrow K_{Y}(0, \hat \epsilon) \subseteq \overline{T(K_{X}(0, N))} \Rightarrow K_{Y}(0, \frac{\hat \epsilon}{N}) \subseteq \overline{T(K_{X}(0, 1))} \quad \Rightarrow \quad \text{Behauptung mit } \epsilon = \frac{\hat \epsilon}{N}  \]
 		Behauptung: $\exists \delta > 0: K_{Y}(0, \delta) \subseteq T(K_{X}(0, 1))$ \\
@@ -78,8 +78,8 @@
 \end{kor}
 
 \begin{beweis}
-	Nach Voraussetzung ist $I : (X, \vertiii{\cdot}) \rightarrow (X, \| \cdot \|)$ beschränkt. \\
-	$\xRightarrow[]{\ref{kor:10.4}} I : (X, \| \cdot \|) \rightarrow (X, \vertiii{\cdot})$ beschränkt.
+	Nach Voraussetzung ist $I \colon (X, \vertiii{\cdot}) \rightarrow (X, \| \cdot \|)$ beschränkt. \\
+	$\xRightarrow[]{\ref{kor:10.4}} I \colon (X, \| \cdot \|) \rightarrow (X, \vertiii{\cdot})$ beschränkt.
 \end{beweis}
 
 

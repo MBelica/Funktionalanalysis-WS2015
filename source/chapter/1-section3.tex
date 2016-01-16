@@ -4,7 +4,7 @@
 
 \begin{definition}
 	Eine Teilmenge V eines normieren Raums $(X, \| \cdot \|)$ hei{\ss}t \begriff{beschränkt}, falls 
-	\[ c := \sup_{x \in V} \| x \| < \infty, \text{ und damit auch } V \subset c U_{(X, \| \cdot \| )} . \]
+	\[ c \coloneqq \sup_{x \in V} \| x \| < \infty, \text{ und damit auch } V \subset c U_{(X, \| \cdot \| )} . \]
 \end{definition}
 
 
@@ -51,7 +51,7 @@
 	
 	
 \begin{definition}
-	Seien $X, Y$ normierte Räume. Mit $B(X, Y)$ bezeichnen wir den \begriff{Vektorraum der beschränkten, linearen Operatoren} $T: X \rightarrow Y$. Ist $ X = Y$ schreiben wir auch kurz $B(X) := B(X, X)$. \\
+	Seien $X, Y$ normierte Räume. Mit $B(X, Y)$ bezeichnen wir den \begriff{Vektorraum der beschränkten, linearen Operatoren} $T: X \rightarrow Y$. Ist $ X = Y$ schreiben wir auch kurz $B(X) \coloneqq B(X, X)$. \\
 	
 	Für $T \in B(X, Y)$ setze
 	\begin{align*}
@@ -141,7 +141,7 @@
 
 \begin{beispiel}[Kompositionsoperator] \index{Kompositionsoperator}
 $\Omega \subset \MdR^{n}$ offen. 
-\[ \sigma : \bar \Omega \rightarrow \bar \Omega \text{ stetig, für } f \in C(\bar \Omega): Tf(u) = f(\sigma(u)) \]
+\[ \sigma \colon \bar \Omega \rightarrow \bar \Omega \text{ stetig, für } f \in C(\bar \Omega): Tf(u) = f(\sigma(u)) \]
 z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 \[ \| Tf \|_{\infty} \leq \| f \|_{\infty}, \hspace{0.25cm} \| T \| = 1 \]
 \end{beispiel}
@@ -156,13 +156,13 @@ z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 
 \begin{beispiel}[Matrizenmultiplikation] \index{Matrizenmultiplikation}
 	Für $p \in [1, \infty]$ und $T \in B(\ell^{p})$ setzen wir 
-	\[ e_{l} := (0, \dotsc, 0, 1, 0, \dotsc), \hspace{0.25cm} l \in \MdN, \hspace{0.25cm} \text{ wobei die 1 an l-ter Stelle steht.} \]
+	\[ e_{l} \coloneqq (0, \dotsc, 0, 1, 0, \dotsc), \hspace{0.25cm} l \in \MdN, \hspace{0.25cm} \text{ wobei die 1 an l-ter Stelle steht.} \]
 	und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
 	\[ \Rightarrow (Tx)_{k} = (\sum_{l = 1}^{\infty} x_{l} T e_{l})_{k} = \sum_{ l = 1}^{\infty} a_{kl}k_{l}, \hspace{0.25cm} k \in \MdN \quad \Rightarrow \quad T x = A x \text{ (unendliches Matrixprodukt)} \]
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Die Hille-Tamarkin-Bedingung (nur hinreichend) \\
 			Sei $p \in (1, \infty)$ und $\frac{1}{p} + \frac{1}{q} = 1$. Setze
-			\[ c := \left( \sum_{k \geq 1} \left( \sum_{l \geq 1} |a_{kl}|^{q} \right)^{\frac{p}{q}} \right)^{\frac{1}{p}} < \infty \]
+			\[ c \coloneqq \left( \sum_{k \geq 1} \left( \sum_{l \geq 1} |a_{kl}|^{q} \right)^{\frac{p}{q}} \right)^{\frac{1}{p}} < \infty \]
 			so definiert $T$ einen Operator $T \in B(\ell^{p})$ mit $\| T \| \leq c$ 
 		\begin{beweis}
 			\begin{enumerate}
@@ -181,7 +181,7 @@ z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 		\end{beweis}
 	\item Der Fall $\ell^{1}$: \\
 		Es ist $T \in B(\ell^{1})$ genau dann, wenn 
-		\[ c_{1} := \sup_{l} \sum_{k} | a_{kl} | < \infty \]
+		\[ c_{1} \coloneqq \sup_{l} \sum_{k} | a_{kl} | < \infty \]
 		und in diesem Fall ist $\| T \| = c_{1}$.
 		\begin{beweis}
 			"\ $\Rightarrow$ "\  Sei $T \in B(\ell^{1})$. Dann gilt für $l \in \MdN$
@@ -194,7 +194,7 @@ z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 		\end{beweis}
 	\item Der Fall $\ell^{\infty}$: \\
 		Es ist $T \in B(\ell^{\infty})$ genau dann, wenn
-		\[ c_{\infty} := \sup_{k} \sum_{l} |a_{kl}| < \infty \]
+		\[ c_{\infty} \coloneqq \sup_{k} \sum_{l} |a_{kl}| < \infty \]
 		und in diesem Fall ist $\| T \| = c_{\infty}$
 		\begin{beweis}
 			"\ $\Rightarrow$ "\  Sei $T \in B(\ell^{\infty})$.  Für $k \in \MdN$ setze dann $x^{(k)} = \begin{cases} \frac{|a_{kl}|}{a_{kl}} & a_{kl} \neq 0 \\ 0 & a_{kl} = 0 \end{cases}$ \\
@@ -211,7 +211,7 @@ z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 	\item Interpolation \\
 		Ist $T \in B(\ell^{1}) \cap B(\ell^{\infty})$, dann ist $T \in B(\ell^{p})$ für alle $p \in (1, \infty)$ mit $\| T \| \leq c_{1}^{\frac{1}{p}} c_{\infty}^{\frac{1}{q}}$, wobei $\frac{1}{p} + \frac{1}{q} = 1$
 		\begin{beweis}
-		 Für $x \in \ell^{p}$ setzen wir $y_{k} := |(T x)_{k}|^{p - 1}, \hspace{0.25cm} k \in \MdN$ \\
+		 Für $x \in \ell^{p}$ setzen wir $y_{k} \coloneqq |(T x)_{k}|^{p - 1}, \hspace{0.25cm} k \in \MdN$ \\
 		 \[ \Rightarrow \| y \|_{\ell^{q}} = \left( \sum_{k \geq 1} \left| \left( Tx \right)_{k} \right|^{\underbrace{q(p-1)}_{= p}}  \right)^\frac{1}{q} = \| Tx \|_{\ell^{p}}^{p - 1} \]	
 		 Damit folgt
 		 \begin{align*}
@@ -262,7 +262,7 @@ z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 \begin{beispiel}
 	Sei $X = \ell^{p}$ für $p \in (1, \infty)$ und $\frac{1}{p} + \frac{1}{q} = 1$ \\
 	Die Abbildung
-	\[ \Phi_{p} : \ell^{p} \rightarrow (\ell^{p})', \hspace{0.25cm} [\Phi_{p}(x)](y) = \sum_{n = 1}^{\infty} x_{n} y_{n}, \hspace{0.25cm} x \in \ell^{p}, y \in \ell^{q}  \]
+	\[ \Phi_{p} \colon \ell^{p} \rightarrow (\ell^{p})', \hspace{0.25cm} [\Phi_{p}(x)](y) = \sum_{n = 1}^{\infty} x_{n} y_{n}, \hspace{0.25cm} x \in \ell^{p}, y \in \ell^{q}  \]
 	Ist ein isometrischer Isomorphismus, d.h.  $(\ell^{p})' \cong \ell^{q}, \hspace{0.25cm}$ (insbesondere $(\ell^{2})' \cong \ell^{2}$)
 	
 	\begin{beweis}
@@ -271,9 +271,9 @@ z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 		Da $\Phi_{p}(x)$ linear in $Y$ ist, folgt $\Phi_{p}(x) \in (\ell^{p})'$ mit
 		\[ \| \Phi_{p}(x) \|_{(\ell^{p})'} \leq \| x \|_{\ell^{q}} \]
 		Es bleibt zu zeigen, dass $ \| \Phi_{p}(x) \|_{(\ell^{p})'} \geq \| x \|_{\ell^{q}} $ und $\Phi_{p}$ surjektiv ist.
-		Sei $y' \in (\ell^{p})'$, dann setze $x_{n} := y'(e_{n}), n \in \MdN$ und $x = (x_{n})_{n \geq 1}$.
+		Sei $y' \in (\ell^{p})'$, dann setze $x_{n} \coloneqq y'(e_{n}), n \in \MdN$ und $x = (x_{n})_{n \geq 1}$.
 		Setze au{\ss}erdem
-		\[ z_{n} := \begin{cases} \frac{|x_{n}|^{q}}{x_{n}} & x_{n} \neq 0 \\ 0 & x_{n} = 0 \end{cases}, \hspace{0.25cm} n \ \in \MdN \]
+		\[ z_{n} \coloneqq \begin{cases} \frac{|x_{n}|^{q}}{x_{n}} & x_{n} \neq 0 \\ 0 & x_{n} = 0 \end{cases}, \hspace{0.25cm} n \ \in \MdN \]
 		Dann gilt für $N \in \MdN$
 		\begin{align*}
 			\sum_{n=1}^{N} |x_{n}|^{q} & = \sum_{n = 1}^{N} x_{n} z_{n} \\
@@ -317,7 +317,7 @@ z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 \begin{beispiel} \label{bsp:3.15}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Sei $K \subset \MdR^{n}$ kompakt, $x \in K$. Dann definieren wir
-			\[ \delta_{x}(f) := f(x) \text{ für } f \in C(K) \]
+			\[ \delta_{x}(f) \coloneqq f(x) \text{ für } f \in C(K) \]
 			Wir versetzen $C(K)$ mit der Supremumsnorm. Dann gilt:
 			\[ |\delta_{x}(f)| = | f(x) | \leq \| f \|_{\infty} \]
 			und offensichtlich ist $\delta_{x}$ linear, d.h. $\delta_{x} \in ( C(K) )'$ mit $\| \delta_{x} \| \leq 1$.

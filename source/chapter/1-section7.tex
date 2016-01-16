@@ -3,7 +3,7 @@
 \section{Kompakte Operatoren}
 
 \begin{definition}  \label{def:7.1-kompktOperator} \index{kompakter Operator}
-	Sei $X$ ein normierter Raum, Y ein Banachraum. Ein linearer Operator $T : X \rightarrow Y$ hei{\ss}t kompakt, falls $T(U_{X})$ relativ kompakt ist in $Y$.
+	Sei $X$ ein normierter Raum, Y ein Banachraum. Ein linearer Operator $T \colon X \rightarrow Y$ hei{\ss}t kompakt, falls $T(U_{X})$ relativ kompakt ist in $Y$.
 \end{definition}
 
 \begin{vereinbarung}
@@ -29,7 +29,7 @@
 
 
 \begin{beispiel} \label{bsp:7.2}
-	$X = \ell^{p}, 1 \leq p < \infty.$ $Q_{n} \in B(\ell^{p}): Q_{n}(x_{j}) := (0, \dotsc, 0, x_{n + 1}, x_{n + 2}, \dotsc)$ \\
+	$X = \ell^{p}, 1 \leq p < \infty.$ $Q_{n} \in B(\ell^{p}): Q_{n}(x_{j}) \coloneqq (0, \dotsc, 0, x_{n + 1}, x_{n + 2}, \dotsc)$ \\
 	Behauptung: 
 	\[ T \in B(\ell^{p}) \text{ kompakt  } \gdw \| Q_{n} T \| \xrightarrow[n \rightarrow \infty]{} 0 \]
 	\[ \gdw \sup_{\|x\|_{p} \leq 1} \left( \sum_{j = n + 1}^{\infty} (Tx)_{j} \right)^{\frac{1}{p}} \xrightarrow[n \rightarrow \infty]{} 0 \gdw T(U_{X}) \text{ ist relativ kompakt in } \ell^{p} \text{ nach } \hyperref[bsp:6.4]{6.4} \]
@@ -61,12 +61,12 @@
 
 
 \begin{beispiel} \label{bsp:7.3}
-	Sei $X = C(\Omega)$, mit $\Omega \subset \MdR^{d}$ kompakt. Für $k : \Omega \times \Omega \rightarrow \MdK$, ist der Integraloperator
+	Sei $X = C(\Omega)$, mit $\Omega \subset \MdR^{d}$ kompakt. Für $k \colon \Omega \times \Omega \rightarrow \MdK$, ist der Integraloperator
 	\[ (Tx)(u) = \int_{\Omega} k(u, v) x(v) dv \quad \text{kompakt.} \]
 	\begin{beweis}
 		Wir führen den Beweis mittels Arzèla-Ascoli. Beachte
 		\[ \exists M \text{ mit } |k(u, v)| \leq M \text{ für } u, v \in \Omega \]
-		$k : \Omega \times \Omega \rightarrow \MdK$ ist gleichmä{\ss}ig stetig, da $\Omega \times \Omega$ kompakt ist.
+		$k \colon \Omega \times \Omega \rightarrow \MdK$ ist gleichmä{\ss}ig stetig, da $\Omega \times \Omega$ kompakt ist.
 		\[ \forall \epsilon > 0 \exists \delta > 0 \| (u_1, v_1) - (u_2, v_2) \|_{\MdR^{2d}} < \delta \Rightarrow |k(u_1, v_1) - k(u_2, v_2)| < \epsilon \]
 		Dann gilt $T(U_{C(\Omega)})$ ist beschränkt, denn
 		\[ |Tx(u)| \leq \int_{\Omega} |k(u, v)| |x(v)| dv \leq M \underbrace{v_{0}(\Omega)}_{< \infty} \| x \|_{\infty} \]
@@ -81,7 +81,7 @@
 
 
 \begin{beispiel} \label{bsp:7.4}
-	$j : C^{1}[0, 1] \hookrightarrow C[0, 1]$, $j$ Inklusion. Dann $j \in K(C^{1}[0, 1], C[0, 1])$.
+	$j \colon C^{1}[0, 1] \hookrightarrow C[0, 1]$, $j$ Inklusion. Dann $j \in K(C^{1}[0, 1], C[0, 1])$.
 	\begin{beweis}
 		$j(U_{C^{1}[0, 1]})$ ist relativ kompakt in $C[0, 1]$ nach \hyperref[]{6.9}. (auch nach \hyperref[satz-6.7-arzelaascoli]{Arzèla-Ascoli}).
 	\end{beweis}

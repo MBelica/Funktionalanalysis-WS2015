@@ -13,7 +13,7 @@
 			\[ d(x_{n}, x_{m}) \leq \epsilon \]
 		\item $(M, d)$ hei{\ss}t \begriff{vollständig}, falls jede Cauchy-Folge $(x_{n}) \subset M$ einen Grenzwert \uline{in M} hat:
 			\[ \lim_{n \rightarrow \infty} x_{n} = x \quad x \in M \]
-		\item Ein normierter Raum $(X, \| \cdot \|)$, der vollständig ist bezüglich $d(x, y) = \| x - y \|$ heißt \begriff{Banachraum}.
+		\item Ein normierter Raum $(X, \| \cdot \|)$ der vollständig ist bezüglich $d(x, y) = \| x - y \|$ heißt \begriff{Banachraum}.
 	\end{enumerate}
 \end{definition}
 
@@ -22,10 +22,9 @@
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Jede konvergente Folge in $(M, d)$ ist eine Cauchy-Folge:
 			\[ \text{Sei } \lim_{n \rightarrow \infty} x_{n} = x: \quad d(x_{n}, x_{m}) \leq d(x_{n}, x) + d(x, x_{m}) \xrightarrow[n, m \rightarrow \infty]{} 0 \]
-		\item \uline{Aber:} nicht jede Cauchy-Folge eines normierten Raums $X$ konvergiert in $X$
+		\item \uline{Aber:} nicht jede Cauchy-Folge eines normierten Raums $X$ konvergiert in $X$.
 			\begin{beispiel*}
-				$X = C[0, 2], \quad \| f \|_{1} = \int_{0}^{2} | f(t) | dt, \quad
-				f_{n}(x) = \begin{cases}x^{n} & \text{ für } x \in [0, 1] \\ 1 & \text{ für } x \in [1, 2]\end{cases}$	
+				$X = C[0, 2]$, $\| f \|_{1} = \int_{0}^{2} | f(t) | dt$, $f_{n}(x) = \begin{cases}x^{n} & \text{ für } x \in [0, 1] \\ 1 & \text{ für } x \in [1, 2]\end{cases}$	
 				\[ f_{n}(x) \rightarrow f(x) = \begin{cases} 0 & \text{ für } x \in [0, 1) \\ 1 & \text{ für } x \in [1, 2] \end{cases} \quad \text{ für feste } x \in [0, 2] \]
 				Nach dem Satz von Lebesgue folgt $\| f - f_{n} \|_{1} \rightarrow 0$ für $n \rightarrow \infty$, aber $f \notin C[0, 2]$ \\
 				Demnach ist $f_{n}$ zwar eine Cauchy-Folge, aber $f_{n}$ konvergiert nicht gegen $f$ in $X$ bezüglich der $\| \cdot \|_{1}$-Norm.
@@ -35,69 +34,71 @@
 
 
 \begin{prop}
-	Sei $X$ ein metrischer Raum, $Y$ ei Banachraum.
-	\[ C(x, Y) = \{ f : X \rightarrow Y: f \text{ stetig} \}, \quad \| f \|_{\infty} = \sup_{x \in X} \| f(x) \|_{Y} \]
+	Sei $X$ ein metrischer Raum, $Y$ ein Banachraum.
+	\[ C(X, Y) = \{ f \colon X \rightarrow Y: f \text{ stetig} \}, \quad \| f \|_{\infty} = \sup_{x \in X} \| f(x) \|_{Y} \]
 	Dann ist $C(X, Y)$ ein (linearer) Banachraum.
 \end{prop}
 
 
 \begin{beispiel*}
-	$\Omega \subseteq \MdR^{n}, \quad C(\Omega, \MdR)$
-	\begin{beweis}
-		Sei $(f_{n})$ eine Cauchy-Folge in $C(X, Y)$. \\
-		Für alle $x \in X$:
-		\[ \| f_{n}(x) - f_{m}(x) \|_{Y} \leq \| f_{n} - f_{m} \|_{\infty} \xrightarrow[n, m \rightarrow \infty]{} 0 \]
-		Für alle $x \in X$: $(f(x))_{n \in \MdN}$ ist eine Cauchy-Folge in $Y$.
-		da $Y$ vollständig ist, existiert $f(x) := \lim_{n \rightarrow \infty} f_{n}(x)$ in Y. \\ \\
-		z.z. $f \in C(X, Y), \quad \| f - f_{n} \|_{\infty} \rightarrow 0$. \\
-		Zu $\epsilon > 0$ gibt es ein $n_{0}$, sodass für alle $x \in X$:
-		\[ \| f_{n}(x) - f_{m}(x) \|_{Y} \leq \| f_{n} - f_{m} \|_{\infty} \leq \epsilon \]
-		Für jedes $x \in X$ fest, folgt für $m \rightarrow \infty$:
-		 \[ \| f_{n}(x) - f(x) \| \leq \epsilon \quad \text{ für } n \geq n_{0} \]
-		 \[ \Rightarrow \| f_{n} - f \|_{\infty} \leq \epsilon \text{ für } n \geq n_{0} \quad  \text{ nehme das Supremum über } x \in X \]
-		 $f \in C(X, Y)$, da der gleichmä{\ss}ige Limes stetiger Funktionen stetig ist.
-	\end{beweis}
+	$\Omega \subseteq \MdR^{n}$, $C(\Omega, \MdR)$
 \end{beispiel*}
+
+\begin{beweis}
+	Sei $(f_{n})$ eine Cauchy-Folge in $C(X, Y)$. Für alle $x \in X$ gilt
+	\[ \| f_{n}(x) - f_{m}(x) \|_{Y} \leq \| f_{n} - f_{m} \|_{\infty} \xrightarrow[n, m \rightarrow \infty]{} 0 \]
+	Mit $x \in X$ ist $(f(x))_{n \in \MdN}$ eine Cauchy-Folge in $Y$. Da $Y$ vollständig ist, existiert $f(x) \coloneqq \lim_{n \rightarrow \infty} f_{n}(x)$ in Y. \\ \\
+	z.z. $f \in C(X, Y), \quad \| f - f_{n} \|_{\infty} \rightarrow 0$. \\
+	Zu $\epsilon > 0$ gibt es ein $n_{0}$, sodass für alle $x \in X$:
+		\[ \| f_{n}(x) - f_{m}(x) \|_{Y} \leq \| f_{n} - f_{m} \|_{\infty} \leq \epsilon \quad m, n \geq n_{0} \]
+	Für jedes $x \in X$ fest, folgt für $m \rightarrow \infty$:
+		\[ \| f_{n}(x) - f(x) \| \leq \epsilon \quad \text{ für } n \geq n_{0} \]
+	Nehme das Supremum über $x \in X$:
+		\[ \Rightarrow \| f_{n} - f \|_{\infty} \leq \epsilon \text{ für } n \geq n_{0}. 	\]	\newline
+	Somit ist $f \in C(X, Y)$, da der gleichmä{\ss}ige Limes stetiger Funktionen stetig ist.
+\end{beweis}
 
 
 \begin{beispiel}
 	Sei $\Omega \subseteq \MdR^{n}$ offen und beschränkt. $C^{m}(\bar \Omega)$ ist vollständig bezüglich der Supremums-Norm.	
-	\begin{beweis}
-		Für $C^{1}(\bar \Omega)$ gilt $\| f \|_{C^{1}} = \| f \|_{\infty} + \sum_{i = 1}^{n}  \| \frac{\partial}{\partial x_{i}} f \|_{\infty}$. \\
-		 Sei $(f_{j}) \subset F$ in $C^{1}(\bar \Omega)$.
-		 \[ \Rightarrow (f_{j})_{j \in \MdN}, \quad (\frac{\partial}{\partial x_{j}} f_{j})_{j \in \MdN}, \quad i = 1, \dotsc, n \text{ Cauchy-Folgen in } C(\bar \Omega) \]
-		 Da $C(\bar \Omega)$ vollständig ist, existieren für $i \in \{ 1, \dotsc, n \} $
-		 	\begin{align*}
+\end{beispiel}
+
+\begin{beweis}
+	Für $C^{1}(\bar \Omega)$ gilt $\| f \|_{C^{1}} = \| f \|_{\infty} + \sum_{i = 1}^{n}  \| \frac{\partial}{\partial x_{i}} f \|_{\infty}$. \\
+	Sei $(f_{j}) \subset F$ in $C^{1}(\bar \Omega)$, dann sind für $i = 1, \dotsc, n $
+		\[ \Rightarrow (f_{j})_{j \in \MdN} \quad \text{und} \quad (\frac{\partial}{\partial x_{j}} f_{j})_{j \in \MdN} \quad \text{ Cauchy-Folgen in } C(\bar \Omega) \]
+	Da $C(\bar \Omega)$ vollständig ist, existieren für $i \in \{ 1, \dotsc, n \} $
+		\begin{align*}
 		 		f & = \lim_{j \rightarrow \infty} f_{j} \\
 		 		g_{i} & = \lim_{j \rightarrow \infty} \frac{\partial}{\partial x_{i}} f_{j}
-		 	\end{align*}
-		 in $C(\bar \Omega)$. Setze $g = (g_{1}, \dotsc, g_{n})$ \\ \\
-		 z. z. $f \in C^{1}(\bar \Omega)$ und $g = \nabla f$ \\
-		 Beweis: zu $u \in \Omega$ und $v$ nahe bei $u$ wähle
-		 \[ u_{t} = (1 - t) u + t v \]
-		 \begin{align*}
+		\end{align*}
+	in $C(\bar \Omega)$. Setze $g = (g_{1}, \dotsc, g_{n})$. \\
+	
+	z. z. $f \in C^{1}(\bar \Omega)$ und $g = \nabla f$ \\
+	Beweis: zu $u \in \Omega$ und $v$ nahe bei $u$ wähle
+		\[ u_{t} = (1 - t) u + t v \]
+		\begin{align*}
 		 	| f_{k}(v) - f_{k} (u) - \nabla f_{k}(u) (v - u) | & = | \int_{0}^{1} [ \nabla f_{k} (u_{t}) - \nabla f_{k} (u) ] (v - u) dt \\
 		 		& \leq  \int_{0}^{1} | \nabla f_{k} (u_{t}) - \nabla f_{k} (u) | dt (v - u) \\
 		 		& \leq \left[ \int_{0}^{1} | \nabla f_{k}(u_{t}) - g(u_{t}) | dt + \int_{0}^{1} | g(u_{t}) - g(u) | dt + \int_{0}^{1} | g(u) - \nabla f_{k}(u) | dt \right] \\
 		 		&  \hspace{5cm} \cdot |v - u| \\
 		 		& \leq \left[ z \| \nabla f_{k} - g \|_{\infty} + \sup_{0 \leq t \leq 1} | g(u_{t}) - g(u) | \right] |v - u|
- 		 \end{align*}
- 		 \begin{align*}
+ 		\end{align*}
+ 		\begin{align*}
  		 	\text{für } k \rightarrow \infty: | f(v) - f(u) - g(u)(v - u) | & \leq \sup_{t \in [0, 1]} | g(u_{t}) - g(u) | |v - u| \\
  		 		& \rightarrow 0 \text{ für } v \rightarrow u \text{ (da g gleichmä{\ss}ig stetig)}
- 		 \end{align*} 
-	\end{beweis}
-\end{beispiel}
-
+		\end{align*} 
+\end{beweis}
+	
 
 \begin{bemerkung}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item $\| \cdot \|_{1}, \| \cdot \|_{2}$ seien äquivalente Normen auf $X$. Ist $X$ bezüglich $\| \cdot \|_{1}$, so auch bezüglich $\| \cdot \|_{2}$.
+		\item $\| \cdot \|_{1}, \| \cdot \|_{2}$ seien äquivalente Normen auf $X$. Ist $X$ bezüglich $\| \cdot \|_{1}$ vollständig, so auch bezüglich $\| \cdot \|_{2}$.
 			\begin{beweis}
 				Äquivalente Normen haben gleiche Cauchy-Folgen.
 			\end{beweis}
 			Bsp.: $C^{1}[0, 1]$, $\vertiii{f} = |f(0)| + \sup_{t \in [0, 1]} | f'(t) |$. Früher: $\vertiii{\cdot} \sim \| \cdot \|_{\infty} \Rightarrow \left( C[0, 1], \vertiii{\cdot} \right)$ ist vollständig.
-		\item Abgeschlossene Teilmengen von 	Banachräumen sind vollständige metrische Räume bezüglich $d(x, y) = \| x - y\|$
+		\item Abgeschlossene Teilmengen von 	Banachräumen sind vollständige metrische Räume bezüglich $d(x, y) = \| x - y\|$.
 			\begin{beweis}
 				$(x_{n}) \subset M$, Cauchy-Folge in $X \Rightarrow \lim_{n \rightarrow \infty} x_{n} = x \in X \xRightarrow[M abg.]{} x \in M$ existiert.	
 			\end{beweis}
@@ -114,9 +115,9 @@
 
 \begin{beweis}
 	Sei $(T_{n}) \subset B(X, Y)$ eine Cauchy-Folge bezüglich der Operatornorm. Sei $x \in X$
-	\[ \| T_{n} x - T_{m} \|_{Y} \leq \| T_{n} - T_{m} \| \|x\|_{X} \]
-	Also $(T_{n}x)_{n \in \MdN}$ eine Cauchy-Folge in $Y$ für alle $x \in X$. Definiere $T x : = \lim_{n \rightarrow \infty} T_{n} x$ \\
-	z.z. $T \in B(X, Y),$ $s\| T_{n} - T \| \rightarrow 0$ \\
+	\[ \| T_{n} x - T_{m} x \|_{Y} \leq \| T_{n} - T_{m} \| \|x\|_{X} \]
+	Also $(T_{n}x)_{n \in \MdN}$ ist eine Cauchy-Folge in $Y$ für alle $x \in X$. Definiere $T x : = \lim_{n \rightarrow \infty} T_{n} x$ \\
+	z.z. $T \in B(X, Y),$ $\| T_{n} - T \| \rightarrow 0$ \\
 	\[ T_{n} (x + y)  = T_{n} x + T_{n} y \xrightarrow[n \rightarrow \infty]{} T(x + y) = Tx + Ty \]
 	\begin{align*}
 		\| Tx - T_{n}x \| & \overset{Norm \text{ } stetig}{=} \lim_{m \rightarrow \infty} \| T_{m} x - T_{n} x \| \\
@@ -157,7 +158,7 @@
 		k > m: \quad \| S_{k} - S_{m} \| & \leq \sum_{n = m + 1}^{k} \| A^{n} \| \\
 			& \leq \sum_{n = m + 1}^{k} \| A \|^{n} \rightarrow 0 \text{ für } m, n \rightarrow \infty \text{, da} \| A \| < 1
 		\end{align*}
-		$R := \lim_{m \rightarrow \infty} S_{m}$ existiert in $B(X)$, da $B(X)$ vollständig.
+		$R \coloneqq \lim_{m \rightarrow \infty} S_{m}$ existiert in $B(X)$, da $B(X)$ vollständig.
 		\[ S_{m} (Id - A) = (Id - A) S_{m} = Id - A^{m} \]
 		mit $\| A^{m} \| \leq \| A \|^{m} \rightarrow 0 \text{ für } m \rightarrow \infty$
 		\[ \Rightarrow R (Id - A) = (Id - A) R = Id, \quad R = (Id - A)^{-1} \]
@@ -211,7 +212,7 @@
 
 \begin{beispiel}
 	$e_{n} (t) = e^{2 \pi n i t} = \cos(2 \pi n t) + i \sin(2 \pi n t), \quad D = \{ (\alpha_{n}) \in L^{2}(\MdZ):$ Nur endlich viele $\alpha_{n} \neq 0 \}$
-	\[ T : \begin{cases} D \rightarrow L^{2}[0, 1] \\ (\alpha_{n}) \rightarrow \sum_{n \in \MdZ} \alpha_{n} e_{n} \end{cases} \]
+	\[ T \colon \begin{cases} D \rightarrow L^{2}[0, 1] \\ (\alpha_{n}) \rightarrow \sum_{n \in \MdZ} \alpha_{n} e_{n} \end{cases} \]
 	Wie kann man man unendlich Reihen $\sum_{n \in \MdZ} \alpha_{n} e_{n}$ definieren? \\
 	Ohne Beweis aus der Fourieranalysis:
 	\begin{itemize}
@@ -276,18 +277,18 @@
 \subsection*{Anhang zu Kapitel 5: Vervollständigung}
 
 $\MdQ \rightarrow \MdR, \quad C[0, 1], \quad \int_{0}^{1} |f(t)| dt \rightarrow L^{1}[0, 1]$ \\
-Sei $X$ ein normierter Vektorraum, $M \subset X$ beliebig, $d(x, y) := \| x - y \|$, wobei $x, y \in M$ und damit $(M, d)$ ein metrischer Raum.
+Sei $X$ ein normierter Vektorraum, $M \subset X$ beliebig, $d(x, y) \coloneqq \| x - y \|$, wobei $x, y \in M$ und damit $(M, d)$ ein metrischer Raum.
 
 
 \begin{definition} \label{def:5.15-Lipschitz}
-	$f: M \rightarrow \MdR$ hei{\ss}t \begriff{Lipschitz}, falls:
+	$f \colon M \rightarrow \MdR$ hei{\ss}t \begriff{Lipschitz}, falls:
 	\[ \sup_{x, y \notin M, x \neq y} \frac{|f(x) - f(y)|}{d(x, y)} = \underbrace{\| f \|_{L}}_{Lipschitz-Konstante} < \infty \]
 \end{definition}
 
 
 \begin{bemerkung}
 	Sei $(M, d)$ ein metrischer Raum, $x_{0} \in M$ fest. \\
-	\[ X = \{ f: M \rightarrow \MdR: \quad f \text{ Lipschitz}, f(x_{0}) = 0 \} \text{ ist bezüglich } \| \cdot \|_{L} \text{ ein normierter Raum.} \]	
+	\[ X = \{ f \colon M \rightarrow \MdR: \quad f \text{ Lipschitz}, f(x_{0}) = 0 \} \text{ ist bezüglich } \| \cdot \|_{L} \text{ ein normierter Raum.} \]	
 	Dann ist $X' = B(X, \MdR)$ vollständig.
 	\begin{beweis}
 		Seien $f, g \in X$, dann gilt:  
@@ -302,7 +303,7 @@ Sei $X$ ein normierter Vektorraum, $M \subset X$ beliebig, $d(x, y) := \| x - y 
 
 \begin{satz} \label{satz:5-17}
 	Sei $(M,d)$ ein metrische Raum, $x_{0} \in M$ fest, $X$ definiert wie in \hyperref[def:5.15-Lipschitz]{5.15}: \\ \\
-	Zu $x \in M$ definiere $F_{x} \in X'$ durch $F_{x}(f) = f(x)$ für $f: M \rightarrow \MdR$ in $X$. \\
+	Zu $x \in M$ definiere $F_{x} \in X'$ durch $F_{x}(f) = f(x)$ für $f \colon M \rightarrow \MdR$ in $X$. \\
 	Dann ist $x \in M \rightarrow F_{x} \in X'$ eine Abbildung, die eine isometrische Einbettung von $M$ nach $X'$ gibt, d.h. 
 	\[ d(x, y) = \| F_{x} - F_{y} \|_{X'} \]
 \end{satz}
@@ -327,7 +328,7 @@ Sei $X$ ein normierter Vektorraum, $M \subset X$ beliebig, $d(x, y) := \| x - y 
 
 
 \begin{definition}
-	Sei $(M, d)$ ein metrischer Raum. Ein vollständiger metrischer Raum $(\hat M, \hat d)$ hei{\ss}t \begriff{Vervollständigung} von $(M, d)$, falls es eine Einbettung $J : M \rightarrow \hat M$ gibt mit:
+	Sei $(M, d)$ ein metrischer Raum. Ein vollständiger metrischer Raum $(\hat M, \hat d)$ hei{\ss}t \begriff{Vervollständigung} von $(M, d)$, falls es eine Einbettung $J \colon M \rightarrow \hat M$ gibt mit:
 	\begin{enumerate}[label=\roman*\upshape)]
 		\item $\hat d (J(x), J(y)) = d(x, y)$ für alle $x, y \in M$ (Isometrie)
 		\item J(M) ist dicht in $\hat{M}$
@@ -353,12 +354,12 @@ Sei $X$ ein normierter Vektorraum, $M \subset X$ beliebig, $d(x, y) := \| x - y 
 
 \begin{beweis}
 	Existenz: Zu $(M, d)$ konstruieren wie in \hyperref[satz:5-17]{5.17} den Banachraum $X$ und die Einbettung 
-		\[ J : \begin{cases} M \rightarrow X' \\ x \rightarrow F x\end{cases} \]
+		\[ J \colon \begin{cases} M \rightarrow X' \\ x \rightarrow F x\end{cases} \]
 		mit $d(x, y) = \| Fx - Fy \| = \| J(x) - J(y) \|$. \\
 		Setze $ \hat M = \overline{J(M)}^{X'} \equalhat$ Abschluss von $J(M)$ in $X'$, damit ist $\hat M$ als abgeschlossene Teilmenge des vollständigen Raumes $X'$ auch vollständig: $J(M)$ dicht in $\hat M$ nach Definition. \\
 		Somit ist $\hat M$ mit $\hat d(f, g) = \|f - h \|_{X'}$ eine Vervollständigung von $(M, d)$. \\ \\
-	Eindeutigkeit: Für $(M, d) = (X, \| \cdot \|)$ ein normierter Vektorraum seien $(X_{1}, d_{1}), (X_{2}, d_{2})$ zwei Vervollständigungen von $X, \| \cdot \|)$ mit isometrischen Einbettungen $J_{1} : X \rightarrow X_{1}$, $J_{2} : X \rightarrow X_{2}$ wobei $J_{2} J_{1}^{-1}: J_{1}(x) \rightarrow X_{2}$ stetig ist. \\
-		Nach \hyperref[prop:5.10]{Proposition 5.10} hat also $J_{2} J_{1}^{-1}$ eine stetige Fortsetzung $U_{1} : X_{1} \rightarrow X_{2}$ mit 
+	Eindeutigkeit: Für $(M, d) = (X, \| \cdot \|)$ ein normierter Vektorraum seien $(X_{1}, d_{1}), (X_{2}, d_{2})$ zwei Vervollständigungen von $X, \| \cdot \|)$ mit isometrischen Einbettungen $J_{1} \colon X \rightarrow X_{1}$, $J_{2} \colon X \rightarrow X_{2}$ wobei $J_{2} J_{1}^{-1}: J_{1}(x) \rightarrow X_{2}$ stetig ist. \\
+		Nach \hyperref[prop:5.10]{Proposition 5.10} hat also $J_{2} J_{1}^{-1}$ eine stetige Fortsetzung $U_{1} \colon X_{1} \rightarrow X_{2}$ mit 
 			\[ \| U_{1} \| \leq \| J_{2} J_{1}^{-1} \| = 1. \]
 		Ebenso hat $J_{2} J_{1}^{-1}$ eine stetige Fortsetzung $U_{2}: X_{2} \rightarrow X_{1}$ mit 
 			\[ \| U_{2} \| \leq \| J_{1} J_{2}^{-1} \| = 1. \]
@@ -373,8 +374,8 @@ Sei $X$ ein normierter Vektorraum, $M \subset X$ beliebig, $d(x, y) := \| x - y 
 \begin{bemerkung}
 Alternativer Beweis der Existenz der Vervollständigung nach Cantor für einen normierten Vektorraum: \\ \\
 	Sei $(X, \| \cdot \|9$ ein normierter Vektorraum, definiere 
-	\[ CF(X) := \{ (x_{n}) \in X^{\MdN}: (x_{n}) \text{ ist Cauchy-Folge in } X \} \quad \text{und} \quad \mu((x_{n})) := \overline{\lim} \| x_{n} \| \]
-	Dann ist $p$ eine Halbnorm auf $CF(X)$. Setze $M := \{(x_{n}) \in CF(X): p(x_{n}) = 0 \} = \{ (x_{n}) \in CF(X): \| x_{n} \| \rightarrow 0 \}$
+	\[ CF(X) \coloneqq \{ (x_{n}) \in X^{\MdN}: (x_{n}) \text{ ist Cauchy-Folge in } X \} \quad \text{und} \quad \mu((x_{n})) \coloneqq \overline{\lim} \| x_{n} \| \]
+	Dann ist $p$ eine Halbnorm auf $CF(X)$. Setze $M \coloneqq \{(x_{n}) \in CF(X): p(x_{n}) = 0 \} = \{ (x_{n}) \in CF(X): \| x_{n} \| \rightarrow 0 \}$
 	Wähle als Kandidaten für die Vervollständigung $\hat X = \QR{CF(X)}{M}$
 	\begin{enumerate}[label=\roman*\upshape)]
 		\item Vollständig, d.h. gegen $x_{k} = (x_{k, j}) \in CF(X)$ mit: $\forall \epsilon > 0$ $\exists k_{\epsilon} \in \MdN: p(x_{n} - x_{m}) \leq \epsilon$ für $n, m \geq k_{0}$ gibt es ein $x = (x_{j}) \in CF(X)$ mit $p(x - x_{k}) \rightarrow 0$

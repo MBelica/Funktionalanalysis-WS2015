@@ -12,8 +12,8 @@
 
 Sei $X$ ein Vektorraum, $dim X < \infty $ und sei $x = (x_{1},\dotsc,x_{n})^{T} \in \MdR^{n}$
 \begin{align*}
-	& \|x\|_{2} := \left(\sum_{k = 1}^{n} \|x_{i}^{2}\| \right)^{\frac{1}{2}}\\
-	& \|x\|_{\infty} := \smash{\displaystyle\max_{i = 1}^{n}}  \|x_{i}\|		
+	\|x\|_{2}~ & \coloneqq \left(\sum_{k = 1}^{n} \|x_{i}^{2}\| \right)^{\frac{1}{2}}\\
+	\|x\|_{\infty} & \coloneqq \smash{\displaystyle\max_{i = 1}^{n}}  \|x_{i}\|	
 \end{align*}	
 
 Diese Normen sind äquivalent, denn:
@@ -25,8 +25,8 @@ Sei $A \subset \MdR^{n}$ beschränkt. Dann hat jede Folge $(x_{n})_{n \in \MdN} 
 
 
 \begin{beispiel}
-	Betrachte $X = C[0, 1] = \{ f : [0, 1] \rightarrow \MdR: f \text{ stetig auf } [0, 1] \} $ mit $\| f \|_{\infty} :=  \smash{\displaystyle\max_{t \in [0, 1]}}  \| f(t) \|$. \\ 
-	Sei weiter $f_{n} : t \rightarrow t^{n}$, damit gilt $\| f_{n} \|_{\infty} \leq 1 \quad \forall n \in \MdN$.	
+	Betrachte $X = C[0, 1] = \{ f \colon [0, 1] \rightarrow \MdR: f \text{ stetig auf } [0, 1] \} $ mit $\| f \|_{\infty} \coloneqq  \smash{\displaystyle\max_{t \in [0, 1]}}  \| f(t) \|$. \\ 
+	Sei weiter $f_{n} \colon t \rightarrow t^{n}$, damit gilt $\| f_{n} \|_{\infty} \leq 1 \quad \forall n \in \MdN$.	
 	\begin{figure}[H]	
 		\begin{center}					
 			\begin{tikzpicture}
@@ -50,7 +50,7 @@ Sei $A \subset \MdR^{n}$ beschränkt. Dann hat jede Folge $(x_{n})_{n \in \MdN} 
 
 
 Sei $N = dim X, M = dim Y$ und seien $(e_n)$ bzw. $(f_n)$ Basen von $X$ bzw. $Y$. 	\\
-Sei $T : X \rightarrow Y$ gegeben durch: \\
+Sei $T \colon X \rightarrow Y$ gegeben durch: \\
 \[ \begin{xy} \xymatrix{
 	X \ar[r]^T	\ar[d]_{ \alpha_{n} \rightarrow \sum \alpha_{n} e_{n} }  &   Y \ar[d]^{ \beta_{n} \rightarrow \sum \beta_{n} f_{n} }  \\
       	\MdR^{N} 	\ar[r]^A    				&   \MdR^{n}  				
@@ -72,8 +72,8 @@ Daraus folgt:
 
 
 \begin{beispiel}
-$X = C^{1}[0, 1] = \{ f : [0, 1] \rightarrow \MdR: f \text{ stetig auf } [0, 1] \}$ \\
-$T f = f', T : X \rightarrow C[0, 1] \text{ stetig.} $ (Aber: $T: C[0, 1] \rightarrow C[0, 1]$, hier ist $T$ nicht definiert.) \\
+$X = C^{1}[0, 1] = \{ f \colon [0, 1] \rightarrow \MdR: f \text{ stetig auf } [0, 1] \}$ \\
+$T f = f', T \colon X \rightarrow C[0, 1] \text{ stetig.} $ (Aber: $T: C[0, 1] \rightarrow C[0, 1]$, hier ist $T$ nicht definiert.) \\
 
 $T$ ist nicht stetig bzgl. $\| \cdot \|_{\infty}$-Norm, da:
 \[ f_{n}(t) = \frac{1}{\sqrt{n}}e^{int}, \hspace{0.5cm}  \text{dann: } \|f_{n}\| \rightarrow 0 \text{ für } t \rightarrow \infty \]	
@@ -101,7 +101,7 @@ $T$ ist injektiv, aber nicht surjektiv
 	\[ \lambda \in \MdR \setminus \{0\}: (\lambda Id - T)(f) = y, \hspace{0.25cm} f,g \in C[0, 1] \]
 	Dann existiert eine Lösung genau dann, wenn diese eindeutig ist. \\
 	\item Dirichletproblem \index{Dirichletproblem}\\
-	$\Omega \subset \MdR^n$ Gebiet, offen, beschränkt, glatter Rand. Sei $g: \partial \Omega \rightarrow \MdR$ stetig \\ 
+	$\Omega \subset \MdR^n$ Gebiet, offen, beschränkt, glatter Rand. Sei $g \colon \partial \Omega \rightarrow \MdR$ stetig \\ 
 	Gesucht ist ein $f \in C(\bar \Omega) \cap  C^(\Omega)$, so dass $\nabla f = \sum_{i = 1}^{n} \frac{\partial^{2} f}{\partial x_{i}^2} = 0$ in $\Omega$ und $f|_{\partial \Omega}= g$ \\ \\
 	Beispiel: Durch Wärmeverteilung auf dem Rand auf die Wärmeverteilung im Inneren schlie{\ss}en. \\ \\
 	Lösung: Dirichletintegral $J(u) = \int_{\Omega} (\nabla u )^{2} dx$, wobei $ u \in M = \{ v \in C^{1}(\bar \Omega) | \hspace{0.25cm} v|_{\partial \Omega} = g \}$ \\

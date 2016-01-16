@@ -35,7 +35,7 @@
 \end{lemma}
 
 \begin{beweis}
-	Sei $x \in X \setminus Y$ und $d := \inf \{ \| x - y \|: y \in Y \} > 0$, da $Y$ ein abgeschlossener Teilraum ist. \\
+	Sei $x \in X \setminus Y$ und $d \coloneqq \inf \{ \| x - y \|: y \in Y \} > 0$, da $Y$ ein abgeschlossener Teilraum ist. \\
 	Da $ d < \frac{d}{1 - \delta}$ gibt es ein $y_{\delta} \in Y$ mit $\| x - y_{\delta} \| < \frac{d}{1 -  \delta}$. \\ 
 	Setze $x_{\delta} = \frac{x - y_{\delta}}{\| x - y_{\delta} \|}$, damit gilt $\| x_{\delta} \| = 1$ und weiter 
 	\begin{align*}
@@ -86,17 +86,17 @@
 	Sei $c)$ falsch, d.h. es gibt eine offene Überdeckung $K \subset \bigcup_{j \in J} U_{j}$ ohne endliche Teilüberdeckung.
 	Zu $\epsilon_{1}$ gibt es nach $b)$ aber endlich viele $x_{1}^{1}, ..., x_{m}^{1} \in K$, so dass 
 	\[ K \subset \bigcup_{j = 1}^{m} K(x_{j}^{1}, \epsilon_{1}) \]
-	Setze der Kürze halber $y_{1} := x_{j_{0}}^{1}$. Nun gibt es eine dieser Kugeln $K(y_{1}, \epsilon_{1})$, sodass $\underbrace{K \cap K(y_{1}, 1)}_{=: L_{1}}$ nicht durch endlich viele der $U_{j}$ überdeckt werden kann. \\
+	Setze der Kürze halber $y_{1} \coloneqq x_{j_{0}}^{1}$. Nun gibt es eine dieser Kugeln $K(y_{1}, \epsilon_{1})$, sodass $\underbrace{K \cap K(y_{1}, 1)}_{=: L_{1}}$ nicht durch endlich viele der $U_{j}$ überdeckt werden kann. \\
 	Nach $B)$ gibt es aber auch zu $\epsilon_{2} = \frac{1}{2}$ endlich viele $x_{1}^{2}, \dotsc, x_{m'}^{2}$, sodass 
 	\[ L_{1} \subset K(x_{1}^{2}, \epsilon_{2}) \cup \dotsc \cup K(x_{m'}^{2}, \epsilon_{2}). \] 
 	Wieder muss es nach Voraussetzung eine dieser Kugeln $K(y_{2}, \epsilon_{2})$ geben, sodass $\underbrace{K \cap K(y_{1}, \epsilon_{1}) \cap K(y_{2}, \epsilon_{2})}_{=: L_{2}}$ sich nicht durch endlich viele der $U_{j}$ überdecken lässt. \\
 	Induktiv finden wir zu $\epsilon_{l} = \frac{1}{2^{l - 1}}$ eine Folge $y_{l} \in K$, so dass
-	\[ L_{l} := K \cap K(y_{1}, \epsilon_{1}) \cap \dotsc \cap K(y_{l}, \epsilon_{l}) \]
+	\[ L_{l} \coloneqq K \cap K(y_{1}, \epsilon_{1}) \cap \dotsc \cap K(y_{l}, \epsilon_{l}) \]
 	sich nicht durch endlich viele der $U_{j}$ überdecken lässt. \\
 	Nun ist aber $L_{l} \subset K(y_{l - 1}, \epsilon_{l - 1}) \cap K(y_{l}, \epsilon_{l}) \neq \emptyset$. Mit $z \in K(y_{l - 1}, \epsilon_{l - 1}) \cap K(y_{l}, \epsilon_{l})$ gilt
 	\[ d(y_{l}, y_{l - 1}) \leq d(y_{l}, z) + d(z, y_{l - 1}) \leq \frac{1}{2^{l - 1}} + \frac{1}{2^{l - 2}} \leq \frac{1}{2^{l - 3}}. \]
 	Für $n < m$: $d(y_{n}, y_{m}) \leq \sum_{l = n}^{m} \frac{1}{2^{l}} \xrightarrow[n, m \rightarrow \infty]{} 0$, d.h. $(y_{n})_{n \geq 1}$ ist Cauchy-Folge in $K$. \\
-	Da $K$ vollständig ist nach $b)$, gilt $y := \lim_{l \rightarrow \infty} y_{l} \in K$.
+	Da $K$ vollständig ist nach $b)$, gilt $y \coloneqq \lim_{l \rightarrow \infty} y_{l} \in K$.
 	Wähle $n$ so gro{\ss}, dass $d(y_{n}, y) < \frac{\delta}{2}, 2^{1-n} < \frac{\delta}{2}$. \\
 	\[ \Rightarrow L_{n} = K \cap K(y_{1}, 1) \cap \dotsc \cap K(y_{n}, \frac{1}{2^{n - 1 ?}} \subset K(y_{n}, 	\frac{1}{2^{n - 1}} \subset K(y, \delta) \subset U_{i_{0}} \]
 	Was jedoch Widerspruch zur Konstruktion der $L_{n}$ wäre. \\ \\
@@ -131,7 +131,7 @@
 
 \begin{satz}[Arzelà-Ascoli] \index{Arzelà-Ascoli} \label{satz:6.7-ArzelaAscoli}
 	Sei $(S, d)$ ein kompakter, metrischer Raum
-	\[ C(S) = \{ d : S \rightarrow \MdK \text{ stetig} \} \]
+	\[ C(S) = \{ d \colon S \rightarrow \MdK \text{ stetig} \} \]
 	$\| f \|_{\infty} = \sup_{s \in S} | f(s) |$. Eine Teilmenge $M \subset C(S)$ ist kompakt, genau dann wenn gilt
 		\begin{enumerate}[label=\alph*\upshape)]
 			\item $M$ ist beschränkt in $C(S)$,
@@ -147,7 +147,7 @@
 	Nach \hyperref[satz:6.5b]{6.5 b)} ist $M$ totalbeschränkt. Damit gibt es zu $\epsilon > 0$ $x_{1}, \dotsc, x_{m}$, so dass zu $x \in M$ ein $x_{i}$ existiert mit $\| x - x_{i} \|_{M} \leq \epsilon$ $(*)$ \\
 	Da stetige Funktionen auf kompakten Mengen gleichmä{\ss}ig stetig sind, sind$x_{1}, \dotsc, x_{m} \in M$ gleichmä{\ss}ig stetig und damit folgt 
 	\[ \exists \delta_{1}, \dotsc, \delta_{m} \text{ mit } d(s, t) < \delta_{i} \Rightarrow |x_{i}(t) - x_{i}(s)| < \epsilon, \text{ } i = 1, \dotsc, m \quad (**) \]
-	Definiere $\delta := \min(\delta_{1}, \dotsc, \delta_{m}) > 0$, dann gilt für $x \in M$:
+	Definiere $\delta \coloneqq \min(\delta_{1}, \dotsc, \delta_{m}) > 0$, dann gilt für $x \in M$:
 	\begin{align*}
 		| x(t) - x(s) | & \leq \underbrace{| x(t) - x_{i}(s) |}_{\leq \| x - x_{i} \| \leq \epsilon \text{ nach } (*) } + \underbrace{| x_{i}(t) - x_{i}(s) |}_{\leq \epsilon \text{ nach } (**) } + \underbrace{| x_{i}(s) - x(s) |}_{\leq \epsilon} \\
 						& \leq 3 \epsilon \text{ für } d(s, t) < \delta 

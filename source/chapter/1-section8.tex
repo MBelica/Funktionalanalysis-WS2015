@@ -7,17 +7,17 @@
 Sei $x = (x_{1}, x_{2}, \dotsc) \in \ell^{p}, x_{m} = (x_{1}, \dotsc, x_{m}, \dotsc)$. \\
 \[ \text{Dann }\|  x - x_{m} \| \rightarrow 0 \text{ für } m \rightarrow \infty. \]
 	\newline
-Betrachten wir $L^{p}(\Omega)$, mit z.B. $\Omega = \MdR^{d}$ und die Integraloperatoren $T :	L^{p}(\Omega) \rightarrow L^{p}(\Omega)$
+Betrachten wir $L^{p}(\Omega)$, mit z.B. $\Omega = \MdR^{d}$ und die Integraloperatoren $T \colon L^{p}(\Omega) \rightarrow L^{p}(\Omega)$
 	\[ T f(u) = \int k(u, v) f(v) dv \quad (*) \label{eq:8.0-BeschrOperatorInLp} \]
-wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
+wobei $k \colon \Omega \times \Omega \rightarrow \MdK$ messbar.
 
 \begin{satz} \label{satz:8.1}
-	Sei $k : \Omega \times \Omega \rightarrow \MdK$ messbar	und
+	Sei $k \colon \Omega \times \Omega \rightarrow \MdK$ messbar	und
 	\begin{align*}
 		\sup_{u \in \Omega} & \int_{\Omega} |k(u, v)| dv \leq C_{1} < \infty \text{ und} \\
 		\sup_{v \in \Omega} & \int_{\Omega} |k(u, v)| du \leq C_{2} < \infty
 	\end{align*}
-	Dann wird durch \hyperref[eq:8.0-BeschrOperatorInLp]{$(*)$} ein beschränkter Operator $T : L^{p}(\Omega) \rightarrow L^{p}(\Omega)$ mit
+	Dann wird durch \hyperref[eq:8.0-BeschrOperatorInLp]{$(*)$} ein beschränkter Operator $T \colon L^{p}(\Omega) \rightarrow L^{p}(\Omega)$ mit
 	\[ \| T \|_{L^{p} \rightarrow L^{p}} \leq C_{1}^{\frac{1}{p'}} C_{1}^{\frac{1}{p}}, \quad \frac{1}{p'} + \frac{1}{p} = 1   \]
 	und $1 \leq p \leq \infty$.
 \end{satz}
@@ -141,7 +141,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 \end{satz}
 
 \begin{beweis}
-	Setze $k(u, v) := k(u - v)$. Dann gilt:
+	Setze $k(u, v) \coloneqq k(u - v)$. Dann gilt:
 	\begin{align*}
 		\int |k(u, v)| dv & = \int | k(u - v) | dv = \| k \|_{L^{1}} \text{ für alle } u \in \MdR^{d} \\
 			\int |k(u, v)| d u& = \int | k(u - v) | du = \| k \|_{L^{1}} \text{ für alle } v \in \MdR^{d} \\
@@ -246,7 +246,7 @@ wobei $k : \Omega \times \Omega \rightarrow \MdK$ messbar.
 			
 		Da $\supp(\phi_{\delta}) \subset B(0, \delta)$ nach \hyperref[bem:8.7ii]{8.7 ii)}
 		\[ \Rightarrow \supp(g \ast \phi_{\delta} ) \subset A + B\left(0, \frac{\delta_{0}}{2}\right) \subset \Omega \text{ für } \delta < \frac{\delta_{0}}{2} \]
-		(mit $A + B := \{ x + y : x \in A, y \in B\}$), denn $g \ast \phi_{\delta}(u) = \int \phi_{\delta}(u - v) g(v) dv \neq 0$ nur wenn $v \in A$ und $\| u - v \| < \delta$. \\
+		(mit $A + B \coloneqq \{ x + y : x \in A, y \in B\}$), denn $g \ast \phi_{\delta}(u) = \int \phi_{\delta}(u - v) g(v) dv \neq 0$ nur wenn $v \in A$ und $\| u - v \| < \delta$. \\
 		Also $g \ast \phi_{\delta} \in C_{c}(\Omega)$. Zu zeigen: $g \ast \phi_{\delta} \in C^{\infty}(\Omega)$
 		\[ D_{u}^{\alpha}(\phi_{\delta} \ast g)(u) = \int_{A} \left[ D_{u}^{\alpha} \phi_{\delta}(u - v) \right] \underbrace{g(v)}_{\text{beschränkt}} gv \]
 		d.h. $\phi_{\delta} \ast g \in C	^{\infty}$; in einfachen Worten bedeutet das, dass $C_{\delta} \ast g$ alle guten Eigenschaften von $\phi$ $"$erbt$"$, auch wenn $g$ $"$schlecht$"$ ist. \\

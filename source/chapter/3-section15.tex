@@ -11,7 +11,7 @@
 
 \begin{definition} \label{def:15.1-Skalarprodukt}
 	Sei $X$ ein Vektorraum über $\MdK$. Eine Abbildung
-	\[ \< \cdot, \cdot \> : X \times X \rightarrow \MdK \]
+	\[ \< \cdot, \cdot \> \colon X \times X \rightarrow \MdK \]
 	hei{\ss}t \begriff{Skalarprodukt}, falls für $x, y \in X, \lambda \in \MdK$ gilt:
 	\begin{description}
 	 	\label{def:15.1i}
@@ -45,7 +45,7 @@
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Für $\lambda \in \MdK$ gilt:
 			\[ 0 \leq \< x + \lambda y, x + \lambda y \> = \< x, x \> + \overline{\lambda} \< x, y \> + \lambda \< x, y \> + |\lambda|^{2} \< y, y \> \]
-			Für $\lambda := - \frac{\< x, y \>}{\< y, y \>}$ folgt:
+			Für $\lambda \coloneqq - \frac{\< x, y \>}{\< y, y \>}$ folgt:
 			\[ 0 \leq \< x, y \> - \frac{|\< x,y \>|^{2}}{\< y, y \>} - \frac{|\< x, y \>|^{2}}{\< y, y \>} + \frac{|\< x, y \>|^{2}}{\< y, y \>} \]
 			\[ \gdw 0 \leq \< x, x \> \cdot \< y, y \> - |\< x, y \>|^{2} \Rightarrow \text{Behauptung } a) \]
 		\item $\| x \| \geq 0, \quad \| x \| = 0 \gdw x = 0$ folgt aus \hyperref[def:15.1iv]{$(S4)$} \\
@@ -83,7 +83,7 @@
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\MdC$ mit $\< x, y \> = \sum_{i = 1}^{n} x_{i} \overline{y_{i}}$ für $x = (x_{i}), y = (y_{i}) \in \MdC^{n}$ \\
 			\[ \| x \| = \left( \sum | x_{i}|^{2} \right)^{\frac{1}{2}} \]
-		\item $X = \ell^{2}, x = (x_{i})_{i \in \MdN} \in \ell{2}, y = (y_{i})_{i \in \MdN} \in \ell^{2}$ \\
+		\item $X = \ell^{2}, x = (x_{i})_{i \in \MdN} \in \ell^{2}, y = (y_{i})_{i \in \MdN} \in \ell^{2}$ \\
 			\[ \< x, y \> = \sum_{\i \in \MdN} x_{i} \overline{y_{i}},  \quad \|x \| = \left( \sum_{i = 1}^{\infty} |x_{i}|^{2} \right)^{\frac{1}{2}} \]
 			$X = \ell^{p}$ ist kein Hilbertraum für $n \neq 2$ (Übung).
 		\item $X = C(\Omega), \Omega \subset \MdR^{n}$ beschränkt und abgeschlossen \\
@@ -107,7 +107,7 @@
 \begin{beweis}
 	Nehmen wir an $(X, \| \cdot \|)$ sei ein Prä-Hilbertraum $\Rightarrow$ \hyperref[eq:15.6-rallelogrammGleichung]{$(P)$} gilt (einfaches nachrechnen mit \hyperref[eq:15.2-*]{$(*)$}). \\
 	Angenommen es gilt \hyperref[eq:15.6-rallelogrammGleichung]{$(P)$} und sei o.B.d.A $\MdK = \MdR$ (der Fall $\MdC$ absolut analog) 
-	\[  \< x, y \> := \frac{1}{4} \left( \| x + y \|^{2} - \| x - y \|^{2} \right) \]
+	\[  \< x, y \> \coloneqq \frac{1}{4} \left( \| x + y \|^{2} - \| x - y \|^{2} \right) \]
 	Überprüfe die Eigenschaften des Skalarproduktes:
 	\begin{enumerate}[label=\roman*\upshape)]
 		\item Zu zeigen: $\< x_{1} + x_{2}, y \> = \< x_{1}, y \> + \< x_{2}, y \>$
@@ -134,7 +134,7 @@
 			Für $\lambda \in \MdQ$, setze $\lambda = \frac{m}{n}$ mit $m, n \in \MdZ, n \neq 0$ 
 			\[ n \< \lambda x, y \> = \< n \lambda x, y \> = \< m x, y \> = m \< x, y \> \]
 			\[ \< \lambda x, y \> = \frac{m}{n} \< x, y \> = \lambda \< x, y \>, \quad \lambda \in \MdQ \]
-			$\lambda : \MdR \rightarrow \< \lambda x, y \>, \lambda : \MdR \rightarrow \lambda \< x, y \>$ sind stetige Funktionen auf $\MdR$, die auf dichten Teilmenge von $\MdQ$ übereinstimmen.
+			$\lambda \colon \MdR \rightarrow \< \lambda x, y \>, \lambda \colon \MdR \rightarrow \lambda \< x, y \>$ sind stetige Funktionen auf $\MdR$, die auf dichten Teilmenge von $\MdQ$ übereinstimmen.
 	\end{enumerate}
 \end{beweis}
 
@@ -145,14 +145,14 @@
 		\item Zu jedem $x \in X$ gibt es genau ein $y_{0} \in K$ so, dass
 			\[ \| x - y_{0} \| = \inf \{ \| x - y \|: y \in K \} \]
 		\item Dieses $y_{0} \in K$ ist charakterisiert durch die Ungleichung 
-			\[ \Re \< x - y_{0}, y - y_{0} \> \leq 0 \]
+			\[ \Re \< x - y_{0}, y - y_{0} \> \leq 0 \quad (w) \label{eq:15.7.5-SkalarproductbestApproximation} \]
 	\end{enumerate}
 \end{satz}
 
 \begin{beweis}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Da Aussage invariant ist gegenüber von Translationen ist, sei o.B.d.A. $x = 0$ und $0 \notin K$. \\ \\
-			Existenz: Setze $d := \inf \{ \| y \| : y \in K \}$ \\
+			Existenz: Setze $d \coloneqq \inf \{ \| y \| : y \in K \}$ \\
 			Wähle eine Folge $y_{n} \in K$ mit $\lim_{n} \| y_{n} \| = d$; wir wollen zeigen, dass dann $(y_{n})$ eine Cauchy-Folge in $X$ ist. \\
 			Da $K$ konvex ist, gilt $\frac{y_{n} + y_{m}}{2} \in K: \| \frac{y_{n} + y_{m}}{2} \| \geq d$. Mit \hyperref[eq:15.6-rallelogrammGleichung]{$(P)$} folgt:
 			\[ d^{2} \leq \| \frac{y_{n} + y_{m}}{2} \|^{2} + \| \frac{y_{n} - y_{m}}{2} \|^{2} \overset{\hyperref[eq:15.6-rallelogrammGleichung]{$(P)$}}{=} \frac{1}{2} \| y_{n} \|^{2} + \frac{1}{2} \| y_{m} \|^{2} \xrightarrow[n, m \rightarrow \infty]{} d^{2} \]
@@ -162,13 +162,32 @@
 			Mit \hyperref[eq:15.6-rallelogrammGleichung]{$(P)$} gilt:
 			\[ \left| \frac{y_{0} + y_{1}}{2} \right|^{2} < \left| \frac{y_{0} + y_{1}}{2} \right|^{2} + \left| \frac{y_{0} - y_{1}}{2} \right|^{2} \overset{\hyperref[eq:15.6-rallelogrammGleichung]{$(P)$}}{=} \frac{1}{2} \| y_{0} \|^{2} + \frac{1}{2} \| y_{1} \|^{2} = d^{2} \]
 			Also $\frac{y_{0} + y_{1}}{2} \in K$ und $ \| \frac{y_{0} + y_{1}}{2} \| < d$, was ein Widerspruch zur Definition von $D$ ist
+			\begin{vereinbarung}
+				Das Element $y_{0} \in K$ im Satz hei{\ss}t das \begriff{Element bester Approximation} von $x$ zu $K$.
+			\end{vereinbarung}
+		\item Annahme: $y_{0} \in K$ erfüllt die Ungleichung. 
+			\begin{align*}
+				\| x - y \|^{2} & = \| x - y_{0} + y_{0} - y \|^{2} \\
+								& = \| x - y_{0} \|^{1} + \| y_{0} - y \|^{2} + \underbrace{2 \Re \< x - y_{0}, y_{0} - y \>}_{ \geq 0} \\
+								& \geq \| x - y_{0} \|^{2}
+			\end{align*}
+			Also ist $y_{0}$ das Element bester Approximation. \\ \\
+			Sei umgekehrt $y_{0}$ das Element bester Approximation und $y \in K$. \\
+			Für $t \in (0, 1)$ setze $ K \ni y_{t} = ( 1 - t ) y_{0} + t y$.
+			\begin{align*}
+				\| x - y_{0} \|^{2} & \leq \| x - y_{0} \|^{2} \\
+									& = \< x - y_{0} + t ( y_{0} - y ), x - y_{0} + t ( y_{0}  - y ) \> \\
+									& = \| x - y_{0} \|^{2} + 2 \Re \<  x - y_{0}, t ( y_{0} - y ) \> + t^{2} \| y_{0} - y \|^{2}
+			\end{align*}
+			$\Rightarrow \Re \< x - y_{0}, y - y_{0} \> \leq \frac{t}{2} \| y_{0} - y \|^{2}$ für $t \in (0, 1)$. Für $t \rightarrow 0$ folgt die Ungleichung.
 	\end{enumerate}
 \end{beweis}
 
 
-\begin{vereinbarung}
-	Das Element $y_{0} \in K$ im Satz hei{\ss}t das \begriff{Element bester Approximation} von $x$ zu $K$.
-\end{vereinbarung}
+\begin{bemerkung}[Winkel zwischen Vektoren]
+		Seien $u, v \in H \setminus \{ 0 \}$ und definiere entsprechend $u_{1} = \frac{u}{\| u \|}, v_{1} = \frac{v}{\| v \|}$.
+		\[ \Rightarrow 1 \geq \frac{|\< u, v \>|}{\|u \| \cdot \| v \|} = | \< u_{1}, v_{1} \> | = \cos(\alpha), \text{ wobei } \alpha \in [0, \pi) \text{ eindeutig gewählt.} \]
+\end{bemerkung}
 
 
 

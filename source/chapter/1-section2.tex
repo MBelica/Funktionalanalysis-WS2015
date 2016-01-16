@@ -10,7 +10,7 @@
 
 \begin{definition}
 	Sei $X$ ein Vektorraum über $\MdK \in\{ \MdR, \MdC \}$. \\
-	Eine Abbildung  $\| \cdot \|: X \rightarrow \MdR_{+}$ hei{\ss}t eine \begriff{Norm}, wenn
+	Eine Abbildung  $\| \cdot \| \colon X \rightarrow \MdR_{+}$ hei{\ss}t eine \begriff{Norm}, wenn
 		\begin{description}
 			\item[$\hspace{0.5cm} (N1) \hspace{0.1cm} $] $\| x \| \geq 0, \quad \| x \| = 0 \gdw x = 0 $
 			\item[$\hspace{0.5cm} (N2) \hspace{0.1cm} $] $\| \lambda x \| = | \lambda \| x \| $
@@ -73,7 +73,7 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 													& \leq \underbrace{ \left( \sum_{i = 1}^{n} |x_{i}|^{2} \right)^\frac{1}{2} }_{=: \vertiii{ x }} \underbrace{ \left( \sum_{i = 1}^{n} \| e_{i} \|^{2} \right)^\frac{1}{2} }_{=: \nu}
 	\end{align*}
 	
-	Für die Umkehrung benutze die Funktion $J: \MdK^{n} \rightarrow X, \hspace{0.1cm} J(x_{1}, \dotsc, x_{n}) = \sum_{i = 1}^{n} x_{i} e_{i} $ \\
+	Für die Umkehrung benutze die Funktion $J \colon \MdK^{n} \rightarrow X, \hspace{0.1cm} J(x_{1}, \dotsc, x_{n}) = \sum_{i = 1}^{n} x_{i} e_{i} $ \\
 	\begin{align*}
  	 \text{Die Abbildung } y & \in \MdK^{n}  \rightarrow \| Jy \| \text{ ist stetig, denn} \\
  	 	 \vertiii{ Jy } = \| y \|_{\MdK^{n}} & = \left( \sum_{i = 1}^{n} |y_{i}|^{2} \right)^{\frac{1}{2}}, y = (y_{1}, \dotsc, y_{n}) \\
@@ -83,7 +83,7 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
  	 \end{align*}
  Daraus folgt die Stetigkeit von $ y \rightarrow \| Jy \| \in \MdR $ \\ \\
 	Sei $S = \{y \in \MdK^{n}: \| y \|_{\MdK^n} = 1 \}$. Dann ist $S$ abgeschlossen und beschränkt.
-	Die Abbildung $N : y \in S \rightarrow \| Jy \| > 0$ ist wie in (*) gezeigt stetig. Nach Analysis II nimmt $N$ sein Minimum in einem Punkt $y_{0} \in S$ an. Setze
+	Die Abbildung $N \colon y \in S \rightarrow \| Jy \| > 0$ ist wie in (*) gezeigt stetig. Nach Analysis II nimmt $N$ sein Minimum in einem Punkt $y_{0} \in S$ an. Setze
 		\begin{align*}
 			m = \inf\{\| x \| : \vertiii{ x } = 1\} & = \inf \{ \| Jy \|: y \in S \} \\
 												& = \| J y_{0} \| > 0 \\ \\
@@ -142,7 +142,7 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 	Im unendlich dimensionalen Fall sind die Normen $\| \cdot \|_{p}$ auf $\MdF$ nicht äquivalent.
 	\begin{beweis}
 		Sei $p > q$, setze 
-		\[ X_{n} := \sum_{j = 2^{n} + 1}^{2^{n + 1}} j^{-\frac{1}{p}}e_{j}, \hspace{0.5cm} e_{j} = ( \delta_{ij} )_{u \in \MdN} \]
+		\[ X_{n} \coloneqq \sum_{j = 2^{n} + 1}^{2^{n + 1}} j^{-\frac{1}{p}}e_{j}, \hspace{0.5cm} e_{j} = ( \delta_{ij} )_{u \in \MdN} \]
 		Damit gilt $x_{n} \in \MdF$ und weiter
 		\[ \| x_{n} \|_{p} = \left( \sum_{j = 2^{n}}^{2^{n + 1}} \frac{1}{j} \right)^{\frac{1}{p}} \simeq \left( ln(2) \right)^{\frac{1}{p}} \]
 		aber $\| x_{n} \|_{q} \rightarrow \infty$, also sind $\| \cdot \|_{p}, \| \cdot \|_{q}$ keine äquivalente Normen.
@@ -153,17 +153,17 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Raum der stetigen Funktionen \index{Raum der stetigen Funktionen} \\
-		$\Omega \subset \MdR^{n}, \hspace{0.25cm} C(\Omega) = \{ f: \Omega \rightarrow \MdR \text{ | } f \text{ stetig} \}$, \hspace{0.25cm} $\| f \|_{\infty} = \sup_{u \in \Omega} |f(u)|$\\
+		$\Omega \subset \MdR^{n}, \hspace{0.25cm} C(\Omega) = \{ f \colon \Omega \rightarrow \MdR \text{ | } f \text{ stetig} \}$, \hspace{0.25cm} $\| f \|_{\infty} = \sup_{u \in \Omega} |f(u)|$\\
 		$\Rightarrow \| f - f_{n} \|_{\infty} \rightarrow 0$ bedeutet gleichmä{\ss}ige Konvergenz von $f_{n}$ gegen $f$ auf $\Omega$.
 		\item Raum der differenzierbaren Funktionen \index{Raum der differenzierbaren Funktionen} \\
-		$\Omega \subset \MdR^{n}$ offen, $f: \Omega \rightarrow \MdR, \hspace{0.25cm} \alpha = (\alpha_{1}, \dotsc, \alpha_{m}) \in \MdN_{0}^{m}$ \\
+		$\Omega \subset \MdR^{n}$ offen, $f \colon \Omega \rightarrow \MdR, \hspace{0.25cm} \alpha = (\alpha_{1}, \dotsc, \alpha_{m}) \in \MdN_{0}^{m}$ \\
 		$D^{\alpha}f(x) = \frac{ \delta^{ | \alpha | } }{ \delta x_{1}^{ \alpha_{1} } \dotsc \delta x_{n}^{ \alpha_{n} } } f(x), \text{ wobei } | \alpha | = \alpha_{1} + \dotsc + \alpha_{n} $ \\ 
 	\end{enumerate}
 \end{beispiel}
 
 
 \begin{definition}
-	Wir nennen $C_{b}^{m}(\Omega) = \{ f: \Omega \rightarrow \MdR | D^{\alpha}f \text{ sind stetig in } \Omega, \text{ beschränkt auf } \Omega \text{ für alle } \alpha \in \MdN^{n}, |\alpha| \leq m \}$ den \begriff{Raum der beschränkten, m-fach stetig differenzierbaren Funktionen}.  \\
+	Wir nennen $C_{b}^{m}(\Omega) = \{ f \colon \Omega \rightarrow \MdR | D^{\alpha}f \text{ sind stetig in } \Omega, \text{ beschränkt auf } \Omega \text{ für alle } \alpha \in \MdN^{n}, |\alpha| \leq m \}$ den \begriff{Raum der beschränkten, m-fach stetig differenzierbaren Funktionen}.  \\
 	Auf $C_{b}^{m}$ definieren wir die Norm: $\| f \|_{C_{b}^{m}} = \sum_{|\alpha| \leq m} \| D^{\alpha}f \|_{\infty}$
 \end{definition}
 
@@ -214,17 +214,17 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 	\begin{itemize}
 		\item Hölderstetige Funktionen \index{Hölderstetige Funktionen} \\
 			Wenn $h_{\alpha}(f) = \sup_{u,v \in \MdR, u \neq v} \frac{\| f(u) - f(v)\|}{|u - v|^{\alpha}} < \infty \hspace{0.25cm} \left( \alpha \in (0, 1] \right)$, dann nennt man $f$ hölderstetig.
-			\[ C^{\alpha}(\Omega) := \{ f: \Omega \rightarrow \MdR: h_{\alpha}(f) < \infty \} \hspace{0.5cm} \Omega \subset \MdR^{n}, \hspace{0.25cm} \]
+			\[ C^{\alpha}(\Omega) \coloneqq \{ f \colon \Omega \rightarrow \MdR: h_{\alpha}(f) < \infty \} \hspace{0.5cm} \Omega \subset \MdR^{n}, \hspace{0.25cm} \]
 			Im Moment ist $h_{\alpha}( \cdot )$ eine Halbnorm. Unter der Voraussetzung $\Omega$ zusammenhängend gilt aber weiter:
 			\[ h_{\alpha}(f) = 0 \gdw f \equiv c \text{ konstant} \]
 			Wenn z.B. $M = \{ \1_\Omega \}$ und $V = C^{\alpha}/M$ ist oben genanntes sogar ein normierter Raum.
 		\item Lebesgues-Integrierbare Funktionen \index{Lebesgue-Integrierbare Funktionen} \\
-			Sei $\Omega \subset \MdR^{n}$ offen, $\cl^{p}(\Omega) = \{ f: \Omega \rightarrow \MdR : |f|^{p}$ ist Lesbesgue-integrierbar auf $\Omega$  \}.
-			Wir definieren $\| f \|_{p} := \left( \int_{\Omega} |f(x)|^{p} d\mu \right)^{\frac{1}{p}}$, wobei $\| \cdot \|_{p}$ hier eine Halbnorm bildet.
+			Sei $\Omega \subset \MdR^{n}$ offen, $\cl^{p}(\Omega) = \{ f \colon \Omega \rightarrow \MdR : |f|^{p}$ ist Lesbesgue-integrierbar auf $\Omega$  \}.
+			Wir definieren $\| f \|_{p} \coloneqq \left( \int_{\Omega} |f(x)|^{p} d\mu \right)^{\frac{1}{p}}$, wobei $\| \cdot \|_{p}$ hier eine Halbnorm bildet.
 			\[ \| f \|_{p} = 0 \gdw  f(x) = 0 \text{ fast überall auf } \Omega \]
-			Wähle $M = \{ f: \Omega \rightarrow \MdR: f = 0 \text{ fast überall auf } \Omega \}$. \\ \\
+			Wähle $M = \{ f \colon \Omega \rightarrow \MdR: f = 0 \text{ fast überall auf } \Omega \}$. \\ \\
 			Dann ist 
-			\[ L^{p}(\Omega) := \QR{ \cl^{p}(\Omega) }{ M } \text{ ein normierter Raum.} \]
+			\[ L^{p}(\Omega) \coloneqq \QR{ \cl^{p}(\Omega) }{ M } \text{ ein normierter Raum.} \]
 	\end{itemize}
 \end{beispiel}
 

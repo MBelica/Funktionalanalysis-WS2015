@@ -4,7 +4,7 @@
 
 \begin{definition}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Sei $M$ eine nichtleere Menge. Eine Abbildung $d: M \times M \rightarrow 	\MdR$ hei{\ss}t \begriff{Metrik} auf $M$, falls $\forall x, y, z \in M:$
+		\item Sei $M$ eine nichtleere Menge. Eine Abbildung $d \colon M \times M \rightarrow 	\MdR$ hei{\ss}t \begriff{Metrik} auf $M$, falls $\forall x, y, z \in M:$
 			\begin{description}
 				\item[$\hspace{0.5cm} (M1) \hspace{0.1cm} $] $d(x, y) \geq 0, \hspace{0.25cm} d(x, y) = 0 \gdw x = y $  (positive Definitheit)
 				\item[$\hspace{0.5cm} (M2) \hspace{0.1cm} $] $d(x, y) = d(y, x)$  (Symmetrie)
@@ -32,10 +32,10 @@
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Sei $X$ ein normierter Vektorraum und $M \subset X$ (nichtleere) Teilmenge. \\
-		Dann definiert $d(x, y) := \| x - y\|, \hspace{0.25cm} x, y \in M$ eine Metrik auf $M$ \\
+		Dann definiert $d(x, y) \coloneqq \| x - y\|, \hspace{0.25cm} x, y \in M$ eine Metrik auf $M$ \\
 		Ein Unterschied hier: Eine Norm setzt eine lineare Struktur auf $X$ voraus, eine Metrik macht auch Sinn auf nicht-linearen Teilmengen.
 		\item \label{bsp:1-diskreteMetrik} Sei $M$ eine nichtleere Menge, dann definieren wir die \begriff{diskrete Metrik} auf $M$ durch
-			\[ d(x, y) := \begin{cases}1 &, x \neq y \\ 0 &, x = y\end{cases} \]
+			\[ d(x, y) \coloneqq \begin{cases}1 &, x \neq y \\ 0 &, x = y\end{cases} \]
 			Dann ist $(M, d)$ ein metrischer Raum und es gilt: 
 				\[ x_{n} \rightarrow x \text{ in } M \gdw \exists N \in \MdN \text{ mit } x_{n} = x \hspace{0.25cm} \forall n \geq N \]
 	\end{enumerate}	
@@ -45,13 +45,13 @@
 \begin{beispiel}  \label{bsp:4.3}
 	\begin{enumerate}[label=\alph*\upshape)]	
 		\item Sei $X$ ein Vektorraum und $p_{j}$ für $j \in \MdN$ Halbnormen auf $X$ mit der Eigenschaft, dass für jedes $x \in X \setminus \{ 0 \}$ ein $K \in \MdN$ existiert mit $p_{K} > 0$. Dann definiert
-			\[ d(x, y) := \sum_{j \geq 1} 2^{-j} \frac{p_{j}(x - y)}{1 + p_{j}(x -y)}, \hspace{0.5cm} x, y \in X \]
+			\[ d(x, y) \coloneqq \sum_{j \geq 1} 2^{-j} \frac{p_{j}(x - y)}{1 + p_{j}(x -y)}, \hspace{0.5cm} x, y \in X \]
 			eine Metrik auf $X$ mit
 			\[ d(x_{n}, x) \rightarrow 0 \gdw p_{j}(x_{n} - x) \rightarrow 0 \hspace{0.25cm} (n \rightarrow  \infty) \hspace{0.25cm} \forall j \in \MdN \]
 			Beweis siehe Übung
-		\item Für $X = \MdK^{\MdN} = \{ (x_{n})_{n \geq 1}: x_{n} \in \MdK \}$ und $p_{j}(x) := |x_{j}|, j \in \MdN$ definiert also
+		\item Für $X = \MdK^{\MdN} = \{ (x_{n})_{n \geq 1}: x_{n} \in \MdK \}$ und $p_{j}(x) \coloneqq |x_{j}|, j \in \MdN$ definiert also
 			\[ d(x, y) = \sum_{j = 1}^{\infty} 2^{-j} \frac{|x_{j} - y_{j}|}{1 + |x_{j} - y_{j}|} \text{ gerade die komponentenweise Konvergenz auf } X \]
-		\item In $\ell^{\infty}$ entspricht die Konvergenz bezüglich $\| \cdot \|_{\ell^{\infty}}$ gerade der gleichmä{\ss}igen Konvergenz der Folge $x_{n} := (x_{n, i})_{(i \in \MdN)}$ gegen $x := (x_{i})_{(i \in \MdN)}$
+		\item In $\ell^{\infty}$ entspricht die Konvergenz bezüglich $\| \cdot \|_{\ell^{\infty}}$ gerade der gleichmä{\ss}igen Konvergenz der Folge $x_{n} \coloneqq (x_{n, i})_{(i \in \MdN)}$ gegen $x \coloneqq (x_{i})_{(i \in \MdN)}$
 			\[ \| x_{n} - x \|_{\ell^{\infty}} = \sup_{i \in \MdN} | x_{n, i} - x_{i} | \rightarrow 0 \hspace{0.5cm} (n \rightarrow \infty) \]
 		\item In $C[a, b]$ entspricht die Konvergenz bezüglich $\| \cdot \|_{\infty}$ ebenfalls die gleichmä{\ss}ige Konvergenz von Funktionen
 			\begin{align*}
@@ -76,13 +76,13 @@
 	\begin{enumerate}[label=\alph*\upshape)] 
 		\item Wir benutzen die Bezeichnungen
 			\begin{align*}
-				K(x, r) & := \{ y \in M: d(x, y) < r \} \hspace{0.25cm} \text{\textbf{ offene Kugel}} \\
-				\bar K(x, r) & := \{ y \in M: d(x, y) \leq r \} \hspace{0.25cm}  \text{\textbf{ abgeschlossene Kugel}}
+				K(x, r) & \coloneqq \{ y \in M: d(x, y) < r \} \hspace{0.25cm} \text{\textbf{ offene Kugel}} \\
+				\bar K(x, r) & \coloneqq \{ y \in M: d(x, y) \leq r \} \hspace{0.25cm}  \text{\textbf{ abgeschlossene Kugel}}
 			\end{align*}
 			für $x \in M, r > 0$. Man sieht leicht, dass $K(x, r)$ offen und $\bar K(x, r)$ abgeschlossen ist.
 		\begin{beweis}
 			\begin{enumerate}
-			\item Sei $y \in K(x, r)$ und wähle $\rho := r - d(x, y) > 0$ \\
+			\item Sei $y \in K(x, r)$ und wähle $\rho \coloneqq r - d(x, y) > 0$ \\
 				Wir zeigen: $K(y, \rho) \subset K(x, r)$ (Dann ist $K(x, r)$ offen). Sei dazu $z \in K(y, \rho)$. Dann folgt 
 				\begin{align*}
 					d(x, y) \leq d(x, z) + d(z,y) & \leq r - \rho + d(z, y) \\
@@ -113,10 +113,10 @@ Wir fassen als Nächstes die grundlegenden Eigenschaften offener und abgeschloss
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $A \subset M$ ist abgeschlossen in $M$ genau dann, wenn $U = M \setminus A$ offen ist
 		\item Für eine beliebige Familie von abgeschlossenen Mengen $(A_{i})_{i \in I}$ sind 
-			\[ A := \bigcap_{i \in I} A_{i} \hspace{0.5cm} \text{ und } \hspace{0.5cm} A_{i_{1}} \cup \dotsc \cup A_{i_{N}} \hspace{0.25cm} (i_{1}, \dotsc, i_{N} \in I) \]
+			\[ A \coloneqq \bigcap_{i \in I} A_{i} \hspace{0.5cm} \text{ und } \hspace{0.5cm} A_{i_{1}} \cup \dotsc \cup A_{i_{N}} \hspace{0.25cm} (i_{1}, \dotsc, i_{N} \in I) \]
 			abgeschlossen in $M$.
 		\item Für eine beliebige Familie offenere Mengen $(U_{i})_{i \in I}$ sind
-			\[ U := \bigcup_{i \in I} U_{i} \hspace{0.5cm} \text{ und } \hspace{0.5cm} U_{i_{1}} \cap \dotsc \cap U_{i_{N}} \hspace{0.25cm} (i_{1}, \dotsc, i_{N} \in I) \] 
+			\[ U \coloneqq \bigcup_{i \in I} U_{i} \hspace{0.5cm} \text{ und } \hspace{0.5cm} U_{i_{1}} \cap \dotsc \cap U_{i_{N}} \hspace{0.25cm} (i_{1}, \dotsc, i_{N} \in I) \] 
 			offen in $M$.
 	\end{enumerate}
 	\begin{beweis}
@@ -133,7 +133,7 @@ Wir fassen als Nächstes die grundlegenden Eigenschaften offener und abgeschloss
 			\[ \Rightarrow \exists r > 0: K(x, r) \subset U_{i_{0}} \subset U, \text{ d.h. } U \text{ ist offen.}  \]
 			Sei $x \in U_{i_{1}} \cap \dotsc \cap U_{i_{N}}.$ Dann existieren $r_{1}, \dotsc, r_{N} > 0$ mit
 			\[ K(x, r_{n}) \subset U_{i_{n}} \hspace{0.5cm} n = 1, \dotsc, N \]
-			Setze $r := \min \{ r_{1}, \dotsc, r_{n} \} > 0$. Dann ist $K(x, r) \subset U_{i_{n}} \hspace{0.25cm} \forall n \in \{ 1, \dotsc, N \}$
+			Setze $r \coloneqq \min \{ r_{1}, \dotsc, r_{n} \} > 0$. Dann ist $K(x, r) \subset U_{i_{n}} \hspace{0.25cm} \forall n \in \{ 1, \dotsc, N \}$
 			\[ \Rightarrow K(x, r) \subset U_{i_{1}} \cap \dotsc \cap U_{i_{N}}, \]
 			d.h. $U_{i_{1}} \cap \dotsc \cap U_{i_{N}}$ ist offen.
 		\end{enumerate}	
@@ -144,9 +144,9 @@ Wir fassen als Nächstes die grundlegenden Eigenschaften offener und abgeschloss
 \begin{definition} \label{def:4.7-AbschlussInnereRand}
 	Sei $(M, d)$ ein metrischer Raum und $V \subset M$. Dann hei{\ss}t 
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item $\bar V := \bigcap \{ A \subset M: A$ ist abgeschlossen mit $V \subset A \} $ der \begriff{Abschluss} von $V$.
-		\item $\mathring V := \bigcup \{ U \subset M: U$ ist offen mit $U \subset V \}$ das \begriff{Innere} von $V$. 
-		\item $ \partial V := \bar V \setminus \mathring V$ der \begriff{Rand} von $V$.
+		\item $\bar V \coloneqq \bigcap \{ A \subset M: A$ ist abgeschlossen mit $V \subset A \} $ der \begriff{Abschluss} von $V$.
+		\item $\mathring V \coloneqq \bigcup \{ U \subset M: U$ ist offen mit $U \subset V \}$ das \begriff{Innere} von $V$. 
+		\item $ \partial V \coloneqq \bar V \setminus \mathring V$ der \begriff{Rand} von $V$.
 	\end{enumerate}
 \end{definition}
 
@@ -238,7 +238,7 @@ Hierfür gelten die folgenden Eigenschaften:
 					\item Da $K(x, r)$ offen ist mit $K(x, r) \subset \bar K(x, r)$ folgt mit \hyperref[prop:4.8.b2]{Proposition 4.8 b) (ii)}: 
 						\[ K(x, r) \subset \bar K(x, r)^{\circ} \]
 						Sei umgekehrt $y \in \bar K(x, r)^{\circ}$. Dann existiert ein $\epsilon > 0$ mit $K(y, \epsilon) \subseteq \bar K(x, r)$. \\
-						Angenommen $\| x - y \| = r$. Setze in diesem Fall $z := y + \frac{\epsilon}{2 r} (y - x)$. Dann gilt $z \in K(y, \epsilon)$, aber $z \notin \bar K(x, r)$, was zu einem Widerspruch führt. \\
+						Angenommen $\| x - y \| = r$. Setze in diesem Fall $z \coloneqq y + \frac{\epsilon}{2 r} (y - x)$. Dann gilt $z \in K(y, \epsilon)$, aber $z \notin \bar K(x, r)$, was zu einem Widerspruch führt. \\
 						Also ist $\| x - y \| < r$, d.h. $y \in K(x, r)$.
 					\item Aussage über Rand folgt aus \hyperref[bsp:4.11.a.i]{i)} und \hyperref[bsp:4.11.a.ii]{ii)}		
 				\end{enumerate}
@@ -248,7 +248,7 @@ Hierfür gelten die folgenden Eigenschaften:
 			\[ K(x, 1) = \{ x \}, \quad \bar K(x, 1) = M, \quad \overline{K(x, 1)} = \{ x \} \]
 			$\Rightarrow \overline{K(x, 1)} \subsetneq \bar K(x, 1)$
 		\item \label{bsp:4.11.b} Sei $X = C[0, 1]$ und $a, b > 0$ mit $a < b$. Dann ist die Menge
-			\[ A := \{ f \in X: f(t) \in (a, b) \quad \forall t \in [0, 1] \} \]
+			\[ A \coloneqq \{ f \in X: f(t) \in (a, b) \quad \forall t \in [0, 1] \} \]
 			offen mit
 			\begin{align*}
 				\bar A & = \{ f \in X: f(t) \in [a, b] \quad \forall t \in [0, 1] \} \\
@@ -306,7 +306,7 @@ Hierfür gelten die folgenden Eigenschaften:
 		\item Sei $X$ ein normierter Vektorraum und $Y \subseteq X$ abzählbar mit $\overline{lin Y} = X$. Dann ist $X$ seperabel.
 			\begin{beweis}
 				Wir definieren
-				\[ lin_{\MdQ} Y := \{ y = \sum_{i = 1}^{n} q_{j} y_{j} : q_{j} \in \MdQ \quad (q_{j} \in \MdQ + i \MdQ ), y_{j} \in Y, n \in \MdN \} \]
+				\[ lin_{\MdQ} Y \coloneqq \{ y = \sum_{i = 1}^{n} q_{j} y_{j} : q_{j} \in \MdQ \quad (q_{j} \in \MdQ + i \MdQ ), y_{j} \in Y, n \in \MdN \} \]
 				Dann ist $lin Y$ abzählbar, da $Y$ abzählbar ist. Sei nun $\epsilon > 0$ beliebig, $x \in X$. \\
 				Nach Voraussetzung existiert dann ein $y \in lin Y$ mit $\| x - y \| < \epsilon$ \\
 				Zu diesem $y$ finden wir ein $z \in lin_{\MdQ} Y$ mit $\| y - z \| < \epsilon$
@@ -321,7 +321,7 @@ Hierfür gelten die folgenden Eigenschaften:
 			\[ \Omega \subseteq \bigcup_{k \in \MdN} K \left( v_{k}, \frac{1}{4} \right) \]
 			Wegen $\| x - y\|_{\ell^{\infty}} = 1$ $\forall x, y \in \Omega$ kann aber in jeder Kugel $K(v_{k}, \frac{1}{4})$ nur ein Element auf $\Omega$ liegen. 
 			(d.h. zu $x \in \Omega$ existiert ein $k(x) \in \MdK$ mit $x \in K(v_{k(x)}, \frac{1}{4})$) \\
-			$\Rightarrow$ die Abbildung $ J : \Omega \rightarrow \MdN, x \rightarrow k(x)$ ist injektiv \\
+			$\Rightarrow$ die Abbildung $ J \colon \Omega \rightarrow \MdN, x \rightarrow k(x)$ ist injektiv \\
 			$\Rightarrow \Omega$ ist abzählbar, Widerspruch.
 	\end{enumerate}
 \end{beispiel}
@@ -332,7 +332,7 @@ Schlie{\ss}lich betrachten wir Stetigkeit:
 
 \begin{definition}
 	Seien $(M, d_{M}), (N, d_{N})$ metrische Räume. \\
-	Eine Abbildung $f: M \rightarrow N$ hei{\ss}t \textbf{stetig in $x_{0} \in M$}, falls für alle $(x_{n}) \subset M$ gilt
+	Eine Abbildung $f \colon M \rightarrow N$ hei{\ss}t \textbf{stetig in $x_{0} \in M$}, falls für alle $(x_{n}) \subset M$ gilt
 	\[ x_{n} \rightarrow x_{0} \text{ in } M \Rightarrow f(x_{n}) \rightarrow f(x_{0}) \text{ in } N \]
 	\[ (d_{M}(x_{n}, x_{0}) \rightarrow 0 \hspace{0.25cm} (n \rightarrow \infty) \hspace{0.5cm} \Rightarrow \hspace{0.5cm} d_{N}(f(x_{n}), f(x_{0})) \rightarrow \hspace{0.25cm} (n \rightarrow \infty)) \]
 	Die Abbildung $f$ hei{\ss}t \begriff{stetig} \textbf{auf $M$}, falls $f$ in jedem Punkt von $M$ stetig ist.
@@ -343,10 +343,10 @@ Hierfür gelten folgende Eigenschaften:
 
 
 \begin{prop} \label{prop:4.13}
-	Sei $(K,d_{K}), (M, d_{M})$ und $(N, d_{N})$ metrische Räume und $f: M \rightarrow N, g: K \rightarrow M$. Dann gilt:
+	Sei $(K,d_{K}), (M, d_{M})$ und $(N, d_{N})$ metrische Räume und $f \colon M \rightarrow N, g \colon K \rightarrow M$. Dann gilt:
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Ist $g$ stetig in $x_{0}$, $f$ stetig in $g(x_{0})$, dann ist auch 
-			\[ f \circ g: K \rightarrow N \text{ stetig in } x_{0} \]
+			\[ f \circ g \colon K \rightarrow N \text{ stetig in } x_{0} \]
 		\item \label{prop:4.13.b} $f$ ist stetig in $x_{0} \in M$ genau dann, wenn 
 			\[ \forall \epsilon > 0 \hspace{0.15cm} \exists \delta > 0 \hspace{0.15cm} \forall x \in M \text{ mit } d_{M}(x, x_{0}) < \delta \text{ gilt } d_{N}(f(x), f(x_{0})) < \epsilon \]
 		\item Die folgenden Aussagen sind äquivalent:
@@ -381,7 +381,7 @@ Hierfür gelten folgende Eigenschaften:
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Sind $(M_{1}, d_{1}$ und $(M_{2}, d_{2})$ metrische Räume, so definiert
-				\[ d(x, y) := d_{1}(x_{1}, y_{1}) + d_{2}(x_{2}, y_{2}) \]
+				\[ d(x, y) \coloneqq d_{1}(x_{1}, y_{1}) + d_{2}(x_{2}, y_{2}) \]
 			für $x = (x_{1}, x_{2}), y = (y_{1}, y_{2}) \in M_{1} \times M_{2}$ eine Metrik mit
 			\[ d(x_{n}, x) \rightarrow 0 \gdw d_{1}(x_{n,1}, x_{1}) \rightarrow 0, d_{2}(x_{n,2}, x_{2}) \rightarrow 0 \]
 			In diesem Sinne ist jede Metrik $d: M \times M \rightarrow \MdR$ stetig. Denn: \\
@@ -395,11 +395,11 @@ Hierfür gelten folgende Eigenschaften:
 			\[ \Rightarrow | d(x, y) - d(x_{n}, y_{n}) | \leq d(x, x_{n}) + d(y_{n}, y) \rightarrow 0 \hspace{0.5cm} (n \rightarrow \infty) \]
 		\item Sei $X$ ein normierter Vektorraum und
 			\begin{align*}
-				A: \MdK \times X \rightarrow X, & \hspace{0.5cm} A( \alpha, x) = \alpha x \\
-				S: X \times X \rightarrow X, & \hspace{0.5cm} S(x, y) = x + y
+				A \colon \MdK \times X \rightarrow X, & \hspace{0.5cm} A( \alpha, x) = \alpha x \\
+				S \colon X \times X \rightarrow X, & \hspace{0.5cm} S(x, y) = x + y
 			\end{align*}
 			Dann sind $A$ und $S$ stetig.
-		\item Sei $X = C[0, 1], t_{0} \in [0, 1], \psi : X \rightarrow \MdK, \psi(f) = f(t_{0})$ \\
+		\item Sei $X = C[0, 1], t_{0} \in [0, 1], \psi \colon X \rightarrow \MdK, \psi(f) = f(t_{0})$ \\
 		Nach \hyperref[bsp:1-3.15]{Beispiel 3.15} ist $\psi$ stetig. D.h. ist $A \subset \MdK$ offen (abgeschlossen), so ist $\psi^{-1}(A)$ offen (abgeschlossen) nach \hyperref[prop:4.13]{Proposition 4.13}.
 	\end{enumerate}	
 \end{beispiel}

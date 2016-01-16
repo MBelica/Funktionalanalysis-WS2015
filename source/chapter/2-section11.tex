@@ -5,7 +5,7 @@
 
 
 \begin{definition} \label{def:11.1-Projektion}
-	Sei $X$ ein Banachraum. $P: X \rightarrow X$ hei{\ss}t \begriff{Projektion}, wenn $P$ linear und $P^{2} = P$ ist.
+	Sei $X$ ein Banachraum. $P \colon X \rightarrow X$ hei{\ss}t \begriff{Projektion}, wenn $P$ linear und $P^{2} = P$ ist.
 \end{definition}
 
 Frage: Wann ist $P$ beschränkt?
@@ -14,9 +14,9 @@ Frage: Wann ist $P$ beschränkt?
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $X = L^{p}(\MdR), $ $\Omega \subset \MdR: $ $\mu(\Omega) > 0, \mu(\MdR \setminus \Omega) > 0$
-			\[ P f := \1_{\Omega} f \Rightarrow P^{2} f = \1_{\Omega}^{2} f = \1_{\Omega} f = P f \]
+			\[ P f \coloneqq \1_{\Omega} f \Rightarrow P^{2} f = \1_{\Omega}^{2} f = \1_{\Omega} f = P f \]
 			$\| P f \|_{L^{p}} = \left( \int | \1_{\Omega} |^{p} \right)^{\frac{1}{p}} = \left( \int_{\Omega} | f |^{p} \right)^{\frac{1}{p}} \leq \| f \|_{L^{p}}$ $\Rightarrow P$ ist beschränkt.
-		\item $X = L^{p}[0, 1]^{2},$ mit $1 \leq p < \infty, \quad P f(x, y) := \int_{0}^{1} f(s, y) ds$
+		\item $X = L^{p}[0, 1]^{2},$ mit $1 \leq p < \infty, \quad P f(x, y) \coloneqq \int_{0}^{1} f(s, y) ds$
 			\[ \Rightarrow P^{2} f (x, y) = \int_{0}^{1} \int_{0}^{1} f(s, y) ds dt = \int_{0}^{1} f(s, y) ds = P f(x, y) \]
 			\begin{align*}
 				\| P f \|_{L^{p}} & = \left( \int_{0}^{1} \int_{0}^{1} \left| \int_{0}^{1} f(s, y) ds \right|^{p} dy dx \right)^{\frac{1}{p}} \\
@@ -29,14 +29,14 @@ Frage: Wann ist $P$ beschränkt?
 
 
 \begin{bemerkung}
-	Sei $X$ ein Vektorraum, $M \subset X$ ein Untervektorraum. Es gibt nach dem Basisergänzungssatz eine lineare Projektion $P: X \rightarrow X,$ $P(X) = M$	
+	Sei $X$ ein Vektorraum, $M \subset X$ ein Untervektorraum. Es gibt nach dem Basisergänzungssatz eine lineare Projektion $P \colon X \rightarrow X,$ $P(X) = M$	
 \end{bemerkung}
 
 \begin{beweis}
 	Sei $(b_{i})_{i \in I}$ eine Basis von $M$ und $(b_{j})_{j \in J}$ von $X$, mit $I \subset J$. \\
 	Nun existiert ein $(\alpha_{j}(x))_{j}$:
 	\[ x = \sum_{j \in J} \alpha_{j}(x) b_{j} \text{ und höchstens endlich viele } \alpha_{j}(x) = 0. \]
-	$P(X) := \sum_{i \in I} \alpha_{i}(x) b_{i}$.
+	$P(X) \coloneqq \sum_{i \in I} \alpha_{i}(x) b_{i}$.
 \end{beweis}
 
 
@@ -48,7 +48,7 @@ Frage: Wann ist $P$ beschränkt?
 \begin{satz} \label{satz:11.4}
 	Sei $X$ ein Banachraum, $M \subset X$ ein abgeschlossener Untervektorraum. Dann sind folgende Aussagen äquivalent:
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Es gibt eine stetige Projektion $P: X \rightarrow X$ mit $P(X) = M$
+		\item Es gibt eine stetige Projektion $P \colon X \rightarrow X$ mit $P(X) = M$
 		\item Es gibt einen abgeschlossenen Untervektorraum $N \subset X: X = M \oplus N$.
 		\item Es gibt einen abgeschlossenen Untervekottraum $N \subset X$ und $J: M \oplus N \rightarrow X,$ $J(x, y) = x + y$ ist ein Isomorphismus, insbesondere $\exists c > 0$ $\forall x \in M, y \in N:$ $c \left( \|x \| + \|y \| \right) \leq \|x + y \| \leq \|x \| + \| y \| $
 	\end{enumerate}
@@ -68,7 +68,7 @@ Frage: Wann ist $P$ beschränkt?
 		$\xRightarrow[]{\ref{kor:10.5}} J^{-1} stetig,$ $\exists \hat{c} > 0: \forall x \in M, y \in N$:
 		\[ \| x + y \| - \| (x, y) \| = \| J^{-1}(x + y) \| \leq \hat{c} \| x + y \| \]
 
-	$c) \Rightarrow a)$ Definiere $\hat{P}: M \oplus N \rightarrow M \oplus N,$ $\hat{P}(x, y) = (x, 0)$
+	$c) \Rightarrow a)$ Definiere $\hat{P} \colon M \oplus N \rightarrow M \oplus N,$ $\hat{P}(x, y) = (x, 0)$
 		\[ \Rightarrow \hat{P}(M \oplus N) = M \oplus \{ 0 \}. \text{ Setze } P = J \hat{P} J^{-1} \quad (P \text{ ist Projektion!}) \]
 		$P(X) = M$, denn $P(X) = J \hat{P}(M \oplus N) = J (M \oplus \{ 0 \}) = M$
 \end{beweis}

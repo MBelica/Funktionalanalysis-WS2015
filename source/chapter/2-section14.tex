@@ -46,7 +46,7 @@ Grundlegende Aussagen zur Lösungstheorie linearer Gleichungen:
 		\[ \kernn(F) = (X_{1} \cap \kernn(F)) \oplus X_{0} \Rightarrow X = X_{0} \oplus X_{1}, F(X_{1}) \subset F, \text{ da } F(X) = X_{1}. \]
 		Beweis von \hyperref[satz:14.1]{Satz 14.1}:
 		\begin{enumerate}[label=\alph*\upshape)]
-			\item Sei $K$ ein endlich dimensionaler Operator auf $X \xRightarrow[]{\hyperref[lemma:14.2]{14.2}}$ Es existiert eine Zerlegung $X = X_{0} \oplus X_{1}$ mit $X_{0}, X_{1}$ abgeschlossen und $K(X_{1}) \subseteq X_{1}, K|_{X_{0}} \equiv 0, \dim(X_{1}) < \infty$. Definiere $K_{1} := K|_{X_{1}}$, nach der Dimensionsformel der Linearen Algebra gilt:
+			\item Sei $K$ ein endlich dimensionaler Operator auf $X \xRightarrow[]{\hyperref[lemma:14.2]{14.2}}$ Es existiert eine Zerlegung $X = X_{0} \oplus X_{1}$ mit $X_{0}, X_{1}$ abgeschlossen und $K(X_{1}) \subseteq X_{1}, K|_{X_{0}} \equiv 0, \dim(X_{1}) < \infty$. Definiere $K_{1} \coloneqq K|_{X_{1}}$, nach der Dimensionsformel der Linearen Algebra gilt:
 				\[ \dim( \kernn(Id_{X_{1}} - K_{1}) = \dim(X_{1}) - \dim(K_{1}(X_{1})) = \codim_{X_{1}}(K_{1}(X_{1})) \quad (*) \label{eq:14.1.5-*} \]
 				Mit
 				\begin{enumerate}[label=(\arabic*\upshape)]
@@ -59,13 +59,13 @@ Grundlegende Aussagen zur Lösungstheorie linearer Gleichungen:
 				$"\supseteq"$ Klar, da $K_{1} = K|_{X_{1}}$ \\
 				$"\subseteq"$ $0 = (Id - K) x = (Id - K) x_{1} + x_{0} + \underbrace{K x_{0}}_{= 0} \Rightarrow x_{0} = K_{1} x_{1} - x_{1} \in X_{1} \cap X_{0} = \{ 0 \} $
 					\[ \Rightarrow x_{0} = 0 \Rightarrow K_{1} x_{1} - x_{1} = 0, \text{ also } x_{1} \in \kernn(Id - K_{1}) \Rightarrow \kernn(Id - k) \subset \kernn(Id - K_{1}) \]
-				Zu $(2)$: $\bild(Id - K) \ni (Id - K)x = (Id - K)x_{1} + x_{0} - \underbrace{K x_{0}}_{= 0} \in \bild(Id - X_{1}) \oplus X_{0}$
+				Zu $(2)$: $\bild(Id - K) \ni (Id - K)x = (Id - K)x_{1} + x_{0} - \underbrace{K x_{0}}_{= 0} \in \bild(Id - X_{1}) \oplus X_{0}$ \\
 				Zu $(3)$: Sei $(x_{n}) \subseteq \bild(Id - K)$ mit $x_{n} \rightarrow x \in X$. Da $\bild)Id - K) = \bild(Id_{X_{1}} - K_{1}) \oplus X_{0}$, schreibe $x_{n} = y_{n} + z_{n}$ mit $z_{n} \in \bild(Id_{X_{1}} - K_{1}), y_{n} \in X_{0}$. \\
 				Nach \hyperref[satz:11.4]{Satz 11.4} gilt für $z \in \bild(Id - K_{1}), y \in X_{0}$ für ein $C \in \MdR$
 				\[ \| z \| + \| y \| \geq \| z + y \| \geq \frac{1}{c} \left( \| z \| + \| y \| \right) \Rightarrow \| x_{n} - x_{m} \| \geq \frac{1}{c} \left( \| z_{n} - z_{m} \| + \| y_{n} - y_{m} \| \right) \]
 				$\Rightarrow (y_{n}), (z_{n}) \text{ sind Cauchy-Folgen}$. \\
 				Da $(Id - K_{1})(X)$ und $X_{0}$ abgeschlossen sind, folgt $y_{n} \rightarrow y \in X_{0}$ und $z_{n} \rightarrow z \in \bild(Id - K_{1}) \Rightarrow x = z + y \in Bild(Id - K_{1}) \oplus X_{0} = \bild(Id - K)$.
-			\item Sei $F \in B(X)$ endlich dimensional mit $\| K - F \| < 1$. $T := Id - k + F$ ist invertierbar nach dem \hyperref[prop:5.8-NeumannscheReihe]{Satz über die Neumannsche Reihe}.
+			\item Sei $F \in B(X)$ endlich dimensional mit $\| K - F \| < 1$. $T \coloneqq Id - k + F$ ist invertierbar nach dem \hyperref[prop:5.8-NeumannscheReihe]{Satz über die Neumannsche Reihe}.
 				\[ \Rightarrow Id - K = T - F = (Id - F T^{-1})T \text{ mit } F T^{-1} \text{ endlich dimensional.} \]
 				Da $T$ invertierbar ist, gilt insbesondere
 				\[ \bild(Id - K) = \bild(Id - F T^{-1}) \text{ und } \kernn(Id - K) = T^{-1}(\kernn(Id - F T^{-1})) \]
@@ -107,7 +107,7 @@ Grundlegende Aussagen zur Lösungstheorie linearer Gleichungen:
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $X = \ell^{p}, 1 \leq p < \infty$. Gegeben $\lambda_{} \in \MdC \setminus \{ 0 \}, | \lambda_{n} | \rightarrow 0:$
 			\[ A(x_{n} = (\lambda_{n} x_{n}) \text{ für } (x_{n}) \in \ell^{p} \]
-			Da $| y_{n} | \rightarrow 0$ gilt: $A \in K(\ell^{p})$ ($U(U_{\ell^{p}})$ kompakt). \\
+			Da $| y_{n} | \rightarrow 0$ gilt: $A \in K(\ell^{p})$ $\left( A \left( U_{\ell^{p}} \right) \text{ kompakt} \right)$. \\
 			$\lambda_{n}$ Eigenwerte mit Eigenraum zum Eigenwert $\lambda_{n} = \ospan\{ e_{m}: \lambda = \lambda_{m} \}$ endlich dimensional \\
 			$0 \in \sigma(A)$, aber kein Eigenwert, da $A$ injektiv.
 		\item Sei $X = C[0, 1]$, $k: \{ (s, t) \in [0, 1]^{2}: s \leq t \} \rightarrow \MdR_{+}$ stetig. \\
@@ -124,6 +124,10 @@ Grundlegende Aussagen zur Lösungstheorie linearer Gleichungen:
 	Sei $X \supset D(A) \xrightarrow[]{A} X$ ein abgeschlossener, linearer Operator, $\rho(A) \neq \emptyset$, $(D(A), \| \cdot \|_{A}) \hookrightarrow X$ kompakt. \\
 	Dann besteht $\sigma(A)$ aus endlich vielen Eigenwerten oder einer Folge von Eigenwerten mit $|\lambda_{n}| \rightarrow \infty$ und die zugehörigen Eigenräume sind endlich dimensional.
 \end{satz}
+
+\begin{beweis}
+	siehe Übung.	
+\end{beweis}
 
 
 

@@ -1,4 +1,4 @@
-nn%!TEX root = Funktionalanalysis - Vorlesung.tex
+%!TEX root = Funktionalanalysis - Vorlesung.tex
 
 \chapter*{Elemente der Operatortheorie} \addcontentsline{toc}{chapter}{Elemente der Operatortheorie} \setcounter{section}{8}
 
@@ -14,7 +14,7 @@ nn%!TEX root = Funktionalanalysis - Vorlesung.tex
 \end{satz}
 
 \begin{beweis}
-    Der Kürze halber definieren wir $D := \bigcap_{n \in \MdN} U_{n}$. \\ \\
+    Der Kürze halber definieren wir $D \coloneqq \bigcap_{n \in \MdN} U_{n}$. \\ \\
     Zu zeigen gilt, dass zu jeder Kugel $K(x_{0}, \epsilon), x_{0} \in M, \epsilon > 0$.
 	Beweis: 
 	\begin{itemize}
@@ -76,7 +76,7 @@ nn%!TEX root = Funktionalanalysis - Vorlesung.tex
 
 
 \begin{satz}
-	$E = \{ x \in C[0, 1]:$ $x$ ist in keinem Punkt von $[0, 1]$ differenzierbar $\}$ ist dicht in $(C[0, 1], \| \cdot \|_{\infty})$. \\
+	$E = \{ x \in C[0, 1]:$ $x$ ist in keinem Punkt von $[0, 1]$ differenzierbar$\}$ ist dicht in $(C[0, 1], \|\cdot\|_{\infty})$. \\
 	Insbesondere:
  		\begin{itemize}
 			\item $E \neq \emptyset$
@@ -101,7 +101,7 @@ nn%!TEX root = Funktionalanalysis - Vorlesung.tex
 			Da $x$ stetig ist, gibt es zu $t$ eine kleine Umgebung $U_{t}$ mit
 			\[ \left| \frac{x(s + h_{t}) - x(s)}{h_{t}} \right| > n + \delta_{t} \text{ für } s \in U_{t}, \quad 0 < |h_{t}| \leq \frac{1}{n} \]
 			Da $[0, 1]$ kompakt und $[0, 1] = \bigcup_{t \in [0, 1]} U_{t}$ gibt es endlich viele $U_{t_{1}}, \dotsc, U_{t_{n}}$ mit $[0, 1] \subset U_{t_{1}} \cup \dotsc \cup U_{t_{n}}$ \\
-			Setze $\delta := \min \{ \delta_{t_{1}}, \dotsc, \delta_{t_{1}} \} > 0, \quad h := \min \{ h_{t_{1}}, \dotsc, h_{t_{n}} \}$. \\
+			Setze $\delta \coloneqq \min \{ \delta_{t_{1}}, \dotsc, \delta_{t_{1}} \} > 0, \quad h \coloneqq \min \{ h_{t_{1}}, \dotsc, h_{t_{n}} \}$. \\
 			Wähle nun ein $\epsilon$ mit $0 < \epsilon < \frac{1}{2} h \delta$. \\
 			Zu zeigen bleibt $K(x, \epsilon) \subset E_{n}$: \\
 			Sei $y \in C[0, 1]$ mit $\| x - y \|_{\infty} < \epsilon$. Zu $t \in [0, 1]$ wähle $i \in \{ 1, \dotsc, n \}$ mit $t \in U_{i}$. \\
@@ -115,7 +115,7 @@ nn%!TEX root = Funktionalanalysis - Vorlesung.tex
 		\item Wir wollen noch zeigen, dass $U_{n}$ dicht in $C[0, 1]$ ist. \\
 			Sei $V \subset C[0, 1]$ offen, $V \neq \emptyset$. Nach dem Approximationssatz von Weierstra{\ss} gibt es ein Polynom $p$ mit $p \in V, \epsilon > 0: \| x - p \|_{\infty} \leq \epsilon \Rightarrow x \in V$. \\
 			Sei weiter $y_{m}$ eine Sägezahnfunktion mit $y_{m}: [0, 1] \rightarrow [0, \epsilon]$ und der Steigung $\pm m$.
-			Dann ist $x := p + {m} \in K(p, \epsilon)$. \\
+			Dann ist $x \coloneqq p + {m} \in K(p, \epsilon)$. \\
 			Wähle zu $n$ die Zahl $m \in \MdN$ so, dass $m > n + \| p \|_{\infty}$. \\
 			Für $t \in [0, 1], 0 < | n | \leq \frac{1}{n}$ gilt:
 			\[ \left| \frac{x_{m}(t + h) - x(t)}{h} \right| \overset{\triangle-\text{Ungl.}}{\geq} \left| \frac{y_{m}(t + h) - y(t)}{h} \right| - \underbrace{\left| \frac{p(t + h) _ p(t)}{h} \right|}_{\leq{\| p' \|_{\infty}} \text{nach MWS}}  \]
@@ -135,7 +135,7 @@ nn%!TEX root = Funktionalanalysis - Vorlesung.tex
 \end{satz}
 
 \begin{beweis}
-	Betrachte die Menge $E_{n} := \{ x \in X: \sup \| T_{i} x \| \leq n\}$. Dann ist $E_{n}$ abgeschlossen, denn $E_{n} = \bigcap_{i \in \MdN} \{ x \in I: \| T_{i} x \| \leq n \}$. Außerdem ist $E_{n}$ symmetrisch, d.h. $x \in E_{n} \gdw -x \in E_{n}$ und konvex, denn für $x_{1}, x_{2} \in E_{n}$ gilt
+	Betrachte die Menge $E_{n} \coloneqq \{ x \in X: \sup \| T_{i} x \| \leq n\}$. Dann ist $E_{n}$ abgeschlossen, denn $E_{n} = \bigcap_{i \in \MdN} \{ x \in I: \| T_{i} x \| \leq n \}$. Außerdem ist $E_{n}$ symmetrisch, d.h. $x \in E_{n} \gdw -x \in E_{n}$ und konvex, denn für $x_{1}, x_{2} \in E_{n}$ gilt
 		\[ \sup \| T_{i} \left( \frac{1}{2} x_{1} + \frac{1}{2} x_{2} \right) \| \leq \frac{1}{2} \sup \| T_{i} x_{1} \| + \frac{1}{2} \sup \| T_{i} x_{2} \| \leq n \quad \text{also } \frac{1}{2} x_{1} + \frac{1}{2} x_{2} \in E_{n} \]
 		Es gilt $X = \sum_{n = 1}^{\infty} E_{n}$, nach \hyperref[satz:9.1-baire]{Baire} existiert dann ein $N \in \MdN, x \in E_{N}, \epsilon > 0$ mit $K(x, \epsilon) \subset E_{N} \Rightarrow K(-x, \epsilon) \subseteq E_{n}$ \\
 		Sei $z \in X: \| z \| < \epsilon$. $z = \frac{1}{2} (x + z) + \frac{1}{2} (z - x) \in \frac{1}{2} E_{N} + \frac{1}{2} E_{N} \subseteq E_{N}$. 
@@ -161,7 +161,7 @@ Aber $\sup_{k \in \MdN} \| T_{k} (x_{n})_{n} \| = \sup_{k \in \MdN} \| k x_{k} \
 \begin{kor} \label{kor:9.7}
 	Sei $X$ ein Banachraum, $Y$ normiert und $(T_{n})_{n} \subset B(X, Y)$ derart, dass
 	\[ \lim_{n \rightarrow \infty} T_{n} x =: y \text{ existiert für alle } x \in X \]
-	Dann ist $T_{x} := y_{x}$ linear und $T \in B(X, Y)$
+	Dann ist $T_{x} \coloneqq y_{x}$ linear und $T \in B(X, Y)$
 	\begin{beweis}
 		$T$ ist linear, da $\lim$ und $T_{n}$ jeweils linear sind. \\
 		$(T_{n} x)_{n}$ ist beschränkt $\xRightarrow[\text{Steinhaus}]{\text{Banach-}} \sup_{n \in \MdN} \| T_{n} \| < \infty$ \\

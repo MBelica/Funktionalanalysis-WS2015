@@ -1,0 +1,119 @@
+%!TEX root = Funktionalanalysis - Vorlesung.tex
+
+
+
+\section{Orthogonalität und Orthonormalbasen}
+
+
+\begin{definition}
+	Sei $X$ ein Prähilbertraum
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $x, y \in X$ hei{\ss}en \begriff{orthogonal}, falls $\< x, y \> = 0$. Schreibweise: $x \bot y$
+		\item $A, B \subseteq X$ sind orthogonal, falls $\< x, y \> = 0$ für alle $x \in A, y \in B$. Schreibweise $A \bot B$
+		\item Sei $A \subset X$. $A^{\bot} = \{ y \in X: \< y, x \> = 0$ $\forall x \in A \}$ ist das \begriff{orthogonale Komplement} von $A$ in $X$.
+	\end{enumerate}
+\end{definition}
+
+
+\begin{bemerkung}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $x \bot y \Rightarrow \| x + y \|^{2} = \| x \|^{2} + \| y \|^{2} $ (Pythagoras) \index{Pythagoras}
+		\item $A \subseteq B \Rightarrow B^{\bot} \subseteq A^{\bot}$
+		\item $A^{\bot}$ ist stets ein abgeschlossener Unterraum von $X$
+		\item $A \subseteq \left( A^{\bot} \right)^{\bot}$, $A^{\bot} = \overline{ \ospan(A) }^{\bot}$
+	\end{enumerate}	
+\end{bemerkung}
+
+
+\begin{satz}[Orthogonalzerlegung] \index{Orthogonalzerlegung} \label{satz:13.6-Orthogonalzerlegung}
+	Sei $X$ ein Hilbertraum und $U$ ein abgeschlossener Teilraum von $X$.
+		\[ \text{Dann gilt: } X \subset U \oplus U^{\bot} \]
+\end{satz}
+
+\begin{beweis}
+	Falls $x \in U \cap U^{\colon}$, dann $x \bot x \Rightarrow x = 0$. Sei $x \in X$, dazu gibt es eine Element bester Approximation $x_{1} \in U$. Setze $x_{2} \coloneqq x - x_{1}$. \\
+	Zu zeigen ist $x_{2} \in U^{\bot}$ \\
+	Nach \hyperref[eq:15.7.5-SkalarproductbestApproximation]{$(w)$} gilt für alle $y \in U: \Re \< x_{2}, y - x_{1} \> \leq 0 \Rightarrow \Re \< x_{2}, y \> \leq 0$ $\forall y \in U$, denn mit $y$ durchläuft auch $y - x_{1}$ ganz $U$ \\
+	$\Rightarrow \< x_{2}, y \> = 0$ $\forall y \in U$, denn mit $y$ durchläuft auch $-y, iy$ und $-iy$ ganz $U$ $\Rightarrow x_{2} \in U^{\bot}$.
+\end{beweis}
+
+
+\begin{definition*}
+	Sei $X$ ein Hilbertraum, $U \subseteq X$ abgeschlossen und $X = U \oplus U^{\bot}$. Für $X \ni x = x_{1} + x_{2}$, mit $x_{1} \in U, x_{2} \in U^{\bot}$ definiere
+		\[ P_{U} \colon X \rightarrow U, ~ P x = x_{1} \]
+		$P_{U}$ hei{\ss}t \begriff{Orthogonalprojektion} von $X$ auf $U$.	
+\end{definition*}
+
+
+\begin{folgerung}
+	Die Orthogonalprojektion hat folgende Eigenschaften:
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $\bild P_{U} = U$, $\kernn P_{U} = U^{\bot}$
+		\item $\| P_{U} \| = 1$, denn $\| x \|^{2} = \| P_{U} x \|^{2} + \| x_{2} \|^{2} \geq \| P_{U} x \|^{2}$
+		\item $P_{U} + P_{U^{\bot}} = Id_{X}$
+	\end{enumerate}	
+\end{folgerung}
+
+\newpage % todo at 16.4 remove this later - just for styling atm
+
+\begin{definition}
+	Sei $X$ ein Hilbertraum.
+	\begin{itemize}
+		\item Eine Folge $(h_{n}) \subseteq X$ hei{\ss}t \begriff{Orthogonalsystem}, falls $h_{n} \bot h_{m}$ für $m \neq n$.
+		\item $(h_{n})$ hei{\ss}t \begriff{Orthonormalsystem}, falls zusätzlich $\| h_{n} \| = 1$ für alle $n$ gilt.
+		\item Ein Orthonormalsystem $(h_{n}) \subseteq X$ hei{\ss}t \begriff{Orthonormalbasis} von $X$ falls $\overline{\ospan(h_{n})} = X$.
+	\end{itemize}
+\end{definition}
+
+
+\begin{beispiel}
+	Sei $X = \ell^{p}$, $h_{n} = e_{n} =$ Einheitsvektor, also $(h_{n}) = ( \delta_{n, m} )_{m \in \MdN}$. \\
+	Weiter sei $x = (x_{n}) \in \ell^{p}$, mit $\< x , e_{n} \> = x_{n}$, also 
+	\[ x = \sum_{n \in \MdN} x_{n} e_{n} = \sum_{n \in \MdN} \< x , e_{n} \> e_{n} \text{ und damit } \| x \|^{2} = \sum_{n \in \MdN} |x_{n}|^{2} = \sum_{n \in \MdN} | \< x , e_{n} \> |^{2}. \]
+	Für $y = (\beta_{n}) \in \ell^{2}$ gilt: $ $ $\< x , y \> = \sum_{n} x_{n} \overline{\beta_{n}} = \sum \< x , e_{n} \> \overline{ \< y , e_{n} \> }$.
+\end{beispiel}
+
+
+\begin{satz}
+	Sei $(h_{n})$ eine Orthonormalbasis. Für $U = \overline{\ospan(h_{n})}$ gilt dann
+		\[ P_{U} x = \sum_{n} \< x, h_{n} \> h_{n} \quad \forall x \in X \]
+	Weiter ist $\| P_{U} x \|^{2} = \sum_{n} | \< x , h_{n} \> |^{2} \leq \| x \|^{2}$ $\forall x \in X$ $ $ (Besselsche Ungleichung) \index{Besselsche Ungleichung}
+\end{satz}
+
+
+\begin{kor}
+	Sei $(h_{n})$ eine Orthonormalbasis von X. Dann ist $x = \sum_{n} \< x, h_{n} \> h_{n}$, $\| x \|^{1} = \sum_{n} | \< x, h_{n} \> |^{2}$ (Parseval) \index{Parseval} und
+		\[ \< x , y \> = \sum_{n} \< x, h_{n} \> \overline{\< y , h_{n} \>} \]
+\end{kor}
+
+\begin{beweis}
+	todo
+\end{beweis}
+
+
+\setcounter{satz}{12} % todo at 16.9 skipping everything between 16.9 and 16.13
+\begin{satz}
+	Jeder separable, unendlich dimensionale Hilbertraum $X$ hat eine Orthonormalbasis $(h_{n})_{n \in \MdN}	$. \\
+	Diese Orthonormalbasis definiert eine Isometrie
+		\[ \phi \colon \ell^{2} \rightarrow X, \phi( (\alpha_{n}) ) = \sum_{n \in \MdN} \alpha_{n} h_{n}, \quad (\alpha_{n}) \in \ell^{2} \]
+	mit 
+	\begin{itemize}
+		\item $\phi( e_{j} ) = h_{j}$
+		\item $\| \phi( (\alpha_{j}) ) \|_{X} = \< (\alpha_{j}),(\beta_{j}) \>_{\ell^{2}} = \sum_{j \in \MdN} \alpha_{j} \overline{\beta_{j}}$
+		\item $\phi^{-1} \colon X \rightarrow \ell^{2}, \phi^{-1}(x) = \left( \< x, h_{j} \>_{X} \right)_{j \in \MdN} \in \ell^{2}$
+	\end{itemize}
+\end{satz}
+
+\begin{beweis}
+	Es gibt eine Folge $(y_{j})_{j \in \MdN}$ in $X$ mit $\overline{\ospan\{ y_{j} \}} = X$ wobei $(y_{j})$ linear unabhängig sind. \\
+	Auf $(y_{j})$ wende \hyperref[satz:13.6-Orthogonalzerlegung]{16.13} an und erhalte eine Orthonormalbasis $(h_{j})$ mit 
+		\[ \overline{\ospan}(h_{j}) = \overline{\ospan(y_{j})} = X. \]
+	Setze $\phi \left( (\alpha_{j}) \right) = \sum_{j \in \MdN} \alpha_{j} h_{j}$, damit gilt $\< \phi \left( (\alpha_{j}) \right) , h_{n} \> = \< \sum_{j} \alpha_{j} h_{j}, h_{n} \> = \alpha_{n}$ und weiter
+	 \[ \| \phi \left( (\alpha_{j}) \right)  \|^{2}_{X} = \sum_{k \in \MdN} | \< \phi \left( (\alpha_{j}) \right), h_{k} \> |^{2} = \sum_{k \in \MdN} | \alpha_{k} |^{2} = \| (\alpha_{j}) \|_{\ell^{2}} \]
+	$\phi$ ist somit eine Isometrie und ist surjektiv, da jedes $x$ die Form
+	\[ x = \sum_{j} \< x, h_{j} \> h_{j} \text{ besitzt, also mit }\alpha_{j} = \< x, h_{j} \> \in \ell^{2}: \text{ } \phi(\alpha_{j} ) = \sum \alpha_{j} h_{j} = x. \]
+\end{beweis}
+
+
+
+\newpage
