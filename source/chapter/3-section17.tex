@@ -5,19 +5,19 @@
 \section{Der Darstellungssatz von Riesz}
 
 
-Ziel: Sei $X$ ein Hilbertraum, $X' ) \{ x' \colon X \rightarrow \MdK:$ linear stetig $\}$, $X' \cong X$.
+Ziel: Sei $X$ ein Hilbertraum, $X' = \{ x' \colon X \rightarrow \MdK:$ linear stetig $\}$, $X' \cong X$.
 
 
 \begin{bemerkung} \label{bem:17.1}
 	Sei $(X, \< \cdot, \cdot \>)$ ein Hilbertraum. $X \hookrightarrow X'$ \\
 	Für jedes $x \in X$ erhält man ein stetiges, lineares Funktional $x' \colon X \rightarrow \MdK$ durch
-		\[ x'(y) = \< y , x > \quad \text{für } y \in X \]
+		\[ x'(y) = \< y , x \> \quad \text{für } y \in X \]
 		mit $\| x' \| = \sup \{ x'(y) : \| y \| = 1 \} = \| x \|_{X}$
 \end{bemerkung}
 
 \begin{beweis}
 	$x'$ ist linear, da $\< \cdot , x \>$ linear ist und stetig da
-	\[ | x'(y) - x'(y_{n}) | = \< y - y_{n}, x > \leq \| y - y_{n} \| \cdot \| x \| \]
+	\[ | x'(y) - x'(y_{n}) | = \< y - y_{n}, x \> \leq \| y - y_{n} \| \cdot \| x \| \]
 	Da $y = \frac{x}{\| x \|}: \< y , x \> = \frac{1}{\| x \|} \< x , x \> = \| x \|$ folgt $\| x' \|_{X'} = \| x \|_{X}$.		
 \end{beweis}
 
@@ -36,10 +36,27 @@ Ziel: Sei $X$ ein Hilbertraum, $X' ) \{ x' \colon X \rightarrow \MdK:$ linear s
 		Dann ist $x'(y) = \underbrace{x'(u)}_{= 0} + \lambda \underbrace{x'(x_{0})}_{= 1} = \lambda$ und
 		\[ \< y , x_{0} \> = \underbrace{\< u , x_{0} \>}_{= 0} + \lambda \< x_{0} , x_{0} \> = \lambda \| x_{0} \|^{2} \]
 		Setze $x \coloneqq \frac{x_{0}}{\| x_{0} \|^{2}}$, dann folgt:
-		\[ \< y , x \> = \frac{1}{\| x_{0} \|^{2}} \< y, x_{0} \> = x'(y) \text{ mit } (+).  \] % todo ref
+		\[ \< y , x \> = \frac{1}{\| x_{0} \|^{2}} \< y, x_{0} \> = x'(y) \text{ mit } \hyperref[eq:16.7.5.b-+]{(+)}.  \]
 		Für die Eindeutigkeit seien $x_{1}$ und $x_{2}$ Elemente in $X$ zugehörig zu gegebenem $x' \in X'$.  \\
 		Dann gilt $x'(y) = \< y , x_{1} \> = \< y , x_{2} \>$, also $ 0 = \< y, x_{1} \> - \< y , x_{2} \> = \< y , x_{1} - x_{2} \>$, also ist $x_{1} - x_{2} \bot y$ $\forall y \in X$, also $x_{1} - x_{2} = 0$ bzw. $x_{1} = x_{2}$. \\
 		Aus \hyperref[bem:17.1]{17.1} folgt dann noch $\| x' \|_{X} = \| x \|_{X}$.
+\end{beweis}
+
+
+\begin{bemerkung*}
+	Damit gibt es eine bijektive Abbildung $\Phi : X \rightarrow X'$ mit $\< \Phi x , y \> = \< y , x \>$ für $y \in X, 
+	 \Phi(x_{1} + x_{2}) = \Phi(x_{1}) + \Phi(x_{2}), \Phi(\lambda x) = \overline{\lambda} \Phi(x)$ für $x_{1}, x_{2}, x \in X, \lambda \in \MdK$ und $\| \Phi(x) \|_{X'} = \| x \|_{X}$.\\
+	 $\Rightarrow \Phi$ ist eine anti-lineare Isometrie von $X$ auf $X'$. In diesem Sinne $X \cong X'$.
+\end{bemerkung*}
+
+
+\begin{kor}
+	Sei $X$ ein Hilbertraum, $M \subseteq X$ ein Untervektorraum und $y' \in M'$. Dann existiert ein $x' \in X'$ mit $x'|_{M} = y'$ und $\| y' \| = \| x' \|$.	
+\end{kor}
+
+\begin{beweis}
+	Sei $P_{M} \colon X \rightarrow M$ die Orthogonalprojektion auf $M$. Setze $x' = y' \circ P_{M}$, dann gilt für $y \in X$ bzw. $y \in M$
+	\[ \| x'(y) \| = \| y'(P_{M} y ) \| \leq \| y' \| \cdot \| P_{M} y \| \leq \| y' \| \cdot \| y \|, \quad x'(y) = y'(P_{M} y) = y'(y), \text{ d.h. } x'|_{M} = y' \]	
 \end{beweis}
 
 

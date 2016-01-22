@@ -15,7 +15,7 @@
 \end{definition}
 
 
-\begin{bemerkung}
+\begin{bemerkung} \label{bem:16.2}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $x \bot y \Rightarrow \| x + y \|^{2} = \| x \|^{2} + \| y \|^{2} $ (Pythagoras) \index{Pythagoras}
 		\item $A \subseteq B \Rightarrow B^{\bot} \subseteq A^{\bot}$
@@ -27,7 +27,7 @@
 
 \begin{satz}[Orthogonalzerlegung] \index{Orthogonalzerlegung} \label{satz:13.6-Orthogonalzerlegung}
 	Sei $X$ ein Hilbertraum und $U$ ein abgeschlossener Teilraum von $X$.
-		\[ \text{Dann gilt: } X \subset U \oplus U^{\bot} \]
+		\[ \text{Dann gilt: } X = U \oplus U^{\bot} \]
 \end{satz}
 
 \begin{beweis}
@@ -45,7 +45,7 @@
 \end{definition*}
 
 
-\begin{folgerung}
+\begin{folgerung} \label{folg-16.4}
 	Die Orthogonalprojektion hat folgende Eigenschaften:
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\bild P_{U} = U$, $\kernn P_{U} = U^{\bot}$
@@ -53,8 +53,6 @@
 		\item $P_{U} + P_{U^{\bot}} = Id_{X}$
 	\end{enumerate}	
 \end{folgerung}
-
-\newpage % todo at 16.4 remove this later - just for styling atm
 
 \begin{definition}
 	Sei $X$ ein Hilbertraum.
@@ -74,24 +72,94 @@
 \end{beispiel}
 
 
-\begin{satz}
+\begin{satz} \label{satz:16.7}
 	Sei $(h_{n})$ eine Orthonormalbasis. Für $U = \overline{\ospan(h_{n})}$ gilt dann
 		\[ P_{U} x = \sum_{n} \< x, h_{n} \> h_{n} \quad \forall x \in X \]
 	Weiter ist $\| P_{U} x \|^{2} = \sum_{n} | \< x , h_{n} \> |^{2} \leq \| x \|^{2}$ $\forall x \in X$ $ $ (Besselsche Ungleichung) \index{Besselsche Ungleichung}
 \end{satz}
 
 
-\begin{kor}
+\begin{kor} \label{kor:16.8}
 	Sei $(h_{n})$ eine Orthonormalbasis von X. Dann ist $x = \sum_{n} \< x, h_{n} \> h_{n}$, $\| x \|^{1} = \sum_{n} | \< x, h_{n} \> |^{2}$ (Parseval) \index{Parseval} und
 		\[ \< x , y \> = \sum_{n} \< x, h_{n} \> \overline{\< y , h_{n} \>} \]
 \end{kor}
 
 \begin{beweis}
-	todo
+	Beweis des \hyperref[kor:16.8]{Korollars 16.8}: \\
+	$U = \overline{\ospan(h_{n})} = X$, also $P_{U} = Id_{X}$. Für $x, y \in X: \< x , y \> = \< \sum_{n} \< x , h_{n} \> h_{n} , \sum_{m} \< y , h_{m} \> h_{m} \>$. \\ \\
+	Beweis von \hyperref[satz:16.7]{Satz 16.7}:
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Sei $J$ eine endliche Indexmenge und $(h_{n})_{n \in J}$ gegeben. Für $U \coloneqq \overline{\ospan(h_{n})}$ nehme ein $x \in X$ und setze $y_{0} = \sum_{n \in J} \< x , h_{n} \> h_{n} \quad y_{1} \coloneqq x - y_{0}$. \\
+		Für $j \in J$ gilt:
+			\[ \< y_{1} , h_{j} \> = \< x , h_{j} \> - \sum_{n \in J} \< x , h_{n} \> \< h_{n} , h_{j} \> = 0 \]
+			$\Rightarrow y_{1} \in U^{\bot} \Rightarrow x = y_{0} + y_{1}$ mit $y_{0} \in U, y_{1} \in U^{\bot}$
+			\[ \Rightarrow P_{U} x = y_{0} = \sum_{j \in J} \< x , h_{j} \> h_{j} \]
+			$\sum_{j \in J} | \< x , h_{j} \> |^{2} = \sum_{j \in J} \| \< x , h_{j} \> h_{j} \|^{2} \overset{Pyth.}{=} \| \sum_{j \in J} \< x , h_{j} \> h_{j} \|^{2} = \| P_{U} x \|^{2} \leq \| x \|^{2}$
+		\item Sei $J = \MdN$. Definiere $J_{m} = \{ 1, \dotsc, m \}$, daraus folgt:
+			\[ \sum_{j = 1}^{\infty} | \< x , h_{j} \> |^{2} = \sup_{m} \sum_{j = 1}^{m} | \< x , h_{j} \> |^{2} \leq \| x \|^{2} \quad (+) \label{eq:16.7.5.b-+} \]
+			Sei $U_{m} = \overline{\ospan\{h_{1}, \dotsc, h_{m}\}}$, dann
+			\[ \| P_{U_{n}} x - P_{U_{m}} x \|^{2} = \| \sum_{j = m + 1}^{n} \< x , h_{j} \> h_{j} \|^{2} = \sum_{j = m + 1}^{n} | \< x , h_{j} \> | ^{2} \rightarrow 0 \text{ für } n, m \rightarrow \infty \text{ wegen } \hyperref[eq:16.7.5.b-+]{(+)} \]
+			Da $X$ vollständig ist: $\sum_{j = 1}^{\infty} \< x , h_{j} \> h_{j} = \lim_{n \rightarrow \infty} \sum_{j = 1 }^{n} \< x , h_{j} \> h_{j}$ existiert. \\
+			Setze $y_{0} = \sum_{j = 1}^{\infty} \< x , h_{j} \> h_{j}$ und $y_{1} = x - y_{0}$. Dann ist wie oben $\< y_{1} , h_{j} \> = 0$ $\forall j \in \MdN$, also $y_{1} \in U^{\bot}$ $\Rightarrow x = y_{0} + y_{1}, P_{U} x = y_{0} = \sum_{j \in \MdN} \< x , h_{j} \> h_{j}$.
+	\end{enumerate}
 \end{beweis}
 
 
-\setcounter{satz}{12} % todo at 16.9 skipping everything between 16.9 and 16.13
+\begin{kor}
+	Ein Orthonormalsystem $(h_{n})_{n \in J}$ ist genau dann eine Orthonormalbasis, wenn $\< x, h_{n} \> = 0$ für alle $n \in J$ bedeutet $x = 0$. 	
+\end{kor}
+
+\begin{beweis}
+	Ist $ \< x , h_{n} \> = 0$ $\forall n \in J$ gilt aber:
+		\[ x \in U^{\bot} = \{ 0 \} \text{ mit } U = \overline{\ospan(h_{n})}. \] 
+	Und somit ist $U = \left( \{ h_{n} \}^{\bot} \right)^{\bot} = \{ 0 \}^{\bot} = X$.
+\end{beweis}
+
+
+\begin{beispiel}
+	Sei $X = L^{2}(\Omega, \Sigma, P)$, wobei $(\Omega, \Sigma, P)$ ein W-Raum sei. Sei au{\ss}erdem $\Omega = \bigcup_{j = 1}^{n} U_{j}$ eine Partition von $\Omega$ mit $P(U_{j}) > 0$ und $U_{j} \cap U_{k} = \emptyset$. \\
+	Definiere $h_{j} \coloneqq \frac{1}{P(U_{j})^{\frac{1}{2}}} \mathds{1}_{U_{j}}$, damit gilt:
+	\[ \| h_{j} \|_{L^{2}} = 1 \quad \text{und} \quad h_{j} \bot h_{i}, \text{ da } U_{i} \cap U_{j} = \emptyset  \]
+	$\Rightarrow \{ h_{j} \}$ ist ein Orthonormalsystem in $X$. Nach \hyperref[satz:16.7]{16.7}: $U = \overline{\ospan\{\mathds{1}_{U_{j}}: j = 1, \dotsc, n\}}$ \\
+	\begin{align*}
+		\Rightarrow \text{ } P_{U} x & = \sum_{j = 1}^{n} \left( \frac{1}{P(U_{j})^{\frac{1}{2}}} \int_{U_{j}} x(u) dP(u) \right) \left( \frac{1}{P(U_{j})	^{\frac{1}{2}}} \mathds{1}_{U_{j}} \right) \\
+		& = \sum_{j = 1}^{n} \left( \frac{1}{P(U_{j})} \int_{U_{j}} x dP \right) \mathds{1}_{U_{j}} \\
+		& = \mathds{E}[x | U_{1}, \dotsc, U_{n}] \text{ bedingte Erwartung.}
+	\end{align*}
+\end{beispiel}
+
+
+\begin{beispiel}
+	Sei $X = L^{2}[-\pi, \pi], \MdK = \MdC$. Die Fourierreihe $h_{n}(t) = \frac{1}{\sqrt{2 \pi}} e^{int}, t \in [-\pi , \pi]$ bildet eine Orthonormalbasis von $L^{2}[-\pi, \pi]$, denn 
+	\[ \| h_{n} \|^{2} = \frac{1}{2\pi} \int_{\pi}^{\pi} e^{int} e^{\overline{int}} dt = \frac{1}{2\pi} 2 \pi = 1. \]
+	Für $n \neq m$ gilt weiter
+	\[ \< h_{n} , h_{m} \> = \frac{1}{2 \pi} \int_{- \pi}^{\pi} e^{int} e^{\overline{imt}} dt = \frac{1}{2 \pi} \int_{- \pi}^{\pi} e^{i(n - m)t} dt = \frac{1}{2 \pi} \frac{1}{i(n - m)} [ e^{i(n - m)t} ]_{-\pi}^{\pi} = 0 \]
+	Dabei ist $\mathds{1}_{[0, a]}(t) = \sum_{k \in \MdZ} c_{k} e^{ikt}$ für $t \notin \{ 0, a \}$ ($\Rightarrow$ konv in $L^{2}$) wobei $c_{k} = \frac{1}{2 \pi} \int_{0}^{a} e^{-ikr} dt = \frac{1}{2 \pi k} \left( e^{-ika} - 1 \right)$ für $k \neq 0$ und $c_{0} = \frac{a}{2 \pi}$. \\
+	Da Linearkombinationen von $\mathds{1}_{[0, a]}, a \in (0, \pi]$ dicht in $L^{2}[-\pi, \pi]$ liegen, folgt $\overline{\ospan\left(e^{in \cdot} \right)} = L^{2}[-\pi, \pi]$.
+\end{beispiel}
+
+
+\begin{beispiel}
+	Sei $S = \{ \frac{1}{\sqrt{2 \pi}}, \frac{cos(nt)}{\sqrt{\pi}}, \frac{sin(nt)}{\sqrt{\pi}}; n \in \MdN \}$ ist eine Orthonormalbasis von $L^{2}[-\pi, \pi]$.	
+\end{beispiel}
+
+\begin{beweis}
+	Zuerst benötigen wir folgende Identitäten
+	\begin{align*}
+		2 \cos(nx) \cos(mx) & = \cos((n + m) x) + \cos( (n - m) x) \\
+		2 \sin(nx) \sin(mx) & = \cos((n - m) x) - \cos( (n + m) x) \\
+		2 \cos(nx) \sin(mx) & = \sin((n + m) x) - \sin( (n - m) x) 
+	\end{align*}
+	$\Rightarrow$ Orthogonalität folgt durch Integration und Periodizität vom $\sin$.
+	\[ \int_{-\pi}^{\pi} \cos^{2}(nx) dx + \int_{-\pi}^{\pi} \sin^{2}(nx) dx = \int_{-\pi}^{\pi} 1 dx = 2 \pi, \quad \int_{-\pi}^{\pi} \sin^{2}(nx) dx = \int_{-\pi}^{\pi} \cos^{2}(nx) dx \]
+	$\Rightarrow S$ ist ein Orthonormalsystem. \\
+	Die Vollständigkeit folgt wegen $e^{0} = 1, e^{inx} = \cos(nx) + i \sin(nx)$.
+\end{beweis}
+
+
+\[ 16.13 \text{ missing in my notes } \] \setcounter{satz}{13} % todo at 16.13: 16.13 missing in my notes
+
+
 \begin{satz}
 	Jeder separable, unendlich dimensionale Hilbertraum $X$ hat eine Orthonormalbasis $(h_{n})_{n \in \MdN}	$. \\
 	Diese Orthonormalbasis definiert eine Isometrie
