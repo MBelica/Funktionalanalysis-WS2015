@@ -55,8 +55,11 @@
 \input{Abbreviations}
 
 \renewcommand{\indexname}{Stichwortverzeichnis}
-\addcontentsline{toc}{chapter}{Stichwortverzeichnis}
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\indexname}
 \printindex
+
 
 
 \end{document}
