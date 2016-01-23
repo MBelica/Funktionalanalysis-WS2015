@@ -4,25 +4,19 @@ Dieses Skript zur Vorlesung "Funktionalanalysis" am KIT bei
 Herrn Prof. Dr. Lutz Weis (WS 2015/2016) wurde von Studenten erstellt, es ist somit 
 inoffiziell, in Bearbeitung und enthält sehr wahrscheinlich einige
 Fehler (Übertragungsfehler, Tippfehler oder
-Verständnisprobleme) - ich bitte deswegen um Verständniss.
+Verständnisprobleme) - ich bitte deswegen um Verständnis.
 
-Verbesserungsvorschläge (auch wenn es nur einzelne Textsetzungsprobleme oder
-Rechtschreibfehler sind) bitte immer direkt melden oder verbessern!
-**Erst durch eure Mitarbeit, kann hieraus ein gutes Skript entstehen.**
+Bis zum Ende des Semesters werde ich wohl auch nicht die Zeit finden, das Skript Korrektur zu lesen, also seht es bitte auch dementsprechend bis dahin mit Wohlwollen.
 
-Den Verbesserungsvorschlag kann man
-* entweder direkt selbst umsetzen und einen pull request machen oder
+Den Verbesserungsvorschlag (wenn auch nur
+Rechtschreibfehler) kann man
+* entweder direkt selbst umsetzen via oder
 * mir per Email (ProxiStyx@hmamail.com) schicken.
 
 Ich werde dann versuchen sowohl die Vorlesung, als auch eure Verbesserungsvorschläge zeitnah einzuarbeiten.
 
+**Erst durch eure Mitarbeit, kann hieraus ein gutes Skript entstehen.**
+
 Zeichnungen
 ===========
-Das erstellen der Zeichnungen ist sehr zeitaufwendig. Das ist der
-Grund, warum diese manchmal im Dokument vorerst ausgelassen sind.
-
-Ihr könnt mir gerne Zeichnungen schicken (entweder schön auf Papier
-Zeichnen und abfotographieren / einscannen oder schon mit Inscape /
-Gimp / ... oder sogar mit TikZ erstellen).
-
-Akzeptable Formate sind: .jpg, .pdf, .svg, .png, .gif, .tex, .sketch
+Sollte ich wichtige Zeichnungen ausgelassen haben, schickt sie mir einfach (entweder eure Zeichnen abfotographieren / einscannen oder schon mit TikZ erstellen) und ich binde sie ein.

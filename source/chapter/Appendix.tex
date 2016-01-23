@@ -6,11 +6,35 @@
 
 Zur Vollständigkeit und solange dieses Skript in Arbeit ist, werden hier Definitionen und Sätze gelistet, auf die das Skript verweist, aber (noch) nicht eingeführt wurden.
 
+~
 
-\begin{satz*}[Lebesgue] \index{Satz von Lebesgue} \label{satz:x-Satz von Lebesgue}
-
-	sas	
+\begin{satz*}[Fubini] \index{Fubini} \label{satz:x-SatzvonFubini}
+	Seien $(\Omega_1, \mathcal{A}_1, \mu_1)$ und $(\Omega_2, \mathcal{A}_2, \mu_2)$ zwei $\sigma$-endliche Maßräume und $f \colon \Omega_1 \times \Omega_2 \rightarrow \MdR$ eine messbare Funktion, die bezüglich des Produktmaßes $\mathrm \mu_1 \otimes \mu_2$ integrierbar ist, d.h. es gelte
+		\[ \int\limits_{\Omega_1 \times \Omega_2} |f| \, \mathrm d(\mu_1 \otimes \mu_2) < \infty \ \]
+	oder es gelte $f \geq 0$ fast überall. \\ \\
+	Dann ist für fast alle $y$ die Funktion $ x \mapsto f(x,y)$ und für fast alle $x$ die Funktion $y \mapsto f(x,y)$ integrierbar bzw. nichtnegativ. \\
+	Man kann deshalb die durch Integration nach $y$ beziehungsweise $x$ definierten Funktionen
+		\[  x \mapsto  \int\limits_{\Omega_2} f(x,y) ~ \mathrm d\mu_2(y)  \]
+		\[ y \mapsto  \int\limits_{\Omega_1} f(x,y) ~ \mathrm d\mu_1(x) \]
+	betrachten. Diese sind auch integrierbar bzw. nichtnegativ und es gilt
+		\[ \int\limits_{\Omega_1 \times \Omega_2} f ~ \mathrm d(\mu_1 \otimes \mu_2) = \int\limits_{\Omega_2}^{}\int\limits_{\Omega_1}^{}f(x,y)~ \mathrm d\mu_1(x)~ \mathrm d\mu_2(y) = \int\limits_{\Omega_1}^{}\int\limits_{\Omega_2}^{}f(x,y)~\mathrm d\mu_2(y)~ \mathrm d\mu_1(x). \]
 \end{satz*}
+
+~
+
+\begin{satznbfr}[Lebesgue] \index{Lebesgue} \label{satz:x-SatzvonLebesgue}
+Sei $(\Omega,\mathcal{A},\mu)$ ein Maßraum und sei $\left(f_n\right)$ eine Folge von $\mathcal{A}$-messbaren Funktionen $f_n \colon \Omega\rightarrow\MdR\cup\{\infty\}$. \\ \\
+Die Folge $\left( f_n \right)$ konvergiere $\mu$-fast überall gegen eine $\mathcal{A}$-messbare Funktion $f$. Ferner werde die Folge $\left(f_n\right)$ von einer $\mu$-integrierbaren Funktion $g$ auf $\Omega$ majorisiert, sprich für alle $n \in \mathbb{N}$ gelte $|f_{n}| \leq g$ $\mu$-fast überall. \\
+Beachte, dass bei der hiesigen Definition von Integrierbarkeit der Wert $\infty$ ausgeschlossen ist, das heißt $\int_\Omega|g|\,d\mu < \infty$. \\ \\
+Dann ist $f$ und alle $f_n$ $\mu$-integrierbar und es gilt:
+	\[ \lim_{n \rightarrow \infty}\int_\Omega{|f_n - f|}\,d\mu = 0 \]
+Dies impliziert auch, dass
+	\[ \lim_{n \rightarrow \infty}\int_\Omega{f_n\,}d\mu = \int_\Omega{f\,}d\mu \]
+gilt.
+\end{satznbfr}
+
+
+Dem Skript vorgreifend, aber da bereits darauf verwiesen wurde, hier der Satz von Hahn-Banach:
 
 
 \begin{satznbfr}[Hahn-Banach] \index{Hahn-Banach} \label{satz:x-hahn-banach}

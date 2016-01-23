@@ -6,4 +6,166 @@
 
 
 
+Für $X = \MdC^{n}$ mit euklidischem Skalarprodukt: \\
+$A \in B(X) \colon \< A x , y \> = \< x , A^{*} y \>, \quad x, y \in X$, wobei
+\[ A = (a_{ij})_{i, j = 1, \dotsc, n}, \quad A^{*} = (\overline{a_{ji}})_{i, j = 1, \dotsc, n} \]
+
+
+\begin{satz}
+	Seien $X, Y$ Hilberträume und $T \in B(X, Y)$. Dann gibt es genau ein $T^{*} \in B(Y, X)$ mit
+	\begin{itemize}
+		\item $\< T x , y \> = \< x , T^{*} y \> \quad \forall x \in X, y \in Y$,
+		\item $\| T^{*} \| = \| T \|$,
+		\item $\left(T	^{*}\right)^{*} = T$.
+	\end{itemize}	
+\end{satz}
+
+\begin{beweis}
+	Für $y \in Y$ fest, setze $l_{y}(y) \coloneqq \< T x , y \>$ für alles $x \in X \Rightarrow l_{y} \in X'$, denn
+	\[ | l_{y}(x) | \leq \| T x \| \cdot \| y \| \leq \|T \| \cdot \| x \| \cdot \| y \|, \text{ also } \| l_{y} \| \leq \| T \| \cdot \| y \| \]
+	Nach dem \hyperref[lemma:6.3-Riesz]{Lemma von Riesz} gibt es ein $z \in X$ mit
+	\[ l_{y} (x) = \< x , z \> \quad \text{und} \quad \| z \|_{X} = \| l_{y} \|_{X'} \]
+	Definiere $T^{*} y \coloneqq z$, dann gilt: $T^{*} \colon Y \rightarrow X$ ist linear und $\< x , T^{*} y \> = l_{y}(x) = \< T x , y \>$. \\
+	Weiter ist 
+	\[ \| T^{*} y \| = \| z \| = \| l_{y} \| \leq \| T \| \cdot \| y \| \quad \Rightarrow \quad \| T^{*} \| \leq \| T \|. \]
+	Nach Definition ist 
+	\[ \left( T^{*} \right)^{*} = T \quad \Rightarrow \quad \| T \| = \| \left( T^{*} \right)^{*} \| \leq \| T^{*} \| \]
+	$\Rightarrow \| T^{*} \| = \| T \|$. 
+\end{beweis}
+
+
+\begin{bemerkung}[Eigenschaften der Adjungierten]
+	Sei $S, T \in B(X), \lambda \in \MdK$
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $\left( S + T \right)^{*} = T^{*} + S^{*}$
+		\item $\left( \lambda S \right)^{*} = \overline{\lambda} S^{*}$
+		\item $\left( T \cdot S \right)^{*} = S^{*} T^{*}$
+		\item $\| S \cdot S^{*} \| = \| S \|^{2} = \| S^{*} \cdot S \|$
+	\end{enumerate}
+\end{bemerkung}
+
+\begin{beweis}
+	todo % todo at 19.2: add proof	
+\end{beweis}
+
+
+\begin{kor}
+	Für $S \in B(X)$ gilt:
+	\[ \kernn(S) = \left( \bild(S^{*}) \right)^{\bot}, \quad \kernn(S{*}) = \left( \bild(S) \right)^{\bot} \]	
+\end{kor}
+
+\begin{beweis}
+	Zuerst zeigen wir $\kernn(S) = \left( \bild(S^{*}) \right)^{\bot}$:
+	\begin{align*}
+		x \in \kernn S & \gdw S x = 0 \gdw \< S x , y \> = 0  ~ \forall y \in X \\
+			& \gdw \< x , S^{*} y \> = 0 ~\forall y \in X \gdw x \in \left( \bild S^{*} \right)
+	\end{align*}
+	Die zweite Aussage zeigt man analog.
+\end{beweis}
+
+
+\begin{beispiel}
+	Integraloperator: Sei $k \in L^{2}( \Omega \times \Omega), (T_{k}x)(u) = \int_{\Omega} k(u, v) x(v) dv$, $T_{k} \in B(L^{2}(\Omega))$
+	\begin{align*}
+		\Rightarrow \< T_{k} x , y \> & = \int_{\Omega} \left( \int_{\Omega} k(u, v) x(v) dv \right) \overline{y(u)} du \\
+			& \overset{\hyperref[satz:x-SatzvonFubini]{Fubini}}{=} \int_{\Omega} x(v) \left( \int_{\Omega} k(u, v)\overline{y(u)} du \right) dv \\
+			& \int_{\Omega} x(v) \left( \overline{ \int_{\Omega} \overline{k(u, v)} y(u) du} \right) dv \\
+			& = \< x , T_{k^{*}} y \>, \text{ wobei } T_{k^{*}} y(u) = \int_{\Omega} \overline{k(v, u)} y(v) dv
+	\end{align*}
+	Es gilt also: $\left( T_{k} \right)^{*} = T_{k^{*}}$, $k^{*}(u, v) = \overline{k(v, u)}$ $ $ (vgl. $A = (a_{ij}), A^{*} = \overline{(A^{T})}$)
+\end{beispiel}
+
+
+\begin{definition}
+	Sei $T \in B(X, Y)$, $X, Y$ Hilberträume
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $T$ hei{\ss}t \begriff{unitär}, falls $T$ invertierbar ist und $T^{-1} = T^{*}$
+			\[ \text{d.h. } T \text{ ist surjektiv und } \< Tx , Ty \> = \< x , T^{*} T y \> = \< x , y \> \quad \forall x, y \in X \]
+		\item Sei $X = Y$. $T$ ist \begriff{selbstadjungiert}, falls $T^{*} = T$, d.h. $\< Tx , y \> = \< x , T y \> \quad \forall x, y \in X$
+		\item Sei $X = Y$. $T \in B(X)$ hei{\ss}t \begriff{normal}, falls $T^{*} T = T T^{*}$.
+			\[ \text{d.h. } \< Tx , Ty \> = \< T^{*} x , T^{*} y \> \quad \forall x, y \in X \]
+	\end{enumerate}
+\end{definition}
+
+
+\begin{bemerkung*}
+	Unitäre und selbstadjungierte Operatoren sind normal.	
+\end{bemerkung*}
+
+
+\begin{beispiel}
+	Seien $X, Y$ Hilberträume und $T \in B(X, Y)$.
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Integraloperator \\
+			$T_{k}$	ist selbstadjungiert $\gdw T_{k^{*}} = T_{k} \gdw \overline{k(v, u)} = k(u, v) \gdw k^{*} = k$. \\
+			Falls $k \in L^{2}\left([0, 1]^{2}\right)$, so ist $T_{k}$ kompakt und damit nicht unitär, da $T_{k}$ keine Isometrie sein kann ($\dim = \infty$).
+		\item Verschiebungsoperator auf $X = \ell^{2}$ \\
+			$T(\alpha_{1}, \alpha_{2}, \dotsc ) = (\alpha_{2}, \alpha_{3}, \dotsc )$, $(\alpha_{j}) \in \ell^{2} \Rightarrow T^{*}(\alpha_{1}, \alpha_{2}, \dotsc ) = (0, \alpha_{1}, \alpha_{2}, \dotsc )$ \\
+			\[ \text{somit ist zwar } T T^{*} = Id, \text { aber } T^{*} T (\alpha_{1}, \alpha_{2}, \dotsc ) = (0, \alpha_{2}, \alpha_{3}, \dotsc ) \]
+			$\Rightarrow T* T = P_{U}$ mit $U = \{ (\alpha_{j}) \in \ell^{2} \colon \alpha_{1} = 0 \}$.
+		\item Sei $U \subset X$ ein Teilraum und $P_{U} \colon X \rightarrow U$ die Orthogonalprojektion auf $U$. \\
+			$P_{U}$ ist selbstadjungiert.
+			\[ \text{Für } x, y \in X ~ ~ \exists ~ x_{1}, y_{1} \in U, ~ x_{2}, y_{2} \in U^{\bot}: x = x_{1} + x_{2} \text{ und } y = y_{1} + y_{2} \]
+			$\Rightarrow \< P x , y \> = \< x , P y \>,$ $\forall x,y \in X$.
+	\end{enumerate}
+\end{beispiel}
+
+
+
+\textbf{Ziel in diesem Abschnitt:} \\
+	Ist $T \in B(X)$ normal und kompakt, so existiert eine Folge $\lambda_{n} \in \MdC$ und ein Orthonormalsystem $(h_{n})$ so, dass
+	\[ T x = \sum_{n \in \MdN} \lambda_{n} \< x , h_{n} \> h_{n} \quad \forall x \in X \]	
+	(vgl. Diagonalisierung von selbstadjungierten Matrizen)
+
+
+
+\begin{satz}
+	$T \in B(X)$ ist selbstadjungiert $\gdw \< T x , x ^> \in \MdR$ für alle $x \in X$
+\end{satz}
+
+\begin{beweis}
+	todo % todo at 19.7: add proof	
+\end{beweis}
+
+
+\begin{prop}
+	Für $T \in B(X)$ selbstadjungiert, gilt:
+	\[ \| T \| = \sup_{\| x \| \leq 1} |\< T x , x \>| \]	
+\end{prop}
+
+\begin{beweis}
+	todo % todo at 19.8: add proof	
+\end{beweis}
+
+
+\begin{prop} \label{prop:19.9}
+	Sei $T \in B(X)$ normal
+	\begin{enumerate}
+		\item $r(T) = \sup \{ | \lambda | : \lambda \in \sigma(T) \} = \| T \|$
+		\item $\kernn T = \kernn T^{*}$
+	\end{enumerate}	
+\end{prop}
+
+\begin{beweis}
+	todo % todo at 19.9: add proof			
+\end{beweis}
+
+
+\begin{lemma}
+	Sei $T \in B(X)$ kompakt und normal. Dann gilt
+	\begin{enumerate}
+		\item $T x = \lambda x \gdw T^{*} x = \overline{\lambda} x$
+		\item $T x = \lambda x, T y = \mu y$ mit $\mu \neq \lambda$  dann ist $x \bot y$
+	\end{enumerate}
+\end{lemma}
+
+\begin{beweis}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $T x = \lambda x \gdw x \in \kernn(T - \lambda) \gdw x \in \kernn(T - \lambda)^{*} \overset{\hyperref[prop:19.9]{19.9}}{\gdw} x \in \kernn(T^{*} - \overline{\lambda}) \gdw T^{*} x = \overline{\lambda} x$
+		\item $\lambda \< x , y \> = \< \lambda x , y \> = \< T x , y \> = \< x , T^{*} y \> = \< x , \overline{\mu} y \> = \mu \< x, y \>$ $\Rightarrow \< x , y \> = 0$.
+	\end{enumerate}	
+\end{beweis}
+
+
+	
 \newpage

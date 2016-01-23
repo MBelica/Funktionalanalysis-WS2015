@@ -116,7 +116,7 @@
 	Für $f \in C(\bar \Omega)$ setze: $Tf(u) = \int_{\Omega} k(u, v) f(v) dv$, \hspace{0.25cm}
 	$\left( A( f_{j} ) \right)_{i} = \sum_{j = 1}^{n} a_{ij}f_{j}, A = (a_{ij})_{i,j = 1, \dotsc, n} )$ \\
 	
-	Dann ist $Tf \in C(\bar \Omega)$ (nach Lebesguesschem Konvergenzsatz)
+	Dann ist $Tf \in C(\bar \Omega)$ (nach \hyperref[satz:x-SatzvonLebesgue]{Lebesguesschem Konvergenzsatz})
 	\begin{align*}
 		|T f(u)| & \leq \int_{\Omega} |k(u, v)| |f(u)| du \\
 				 & \leq \int_{\Omega} |k(u, v)| du \sup_{u \in \Omega} | f(u) |
@@ -126,7 +126,7 @@
 		\| Tf \|_{\infty} \leq \sup_{u \in \Omega} \int |k(u,v)| dv \| f \|_{\infty} \\
 		\Rightarrow \| T \| = \sup_{u \in \Omega} \int |k(u, v)| dv < \infty,
 	\end{align*} 	
-	Die Abbildung $u \in \bar \Omega \rightarrow \int |k(u, v)| dv \in \MdR$ ist stetig nach dem Konvergenzsatz von Lebesgue. \\
+	Die Abbildung $u \in \bar \Omega \rightarrow \int |k(u, v)| dv \in \MdR$ ist stetig nach dem \hyperref[satz:x-SatzvonLebesgue]{Konvergenzsatz von Lebesgue}. \\
 	\begin{beweis}
 		$ "\ \leq "\ $ ist klar \\
 		$ "\ \geq "\ $ Falls $ k(u, v) \geq 0$ dann ist $T \cdot \1 (u) = \int k(u, v) dv = \int |k(u, v)| dv$ \\

@@ -12,5 +12,89 @@
 \end{definition}
 
 
+\begin{bemerkung}
+	Der schwache Limes ist eindeutig bestimmt und linear. Sei $x_{n} \xrightarrow[]{w} x, x_{n} \xrightarrow[]{w} \hat{x}$
+		\[ \Rightarrow \< x - \hat{x} , y \> = \lim_{n \rightarrow \infty} \left( \< x_{n} , y \> - \< x_{n} , y \> \right) = 0 \quad \forall y \in X, \text{ insbesondere für } y = x - \hat{x} \]	
+\end{bemerkung}
+
+
+\begin{prop}[Vgl. von Norm- und schwacher Konvergenz] \label{prop:18.3}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Normenkonvergenz impliziert schwache Konvergenz
+		\item $x_{n} \xrightarrow[]{w} x$, dann $\| x_{n} \| \leq \lim_{n \rightarrow \infty} \| x_{n} \|$
+		\item Falls $x_{n} \xrightarrow[]{w} x$ und $\| x_{n} \| \rightarrow \| x \|$, dann $\| x - x_{n} \| \rightarrow 0$
+	\end{enumerate}
+\end{prop}
+
+\begin{beweis}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Sei $\| x_{n} - x \| \rightarrow 0$. Dann gilt für $y \in X$:
+			\[ |\< x_{n} - x , y \> \leq \| x_{n} - x \| \cdot \| y \| \rightarrow 0 \]
+			Umgekehrt: $(h_{j})$ Orthonormalsystem $\Rightarrow h_{j} \xrightarrow[]{w} 0$, aber $\| h_{j} \| = 1 \not\rightarrow 0$
+		\item Sei $x_{n} \xrightarrow[]{w} x \neq 0$. Für $y = \frac{x}{\| x \|}$ gilt: $\| x_{n} \| \geq \< x_{n} , \frac{x}{\| x \|} \> \rightarrow \< x , x \> \frac{1}{\| x \|} = \| x \|$
+		\item Sei $x_{n} \xrightarrow[]{w} x$ und $\| x_{n} \| \rightarrow \| x \| \Rightarrow \| x_{n} - x \|^{2} = \| x_{n} \|^{2} - 2 \Re \< x_{n} , x \> + \| x \|^{2} \rightarrow 0$
+	\end{enumerate}	
+\end{beweis}
+
+
+\begin{prop}
+	Jede schwach konvergente Folge ist normbeschränkt
+\end{prop}
+
+\begin{beweis}
+	Sei $x_{n} \xrightarrow[]{w} x$. Setze $l_{n} \in B(X, \MdK) = X' \colon l_{n}(y) \coloneqq \< y, x_{n} \>	$. \\
+	Für jedes $y \in X$ gilt: 
+	\[ \| l_{n}(y) \| = | \< y , x_{n} \> | \leq C y < \infty \quad \Rightarrow \quad \| x_{n} \| \overset{\hyperref[def:13.1]{13.1}}{=} \| l_{n} \|_{X'} < \infty \text{ nach } \hyperref[satz:9.5-Banach-Steinhaus]{\text{Banach-Steinhaus}}. \]
+\end{beweis}
+
+
+\begin{beispiel}
+	Sei $X = \ell^{2}$, $x_{n} = (a_{n, j})_{j}, x = (a_{j})$. Dann $x_{n} \xrightarrow[]{w} \gdw a_{n, j}$ für alle $j \in \MdN$.
+\end{beispiel}
+
+\begin{beweis}
+	$a_{n, j} = \< x_{n} , e_{j} \> \rightarrow \< x , e_{j} \> = a_{j}$. Umkehrung folgt aus \hyperref[prop:18.6]{18.6}.	
+\end{beweis}
+
+
+\begin{prop} \label{prop:18.6}
+	Sei $X$ ein Hilbertraum mit Orthonormalbasis $(h_{j})$. Dann gilt	$x_{n} \xrightarrow[]{w} \gdw \< x_{n} , h_{j} \> \rightarrow \< x , h_{j} \> \forall j \in \MdN$
+\end{prop}
+
+\begin{beweis}
+	Die Hinrichtung folgt direkt. Betrachten wir also die Rückrichtung: \\	
+	Nach \hyperref[prop:18.3]{18.3}: $\exists c < \infty \colon \| x_{n} \|, \| x \| \leq c$. Für beliebiges $y \in X$ folgt
+	\begin{align*}
+		| \< x_{n} - x , y \> | & = | \< x_{n} - x , \sum_{j = 1}^{\infty} \< y , h_{j} \> h_{j} \> | \\
+			& \leq \underbrace{\sum_{j = 1}^{N} |\underbrace{\< x_{n} - x , h_{j} \>}_{\rightarrow 0} \< y  , h_{j} \>|}_{\rightarrow 0} + \underbrace{|\< x_{n} - x ,\sum_{j = N + 1}^{\infty} \< y , h_{j} \> h_{j} \>|}_{ \leq \underbrace{\| x_{n} - x \|}_{\leq 2 \epsilon} \cdot \underbrace{\| \sum_{j = N + 1}^{\infty} \< y , h_{j} \> h_{j} \|}_{\leq \epsilon \text{ für } N \text{ gro{\ss}}}}
+	\end{align*}
+	$\Rightarrow \overline{\ospan} | \< x_{n} - x , y \> | \leq \epsilon$ für $N$ gro{\ss} und $\epsilon > 0$ beliebig.
+\end{beweis}
+
+
+\begin{definition}
+	Eine Teilmenge $M$ eines Hilbertraums $X$ hei{\ss}t \begriff{relativ schwach kompakt}, falls jede Folge $(x_{n}) \subseteq M$ eine schwach konvergente Teilmenge besitzt.
+\end{definition}
+
+
+\begin{satz}
+	Eine beschränkte Teilmenge eines Hilbertraums ist relativ schwach kompakt.	
+\end{satz}
+
+\begin{beweis}
+	Sei $(x_{n}) \subseteq M \Rightarrow \| x_{n} \leq C$. Definiere $X_{0} \coloneqq \overline{\ospan(x_{n})} \subseteq X$ als separablen Hilbertraum mit Orthonormalbasis $(h_{j})$.	
+		\[ \sup | \< x_{n} , h_{j} \> | \leq c \Rightarrow \< x_{n} , h_{j} \> \in \MdK \text{ hat eine konvergente Teilfolge nach } \hyperref[satz:1.1-BolzanoWeierstrass]{\text{Bolzano-Weierstrass}}. \]
+		Mit Hilfe des Cantor'schen Diagonalverfahrens wähle eine Teilfolge $M_{j+1} \subseteq M_{j}, |M_{j} = \infty$ mit $\lim_{n \in M_{j}} \< x_{n} , h_{j} \> = \alpha_{j}$. Wähle $n_{k} \in M_{k}$ mit $n_{k} \geq k$. \\
+		Dann ist $n_{k} \in M_{j}$ für $k$ gro{\ss} genug und $n_{k} \rightarrow \infty \Rightarrow \lim_{k \rightarrow \infty} \< x_{n_{k}} , h_{j} \> = \alpha_{j}$ für alle $j \in \MdN$. \\
+		Zu zeigen ist noch $x = \sum_{j \in \MdN} \alpha_{j} h_{j} \in X$.
+		\begin{align*}
+			\sum_{j = 1}^{N} | \alpha_{j} |^{2} & = \lim_{k \rightarrow \infty} \sum_{j = 1}^{N} | \< x_{n_{k}} , h_{j} \> |^{2} \\
+				& = \lim_{k \rightarrow \infty} \| \sum_{j = 1}^{N} \< x_{n_{k}} , h_{j} \> h_{j} \|^{2} \\
+				& \overset{\hyperref[satz:16.7]{Bessel}}{\leq} \lim_{k} \| x_{n_{k}} \|^{2} \leq C^{2} \quad \forall N \in \MdN
+		\end{align*}
+		Damit gilt $\sum_{j = 1}^{\infty} | \alpha_{j} |^{2} \leq C^{2} < \infty$ und somit $x \in X_{0}$.
+\end{beweis}
+
+
 
 \newpage
