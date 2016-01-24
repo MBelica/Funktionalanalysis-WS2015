@@ -34,7 +34,7 @@ $A \in B(X) \colon \< A x , y \> = \< x , A^{*} y \>, \quad x, y \in X$, wobei
 \end{beweis}
 
 
-\begin{bemerkung}[Eigenschaften der Adjungierten]
+\begin{bemerkung}[Eigenschaften der Adjungierten] \label{bem:19.2}
 	Sei $S, T \in B(X), \lambda \in \MdK$
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\left( S + T \right)^{*} = T^{*} + S^{*}$
@@ -120,11 +120,22 @@ $A \in B(X) \colon \< A x , y \> = \< x , A^{*} y \>, \quad x, y \in X$, wobei
 
 
 \begin{satz}
-	$T \in B(X)$ ist selbstadjungiert $\gdw \< T x , x \> \in \MdR$ für alle $x \in X$
+	Sei $X$ ein Hilbertraum über $\MdC$. \\
+		\[ T \in B(X) \text{ ist selbstadjungiert } \gdw \< T x , x \> \in \MdR \text{ für alle } x \in X \]
 \end{satz}
 
 \begin{beweis}
-	todo % todo at 19.7: add proof	
+	$" \Rightarrow "$: $\< T x , x \> = \< x , T x \> = \overline{\< T x , x \>} \in \MdR$ \\ \\
+	$" \Leftarrow "$: $\lambda \in \MdC$, $x, y \in X$ \\
+	\[ \< T ( x + \lambda y ) , x + \lambda y \> =  \< T x , x \> + \overline{\lambda} \< T y , x \> + \lambda \< y, T x \> + | \lambda |^{2} \< T y , T y \> \quad (1) \label{eq:19.7.5-1} \]
+	Konjugieren dieser Gleichung liefert:
+	\[ \< T ( x + \lambda y ) , x + \lambda y \> =  \< T x , x \> + \lambda \< x , T y \> + \overline{\lambda} \< T x , y \> + | \lambda |^{2} \< T y , T y \> \quad (2) \label{eq:19.7.5-2} \]
+	Bilde $\hyperref[eq:19.7.5-1]{(1)} - \hyperref[eq:19.7.5-2]{(2)}$ für $\lambda = 1$:
+	\[  \< T x , y \> + \< T y , x \> = \< y , T x \> + \< x , T y \> \quad (3) \label{eq:19.7.5-3} \]
+	Bilde $\hyperref[eq:19.7.5-1]{(1)} - \hyperref[eq:19.7.5-2]{(2)}$ für $\lambda = i$:
+	\[ \< T x , y \> - \< T y , x \> = - \< y , T x \> + \< x , T y \> \quad (4) \label{eq:19.7.5-4} \]
+	und $\hyperref[eq:19.7.5-3]{(3)} + \hyperref[eq:19.7.5-4]{(4)}$ liefert dann:
+	\[ \< T x , y \> = \< x , T y \> \]
 \end{beweis}
 
 
@@ -140,14 +151,24 @@ $A \in B(X) \colon \< A x , y \> = \< x , A^{*} y \>, \quad x, y \in X$, wobei
 
 \begin{prop} \label{prop:19.9}
 	Sei $T \in B(X)$ normal
-	\begin{enumerate}
+	\begin{enumerate}[label=\alph*\upshape)]
 		\item $r(T) = \sup \{ | \lambda | : \lambda \in \sigma(T) \} = \| T \|$
 		\item $\kernn T = \kernn T^{*}$
 	\end{enumerate}	
 \end{prop}
 
 \begin{beweis}
-	todo % todo at 19.9: add proof			
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Es gilt $\| T \|^{2} = \| T^{2} \|$ $(*)$ \label{prop:19.9.5-*}, denn:
+			\begin{align*}
+				\| T^{2} \|^{2} & \overset{\hyperref[bem:19.2]{19.2}}{=} \| T^{2} \left( T^{2} \right)^{*} \| \qquad \left((T^{2})^{*} = T^{*} T^{*} = (T^{*})^{2}\right) \\
+					& ~= \| (T T^{*}) (T T^{*})^{*} \| \overset{\hyperref[bem:19.2]{19.2}}{=} \| T T^{*} \|^{2} \overset{\hyperref[bem:19.2]{19.2}}{=} \left( \| T \|^{2} \right)^{2}
+			\end{align*}
+			$T$ normal $\Rightarrow T^{2}$ normal. Also $\| T^{2^{k}} \| = \| T \|^{2^{k}}$, wende \hyperref[prop:19.9.5-*]{$(*)$} $k$-mal an. 
+			\[ r(T) = \lim_{n \rightarrow \infty} \| T^{n} \|^{\frac{1}{n}} = \lim_{k \rightarrow \infty} \| T^{2^{k}} \|^{\frac{1}{2^{k}}} = \lim_{k \rightarrow \infty} \left( \| T \|^{2^{k}} \right)^{\frac{1}{2^{k}}} = \| T \| \]
+		\item $\| T x \|^{2} = \< T x , T x \> = \< x , T^{*} T x \> = \< x , T T^{*} x \> = \< T	^{*} x , T^{*} x \> = \| T^{*} x \|^{2}$ \\
+			\[ \Rightarrow T x = 0 \quad \gdw \quad T^{*} x = 0 \]
+	\end{enumerate}				
 \end{beweis}
 
 

@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc} 				% correct output of umlauts in pdf
 \usepackage[ngerman]{babel} 				% german spelling
 
-\usepackage{acronym}					% the Acronym at the end
+\usepackage{acronym}					% acronyms
 \usepackage{amsmath}					% extended math enviroments
 \usepackage{chngcntr}					% corrected numbering of figures
 \usepackage{dsfont}						% example for mathds
@@ -26,8 +26,10 @@
 \usetikzlibrary{intersections}
 \usetikzlibrary[topaths]
 
+
 % Removes common mistake occurring with broken unicode character 
 \DeclareUnicodeCharacter{00A0}{ }
+
 
 % Sets
 \def\MdC{\ensuremath{\mathbb{C}}}
@@ -68,6 +70,7 @@
 \def\scrt{\ensuremath{\mathscr{T}}}
 \def\scrh{\ensuremath{\mathscr{H}}}
 
+
 % Operators 
 \def\H{\text{H}}	
 \def\esssup{\text{ess sup}}	
@@ -95,6 +98,7 @@
 \def\ospan{\ensuremath{\operatorname{span}}}
 \def\sign{\ensuremath{\operatorname{sign}}}
 
+
 % Common formulars
 \newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert#1\right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
 \newcommand{\QR}[2]{\raisebox{1.5ex}{\ensuremath{#1}}\ensuremath{\mkern-4mu}\bigg/\ensuremath{\mkern-4mu}\raisebox{-1.5ex}{\ensuremath{#2}}}
@@ -107,12 +111,26 @@
 \newcommand{\da}{\mathrel{\mbox{$\coloneqq$}}}
 \newcommand{\ad}{\mathrel{\mbox{$\eqqcolon$}}}
 
+
 % Miscellaneous
 \renewcommand{\contentsname}{Inhaltsverzeichnis}
+\renewcommand{\indexname}{Stichwortverzeichnis}
+\renewcommand*\thesection{\arabic{section}}
 \newcount\mycount
-\reserveinserts{28}
+\counterwithin{figure}{section}
 \let\cleardoublepage\clearpage
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2ex}
-\renewcommand*\thesection{\arabic{section}}
-\counterwithin{figure}{section}
+\reserveinserts{28}
+
+
+%Commands to be used as metadata.
+\newcommand{\teachingsubject}[1]{} % Should be complete, work-in-progress, partial or unknown
+\newcommand{\lecturer}[1]{}
+\newcommand{\semester}[1]{}
+\newcommand{\university}[1]{}
+\newcommand{\scriptauthor}[1]{}
+\newcommand{\languages}[1]{} % Language tags (English, German, French, ...) 
+\newcommand{\content}[1]{} % Content Description: It should be possible to mark the content with what it teaches. This way, students could take the keywords they have to know and look for courses which teach those keywords.
+\newcommand{\dependencies}[1]{} % Dependencies
+\newcommand{\scriptstate}[1]{} % Should be complete, work-in-progress, partial or unknown
