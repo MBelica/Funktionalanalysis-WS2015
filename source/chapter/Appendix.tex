@@ -8,6 +8,24 @@ Zur Vollständigkeit und solange dieses Skript in Arbeit ist, werden hier Defini
 
 ~
 
+\begin{definition*}
+	Ist $V$ ein Vektorraum über einem beliebigen Körper und ist $U$ ein Untervektorraum von $V$, dann wird die \begriff{Kodimension} von $U$ in $V$ durch
+	\[ \mathrm{codim}(U,V) = \dim ( \QR{V}{U} ), \]
+	also als die Dimension des Faktorraums $\QR{V}{U}$, definiert.
+\end{definition*}
+
+\begin{bemerkung*}
+	Es gilt stets
+		\[ \dim U+\mathrm{codim}(U,V)=\dim V. \]
+	Ist $W$ ein Komplementärraum von $U$ in $V$, d. h. $U \oplus W = V$, so ist
+		\[ \mathrm{codim}(U,V)=\dim W. \]
+	Sind $U_1,U_2\subseteq V$ zwei Unterräume, so gilt stets
+		\[ \mathrm{codim}(U_1\cap U_2,V)\leq\mathrm{codim}(U_1,V)+\mathrm{codim}(U_2,V). \]
+	Sind $U,W\subseteq V$ Unterräume, so gilt
+		\[ \mathrm{codim}(U\cap W,W)=\mathrm{codim}(U,U+W)\leq\mathrm{codim}(U,V). \]
+\end{bemerkung*}
+
+
 \begin{satz*}[Fubini] \index{Fubini} \label{satz:x-SatzvonFubini}
 	Seien $(\Omega_1, \mathcal{A}_1, \mu_1)$ und $(\Omega_2, \mathcal{A}_2, \mu_2)$ zwei $\sigma$-endliche Maßräume und $f \colon \Omega_1 \times \Omega_2 \rightarrow \MdR$ eine messbare Funktion, die bezüglich des Produktmaßes $\mathrm \mu_1 \otimes \mu_2$ integrierbar ist, d.h. es gelte
 		\[ \int\limits_{\Omega_1 \times \Omega_2} |f| \, \mathrm d(\mu_1 \otimes \mu_2) < \infty \ \]

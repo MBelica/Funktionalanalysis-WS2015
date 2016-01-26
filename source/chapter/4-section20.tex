@@ -1,0 +1,64 @@
+%!TEX root = Funktionalanalysis - Vorlesung.tex
+
+
+\chapter*{Dualität in Banachräumen} \addcontentsline{toc}{chapter}{Dualität in Banachräumen} \setcounter{section}{19}
+
+
+
+\section{Der Fortsetzungssatz von Hahn-Banach}
+
+
+
+\begin{motivation}
+	Don't have a proper drawing yet % todo at 20.0.5: add motivation
+\end{motivation}
+ 
+ 
+\begin{definition}
+	Sei $X$ ein Vektorraum über $\MdK$. Eine Abbildung $p \colon X \rightarrow \MdR$ hei{\ss}t \begriff{sublinear}, falls
+ 	\begin{enumerate}
+ 		\item $p( x + y) \leq p(x) + p(y) \quad \forall x, y \in X$
+ 		\item $p(\lambda x ) = \lambda p(y) \quad \forall y \in X, \lambda \geq 0$
+ 	\end{enumerate}
+\end{definition}
+
+
+\begin{satz}[Hahn-Banach für Vektorräume] \index{Hahn-Banach für Vektorräume}
+		Sei $X$ ein Vektorraum, $p \colon X \rightarrow \MdR$ sublinear. \\
+		Zu jeder linearen Abbildung $l \colon U \rightarrow \MdK$, $U \subset X$ Untervektorraum mit
+			\[ \Re l(x) \leq p(x) \quad \forall x \in U \]
+		gibt es eine lineare Abbildung $L \colon X \rightarrow \MdR$ mit 
+			\[ L|_{U} = l, \quad \Re  L(x) \leq p(x) \quad \forall x \in X \]
+		Es wird jedoch keine Eindeutigkeit behauptet.
+\end{satz}
+
+\begin{beweis}
+	1. Schritt: sei $\MdK = \MdR$, $\dim \QR{X}{U} = 1$. Wähle $x_{0} \in \QR{X}{U}$, $x = \ospan(x) \oplus U$, d.h. zu $x \in X$ gibt es ein $u \in U, \lambda \in \MdR$ mit $x = u + \lambda x_{0}$ \\
+	Für jedes $r \in \MdR$ erhalten wir eine lineare Abbildung:
+	\[ L_{r} \colon X \rightarrow \MdR, \quad L_{r} (x) = l(u) + \lambda r, \quad L|_{U} = l \]
+	Zeige dass $r$ so gewählt werden kann, dass für alle $x \in X$ gilt $L_{r}(x) \leq p(x)$ und 
+	\[ l(u) + \lambda r \leq p(u + \lambda_{0} x_{0} \quad \forall u \in U, \lambda \in \MdR \quad (1) \label{eq:20.2.5-1} \]
+	Für $\lambda > 0$ bedeutet \hyperref[eq:20.2.5-1]{$(1)$}:
+	\begin{align*}
+		r & \leq p(\frac{u}{\lambda} + x_{0}) - l(\frac{u}{\lambda}) \quad \forall u \in U \\
+		\gdw r & \leq \inf \{ p( v + x_{0}) - l(v) : v \in U \} \quad (2) \label{eq:20.2.5-2}
+	\end{align*}
+	Für $\lambda < 0$ bedeutet \hyperref[eq:20.2.5-1]{$(1)$}:
+	\begin{align*}
+		- r & \leq p(\frac{u}{- \lambda} - x_{0}) - l(\frac{u}{- \lambda}) \quad \forall u \in U \\
+		\gdw r & \geq \sup \{ - p( w + x_{0}) + l(w) : w \in U \} \quad (3) \label{eq:20.2.5-3}
+	\end{align*}
+	Um \hyperref[eq:20.2.5-2]{$(2)$} und \hyperref[eq:20.2.5-3]{$(3)$} und damit \hyperref[eq:20.2.5-1]{$(1)$} zu erfüllen, benötigt man
+	\begin{align*}
+		l(w) - p(w - x_{0}) & \leq p(v + x_{0}) - l(v) \quad \forall v, w \in U \\
+		\gdw l(w) + l(v) & \leq p(v + x_{0}) + p(w - x_{0}) \quad u, v \in U
+	\end{align*}
+	Damit $l(v) + l(w) = l(v + w) \leq p(v + w) \leq p(v) + p(w)$ \\
+	Rückwärtsbetrachten liefert die erste Behauptung. \\ \\
+	2. Schritt: sei $\MdK = \MdR$ und $U$ allgemein mit $U \subset U_{1} \subset U_{2} \subset \dotsc$ und $\dim \QR{U_{j}}{U_{j - 1}} = 1$ \\
+	Da wir aber keine Topologie haben, können wir nicht annehmen, dass uns diese vollständige Induktion über z.B. $\bigcup_{j \in \MdN} U_{j}$ eine in X dichte Menge liefert.
+\end{beweis}
+
+
+
+\newpage

@@ -45,7 +45,15 @@ $A \in B(X) \colon \< A x , y \> = \< x , A^{*} y \>, \quad x, y \in X$, wobei
 \end{bemerkung}
 
 \begin{beweis}
-	todo % todo at 19.2: add proof	
+	\begin{enumerate}[label=\alph*\upshape)]
+		\setcounter{enumi}{3}
+		\item $\| S^{*} \|  \leq \| S^{*} \| \cdot \| S \| = \| S \|^{2}$
+			\begin{align*}
+				\| S \|^{2} & = \sup_{\| x \| \leq 1} \| S x \|^{2} = \sup_{\| x \| \leq 1}  \< S x , S x \> \\
+					& = \sup_{\| x \| \leq 1} \< x , S^{*} S x \> \leq \sup_{\| x \| \leq 1}  \underbrace{\| x \|}_{\leq 1} \cdot \| S^{*} S x \| = \| S^{*} S \|
+			\end{align*}
+			$T = S^{*} \colon \| S S^{*} \| = \| T^{*} T \| = \| T \|^{2} = \| S^{*} \|^{2} = \| S \|^{2}$
+	\end{enumerate}
 \end{beweis}
 
 
@@ -139,13 +147,36 @@ $A \in B(X) \colon \< A x , y \> = \< x , A^{*} y \>, \quad x, y \in X$, wobei
 \end{beweis}
 
 
-\begin{prop}
+\begin{prop} \label{prop:19.8}
 	Für $T \in B(X)$ selbstadjungiert, gilt:
 	\[ \| T \| = \sup_{\| x \| \leq 1} |\< T x , x \>| \]	
 \end{prop}
 
 \begin{beweis}
-	todo % todo at 19.8: add proof	
+	$" \geq "$: $| \< T x , x \> | \leq \| T x \| \cdot \|x \| \leq \| T x \| \leq \| T \|$, falls $\| x \| \leq 1$. \\ \\
+	$" \leq "$: $M = \sup_{\| x \| \leq 1} \< T x , x \>$ \\
+	Zu zeigen ist $\| T \| \leq M$: \\
+	Es gilt $T^{*} = T$ und nach der Definition von $M$
+	\begin{align*}
+		\< T ( x + y ) , ( x + y ) \> - \< T ( x - y ) , ( x - y) \> & = 2 \< T x , y \> + 2 \underbrace{\< T y , x \>}_{= \< y , T x \>} \\
+			& = 2 \left( \< T x , y \> + \overline{\< x , T y \>} \right) \\
+			& = 4 \Re \left( \< T x , y \> \right)
+	\end{align*}
+	Also mittels der Parallelogrammgleichung 
+	\begin{align*}
+		| 4 \cdot \Re \< T x , y \> | & \leq | \< T ( x + y ) ,  x + y \> | + | \< T ( x - y ) , x - y \> | \\
+			& \leq M \| x + y \|^{2} + M \| x - y \|^{2} \\
+			& = M \left( 2 \| x \|^{2} + 2 \| y \|^{2} \right)
+	\end{align*}
+	Für $\| x \|, \| y \| \leq 1$ ist 
+		\[ | 4 \Re \< T x , y \> | \leq 4 M \]
+	Wähle $\theta \in (-\pi , \pi]$, für $\| x \| \leq 1, \| e^{i \theta} y \| \leq 1$ gilt:
+	\begin{align*}
+		| \< T x, y \> | & = e^{i \theta} \Re \< T x , y \> \\
+						 & = \Re\< T x , e^{i \theta} y \> \\
+						 & \leq M
+	\end{align*}
+	$\sup_{\| x \|, \| y \| \leq 1} \< T x , y \> = \| T \| \leq M$.
 \end{beweis}
 
 
@@ -172,11 +203,13 @@ $A \in B(X) \colon \< A x , y \> = \< x , A^{*} y \>, \quad x, y \in X$, wobei
 \end{beweis}
 
 
-\begin{lemma}
-	Sei $T \in B(X)$ kompakt und normal. Dann gilt
+\begin{lemma} \label{lemma:19.10}
+	Sei $X$ ein Hilbertraum und $T \in B(X)$ kompakt und normal, d.h.  $T T^{*} = T^{*} T$. Dann gilt
 	\begin{enumerate}
 		\item $T x = \lambda x \gdw T^{*} x = \overline{\lambda} x$
 		\item $T x = \lambda x, T y = \mu y$ mit $\mu \neq \lambda$  dann ist $x \bot y$
+		\item Falls $\MdK = \MdC$, dann gibt es ein $\lambda \in \sigma(T)$ mit $| \lambda | = \| T \|$
+		\item Falls $\MdK = \MdR$, dann ist $\sigma(T) \subset \MdR$ und $\| T \| \in \sigma(T)$ oder $- \| T \| \in \sigma(T)$
 	\end{enumerate}
 \end{lemma}
 
@@ -184,9 +217,66 @@ $A \in B(X) \colon \< A x , y \> = \< x , A^{*} y \>, \quad x, y \in X$, wobei
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $T x = \lambda x \gdw x \in \kernn(T - \lambda) \gdw x \in \kernn(T - \lambda)^{*} \overset{\hyperref[prop:19.9]{19.9}}{\gdw} x \in \kernn(T^{*} - \overline{\lambda}) \gdw T^{*} x = \overline{\lambda} x$
 		\item $\lambda \< x , y \> = \< \lambda x , y \> = \< T x , y \> = \< x , T^{*} y \> = \< x , \overline{\mu} y \> = \mu \< x, y \>$ $\Rightarrow \< x , y \> = 0$.
+		\item Nach \hyperref[prop:19.9]{19.9a} ist $\ospan \{ | \lambda | : \lambda \in \sigma(T) \} = \| T \|$ \\
+			Wähle $\lambda_{j} \in \sigma(T)$ mit $| \lambda_{j}| \rightarrow \| T \|$. Für eine Teilfolge $(\lambda_{n})$ von $(\lambda_{j})$ gilt: 
+			\[ \lambda_{n} \rightarrow \lambda, | \lambda_{n} | \rightarrow | \lambda | = \| T \| \]
+			Da $\lambda_{n} \in \sigma(T)$ und $\sigma(T)$ abgeschlossen folgt $\lambda \in \sigma(T), | \lambda | = \| T \|$.
+		\item $T x = \lambda x, x \neq 0: \lambda \< x, x \> = \< T x , x \> = \< x , T x \> = \overline{\lambda} \< x , x \>$ \\
+			$\Rightarrow \lambda = \overline{\lambda} \in \MdR$ \\
+			$\MdK = \MdR$: Nach \hyperref[prop:19.8]{Prop. 19.8} ist $\| T \| = \sup \{ \< x , Tx \> : \| x \| \leq 1\}$. \\
+			$\exists x_{j}, \| x_{j} \| = 1, | \< T x_{j} , x_{j} \> | \rightarrow \| T \|$. \\
+			Wähle Teilfolge $(x_{n})$ von $(x_{j})$ so, dass 
+			\[ x \coloneqq \lim_{j} \< T x_{j}, x_{j} \>, \quad y \coloneqq \lim_{n} T x_{n} \]
+			Da $|x| = \lim_{j} | \< T x_{j} , x_{j} \> | = \| T \|$ ist:
+			\begin{align*}
+				\| T x_{n} - \lambda_{n} x_{n} \|^{2} & = \| T x_{n} \|^{2} - 2 \< T x_{n} , x_{n} \> + \lambda_{n}^{2} \underbrace{\| x_{n} \|^{2}}_{= 1} \\
+				& \rightarrow \lambda^{2} - 2 \lambda^{2} + \lambda^{2} = 0
+			\end{align*} 
+			Da $y = \lim_{n} \left( \lambda_{n} x_{n} \right)$: $T y = \lambda \lim T x_{n} = \lambda y$. \\
+			$\Rightarrow \lambda \in \sigma(T), \lambda \in \MdR, | \lambda | = \| T \|$.
 	\end{enumerate}	
 \end{beweis}
 
 
+\begin{satz}[Spektralsatz für kompakte, normale Operatoren] \index{Spektralsatz für kompakte, normale Operatoren} \label{satz:19.11.b}
+	Sei $X$ ein Hilbertraum, $T \in B(X)$ kompakt und normal. \\
+	Dann gibt es eine Folge $(\lambda_{n}) \in \MdC \setminus \{ 0 \}$, die entweder endlich oder eine Nullfolge und es gibt ein Orthonormalsystem $(h_{n})$ in $X$, das endlich ist, falls $(\lambda_{n})$ endlich ist, so dass
+	\[ Tx = \sum_{n} \lambda_{n} \< x , h_{n} \> h_{n} \quad \forall x \in X \]
+	Insbesondere:
+	\begin{itemize}
+		\item $\sigma(T) \setminus \{ 0 \} = \{ \lambda_{n} \}$, $T h_{n} = \lambda_{n} h_{n}$
+		\item $X = \left( \kernn T \right) \oplus \overline{\ospan} \{ h_{n} \}$, orthogonale Komplement
+		\item $\| T \| = \sup_{n} | \lambda_{n} |$ 
+	\end{itemize}
+\end{satz}
+
+\begin{bemerkung*}
+	Falls $X$ seperabel ist, so gibt es eine Orthonormalbasis $(e_{n})$ von $X$, die diese $(h_{n})$ und eine orthonormalbasis von $\kernn(T)$ so, dass 
+	\[ T x = \sum_{n = 0}^{\infty} \mu_{n} \< x , e_{n} \> e_{n} \]
+	wobei $\mu_{n} = 0$, falls $e_{n} \in \kernn(T), \mu_{n} = \lambda_{m}$ falls $e_{n} = h_{m}$.
+\end{bemerkung*}
+
+There was a drawing here % todo at 19.11: add drawing
+
+\begin{beweis}
+	Aus dem Kapitel über Spektraltheorie von kompakten Operatoren wissen wir $\sigma(T) \setminus \{ 0 \}$ besteht aus endlich vielen oder einer Nullfolge von Eigenwerten $(\nu_{n})$ mit $X_{k} = \kernn( T - \nu_{k} Id )$, $\dim X_{k} = d_{k} < \infty$. \\
+	Sei $(\lambda_{n})$ eine Folge, die jeden Eigenwert $\nu_{k}$ entsprechend seiner Vielfachheit $d_{k}$ enthält:
+\begin{align*}
+	(\lambda_{n}) & = (\underbrace{v_{1}, \dotsc, v_{1}}_{d_{1}\text{-mal}}, \underbrace{v_{2}, \dotsc, v_{2}}_{d_{2}\text{-mal}}, \underbrace{v_{3}, \dotsc, v_{3}}_{d_{3}\text{-mal}}, \dotsc) \\
+	(h_{n}) & = (e_{1}^{1}, \dotsc, e_{d_{1}}^{1}, e_{1}^{2}, \dotsc, e_{d_{2}}^{2}, e_{1}^{3}, \dotsc, e_{d_{3}}^{3}, \dotsc)
+\end{align*}
+Da für jedes $k$ $(e_{1}^{k}, \dotsc, e_{d_{k}}^{k})$ ein Orthonormalsystem von $X_{k}$ ist und $X_{k} \bot X_{l}$ für $k \neq l$ nach \hyperref[]{9.11b}, ist $(h_{n})$ ein Orthonormalsystem in X. \\ % todo: is it 19.10b? prof weis wrote 9.11b...
+Also: $T h_{n} = \lambda_{n} h_{n}$ und $h_{n} \bot \kernn(T)$ nach \hyperref[]{9.11b} \\ % todo: is it 19.10b? prof weis wrote 9.11b... 
+Beh: $X = \kernn(T) \oplus X_{0}$, $X_{0} = \overline{\ospan}(h_{n})$, denn daraus würde schon die Behauptung folgen: \\
+Für alle $x \in X$ ist $x = y + \sum_{n} \< x , h_{n} \> h_{n}$, da $(h_{n})$ Orthonormalbasis von  $X_{0}$
+	\[ \Rightarrow T x = \underbrace{T y}_{= 0} + \sum_{n} \< x , h_{n} \> \underbrace{( T h_{n} )}_{\lambda_{n} h_{n}} ) \sum \lambda_{n} \< x, h_{n} \> h_{n}. \]
+Zu zeigen ist also $X_{0}^{\bot} = \kernn(T)$ \\
+Beweis: für $x \in X_{0}^{\bot}$ ist $Tx \in X_{0}^{\bot}$, denn $\< T x , h_{n} \> = \< x , T h_{n} \> = \lambda \underbrace{\< x , h_{n} \>}_{= 0}, \quad \forall n$ \\
+Also $T(X_{0}^{\bot}) \subset X_{0}^{\bot}$, setze $S = T|_{X_{0}^{\bot}} \in B(X_{0}^{\bot})$ kompakt und normal. Nach \hyperref[lemma:19.10]{19.10c, d)} gibt es  einen Eigenwert $\mu$ von $S$ mit $| \mu | = \| S \|$. \\ 
+	\[ \Rightarrow \operatorname{Eig}(S - \mu) \subset X_{0} \cap X_{0}^{\bot} = \{  0 \} \Rightarrow S = 0 \Rightarrow X_{0}^{\bot} \subset \kernn S. \]
+Andererseits: $\kernn T \bot X_{k} \Rightarrow \kernn T \subset X_{0}^{\bot} \Rightarrow X_{0}^{\bot} = \kernn(T)$.
+\end{beweis}
+
+	
 	
 \newpage

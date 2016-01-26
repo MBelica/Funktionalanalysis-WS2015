@@ -113,15 +113,14 @@
 
 
 % Miscellaneous
-\renewcommand{\contentsname}{Inhaltsverzeichnis}
-\renewcommand{\indexname}{Stichwortverzeichnis}
-\renewcommand*\thesection{\arabic{section}}
 \newcount\mycount
 \counterwithin{figure}{section}
 \let\cleardoublepage\clearpage
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2ex}
 \reserveinserts{28}
+\renewcommand*\thesection{\arabic{section}}
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
 
 
 %Commands to be used as metadata.
