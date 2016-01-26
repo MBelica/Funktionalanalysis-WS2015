@@ -10,20 +10,31 @@
 
 
 \begin{motivation}
-	Don't have a proper drawing yet % todo at 20.0.5: add motivation
+	Sei $X$ ein Hilbertraum und {\Longunderstack{\hbox{$M \subseteq X$} \hbox{$T \in B(X)$} \hbox{schwach konv.}}}: {\Longunderstack{\hbox{$M^{\bot}$} \hbox{$T^{*} \in B(X)$} \hbox{Kompaktheit}}}
+	\[ \begin{xy} \xymatrix{  
+			X \ar[rd]^L \ar[d]|{ \rotatebox[origin=c]{270}{$\supseteq$}  }          \\
+      		M \ar[r]^l    				  &   \MdK			
+		} \end{xy} \] % todo at 20.0.5: check if I've understood drawing correctly 
+	Wir suchen zu $l \in M'$ ein $L \in X'$ mit $L|_{M} = l$ und $\| L \| = \| l \|$. \\ \\
+ 	Zum Beispiel mit $X$ einem beliebigen Hilbertraum und $M \subset X$ betrachte
+ 		\[ \begin{xy} \xymatrix{
+			X \ar[d]_{ P_{U} }                      \\
+      		M \ar[r]^l    				   &   \MdK			
+		} \end{xy} \]
+		Dann besitzt $L \coloneqq l \circ P_{U}$ die gewünschten Eigenschaften.
 \end{motivation}
  
  
 \begin{definition}
 	Sei $X$ ein Vektorraum über $\MdK$. Eine Abbildung $p \colon X \rightarrow \MdR$ hei{\ss}t \begriff{sublinear}, falls
- 	\begin{enumerate}
+ 	\begin{enumerate}[label=\alph*\upshape)]
  		\item $p( x + y) \leq p(x) + p(y) \quad \forall x, y \in X$
  		\item $p(\lambda x ) = \lambda p(y) \quad \forall y \in X, \lambda \geq 0$
  	\end{enumerate}
 \end{definition}
 
 
-\begin{satz}[Hahn-Banach für Vektorräume] \index{Hahn-Banach für Vektorräume}
+\begin{satz}[Hahn-Banach für Vektorräume] \index{Hahn-Banach für Vektorräume} \label{satz:20.2-HahnBanach}
 		Sei $X$ ein Vektorraum, $p \colon X \rightarrow \MdR$ sublinear. \\
 		Zu jeder linearen Abbildung $l \colon U \rightarrow \MdK$, $U \subset X$ Untervektorraum mit
 			\[ \Re l(x) \leq p(x) \quad \forall x \in U \]
@@ -54,7 +65,7 @@
 		\gdw l(w) + l(v) & \leq p(v + x_{0}) + p(w - x_{0}) \quad u, v \in U
 	\end{align*}
 	Damit $l(v) + l(w) = l(v + w) \leq p(v + w) \leq p(v) + p(w)$ \\
-	Rückwärtsbetrachten liefert die erste Behauptung. \\ \\
+	Rückwärts betrachten liefert die erste Behauptung. \\ \\
 	2. Schritt: sei $\MdK = \MdR$ und $U$ allgemein mit $U \subset U_{1} \subset U_{2} \subset \dotsc$ und $\dim \QR{U_{j}}{U_{j - 1}} = 1$ \\
 	Da wir aber keine Topologie haben, können wir nicht annehmen, dass uns diese vollständige Induktion über z.B. $\bigcup_{j \in \MdN} U_{j}$ eine in X dichte Menge liefert.
 \end{beweis}

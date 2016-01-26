@@ -13,12 +13,14 @@
 \usepackage{framed}						% framed theorems
 \usepackage[bookmarks,bookmarksnumbered,hypertexnames=false,pdfpagelayout=OneColumn,colorlinks]{hyperref}		% hyperref throughout the document
 \usepackage{makeidx}					% the index
-\usepackage{mathtools}					% advanced math tools
+\usepackage{mathtools} % advanced math tools
+\usepackage{nicefrac} % qr					
 \usepackage[framed,amsmath,thmmarks,hyperref]{ntheorem} % advanced theorems
 \usepackage{pgfplots}					% tikz
 \usepackage{pstricks}					% polygons etc.
 \usepackage{scrlayer-scrpage} 			% markleft
 \usepackage{scalerel,amssymb} 			% header, footer and amssymbols
+\usepackage{stackengine}					% text stacking
 \usepackage{ulem}						% underlined text
 \usepackage[arrow, matrix, curve]{xy} 	% xy-plots
 
@@ -101,7 +103,8 @@
 
 % Common formulars
 \newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert#1\right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
-\newcommand{\QR}[2]{\raisebox{1.5ex}{\ensuremath{#1}}\ensuremath{\mkern-4mu}\bigg/\ensuremath{\mkern-4mu}\raisebox{-1.5ex}{\ensuremath{#2}}}
+% \newcommand{\QR}[2]{\raisebox{1.5ex}{\ensuremath{#1}}\ensuremath{\mkern-4mu}\bigg/\ensuremath{\mkern-4mu}\raisebox{-1.5ex}{\ensuremath{#2}}}
+\newcommand{\QR}[2]{\nicefrac{#1}{#2}}
 \newcommand\equalhat{\let\savearraystretch\arraystretch\renewcommand\arraystretch{0.3}\begin{array}{c}\stretchto{\scalerel*[\widthof{=}]{\wedge}{\rule{1ex}{3ex}}}{0.5ex}\\ =\end{array}\let\arraystretch\savearraystretch}
 \newcommand{\diagentry}[1]{\mathmakebox[1.8em]{#1}}
 \newcommand{\xddots}{\raise 4pt \hbox {.}\mkern 6mu\raise 1pt \hbox {.}\mkern 6mu\raise -2pt \hbox {.}}
