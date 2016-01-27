@@ -206,18 +206,18 @@ Hierfür gelten die folgenden Eigenschaften:
 \end{prop}
 
 
-\begin{definition} \label{def:4.9-DichtSeperabel}
+\begin{definition} \label{def:4.9-DichtSeparabel}
 	Sei $(M, d)$ ein metrischer Raum
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Eine Menge $V \subset M$ hei{\ss}t \begriff{dicht} in M, falls $\bar V = M$, d.h. jeder Punkt in $M$ ist Grenzwert einer Folge aus $V$.
-		\item $M$ hei{\ss}t \begriff{seperabel}, falls es eine abzählbare Teilmenge $V \subset M$ gibt, die dicht in $M$ liegt.
+		\item $M$ hei{\ss}t \begriff{separabel}, falls es eine abzählbare Teilmenge $V \subset M$ gibt, die dicht in $M$ liegt.
 	\end{enumerate}
 \end{definition}
 
 
 \begin{bemerkung}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item All die Begriffe und Bezeichnungen aus \hyperref[def:4.4-AbgeschlossenOffen-abgoff]{Definition 4.4}, \hyperref[bem:4.5]{Bemerkung 4.5}, \hyperref[def:4.7-AbschlussInnereRand]{Definition 4.7} und \hyperref[def:4.9-DichtSeperabel]{Definition 4.9} werden wir auch in normieren Räumen benutzen bzgl. der kanonischen Metrik $d(x, y) = \| x - y\|$
+		\item All die Begriffe und Bezeichnungen aus \hyperref[def:4.4-AbgeschlossenOffen-abgoff]{Definition 4.4}, \hyperref[bem:4.5]{Bemerkung 4.5}, \hyperref[def:4.7-AbschlussInnereRand]{Definition 4.7} und \hyperref[def:4.9-DichtSeparabel]{Definition 4.9} werden wir auch in normieren Räumen benutzen bzgl. der kanonischen Metrik $d(x, y) = \| x - y\|$
 		\item Sei $(M, d)$ ein metrischer Raum, $U \subset M$. Dann ist auch $(U, d)$ ein metrischer Raum. Für $V \subset U$ muss man dann aber unterscheiden bzgl. Abgeschlossenheit (bzw. Offenheit) von $V$ in $U$ oder in $M$. Man sagt dann, dass $V$ \begriff{relativ offen} bzw. \begriff{relativ abgeschlossen} in $U$ ist.
 	\end{enumerate}	
 \end{bemerkung}
@@ -303,7 +303,7 @@ Hierfür gelten die folgenden Eigenschaften:
 					\item Aussage über $\partial A$ folgt aus \hyperref[bsp:4.11.b]{i)} und \hyperref[bsp:4.11.b]{ii)}
 				\end{enumerate}
 			\end{beweis}
-		\item Sei $X$ ein normierter Vektorraum und $Y \subseteq X$ abzählbar mit $\overline{lin Y} = X$. Dann ist $X$ seperabel.
+		\item Sei $X$ ein normierter Vektorraum und $Y \subseteq X$ abzählbar mit $\overline{lin Y} = X$. Dann ist $X$ separabel.
 			\begin{beweis}
 				Wir definieren
 				\[ lin_{\MdQ} Y \coloneqq \{ y = \sum_{i = 1}^{n} q_{j} y_{j} : q_{j} \in \MdQ \quad (q_{j} \in \MdQ + i \MdQ ), y_{j} \in Y, n \in \MdN \} \]
@@ -312,10 +312,10 @@ Hierfür gelten die folgenden Eigenschaften:
 				Zu diesem $y$ finden wir ein $z \in lin_{\MdQ} Y$ mit $\| y - z \| < \epsilon$
 				\[ \Rightarrow \| x - z \| < 2 \epsilon, \quad \text{d.h. } \overline{lin_{\MdQ} Y} = X \]
 			\end{beweis}
-		\item $C[0, 1]$ ist seperabel, da $ lin \{ t^{n}, n \in \MdN \} $ dicht in $C[0, 1]$ liegt nach dem Approximationssatz von Weierstrass.
-		\item Die Räume $\ell^{p}, p \in [1, \infty)$ und $c_{0}$ sind seperabel, da
+		\item $C[0, 1]$ ist separabel, da $ lin \{ t^{n}, n \in \MdN \} $ dicht in $C[0, 1]$ liegt nach dem Approximationssatz von Weierstrass.
+		\item Die Räume $\ell^{p}, p \in [1, \infty)$ und $c_{0}$ sind separabel, da
 			\[ D = lin \{ e_{k}, k \in \MdK \} \text{ dicht in allen Räumen liegt.} \]
-		\item Der Raum $\ell^{\infty}$ ist nicht seperabel: \\
+		\item Der Raum $\ell^{\infty}$ ist nicht separabel: \\
 			Die Menge $\Omega$ der $\{0, 1\}$-wertigen Folgen ist überabzählbar. Für $x, y \in \Omega$ mit $x \neq y$ gilt $\| x - y \|_{\infty} = 1$ \\
 			Angenommen: $\overline{ \{v_{k}, k \in \MdN \} } = \ell^{\infty}$. Dann
 			\[ \Omega \subseteq \bigcup_{k \in \MdN} K \left( v_{k}, \frac{1}{4} \right) \]

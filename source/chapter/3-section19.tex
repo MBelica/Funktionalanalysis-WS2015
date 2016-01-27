@@ -154,9 +154,8 @@ $A \in B(X) \colon \< A x , y \> = \< x , A^{*} y \>, \quad x, y \in X$, wobei
 
 \begin{beweis}
 	$" \geq "$: $| \< T x , x \> | \leq \| T x \| \cdot \|x \| \leq \| T x \| \leq \| T \|$, falls $\| x \| \leq 1$. \\ \\
-	$" \leq "$: $M = \sup_{\| x \| \leq 1} \< T x , x \>$ \\
-	Zu zeigen ist $\| T \| \leq M$: \\
-	Es gilt $T^{*} = T$ und nach der Definition von $M$
+	$" \leq "$: Definiere $M \coloneqq \sup_{\| x \| \leq 1} \left| \< T x , x \> \right|$. Zu zeigen ist damit $\| T \| \leq M$: \\ \\
+	Nach $T^{*} = T$ und der Definition von $M$ gilt:
 	\begin{align*}
 		\< T ( x + y ) , ( x + y ) \> - \< T ( x - y ) , ( x - y) \> & = 2 \< T x , y \> + 2 \underbrace{\< T y , x \>}_{= \< y , T x \>} \\
 			& = 2 \left( \< T x , y \> + \overline{\< x , T y \>} \right) \\
@@ -250,7 +249,7 @@ $A \in B(X) \colon \< A x , y \> = \< x , A^{*} y \>, \quad x, y \in X$, wobei
 \end{satz}
 
 \begin{bemerkung*}
-	Falls $X$ seperabel ist, so gibt es eine Orthonormalbasis $(e_{n})$ von $X$, die diese $(h_{n})$ und eine orthonormalbasis von $\kernn(T)$ so, dass 
+	Falls $X$ separabel ist, so gibt es eine Orthonormalbasis $(e_{n})$ von $X$, die diese $(h_{n})$ und eine orthonormalbasis von $\kernn(T)$ so, dass 
 	\[ T x = \sum_{n = 0}^{\infty} \mu_{n} \< x , e_{n} \> e_{n} \]
 	wobei $\mu_{n} = 0$, falls $e_{n} \in \kernn(T), \mu_{n} = \lambda_{m}$ falls $e_{n} = h_{m}$. \\ \\ % todo at 19.11: check if I've understood drawing correctly 
 	Die Abbildung $\phi \colon \ell^{2} \rightarrow X, \phi \left( (\alpha_{n}) \right) = \sum_{n} \alpha_{n} e_{n}$ ist eine Isometrie. \\
@@ -278,7 +277,7 @@ $A \in B(X) \colon \< A x , y \> = \< x , A^{*} y \>, \quad x, y \in X$, wobei
 	(h_{n}) & = (e_{1}^{1}, \dotsc, e_{d_{1}}^{1}, e_{1}^{2}, \dotsc, e_{d_{2}}^{2}, e_{1}^{3}, \dotsc, e_{d_{3}}^{3}, \dotsc)
 \end{align*}
 Da für jedes $k$ $(e_{1}^{k}, \dotsc, e_{d_{k}}^{k})$ ein Orthonormalsystem von $X_{k}$ ist und $X_{k} \bot X_{l}$ für $k \neq l$ nach \hyperref[lemma:19.10]{19.10b}, ist $(h_{n})$ ein Orthonormalsystem in X. \\ 
-Also: $T h_{n} = \lambda_{n} h_{n}$ und $h_{n} \bot \kernn(T)$ nach \hyperref[]{19.10b} \\ 
+Also: $T h_{n} = \lambda_{n} h_{n}$ und $h_{n} \bot \kernn(T)$ nach \hyperref[lemma:19.10]{19.10b} \\ 
 Beh: $X = \kernn(T) \oplus X_{0}$, $X_{0} = \overline{\ospan}(h_{n})$, denn daraus würde schon die Behauptung folgen: \\
 Für alle $x \in X$ ist $x = y + \sum_{n} \< x , h_{n} \> h_{n}$, da $(h_{n})$ Orthonormalbasis von  $X_{0}$
 	\[ \Rightarrow T x = \underbrace{T y}_{= 0} + \sum_{n} \< x , h_{n} \> \underbrace{( T h_{n} )}_{\lambda_{n} h_{n}} ) \sum \lambda_{n} \< x, h_{n} \> h_{n}. \]
