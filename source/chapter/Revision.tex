@@ -12,7 +12,7 @@ Zu jedem Kapitel eine kleine Wiederholung der einzelnen Sätze und dazu Beispiel
 \subsection*{Wiederholung zu Aufgabenblatt 10}
 
 \textbf{Zu Aufgabe 29: Spektrum kompakter Operatoren:} \\
-Sei $X$ ein endlich dimensionaler Banachraum, $K \in B(X)$ kompakt
+Sei $X$ ein unendlich dimensionaler Banachraum, $K \in B(X)$ kompakt
 	\[ \Rightarrow 0 \in \sigma(K) \]
 Außerdem ist $\sigma(K)$ endlich oder besteht aus einer Nullfolge \textbf{und} jedes $\lambda \in \sigma(K) \setminus \{ 0 \}$ ist ein Eigenwert mit endlich dimensional. 
 ~ \newline
@@ -41,7 +41,53 @@ Sei $X$ ein Hilbertraum
 
 \begin{enumerate}
 	\item $x, y \in X$ hei{\ss}en orthogonal $(x \bot y)$, falls $\< x , y \> = 0$
-	\item todo % todo at revision
+	\item Für $A \subseteq X$ definiere das orthogonale Komplement durch
+		\[ A^{\bot} = \{ x \in X : \< x , a \> = 0 ~ \forall a \in A \} \]
+	\item Eine Projektion $P \in B(X)$ hei{\ss}t orthogonal, falls 
+		\[ \bild(P) \bot \kernn(P) \]
+	\item Projektionssatz: Ist $Y \subseteq X$ ein abgeschlossener Unterraum, so gilt
+		 	\[ X = Y \oplus Y^{\bot} \]
+		und es existiert eine eindeutig bestimmte Orthogonalprojektion $P$ mit
+		\[ \| P \| = 1, \quad \bild(P) = Y, \quad \kernn(P) = Y^{\bot} \quad \text{und} \quad \| x - Px \| = d( x , Y) ~ \forall x \in X \]
+	\item Eine Menge $S \subseteq X$ hei{\ss}t Orthonormalsystem, falls 
+			\begin{enumerate}[label=\roman*\upshape)]
+				\item $\| v \| = 1$ und
+				\item $v \bot w \quad \forall v, w \in X$ mit $v \neq w$
+			\end{enumerate}
+	\item Eine Menge $B \subseteq X$ hei{\ss}t Orthonormalbasis, falls
+			\begin{enumerate}[label=\roman*\upshape)]
+				\item $B$ ist Orthonormalsystem und
+				\item $\overline{\ospan(B)} = X$
+			\end{enumerate}
+	\item Ist $S = \{ v_{n} : n \in \MdN \}$ ein Orthonormalsystem in $X$, dann
+		\begin{enumerate}[label=\roman*\upshape)]
+			\item $\sum_{n = 1}^{\infty} | \< x , v_{n} \> |^{2} \leq \| x \|$ (Besselsche Ungleichung)
+			\item $P x = \sum_{n = 1}^{\infty} \< x , v_{n} \> v_{n}$ ist die Orthogonalprojektion auf $\overline{\ospan(S)}$ mit $\| P x \|^{2} = \sum_{n \geq 1} | \< x , v_{n} \> |^{2}$
+		\end{enumerate}
+	\item Charakterisierungssatz für Orthonormalbasen: \\
+		Sei $S = \{ v_{n} : n \in \MdN \}$ ein Orthonormalsystem, dann sind äquivalent
+			\begin{enumerate}[label=\roman*\upshape)]
+				\item $S$ ist Orthonormalbasis
+				\item $S^{\bot} = \{ 0 \}$
+				\item $\forall x \in X: x = \sum_{n \geq 1} \< x , v_{n} \> v_{n}$
+				\item $\forall x , y \in X: \< x , y \> = \sum_{n \geq 1} \< x , v_{n} \> \< v_{n} , y \>$
+				\item $\forall x \in X: \| x \|^{2} = \sum_{n \geq 1} | \< x , v_{n} \>|^{2}$ (Parsevalsche Gleichung) 
+			\end{enumerate}
+\end{enumerate}
+
+\textbf{Beispiel:}
+Sei $X$ ein Hilbertraum, $A \subseteq X$, $U, v \subseteq X$ abgeschlossene Unterräume.
+\begin{enumerate}[label=\alph*\upshape)]
+	\item Behauptung: $A^{\bot}$ ist abgeschlossener Unterraum von $X$ \\
+		Beweis: $\< \alpha x + \beta y , a \> = \alpha \< x , a \> + \beta \< y , a \> = 0$ $\forall x , y \in A^{\bot}, \alpha, \beta \in \MdK, a \in A$ \\
+		$\Rightarrow \alpha x + \beta y \in A^{\bot}$ und somit ist $A^{\bot}$ linearer Unterraum \\
+		Sei $(x_{n}) \subseteq A^{\bot}$ mit $x_{n} \rightarrow X \in X$. Dann gilt
+		\[ \< x , a \> = \lim_{n \rightarrow \infty} \underbrace{\< x_{n} , a \>}_{= 0} = 0 \]
+		$\Rightarrow x \in A^{\bot}$ und somit ist $A^{\bot}$ abgeschlossen.
+	\item Behauptung: $A^{\bot} = \left( \overline{\ospan(A)} \right)^{\bot}$ \\
+		Beweis: Per Definition gilt todo % todo add rest
+	\item Behauptung: $U^{\bot} \cap V^{\bot} = \left( U + V \right)^{\bot}$ \\
+		Beweis:
 \end{enumerate}
 
 
