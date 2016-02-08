@@ -68,6 +68,66 @@
 	Rückwärts betrachten liefert die erste Behauptung. \\ \\
 	2. Schritt: sei $\MdK = \MdR$ und $U$ allgemein mit $U \subset U_{1} \subset U_{2} \subset \dotsc$ und $\dim \QR{U_{j}}{U_{j - 1}} = 1$ \\
 	Da wir aber keine Topologie haben, können wir nicht annehmen, dass uns diese vollständige Induktion über z.B. $\bigcup_{j \in \MdN} U_{j}$ eine in X dichte Menge liefert.
+	
+	todo % todo rest des beweises
+\end{beweis}
+
+\textit{Vorläufig überspringe ich ab hier alle Beweise, werde sie aber nachtragen.} % todo add proof
+
+\begin{satz}[Hahn-Banach für normierte Räume]
+	Sei $X$ normierter Raum. Sei $U \subset X$ ein linearer Teilraum. \\
+	Zu jedem stetigen Funktional $u' \colon U \rightarrow \MdK$, gibt es ein stetiges lineares Funktional $x' \colon X \rightarrow \MdK$ mit 
+		\[ \| x' \|_{X'} = \| u' \|_{U'} \quad \text{und} \quad x'|_{U} = u'. \]	
+\end{satz}
+
+
+\begin{kor}
+	Sei $X$ ein normierter Vektorraum. Zu jedem $x \in X, x \neq 0$ gibt es ein $x \in X$ mit 
+		\[ \| x \|_{X'} \quad \text{und} \quad x'(x) = \| x \| \]
+\end{kor}
+
+
+\begin{folgerung}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $x \in X, x'(x) = 0$ für alle $x' \in X^{*} \Rightarrow x = 0$
+		\item Zu $x_{1}, x_{2} \in X$ gibt es $x' \in X'$ mit $x'(x_{1}) \neq x'(x_{2})$ (folgt aus $a)$ mit $x = x_{1} - x_{2}$)
+		\item $\| x \| = \sup \{ x'(x) : \| x' \| = 1, x' \in X' \}$
+	\end{enumerate}	
+\end{folgerung}
+
+
+\begin{kor}
+	Sei $X$ ein normierter Raum. $U \subset X$ ein abgeschlossener, linearer Teilraum, $x \in X \setminus U$. \\
+	Dann gibt es ein $x' \in X'$ mit $x'|_{U} = 0, x'(x) =\neq 0$.	
+\end{kor}
+
+
+\begin{definition}
+	$X$ sei ein normierter Raum, $U \subset X, V \subset X'$ Teilmenge. Setze
+	\begin{align*}
+		U^{\bot} & \coloneqq \{ x' \in X' : x'(x) = 0 \text{ für alle } x \in X \} \\
+		V_{\bot} & \coloneqq \{ x \in X : x'(x) = 0 \text{ für alle } x \in V \} 
+	\end{align*}
+	Beachte: $X'' \supset V^{\bot} = \{  x'' \in \left( X' \right)' = X'' : x''(x) = 0 \text{ für alle } x' \in V \} \neq V_{\bot} \subset X$
+\end{definition}
+
+
+\begin{bemerkung}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $U^{\bot}$ ist ein linearer abgeschlossener Teilraum $X'$, $V_{\bot}$ ist ein linearer abgeschlossen Teilraum von $X$.
+		\item $U_{1} \subset U_{2} \Rightarrow U_{2}^{\bot} \subset U_{1}^{\bot}$, $V_{1} \subset V_{2} \Rightarrow (V_{2})_{\bot} \subset (V_{1})_{\bot}$
+		\item $(U^{\bot})_{\bot} = \overline{\ospan} U$
+	\end{enumerate}	
+\end{bemerkung}
+
+
+\begin{prop}
+	Sei $X$ ein Banachraum, $U \subset X$ abgeschlossen. Dann gilt
+		\[ \left( \QR{X}{U} \right)' \equalhat U^{\bot}, \quad U' \equalhat \QR{X'}{U^{\bot}} \]	
+\end{prop}
+
+\begin{beweis}
+	siehe Übung.	
 \end{beweis}
 
 
