@@ -3,11 +3,13 @@
 
 \section{Schwache Konvergenz \& Reflexivität}
 
+
 \begin{notation}
 	Sei $X$ ein normierter Raum und $X'$ der Dualraum. Für $x \in X, x' \in X'$ setze
 	\[ x'(x) \eqqcolon (x, x'), \]
 	\[  (x, x') \in X \times X' \rightarrow ( x , x') \text{ Bilinearform auf } X \times X'. \]	
 \end{notation}
+
 
 \begin{bemerkung*}
 	Sei $X$ ein Hilbertraum mit $\< \cdot , \cdot \>$. \\
@@ -22,5 +24,49 @@
 \end{bemerkung*}
 
 
+\begin{definition}
+	Sei $X$ ein normierter Raum und $X'$ der Dualraum
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Eine Folge $(x_{n})_{n} \subset X$ \begriff{konvergiert schwach} gegen $x \in X$, falls 
+			\[ (x_{n} , x') \xrightarrow[n \rightarrow \infty]{} (x , x'), \quad \forall x' \in X' \]
+		\item Eine Folge $(x_{n}')_{n} \subset X'$ \begriff{konvergiert schwach*} gegen $y' \in X'$, falls 
+			\[ (x , x_{n}') \xrightarrow[n \rightarrow \infty]{} (x, x'), \quad \forall x \in X \]
+	\end{enumerate}
+\end{definition}
+
+\begin{notation*}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $x_{n} \xrightarrow[]{w} x$ oder $x_{n} \rightarrow x$ in $\sigma(X , X')$ oder $x = w$-$\lim_{n} x_{n}$
+		\item $x_{n}' \xrightarrow[]{w^{*}} x'$ oder $x_{n}' \rightarrow x'$ in $\sigma(X' , X)$ oder $x' = w^{*}$-$\lim_{n} x_{n}'$
+	\end{enumerate}
+\end{notation*}
+
+
+\begin{eig}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $w$-$\lim$, $w^{*}$-$\lim$ sind (falls existent) eindeutig
+		\item Normkonvergenz in $X$ (oder $X'$) impliziert schwache (bzw. w*-schwache) Konvergenz; nicht umgekehrt.
+		\item $x_{k} \xrightarrow[]{w} x \Rightarrow \| x \| \leq \liminf_{n} \| x_{n} \|$ \\
+			$x_{k} \xrightarrow[]{w^{*}} xÄ \Rightarrow \| x' \| \leq \liminf_{n} \| x_{n} \|$ 
+		\item Falls $X$ ein Banachraum ist und $(x_{n}) \subset X$ schwach konvergiert, dann ist $(x_{n})$ beschränkt; genauso für $(x_{n}') \subset X'$
+	\end{enumerate}	
+\end{eig}
+
+
+\begin{lemma}
+	Sei $(x_{n}')$ beschränkt in $X'$ und $D \subset X$ mit $\overline{\ospan D} = X$. \\
+	Falls $x_{n}'(x)$ eine Cauchy-Folge ist für alle $x \in D$, dann konvergiert $x_{n}'$ schwach* gegen ein $x' \in X'$
+\end{lemma}
+
+
+\begin{prop} \label{prop:21.5}
+	Setze $J \colon X \rightarrow X'', J(x)(x') = x'(x)$, für alle $x' \in X$. \\
+	Dann ist $J$ eine isometrische Einbettung von $X$ nach $X''$.	
+\end{prop}
+
+
+\begin{definition}
+	Ein Banachraum hei{\ss}t \begriff{reflexiv}, falls $J \colon X \rightarrow X''$ (in \hyperref[prop:21.5]{21.5}) surjektiv ist ($X \equalhat X''$).
+\end{definition}
 
 \newpage
