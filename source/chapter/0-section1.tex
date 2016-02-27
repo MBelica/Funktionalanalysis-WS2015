@@ -86,37 +86,29 @@ $T ( a_{1}, a_{2}, a_{3}, ...) = ( 0, a_{1}, a_{2}, a_{3}, ...)$ \\
 $T$ ist injektiv, aber nicht surjektiv
 \end{beispiel}
 
+\newpage % todo temporarily for optics
 
 \subsection*{Anwendungen}
 
 
 \begin{enumerate}
-	\item Fredholm'sche Integralgleichungen \index{Fredholm'sche Integralgleichung} \\
-	$X = C[0, 1], \hspace{0.25cm} k: [0, 1] \times [0, 1] \rightarrow \MdR$ stetig \\
-	\[ Tf(t) = \int_{0}^{1} k(t, s) f(s) ds \]
-	Analogie zum endlich dim. ('Verallg. der Matrixmultiplikation'):  $ T(f_{j})(i) = \sum_{j = 1}^{n} a_{ij}f_{j}$ \\ \\
+	\item \begriff{Fredholm'sche Integralgleichungen}: \index{Fredholm'sche Integralgleichung} Sei $X = C[0, 1]$ und $k: [0, 1] \times [0, 1] \rightarrow \MdR$ stetig. Definiere $Tf(t) \coloneqq \int_{0}^{1} k(t, s) f(s) ds$ \textit{(Analogie zum endlich dim. als 'Verallg. der Matrixmultiplikation' mit} $T(f_{j})(i) = \sum_{j = 1}^{n} a_{ij}f_{j}$\textit{)}. \\
  	$T$ ist in diesem Fall linear und stetig und es gilt die Fredholm'sche Alternative:
 	\[ \lambda \in \MdR \setminus \{0\}: (\lambda Id - T)(f) = y, \hspace{0.25cm} f,g \in C[0, 1] \]
-	Dann existiert eine Lösung genau dann, wenn diese eindeutig ist. \\
-	\item Dirichletproblem \index{Dirichletproblem}\\
-	$\Omega \subset \MdR^n$ Gebiet, offen, beschränkt, glatter Rand. Sei $g \colon \partial \Omega \rightarrow \MdR$ stetig \\ 
-	Gesucht ist ein $f \in C(\bar \Omega) \cap  C^(\Omega)$, so dass $\nabla f = \sum_{i = 1}^{n} \frac{\partial^{2} f}{\partial x_{i}^2} = 0$ in $\Omega$ und $f|_{\partial \Omega}= g$ \\ \\
+	und eine Lösung existiert genau dann, wenn diese eindeutig ist. \\
+	\item \begriff{Dirichletproblem}: \index{Dirichletproblem} Sei $\Omega \subset \MdR^n$ ein offenes, beschränktes Gebiet mit glattem Rand und sei $g \colon \partial \Omega \rightarrow \MdR$ stetig. Gesucht ist ein $f \in C(\bar \Omega) \cap  C^(\Omega)$, so dass $\nabla f = \sum_{i = 1}^{n} \frac{\partial^{2} f}{\partial x_{i}^2} = 0$ in $\Omega$ und $f|_{\partial \Omega}= g$. \\
 	Beispiel: Durch Wärmeverteilung auf dem Rand auf die Wärmeverteilung im Inneren schlie{\ss}en. \\ \\
 	Lösung: Dirichletintegral $J(u) = \int_{\Omega} (\nabla u )^{2} dx$, wobei $ u \in M = \{ v \in C^{1}(\bar \Omega) | \hspace{0.25cm} v|_{\partial \Omega} = g \}$ \\
-	Sei $v_{0}$ das absolute Minimum von $J$, d.h. $J(v_{0}) = \inf \{ J(w): w \in M \}$ \\
-	$v \in C^{1}(\bar \Omega)$ mit $v = 0$ in einer Umgebung von $\partial U$. $\epsilon \rightarrow J(u_{0} + \epsilon v)$:
+	Sei $v_{0}$ das absolute Minimum von $J$, d.h. $J(v_{0}) = \inf \{ J(w): w \in M \}$ . Ist $v \in C^{1}(\bar \Omega)$ mit $v = 0$ in einer Umgebung von $\partial U$. $\epsilon \rightarrow J(u_{0} + \epsilon v)$:
 	\[ \frac{d}{d\epsilon} J(u_{0} + \epsilon v) = \int_{\Omega} \frac{d}{d\epsilon} (\nabla u_{0} + \epsilon \nabla v)^{2} dx = 2 \int_{\Omega} (\nabla u_{0} + \epsilon \nabla v)(\nabla v) dx|_{\epsilon = 0} = 2 \int_\Omega (\nabla u_{0}) (\nabla v) dx \]
-	Mit $0 \geq J(u_{0} + \epsilon v)- J(u_{0}) \geq 0: \hspace{0.25cm} \int (\nabla u_{0})(\nabla v) dx \overset{\text{P.I.}}{{=}} - \int (\nabla u_{0})v dx = 0$ \\
+	Mit $0 \geq J(u_{0} + \epsilon v)- J(u_{0}) \geq 0: \hspace{0.25cm} \int (\nabla u_{0})(\nabla v) dx \overset{\text{P.I.}}{{=}} - \int (\nabla u_{0})v dx = 0$
 	\[ \Rightarrow \nabla u_{0} = 0 \text{, au{\ss}erdem } u_{0 }|_{\partial \Omega} = g \text{ (s.o.)} \]
 	Im Allgemeinen existiert das, das absolute Minimum $u_{0} \in J$ aber nicht. \\
-	Ausweg: $X = \{ f \in L^{2}(\Omega), f' \in L^{2}(\Omega) \} \supset \{f \in C(\bar \Omega), f' \in C(\bar \Omega) \} $	\\
-	In diesem Raum $X$ (Sobolevräume) gibt es ein Minimum $u_{0}$ von $J$. \\
-	\item Sturm-Liouville Problem \index{Sturm-Liouville Problem} \\
-	$X = C^{2}([0, 1]), Tu = (pu')' + qu$, mit $q \in C[0, 1], p \in C^{1}[0, 1]$ \\ 
-	Problem: bei gegebenen $f \in C[0, 1]$ finde $u \in X$ mit $Tu = f, v(0) = 0, v'(1) = 0$ \\ \\
-	$Y = \{ f \in L^{2}[0, 1], f' \in L^{2}[0, 1] \}$ Hilbertraum. \\
-	Orthonormalbasis $(e_{n})$ von $Y$ wäre: $\| e_{n} \|_{2} = 1, \int e_{n}(x) e_{m}(x) dx = 0$ für $m \neq m$ \\
-	$f \in Y: f = \sum_{n = 1}^{\infty} \alpha_{n} e_{n}$ mit $\| f \|^2 = \sum | \alpha_{n} |^2$ \\
+	Ausweg: $X = \{ f \in L^{2}(\Omega), f' \in L^{2}(\Omega) \} \supset \{f \in C(\bar \Omega), f' \in C(\bar \Omega) \} $
+	In diesem Raum $X$ (Sobolevräume) gibt es ein Minimum $u_{0}$ von $J$.
+	\item  \begriff{Sturm-Liouville Problem}: \index{Sturm-Liouville Problem} Gegeben $X = C^{2}([0, 1]), Tu = (pu')' + qu$, mit $q \in C[0, 1], p \in C^{1}[0, 1]$, finde bei gegebenen $f \in C[0, 1]$ ein $u \in X$ mit $Tu = f, v(0) = 0, v'(1) = 0$. \\ \\
+	Sei $Y = \{ f \in L^{2}[0, 1], f' \in L^{2}[0, 1] \}$ ein Hilbertraum und $(e_{n})$ ein Orthonormalbasis. Wäre:$\| e_{n} \|_{2} = 1, \int e_{n}(x) e_{m}(x) dx = 0$ für $m \neq m$: 
+		\[ f \in Y: f = \sum_{n = 1}^{\infty} \alpha_{n} e_{n} \text{ mit } \| f \|^2 = \sum | \alpha_{n} |^2 \]
 	Die $(e_{n})$ sind au{\ss}erdem Eigenvektoren des Operatoren $T$, d.h. $Te_{n} = \lambda_{n} e_{n}$ \\
 	\[ Ty = f \Rightarrow \int Ty(x) e_{n}(x) dx = \int f(x) e_{n}(x) dx, y = \sum_{n = 1}^{\infty} \alpha_{n} e_{n} \]
 	Gesucht sind die Koeffizienten $\alpha_{n}$

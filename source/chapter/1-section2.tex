@@ -9,8 +9,7 @@
 
 
 \begin{definition}
-	Sei $X$ ein Vektorraum über $\MdK \in\{ \MdR, \MdC \}$. \\
-	Eine Abbildung  $\| \cdot \| \colon X \rightarrow \MdR_{+}$ hei{\ss}t eine \begriff{Norm}, wenn
+	Sei $X$ ein Vektorraum über $\MdK \in\{ \MdR, \MdC \}$. Eine Abbildung  $\| \cdot \| \colon X \rightarrow \MdR_{+}$ hei{\ss}t \begriff{Norm}, falls
 		\begin{description}
 			\item[$\hspace{0.5cm} (N1) \hspace{0.1cm} $] $\| x \| \geq 0, \quad \| x \| = 0 \gdw x = 0 $
 			\item[$\hspace{0.5cm} (N2) \hspace{0.1cm} $] $\| \lambda x \| = | \lambda \| x \| $
@@ -20,18 +19,20 @@
 
 
 \begin{bemerkung}
-	Falls $ \| \cdot \| $ all die oben genannten Eigenschaften erfüllt au{\ss}er $ \| x \| = 0 \Rightarrow x = 0 $, dann hei{\ss}t $ \| \cdot \| $ Halbnorm.
+	Falls $ \| \cdot \| $ all die oben genannten Eigenschaften erfüllt au{\ss}er $ \| x \| = 0 \Rightarrow x = 0 $, dann hei{\ss}t $ \| \cdot \| $ \begriff{Halbnorm}.
 \end{bemerkung}
 
 
-\begin{vereinbarung}
-Die Menge $ U_{X} = \{ x \in X:  \|x \| \leq 1 \}$ hei{\ss}t \begriff{Einheitskugel}. \\
-Eine Folge $(x_{n})$ des normierten Raums $X$ \begriff{konvergiert} gegen ein $ x \in X $, falls  $\| x_{n} - x \| \xrightarrow[n \rightarrow \infty]{} 0. $	
-\end{vereinbarung}
+\begin{vereinbarungen}
+	\begin{itemize}
+		\item Die Menge $ U_{X} = \{ x \in X:  \|x \| \leq 1 \}$ hei{\ss}t \begriff{Einheitskugel}.
+		\item Eine Folge $(x_{n})$ des normierten Raums $X$ \begriff{konvergiert} gegen ein $ x \in X $, falls  $\| x_{n} - x \| \xrightarrow[n \rightarrow \infty]{} 0$.
+	\end{itemize}
+\end{vereinbarungen}
 
 
 \begin{bemerkung}
-Für zwei Elemente $x, y \in (X, \| \cdot \|)$ in normierten Räumen gilt auch die \begriff{umgekehrte Dreiecksungleichung} $( | \| x \| + \| y \| | \leq \| x + y \|)$
+Für zwei Elemente $x, y \in (X, \| \cdot \|)$ in normierten Räumen gilt auch die \begriff{umgekehrte Dreiecksungleichung} $( \left| \| x \| - \| y \| \right| \leq \| x - y \|)$
 \end{bemerkung}
 
 
@@ -42,11 +43,9 @@ Sei $ X = \MdK^{n}, \hspace{0.25cm} x = ( x_{1}, \dotsc, x_{n}), \hspace{0.25cm}
 	\| x \|_{\infty} & = \hspace{0.3cm} \sup_{j = 1}^{n} |x_{j}|	
 \end{align*}
 
-Beh.: $\| \cdot \| $ ist Norm auf $\MdK^n$ für $1 \leq p \leq \infty$
-
-$\| x + y \|_{\infty} = sup_{j = 1}^{k} |x_{j} + y_{j}| \leq \|x\|_{\infty} + \|y\|_{\infty} $
-Für $p \in (1, \infty), p \neq 2:$ siehe Übungsaufgabe (Fall $p = 2$ läuft über Cauchy-Schwarz)
-
+Beh.: $\| \cdot \| $ ist Norm auf $\MdK^n$ für $1 \leq p \leq \infty$.
+\[ \| x + y \|_{\infty} = \sup_{j = 1}^{k} |x_{j} + y_{j}| \leq \|x\|_{\infty} + \|y\|_{\infty} \]
+Für $p \in (1, \infty), p \neq 2:$ siehe Übungsaufgabe (Fall $p = 2$ läuft über Cauchy-Schwarz). \\
 Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \leq n \| x \|_{\infty}$
 \end{beispiel}
 
@@ -63,41 +62,40 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 
 \begin{beweis}
 	Wähle eine algebraische Basis $(e_{1}, \dotsc, e_{n})$ von X, wobei $ n = dim X < \infty$. \\
-	Definiere $ \vertiii{x} = \left(\sum_{i = 1}^{n} |x_{i}|^2\right)^{\frac{1}{2}}$, wobei $x = \sum_{i = 1}^{n} x_{i} e_{i}$ \\
+	Definiere $ \vertiii{x} \coloneqq \left(\sum_{i = 1}^{n} |x_{i}|^2\right)^{\frac{1}{2}}$, wobei $x = \sum_{i = 1}^{n} x_{i} e_{i} \in X$ \\
 	
 	z. z. die gegeben Norm $\vertiii{ \cdot }$ ist äquivalent zu $\| \cdot \|$. \\ \\
 	Beweis: \\
-	In der einen Richtung betrachte: 
+	Für die eine Richtung betrachte: 
 	\begin{align*}
 		\| x \| = \left\| \sum_{i = 1}^{n} x_{i} e_{i} \right\| & \leq \sum_{i = 1}^{n} |x_{i}| \|  e_{i} \| \\ 
-													& \leq \underbrace{ \left( \sum_{i = 1}^{n} |x_{i}|^{2} \right)^\frac{1}{2} }_{=: \vertiii{ x }} \underbrace{ \left( \sum_{i = 1}^{n} \| e_{i} \|^{2} \right)^\frac{1}{2} }_{=: \nu}
+													& \leq \underbrace{ \left( \sum_{i = 1}^{n} |x_{i}|^{2} \right)^\frac{1}{2} }_{= \vertiii{ x }} \underbrace{ \left( \sum_{i = 1}^{n} \| e_{i} \|^{2} \right)^\frac{1}{2} }_{=: M}
 	\end{align*}
-	
-	Für die Umkehrung benutze die Funktion $J \colon \MdK^{n} \rightarrow X, \hspace{0.1cm} J(x_{1}, \dotsc, x_{n}) = \sum_{i = 1}^{n} x_{i} e_{i} $ \\
+	also $\| x \| \leq M \vertiii{ x }$. \\ \\
+	Für die Umkehrung betrachten wir die Funktion $J \colon \MdK^{n} \rightarrow X, \hspace{0.1cm} J(x_{1}, \dotsc, x_{n}) = \sum_{i = 1}^{n} x_{i} e_{i}$. \\
+	Die Abbildung $y \in \MdK^{n} \rightarrow \| Jy \| $ ist stetig, denn
+	 \[ \vertiii{ Jy } = \| y \|_{\MdK^{n}} = \left( \sum_{i = 1}^{n} |y_{i}|^{2} \right)^{\frac{1}{2}}, \quad y = (y_{1}, \dotsc, y_{n}) \]
+	und damit gilt 
 	\begin{align*}
- 	 \text{Die Abbildung } y & \in \MdK^{n}  \rightarrow \| Jy \| \text{ ist stetig, denn} \\
- 	 	 \vertiii{ Jy } = \| y \|_{\MdK^{n}} & = \left( \sum_{i = 1}^{n} |y_{i}|^{2} \right)^{\frac{1}{2}}, y = (y_{1}, \dotsc, y_{n}) \\
- 	 	 \text{und } \left| \| Jy \| - \| Jz \| \right| & \leq | \| Jy - Jz \| = | \| J(y - z) \| \\
- 	 	 & \leq \nu \vertiii{ J (y - z) } \\
- 	 	 & = M \| y - z \|_{\MdK^{n}} \\
+ 	 	 \left| \| Jy \| - \| Jz \| \right| & \leq |  \| Jy - Jz \| | =  \| J(y - z) \| \\
+ 	 	 & \leq M \vertiii{ J (y - z) } \\
+ 	 	 & = M \| y - z \|_{\MdK^{n}}
  	 \end{align*}
- Daraus folgt die Stetigkeit von $ y \rightarrow \| Jy \| \in \MdR $ \\ \\
-	Sei $S = \{y \in \MdK^{n}: \| y \|_{\MdK^n} = 1 \}$. Dann ist $S$ abgeschlossen und beschränkt.
-	Die Abbildung $N \colon y \in S \rightarrow \| Jy \| > 0$ ist wie in (*) gezeigt stetig. Nach Analysis II nimmt $N$ sein Minimum in einem Punkt $y_{0} \in S$ an. Setze
-		\begin{align*}
-			m = \inf\{\| x \| : \vertiii{ x } = 1\} & = \inf \{ \| Jy \|: y \in S \} \\
-												& = \| J y_{0} \| > 0 \\ \\
-			\text{Also } m \leq \| \frac{x}{ \vertiii{ x } } \| =  \frac{ \| x \| }{ \vertiii{ x } }  &\Rightarrow \vertiii{ x } \leq m \| x \|.
-		\end{align*}
+ 	Daraus folgt die Stetigkeit der Abbildung $ y \rightarrow \| Jy \| \in \MdR$. \\
+	Weiter ist $S = \{y \in \MdK^{n}: \| y \|_{\MdK^n} = 1 \}$ abgeschlossen und beschränkt und damit im endlich dimensionalen Vektorraum kompakt. Nach Analysis II nimmt damit die stetige Abbildung $N \colon y \in S \rightarrow \| Jy \| > 0$ ihr Minimum in einem Punkt $y_{0} \in S$ an. Setze
+		\[ m \coloneqq \inf\{\| x \| : \vertiii{ x } = 1\} = \inf \{ \| Jy \|: y \in S \} \]
+	Das bedeutet $m \leq \left\| \frac{x}{ \vertiii{ x } } \right\| =  \frac{ \| x \| }{ \vertiii{ x } }$ für alle $x \in X$ und damit
+		\[ m \vertiii{ x } \leq \| x \|. \]
 \end{beweis}
 
+\newpage % todo temporarily for optics
 
-\begin{prop}
-	Für zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ auf $X$ sind äquivalent:
+\begin{prop} \label{prop:2.7}
+	Für zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ auf $X$ sind folgende Aussagen äquivalent:
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $\| \cdot \|_{1}, \| \cdot \|_{2}$ sind äquivalent
-		\item Für alle $(x_{n}) \subset X$, $x \in X$ gilt $\| x_{n} - x \|_{1} \rightarrow 0 \gdw \| x_{n} - x \|_{2} \rightarrow 0 $
-		\item Für alle $(x_{n}) \subset X$ gilt $\| x_{n} |_{1} \rightarrow 0 \gdw \| x_{n} \|_{2} \rightarrow 0 $
+		\item Für alle $(x_{n})_{n} \subset X$, $x \in X$ gilt $\| x_{n} - x \|_{1} \rightarrow 0 \gdw \| x_{n} - x \|_{2} \rightarrow 0 $
+		\item Für alle $(x_{n})_{n} \subset X$ gilt $\| x_{n} \|_{1} \rightarrow 0 \gdw \| x_{n} \|_{2} \rightarrow 0 $
 		\item Es gibt Konstanten $0 < m$, $M < \infty$, so dass $m U_{(X, \| \cdot \|_{1})} \leq U_{(X, \| \cdot \|_{2})} \leq M U_{(X, \| \cdot \|_{1})}$
 	\end{enumerate}
 	\begin{beweis}
@@ -107,26 +105,24 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
   				Dann gibt es eine Folge $x_{n} \in U_{(X, \| \cdot \|_{2})}$ mit $\| x_{n} \|_{1} \geq n^{2}$ \\
   				Setze $y_{n} =  \frac{1}{n} x_{n}$. Dann gilt $\| y_{n} \|_{1} \rightarrow 0$ und $\| y_{n} \|_{2} \rightarrow \infty$. \\
   				Widerspruch zu $c)$.
-  			 \item[] $d) \Rightarrow a)$ Gegeben ist $U_{(X, \| \cdot \|_{2})} \subset M U_{(X, \| \cdot \|_{1})}$ \\
-  			 Das ist äquivalent zu $\| x \|_{2} \leq M \| x \|_{1}$ \\
-  			 Analog folgt aus $m U_{(X, \| \cdot \|_{1})} \subset U_{(X, \| \cdot \|_{2})}$ dann $m \| x \|_{1} \leq \| x \|_{2}$. \\
-  			 Also $m \| x \|_{1} \leq \| x \|_{2} \leq M \| x \|_{1}$ 
+  			 \item[] $d) \Rightarrow a)$ Gegeben $m U_{(X, \| \cdot \|_{1})} \leq U_{(X, \| \cdot \|_{2})} \leq M U_{(X, \| \cdot \|_{1})}$ \\
+  			 Es folgt aus der ersten Ungleichung  $m \| x \|_{1} \leq \| x \|_{2}$, bzw. aus der zweiten $\| x \|_{2} \leq M \| x \|_{1}$. \\
+  			 Also $m \| x \|_{1} \leq \| x \|_{2} \leq M \| x \|_{1}$. 
 		\end{description}
 	\end{beweis}
 \end{prop}
 
 
 \begin{vereinbarung}
-	Sei $\MdF = \{ (x_{n}) \in \MdK^{\MdN}: x_{i} = 0 \text{ bis auf endlich viele } n \in \MdN \} $ der \begriff{Folgenraum} \\
-	und $e_{j} = (0, \dotsc, 0, 1, 0, \dotsc, 0) $ der Einheitsvektor, wobei die $1$ an j-ter Stelle steht.
+	$\MdF = \{ (x_{n}) \in \MdK^{\MdN}: x_{i} = 0 \text{ bis auf endlich viele } n \in \MdN \} $ ist der \begriff{Folgenraum} und $e_{j} = (0, \dotsc, 0, 1, 0, \dotsc, 0) $ der j-te Einheitsvektor in $\MdF$, wobei die $1$ an j-ter Stelle steht.
 \end{vereinbarung}
 
 
 \begin{beispiel} \index{$\ell^{p}$-Raum} \index{$\ell^{\infty}$-Raum} \index{c$_{0}$-Raum}
 	\begin{itemize}
-		\item $\ell^{p} = \{ x = (x_{n}) \in \MdK^{\MdN}: \|x\|_{p} = \left( \sum_{n = 1}^{\infty} | x_{n} |^{p}\right)^{\frac{1}{p}} < \infty \}$
-		\item $\ell^{\infty} = \{ x = (x_{n}) \in \MdK^{\MdN  }: \|x\|_{\infty} = \sup_{n \in \MdN} |x_{n}| < \infty \}$
-		\item $c_{0} = \{ x = (x_{n}) \in \ell^{\infty}: \lim_{n \rightarrow \infty} |x_{n}| = 0 \}$
+		\item $\ell^{p}~= \{ x = (x_{n})_{n} \in \MdK^{\MdN}: \|x\|_{p} = \left( \sum_{n = 1}^{\infty} | x_{n} |^{p}\right)^{\frac{1}{p}} < \infty \}$
+		\item $\ell^{\infty} = \{ x = (x_{n})_{n} \in \MdK^{\MdN  }: \|x\|_{\infty} = \sup_{n \in \MdN} |x_{n}| < \infty \}$
+		\item $c_{0} ~= \{ x = (x_{n})_{n} \in \ell^{\infty} : \lim_{n \rightarrow \infty} |x_{n}| = 0 \}$
 	\end{itemize}
 	Gültigkeit der Dreiecksungleichung beweist man ähnlich wie bei $(\MdK^{n}, \| \cdot \|_{p})$.
 \end{beispiel}
@@ -141,30 +137,30 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 \begin{bemerkung}
 	Im unendlich dimensionalen Fall sind die Normen $\| \cdot \|_{p}$ auf $\MdF$ nicht äquivalent.
 	\begin{beweis}
-		Sei $p > q$, setze 
-		\[ X_{n} \coloneqq \sum_{j = 2^{n} + 1}^{2^{n + 1}} j^{-\frac{1}{p}}e_{j}, \hspace{0.5cm} e_{j} = ( \delta_{ij} )_{u \in \MdN} \]
-		Damit gilt $x_{n} \in \MdF$ und weiter
+		Sei o.B.d.A. $p > q$ und setze $x_{n} \coloneqq \sum_{j = 2^{n} + 1}^{2^{n + 1}} j^{-\frac{1}{p}}e_{j}$, $e_{j} = ( \delta_{ij} )_{u \in \MdN}$. \\
+		Damit gilt $x_{n} \in \MdF$ und 
 		\[ \| x_{n} \|_{p} = \left( \sum_{j = 2^{n}}^{2^{n + 1}} \frac{1}{j} \right)^{\frac{1}{p}} \simeq \left( ln(2) \right)^{\frac{1}{p}} \]
-		aber $\| x_{n} \|_{q} \rightarrow \infty$, also sind $\| \cdot \|_{p}, \| \cdot \|_{q}$ keine äquivalente Normen.
+		aber $\| x_{n} \|_{q} \rightarrow \infty$, also sind $\| \cdot \|_{p}$, $\| \cdot \|_{q}$ nach \hyperref[prop:2.7]{Prop. 2.7 c)} keine äquivalente Normen.
 	\end{beweis}	
 \end{bemerkung}
 
 
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Raum der stetigen Funktionen \index{Raum der stetigen Funktionen} \\
-		$\Omega \subset \MdR^{n}, \hspace{0.25cm} C(\Omega) = \{ f \colon \Omega \rightarrow \MdR \text{ | } f \text{ stetig} \}$, \hspace{0.25cm} $\| f \|_{\infty} = \sup_{u \in \Omega} |f(u)|$\\
-		$\Rightarrow \| f - f_{n} \|_{\infty} \rightarrow 0$ bedeutet gleichmä{\ss}ige Konvergenz von $f_{n}$ gegen $f$ auf $\Omega$.
-		\item Raum der differenzierbaren Funktionen \index{Raum der differenzierbaren Funktionen} \\
-		$\Omega \subset \MdR^{n}$ offen, $f \colon \Omega \rightarrow \MdR, \hspace{0.25cm} \alpha = (\alpha_{1}, \dotsc, \alpha_{m}) \in \MdN_{0}^{m}$ \\
-		$D^{\alpha}f(x) = \frac{ \delta^{ | \alpha | } }{ \delta x_{1}^{ \alpha_{1} } \dotsc \delta x_{n}^{ \alpha_{n} } } f(x), \text{ wobei } | \alpha | = \alpha_{1} + \dotsc + \alpha_{n} $ \\ 
+		\item Raum der stetigen Funktionen: \index{Raum der stetigen Funktionen} \\
+		Sei $\Omega \subset \MdR^{n}$, $C(\Omega) \coloneqq \{ f \colon \Omega \rightarrow \MdR \text{ | } f \text{ stetig} \}$, $\| f \|_{\infty} = \sup_{u \in \Omega} |f(u)|$
+		\[ \Rightarrow \| f - f_{n} \|_{\infty} \rightarrow 0 \text{ bedeutet gleichmä{\ss}ige Konvergenz von } f_{n} \text{ gegen } f \text{ auf } \Omega. \]
+		\item Raum der differenzierbaren Funktionen: \index{Raum der differenzierbaren Funktionen} \\
+		Sei $\Omega \subset \MdR^{n}$ offen, $f \colon \Omega \rightarrow \MdR, \hspace{0.25cm} \alpha = (\alpha_{1}, \dotsc, \alpha_{m}) \in \MdN_{0}^{m}$. Definiere
+		\[ D^{\alpha}f(x) \coloneqq \frac{ \partial^{ | \alpha | } }{ \partial x_{1}^{ \alpha_{1} } \dotsc \partial x_{n}^{ \alpha_{m} } } f(x), \text{ wobei } | \alpha | = \alpha_{1} + \dotsc + \alpha_{m} \] 
 	\end{enumerate}
 \end{beispiel}
 
 
 \begin{definition}
-	Wir nennen $C_{b}^{m}(\Omega) = \{ f \colon \Omega \rightarrow \MdR | D^{\alpha}f \text{ sind stetig in } \Omega, \text{ beschränkt auf } \Omega \text{ für alle } \alpha \in \MdN^{n}, |\alpha| \leq m \}$ den \begriff{Raum der beschränkten, m-fach stetig differenzierbaren Funktionen}.  \\
-	Auf $C_{b}^{m}$ definieren wir die Norm: $\| f \|_{C_{b}^{m}} = \sum_{|\alpha| \leq m} \| D^{\alpha}f \|_{\infty}$
+	Wir definieren durch
+		\[ C_{b}^{m}(\Omega) \coloneqq \{ f \colon \Omega \rightarrow \MdR : D^{\alpha}f \text{ sind für alle } \alpha \in \MdN^{n} \text{ stetig und beschränkt auf } \Omega, |\alpha| \leq m \}. \]	
+	den \begriff{Raum der beschränkten, m-fach stetig differenzierbaren Funktionen} und versehen ihn mit der Norm $\| f \|_{C_{b}^{m}} \coloneqq \sum_{|\alpha| \leq m} \| D^{\alpha}f \|_{\infty}$.
 \end{definition}
 
 
@@ -185,16 +181,15 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 
 
 \begin{definition}[\begriff{Quotientenräume}] \label{def:2.15-Quotientenraeume}
-	Sei $(X, \| \cdot \|)$ ein normierter Raum. $M \subset X$ sei abgeschlossener, linearer Unterraum. \[ (\text{abgeschlossen: d.h. für alle } (x_{n}) \in M, \| x_{n} - x \| \rightarrow 0 \Rightarrow x \in M) \]
-
-	Definiere $\hat X = X / M, \hspace{0.25cm} \hat x \in X/M: \hspace{0.25cm} \hat x = \{ y \in X: y - x \in M \} = x + M$ \\
+	Sei $(X, \| \cdot \|)$ ein normierter Raum und $M \subset X$ sei abgeschlossener (d.h. für alle $(x_{n}) \in M, \| x_{n} - x \| \rightarrow 0 \Rightarrow x \in M$), linearer Unterraum.
+	Definiere $\hat X \coloneqq \QR{X}{M}$, dann ist $\hat x \in \QR{X}{M}$:
+		\[ \hat x = \{ y \in X: y - x \in M \} = x + M \]
 	Dabei gilt unter anderem $\hat x_{1} + \hat x_{2} = \widehat{x_{1} + x_{2}}$ und $\lambda \hat x_{1} = \widehat{\lambda x_{1}}$; $\hat X$ bildet somit einen Vektorraum. \\
-	Definieren wir eine Norm für die Äquivalenzklassen mittels $\| \hat x \|_{\hat X} : = \inf \{ \| x - y \|_{X}: y \in M \} =: d(x, Y)$
-
-	Behauptung: $(\hat X, \| \cdot \|_{\hat X})$ ein normierter Raum. \\
-	Beweis: Sei $\hat x \in \hat X$ beliebig mit $\| \hat x \|_{\hat X} = 0$ \\
-	dann existiert ein $y_{n} \in \hat X \text{ mit } \| y_{n} \| \rightarrow 0$ und $x - y_{n} \in M$
-	\[ \Rightarrow x \in M, \hat x = 0 \]
+	Definieren wir eine Norm für die Äquivalenzklassen mittels
+		\[n\| \hat x \|_{\hat X} : = \inf \{ \| x - y \|_{X}: y \in M \} =: d(x, Y) \]
+	Behauptung: $(\hat X, \| \cdot \|_{\hat X})$ ein normierter Raum. \\ \\
+	Beweis: Sei $\hat x \in \hat X$ beliebig mit $\| \hat x \|_{\hat X} = 0$. \\
+	Dann existiert ein $y_{n} \in \hat X \text{ mit } \| y_{n} \| \rightarrow 0$ und $x - y_{n} \in M$ $\Rightarrow$ $x \in M, \hat x = 0 $ \\
 	Zu $\epsilon > 0$ wähle für $\hat x_{1}, \hat x_{2} \in \hat X, y_{1}, y_{2} \in M$ mit
 	\[ \| \hat x_{i} \| \geq \| x_{i} - y_{i} \| - \epsilon \] 
 	Damit folgt:
