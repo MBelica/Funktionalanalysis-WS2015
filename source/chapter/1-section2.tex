@@ -137,8 +137,8 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 \begin{bemerkung}
 	Im unendlich dimensionalen Fall sind die Normen $\| \cdot \|_{p}$ auf $\MdF$ nicht äquivalent.
 	\begin{beweis}
-		Sei o.B.d.A. $p > q$ und setze $x_{n} \coloneqq \sum_{j = 2^{n} + 1}^{2^{n + 1}} j^{-\frac{1}{p}}e_{j}$, $e_{j} = ( \delta_{ij} )_{u \in \MdN}$. \\
-		Damit gilt $x_{n} \in \MdF$ und 
+		Sei o.B.d.A. $p > q$ und setze $x_{n} \coloneqq \sum_{j = 2^{n} + 1}^{2^{n + 1}} j^{-\frac{1}{p}}e_{j}$, $e_{j} = ( \delta_{ij} )_{i \in \MdN}$. \\
+		Damit ist $x_{n} \in \MdF$ und 
 		\[ \| x_{n} \|_{p} = \left( \sum_{j = 2^{n}}^{2^{n + 1}} \frac{1}{j} \right)^{\frac{1}{p}} \simeq \left( ln(2) \right)^{\frac{1}{p}} \]
 		aber $\| x_{n} \|_{q} \rightarrow \infty$, also sind $\| \cdot \|_{p}$, $\| \cdot \|_{q}$ nach \hyperref[prop:2.7]{Prop. 2.7 c)} keine äquivalente Normen.
 	\end{beweis}	
@@ -174,8 +174,8 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 
 
 \begin{beispiel}
-	$X = C(\bar\Omega), \Omega \subset \MdR^{n}$ offen, beschränkt. \\
-	Definiere $\| f \|_{L^{p}} = \left( \int_{\Omega} |f(u)|^{p} du \right)^{\frac{1}{p}}$ und betrachte $f_{k}(t) = t^k, t \in [0, 1]$, dann gilt:
+	Sei $X = C(\bar\Omega)$, mit $\Omega \subset \MdR^{n}$ offen, beschränkt. \\
+	Definiere $\| f \|_{L^{p}} \coloneqq \left( \int_{\Omega} |f(u)|^{p} du \right)^{\frac{1}{p}}$ und betrachte $f_{k}(t) = t^k, t \in [0, 1]$, dann gilt:
  	\[ \| f \|_{L^{p}} = \left( \frac{1}{kp + 1} \right)^{\frac{1}{p}} \xrightarrow[k \rightarrow \infty]{} 0, \hspace{0.25cm} p < \infty \]
 \end{beispiel}
 
@@ -208,7 +208,7 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 \begin{beispiel}
 	\begin{itemize}
 		\item Hölderstetige Funktionen \index{Hölderstetige Funktionen} \\
-			Wenn $h_{\alpha}(f) = \sup_{u,v \in \MdR, u \neq v} \frac{\| f(u) - f(v)\|}{|u - v|^{\alpha}} < \infty \hspace{0.25cm} \left( \alpha \in (0, 1] \right)$, dann nennt man $f$ hölderstetig.
+			Wenn $h_{\alpha}(f) = \sup_{u,v \in \MdR, u \neq v} \frac{\| f(u) - f(v)\|}{|u - v|^{\alpha}} < \infty$ (mit $\alpha \in (0, 1]$), dann nennt man $f$ hölderstetig.
 			\[ C^{\alpha}(\Omega) \coloneqq \{ f \colon \Omega \rightarrow \MdR: h_{\alpha}(f) < \infty \} \hspace{0.5cm} \Omega \subset \MdR^{n}, \hspace{0.25cm} \]
 			Im Moment ist $h_{\alpha}( \cdot )$ eine Halbnorm. Unter der Voraussetzung $\Omega$ zusammenhängend gilt aber weiter:
 			\[ h_{\alpha}(f) = 0 \gdw f \equiv c \text{ konstant} \]
