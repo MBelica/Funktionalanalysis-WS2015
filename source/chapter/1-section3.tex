@@ -120,13 +120,14 @@
 	
 	Dann ist $Tf \in C(\bar \Omega)$ (nach dem Konvergenzsatz von Lebesgue)
 	\begin{align*}
-		|T f(u)| & \leq \int_{\Omega} |k(u, v)| |f(u)| du \\
-				 & \leq \int_{\Omega} |k(u, v)| du \sup_{u \in \Omega} | f(u) |
+		|T f(v)| & \leq \int_{\Omega} |k(u, v)| |f(u)| du \\
+				 & \leq \int_{\Omega} |k(u, v)| du \cdot \sup_{u \in \Omega} | f(u) | \\
+				 & = \int_{\Omega} |k(u, v)| du \cdot \| f \|_{\infty}
 	\end{align*} 				 
-	$\sup$ über $u \in \Omega$ liefert dann:
+	Das Bilden des Supremums über $v \in \Omega$ liefert somit eine Abschätzung der Norm:
 	\begin{align*}
-		\| Tf \|_{\infty} \leq \sup_{u \in \Omega} \int |k(u,v)| dv \| f \|_{\infty} \\
-		\Rightarrow \| T \| = \sup_{u \in \Omega} \int |k(u, v)| dv < \infty,
+		\| Tf \|_{\infty} \leq \sup_{v \in \Omega} \int |k(u,v)| du \cdot \| f \|_{\infty} \\
+		\Rightarrow \| T \| = \sup_{v \in \Omega} \int |k(u, v)| du < \infty,
 	\end{align*} 	
 	Die Abbildung $u \in \bar \Omega \rightarrow \int |k(u, v)| dv \in \MdR$ ist stetig nach dem Konvergenzsatz von Lebesgue. \\
 	\begin{beweis}
@@ -142,25 +143,26 @@
 
 
 \begin{beispiel}[Kompositionsoperator] \index{Kompositionsoperator}
-$\Omega \subset \MdR^{n}$ offen. 
-\[ \sigma \colon \bar \Omega \rightarrow \bar \Omega \text{ stetig, für } f \in C(\bar \Omega): Tf(u) = f(\sigma(u)) \]
+Sei $\Omega \subset \MdR^{n}$ offen und betrachte für $\sigma \colon \bar \Omega \rightarrow \bar \Omega$ stetig und $f \in C(\bar \Omega)$:
+	\[ Tf(u) = f(\sigma(u)) \]
 z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 \[ \| Tf \|_{\infty} \leq \| f \|_{\infty}, \hspace{0.25cm} \| T \| = 1 \]
 \end{beispiel}
 
 \begin{beispiel}[Differentialoperatoren] \index{Differentialoperatoren}
-	$\Omega \subset \MdR^n$ offen, $m \in \MdN$, $X = C^{m}(\bar \Omega), Y = C_{b}(\Omega),$
+	Mit $\Omega \subset \MdR^n$ offen, $m \in \MdN$ und $X = C^{m}(\bar \Omega), Y = C_{b}(\Omega)$, betrachte
 	\begin{align*}
-		T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\alpha} f(u), u \in \MdR, a_{\alpha} \in C{\bar \Omega} \\
-  		\text{damit } & \| Tf \|_{\infty} \leq \sum_{|\alpha| \leq m} \| a_{\alpha} \|_{\infty} \| D^{\alpha} f \|_{\infty} \leq c \|f\|_{\infty}	
+		T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\alpha} f(u), u \in \MdR, a_{\alpha} \in C{\bar \Omega}
   	\end{align*}
+    Dann ist $\| Tf \|_{\infty} \leq \sum_{|\alpha| \leq m} \| a_{\alpha} \|_{\infty} \| D^{\alpha} f \|_{\infty} \leq c \|f\|_{\infty}$.
 \end{beispiel}
 
 \begin{beispiel}[Matrizenmultiplikation] \index{Matrizenmultiplikation}
 	Für $p \in [1, \infty]$ und $T \in B(\ell^{p})$ setzen wir 
-	\[ e_{l} \coloneqq (0, \dotsc, 0, 1, 0, \dotsc), \hspace{0.25cm} l \in \MdN, \hspace{0.25cm} \text{ wobei die 1 an l-ter Stelle steht.} \]
-	und $a_{kl} = (T e_{l})_{k}$, sowie $A = (a_{kl})_{k,l \in \MdN}$
-	\[ \Rightarrow (Tx)_{k} = (\sum_{l = 1}^{\infty} x_{l} T e_{l})_{k} = \sum_{ l = 1}^{\infty} a_{kl}k_{l}, \hspace{0.25cm} k \in \MdN \quad \Rightarrow \quad T x = A x \text{ (unendliches Matrixprodukt)} \]
+	\[ e_{l} \coloneqq (0, \dotsc, 0, 1, 0, \dotsc), ~ l \in \MdN, ~ \text{ wobei die 1 an l-ter Stelle steht.} \]
+	und $a_{kl} \coloneqq (T e_{l})_{k}$, sowie $A \coloneqq (a_{kl})_{k,l \in \MdN}$
+	\[ \Rightarrow (Tx)_{k} = (\sum_{l = 1}^{\infty} x_{l} T e_{l})_{k} = (\sum_{ l = 1}^{\infty} x_{l} a_{kl})_{k}, ~ k \in \MdN \]
+	\[  \Rightarrow T x = A x \text{ (vgl. unendliches Matrixprodukt)} \]
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Die Hille-Tamarkin-Bedingung (nur hinreichend) \\
 			Sei $p \in (1, \infty)$ und $\frac{1}{p} + \frac{1}{q} = 1$. Setze
