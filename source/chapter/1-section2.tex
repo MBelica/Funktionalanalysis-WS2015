@@ -96,16 +96,16 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 		\item $\| \cdot \|_{1}, \| \cdot \|_{2}$ sind äquivalent
 		\item Für alle $(x_{n})_{n} \subset X$, $x \in X$ gilt $\| x_{n} - x \|_{1} \rightarrow 0 \gdw \| x_{n} - x \|_{2} \rightarrow 0 $
 		\item Für alle $(x_{n})_{n} \subset X$ gilt $\| x_{n} \|_{1} \rightarrow 0 \gdw \| x_{n} \|_{2} \rightarrow 0 $
-		\item Es gibt Konstanten $0 < m$, $M < \infty$, so dass $m U_{(X, \| \cdot \|_{1})} \leq U_{(X, \| \cdot \|_{2})} \leq M U_{(X, \| \cdot \|_{1})}$
+		\item Es gibt Konstanten $0 < m$, $M < \infty$, so dass $m U_{(X, \| \cdot \|_{1})} \subseteq U_{(X, \| \cdot \|_{2})} \subseteq M U_{(X, \| \cdot \|_{1})}$
 	\end{enumerate}
 	\begin{beweis}
 		\begin{description}
 			\item[] $a) \Rightarrow b) \Rightarrow c)$ folgt direkt durch die Definition von äquivalenten Normen. 
-  			\item[] $c) \Rightarrow d)$ Annahme: Es existiert kein $M$ mit $U_{(X, \| \cdot \|_{2})} \subset M U_{(X, \| \cdot \|_{1})}$. \\
+  			\item[] $c) \Rightarrow d)$ Annahme: Es existiert kein $M$ mit $U_{(X, \| \cdot \|_{2})} \subseteq M U_{(X, \| \cdot \|_{1})}$. \\
   				Dann gibt es eine Folge $x_{n} \in U_{(X, \| \cdot \|_{2})}$ mit $\| x_{n} \|_{1} \geq n^{2}$ \\
-  				Setze $y_{n} =  \frac{1}{n} x_{n}$. Dann gilt $\| y_{n} \|_{1} \rightarrow 0$ und $\| y_{n} \|_{2} \rightarrow \infty$. \\
+  				Setze $y_{n} =  \frac{1}{n} x_{n}$. Dann gilt $\| y_{n} \|_{w} \rightarrow 0$ und $\| y_{n} \|_{1} \rightarrow \infty$. \\
   				Widerspruch zu $c)$.
-  			 \item[] $d) \Rightarrow a)$ Gegeben $m U_{(X, \| \cdot \|_{1})} \leq U_{(X, \| \cdot \|_{2})} \leq M U_{(X, \| \cdot \|_{1})}$ \\
+  			 \item[] $d) \Rightarrow a)$ Gegeben $m U_{(X, \| \cdot \|_{1})} \subseteq U_{(X, \| \cdot \|_{2})} \subseteq M U_{(X, \| \cdot \|_{1})}$ \\
   			 Es folgt aus der ersten Ungleichung  $m \| x \|_{1} \leq \| x \|_{2}$, bzw. aus der zweiten $\| x \|_{2} \leq M \| x \|_{1}$. \\
   			 Also $m \| x \|_{1} \leq \| x \|_{2} \leq M \| x \|_{1}$. 
 		\end{description}

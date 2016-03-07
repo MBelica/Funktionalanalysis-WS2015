@@ -58,28 +58,30 @@
 		\| T \| & = \sup \{ \frac{\| Tx \|}{\| x \|}: x \in X \ {0} \} \\
 				& = \sup \{ \| Tx \|: \| x \| \leq 1 \}
 	\end{align*}
-	Die Norm $\| T \|$ von $T$ ist die kleinste Konstante $c$, für welche die Gleichung $\| Tx \| \leq c \| x \|$ für alle $x \in X$ gilt.
+	Die Norm $\| T \|$ ist die kleinste Konstante $c$, für welche die Gleichung $\| Tx \| \leq c \| x \|$ für alle $x \in X$ gilt.
 \end{definition}
 
 
 \begin{satz}
  	$(B(X, Y), \| \cdot \|)$ ist ebenfalls ein normierter Raum und für $X = Y$ gilt für $S, T \in B(X)$:
- 	\[ \| S \cdotp T \| \leq \| S \| \| T \| \]
+ 	\[ S \cdot T \in B(X) \quad \text{und} \quad \| S \cdotp T \| \leq \| S \| \| T \| \]
 \end{satz}
 
 \begin{beweis}
-	$\| T \| \geq 0, \hspace{0.15cm} \| T \| = 0 \hspace{0.15cm} \Rightarrow \| Tx \| = 0$ für $\| x \| \leq 1 \hspace{0.15cm} \Rightarrow \hspace{0.15cm} Tx = 0 \hspace{0.15cm} \Rightarrow \hspace{0.15cm} T = 0$ \\
+	Wir betrachten also ab sofort $T \in B(X)$: $\| T \| > 0$, da $\| T \| \geq 0$ und für $\| T \| = 0$ ist $\| Tx \| = 0$ für alle $\| x \| \leq 1$ $\xRightarrow[\text{ist Norm}]{\| \cdot \| }$ $Tx = 0$ für alle $\| x \| \leq 1$ $\Rightarrow$ $T = 0$ \\ \\
+	Für den ersten Teil betrachte 
 	\begin{align*}
 		\| ( T + S )(x) \| = \| Tx + Sx \| &\leq \| Tx \| + \| Sx \| \\
-										   &\leq \| T \| + \| S \|
+										   &\leq \| T \| + \| S \|,
 	\end{align*}
-	Nehme das Supremum über $\| x \| \leq 1$:
-	\[ \| T + S \| \leq \| T \| + \| S \| \]
+	und für die Linearität über das Supremum über $\| x \| \leq 1$:
+	\[ \| T + S \| \leq \| T \| + \| S \|. \]
+	Die Beschränktheit folgt aus
 	\begin{align*}
 		\| ( S \cdot T )(x) \| = \| S(Tx) \| & \leq \| S \| \| Tx \| \\
 													 & \leq \| S \| \| T \| \| x \|
 	\end{align*}
-	\[ \Rightarrow \| S T \| \leq \| S \| \| T \| \]
+	Also ist der Operator $S \cdot T$ beschränkt und $\| S T \| \leq \| S \| \| T \|$.
 \end{beweis}
 
 
