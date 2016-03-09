@@ -82,15 +82,14 @@
 			für $x \in M, r > 0$. Man sieht leicht, dass $K(x, r)$ offen und $\bar K(x, r)$ abgeschlossen ist.
 		\begin{beweis}
 			\begin{enumerate}
-			\item Sei $y \in K(x, r)$ und wähle $\rho \coloneqq r - d(x, y) > 0$ \\
-				Wir zeigen: $K(y, \rho) \subset K(x, r)$ (Dann ist $K(x, r)$ offen). Sei dazu $z \in K(y, \rho)$. Dann folgt 
+			\item Sei $y \in K(x, r)$ und wähle $\rho \coloneqq r - d(x, y) > 0$. Wir zeigen: $K(y, \rho) \subset K(x, r)$ (dann ist $K(x, r)$ offen). \\ 
+				Sei dazu $z \in K(y, \rho)$, dann folgt 
 				\begin{align*}
 					d(x, y) \leq d(x, z) + d(z,y) & \leq r - \rho + d(z, y) \\
-												  & \leq r - \rho + \rho = r \\ \\
-								\Rightarrow z \in K(x, r)
+												  & < r - \rho + \rho = r
 				\end{align*} 
-				Da $z$ beliebig war, folgt die Behauptung.
-			\item Sei $(y_{n})_{n \geq 1} \subset \bar K(x, r)$ eine beliebige Folge mit $ \lim_{n \rightarrow \infty} y_{n} = y \in M$. Wir müssen zeigen, dass $y \in \bar K(x, r)$ (Dann ist $\bar K(x, r)$ abgeschlossen). \\
+				Damit ist $z \in K(x, r)$ und da $z$ beliebig war, folgt die Behauptung.
+			\item Sei $(y_{n})_{n \geq 1} \subset \bar K(x, r)$ eine beliebige Folge mit $ \lim_{n \rightarrow \infty} y_{n} = y \in M$. Wir müssen zeigen, dass $y \in \bar K(x, r)$ (dann ist $\bar K(x, r)$ abgeschlossen). \\
 				\begin{align*}
 					d(x, y) & \leq d(x, y_{n}) + d(y_{n}, y) \\
 							& \leq r + d(y_{n}, y) \rightarrow r \\ \\
