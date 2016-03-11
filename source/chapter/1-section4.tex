@@ -276,7 +276,7 @@ Hierfür gelten die folgenden Eigenschaften:
 						\end{figure}
 															
 						Für $\epsilon \in (0, \min\{c_1 - a, b - c_2\})$ gilt dann $K(f, \epsilon) \subseteq A$, d.h. $A$ ist offen.
-					\item Da Konvergenz bezüglich $\| \cdot \|_{\infty}$ punktweise Konvergenz impliziert, folgt direkt
+					\item Da punktweise Konvergenz durch Konvergenz bezüglich $\| \cdot \|_{\infty}$ impliziert wird, folgt direkt
 						\[ \overline{A} \subseteq \{ f\in X \colon f(t) \in [a, b] \quad \forall t \in [a,b] \}. \]
 						Ist umgekehrt $f \in X$ mit $f(t) \in [a, b]$ für alle $t \in [0,1]$, so definieren wir
 						\[ f_{n}(t) = \begin{cases} a + \frac{1}{n} &, f(t) \leq a + \frac{1}{n} \\ b - \frac{1}{n} &, f(t) \geq b - \frac{1}{n} \\ f(t) &, \text{ sonst.}  \end{cases}   \]
@@ -326,7 +326,7 @@ Hierfür gelten die folgenden Eigenschaften:
 \end{beispiel}
 
 
-Schlie{\ss}lich betrachten wir Stetigkeit:
+Schlie{\ss}lich betrachten wir noch die Stetigkeit:
 
 
 \begin{definition}
@@ -358,7 +358,7 @@ Hierfür gelten folgende Eigenschaften:
 	\begin{beweis}		
 		\begin{enumerate}[label=\alph*\upshape)]	
 			\item Folgt direkt aus der Definition
-			\item $" \Rightarrow "$: Annahme, das $\epsilon$-$\delta$-Kriterium gilt nicht. Dann existiert eine $\epsilon > 0$ und für jedes $n \in \MdN$ ein $x_{n} \in K(x_{0}, \frac{1}{n})$ mit $d_{M}(f(x_{n}), f(x_{0})) \geq \epsilon$. \\
+			\item $" \Rightarrow "$: Annahme, das $\epsilon$-$\delta$-Kriterium gilt nicht. Dann existiert ein $\epsilon > 0$ und für jedes $n \in \MdN$ ein $x_{n} \in K(x_{0}, \frac{1}{n})$ mit $d_{M}(f(x_{n}), f(x_{0})) \geq \epsilon$. \\
 				Dann gilt aber $d_{M}(x_{n}, x_{0}) < \frac{1}{n} \rightarrow 0$ für $n \rightarrow \infty$ und $d_{N}(f(x_{n}, f(x_{0})) \geq \epsilon \not\rightarrow 0$ für $n \rightarrow \infty$, d.h. $f$ ist nicht stetig in $x_{0}$. \\ \\
 				$" \Leftarrow "$: Es gelte das $\epsilon$-$\delta$-Kriterium. Sei $(x_{n}) \subseteq M$ mit $x_{n} \rightarrow x_{0}, \epsilon > 0$. \\
 				Dann gilt $d_{N}(f(x_{n}), f(x_{0})) < \epsilon$ für $n$ gro{\ss} genug. Da $\epsilon > 0$ beliebig, folgt $d_{N}(f(x_{n}), f(f_{0})) \rightarrow 0$ für $n \rightarrow \infty$.
