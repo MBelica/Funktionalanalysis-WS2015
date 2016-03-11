@@ -349,7 +349,7 @@ Hierfür gelten folgende Eigenschaften:
 		\item \label{prop:4.13.b} $f$ ist stetig in $x_{0} \in M$ genau dann, wenn 
 			\[ \forall \epsilon > 0 \hspace{0.15cm} \exists \delta > 0 \hspace{0.15cm} \forall x \in M \text{ mit } d_{M}(x, x_{0}) < \delta \text{ gilt } d_{N}(f(x), f(x_{0})) < \epsilon \]
 		\item Die folgenden Aussagen sind äquivalent:
-			\begin{enumerate}
+			\begin{enumerate}[label=(\roman*\upshape)]
 				\item $f$ ist stetig auf $M$
 				\item Ist $U \subset N$ offen, so ist auch $f^{-1}(U)$ offen in $M$
 				\item Ist $A \subset N$ abgeschlossen, so ist auch $f^{-1}(A)$ abgeschlossen in $M$.
@@ -359,7 +359,7 @@ Hierfür gelten folgende Eigenschaften:
 		\begin{enumerate}[label=\alph*\upshape)]	
 			\item Folgt direkt aus der Definition
 			\item $" \Rightarrow "$: Annahme, das $\epsilon$-$\delta$-Kriterium gilt nicht. Dann existiert ein $\epsilon > 0$ und für jedes $n \in \MdN$ ein $x_{n} \in K(x_{0}, \frac{1}{n})$ mit $d_{M}(f(x_{n}), f(x_{0})) \geq \epsilon$. \\
-				Dann gilt aber $d_{M}(x_{n}, x_{0}) < \frac{1}{n} \rightarrow 0$ für $n \rightarrow \infty$ und $d_{N}(f(x_{n}, f(x_{0})) \geq \epsilon \not\rightarrow 0$ für $n \rightarrow \infty$, d.h. $f$ ist nicht stetig in $x_{0}$. \\ \\
+				Dann gilt aber $d_{M}(x_{n}, x_{0}) < \frac{1}{n} \rightarrow 0$ für $n \rightarrow \infty$ und $d_{N}(f(x_{n}), f(x_{0})) \geq \epsilon \not\rightarrow 0$ für $n \rightarrow \infty$, d.h. $f$ ist nicht stetig in $x_{0}$. \\ \\
 				$" \Leftarrow "$: Es gelte das $\epsilon$-$\delta$-Kriterium. Sei $(x_{n}) \subseteq M$ mit $x_{n} \rightarrow x_{0}, \epsilon > 0$. \\
 				Dann gilt $d_{N}(f(x_{n}), f(x_{0})) < \epsilon$ für $n$ gro{\ss} genug. Da $\epsilon > 0$ beliebig, folgt $d_{N}(f(x_{n}), f(f_{0})) \rightarrow 0$ für $n \rightarrow \infty$.
 			\item $(i) \Rightarrow (iii)$: Sei $A \subseteq N$ abgeschlossen und $(x_{n}) \subseteq f^{-1}(A)$ mit $x_{n} \rightarrow x$ in $M$ für $n \rightarrow \infty$. Dann gilt nach $(i)$ $f(x_{n}) \rightarrow f(x)$ in $N$ für $n \rightarrow \infty$. \\
