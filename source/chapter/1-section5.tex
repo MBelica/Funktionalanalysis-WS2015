@@ -45,16 +45,17 @@
 \end{beispiel*}
 
 \begin{beweis}
-	Sei $(f_{n})$ eine Cauchy-Folge in $C(X, Y)$. Für alle $x \in X$ gilt
+	Sei $(f_{n})$ eine Cauchy-Folge in $C(X, Y)$. Für alle $x \in X$ gilt demnach
 	\[ \| f_{n}(x) - f_{m}(x) \|_{Y} \leq \| f_{n} - f_{m} \|_{\infty} \xrightarrow[n, m \rightarrow \infty]{} 0 \]
-	Mit $x \in X$ ist $(f(x))_{n \in \MdN}$ eine Cauchy-Folge in $Y$. Da $Y$ vollständig ist, existiert $f(x) \coloneqq \lim_{n \rightarrow \infty} f_{n}(x)$ in Y. \\ \\
-	z.z. $f \in C(X, Y), \quad \| f - f_{n} \|_{\infty} \rightarrow 0$. \\
+	Mit $x \in X$ ist $(f(x))_{n \in \MdN}$ auch eine Cauchy-Folge in $Y$ und da $Y$ vollständig ist, existiert $f(x) \coloneqq \lim_{n \rightarrow \infty} f_{n}(x)$ in Y. \\ \\
+	z.z. $f \in C(X, Y)$, $\| f - f_{n} \|_{\infty} \rightarrow 0$.
+	
 	Zu $\epsilon > 0$ gibt es ein $n_{0}$, sodass für alle $x \in X$:
 		\[ \| f_{n}(x) - f_{m}(x) \|_{Y} \leq \| f_{n} - f_{m} \|_{\infty} \leq \epsilon \quad m, n \geq n_{0} \]
 	Für jedes $x \in X$ fest, folgt für $m \rightarrow \infty$:
 		\[ \| f_{n}(x) - f(x) \| \leq \epsilon \quad \text{ für } n \geq n_{0} \]
 	Nehme das Supremum über $x \in X$:
-		\[ \Rightarrow \| f_{n} - f \|_{\infty} \leq \epsilon \text{ für } n \geq n_{0}. 	\]	\newline
+		\[ \Rightarrow \| f_{n} - f \|_{\infty} \leq \epsilon \text{ für } n \geq n_{0}. 	\]
 	Somit ist $f \in C(X, Y)$, da der gleichmä{\ss}ige Limes stetiger Funktionen stetig ist.
 \end{beweis}
 
