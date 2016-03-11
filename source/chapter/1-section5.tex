@@ -67,7 +67,7 @@
 \begin{beweis}
 	Für $C^{1}(\bar \Omega)$ gilt $\| f \|_{C^{1}} = \| f \|_{\infty} + \sum_{i = 1}^{n}  \| \frac{\partial}{\partial x_{i}} f \|_{\infty}$. \\
 	Sei $(f_{j})$ eine Cauchy-Folge in $C^{1}(\bar \Omega)$, dann sind für $i = 1, \dotsc, n $
-		\[ (f_{j})_{j \in \MdN} \quad \text{und} \quad (\frac{\partial}{\partial x_{j}} f_{j})_{j \in \MdN} \quad \text{Cauchy-Folgen in } C(\bar \Omega) \]
+		\[ (f_{j})_{j \in \MdN} \quad \text{und} \quad (\frac{\partial}{\partial x_{i}} f_{j})_{j \in \MdN} \quad \text{Cauchy-Folgen in } C(\bar \Omega) \]
 	Da $C(\bar \Omega)$ vollständig ist, existieren für $i \in \{ 1, \dotsc, n \} $
 		\begin{align*}
 		 		f & = \lim_{j \rightarrow \infty} f_{j} \\
@@ -123,10 +123,10 @@
 	\begin{align*}
 		\| Tx - T_{n}x \| & \overset{Norm \text{ } stetig}{=} \lim_{m \rightarrow \infty} \| T_{m} x - T_{n} x \| \\
 		 & \leq \lim_{m \rightarrow \infty} \| T_{n} - T_{m} \| \| x \| \\
-		 & \leq \epsilon \| x \| \text{ für n gro{\ss} genug.}
+		 & \leq \epsilon \| x \|
 	\end{align*}
-	Wobei $\| T - T_{n} \| \leq \epsilon$ für $n$ gro{\ss} genug.
-	Also für $\| x \| \leq 1$:
+	für n gro{\ss} genug, wobei $\| T - T_{n} \| \leq \epsilon$. \\ \\
+	Für $\| x \| \leq 1$ gilt dann:
 	\[ \| T x \| \leq \| T_{n} x \| + \epsilon \leq \| T_{n} \| + \epsilon  \]
 	\[ \Rightarrow \| T \| \leq \| T_{n} \| + \epsilon, \quad \text{ also } T \in B(X, Y) \]
 \end{beweis}
@@ -168,7 +168,7 @@
 
 
 \begin{kor} \label{kor:5.9}
-	$X$ sei ein Banachraum und $J: X \rightarrow X$ ein (surjektiver) Isomorphismus. \\
+	Sei $X$ ein Banachraum und $J: X \rightarrow X$ ein (surjektiver) Isomorphismus. \\
 	Für $A \in B(X)$ und $\| A \| < \| J^{-1} \|^{-1}$ ist auch $J - A$ ein Isomorphismus \\ \\
 	Insbesondere: $G = \{ T \in B(X): T \text{ stetig und invertierbar} \}$ ist eine offene Menge in $B(X)$.
 	\begin{beweis}
