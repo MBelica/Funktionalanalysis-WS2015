@@ -133,14 +133,14 @@
 \newpage % todo temporarily for optics
 
 \begin{bemerkung}[Exponentialfunktion]
-	Sei $A \in B(X)$, wobei $X$ Banachraum.
+	Sei $A \in B(X)$, wobei $X$ ein Banachraum ist.
 	\begin{itemize}
-		\item Frage: $e^{tA}$
+		\item Frage: $e^{tA} \in B(X) $
 		\item Idee: $e^{tA} = \sum_{n = 0}^{\infty} \frac{1}{n!} t^{n} A^{n}$
-		\item Setze $S_{m} = \sum_{n = 0}^{m}	 \frac{1}{n!} t^{n} A^{n}$
 	\end{itemize}
-	z. z. $S_{m}$ ist eine Cauchy-Folge in $B(X)$ \\
-	Seien $k, m \in \MdN, k > 0$
+	Setze $S_{m} \coloneqq \sum_{n = 0}^{m} \frac{1}{n!} t^{n} A^{n}$ und seien $k, m \in \MdN, k > 0$.
+	
+	z. z. $S_{m}$ ist eine Cauchy-Folge in $B(X)$
 	\begin{align*}
 		\| S_{k} - S_{m} \| & \leq \sum_{n = m +1}^{k} \| \frac{1}{n!} t^{n} A^{n} \| \\
 			& \leq \sum_{n = m +1}^{k}  \frac{1}{n!} | t^{n} | \| A^{n} \| \xrightarrow[k, m \rightarrow \infty]{} 0
