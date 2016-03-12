@@ -101,7 +101,7 @@
 			Bsp.: $C^{1}[0, 1]$, $\vertiii{f} = |f(0)| + \sup_{t \in [0, 1]} | f'(t) |$. Früher: $\vertiii{\cdot} \sim \| \cdot \|_{\infty} \Rightarrow \left( C[0, 1], \vertiii{\cdot} \right)$ ist vollständig.
 		\item Abgeschlossene Teilmengen von 	Banachräumen sind vollständige metrische Räume bezüglich $d(x, y) = \| x - y\|$.
 			\begin{beweis}
-				$(x_{n}) \subset M$, Cauchy-Folge in $X \Rightarrow \lim_{n \rightarrow \infty} x_{n} = x \in X \xRightarrow[M abg.]{} x \in M$ existiert.	
+				$(x_{n}) \subset M$, Cauchy-Folge in $X \Rightarrow \lim_{n \rightarrow \infty} x_{n} = x \in X \xRightarrow[abg.]{M} x \in M$ existiert.	
 			\end{beweis}
 			Bsp.: $X = C([0, 1], \MdC), M = \{ f \in X: |f ( t )| = 1 \}$ ist ein vollständiger metrischer Raum.
 	\end{enumerate}
@@ -223,9 +223,9 @@
 
 
 \begin{beispiel}
-	$e_{n} (t) = e^{2 \pi n i t} = \cos(2 \pi n t) + i \sin(2 \pi n t), \quad D = \{ (\alpha_{n}) \in L^{2}(\MdZ):$ Nur endlich viele $\alpha_{n} \neq 0 \}$
+	Seo $e_{n}(t) \coloneqq e^{2 \pi n t i} = \cos(2 \pi n t) + i \sin(2 \pi n t)$, $D = \{ (\alpha_{n}) \in L^{2}(\MdZ):$ Nur endlich viele $\alpha_{n} \neq 0 \}$.
 	\[ T \colon \begin{cases} D \rightarrow L^{2}[0, 1] \\ (\alpha_{n}) \rightarrow \sum_{n \in \MdZ} \alpha_{n} e_{n} \end{cases} \]
-	Wie kann man man unendlich Reihen $\sum_{n \in \MdZ} \alpha_{n} e_{n}$ definieren? \\
+	Wie kann man mit unendlichen Reihen $\sum_{n \in \MdZ} \alpha_{n} e_{n}$ definieren? \\
 	Ohne Beweis aus der Fourieranalysis:
 	\begin{itemize}
 		\item Es gibt $(\alpha_{n}) \in \MdC^{2}$, so dass $\sum_{n \in \MdZ} \alpha_{n} e_{n}(t)$ nicht für alle $t \in [0, 1]$ konvergent.
@@ -249,9 +249,7 @@
 	Für einen normierten Raum $(X, \| \cdot \|)$ sind äquivalent:
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $X$ ist vollständig
-		\item Jede absolut konvergente Reihe $\sum_{n \geq 1} x_{n}$ mit
-			\[ x_{n} \in X, \sum_{n \geq 1} \| x_{n} \| < \infty \]
-			hat einen Limes in $X$.
+		\item Jede absolut konvergente Reihe $\sum_{n \geq 1} x_{n}$ mit $x_{n} \in X$ hat einen Limes in $X$.
 	\end{enumerate}	
 \end{lemma}
 
@@ -274,7 +272,7 @@
 	Sei $X$ ein Banachraum und $M \subset X$ ein abgeschlossener, linearer Teilraum. \\
 	Dann $\hat X = \QR{X}{M}$ ist vollständig.
 	\begin{beweis}[mit Lemma 5.13]	
-		Sei $x_{k} \in X$ so, dass für $\hat x_{k} \in \hat X$ gilt:
+		Sei $(x_{k}) \in X$ so, dass für $(\hat x_{k}) \in \hat X$ gilt:
 		\[ \sum_{k \geq 1} \| \hat x_{k} \|_{\hat X} < \infty \]
 		Nach der Definition des Quotientenraums kann man annehmen, dass
 		\[ \| x_{k} \|_{X} \leq \| \hat x_{k} \|_{\hat X} + \frac{1}{2^{k}}, \quad k \in \MdK \quad \text{(vgl. \hyperref[def:1-2.15]{Quotientennorm})} \]
