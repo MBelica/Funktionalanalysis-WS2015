@@ -94,7 +94,7 @@
 
 \begin{bemerkung}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item $\| \cdot \|_{1}, \| \cdot \|_{2}$ seien äquivalente Normen auf $X$. Ist $X$ bezüglich $\| \cdot \|_{1}$ vollständig, so auch bezüglich $\| \cdot \|_{2}$.
+		\item Sind $\| \cdot \|_{1}, \| \cdot \|_{2}$ äquivalente Normen auf $X$, ist dann $X$ bezüglich $\| \cdot \|_{1}$ vollständig, so auch bezüglich $\| \cdot \|_{2}$.
 			\begin{beweis}
 				Äquivalente Normen haben gleiche Cauchy-Folgen.
 			\end{beweis}
@@ -119,21 +119,21 @@
 	\[ \| T_{n} x - T_{m} x \|_{Y} \leq \| T_{n} - T_{m} \| \|x\|_{X} \]
 	Also $(T_{n}x)_{n \in \MdN}$ ist eine Cauchy-Folge in $Y$ für alle $x \in X$. Definiere $T x : = \lim_{n \rightarrow \infty} T_{n} x$ \\
 	z.z. $T \in B(X, Y),$ $\| T_{n} - T \| \rightarrow 0$ \\
-	\[ T_{n} (x + y)  = T_{n} x + T_{n} y \xrightarrow[n \rightarrow \infty]{} T(x + y) = Tx + Ty \]
+	\[ T_{n} (x + y)  = T_{n} x + T_{n} y \xrightarrow[n \rightarrow \infty]{} Tx + Ty = T(x + y) \]
 	\begin{align*}
-		\| Tx - T_{n}x \| & \overset{Norm \text{ } stetig}{=} \lim_{m \rightarrow \infty} \| T_{m} x - T_{n} x \| \\
-		 & \leq \lim_{m \rightarrow \infty} \| T_{n} - T_{m} \| \| x \| \\
-		 & \leq \epsilon \| x \|
+		\| Tx - T_{n}x \|_{Y} & \underset{\text{stetig}}{\overset{\text{Norm}}{=}} \lim_{m \rightarrow \infty} \| T_{m} x - T_{n} x \|_{Y} \\
+		 & ~~ \leq \lim_{m \rightarrow \infty} \| T_{n} - T_{m} \| \| x \|_{X} \\
+		 & ~~ \leq \epsilon \| x \|_{X}
 	\end{align*}
-	für n gro{\ss} genug, wobei $\| T - T_{n} \| \leq \epsilon$. \\ \\
-	Für $\| x \| \leq 1$ gilt dann:
-	\[ \| T x \| \leq \| T_{n} x \| + \epsilon \leq \| T_{n} \| + \epsilon  \]
+	für n gro{\ss} genug; d.h. $\| T - T_{n} \| \leq \epsilon$ und für $\| x \| \leq 1$ gilt dann:
+	\[ \| T x \|_{Y} \leq \| T_{n} x \|_{Y} + \epsilon \leq \| T_{n} \| + \epsilon  \]
 	\[ \Rightarrow \| T \| \leq \| T_{n} \| + \epsilon, \quad \text{ also } T \in B(X, Y) \]
 \end{beweis}
 
+\newpage % todo temporarily for optics
 
 \begin{bemerkung}[Exponentialfunktion]
-	$A \in B(X)$, $X$ Banachraum
+	Sei $A \in B(X)$, wobei $X$ Banachraum.
 	\begin{itemize}
 		\item Frage: $e^{tA}$
 		\item Idee: $e^{tA} = \sum_{n = 0}^{\infty} \frac{1}{n!} t^{n} A^{n}$
