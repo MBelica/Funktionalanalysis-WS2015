@@ -185,7 +185,7 @@
 \begin{prop}[Fortsetzung von Operatoren] \label{prop:5.10}
 	Sei $X$ ein normierter Raum, $Y$ ein Banachraum und $D \subset X$ ein dichter Teilraum. \\
 	Jeder linearere Operator $T: X \rightarrow Y$ mit
-		\[ \| T x \|_{Y} \leq M \| x \|_{X}, \quad \text{ für alle } x \in D \]
+		\[ \| T x \|_{Y} \leq M \| x \|_{X}, \quad \text{für alle } x \in D \]
 	lässt sich zu einem eindeutig bestimmten Operator $ \tilde T \in B(X, Y)$ mit $\| \tilde T \| \leq M	$ fortsetzen.	
 \end{prop} 
 
@@ -208,7 +208,7 @@
 		\[ \lim_{n \rightarrow \infty} T_{n} x = T x \]
 	\begin{beweis}
 		Setze für $x \in D$: $Tx = \lim_{n \rightarrow \infty} T_{n}(x)$, da $Y$ vollständig. \\
-		Dieses $T: X \rightarrow Y$ ist linear. \\ % todo correct hyperref
+		Dieses $T: X \rightarrow Y$ ist linear. \\ 
 		Nach \hyperref[prop:5.10]{5.10} gibt es genau ein $\tilde T \in B(X, Y)$ mit $\tilde T x = T x$ für $x \in D$, $\| \tilde T \| \leq M$, denn für $x \in D$:
 		\[ \| T x \| \leq \limsup \| T_{n} x \| \leq M \| x \| \]
 		z. z. $\tilde T x = \lim_{n \rightarrow \infty} T_{n} x$ für alle $x \in X$. \\
