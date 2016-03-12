@@ -108,7 +108,7 @@
 \end{bemerkung}
 
 
-\begin{satz}
+\begin{satz} \label{satz:5.6}
 	Sei $X$ ein normiert Raum, $Y$ ein Banachraum.
 	Dann ist $B(X, Y)$ mit der Operatornorm vollständig. \\
 	Insbesondere: $X' = B(X, \MdK)$ ist immer  vollständig.
@@ -133,19 +133,17 @@
 \newpage % todo temporarily for optics
 
 \begin{bemerkung}[Exponentialfunktion]
-	Sei $A \in B(X)$, wobei $X$ ein Banachraum ist.
-	\begin{itemize}
-		\item Frage: $e^{tA} \in B(X) $
-		\item Idee: $e^{tA} = \sum_{n = 0}^{\infty} \frac{1}{n!} t^{n} A^{n}$
-	\end{itemize}
-	Setze $S_{m} \coloneqq \sum_{n = 0}^{m} \frac{1}{n!} t^{n} A^{n}$ und seien $k, m \in \MdN, k > 0$.
+	Sei $A \in B(X)$, mit $X$ Banachraum, dann ist $e^{tA} \in B(X)$ (Idee: $e^{tA} = \sum_{i = 0}^{\infty} \frac{1}{i!} t^{i} A^{i}$).
+	\begin{beweis}
+		Setze $S_{k} \coloneqq \sum_{i = 0}^{k} \frac{1}{i!} t^{i} A^{i}$ und seien $m, n \in \MdN, n > m$.
 	
-	z. z. $S_{m}$ ist eine Cauchy-Folge in $B(X)$
-	\begin{align*}
-		\| S_{k} - S_{m} \| & \leq \sum_{n = m +1}^{k} \| \frac{1}{n!} t^{n} A^{n} \| \\
-			& \leq \sum_{n = m +1}^{k}  \frac{1}{n!} | t^{n} | \| A^{n} \| \xrightarrow[k, m \rightarrow \infty]{} 0
-	\end{align*}
-	Da $B(X)$ vollständig ist, ist $e^{tA} = \lim_{m \rightarrow \infty} S_{m}$ in $B(X)$.
+		z. z. $S_{k}$ ist eine Cauchy-Folge in $B(X)$
+		\begin{align*}
+			\| S_{n} - S_{m} \| & \leq \sum_{i = m + 1}^{n} \| \frac{1}{i!} t^{i} A^{i} \| \\
+				& \leq \sum_{i = m +1}^{n}  \frac{1}{i!} | t^{i} | \| A^{i} \| \xrightarrow[m, n \rightarrow \infty]{} 0
+		\end{align*}
+		Da $B(X)$ vollständig ist, ist $e^{tA} = \lim_{n \rightarrow \infty} S_{n} \in B(X)$.	
+	\end{beweis}
 \end{bemerkung}
 
 
@@ -157,12 +155,13 @@
 		$S_{m} = \sum_{n = 0}^{m} A^{n}$ ist eine Cauchy-Folge in $B(X)$, denn für
 		\begin{align*}
 		k > m: \quad \| S_{k} - S_{m} \| & \leq \sum_{n = m + 1}^{k} \| A^{n} \| \\
-			& \leq \sum_{n = m + 1}^{k} \| A \|^{n} \rightarrow 0 \text{ für } m, n \rightarrow \infty \text{, da} \| A \| < 1
+			& \leq \sum_{n = m + 1}^{k} \| A \|^{n} \rightarrow 0 \text{ für } m, n \rightarrow \infty \text{, da } \| A \| < 1
 		\end{align*}
-		$R \coloneqq \lim_{m \rightarrow \infty} S_{m}$ existiert in $B(X)$, da $B(X)$ vollständig.
+		Weiter existiert $R \coloneqq \lim_{m \rightarrow \infty} S_{m}$ in $B(X)$, da $B(X)$ nach \hyperref[satz:5.6]{Satz 5.6} vollständig ist.
 		\[ S_{m} (Id - A) = (Id - A) S_{m} = Id - A^{m} \]
-		mit $\| A^{m} \| \leq \| A \|^{m} \rightarrow 0 \text{ für } m \rightarrow \infty$
-		\[ \Rightarrow R (Id - A) = (Id - A) R = Id, \quad R = (Id - A)^{-1} \]
+		mit $\| A^{m} \| \leq \| A \|^{m} \rightarrow 0 \text{ für } m \rightarrow \infty$ ist
+		\[ R (Id - A) = (Id - A) R = Id, \]
+		und damit $R = (Id - A)^{-1}$.
 	\end{beweis}
 \end{prop}
 
@@ -183,12 +182,24 @@
 \end{kor}
 
 
-\begin{prop} \label{prop:5.10}
+\begin{prop}[Fortsetzung von Operatoren] \label{prop:5.10}
 	Sei $X$ ein normierter Raum, $Y$ ein Banachraum und $D \subset X$ ein dichter Teilraum. \\
 	Jeder linearere Operator $T: X \rightarrow Y$ mit
 		\[ \| T x \|_{Y} \leq M \| x \|_{X}, \quad \text{ für alle } x \in D \]
-	lässt sich zu einem eindeutig bestimmten Operator $ \tilde T \in B(X, Y)$ mit $\| \tilde T \| \leq c$ fortsetzen.	
-\end{prop}
+	lässt sich zu einem eindeutig bestimmten Operator $ \tilde T \in B(X, Y)$ mit $\| \tilde T \| \leq M	$ fortsetzen.	
+\end{prop} 
+
+\begin{beweis}
+	Zu $x \in X$ wähle wine Folge $(x_{n}) \subset D$ mit $\| x_{n} - x \|_{X} \rightarrow 0$. Dann ist $(x_{n}) \subset X$ auch eine Cauchy-Folge und
+	\[ \| Tx_{n} - Tx_{m} \|_{Y} \leq M \|x_{n} - x_{m} \|_{X} \rightarrow 0,  \]
+	d.h. $(Tx_{n})$ ist auch eine Cauchy-Folge in $Y$ und da $Y$ ein Banachraum ist, existiert $\hat T x = \lim T x_{n}$ in $Y$. \\
+	$\hat T$ wohldefiniert: Sei $y_{n} \in D$ mit $y_{n} \rightarrow x$, dann ist 
+		\[ \| T x_{n} - T y_{n} \| \leq M \| x_{n} - y_{n} \| \leq M \left( \| x_{n} - x \| + \| x - y_{n} \| \right) \rightarrow 0 \]
+	$\hat T$ linear: Ist $x_{n}, y_{n} \in D : x_{n} \rightarrow x, y_{n} \rightarrow y$, so gilt:
+		\[ T(x_{n} + y_{n}) = T(x_{n}) + T(y_{n}) \xRightarrow[]{n \rightarrow \infty} \hat T(x + y) = \hat T(x) + \hat T(y) \]
+	$\hat T$ beschränkt: Sei $(x_{n}) \in D, x_{n} \rightarrow x$,
+	\[ \| \hat T x \| = \lim \| T x_{n} \| \leq M \| x \| \Rightarrow \| \hat T \| \leq M \]
+\end{beweis}
 
 
 \begin{kor} \label{kor:5.11}
@@ -197,7 +208,7 @@
 		\[ \lim_{n \rightarrow \infty} T_{n} x = T x \]
 	\begin{beweis}
 		Setze für $x \in D$: $Tx = \lim_{n \rightarrow \infty} T_{n}(x)$, da $Y$ vollständig. \\
-		Dieses $T: X \rightarrow Y$ ist linear. \\
+		Dieses $T: X \rightarrow Y$ ist linear. \\ % todo correct hyperref
 		Nach \hyperref[prop:5.10]{5.10} gibt es genau ein $\tilde T \in B(X, Y)$ mit $\tilde T x = T x$ für $x \in D$, $\| \tilde T \| \leq M$, denn für $x \in D$:
 		\[ \| T x \| \leq \limsup \| T_{n} x \| \leq M \| x \| \]
 		z. z. $\tilde T x = \lim_{n \rightarrow \infty} T_{n} x$ für alle $x \in X$. \\

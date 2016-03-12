@@ -75,11 +75,11 @@
 \begin{bemerkung} \label{bem:4.5}
 	\begin{enumerate}[label=\alph*\upshape)] 
 		\item Wir benutzen die Bezeichnungen
-			\begin{align*}
-				K(x, r) & \coloneqq \{ y \in M: d(x, y) < r \} \hspace{0.25cm} \text{\textbf{ offene Kugel}} \\
-				\bar K(x, r) & \coloneqq \{ y \in M: d(x, y) \leq r \} \hspace{0.25cm}  \text{\textbf{ abgeschlossene Kugel}}
-			\end{align*}
-			für $x \in M, r > 0$. Man sieht leicht, dass $K(x, r)$ offen und $\bar K(x, r)$ abgeschlossen ist.
+			\begin{itemize}
+				\item \textbf{offene Kugel}: $K(x, r)  \coloneqq \{ y \in M: d(x, y) < r \}$
+				\item \textbf{abgeschlossene Kugel}: $\bar K(x, r) \coloneqq \{ y \in M: d(x, y) \leq r \}$
+			\end{itemize}
+			mit $x \in M, r > 0$. Man sieht leicht, dass $K(x, r)$ offen und $\bar K(x, r)$ abgeschlossen ist.
 		\begin{beweis}
 			\begin{enumerate}
 			\item Sei $y \in K(x, r)$ und wähle $\rho \coloneqq r - d(x, y) > 0$. Wir zeigen: $K(y, \rho) \subset K(x, r)$ (dann ist $K(x, r)$ offen). \\ 
