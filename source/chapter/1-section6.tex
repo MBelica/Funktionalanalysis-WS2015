@@ -21,7 +21,7 @@
  
 \begin{beweis}
 	$"\Rightarrow"$ $X \cong \MdK^{d}$, $d = \dim X$, $U_X$ ist abgeschlossen, beschränkt $\xRightarrow[Borell]{Heine-} U_{X}$ ist kompakt. \\ \\
-	$"\Leftarrow"$ Sei $\dim X = \infty$. Wähle $x_1 \in X$ mig $\| x_1 \| = 1$. \\
+	$"\Leftarrow"$ Sei $\dim X = \infty$. Wähle $x_1 \in X$ mit $\| x_1 \| = 1$. \\
 	Nach \eqref{lemma:6.3-Riesz} mit $ Y = \overline{span}\{ x_{1} \}$ finde zu $\delta = \frac{1}{2}$ ein $x_{2} \in X, \| x_{2} \| = 1$ und $\| x_{2} - x_{1} \| \geq \frac{1}{2}$ \\
 	Wieder nach \eqref{lemma:6.3-Riesz} mit $ Y = \overline{span}\{ x_{1}, x_{2} \}$ finde zu $\delta = \frac{1}{2}$ ein $x_{3} \in X, \| x_{3} \| = 1$ und $\| x_{3} - x_{j} \| \geq \frac{1}{2}$ für $j = 1, 2$ \\
 	Induktiv erhält man eine Folge $x_{i} \in X$ mit $\| x_{i} \| = 1$ und $\| x_{i} - x_{j} \| \geq \frac{1}{2}$ für $j = 1, \dotsc, i - 1$.
@@ -172,7 +172,7 @@
 
 
 \begin{beispiel}
-	$K = \{ d \in C^{1}[0, 1]: \| f' \|_{\infty} \leq 1, | f(0) | \leq 1 \}$ \\
+	$K = \{ f \in C^{1}[0, 1]: \| f' \|_{\infty} \leq 1, | f(0) | \leq 1 \}$ \\
 	$K$ ist nicht kompakt in $C^{1}[0, 1]$, aber $K$ ist kompakt in $C[0, 1]$.	
 \end{beispiel}
 
@@ -196,10 +196,10 @@
 \end{kor}
 
 \begin{beweis}
-	$"a) \Rightarrow b)"$ und $"a) \Rightarrow c)"$ klar nach \hyperref[satz:6.5]{6.5}. \\ \\
-	$"b) \Rightarrow a)"$ Sei $(x_{n} \subseteq K$ mit einer Cauchy-Teilfolge $(x_{n_{k}})$. \\
+	$"$$a) \Rightarrow b)$$"$ und $"$$a) \Rightarrow c)$$"$ klar nach \hyperref[satz:6.5]{6.5}. \\ \\
+	$"$$b) \Rightarrow a)$$"$ Sei $(x_{n} \subseteq K$ mit einer Cauchy-Teilfolge $(x_{n_{k}})$. \\
 		\[ \text{Da } X \text{ vollständig ist, existiert } \lim_{n \rightarrow \infty} x_{n_{k}} = x \in X \Rightarrow x \in \overline{K} \Rightarrow \overline{K} \text{ kompakt.} \]
-	$"c) \Rightarrow a)"$ Da $X$ vollständig ist, ist $\overline{K}$ vollständig. Zu $\epsilon > 0$ wähle $y_{1}, \dotsc, y_{m} \in K$ mit 
+	$"$$c) \Rightarrow a)$$"$ Da $X$ vollständig ist, ist $\overline{K}$ vollständig. Zu $\epsilon > 0$ wähle $y_{1}, \dotsc, y_{m} \in K$ mit 
 		\[ K \subseteq \bigcup_{j = 1}^{m} K(y_{j}, \epsilon) \Rightarrow \overline{K} \subseteq \bigcup_{j = 1}^{m} \overline{K(y_{j}, \epsilon)} \subseteq \bigcup_{j = 1}^{m} K(y_{j}, 2\epsilon) \]
 \end{beweis}
 
