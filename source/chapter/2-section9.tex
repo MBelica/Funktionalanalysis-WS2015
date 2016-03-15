@@ -14,12 +14,12 @@
 \end{satz}
 
 \begin{beweis}
-    Der Kürze halber definieren wir $D \coloneqq \bigcap_{n \in \MdN} U_{n}$. \\ \\
-    Zu zeigen gilt, dass zu jeder Kugel $K(x_{0}, \epsilon), x_{0} \in M, \epsilon > 0$.
+    Definiere der Kürze halber $D \coloneqq \bigcap_{n \in \MdN} U_{n}$. Damit werden wir zeigen, dass zu jeder Kugel $K(x_{0}, \epsilon)$, mit $x_{0} \in M, \epsilon > 0$ ein $x \in K(x_{0}, \epsilon) \cap D$ existiert.
+    
 	Beweis: 
 	\begin{itemize}
 		\item $U_{1} \cap K(x_{0}, \epsilon)$ ist offen und nichtleer, da $U_{1}$ dicht ist. Also existiert ein $x_{1} \in U_{1}$ und $\epsilon_{1} > 0$ mit $\epsilon_{1} < \frac{1}{2} \epsilon$ so, dass $K( x_{1}, 2 \epsilon_{1}) \subset U_{1} \cap K(x_{0}, \epsilon)$
-			\[ \Rightarrow \overline{K(x_{1}, \epsilon)} \subseteq U_{1} \cap K(x_{0}, \epsilon) \]
+			\[ \Rightarrow \overline{K(x_{1}, \epsilon_{1})} \subseteq U_{1} \cap K(x_{0}, \epsilon) \]
 		\item Nun ist $U_{2} \cap K(x_{1}, \epsilon_{1})$  offen und nichtleer, da $U_{1}$ dicht ist. Also existiert ein $x_{2} \in U_{2}$ und ein $\epsilon_{2} < \frac{1}{2} \epsilon_{1}$ mit
 			\[ \overline{K(x_{2}, \epsilon_{2})} \subset K(x_{2}, 2 \epsilon_{2}) \subset U_{2} \cap K(x_{1}, \epsilon_{1}) \subset U_{2} \cap U_{1} \cap K(x_{0}, \epsilon) \]
 		\item Induktiv findet man Folgen $\epsilon_{n} > 0, x_{n}$ mit
