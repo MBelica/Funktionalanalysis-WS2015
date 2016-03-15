@@ -87,25 +87,26 @@
 \begin{beweis}
 	Betrachte 
 	\[ E_{n} = \{ x \in C[0, 1]: \sup_{0 < |h| \leq \frac{1}{n}} \left| \frac{x(t + h) - x(t)}{h} \right| > n, \text{ für alle } t \in [0, 1] \}, \]
-	dann ist $\bigcap E_{n} \subset E$. Wir wolle nun zeigen, dass 
+	dann ist $\bigcap E_{n} \subset E$. 
+	
+	\newpage % todo temporarily for optics
+	
+	Damit wir den \hyperref[satz:9.1-baire]{Satz von Baire} anwenden können, müssen wir zeigen 
 	\begin{enumerate}[label=\roman*\upshape)]
 		\item $E_{n}$ sind offen in $C[0, 1]$ für alle $n$
 		\item $E_{n}$ sind dicht in $C[0, 1]$ für alle $n$
 	\end{enumerate}
-	Damit können den \hyperref[satz:9.1-baire]{Satz von Baire} anwenden und erhalten dass $\bigcap_{n \in \MdN} E_{n}$ und damit auch die Menge $E$ dicht in $C[0, 1]$ ist. \\
+	und erhalten dann, dass $\bigcap_{n \in \MdN} E_{n}$ und damit auch die Menge $E$ dicht in $C[0, 1]$ ist. \\
 	\begin{enumerate}[label=\roman*\upshape)]
 		\item Sei $n \in \MdN$ und $x \in E_{n}$ fest. \\
-			Zu jedem $t \in [0, 1]$ wähle $f_{t}$ definiert durch
-			\[ \sup_{0 < |h| \leq \frac{1}{n}} \left| \frac{x(t + h) - x(t)}{h} \right| = n + 2 \delta_{t} \]
-			$\Rightarrow \left| \frac{x(s + h_{t}) - x(s)}{h_{t}} \right| > n + \delta_{t}$ für $s \in U_{t}$, $0 < |h_{t}| \leq \frac{1}{n} $ \\
-			Da $x$ stetig ist, gibt es zu $t$ eine kleine Umgebung $U_{t}$ mit
+			Zu jedem $t \in [0, 1]$ wähle $\delta_{t}$ definiert durch: $\sup_{0 < |h| \leq \frac{1}{n}} \left| \frac{x(t + h) - x(t)}{h} \right| = n + 2 \delta_{t}$
+			\[ \Rightarrow \left| \frac{x(t + h_{t}) - x(t)}{h_{t}} \right| > n + \delta_{t} \text{ für } 0 < |h_{t}| \leq \frac{1}{n} \]
+			Da $x$ stetig ist, gibt es zu $t$ eine offene Umgebung $U_{t}$ mit
 			\[ \left| \frac{x(s + h_{t}) - x(s)}{h_{t}} \right| > n + \delta_{t} \text{ für } s \in U_{t}, \quad 0 < |h_{t}| \leq \frac{1}{n} \]
-			Da $[0, 1]$ kompakt und $[0, 1] = \bigcup_{t \in [0, 1]} U_{t}$ gibt es endlich viele $U_{t_{1}}, \dotsc, U_{t_{n}}$ mit $[0, 1] \subset U_{t_{1}} \cup \dotsc \cup U_{t_{n}}$ \\
-			Setze $\delta \coloneqq \min \{ \delta_{t_{1}}, \dotsc, \delta_{t_{1}} \} > 0, \quad h \coloneqq \min \{ h_{t_{1}}, \dotsc, h_{t_{n}} \}$. \\
-			Wähle nun ein $\epsilon$ mit $0 < \epsilon < \frac{1}{2} h \delta$. \\
-			Zu zeigen bleibt $K(x, \epsilon) \subset E_{n}$: \\
-			Sei $y \in C[0, 1]$ mit $\| x - y \|_{\infty} < \epsilon$. Zu $t \in [0, 1]$ wähle $i \in \{ 1, \dotsc, n \}$ mit $t \in U_{i}$. \\
-			Dann:
+			Da $[0, 1]$ kompakt und $[0, 1] = \bigcup_{t \in [0, 1]} U_{t}$ gibt es endlich viele $U_{t_{1}}, \dotsc, U_{t_{n}}$ mit 
+				\[ [0, 1] \subset U_{t_{1}} \cup \dotsc \cup U_{t_{n}} \]
+			Setze $\delta \coloneqq \min \{ \delta_{t_{1}}, \dotsc, \delta_{t_{1}} \} > 0$, $h \coloneqq \min \{ h_{t_{1}}, \dotsc, h_{t_{n}} \}$ und wähle ein $\epsilon$ mit $0 < \epsilon < \frac{1}{2} h \delta$. Zu zeigen bleibt $K(x, \epsilon) \subset E_{n}$: \\ 
+			Sei $y \in C[0, 1]$ mit $\| x - y \|_{\infty} < \epsilon$. Zu $t \in [0, 1]$ wähle $i \in \{ 1, \dotsc, n \}$ mit $t \in U_{i}$. Dann:
 			\begin{align*}
 				\left| \frac{y(t + h_{t_{i}}) - y(t)}{h_{t_{i}}} \right| & \overset{\triangle-\text{Ungl.}}{\geq} \left| \frac{x(t + h_{t_{i}}) - x(t)}{h_{t_{i}}} \right| - 2 \frac{\| x - y \|_{\infty}}{|h_{t_{i}}|} \\
 				& \overset{t \in U_{t_{i}}}{>} n + \delta - 2 \frac{\epsilon}{n} \\
