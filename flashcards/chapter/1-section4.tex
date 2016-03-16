@@ -55,3 +55,45 @@
 			\[ U \coloneqq \bigcup_{i \in I} U_{i} \quad \text{und} \quad U_{i_{1}} \cap \dotsc \cap U_{i_{N}} \qquad (i_{1}, \dotsc, i_{N} \in I) \] 
 			offen in $M$.
 	\end{karte}
+	
+	\begin{karte}{Abschluss, Innere und Rand}
+		Sei $(M, d)$ ein metrischer Raum und $V \subset M$. Dann hei{\ss}t 
+
+
+		$\bar V \coloneqq \bigcap \{ A \subset M: A$ ist abgeschlossen mit $V \subset A \} $ der \begriff{Abschluss} von $V$.
+		
+		$\mathring V \coloneqq \bigcup \{ U \subset M: U$ ist offen mit $U \subset V \}$ das \begriff{Innere} von $V$. 
+		
+		$ \partial V \coloneqq \bar V \setminus \mathring V$ der \begriff{Rand} von $V$.	
+	\end{karte}
+	
+	\begin{karte}{Dicht}	
+		Sei $(M, d)$ ein metrischer Raum. Eine Menge $V \subset M$ hei{\ss}t \begriff{dicht} in M, falls $\bar V = M$, d.h. jeder Punkt in $M$ ist Grenzwert einer Folge aus $V$.
+	\end{karte}	
+
+	\begin{karte}{Separabel}		
+		Sei $(M, d)$ ein metrischer Raum, $M$ hei{\ss}t \begriff{separabel}, falls es eine abzählbare Teilmenge $V \subset M$ gibt, die dicht in $M$ liegt.
+	\end{karte}
+	
+	\begin{karte}{Stetige Abbildung}
+			Seien $(M, d_{M}), (N, d_{N})$ metrische Räume. Eine Abbildung $f \colon M \rightarrow N$ hei{\ss}t \textbf{stetig in $x_{0} \in M$}, falls für alle $(x_{n}) \subset M$ gilt
+		\[ x_{n} \rightarrow x_{0} \text{ in } M \Rightarrow f(x_{n}) \rightarrow f(x_{0}) \text{ in } N \]
+		\[ d_{M}(x_{n}, x_{0}) \rightarrow 0 (n \rightarrow \infty) ~ \Rightarrow ~ d_{N}(f(x_{n}), f(x_{0})) \rightarrow 0 \]
+		Die Abbildung $f$ hei{\ss}t \begriff{stetig} \textbf{auf $M$}, falls $f$ in jedem Punkt von $M$ stetig ist.	
+	\end{karte}
+
+	\begin{karte}{Ist $\ell^{p}$ separabel?}	
+		Die Räume $\ell^{p}, p \in [1, \infty)$ und $c_{0}$ sind separabel, da
+			\[ D = lin \{ e_{k}, k \in \MdK \} \text{ dicht in allen Räumen liegt.} \]
+		Der Raum $\ell^{\infty}$ ist nicht separabel: 
+			Die Menge $\Omega$ der $\{0, 1\}$-wertigen Folgen ist überabzählbar. Für $x, y \in \Omega$ mit $x \neq y$ gilt $\| x - y \|_{\infty} = 1$
+	\end{karte}
+	
+	\begin{karte}{Äquivalenzen zur Stetigkeit einer Abbildungen}		
+		Die folgenden Aussagen sind äquivalent:
+			\begin{enumerate}[label=(\roman*\upshape)]
+				\item $f$ ist stetig auf $M$
+				\item Ist $U \subset N$ offen, so ist auch $f^{-1}(U)$ offen in $M$
+				\item Ist $A \subset N$ abgeschlossen, so ist auch $f^{-1}(A)$ abgeschlossen in $M$.
+			\end{enumerate}
+	\end{karte}
