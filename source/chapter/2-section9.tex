@@ -127,14 +127,14 @@
 
 \begin{satz}[Banach-Steinhaus] \label{satz:9.5-Banach-Steinhaus} \index{Banach-Steinhaus}
 	Sei $X$ ein Banachraum, $Y$ ein normierter Raum, $I$ eine Indexmenge und $(T_{i})_{i \geq 1} \in B(X, Y)$.
-	Falls: 
-	\[ \sup_{i \in I} \| T_{i} x \| = C(X) < \infty \quad \forall x \in X \]
-	Dann:
+	Falls:
+	\[ \sup_{i \in I} \| T_{i} x \| = c(x) < \infty, \quad \forall x \in X \]
+	dann ist auch
 	\[ \sup_{i \in I} \| T_{i} \| = \sup_{i \in I} \sup_{\| x \| \leq 1} \| T_{i} x \| < \infty. \]
 \end{satz}
 
 \begin{beweis}
-	Betrachte die Menge $E_{n} \coloneqq \{ x \in X: \sup \| T_{i} x \| \leq n\}$. Dann ist $E_{n}$ abgeschlossen, denn $E_{n} = \bigcap_{i \in \MdN} \{ x \in I: \| T_{i} x \| \leq n \}$. Außerdem ist $E_{n}$ symmetrisch, d.h. $x \in E_{n} \gdw -x \in E_{n}$ und konvex, denn für $x_{1}, x_{2} \in E_{n}$ gilt
+	Betrachte die Menge $E_{n} \coloneqq \{ x \in X: \sup \| T_{i} x \| \leq n\}$. Dann ist $E_{n}$ abgeschlossen, denn $E_{n} = \bigcap_{i \in \MdN} \{ x \in X: \| T_{i} x \| \leq n \}$. Außerdem ist $E_{n}$ symmetrisch, d.h. $x \in E_{n} \gdw -x \in E_{n}$ und konvex, denn für $x_{1}, x_{2} \in E_{n}$ gilt
 		\[ \sup \| T_{i} \left( \frac{1}{2} x_{1} + \frac{1}{2} x_{2} \right) \| \leq \frac{1}{2} \sup \| T_{i} x_{1} \| + \frac{1}{2} \sup \| T_{i} x_{2} \| \leq n \quad \text{also } \frac{1}{2} x_{1} + \frac{1}{2} x_{2} \in E_{n} \]
 		Es gilt $X = \sum_{n = 1}^{\infty} E_{n}$, nach \hyperref[satz:9.1-baire]{Baire} existiert dann ein $N \in \MdN, x \in E_{N}, \epsilon > 0$ mit $K(x, \epsilon) \subset E_{N} \Rightarrow K(-x, \epsilon) \subseteq E_{n}$ \\
 		Sei $z \in X: \| z \| < \epsilon$. $z = \frac{1}{2} (x + z) + \frac{1}{2} (z - x) \in \frac{1}{2} E_{N} + \frac{1}{2} E_{N} \subseteq E_{N}$. 
@@ -144,7 +144,7 @@
 
 \begin{bemerkung}  \label{bem:9.6}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Aus $C(X)$ kann man $\sup_{i \in I} \| T_{i} \|$ nicht herleiten (\hyperref[satz:9.5-Banach-Steinhaus]{Banach-Steinhaus} ist nicht konstruktiv).
+		\item Der \hyperref[satz:9.5-Banach-Steinhaus]{Satz von Banach-Steinhaus} ist nicht konstruktiv d.h. aus $c(X)$ kann man $\sup_{i \in I} \| T_{i} \|$ nicht herleiten.
 		\item Die Vollständigkeit von $X$ ist notwendig.
 	\end{enumerate}	
 \end{bemerkung}
@@ -159,21 +159,27 @@ $F \coloneqq \{ (x_{n})_{n}: x_{n} = 0$ für alle, bis auf endlich viele $n \}$ 
 
 
 \begin{kor} \label{kor:9.7}
-	Sei $X$ ein Banachraum, $Y$ normiert und $(T_{n})_{n \geq 1} \subset B(X, Y)$ derart, dass
+	Sei $X$ ein Banachraum, $Y$ ein normierter Raum und $(T_{n})_{n \geq 1} \subset B(X, Y)$ derart, dass
 	\[ \lim_{n \rightarrow \infty} T_{n} x =: y \text{ existiert für alle } x \in X \]
-	Dann ist $T_{x} \coloneqq y_{x}$ linear und $T \in B(X, Y)$
+	Dann ist $T x \coloneqq y_{x}$ linear und $T \in B(X, Y)$.
+	
+	\newpage % todo temporarily for optics
+	
 	\begin{beweis}
-		$T$ ist linear, da $\lim$ und $T_{n}$ jeweils linear sind. \\
-		$(T_{n} x)_{n}$ ist beschränkt $\xRightarrow[\text{Steinhaus}]{\text{Banach-}} \sup_{n \in \MdN} \| T_{n} \| < \infty$ \\
+		Da sowohl der Limes als auch $T_{n}$ für alle $n \in \MdN$ jeweils linear sind, ist $T$  linear. \\
+		Insbesondere ist $(T_{n} x)_{n \geq 1}$ beschränkt; mit \hyperref[satz:9.5-Banach-Steinhaus]{Banach-Steinhaus} ist also auch $ \sup_{n \in \MdN} \| T_{n} \| < \infty$. \\
 		\[ \| T x \| = \lim_{n \rightarrow \infty} \| T_{n} x \| \leq \sup_{n \in \MdN} \|T_{n} \| \cdot \|x \| \]
-		\[ \Rightarrow T \in B(X, Y) \text{ mit } \| T \| \leq \sup_{n \in \MdN} \| T_{n} \|. \]
+		\[ \Rightarrow T \in B(X, Y) \text{ mit } \| T \| \leq \sup_{n \in \MdN} \| T_{n} \|\]
 	\end{beweis}
+	Frage: $T_{n} \xrightarrow[n \rightarrow \infty]{} T$ in $B(X, Y)$? Nein, nicht im Allgemeinen! \\
 \end{kor} 
-Frage: $T_{n} \xrightarrow[n \rightarrow \infty]{} T$ in $B(x, Y)$? Nein! \\
+
 \begin{beispiel*}
-	$X = Y = \ell^{p}, \quad T_{k} (x_{n})_{n} = (x_{1}, \dotsc, x_{k}, 0, \dotsc)$ \\
-	\[ \| T_{k} (x_{n})_{n} - I (x_{n})_{n} \| = \left( \sum_{n = k + q}^{\infty} | x_{n} |^{p} \right)^{\frac{1}{p}} \xrightarrow[n \rightarrow \infty]{} 0 \quad \text{(Identität ist punktweiser Gw.)} \]
-	Aber: $\| T_{k} - I \| \geq \|(T_{k} - I)\underbrace{(0, \dotsc, 0, 1, 0, \dotsc)	}_{1 \text{ an } k+1-\text{ter Stelle}} \|_{\ell^{p}} = 1 \xrightarrow[k \rightarrow \infty]{} 0$
+	$X = Y = \ell^{p}$, $T_{k} (x_{n})_{n} = (x_{1}, \dotsc, x_{k}, 0, \dotsc)$
+	\[ \| T_{k} (x_{n})_{n} - I (x_{n})_{n} \|_{\ell^{p}} \left( \sum_{n = k + 1}^{\infty} | x_{n} |^{p} \right)^{\frac{1}{p}} \xrightarrow[k \rightarrow \infty]{} 0 \]
+	Aber
+		\[ \| T_{k} - I \| \geq \|(T_{k} - I)\underbrace{(0, \dotsc, 0, 1, 0, \dotsc)	}_{1 \text{ an } k+1-\text{ter Stelle}} \|_{\ell^{p}} = 1 \not\xrightarrow[ ~ ]{ } 0 \]
+	D.h. punktweise Konvergenz impliziert keine Konvergenz bezüglich der Operatornorm.
 \end{beispiel*}
 
 
