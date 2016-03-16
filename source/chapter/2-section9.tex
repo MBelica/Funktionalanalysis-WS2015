@@ -128,7 +128,7 @@
 
 
 \begin{satz}[Banach-Steinhaus] \label{satz:9.5-Banach-Steinhaus} \index{Banach-Steinhaus}
-	Sei $X$ ein Banachraum, $Y$ ein normierter Raum, $I$ eine Indexmenge und $(T_{i})_{i} \in B(X, Y)$.
+	Sei $X$ ein Banachraum, $Y$ ein normierter Raum, $I$ eine Indexmenge und $(T_{i})_{i \geq 1} \in B(X, Y)$.
 	Falls: 
 	\[ \sup_{i \in I} \| T_{i} x \| = C(X) < \infty \quad \forall x \in X \]
 	Dann:
@@ -146,21 +146,22 @@
 
 \begin{bemerkung}  \label{bem:9.6}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Aus $C(X)$ kann man $\sup_{i \in I} \| T_{i} \|$ nicht herleiten (\hyperref[satz:9.3-KategoriensatzVonBaire]{Baire} ist nicht konstruktiv).
+		\item Aus $C(X)$ kann man $\sup_{i \in I} \| T_{i} \|$ nicht herleiten (\hyperref[satz:9.5-Banach-Steinhaus]{Banach-Steinhaus} ist nicht konstruktiv).
 		\item Die Vollständigkeit von $X$ ist notwendig.
 	\end{enumerate}	
 \end{bemerkung}
 
 
 \begin{beispiel*}
-Sei $F = \{ (x_{n})_{n}: x_{n} = 0$ für alle, bis auf endlich viele $n \}$ mit $\| (x_{n})_{n} \|_{p} = \sup_{n \in \MdN} | x_{n} |$. \\
-Betrachte $T_{k} (x_{n})_{n} = k x_{k}$, dann gilt $\| T_{k} \| = k$ und $\sup_{k \in \MdN} \| T_{k} \| = \infty$ \\
-Aber $\sup_{k \in \MdN} \| T_{k} (x_{n})_{n} \| = \sup_{k \in \MdN} \| k x_{k} \| < \infty$, da $\sup$ nur über endlich viele Werte genommen wird.
+$F \coloneqq \{ (x_{n})_{n}: x_{n} = 0$ für alle, bis auf endlich viele $n \}$ mit $\| \cdot \|_{\infty}$ und betrachte $T_{k} (x_{n})_{n} = k x_{k}$. \\ 
+	Dann gilt $\| T_{k} \| = k$ und $\sup_{k \in \MdN} \| T_{k} \| = \infty$, aber 
+	\[ \sup_{k \in \MdN} \| T_{k} (x_{n})_{n} \| = \sup_{k \in \MdN} \| k x_{k} \| < \infty, \]
+	da das Supremum nur über endlich viele Werte genommen wird.
 \end{beispiel*}
 
 
 \begin{kor} \label{kor:9.7}
-	Sei $X$ ein Banachraum, $Y$ normiert und $(T_{n})_{n} \subset B(X, Y)$ derart, dass
+	Sei $X$ ein Banachraum, $Y$ normiert und $(T_{n})_{n \geq 1} \subset B(X, Y)$ derart, dass
 	\[ \lim_{n \rightarrow \infty} T_{n} x =: y \text{ existiert für alle } x \in X \]
 	Dann ist $T_{x} \coloneqq y_{x}$ linear und $T \in B(X, Y)$
 	\begin{beweis}
