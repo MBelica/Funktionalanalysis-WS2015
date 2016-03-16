@@ -8,16 +8,15 @@
 	Sei $X$ ein Banachraum. $P \colon X \rightarrow X$ hei{\ss}t \begriff{Projektion}, wenn $P$ linear und $P^{2} = P$ ist.
 \end{definition}
 
-Frage: Wann ist $P$ beschränkt?
-
+Die Frage die wir uns dabei stellen sollten, lautet: wann ist $P$ beschränkt?
 
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item $X = L^{p}(\MdR), $ $\Omega \subset \MdR: $ $\mu(\Omega) > 0, \mu(\MdR \setminus \Omega) > 0$
-			\[ P f \coloneqq \1_{\Omega} f \Rightarrow P^{2} f = \1_{\Omega}^{2} f = \1_{\Omega} f = P f \]
-			$\| P f \|_{L^{p}} = \left( \int | \1_{\Omega} |^{p} \right)^{\frac{1}{p}} = \left( \int_{\Omega} | f |^{p} \right)^{\frac{1}{p}} \leq \| f \|_{L^{p}}$ $\Rightarrow P$ ist beschränkt.
-		\item $X = L^{p}[0, 1]^{2},$ mit $1 \leq p < \infty, \quad P f(x, y) \coloneqq \int_{0}^{1} f(s, y) ds$
-			\[ \Rightarrow P^{2} f (x, y) = \int_{0}^{1} \int_{0}^{1} f(s, y) ds dt = \int_{0}^{1} f(s, y) ds = P f(x, y) \]
+		\item $X = L^{p}(\MdR)$, $\Omega \subset \MdR: $ $\mu(\Omega) > 0$, $\mu(\MdR \setminus \Omega) > 0$
+			\[ P f \coloneqq \1_{\Omega} f ~ \Rightarrow ~ P^{2} f = \1_{\Omega}^{2} f = \1_{\Omega} f = P f \]
+			$\| P f \|_{L^{p}} = \left( \int | \1_{\Omega} f |^{p} d\mu \right)^{\frac{1}{p}} = \left( \int_{\Omega} | f |^{p} d\mu \right)^{\frac{1}{p}} \leq \| f \|_{L^{p}}$ $\Rightarrow P$ ist beschränkt.
+		\item $X = L^{p}[0, 1]^{2},$ mit $1 \leq p < \infty$
+			\[ P f(x, y) \coloneqq \int_{0}^{1} f(s, y) ds ~ \Rightarrow ~ P^{2} f (x, y) = \int_{0}^{1} \int_{0}^{1} f(s, y) ds dt = \int_{0}^{1} f(s, y) ds = P f(x, y) \]
 			\begin{align*}
 				\| P f \|_{L^{p}} & = \left( \int_{0}^{1} \int_{0}^{1} \left| \int_{0}^{1} f(s, y) ds \right|^{p} dy dx \right)^{\frac{1}{p}} \\
 				& \overset{\triangle-\text{Ungl.}}{\leq} \left( \int_{0}^{1} \left( \int_{0}^{1} |f(s, y)| ds \right)^{p} dy \right)^{\frac{1}{p}} \\
@@ -35,8 +34,8 @@ Frage: Wann ist $P$ beschränkt?
 \begin{beweis}
 	Sei $(b_{i})_{i \in I}$ eine Basis von $M$ und $(b_{j})_{j \in J}$ von $X$, mit $I \subset J$. \\
 	Nun existiert ein $(\alpha_{j}(x))_{j}$:
-	\[ x = \sum_{j \in J} \alpha_{j}(x) b_{j} \text{ und höchstens endlich viele } \alpha_{j}(x) = 0. \]
-	$P(X) \coloneqq \sum_{i \in I} \alpha_{i}(x) b_{i}$.
+	\[ x = \sum_{j \in J} \alpha_{j}(x) b_{j} \text{ mit } \alpha_{j}(x) = 0 \text{ für fast alle } j \in J. \]
+	$P(x) \coloneqq \sum_{i \in I} \alpha_{i}(x) b_{i}$.
 \end{beweis}
 
 
@@ -44,6 +43,7 @@ Frage: Wann ist $P$ beschränkt?
 	Sind $X, Y$ Banachräume, dann ist auch $X \oplus Y$ ein Banachraum mit $\| (x, y) \|_{X \bigoplus Y} = \| x \|_{X} + \| y \|_{Y}$ $\forall x \in X, y \in Y$
 \end{erinnerung}
 
+\newpage % todo temporarily for optics
 
 \begin{satz} \label{satz:11.4}
 	Sei $X$ ein Banachraum, $M \subset X$ ein abgeschlossener Untervektorraum. Dann sind folgende Aussagen äquivalent:
@@ -55,9 +55,9 @@ Frage: Wann ist $P$ beschränkt?
 \end{satz}
 
 \begin{beweis}
-	$a) \Rightarrow b)$ Definiere $N = (I + P)(X)$. Dann gilt
+	$a) \Rightarrow b)$ Definiere $N = (I - P)(X)$. Dann gilt
 		\[ X = P(X) + (I - P)(X) \text{ und } P(X) \cap (I - P)(X) = \{ 0 \} \]
-		$N$ ist abgeschlossen, dann $N = \kernn{P} = P^{-1}\{ 0 \}$ und $P$ ist stetig.	\\ \\
+		$N$ ist abgeschlossen, denn $N = \kernn{P} = P^{-1}\{ 0 \}$ und $P$ ist stetig.	\\ \\
 	$b) \Rightarrow c)$ Sei $N$ wie in $b)$. $J: M \oplus N \rightarrow X,$ $J(x, y) = x + y$. Dann gilt:
 		\begin{align*}
 			\| x + y \| & = \| J(x, y) \| \quad \forall x \in M, y \in N \\
@@ -92,7 +92,7 @@ Frage: Wann ist $P$ beschränkt?
 				N & = \{ f \in L^{p}([0, 1]^{2}): \int_{0}^{1} f(s, y) ds = 0 \text{ fast überall, } y \in [0, 1] \}
 			\end{align*}
 	\end{enumerate}
-	$\left( a) \& b) \right)$ Da $P$ stetig ist, gilt: $X = M \oplus N$.
+	Sowohl in $a)$ als auch in $b)$ gilt $X = M \oplus N$, da $P$ in beiden Fällen stetig ist.
 \end{beispiel*}
 
 
