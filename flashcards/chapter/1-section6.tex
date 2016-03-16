@@ -18,9 +18,8 @@
 	\end{karte}
 	
 	\begin{karte}{Äquivalenzen zur Kompaktheit}
-		Sei $(M, d)$ ein metrischer Raum. Für $k \subset M$ sind folgende Aussagen äquivalent:
+		Sei $(M, d)$ ein metrischer Raum. Für $k \subset M$ sind folgende Aussagen äquivalent zu $K$ ist (folgen-)kompakt:
 		\begin{enumerate}[label=\alph*\upshape)]
-		 	\item $K$ ist (folgen-)kompakt
 			\item $K$ ist vollständig und total beschränkt, d.h. für alle $\epsilon > 0$ gibt es endlich viele $x_{1}, \dotsc, x_{m} \in M$ so dass ~ $K \subset \bigcup_{j = 1}^{m} K(x_{j}, \epsilon)$
 			\item Jede Überdeckung von $K$ durch offene Mengen $U_{j}, j \in J$ mit $K \subset \bigcup_{j \in J} U_{j}$ besitzt eine endliche Teilüberdeckung, d.h. $j_{1}, \dotsc, j_{m}$ mit ~ $K \subset \bigcup_{k = 1}^{m} U_{j_{k}}$
 		\end{enumerate}	
@@ -36,10 +35,8 @@
 	\end{enumerate}
 	\end{karte}
 		
-	\begin{karte}{Arzela Ascoli}
-	Sei $(S, d)$ ein kompakter, metrischer Raum
-	\[ C(S) = \{ d \colon S \rightarrow \MdK \text{ stetig} \} \]
-	$\| f \|_{\infty} = \sup_{s \in S} | f(s) |$. Eine Teilmenge $M \subset C(S)$ ist kompakt, genau dann wenn gilt
+	\begin{karte}{Arzelà-Ascoli}
+	Sei $(S, d)$ ein kompakter, metrischer Raum. Definiere $C(S) \coloneqq \{ d \colon S \rightarrow \MdK \text{ stetig} \}$, $\| f \|_{\infty} = \sup_{s \in S} | f(s) |$. Eine Teilmenge $M \subset C(S)$ ist kompakt, genau dann wenn gilt
 		\begin{enumerate}[label=\alph*\upshape)]
 			\item $M$ ist beschränkt in $C(S)$,
 			\item $M$ ist abgeschlossen in $C(S)$ und
@@ -47,4 +44,12 @@
 				\[ \forall \epsilon > 0 \text{ } \exists \delta > 0 \text{ } \forall x \in M: d(s, t) < \delta \Rightarrow | x(s) - x(t) | < \epsilon \]
 		\end{enumerate}
 	\end{karte}
-	
+
+	\begin{karte}{Äquivalenzen zur relativen Kompaktheit}	
+		Sei $X$ ein Banachraum. Für $K \subseteq X$ sind äquivalent
+		\begin{enumerate}[label=\alph*\upshape)]
+			\item $K$ relativ kompakt (d.h. $\overline{K}$ ist kompakt)
+			\item Jede Folge $(x_{k}) \subseteq K$ hat eine Cauchy-Teilfolge
+			\item $\forall \epsilon > 0$ $\exists y_{1}, \dotsc, y_{m} \in K$ mit $K \subseteq K(y_{1}, \epsilon) \cup \dotsc \cup K(y_{m}, \epsilon)$
+		\end{enumerate}
+	\end{karte}
