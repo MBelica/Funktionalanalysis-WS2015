@@ -1,0 +1,47 @@
+\subsection*{7 - Kompakte Op.}
+
+	\begin{karte}{kompakter Operator}
+		Sei $X$ ein normierter Raum, Y ein Banachraum. Ein linearer Operator $T \colon X \rightarrow Y$ hei{\ss}t kompakt, falls $T(U_{X})$ relativ kompakt ist in $Y$.
+	\end{karte}
+
+	\begin{karte}{$K(X, Y)$}	
+		$K(X, Y) =$ Raum der linearen, kompakten Operatoren von $X$ nach $Y$.
+		
+		Bemerkung:
+		\begin{enumerate}[label=\alph*\upshape)]
+			\item $T \in K(X, Y) \gdw$ jede beschränkte Folge $(x_{n}) \subset X$ besitzt eine Teilfolge $(x_{n_{k}})$ mit $T(x_{n_{k}})$ ist Cauchy-Folge in $Y$.
+			\item $K(X, Y) \subset B(X, Y)$, da die kompakte Menge $\overline{T(U_{X})}$ beschränkt in $Y$ ist.
+		\end{enumerate}	
+	\end{karte}
+
+	\begin{karte}{Eigenschaften von $K(X, Y)$}		
+		Seien $X, Y$ und $Z$ Banachräume.
+		\begin{enumerate}[label=\alph*\upshape)]
+			\item $K(X, Y)$ ist ist ein linearer, \textit{abgeschlossener} Teilraum von $B(X, Y)$.
+			\item Seien $T \in B(X, Y), S \in B(Y, Z)$ und entweder $T$ oder $S$ kompakt. Dann ist $S \circ T \in K(X, Z)$. \\
+			Insbesondere: $K(X) = K(X, X)$ ist ein Ideal in $B(X)$.
+		\end{enumerate}
+	\end{karte}
+
+	\begin{karte}{Folge endlich dimensionaler beschränkter Operatoren}		
+		Seien $X, Y$ Banachräume, $T \in B(X, Y)$. \\
+		Falls es endlich dimensionale Operatoren $T_{n} \in B(X, Y)$ gibt, dann ist $T \in K(X, Y)$.
+		
+		Beweis:
+			Bemerkung nach 7.1, 7.5 a)	
+	\end{karte}
+
+	\begin{karte}{Folge der Approximationseigenschaft}			
+		Seien $X, Y$ Banachräume und $X$ habe die \begriff{Approximationseigenschaft} (d.h. es existieren endlich dimensionale Operatoren $S_{n} \in B(X): S_{n} x \rightarrow x, \quad \forall x \in X$). \\ \\
+		Dann gilt: $K(X, Y) = \overline{F(X, Y)}$ in der Operatornorm, wobei $F(X, Y) = \{ T \in B(X, Y): \dim T(X) < \infty \}$.
+	\end{karte}
+	
+	\begin{karte}{Approximative Eins}
+		Sei $\phi \in L^{1}(\MdR^{d})$ mit $\phi \geq 0$ und $\int_{\MdR^{d}} \phi(u) du = 1$. Dann hei{\ss}t $\phi_{\epsilon}(u) = \epsilon^{-d} \phi(\epsilon^{-1} u), \epsilon > 0$,	\begriff{approximative Eins}. \\
+		Notation: $\phi_{\epsilon} \ast f(u) = \int \phi_{\epsilon}(u - v) f(v) dv$.
+	\end{karte}
+	
+	\begin{karte}{Konvergenz der Approximativen Eins}
+		Sei $(\phi_{\epsilon})_{\epsilon > 0}$ eine approximative Eins. Dann gilt für alle $f \in L^{p}(\MdR^{d}), 1 \leq p < \infty$
+		\[ \| f - \phi_{\epsilon} \ast f \|_{L^{p}} \xrightarrow[\epsilon \rightarrow 0]{} 0 \]	
+	\end{karte}

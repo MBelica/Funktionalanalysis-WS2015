@@ -1,0 +1,24 @@
+\subsection*{8 - Approx. von $L^{p}$ Fkt}
+
+	\begin{karte}{Beschränkter Kern definiert beschränkten Operator}
+		Sei $k \colon \Omega \times \Omega \rightarrow \MdK$ messbar	und
+		\begin{align*}
+			\sup_{u \in \Omega} & \int_{\Omega} |k(u, v)| dv \leq C_{1} < \infty \text{ und} \\
+			\sup_{v \in \Omega} & \int_{\Omega} |k(u, v)| du \leq C_{2} < \infty
+		\end{align*}
+		Dann wird durch \hyperref[eq:8.0-BeschrOperatorInLp]{$(*)$} ein beschränkter Operator $T \colon L^{p}(\Omega) \rightarrow L^{p}(\Omega)$ mit
+		\[ \| T \|_{L^{p} \rightarrow L^{p}} \leq C_{1}^{\frac{1}{p'}} C_{1}^{\frac{1}{p}}, \quad \frac{1}{p'} + \frac{1}{p} = 1   \]
+		und $1 \leq p \leq \infty$.		
+	\end{karte}
+	
+	\begin{karte}{Bedingter Erwartungsoperator} 
+	Sei $\ca = \{ A_{n} \}_{n \in \MdN}$ eine Partition von $\Omega$ in paarweise disjunkte, messbare Mengen $A_{n}$ mit $0 < \mu(A_{n}) < \infty$. Setze
+	\[ \EW_{\ca}(f)(s) = \sum_{n} \left[ \frac{1}{\mu(A_{n})} \int_{A_{n}} f(t) dt \right] \1_{A_{n}}(s) \] 
+	\end{karte}
+	
+	\begin{karte}{Young}
+		Für $k \in L^{1}(\MdR^{d})$ setze für $f \in L^{p}(\MdR^{d})$
+		\[ (k \ast f) (u) = \int_{\MdR^{d}} k(u - v) f(v) dv \quad (*) \label{eq:8.5-Young} \]
+		$k \ast f$ hei{\ss}t \begriff{Faltung} von $k$ und $f$. \\
+		Dann definiert \hyperref[eq:8.5-Young]{$(*)$} einen beschränkten Operator $T f = k \ast f$ von $L^{p}(\MdR^{d})$ nach $L^{p}(\MdR^{d})$ für $1 \leq p \leq \infty$ und $\|T\|_{L^{p} \rightarrow L^{p}} \leq \|k\|_{L^{1}}$.
+	\end{karte}
