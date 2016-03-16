@@ -1,0 +1,64 @@
+\subsection*{3 - Beschr. und lin. Op.}
+
+	\begin{karte}{Beschränkte Menge}
+		Eine Teilmenge V eines normieren Raums $(X, \| \cdot \|)$ hei{\ss}t \begriff{beschränkt}, falls 
+		\[ c \coloneqq \sup_{x \in V} \| x \| < \infty, \text{ und damit auch } V \subset c U_{(X, \| \cdot \| )} . \]
+	\end{karte}
+	
+	\begin{karte}{Beschränkte Folge}
+		Eine konvergente Folge $(x_{n})	\in X, x_{n} \rightarrow x$ ist beschränkt, denn $x_{m} \in \{ y: \| x - y \| \leq 1 \}$ für fast alle $m$.
+	\end{karte}	
+	
+	\begin{karte}{Äquivalenzen zu $T$ stetig}
+		Seien $X$, $Y$ normierte Räume. Für einen linearen Operator $S: X \rightarrow Y$ sind äquivalent:
+		\begin{enumerate}[label=\alph*\upshape)]
+			\item $T$ stetig, d.h. $x_{n} \rightarrow x$ impliziert $Tx_{n} \rightarrow Tx$
+			\item $T$ stetig in 0
+			\item $T(U_{(X, \| \cdot \|)})$ ist beschränkt in $Y$
+			\item Es gibt ein $c < \infty$ mit $\| Tx \| \leq c \| x \|$
+		\end{enumerate}
+	\end{karte}	
+	
+	\begin{karte}{Vektorraum der beschränkten, linearen Operatoren}
+		Seien $X, Y$ normierte Räume. Mit $B(X, Y)$ bezeichnen wir den \begriff{Vektorraum der beschränkten, linearen Operatoren} $T: X \rightarrow Y$. Ist $ X = Y$ schreiben wir auch kurz $B(X) \coloneqq B(X, X)$.
+		
+			$(B(X, Y), \| \cdot \|)$ ist ebenfalls ein normierter Raum und für $X = Y$ gilt für $S, T \in B(X)$:
+ 		\[ S \cdot T \in B(X) \quad \text{und} \quad \| S \cdotp T \| \leq \| S \| \| T \| \]
+	\end{karte}
+	
+	\begin{karte}{Isometrie}
+		Seien $X, Y$ normierte Vektorräume und $T: X \rightarrow Y$ linear.
+	
+		$T$ hei{\ss}t \begriff{Isometrie}, falls 
+			\[ \| Tx \|_{Y} = \| x \|_{X}, ~ \forall x \in X \]
+	\end{karte}
+	
+	\begin{karte}{stetige Einbettung}
+		Seien $X, Y$ normierte Vektorräume und $T: X \rightarrow Y$ linear.
+	
+		$T$ hei{\ss}t \begriff{stetige Einbettung}, falls $T$ stetig und injektiv ist.
+	\end{karte}
+
+	\begin{karte}{isomorphe Einbettung}
+		Seien $X, Y$ normierte Vektorräume und $T: X \rightarrow Y$ linear.
+		
+	$T$ hei{\ss}t \begriff{isomorphe Einbettung}, falls $T$ injektiv ist und ein $c > 0$ existiert mit
+			\[ \frac{1}{c} \| x \|_{X} \leq \| Tx \|_{Y} \leq c \| x \|_{x} \]
+			In diesem Fall identifizieren wir oft $X$ mit dem Bild von $T$ in $Y$, $X \cong T(X) \subset Y$
+	\end{karte}
+	
+	\begin{karte}{Isomorphismus}
+		Seien $X, Y$ normierte Vektorräume und $T: X \rightarrow Y$ linear.
+		
+	$T$ hei{\ss}t \begriff{Isomorphismus}, falls $T$ bijektiv und stetig ist und $T^{-1}: Y \rightarrow X$ ebenfalls stetig ist. 
+			\[ \text{d.h. falls } \exists c > 0: \frac{1}{c} \| x \|_{X} \leq \| T x \|_{Y} \leq c \| x \|_{X} \]
+			\[ \text{(daraus folgt dann auch für }T^{-1}: Y \rightarrow X \text{ aus der ersten Ungleichung } \]
+			\[ \| T^{-1}y \|_{X} \leq c \| T (T^{-1}y) \|_{Y} = c \| y \|_{Y}, \text{d.h. } T^{-1} \text{ ist stetig.)}\]
+			In diesem Fall Identifizieren wir $X \cong Y$ und sagen $X$ und $Y$ sind isomorph.
+	\end{karte}
+	
+	\begin{karte}{Dualraum}
+		Sei $X$ ein normierter Vektorraum. Der Raum
+ 		\[ X' = B(X, \MdK) \]	
+ 		hei{\ss}t \begriff{Dualraum} von $X$ oder Raum der linearen Funktionalen.
+	\end{karte}

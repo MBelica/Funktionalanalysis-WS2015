@@ -1,0 +1,57 @@
+\subsection*{4 - Metrische R{\"a}ume}
+
+	\begin{karte}{Metrik}
+		Sei $M$ eine nichtleere Menge. Eine Abbildung $d \colon M \times M \rightarrow 	\MdR$ hei{\ss}t \begriff{Metrik} auf $M$, falls $\forall x, y, z \in M:$
+			\begin{description}
+				\item[$\hspace{0.5cm} (M1) \hspace{0.1cm} $] $d(x, y) \geq 0, \hspace{0.25cm} d(x, y) = 0 \gdw x = y $  (positive Definitheit)
+				\item[$\hspace{0.5cm} (M2) \hspace{0.1cm} $] $d(x, y) = d(y, x)$  (Symmetrie)
+				\item[$\hspace{0.5cm} (M3) \hspace{0.1cm} $] $d(x, z) \leq d(x, y) + d(y, z)$  (Dreiecksungleichung)
+			\end{description}
+	\end{karte}
+	
+	\begin{karte}{Konvergente Folge im metrischen Raum}
+		Eine Folge $(x_{n})_{n \geq 1} \subset M$ konvergiert gegen $x \in M$, falls
+			\[ d(x_{n}, x) \rightarrow 0 \hspace{0.5cm} \text{für } n \rightarrow \infty \]	 
+			Notation: $x = \lim_{n \rightarrow \infty} x_{n}$ (in $M$)
+	\end{karte}
+	
+	\begin{karte}{Durch Halbnorm induzierte Metrik}
+		Sei $X$ ein Vektorraum und $p_{j}$ für $j \in \MdN$ Halbnormen auf $X$ mit der Eigenschaft, dass für jedes $x \in X \setminus \{ 0 \}$ ein $K \in \MdN$ existiert mit $p_{K} > 0$. Dann definiert
+			\[ d(x, y) \coloneqq \sum_{j \geq 1} 2^{-j} \frac{p_{j}(x - y)}{1 + p_{j}(x -y)}, \hspace{0.5cm} x, y \in X \]
+			eine Metrik auf $X$ mit
+			\[ d(x_{n}, x) \rightarrow 0 \gdw p_{j}(x_{n} - x) \rightarrow 0 \hspace{0.25cm} (n \rightarrow  \infty) \hspace{0.25cm} \forall j \in \MdN \]
+	\end{karte}
+
+	\begin{karte}{Abgeschlossen Menge}	
+		Sei $(M, d)$ ein metrischer Raum. Eine Teilmenge $A \subset M$ hei{\ss}t \begriff{abgeschlossen} (in $M$), falls für alle in $M$ konvergenten Folgen $(x_{n})_{n \geq 1} \subset A$ der Grenzwert von $(x_{n})$ in $A$ liegt
+	\end{karte}
+
+	\begin{karte}{Offene Menge}	
+		Eine Teilmenge $U \subset M$ hei{\ss}t \begriff{offen} (in $M$), falls zu jedem $x \in U$ ein $\epsilon > 0$ existiert, sodass
+			\[ \{ y \in M: d(x, y) < \epsilon \} \subset U \]
+			$A \subset M$ ist offen in $M$ genau dann, wenn $U = M \setminus A$ abgeschlossen ist
+	\end{karte}
+	
+	\begin{karte}{Offene bzw. abgeschlossene Kugel}		
+		Wir benutzen die Bezeichnungen
+			\begin{itemize}
+				\item \textbf{offene Kugel}: $K(x, r)  \coloneqq \{ y \in M: d(x, y) < r \}$
+				\item \textbf{abgeschlossene Kugel}: $\bar K(x, r) \coloneqq \{ y \in M: d(x, y) \leq r \}$
+			\end{itemize}
+			mit $x \in M, r > 0$. Man sieht leicht, dass $K(x, r)$ offen und $\bar K(x, r)$ abgeschlossen ist.
+	\end{karte}
+	
+	\begin{karte}{Offene Menge bezüglich diskreter Metrik}
+		Bezüglich der diskreten Metrik $d$ aus \hyperref[bsp:1-diskreteMetrik]{Beispiel 4.2 b)} ist $\{x\} \subset M$ offen für jedes $x \in M$, da
+			\[ K(x, r) = \{ x \} \subset \{ x \} \text{ für } r \in (0, 1] \]	
+	\end{karte}
+
+	\begin{karte}{Vereinigungen/Schnitte offener/abgeschlossener Mengen}
+		Für eine beliebige Familie von abgeschlossenen Mengen $(A_{i})_{i \in I}$ sind 
+			\[ A \coloneqq \bigcap_{i \in I} A_{i} \hspace{0.5cm} \text{ und } \hspace{0.5cm} A_{i_{1}} \cup \dotsc \cup A_{i_{N}} \hspace{0.25cm} (i_{1}, \dotsc, i_{N} \in I) \]
+			abgeschlossen in $M$.
+			
+		Für eine beliebige Familie offenere Mengen $(U_{i})_{i \in I}$ sind
+			\[ U \coloneqq \bigcup_{i \in I} U_{i} \quad \text{und} \quad U_{i_{1}} \cap \dotsc \cap U_{i_{N}} \qquad (i_{1}, \dotsc, i_{N} \in I) \] 
+			offen in $M$.
+	\end{karte}
