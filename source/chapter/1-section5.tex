@@ -190,20 +190,21 @@
 \end{prop} 
 
 \begin{beweis}
-	Zu $x \in X$ wähle wine Folge $(x_{n}) \subset D$ mit $\| x_{n} - x \|_{X} \rightarrow 0$. Dann ist $(x_{n}) \subset X$ auch eine Cauchy-Folge und
+	Zu $x \in X$ wähle eine Folge $(x_{n})_{n \geq 1} \subset D$ mit $\| x_{n} - x \|_{X} \rightarrow 0$, dann ist $(x_{n})_{n \geq 1} \subset X$ auch eine Cauchy-Folge und
 	\[ \| Tx_{n} - Tx_{m} \|_{Y} \leq M \|x_{n} - x_{m} \|_{X} \rightarrow 0,  \]
-	d.h. $(Tx_{n})$ ist auch eine Cauchy-Folge in $Y$ und da $Y$ ein Banachraum ist, existiert $\hat T x = \lim T x_{n}$ in $Y$. \\
+	d.h. $(Tx_{n})$ ist eine Cauchy-Folge in $Y$ und da $Y$ ein Banachraum ist, existiert 
+		\[ \hat T x = \lim_{n \rightarrow \infty} T x_{n} \text{ in } Y. \]
 	$\hat T$ wohldefiniert: Sei $y_{n} \in D$ mit $y_{n} \rightarrow x$, dann ist 
 		\[ \| T x_{n} - T y_{n} \| \leq M \| x_{n} - y_{n} \| \leq M \left( \| x_{n} - x \| + \| x - y_{n} \| \right) \rightarrow 0 \]
 	$\hat T$ linear: Ist $x_{n}, y_{n} \in D : x_{n} \rightarrow x, y_{n} \rightarrow y$, so gilt:
 		\[ T(x_{n} + y_{n}) = T(x_{n}) + T(y_{n}) \xRightarrow[]{n \rightarrow \infty} \hat T(x + y) = \hat T(x) + \hat T(y) \]
 	$\hat T$ beschränkt: Sei $(x_{n}) \in D, x_{n} \rightarrow x$,
-	\[ \| \hat T x \| = \lim \| T x_{n} \| \leq M \| x \| \Rightarrow \| \hat T \| \leq M \]
+	\[ \| \hat T x \| = \lim_{n \rightarrow \infty} \| T x_{n} \| \leq M \| x \| \Rightarrow \| \hat T \| \leq M \]
 \end{beweis}
 
 
 \begin{kor} \label{kor:5.11}
-	Sei $X$ ein normierter Banachraum, $D \subset X$ dicht in $X$ und sei eine Folge $T_{n} \in B(X, Y)$, wobei $(T_{n} x)$ eine Cauchy-Folge für jedes $x \in D$ sei. \\
+	Sei $X$ ein normierter Vektorraum, $Y$ ein Banachraum und $D \subset X$ dicht in $X$ und sei eine Folge $T_{n} \in B(X, Y)$, wobei $(T_{n} x)$ eine Cauchy-Folge für jedes $x \in D$ sei. \\
 		Dann gibt es genau einen Operator $T \in B(X, Y)$ mit
 		\[ \lim_{n \rightarrow \infty} T_{n} x = T x \]
 	\begin{beweis}
@@ -223,7 +224,7 @@
 
 
 \begin{beispiel}
-	Seo $e_{n}(t) \coloneqq e^{2 \pi n t i} = \cos(2 \pi n t) + i \sin(2 \pi n t)$, $D = \{ (\alpha_{n}) \in L^{2}(\MdZ):$ Nur endlich viele $\alpha_{n} \neq 0 \}$.
+	Sei $e_{n}(t) \coloneqq e^{2 \pi n t i} = \cos(2 \pi n t) + i \sin(2 \pi n t)$, $D = \{ (\alpha_{n}) \in L^{2}(\MdZ):$ Nur endlich viele $\alpha_{n} \neq 0 \}$.
 	\[ T \colon \begin{cases} D \rightarrow L^{2}[0, 1] \\ (\alpha_{n}) \rightarrow \sum_{n \in \MdZ} \alpha_{n} e_{n} \end{cases} \]
 	Wie kann man mit unendlichen Reihen $\sum_{n \in \MdZ} \alpha_{n} e_{n}$ definieren? \\
 	Ohne Beweis aus der Fourieranalysis:
@@ -262,8 +263,8 @@
 		Wähle zu $k \in \MdN$ ein $x_{n_{k}}$ so, dass
 		\[ \| x_{n_{k+1}} - x_{n_{k}} \| \leq 2^{-k}.\]
 		Setze $y_{0} = x_{k_{1}}$ und für $k \in \MdN: y_{k} = y_{n_{k+1}} - y_{n_{k}}$. \\
-		Dann gilt: $\sum_{k \geq 1} \| y_{k} \| \leq \sum_{k \geq 1} 2^{-k} < \infty$. Nach $b)$ konvergiert die Reihe $\sum_{k \geq 1} y_{k}$ in $Y$. \\
-		$\sum_{j = 0}^{k} x_{j} \overset{Teleskopsumme}{=} x_{n_{k}} \Rightarrow $ die Folge $(x_{n_{k}})_{k \in \MdN}$ konvergiert in $X$. \\
+		Dann gilt: $\sum_{k \geq 1} \| y_{k} \| \leq \sum_{k \geq 1} 2^{-k} < \infty$. Nach $b)$ konvergiert die Reihe $\sum_{k \geq 1} y_{k}$ in $X$. \\
+		$\sum_{j = 0}^{k} x_{j} \underset{summe}{\overset{Teleskop-}{=}}x_{n_{k}} \Rightarrow $ die Folge $(x_{n_{k}})_{k \in \MdN}$ konvergiert in $X$. \\
 		$(x_{n})$ ist eine Cauchy-Folge $\Rightarrow \lim_{n \rightarrow \infty} x_{n}$ existiert in $X$.
 \end{beweis}
 
