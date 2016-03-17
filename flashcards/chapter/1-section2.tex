@@ -46,17 +46,20 @@
 	\end{karte}
 	
 	\begin{karte}{Äquivalenzen zu äquivalente Norm}
-		Für zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ auf $X$ sind folgende Aussagen äquivalent:
+		Für zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ auf $X$ sind äquivalent:
 		\begin{enumerate}[label=\alph*\upshape)]
 			\item $\| \cdot \|_{1}, \| \cdot \|_{2}$ sind äquivalent
-			\item Für alle $(x_{n})_{n} \subset X$, $x \in X$ gilt $\| x_{n} - x \|_{1} \rightarrow 0 \gdw \| x_{n} - x \|_{2} \rightarrow 0 $
+			\item Für alle $(x_{n})_{n} \subset X$, $x \in X$ gilt $ \| x_{n} - x \|_{1} \rightarrow 0 \gdw \| x_{n} - x \|_{2} \rightarrow 0 $
 			\item Für alle $(x_{n})_{n} \subset X$ gilt $\| x_{n} \|_{1} \rightarrow 0 \gdw \| x_{n} \|_{2} \rightarrow 0 $
-			\item Es gibt Konstanten $0 < m$, $M < \infty$, so dass $m U_{(X, \| \cdot \|_{1})} \subseteq U_{(X, \| \cdot \|_{2})} \subseteq M U_{(X, \| \cdot \|_{1})}$
+			\item Es gibt Konstanten $0 < m$, $M < \infty$, so dass 
+				\[ m U_{(X, \| \cdot \|_{1})} \subseteq U_{(X, \| \cdot \|_{2})} \subseteq M U_{(X, \| \cdot \|_{1})} \]
 		\end{enumerate}
 	\end{karte}
 	
-	\begin{karte}{Folgenraum}	
-		$\MdF = \{ (x_{n}) \in \mathbb{K}^{\mathbb{N}}: x_{i} = 0 \text{ bis auf endlich viele } n \in \mathbb{N} \} $ ist der \begriff{Folgenraum} und $e_{j} = (0, \dotsc, 0, 1, 0, \dotsc, 0) $ der j-te Einheitsvektor in $\MdF$, wobei die $1$ an j-ter Stelle steht.
+	\begin{karte}{Folgenraum}
+		Wir definieren den \begriff{Folgenraum} mittels	
+		\[ \MdF = \{ (x_{n}) \in \mathbb{K}^{\mathbb{N}}: x_{i} = 0 \text{ bis auf endlich viele } n \in \mathbb{N} \} \]
+		  und $e_{j} = (0, \dotsc, 0, 1, 0, \dotsc, 0) $ der j-te Einheitsvektor in $\MdF$, wobei die $1$ an j-ter Stelle steht.
 	\end{karte}		
 
 	\begin{karte}{Minkowski-Ungleichung}
@@ -74,7 +77,8 @@
 	\begin{karte}{äquivalente Normen + unendlich dimensionale Räume}
 		Im unendlich dimensionalen Fall sind die Normen $\| \cdot \|_{p}$ auf $\MdF$ nicht äquivalent.
 		
-		Bsp.: sei o.B.d.A. $p > q$ und setze $x_{n} \coloneqq \sum_{j = 2^{n} + 1}^{2^{n + 1}} j^{-\frac{1}{p}}e_{j}$, $e_{j} = ( \delta_{ij} )_{i \in \MdN}$. \\
+		Bsp.: sei o.B.d.A. $p > q$ und setze 
+		\[ x_{n} \coloneqq \sum_{j = 2^{n} + 1}^{2^{n + 1}} j^{-\frac{1}{p}}e_{j}, e_{j} = ( \delta_{ij} )_{i \in \MdN} \]
 	\end{karte}
 	
 	\begin{karte}{Raum der beschränkten, m-fach stetig differenzierbaren Funktionen}	
