@@ -14,11 +14,64 @@
 	\begin{karte}{Bedingter Erwartungsoperator} 
 	Sei $\ca = \{ A_{n} \}_{n \in \MdN}$ eine Partition von $\Omega$ in paarweise disjunkte, messbare Mengen $A_{n}$ mit $0 < \mu(A_{n}) < \infty$. Setze
 	\[ \EW_{\ca}(f)(s) = \sum_{n} \left[ \frac{1}{\mu(A_{n})} \int_{A_{n}} f(t) dt \right] \1_{A_{n}}(s) \] 
+		\begin{itemize}
+			\item Für jede Partition $\ca = \{ A_{n} \}$ von $\Omega$ ist $\EW_{\ca} \in B \left( L^{p}(\Omega) \right)$ für alle $1 \leq p \leq \infty$ mit $\| \EW_{\ca} \|_{L^{p} \rightarrow L^{p}} = 1.$
+			\item Bild $\EW_{\ca} = \EW_{\ca}(L^{p})$ ist isometrisch zu $\ell^{p}_{m} \cong \left( \MdK^{m}, \| \cdot \|_{p} \right)$, mit $m = card(A)$. 
+		\end{itemize}
 	\end{karte}
 	
+	\begin{karte}{Konvergenz des bedingten Erwartungsoperators}
+		Sei $\ca_{m} = \{ A_{n, m} : n = 1, \dotsc, m_{n} \}$ eine Zerlegung von $ \Omega \cap K(0, r_{m}), \Omega \subset \MdR^{d}$. \\
+		Es gelte $r_{m} \rightarrow \infty$ und $\ca_{m} \subset \ca_{m + 1}, r_{m} \rightarrow \infty$.
+		\[ d_{m} = \sup \{ |t - s|: s, t \in A_{m, n}, n = 1, \dotsc, m_{n} \} \] \[ \textit{'Feinheit der Zerlegung'} \]
+		Dann gilt für alle $f \in L^{p}(\Omega), 1 \leq p < \infty$
+		\[ \| \EW_{\ca_{m}} f - f \|_{L^{p}} \rightarrow 0 \text{ für } m \rightarrow \infty \]	
+	\end{karte}
+	
+	\begin{karte}{Approximation der kompakten Operatoren}
+			Für $X = L^{p}(\Omega), 1 \leq p < \infty$ gilt:
+		\[ K(X, X) = \overline{\cf(X, X)} = \text{ Abschluss der endl. dim. Operatoren} \]	
+	\end{karte}
+
+	\begin{karte}{Approximative Eins}
+		Sei $\phi \in L^{1}(\MdR^{d})$ mit $\phi \geq 0$ und $\int_{\MdR^{d}} \phi(u) du = 1$. Dann hei{\ss}t $\phi_{\epsilon}(u) = \epsilon^{-d} \phi(\epsilon^{-1} u), \epsilon > 0$,	\begriff{approximative Eins}. \\
+		Notation: $\phi_{\epsilon} \ast f(u) = \int \phi_{\epsilon}(u - v) f(v) dv$. \\
+		Bsp: $\phi(u) = \frac{1}{|B(0, 1)|} \cdot \1_{B(0, 1)}(u), \phi \geq 0, \int \phi du = 1	$ \\
+	\begin{align*}
+		\phi_{\epsilon} \ast f(u) & = \frac{1}{|B(u, \epsilon)|} \int \1_{B(u, \epsilon)}(u - v) f(v) dv \\
+		&  = \frac{1}{|B(u, \epsilon)|} \int_{(u, \epsilon)} f(v) dv 
+	\end{align*}
+	Vermutung: $\phi_{\epsilon} \ast f(u) \xrightarrow[\epsilon \rightarrow 0]{} f(u)$.  Sinne jedoch noch unklar.		
+
+	\end{karte}
+	
+	\begin{karte}{Konvergenz der Approximativen Eins}
+		Sei $(\phi_{\epsilon})_{\epsilon > 0}$ eine approximative Eins. Dann gilt für alle $f \in L^{p}(\MdR^{d}), 1 \leq p < \infty$
+		\[ \| f - \phi_{\epsilon} \ast f \|_{L^{p}} \xrightarrow[\epsilon \rightarrow 0]{} 0 \]
+			\begin{enumerate}[label=\roman*\upshape)]
+		\item $\int \phi_{\epsilon}(u) du = 1$
+		\item $\int_{\MdR^{d} \setminus B(0, r)} \phi_{\epsilon}(u) du \xrightarrow[\epsilon \rightarrow 0]{} 0$
+		\item $\supp(\phi) \subset B(0, r) \Rightarrow \supp(\phi_{\epsilon}) \subset B(0, \epsilon)$
+		\item $\| \phi_{\epsilon} \ast f \|_{L^{p}} \leq 1 \| f \|_{L^{p}} \quad$ (nach \hyperref[satz:8.5-Young]{Young})
+	\end{enumerate}	
+	\end{karte}
+
 	\begin{karte}{Young}
 		Für $k \in L^{1}(\MdR^{d})$ setze für $f \in L^{p}(\MdR^{d})$
 		\[ (k \ast f) (u) = \int_{\MdR^{d}} k(u - v) f(v) dv \quad (*) \label{eq:8.5-Young} \]
 		$k \ast f$ hei{\ss}t \begriff{Faltung} von $k$ und $f$. \\
 		Dann definiert \hyperref[eq:8.5-Young]{$(*)$} einen beschränkten Operator $T f = k \ast f$ von $L^{p}(\MdR^{d})$ nach $L^{p}(\MdR^{d})$ für $1 \leq p \leq \infty$ und $\|T\|_{L^{p} \rightarrow L^{p}} \leq \|k\|_{L^{1}}$.
 	\end{karte}
+	
+	\begin{karte}{Dichte Menge in $L^{p}$}
+		Sei $\Omega \subseteq \MdR^{d}$ offen. Dann liegt
+		\[ C_{c}^{\infty}(\Omega) = \{ f : f \text{ ist unendlich oft differenzierbar} \]
+		\[ \quad ~ ~ \text{ und } \supp(f) \text{ ist kompakt.} \} \]
+		dicht in $L^{p}(\Omega)$.
+	\end{karte}
+		
+	\begin{karte}{Korollar 8.10}
+		Sei $\Omega \subseteq \MdR^{d}$ offen. Sei $f \in L^{p}(\Omega), p \in [1, \infty)$ mit
+			\[ \int f(u) g(u) du = 0 \text{ für alle } g \in C_{c}^{\infty}(\Omega) \]
+			Dann ist $f = 0$.
+	\end{karte}	

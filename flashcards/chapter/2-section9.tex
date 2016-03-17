@@ -1,0 +1,46 @@
+\subsection*{9 - Baire \& B.-S.}
+
+	\begin{karte}{Satz von Baire}
+		Sei $(M, d)$ ein vollständiger metrischer Raum und seien $(U_{n})_{n \geq 1}$ offen und dicht in $M$.
+		\[ \text{Dann ist } \bigcap_{n \in \MdN} U_{n} \text{ dicht in } M. \]
+	\end{karte}
+	
+	
+	\begin{karte}{nirgends dicht}
+		Eine Teilmenge $L$ eines metrischen Raums $M$ hei{\ss}t \begriff{nirgends dicht}, falls $\overline{L}$ keine inneren Punkte enthält.
+		
+		Ist $L$ nirgends dicht, dann ist $M \setminus \overline{L}$ dicht in $M$.	
+	\end{karte}
+
+	\begin{karte}{1. Kategorie}
+		Eine Teilmenge $L$, die sich als Vereinigung von einer Folge von nirgends dichten Mengen $L_{n}$ darstellen lässt, d.h. $L = \bigcup_{n \in \MdN} L_{n}$ hei{\ss}t von \begriff{1. Kategorie}.		
+	\end{karte}
+
+	\begin{karte}{2. Kategorie}
+		$L$ hei{\ss}t von \begriff{2. Kategorie}, falls $L$ nicht von 1. Kategorie ist.		
+	\end{karte}
+	
+	\begin{karte}{Kategoriensatz von Baire}
+		\begin{enumerate}[label=\alph*\upshape)]
+			\item In einem vollständigen metrischen Raum $(M, d)$ liegt das Komplement einer Menge $L$ von 1. Kategorie stets dicht. Insbesondere:
+			\item Ein vollständig metrischer Raum ist von 2. Kategorie
+			\item Sei $(M, d)$ vollständig und $(M_{n})_{n \geq 1}$ eine Folge abgeschlossener Mengen mit $M = \bigcup_{n \in \MdN} M_{n}$. Dann enthält mindestens ein $M_{n}$ eine Kugel
+		\end{enumerate}	
+	\end{karte}
+
+	\begin{karte}{Dichte Teilmenge von $(C[0, 1], \|\cdot\|_{\infty})$}	
+		$E = \{ x \in C[0, 1]:$ $x$ ist in keinem Punkt von $[0, 1]$ differenzierbar$\}$ ist dicht in $(C[0, 1], \|\cdot\|_{\infty})$. \\
+		Insbesondere:
+ 		\begin{itemize}
+			\item $E \neq \emptyset$
+			\item $C^{1}[0, 1]$ ist von 1. Kategorie in $C[0, 1]$, also liegt $C[0, 1] \setminus C^{1}[0, 1]$ dicht in $C[0, 1]$.
+		\end{itemize}
+	\end{karte}
+	
+	\begin{karte}{Banach-Steinhaus}
+		Sei $X$ ein Banachraum, $Y$ ein normierter Raum, $I$ eine Indexmenge und $(T_{i})_{i \geq 1} \in B(X, Y)$.
+		Falls:
+		\[ \sup_{i \in I} \| T_{i} x \| = c(x) < \infty, \quad \forall x \in X \]
+		dann ist auch
+		\[ \sup_{i \in I} \| T_{i} \| = \sup_{i \in I} \sup_{\| x \| \leq 1} \| T_{i} x \| < \infty. \]
+	\end{karte}

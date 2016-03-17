@@ -21,7 +21,6 @@ wobei $k \colon \Omega \times \Omega \rightarrow \MdK$ messbar.
 	\[ \| T \|_{L^{p} \rightarrow L^{p}} \leq C_{1}^{\frac{1}{p'}} C_{1}^{\frac{1}{p}}, \quad \frac{1}{p'} + \frac{1}{p} = 1   \]
 	und $1 \leq p \leq \infty$.
 \end{satz}
-
 \begin{beweis}
 	\begin{itemize}
 		\item $p = \infty:$ $f \in L^{\infty}(\Omega)$
@@ -91,8 +90,9 @@ wobei $k \colon \Omega \times \Omega \rightarrow \MdK$ messbar.
 
 
 \begin{satz} 
-	Sei $\ca_{m} = \{ A_{n, m} : n = 1, \dotsc, m_{n} \}$ eine Zerlegung von $ \Omega \cap K(0, r_{m}), \Omega \subset \MdR^{d} r_{m} \rightarrow \infty$ und $\ca_{m} \subset \ca_{m + 1}, r_{m} \rightarrow \infty$.
-	\[ d_{m} = \sup \{ |t - s|: s, t \in A_{m, n}, n = 1, \dotsc, m_{n} \} \quad \textit{'Feinheit der Zerlegung'} \]
+	Sei $\ca_{m} = \{ A_{n, m} : n = 1, \dotsc, m_{n} \}$ eine Zerlegung von $ \Omega \cap K(0, r_{m}), \Omega \subset \MdR^{d}$. \\
+	Es gelte $r_{m} \rightarrow \infty$ und $\ca_{m} \subset \ca_{m + 1}, r_{m} \rightarrow \infty$.
+	\[ d_{m} = \sup \{ |t - s|: s, t \in A_{m, n}, n = 1, \dotsc, m_{n} \} ~ \textit{'Feinheit der Zerlegung'} \]
 	Dann gilt für alle $f \in L^{p}(\Omega), 1 \leq p < \infty$
 	\[ \| \EW_{\ca_{m}} f - f \|_{L^{p}} \rightarrow 0 \text{ für } m \rightarrow \infty \]
 \end{satz}
@@ -153,7 +153,7 @@ wobei $k \colon \Omega \times \Omega \rightarrow \MdK$ messbar.
 \begin{bemerkung*}
 	$D \subseteq L^{p}(\MdR^{d})$ dicht, z.B.: $D = \{ f \in L^{\infty}(\MdR^{d}): \supp(f)$ kompakt$\}$
 	$f \in D: \int_{\MdR^{d}} k(u - v) f(v) dv$ existiert als Lebesgueintegral für alle $f \in D$. \\
-	Nach \hyperref[satz:8.1]{Satz 8.1} gilt $\| T f \|_{L^{p}} \leq \| k \|_{L{1}} \cdot \| f \|_{L^{p}}$ für $f \in D$. \\
+	Nach \hyperref[satz:8.1]{Satz 8.1} gilt $\| T f \|_{L^{p}} \leq \| k \|_{L^{1}} \cdot \| f \|_{L^{p}}$ für $f \in D$. \\
 	$T$ ist die \begriff{stetige Fortsetzung} von $T|_{D}$ auf ganz $L^{p}(\MdR^{d})$.
 \end{bemerkung*}
 

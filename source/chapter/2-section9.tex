@@ -136,7 +136,7 @@
 \begin{beweis}
 	Betrachte die Menge $E_{n} \coloneqq \{ x \in X: \sup \| T_{i} x \| \leq n\}$. Dann ist $E_{n}$ abgeschlossen, denn $E_{n} = \bigcap_{i \in \MdN} \{ x \in X: \| T_{i} x \| \leq n \}$. Außerdem ist $E_{n}$ symmetrisch, d.h. $x \in E_{n} \gdw -x \in E_{n}$ und konvex, denn für $x_{1}, x_{2} \in E_{n}$ gilt
 		\[ \sup \| T_{i} \left( \frac{1}{2} x_{1} + \frac{1}{2} x_{2} \right) \| \leq \frac{1}{2} \sup \| T_{i} x_{1} \| + \frac{1}{2} \sup \| T_{i} x_{2} \| \leq n \quad \text{also } \frac{1}{2} x_{1} + \frac{1}{2} x_{2} \in E_{n} \]
-		Es gilt $X = \sum_{n = 1}^{\infty} E_{n}$, nach \hyperref[satz:9.1-baire]{Baire} existiert dann ein $N \in \MdN, x \in E_{N}, \epsilon > 0$ mit $K(x, \epsilon) \subset E_{N} \Rightarrow K(-x, \epsilon) \subseteq E_{n}$ \\
+		Es gilt $X = \bigcup_{n = 1}^{\infty} E_{n}$, nach \hyperref[satz:9.1-baire]{Baire} existiert dann ein $N \in \MdN, x \in E_{N}, \epsilon > 0$ mit $K(x, \epsilon) \subset E_{N} \Rightarrow K(-x, \epsilon) \subseteq E_{n}$ \\
 		Sei $z \in X: \| z \| < \epsilon$. $z = \frac{1}{2} (x + z) + \frac{1}{2} (z - x) \in \frac{1}{2} E_{N} + \frac{1}{2} E_{N} \subseteq E_{N}$. 
 		\[ \Rightarrow \sup_{i \in \MdN} \sup_{\| z \| \leq 1} \| T_{i} z \| = \sup_{i \in \MdN} \sup_{\| z \| < \epsilon} \| T_{i} \frac{z}{\epsilon} \| \leq \sup_{i \in \MdN} \sup_{z \in E_{N}} \frac{1}{\epsilon} \| T_{i} z \| \leq \frac{N}{\epsilon} \]	
 \end{beweis}
@@ -144,7 +144,7 @@
 
 \begin{bemerkung}  \label{bem:9.6}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Der \hyperref[satz:9.5-Banach-Steinhaus]{Satz von Banach-Steinhaus} ist nicht konstruktiv d.h. aus $c(X)$ kann man $\sup_{i \in I} \| T_{i} \|$ nicht herleiten.
+		\item Der \hyperref[satz:9.5-Banach-Steinhaus]{Satz von Banach-Steinhaus} ist nicht konstruktiv d.h. aus $c(x)$ kann man $\sup_{i \in I} \| T_{i} \|$ nicht herleiten.
 		\item Die Vollständigkeit von $X$ ist notwendig.
 	\end{enumerate}	
 \end{bemerkung}

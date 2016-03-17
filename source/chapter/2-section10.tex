@@ -10,7 +10,7 @@
 
 
 \begin{lemma} \label{lemma:10.2}
-	Seien $X, Y$ normiert und $T: X \rightarrow Y$ ein linearer Operator, dann sind äquivalent:
+	Seien $X, Y$ normierte Räume und $T: X \rightarrow Y$ ein linearer Operator, dann sind äquivalent:
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $T$ ist offen
 		\item $\exists \epsilon > 0: K_{Y}(0, \epsilon) \subset T(K_{X}(0, 1))$
@@ -18,17 +18,13 @@
 \end{lemma}
 
 \begin{beweis}
-	$"\Rightarrow":$ $T(K_{X}(0, 1))$ ist offen und $T(0) = 0$. \\
-	$"\Leftarrow":$ Sei $U \subset X$ offen, $x \in U, \epsilon > 0: K_{X}(x, \epsilon) \subset U$.
-	\begin{align*}
-		& \Rightarrow T( K_{X}(x, \epsilon)) \subset T(U) \\
-		& \Rightarrow Tx + \epsilon T(K_{X}(0, 1)) = Tx + T(K_{X}(0, \epsilon)) \subset T(U)
-	\end{align*}
+	$"\Rightarrow":$ $T(K_{X}(0, 1))$ ist offen und $T(0) = 0$. \\ \\
+	$"\Leftarrow":$ Sei $U \subset X$ offen und $x \in U$ beliebig. Nehme ein $\epsilon > 0$, sodass $K_{X}(x, \epsilon) \subset U$. \\
+	Dann ist $T( K_{X}(x, \epsilon)) \subset T(U)$ und damit auch
+	\[ Tx + \epsilon T(K_{X}(0, 1)) = Tx + T(K_{X}(0, \epsilon)) \subset T(U) \]
 	Nach $b)$ $\exists \delta > 0: K_{Y}(0, \delta) \subset T(K_{X}(0, 1))$
-	\begin{align*}
-		& \Rightarrow K_{Y}(Tx, \epsilon \delta) = T x + \epsilon K_{Y}(0, \delta) \subset T(U) \\
-		& \Rightarrow T(U) \text{ ist offen}
-	\end{align*}	
+	\[ \Rightarrow ~ K_{Y}(Tx, \epsilon \delta) = T x + \epsilon K_{Y}(0, \delta) \subset T(U) \]	
+	Somit ist $T(U)$ offen.
 \end{beweis}
 
 
@@ -58,7 +54,7 @@
 
 
 \begin{kor} \label{kor:10.4}
-	Seien $X, Y$ Banachräume und $T \in B(X, Y)$ bijektv. Dann ist $T^{-1} \in B(Y, X)$	
+	Seien $X, Y$ Banachräume und $T \in B(X, Y)$ bijektv, dann ist $T^{-1} \in B(Y, X)$	
 \end{kor}
 
 \begin{beweis}
@@ -69,7 +65,7 @@
 
 
 \begin{kor} \label{kor:10.5}
-	Sei $X$	ein Vektorraum, der sowohl mit $\| \cdot \|$, als auch mit $\vertiii{\cdot}$ ausgestattet ein Banachraum wird. Gilt dann
+	Sei $X$	ein Vektorraum der sowohl mit $\| \cdot \|$ als auch mit $\vertiii{\cdot}$ ein Banachraum ist. Gilt 
 		\[ \exists c > 0: \| x \| \leq c \cdot \vertiii{x}, ~ \forall x \in X, \]
 		dann sind die Normen äquivalent, d.h. $\exists \hat{c} $ mit $\hat{c} \cdot \vertiii{x} \leq \| x \|$ $\forall x \in X \leq c \cdot \vertiii{x}$. 
 \end{kor}

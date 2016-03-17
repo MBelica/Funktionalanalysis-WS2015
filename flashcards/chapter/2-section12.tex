@@ -1,0 +1,41 @@
+\subsection*{12 - Abg. Operatoren}
+
+	\begin{karte}{Operatorfortsetzung}
+		Sei $X$ ein Banachraum, $D(A)$ ein dichter Untervektorraum und $A: D(A) \rightarrow X$ linear
+	
+		Gilt $\| A x \| \leq c \| x \|$ $\forall x \in D(A)$, so lässt sich $A$ zu einem beschränkten Operator fortsetzen $A \in B(X)$	
+	\end{karte}
+	
+
+
+	\begin{karte}{Graphennorm}
+		Auf $D(A)$ definieren wir die \begriff{Graphennorm}
+		\[ \| x \|_{A} \coloneqq \|x \| + \| A \| \quad \forall x \in D \]
+		Insbesondere: $A: (D(A), \| \cdot \|_{A}) \rightarrow X$ stetig, denn $\| X \| \leq \|x \| + \| A x \| = \| x \|_{A}$
+	\end{karte}
+
+
+	\begin{karte}{Abgeschlossener Operator}
+		Es sind äquivalent
+		\begin{enumerate}[label=\alph*\upshape)]
+			\item $\left( D(A), \| \cdot \|_{A} \right)$ ist ein Banachraum
+			\item $\ograph(A) = \{ (x, A x): x \in D(A) \} \subset X \times X$ ist abgeschlossen
+			\item Wenn $(x_{n})_{n} \subset D(A): \begin{cases}
+			x_{n} \xrightarrow[]{n \rightarrow \infty} x & \text{ in } X \\ A x_{n} \xrightarrow[]{n \rightarrow \infty} y & \text{ in } X \end{cases}$, $ $ so ist $x \in D(A), A x = y$
+		\end{enumerate}
+	
+		$A$ hei{\ss}t abgeschlossen, wenn $a) - c)$ aus \hyperref[satz:12.3]{12.3} erfüllt sind	
+	\end{karte}
+
+
+	\begin{karte}{Abgeschlossener vs. stetiger Operator}
+		\begin{align*}
+			A \text{ stetig: } & x_{n} \xrightarrow[]{n \rightarrow \infty} x \Rightarrow Ax_{} \xrightarrow[]{n \rightarrow \infty} y, Ax = y \\
+			A \text{ abgeschlossen: } & x_{n} \xrightarrow[]{n \rightarrow \infty} x, A x_{n} \xrightarrow[]{n \rightarrow \infty} y \Rightarrow Ax = y
+		\end{align*}
+	\end{karte}
+
+
+	\begin{karte}{Satz vom abgeschlossenen Graphen}
+		Ist $A$ abgeschlossen und $D(A) = X$, so ist $A$ stetig auf $X$.
+	\end{karte}
