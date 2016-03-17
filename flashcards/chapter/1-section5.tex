@@ -1,9 +1,7 @@
 \subsection*{5 - Vollst{\"a}ndigkeit}
 
 	\begin{karte}{Cauchy-Folge}
-		Sei $(M, d)$ ein metrischer Raum.
-		
-		 $x_{n} \in M$ hei{\ss}t \begriff{Cauchy-Folge}, falls es zu jedem $\epsilon > 0$ ein $n_{0} \in \MdN$ gibt, sodass $\forall m, n \geq n_{0}$ gilt:
+		Sei $(M, d)$ ein metrischer Raum. $x_{n} \in M$ hei{\ss}t \begriff{Cauchy-Folge}, falls es zu jedem $\epsilon > 0$ ein $n_{0} \in \MdN$ gibt, sodass $\forall m, n \geq n_{0}$ gilt:
 			\[ d(x_{n}, x_{m}) \leq \epsilon \]	
 	\end{karte}
 	
@@ -22,14 +20,16 @@
 
 	\begin{karte}{Raum der Abbildungen zwischen metrischen und Banachraum}	
 		Sei $X$ ein metrischer Raum, $Y$ ein Banachraum.
-		\[ C(X, Y) = \{ f \colon X \rightarrow Y: f \text{ stetig} \}, \quad \| f \|_{\infty} = \sup_{x \in X} \| f(x) \|_{Y} \]
+		\[ C(X, Y) = \{ f \colon X \rightarrow Y: f \text{ stetig} \}, ~ \| f \|_{\infty} = \sup_{x \in X} \| f(x) \|_{Y} \]
 		Dann ist $C(X, Y)$ ein (linearer) Banachraum.
 	\end{karte}
 	
 	\begin{karte}{Vollständigkeit vs. äquivalente Normen}		
-		Sind $\| \cdot \|_{1}, \| \cdot \|_{2}$ äquivalente Normen auf $X$, ist dann $X$ bezüglich $\| \cdot \|_{1}$ vollständig, so auch bezüglich $\| \cdot \|_{2}$; da äquivalente Normen haben gleiche Cauchy-Folgen.
+		Sind $\| \cdot \|_{1}, \| \cdot \|_{2}$ äquivalente Normen auf $X$ und ist dann $X$ bezüglich $\| \cdot \|_{1}$ vollständig, so auch bezüglich $\| \cdot \|_{2}$; da äquivalente Normen haben gleiche Cauchy-Folgen.
 	
-		Bsp.: $C^{1}[0, 1]$, $\vertiii{f} = |f(0)| + \sup_{t \in [0, 1]} | f'(t) |$. Früher: $\vertiii{\cdot} \sim \| \cdot \|_{\infty} \Rightarrow \left( C[0, 1], \vertiii{\cdot} \right)$ ist vollständig.
+		Bsp.: $C^{1}[0, 1]$
+		\[ \vertiii{f} = |f(0)| + \sup_{t \in [0, 1]} | f'(t) | \]
+		Früher: $\vertiii{\cdot} \sim \| \cdot \|_{\infty} \Rightarrow \left( C[0, 1], \vertiii{\cdot} \right)$ ist vollständig.
 	\end{karte}
 
 	\begin{karte}{Abg. Teilmengen von BR vs metrische Räume}	
@@ -38,7 +38,7 @@
 
 	\begin{karte}{Raum der beschränkten Operatoren vollständig}		
 		Sei $X$ ein normiert Raum, $Y$ ein Banachraum.
-	Dann ist $B(X, Y)$ mit der Operatornorm vollständig. \\
+	Dann ist $B(X, Y)$ mit der Operatornorm vollständig. \\ \\
 	Insbesondere: $X' = B(X, \MdK)$ ist immer  vollständig.
 	\end{karte}
 	
@@ -79,7 +79,7 @@
 		\end{enumerate}	
 	\end{karte}
 	
-	\begin{karte}{Vollständigkeit des Quotientenraums}	
+	\begin{karte}{Vollständigkeit des Quotientenraums}
 		Sei $X$ ein Banachraum und $M \subset X$ ein abgeschlossener, linearer Teilraum. \\
 		Dann $\hat X = \QR{X}{M}$ ist vollständig.
 	\end{karte}

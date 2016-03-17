@@ -10,7 +10,9 @@
 	\end{karte}
 	
 	\begin{karte}{Halbnorm}
-		Falls $ \| \cdot \| $ all die Eigenschaften einer Norm erfüllt au{\ss}er $ \| x \| = 0 \Rightarrow x = 0 $, dann hei{\ss}t $ \| \cdot \| $ \begriff{Halbnorm}.
+		Falls $ \| \cdot \| $ all die Eigenschaften einer Norm erfüllt au{\ss}er 
+		\[ \| x \| = 0 \Rightarrow x = 0, \]
+		dann hei{\ss}t $ \| \cdot \| $ \begriff{Halbnorm}.
 	\end{karte}
 	
 	\begin{karte}{Einheitskugel}
@@ -23,7 +25,8 @@
 	\end{karte}
 	
 	\begin{karte}{umgekehrte Dreiecksungleichung}
-		Für zwei Elemente $x, y \in (X, \| \cdot \|)$ in normierten Räumen gilt auch die \begriff{umgekehrte Dreiecksungleichung} $( \left| \| x \| - \| y \| \right| \leq \| x - y \|)$
+		Für zwei Elemente $x, y \in (X, \| \cdot \|)$ in normierten Räumen gilt auch die \begriff{umgekehrte Dreiecksungleichung} 
+		\[ ( \left| \| x \| - \| y \| \right| \leq \| x - y \|) \]
 	\end{karte}
 	
 	\begin{karte}{äquivalente Normen}
@@ -35,8 +38,11 @@
 		Auf einem endlich dimensionalen Vektorraum sind alle Normen äquivalent.
 	\end{karte}
 	
-	\begin{karte}{äquivalente Normen + endlich dimensionalen Vektorraum}
-		Auf einem endlich dimensionalen Vektorraum sind alle Normen äquivalent.
+	\begin{karte}{äquivalente Normen + unendlich dimensionalen Vektorraum}
+		Im unendlich dimensionalen Fall sind die Normen $\| \cdot \|_{p}$ auf $\MdF$ nicht äquivalent.
+	
+		Sei z.B. o.B.d.A. $p > q$ und setze 
+		\[ x_{n} \coloneqq \sum_{j = 2^{n} + 1}^{2^{n + 1}} j^{-\frac{1}{p}}e_{j}, ~ e_{j} = ( \delta_{ij} )_{i \in \MdN} \]
 	\end{karte}
 	
 	\begin{karte}{Äquivalenzen zu äquivalente Norm}
@@ -56,13 +62,13 @@
 	\begin{karte}{Minkowski-Ungleichung}
 			\begriff{Minkowski-Ungleichung}: 
 			
-			$\left( \sum_{i=1}^{\infty} |x_{i} + y_{i}|^p\right)^{\frac{1}{p}} \leq\left( \sum_{i=1}^{\infty} |x_{i}|^p\right)^{\frac{1}{p}} + \left( \sum_{i=1}^{\infty} |y_{i}|^p\right)^{\frac{1}{p}} $	\\
+			\[ \left( \sum_{i=1}^{\infty} |x_{i} + y_{i}|^p\right)^{\frac{1}{p}} \leq\left( \sum_{i=1}^{\infty} |x_{i}|^p\right)^{\frac{1}{p}} + \left( \sum_{i=1}^{\infty} |y_{i}|^p\right)^{\frac{1}{p}} \]
 	\end{karte}
 	
 	\begin{karte}{Hölder-Ungleichung}
 		\begriff{Hölder-Ungleichung} mit $\frac{1}{p} + \frac{1}{p'} = 1 \text{ gilt; }$
 		 
-		 $\sum_{i=1}^{\infty} |x_{i}| |y_{i}| \leq \left( \sum_{i=1}^{\infty} |x_{i}|^{p} \right)^{\frac{1}{p}} \left( \sum_{i=1}^{\infty} |y_{i}|^{p'} \right)^{\frac{1}{p'}} $	
+		 \[ \sum_{i=1}^{\infty} |x_{i}| |y_{i}| \leq \left( \sum_{i=1}^{\infty} |x_{i}|^{p} \right)^{\frac{1}{p}} \left( \sum_{i=1}^{\infty} |y_{i}|^{p'} \right)^{\frac{1}{p'}} \]	
 	\end{karte}
 	
 	\begin{karte}{äquivalente Normen + unendlich dimensionale Räume}
@@ -72,6 +78,7 @@
 	\end{karte}
 	
 	\begin{karte}{Raum der beschränkten, m-fach stetig differenzierbaren Funktionen}	
+	Definiere
 		\[ C_{b}^{m}(\Omega) \coloneqq \{ f \colon \Omega \rightarrow \MdR : D^{\alpha}f \text{ sind für alle } \alpha \in \MdN^{n} \text{ stetig} \] \[ \text{ und beschränkt auf } \Omega, |\alpha| \leq m \}. \]	
 		und versehen ihn mit der Norm 
 			\[ \| f \|_{C_{b}^{m}} \coloneqq \sum_{|\alpha| \leq m} \| D^{\alpha}f \|_{\infty} \]
