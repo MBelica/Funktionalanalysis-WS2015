@@ -14,7 +14,7 @@
 	\[ \begin{xy} \xymatrix{  
 			X \ar[rd]^L \ar[d]|{ \rotatebox[origin=c]{270}{$\supseteq$}  }          \\
       		M \ar[r]^l    				  &   \MdK			
-		} \end{xy} \] % todo at 20.0.5: check if I've understood drawing correctly 
+		} \end{xy} \]
 	Wir suchen zu $l \in M'$ ein $L \in X'$ mit $L|_{M} = l$ und $\| L \| = \| l \|$. \\ \\
  	Zum Beispiel mit $X$ einem beliebigen Hilbertraum und $M \subset X$ betrachte
  		\[ \begin{xy} \xymatrix{
@@ -34,7 +34,7 @@
 \end{definition}
 
 
-\begin{satz}[Hahn-Banach für Vektorräume] \index{Hahn-Banach für Vektorräume} \label{satz:20.2-HahnBanach}
+\begin{satz}[Hahn-Banach für Vektorräume] \label{satz:20.2-Hahn-Banach} \index{Hahn-Banach für Vektorräume} \label{satz:20.2-HahnBanach}
 		Sei $X$ ein Vektorraum, $p \colon X \rightarrow \MdR$ sublinear. \\
 		Zu jeder linearen Abbildung $l \colon U \rightarrow \MdK$, $U \subset X$ Untervektorraum mit
 			\[ \Re l(x) \leq p(x) \quad \forall x \in U \]
@@ -72,19 +72,31 @@
 	todo % todo rest des beweises
 \end{beweis}
 
-\textit{Vorläufig überspringe ich ab hier alle Beweise, werde sie aber nachtragen.} % todo add proof
 
-\begin{satz}[Hahn-Banach für normierte Räume]
+\begin{satz}[Hahn-Banach für normierte Räume] \label{satz:20.3-Hahn-Banach} 
 	Sei $X$ normierter Raum. Sei $U \subset X$ ein linearer Teilraum. \\
 	Zu jedem stetigen Funktional $u' \colon U \rightarrow \MdK$, gibt es ein stetiges lineares Funktional $x' \colon X \rightarrow \MdK$ mit 
 		\[ \| x' \|_{X'} = \| u' \|_{U'} \quad \text{und} \quad x'|_{U} = u'. \]	
 \end{satz}
 
+\begin{beweis}
+	Setze $l \coloneqq u'$ und $p(x) \coloneqq \| u'\| \cdot \| x \|$. Dann gilt 
+		\[ \Re l(x) \leq | u'(x) | \leq \| u' \|_{U} \cdot \| x \| = p(x), ~ \forall x \in U \]
+	Nach \hyperref[satz:20.2-Hahn-Banach]{20.2.} gibt es eine Fortsetzung $x'$ von $l$ auf $X$ mit $\Re x'(x) \leq \| u' \| \cdot \| x \|$ und $x'|_{U} = u'$.	Zu $x' \in X'$ und $x \in X$ wähle $\alpha \in \MdC$ mit $|\alpha| = 1$ und 
+	\[ | x'(x) | = \alpha \Re x'(x) \leq \| u' \| \| \alpha x \| = \| u' \| \| x \|\]
+	Somit ist $\| x' \| \leq \| u' \|$.
+\end{beweis}
 
-\begin{kor}
+
+\begin{kor} \label{kor:20.4}
 	Sei $X$ ein normierter Vektorraum. Zu jedem $x \in X, x \neq 0$ gibt es ein $x \in X$ mit 
 		\[ \| x \|_{X'} \quad \text{und} \quad x'(x) = \| x \| \]
 \end{kor}
+
+\begin{beweis}
+	Sei $U = \ospan \{ x \}, u'( \lambda x) \coloneqq \lambda \| x \|$. Dann ist $u'$ linear, $\| u \| \leq 1$, $u'(\frac{x}{\| x \|}) ) 1$, also $\| u' \| = 1$. Sei $x'$ die Fortsetzung von $u'$ auf X wie in \hyperref[satz:20.3-Hahn-Banach]{20.3}, dann folgt
+	\[ \| x' \| = \| u' \| = 1 \text{ und } x'(x) = u'(x) = \| x \| \]
+\end{beweis}
 
 
 \begin{folgerung}
@@ -95,11 +107,20 @@
 	\end{enumerate}	
 \end{folgerung}
 
+\begin{beweis}
+	$|x'(x) | \leq \| x' \| \cdot \| x \| \leq \| x \|$ für $\| x' \| \leq 1$.
+	Für die Umkehrung wähle $x'$ wie in \hyperref[kor:20.4]{20.4}.
+\end{beweis}
 
-\begin{kor}
+
+\begin{kor} \label{kor:20.6}
 	Sei $X$ ein normierter Raum. $U \subset X$ ein abgeschlossener, linearer Teilraum, $x \in X \setminus U$. \\
 	Dann gibt es ein $x' \in X'$ mit $x'|_{U} = 0, x'(x) =\neq 0$.	
 \end{kor}
+
+\begin{beweis}
+	Sei $q \colon X \rightarrow \QR{X}{U}$ Quotientenabbildung $\Rightarrow q(x) \in \QR{X}{X}, q(x) \neq 0 \xRightarrow[]{\ref{kor:20.4}}$ Wähle $l \in \left(\QR{X}{U}\right)'$ mit $l(q(x)) \neq 0$. Setze $x' = l \circ q \colon x \rightarrow \MdK \Rightarrow x' \in X'$ und $x'(x) = l(q(x)) \neq 0$.
+\end{beweis}
 
 
 \begin{definition}
@@ -119,6 +140,11 @@
 		\item $(U^{\bot})_{\bot} = \overline{\ospan } U$
 	\end{enumerate}	
 \end{bemerkung}
+
+\begin{beweis}
+	$c)$ $"$$\supseteq$$"$ Nach Definition. $"$$\subseteq$ Sei $x \notin \overline{\ospan}(U) \xRightarrow[]{\ref{kor:20.6}} \exists ~ x' \in X'$ mit $x'|_{\overline{\ospan}(U)} \equiv 0$ und $x'(x) \neq 0$
+	\[ \Rightarrow x' \in U^{\bot} \text{, aber wegen } x'(x) \neq 0 \text{ gilt } x' \notin ( U^{\bot} )_{\bot}\]
+\end{beweis}
 
 
 \begin{prop}

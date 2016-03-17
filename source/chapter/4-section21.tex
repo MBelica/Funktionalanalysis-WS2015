@@ -4,12 +4,6 @@
 \section{Trennungssätze für konvexe Menge}
 
 
-
-\begin{motivation}
-	todo, siehe Werner S.100/101 % todo motivation, siehe Werner S100/101
-\end{motivation}
-
-
 \begin{definition}
 	Sei $X$ ein Vektorraum mit $A \subset X$. Definiere 
 		\[ p_{A} \colon X \rightarrow [0, \infty], ~ p_{A}(x) \coloneqq \inf \{ \lambda > 0 : \frac{x}{\lambda} \in A \} \quad \text{(Minkowski-Funktional)} \]
@@ -30,6 +24,20 @@
 		\item Ist $U$ offen: $U = p_{U}^{-1}([0 , 1])$
 	\end{enumerate}	
 \end{prop}
+
+\begin{beweis}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $x \in \epsilon \cdot U_{X} \Rightarrow \frac{1}{\epsilon} \cdot x \in U_{X} \Rightarrow p_{U}(x) \leq \frac{1}{\epsilon} \cdot \| x \|$.
+		\item $p_{U}(\lambda x ) = \lambda \cdot p_{U}(x)$ für $\lambda > 0$, denn 
+			\[ (r \lambda) x \in U \gdw r(\lambda x) \in U \] % todo r seems wrong..
+			Zu $\epsilon > 0$ wähle $\lambda, \mu > 0$ mit  $\lambda \leq p_{U}(x) + \epsilon, ~\mu \leq p_{U}(y) + \epsilon$. Dann $\frac{x}{\lambda} \in U, \frac{y}{\mu} \in U$ 
+			\[ \xRightarrow[]{Konv} \frac{\lambda}{\lambda + \mu} \left( \frac{x}{\lambda} \right) + \frac{\mu}{\mu + \lambda} \left( \frac{y}{\mu} \right) = \frac{x + y}{\lambda + \mu} \in U \]
+			Somit ist $p_{U}(x + y) \leq \lambda + \mu \leq p_{U}(x) + p_{U}(y) + 2 \epsilon \text{ für alle } \epsilon > 0$.
+		\item $x \in p_{U}^{-1}([0, 1]) \Rightarrow p_{U}(x) \leq 1$. Dann existiert ein $\lambda < 1$ mit $\frac{x}{\lambda} \in U$. Da $0 \in U$ und $U$ konvex ist, folgt
+			\[ x = \lambda \left( \frac{x}{\lambda} \right) + (1 - \lambda) 0 \in U \]
+			Sei umgekehrt $x \in U$. Da $U$ offen ist, gibt es $\epsilon > 0$ mit $x + \epsilon x \in U \Rightarrow p_{U}(x) \leq \frac{1}{1 + \epsilon}$.
+	\end{enumerate}
+\end{beweis}
 
 
 \begin{satz}[1. Trennungssatz]
@@ -61,11 +69,6 @@
 	Sei $X$ ein normierter Raum, $V \subset X$ konvex und abgeschlossen. Für $x \notin V$ gibt es ein $x' \in X'$ mit:
 		\[ \Re x'(x) < \inf \{ \Re x'(v) : v \in V \} \]	
 \end{satz}
-
-\begin{beweis}
-	todo, siehe Werner III, Seite 2f % todo, siehe Werner III, Seite 2f 
-\end{beweis}
-
 
 
 \newpage
