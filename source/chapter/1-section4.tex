@@ -53,7 +53,7 @@
 			\[ d(x, y) = \sum_{j = 1}^{\infty} 2^{-j} \frac{|x_{j} - y_{j}|}{1 + |x_{j} - y_{j}|} \text{ gerade die komponentenweise Konvergenz auf } X \]
 		\item In $\ell^{\infty}$ entspricht die Konvergenz bezüglich $\| \cdot \|_{\ell^{\infty}}$ gerade der gleichmä{\ss}igen Konvergenz der Folge $x_{n} \coloneqq (x_{n, i})_{(i \in \MdN)}$ gegen $x \coloneqq (x_{i})_{(i \in \MdN)}$
 			\[ \| x_{n} - x \|_{\ell^{\infty}} = \sup_{i \in \MdN} | x_{n, i} - x_{i} | \rightarrow 0 \hspace{0.5cm} (n \rightarrow \infty) \]
-		\item In $C[a, b]$ entspricht die Konvergenz bezüglich $\| \cdot \|_{\infty}$ ebenfalls die gleichmä{\ss}ige Konvergenz von Funktionen
+		\item In $C[a, b]$ entspricht die Konvergenz bezüglich $\| \cdot \|_{\infty}$ ebenfalls der gleichmä{\ss}igen Konvergenz von Funktionen
 			\begin{align*}
 				f_{n} \rightarrow f \text{ in } [a, b] & \gdw \| f_{n} - f \|_{\infty} = \sup_{t \in [a, b]} |f_{n}(t) - f(t) | \rightarrow 0 \\
 				& \gdw f_{n} \rightarrow f \text{ gleichmä{\ss}ig.}
@@ -306,7 +306,7 @@ Hierfür gelten die folgenden Eigenschaften:
 			\begin{beweis}
 				Wir definieren
 				\[ lin_{\MdQ} Y \coloneqq \{ y = \sum_{i = 1}^{n} q_{j} y_{j} : q_{j} \in \MdQ \quad (q_{j} \in \MdQ + i \MdQ ), y_{j} \in Y, n \in \MdN \} \]
-				Dann ist $lin Y$ abzählbar, da $Y$ abzählbar ist. Sei nun $\epsilon > 0$ beliebig, $x \in X$. \\
+				Dann ist $lin_{\MdQ} Y$ abzählbar, da $Y$ abzählbar ist. Sei nun $\epsilon > 0$ beliebig, $x \in X$. \\
 				Nach Voraussetzung existiert dann ein $y \in lin Y$ mit $\| x - y \| < \epsilon$ \\
 				Zu diesem $y$ finden wir ein $z \in lin_{\MdQ} Y$ mit $\| y - z \| < \epsilon$
 				\[ \Rightarrow \| x - z \| < 2 \epsilon, \quad \text{d.h. } \overline{lin_{\MdQ} Y} = X \]

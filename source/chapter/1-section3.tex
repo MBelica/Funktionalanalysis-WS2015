@@ -34,7 +34,7 @@
 			\| T y_{n} \| = n^{2} \| T(x_{n}) \| \geq \frac{n^2}{n} \rightarrow \infty 
 		 \]
 		 Widerspruch zur Voraussetzung.
-		 \item[] $c) \Rightarrow d)$ Sei $T(U_{X}) \subset U_{Y}$ \\
+		 \item[] $c) \Rightarrow d)$ Sei $T(U_{X}) \subset c U_{Y}$ \\
 		 Für $x \in X \setminus \{0\}, \frac{x}{\| x \|} \in U_{X}$ folgt:
 		 \begin{align*}
 		 	&T \left( \frac{x}{\| x \|} \right) \in c U_{Y} \\
@@ -69,14 +69,14 @@
 
 \begin{beweis}
 	Wir betrachten also ab sofort $T \in B(X)$: $\| T \| > 0$, da $\| T \| \geq 0$ und für $\| T \| = 0$ ist $\| Tx \| = 0$ für alle $\| x \| \leq 1$ $\xRightarrow[\text{ist Norm}]{\| \cdot \| }$ $Tx = 0$ für alle $\| x \| \leq 1$ $\Rightarrow$ $T = 0$ \\ \\
-	Für den ersten Teil betrachte 
+	Die Beschränktheit erhalten wir mittels
 	\begin{align*}
 		\| ( T + S )(x) \| = \| Tx + Sx \| &\leq \| Tx \| + \| Sx \| \\
-										   &\leq \| T \| + \| S \|,
+										   &\leq \| T \| + \| S \|
 	\end{align*}
-	und für die Linearität über das Supremum über $\| x \| \leq 1$:
+	Bilden des Supremums über $\| x \| \leq 1$ liefert:
 	\[ \| T + S \| \leq \| T \| + \| S \|. \]
-	Die Beschränktheit folgt aus
+	Für $X = Y$ und $x \in X$ gilt
 	\begin{align*}
 		\| ( S \cdot T )(x) \| = \| S(Tx) \| & \leq \| S \| \| Tx \| \\
 													 & \leq \| S \| \| T \| \| x \|
@@ -152,7 +152,7 @@ z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 \begin{beispiel}[Differentialoperatoren] \index{Differentialoperatoren}
 	Mit $\Omega \subset \MdR^n$ offen, $m \in \MdN$ und $X = C^{m}(\bar \Omega), Y = C_{b}(\Omega)$, betrachte
 	\begin{align*}
-		T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\alpha} f(u), u \in \MdR, a_{\alpha} \in C{\bar \Omega}
+		T:X \rightarrow Y, & \hspace{0.25cm} Tf(u) = \sum_{|\alpha| < m} a_{\alpha} D^{\alpha} f(u), u \in \MdR, a_{\alpha} \in C(\bar \Omega)
   	\end{align*}
     Dann ist $\| Tf \|_{\infty} \leq \sum_{|\alpha| \leq m} \| a_{\alpha} \|_{\infty} \| D^{\alpha} f \|_{\infty} \leq c \|f\|_{\infty}$.
 \end{beispiel}
@@ -266,7 +266,7 @@ z.B.: $\sigma$ als Transposition der Elemente in $\Omega$
 \begin{beispiel}
 	Sei $X = \ell^{p}$ für $p \in (1, \infty)$ und $\frac{1}{p} + \frac{1}{q} = 1$ \\
 	Die Abbildung
-	\[ \Phi_{p} \colon \ell^{p} \rightarrow (\ell^{p})', \hspace{0.25cm} [\Phi_{p}(x)](y) = \sum_{n = 1}^{\infty} x_{n} y_{n}, \hspace{0.25cm} x \in \ell^{p}, y \in \ell^{q}  \]
+	\[ \Phi_{p} \colon \ell^{q} \rightarrow (\ell^{p})', \hspace{0.25cm} [\Phi_{p}(x)](y) = \sum_{n = 1}^{\infty} x_{n} y_{n}, \hspace{0.25cm} x \in \ell^{q}, y \in \ell^{p}  \]
 	Ist ein isometrischer Isomorphismus, d.h.  $(\ell^{p})' \cong \ell^{q}, \hspace{0.25cm}$ (insbesondere $(\ell^{2})' \cong \ell^{2}$)
 	
 	\begin{beweis}

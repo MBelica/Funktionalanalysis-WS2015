@@ -77,7 +77,8 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 	 \[ \vertiii{ Jy } = \| y \|_{\MdK^{n}} = \left( \sum_{i = 1}^{n} |y_{i}|^{2} \right)^{\frac{1}{2}}, \quad y = (y_{1}, \dotsc, y_{n}) \]
 	und damit gilt 
 	\begin{align*}
- 	 	 \left| \| Jy \| - \| Jz \| \right| & \leq |  \| Jy - Jz \| | =  \| J(y - z) \| \\
+ 	 	 \left| \| Jy \| - \| Jz \| \right| & \leq \| Jy - Jz \| \\
+ 	 	 & = \| J(y - z) \| \\
  	 	 & \leq M \vertiii{ J (y - z) } \\
  	 	 & = M \| y - z \|_{\MdK^{n}}
  	 \end{align*}
@@ -88,7 +89,6 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 		\[ m \vertiii{ x } \leq \| x \|. \]
 \end{beweis}
 
-\newpage % todo temporarily for optics
 
 \begin{prop} \label{prop:2.7}
 	Für zwei Normen $\| \cdot \|_{1}, \| \cdot \|_{2}$ auf $X$ sind folgende Aussagen äquivalent:
@@ -103,7 +103,7 @@ Beachte: $\|x\|_{\infty} \leq  \|x\|_{p} \leq n^{\frac{1}{p}} \|x\|_{\infty} \le
 			\item[] $a) \Rightarrow b) \Rightarrow c)$ folgt direkt durch die Definition von äquivalenten Normen. 
   			\item[] $c) \Rightarrow d)$ Annahme: Es existiert kein $M$ mit $U_{(X, \| \cdot \|_{2})} \subseteq M U_{(X, \| \cdot \|_{1})}$. \\
   				Dann gibt es eine Folge $x_{n} \in U_{(X, \| \cdot \|_{2})}$ mit $\| x_{n} \|_{1} \geq n^{2}$ \\
-  				Setze $y_{n} =  \frac{1}{n} x_{n}$. Dann gilt $\| y_{n} \|_{w} \rightarrow 0$ und $\| y_{n} \|_{1} \rightarrow \infty$. \\
+  				Setze $y_{n} =  \frac{1}{n} x_{n}$. Dann gilt $\| y_{n} \|_{2} \rightarrow 0$ und $\| y_{n} \|_{1} \rightarrow \infty$. \\
   				Widerspruch zu $c)$.
   			 \item[] $d) \Rightarrow a)$ Gegeben $m U_{(X, \| \cdot \|_{1})} \subseteq U_{(X, \| \cdot \|_{2})} \subseteq M U_{(X, \| \cdot \|_{1})}$ \\
   			 Es folgt aus der ersten Ungleichung  $m \| x \|_{1} \leq \| x \|_{2}$, bzw. aus der zweiten $\| x \|_{2} \leq M \| x \|_{1}$. \\
