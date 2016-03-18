@@ -47,7 +47,7 @@
 \begin{beispiel} \label{bsp:6.4}
 	Sei $X = \ell^{p}$ für $1 \leq p < \infty$ gilt: \\
 	$M \subset \ell^{p}$ ist kompakt genau dann, wenn
-	\[ \sup \{ \sum_{ n = 1}^{\infty} |x_{n}|^{p} : x = (x_{m}) \in M \} \xrightarrow[k \rightarrow \infty]{} 0 \]	
+	\[ \sup \{ \sum_{n = k}^{\infty} |x_{n}|^{p} : x = (x_{m}) \in M \} \xrightarrow[k \rightarrow \infty]{} 0 \]	
 	(Kompakte Mengen lassen sich gut durch endliche Mengen approximieren)
 \end{beispiel}
 
@@ -176,7 +176,7 @@
 \begin{beweis}
 	$U_{C^{1}[0, 1]} \subset K$ ist nicht kompakt, da $\dim C^{1}[0, 1] = \infty$ nach \hyperref[satz:6.2]{6.2}. Aber $K \subseteq C[0, 1]$ ist kompakt nach \hyperref[satz:6.7-ArzelaAscoli]{6.7}, denn 
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item $f \in K: f(t) = f(0) + \int_{0}^{t} f'(u) du \rightarrow |f(t) \leq |f(0)| + \| f' \|_{\infty}$
+		\item $f \in K: f(t) = f(0) + \int_{0}^{t} f'(u) du \rightarrow \|f(t)\| \leq |f(0)| + \| f' \|_{\infty}$
 		\item $K$ ist abgeschlossen nach Definition
 		\item $f \in K, s < t \in [0, 1]: |f(s) - f(t)| = | \int_{s}^{t} f'(u) du | \leq |t-s| \|f'\|_{\infty} \leq | t - s| < \epsilon$ für $\delta = \epsilon$
 	\end{enumerate}
@@ -194,7 +194,7 @@
 
 \begin{beweis}
 	$"$$a) \Rightarrow b)$$"$ und $"$$a) \Rightarrow c)$$"$ klar nach \hyperref[satz:6.5]{6.5}. \\ \\
-	$"$$b) \Rightarrow a)$$"$ Sei $(x_{n} \subseteq K$ mit einer Cauchy-Teilfolge $(x_{n_{k}})$. \\
+	$"$$b) \Rightarrow a)$$"$ Sei $(x_{n})_{n \geq 1} \subseteq K$ mit einer Cauchy-Teilfolge $(x_{n_{k}})$. \\
 		\[ \text{Da } X \text{ vollständig ist, existiert } \lim_{n \rightarrow \infty} x_{n_{k}} = x \in X \Rightarrow x \in \overline{K} \Rightarrow \overline{K} \text{ kompakt.} \]
 	$"$$c) \Rightarrow a)$$"$ Da $X$ vollständig ist, ist $\overline{K}$ vollständig. Zu $\epsilon > 0$ wähle $y_{1}, \dotsc, y_{m} \in K$ mit 
 		\[ K \subseteq \bigcup_{j = 1}^{m} K(y_{j}, \epsilon) \Rightarrow \overline{K} \subseteq \bigcup_{j = 1}^{m} \overline{K(y_{j}, \epsilon)} \subseteq \bigcup_{j = 1}^{m} K(y_{j}, 2\epsilon) \]
