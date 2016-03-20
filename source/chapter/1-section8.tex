@@ -43,9 +43,10 @@ wobei $k \colon \Omega \times \Omega \rightarrow \MdK$ messbar.
 		\item $1 < p < \infty:$	$f \in L^{1} \cap L^{\infty} \subset L^{p}, T f \in L^{1} \cap L^{\infty} \subset L^{p}$. \\ \\
 			Definiere $g(u) = \left( \int |Tf(u)|^{p} du \right)^{- \frac{1}{p'}} \left| T f(u) \right|^{p - 1} sign( T f(u) )$.
 			\begin{align*}
-				\| T f \|_{L^{p}} & = \left( \int_{\Omega} | T f(u) |^{p} du \right) \left( \int_{\Omega} | T f(u) |^{p} \right)^{\frac{1}{p} - 1} \\
-								  & = \int g(u) Tf(u) du \\
-								  & = \int \int g(u) k(u, v) f(v) dv du \\
+				\| T f \|_{L^{p}} & = \left( \int_{\Omega} | T f(u) |^{p} du \right)^{\frac{1}{p}} \\
+								  & = \left( \int_{\Omega} | T f(u) |^{p} du \right) \left( \int_{\Omega} | T f(u) |^{p} du \right)^{\frac{1}{p} - 1} \\
+								  & = \int_{\Omega} g(u) Tf(u) du \\
+								  & = \int_{\Omega} \int_{\Omega} g(u) k(u, v) f(v) dv du \\
 								  & \leq \int_{\Omega \times \Omega} | g(u) | | k(u, v) |^{\frac{1}{p'}} |k(u, v) |^{\frac{1}{p}} |f(v)| d(u, v), \quad \text{ durch Hölder auf } \Omega \times \Omega \text{ folgt} \\
 								  & \leq \left( \int_{\Omega \times \Omega} | g(u) |^{p'} |k(u, v)| d(u, v) \right)^{\frac{1}{p'}} \left( \int_{\Omega \times \Omega} |k(u, v)| |f(v)|^{p} d(u, v) \right)^{\frac{1}{p}} \quad (*)
 			\end{align*}
@@ -57,7 +58,7 @@ wobei $k \colon \Omega \times \Omega \rightarrow \MdK$ messbar.
             & \leq C_{1}^{\frac{1}{p'}} C_{2}^{\frac{1}{p}} \| f \|_{L^{p}} \| g \|_{L^{p'}}
             \end{align*}
             Wir wollen noch zeigen, dass $\| g \|_{L^{p'}} \leq 1$, da wir dann die richtige Abschätzung auf einer dichten Teilmenge gefunden haben.
-            \[ \| g \|_{L^{p'}} = \left( \int | T f(u) |^{p} du \right)^{- \frac{1}{p'}} \left( \int |T f(u)|^{(p-1)p'} du \right)^{\frac{1}{p'}} = 1 \quad \text{da } (p - 1) p' = p \]
+            \[ \| g \|_{L^{p'}} = \left( \int | T f(u) |^{p} du \right)^{- \frac{1}{p'}} \left( \int |T f(u)|^{(p-1)p'} du \right)^{\frac{1}{p'}} = 1, \text{ da } (p - 1) p' = p \]
     \end{itemize}	
 \end{beweis}
 
@@ -91,9 +92,9 @@ wobei $k \colon \Omega \times \Omega \rightarrow \MdK$ messbar.
 
 
 \begin{satz} 
-	Sei $\ca_{m} = \{ A_{n, m} : n = 1, \dotsc, m_{n} \}$ eine Zerlegung von $ \Omega \cap K(0, r_{m}), \Omega \subset \MdR^{d}$. \\
-	Es gelte $r_{m} \rightarrow \infty$ und $\ca_{m} \subset \ca_{m + 1}, r_{m} \rightarrow \infty$.
-	\[ d_{m} = \sup \{ |t - s|: s, t \in A_{m, n}, n = 1, \dotsc, m_{n} \} ~ \textit{'Feinheit der Zerlegung'} \]
+	Sei $\Omega \subset \MdR^{d}$ und $\ca_{m} = \{ A_{n, m} : n = 1, \dotsc, m_{n} \}$ eine Zerlegung von $ \Omega \cap K(0, r_{m})$ für alle $m \in \MdN$ mit $r_{m} \rightarrow \infty$.
+	Es gelte $\ca_{m} \subset \ca_{m + 1}$ und die $"$Feinheit der Zerlegung$"$ soll gegen $0$ gehen:
+	\[ d_{m} = \sup_{n = 1, \dotsc, m_{n}} \{ |t - s| : s, t \in A_{m, n}  \} \rightarrow 0 \]
 	Dann gilt für alle $f \in L^{p}(\Omega), 1 \leq p < \infty$
 	\[ \| \EW_{\ca_{m}} f - f \|_{L^{p}} \rightarrow 0 \text{ für } m \rightarrow \infty \]
 \end{satz}
