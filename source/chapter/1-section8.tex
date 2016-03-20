@@ -4,12 +4,12 @@
 
 
 
-Sei $x = (x_{1}, x_{2}, \dotsc) \in \ell^{p}, x_{m} = (x_{1}, \dotsc, x_{m}, \dotsc)$. \\
+Sei $x = (x_{1}, x_{2}, \dotsc) \in \ell^{p}, x_{m} = (x_{1}, \dotsc, x_{m}, 0, \dotsc)$.
 \[ \text{Dann }\|  x - x_{m} \| \rightarrow 0 \text{ für } m \rightarrow \infty. \]
-	\newline
 Betrachten wir $L^{p}(\Omega)$, mit z.B. $\Omega = \MdR^{d}$ und die Integraloperatoren $T \colon L^{p}(\Omega) \rightarrow L^{p}(\Omega)$
 	\[ T f(u) = \int k(u, v) f(v) dv \quad (*) \label{eq:8.0-BeschrOperatorInLp} \]
 wobei $k \colon \Omega \times \Omega \rightarrow \MdK$ messbar.
+
 
 \begin{satz} \label{satz:8.1}
 	Sei $k \colon \Omega \times \Omega \rightarrow \MdK$ messbar	und
@@ -18,9 +18,10 @@ wobei $k \colon \Omega \times \Omega \rightarrow \MdK$ messbar.
 		\sup_{v \in \Omega} & \int_{\Omega} |k(u, v)| du \leq C_{2} < \infty
 	\end{align*}
 	Dann wird durch \hyperref[eq:8.0-BeschrOperatorInLp]{$(*)$} ein beschränkter Operator $T \colon L^{p}(\Omega) \rightarrow L^{p}(\Omega)$ mit
-	\[ \| T \|_{L^{p} \rightarrow L^{p}} \leq C_{1}^{\frac{1}{p'}} C_{1}^{\frac{1}{p}}, \quad \frac{1}{p'} + \frac{1}{p} = 1   \]
+	\[ \| T \|_{L^{p} \rightarrow L^{p}} \leq C_{1}^{\frac{1}{p'}} C_{2}^{\frac{1}{p}}, \quad \frac{1}{p'} + \frac{1}{p} = 1   \]
 	und $1 \leq p \leq \infty$.
 \end{satz}
+
 \begin{beweis}
 	\begin{itemize}
 		\item $p = \infty:$ $f \in L^{\infty}(\Omega)$
