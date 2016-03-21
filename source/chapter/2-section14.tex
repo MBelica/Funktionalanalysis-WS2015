@@ -41,7 +41,7 @@ Grundlegende Aussagen zur Lösungstheorie linearer Gleichungen:
 \begin{beweis}
 	Beweis des \hyperref[lemma:14.2]{Lemmas 14.2}: \\
 	Wähle $Y \subseteq X, \dim Y < \infty$ so, dass $F(Y) = F(X)$. Setze $X_{1} = Y + F(X), \dim(X_{1}) < \infty$
-		\[ \Rightarrow X = X_{1} = \kernn(F), \text{ denn zu jedem } x \in X \text{ gibt es ein } y \in Y \text{ mit } F(x) = F(y) \text{, also } x = y + z \text{ mit } z = x - y \in \kernn(F) \]
+		\[ \Rightarrow X = X_{1} + \kernn(F), \text{ denn zu jedem } x \in X \text{ gibt es ein } y \in Y \text{ mit } F(x) = F(y) \text{, also } x = y + z \text{ mit } z = x - y \in \kernn(F) \]
 		also $F(z) = F(x) - F(y) = 0$, da $X_{1} \cap \kernn(F)$ ein endlicher Teilraum von $\kernn(F)$ ist. Dann gibt es einen abgeschlossenen Teilraum $X_{0} \subset \kernn(F)$ mit 
 		\[ \kernn(F) = (X_{1} \cap \kernn(F)) \oplus X_{0} \Rightarrow X = X_{0} \oplus X_{1}, F(X_{1}) \subset F, \text{ da } F(X) = X_{1}. \]
 		Beweis von \hyperref[satz:14.1]{Satz 14.1}:
@@ -65,7 +65,7 @@ Grundlegende Aussagen zur Lösungstheorie linearer Gleichungen:
 				\[ \| z \| + \| y \| \geq \| z + y \| \geq \frac{1}{c} \left( \| z \| + \| y \| \right) \Rightarrow \| x_{n} - x_{m} \| \geq \frac{1}{c} \left( \| z_{n} - z_{m} \| + \| y_{n} - y_{m} \| \right) \]
 				$\Rightarrow (y_{n}), (z_{n}) \text{ sind Cauchy-Folgen}$. \\
 				Da $(Id - K_{1})(X)$ und $X_{0}$ abgeschlossen sind, folgt $y_{n} \rightarrow y \in X_{0}$ und $z_{n} \rightarrow z \in \bild(Id - K_{1}) \Rightarrow x = z + y \in Bild(Id - K_{1}) \oplus X_{0} = \bild(Id - K)$.
-			\item Sei $F \in B(X)$ endlich dimensional mit $\| K - F \| < 1$. $T \coloneqq Id - k + F$ ist invertierbar nach dem \hyperref[prop:5.8-NeumannscheReihe]{Satz über die Neumannsche Reihe}.
+			\item Sei $F \in B(X)$ endlich dimensional mit $\| K - F \| < 1$. $T \coloneqq Id - K + F$ ist invertierbar nach dem \hyperref[prop:5.8-NeumannscheReihe]{Satz über die Neumannsche Reihe}.
 				\[ \Rightarrow Id - K = T - F = (Id - F T^{-1})T \text{ mit } F T^{-1} \text{ endlich dimensional.} \]
 				Da $T$ invertierbar ist, gilt insbesondere
 				\[ \bild(Id - K) = \bild(Id - F T^{-1}) \text{ und } \kernn(Id - K) = T^{-1}(\kernn(Id - F T^{-1})) \]
