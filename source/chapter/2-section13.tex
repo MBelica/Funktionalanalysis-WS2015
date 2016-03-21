@@ -151,22 +151,29 @@ Formel: $x = (\lambda I - A)^{-1} y$ ist Lösung, falls $(\lambda I - A)^{-1}$ e
 
 
 \begin{definition} \label{def:13.8-Spektralradius}
-	Für $A \in B(X)$ hei{\ss}t $r(A) = \sup \{ | \lambda |: \lambda \in \sigma(A) \}Q$ der \begriff{Spektralradius} von $A$.
+	Für $A \in B(X)$ hei{\ss}t $r(A) \coloneqq \sup \{ | \lambda |: \lambda \in \sigma(A) \}$ der \begriff{Spektralradius} von $A$.
 \end{definition}
 
 
 \begin{satz} \label{satz:13.9}
-	Für $A \in B(X)$ ist $r(A) = \lim_{n \rightarrow \infty} \| A^{n} \|^{\frac{1}{n}} = \inf_{n \in \MdN} \| A^{n} \|^{\frac{1}{n}}$ \\ \\
-	Hilfssatz: Ist $a_{n} \in \MdR$ mit $0 \leq a_{n + m} \leq a_{n} \cdot a_{m}$, $n,m \in \MdN$, dann gilt $\lim_{n \rightarrow \infty} a_{n}^{\frac{1}{n}} = \inf_{n \in \MdN} a_{n}^{\frac{1}{n}}$
+	Für $A \in B(X)$ ist
+		\[ r(A) = \lim_{n \rightarrow \infty} \| A^{n} \|^{\frac{1}{n}} = \inf_{n \in \MdN} \| A^{n} \|^{\frac{1}{n}} \]
 \end{satz}
+
+\begin{satz*}
+	Hilfssatz: Ist $(a_{n})_{n \geq 1} \subset \MdR$ mit $0 \leq a_{n + m} \leq a_{n} \cdot a_{m}$, für alle $n,m \in \MdN$, dann gilt 
+	\[ \lim_{n \rightarrow \infty} a_{n}^{\frac{1}{n}} = \inf_{n \in \MdN} a_{n}^{\frac{1}{n}} \eqqcolon a \]	
+\end{satz*}
+
 
 \begin{beweis}
 	Beweis des Hilfssatzes: \\
 	Zu $\epsilon > 0$ wähle $N \in \MdN$ mit $(a_{N})^{\frac{1}{N}} \leq a + \epsilon$. Setze $b = b(\epsilon) = \max \{ a_{1}, \dotsc, a_{N} \}$. \\
 	Jedes $n \in \MdN$ lässt sich schreiben als $n = k \cdot N + r, k \in \MdN, r \in \{ 1, \dotsc, N - 1 \}$. \\
 	Damit folgt:
-		\[ (a_{n})^{\frac{1}{n}} = a_{k N + r}^{\frac{1}{n}} \leq (a_{N}^{k} a_{r})^{\frac{1}{n}} \leq (a + \epsilon)^{\frac{k N}{n}} \cdot b^{\frac{1}{n}} = (a + \epsilon)(a + \epsilon)^{- \frac{r}{n}} b^{\frac{1}{n}} < a + 2 \epsilon \text{ für } n \text{ gro{\ss} genug.} \]
-	Beweis von \hyperref[satz:13.9]{13.9}: $a_{n} \coloneqq \| A^{n} \|$ erfüllt
+		\[ (a_{n})^{\frac{1}{n}} = a_{k N + r}^{\frac{1}{n}} \leq (a_{N}^{k} a_{r})^{\frac{1}{n}} \leq (a + \epsilon)^{\frac{k N}{n}} \cdot b^{\frac{1}{n}} = (a + \epsilon)(a + \epsilon)^{- \frac{r}{n}} b^{\frac{1}{n}} < a + 2 \epsilon \text{ für } n \text{ gro{\ss} genug.} \] ~\\
+	Beweis von \hyperref[satz:13.9]{13.9}: \\
+	Definiere $a_{n} \coloneqq \| A^{n} \|$, dann erfüllt $a_{n}$:
 	 \[ a_{n + m} = \| A^{n + m} \| = \| A^{n} A^{m} \| \leq \|A^{n}\| \cdot \|A^{m}\| = a_{n} \cdot a_{m} \Rightarrow \lim_{n \rightarrow \infty} \| A^{n} \|^{\frac{1}{n}} = \inf_{n} \| A^{n} \|^{\frac{1}{n}} \]
 	Nach \hyperref[satz:13.6]{13.6} gilt für $\left| \frac{1}{\lambda} \right| > \| A \|$ die Darstellung: $R(\frac{1}{\lambda}, A) = \sum_{n \geq 0} \lambda^{n +1} A^{n} (*) \label{eq:13.9.5-*}$ \\ 
 	Nach dem Wurzelkriterium konvergiert diese Reihe falls $\overline{\lim_{n \rightarrow \infty}} \| \lambda^{n + 1} A^{n} \|^{\frac{1}{n}} = |\lambda| \lim_{n \rightarrow \infty} \| A^{n} \|^{\frac{1}{n}} < 1$, d.h. $| \lambda | < \left[ \lim_{n \rightarrow \infty} \| A^{n} \|^{\frac{1}{n}} \right]^{-1}$
@@ -183,18 +190,33 @@ Im Allgemeinen gilt $r(A) < \| A \|$.
 	Sei $X = C[0, 1]$ und  $Q = \{ (s, t) \in [0, 1]^{2}: s \leq t \}$, betrachte $k: Q \rightarrow \MdR$ stetig.  \\
 	Wir definieren einen Volterraoperator $V: C[0, 1] \rightarrow C[0, 1]$ durch 
 		\[ (V x)(t) = \int_{0}^{t} k(t, s) x(s) ds, t \in [0, 1], x \in C[0, 1] \]
-	Behauptung: $V \in B(C[0, 1]), \| V \| = \sup_{t \in [0, 1]} \int_{0}^{t} k(t, s) ds > 0,$ $r(v) = 0,$ $\sigma(v) = \{ 0 \}$, d.h. \\
-	\[ (\lambda - v)x = y \text{ ist für alle } y \in C[0, 1], \lambda \neq 0, \text{ eine eindeutige Lösung } x = (\lambda - A)^{-1} y \in C[0, 1] \]
+	Behauptung: $V \in B(C[0, 1])$, $\| V \| = \sup_{t \in [0, 1]} \int_{0}^{t} k(t, s) ds \geq 0$ und $r(V) = 0,$ $\sigma(V) = \{ 0 \}$, d.h. \\
+	\[ (\lambda - v) \cdot x = y \text{ besitzt für alle } y \in C[0, 1]  \text{ und } \lambda \neq 0 \text{ eine eindeutige Lösung } x = (\lambda - A)^{-1} y \in C[0, 1] \]
 \end{beispiel}
 
 \begin{beweis}
-	$\| V x \|_{\infty} = \sup_{7 \in [0, 1]} \int_{0}^{t} k(t, s) x(s) ds \leq \underbrace{\sup_{t \in [0, 1]} \int_{0}^{t} k(t, s) ds}_{=: K} \| x \|_{\infty} \Rightarrow \| V \| \leq K$ \\
+	$\| V x \|_{\infty} = \sup_{t \in [0, 1]} \int_{0}^{t} k(t, s) x(s) ds \leq \underbrace{\sup_{t \in [0, 1]} \int_{0}^{t} k(t, s) ds}_{=: K} \| x \|_{\infty} \Rightarrow \| V \| \leq K$ \\
 	\[ \| \1 \|_{\infty} = 1, \quad \| V \1 \|_{\infty} = \sup_{t \in [0, 1]} \int_{0}^{t} k(t, s) ds \quad \Rightarrow \quad \| V \| = K \]
-	Wir müssen zeigen, dass $r(V) = \lim_{n \rightarrow \infty} \| V^{n} \|^{\frac{1}{n}} = 0$. \\
-	$V^{n}$ hat die Form $V^{n} x(t) = \int_{0}^{t} k^{n}(t, s) x(s) ds$, mit
+	Wir müssen zeigen, dass $r(V) = \lim_{n \rightarrow \infty} \| V^{n} \|^{\frac{1}{n}} = 0$. $V^{n}$ hat die Form 
+		\[ V^{n} x(t) = \int_{0}^{t} k^{n}(t, s) x(s) ds \]
+	mit
 	\begin{align*}
-		\left( V^{n + 1} x \right)(t) & = a
+		\left( V^{n + 1} x \right)(t) = V \left( V^{n} x \right) (t) & = \int_{0}^{t} k(t, s) \left( V^{n} x \right)(s) ds \\
+			& = \int_{0}^{t} k(t, s) \left( \int_{0}^{s} k^{(n)}(s, u) x(u) du \right) ds \\
+			& \overset{Fubini}{=} \int_{0}^{t} \left( \int_{u}^{t} k(t, s) k^{(n)}(s, u) ds \right) x(u) du \\
+			& \overset{!}{=} \int_{0}^{t} k^{(n + 1)}(t, u) x(u) du, \text{ d.h. } k_{(n + 1)}(t , u) = \int_{u}^{t} k(t , s) k^{(n)}(s, u) ds
 	\end{align*}
+	Damit haben wir $V^{n}$ als Integraloperator dargestellt und die Kerne von $V^{n + 1}$ und $V^{n}$ in Beziehung gesetzt. Es gilt
+	\[ k^{(n)}(t, s) \leq \frac{M^{n}}{(n - 1)!} \left| t - s \right|^{n - 1} \]
+	wobei $M = \sup \{ k(t, s) : (s, t) \in a \}$. \\ \\
+	Über vollständige Induktion erhalten wir:
+	\begin{description}
+		\item $n = 1: k^{(1)}(t, s) \leq M$.
+		\item $n \rightarrow n + 1$: $k^{(n + 1)}(t, u) = \int_{u}^{t} k(t, s) k^{(n)}(s, u) ds \leq M \int_{u}^{t} \frac{M^{n}}{(n - 1)!} \left| s - u \right|^{n - 1} ds = M^{n + 1} \frac{1}{n!} \left| t - s \right|^{n}$
+	\end{description}
+	Es gilt für $x \in C[0, 1]$: $\left( V^{n} x \right)(t) = \int_{0}^{t} k^{(n)}(t, s)x(s) ds \leq \frac{M^{n}}{(n - 1)!} \int_{0}^{t} \left| t - s \right|^{n - 1} \left| x(s) \right| ds \leq \frac{M^{n}}{(n - 1)!} \| x \|_{\infty}$, $t \in [0, 1]$
+	\[ \Rightarrow ~ \| V^{n} \| \leq \frac{M^{n}}{(n - 1)!} \quad \Rightarrow ~ 0 \leq r(A) = \lim_{n \rightarrow \infty} \| V^{n} \|^{\frac{1}{n}} \leq \lim_{n \rightarrow \infty} \frac{M}{\left( (n - 1)! \right)^{\frac{1}{n}}} = 0 \]
+da für $n$ ungerade $(n - 1)! \geq \left( \frac{n - 1}{2} \right)^{\frac{n - 1}{2}}$.
 \end{beweis}
 
 
