@@ -118,9 +118,9 @@ Formel: $x = (\lambda I - A)^{-1} y$ ist Lösung, falls $(\lambda I - A)^{-1}$ e
 \begin{beweis}
 	Für $| \lambda | > \| A \|$ gilt: $\lambda - A = \lambda [I - S]$ mit $S = \frac{A}{\lambda}, \| S \| \leq \frac{\| A \|}{| \lambda |} < 1$ nach Voraussetzung. \\
 	Nach Neumann: 
+		\[ (I - S)^{-1}  = \sum_{n = 0}^{\infty} S^{n} \]
 	\begin{align*}
-		(I - S)^{-1} & = \sum_{n = 0}^{\infty} S^{n} (\lambda - A)^{-1} \\
-			& = \lambda^{-1} [I - S]^{-1} \\
+		\Rightarrow (\lambda - A)^{-1} & = \lambda^{-1} [I - S]^{-1} \\
 			& = \lambda^{-1} \sum_{n = 0}^{\infty} \left( \frac{A}{\lambda} \right)^{n} \\
 			& = \sum_{n = 0}^{\infty} \lambda^{-n-1} A^{n}
 	\end{align*}
