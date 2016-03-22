@@ -21,7 +21,7 @@
 \begin{prop}[Vgl. von Norm- und schwacher Konvergenz] \label{prop:18.3}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Normenkonvergenz impliziert schwache Konvergenz
-		\item $x_{n} \xrightarrow[]{w} x$, dann $\| x_{n} \| \leq \lim_{n \rightarrow \infty} \| x_{n} \|$
+		\item $x_{n} \xrightarrow[]{w} x$, dann $\| x \| \leq \lim_{n \rightarrow \infty} \| x_{n} \|$
 		\item Falls $x_{n} \xrightarrow[]{w} x$ und $\| x_{n} \| \rightarrow \| x \|$, dann $\| x - x_{n} \| \rightarrow 0$
 	\end{enumerate}
 \end{prop}
@@ -49,7 +49,7 @@
 
 
 \begin{beispiel}
-	Sei $X = \ell^{2}$, $x_{n} = (a_{n, j})_{j}, x = (a_{j})$. Dann $x_{n} \xrightarrow[]{w} \gdw a_{n, j}$ für alle $j \in \MdN$.
+	Sei $X = \ell^{2}$, $x_{n} = (a_{n, j})_{j}, x = (a_{j})$. Dann $x_{n} \xrightarrow[]{w} x \gdw a_{n, j} \rightarrow a_{j}$ für alle $j \in \MdN$.
 \end{beispiel}
 
 \begin{beweis}
@@ -58,7 +58,8 @@
 
 
 \begin{prop} \label{prop:18.6}
-	Sei $X$ ein Hilbertraum mit Orthonormalbasis $(h_{j})$. Dann gilt	$x_{n} \xrightarrow[]{w} \gdw \< x_{n} , h_{j} \> \rightarrow \< x , h_{j} \> \forall j \in \MdN$
+	Sei $X$ ein Hilbertraum mit Orthonormalbasis $(h_{j})$. Dann gilt
+	\[ x_{n} \xrightarrow[]{w} x \gdw \< x_{n} , h_{j} \> \rightarrow \< x , h_{j} \> ~ \forall j \in \MdN \]
 \end{prop}
 
 \begin{beweis}
