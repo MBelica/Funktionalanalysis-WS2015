@@ -73,8 +73,8 @@
 \end{beweis}
 
 
-\begin{definition}
-	Eine Teilmenge $M$ eines Hilbertraums $X$ hei{\ss}t \begriff{relativ schwach kompakt}, falls jede Folge $(x_{n}) \subseteq M$ eine schwach konvergente Teilmenge besitzt.
+\begin{definition} \index{schwach kompakt}
+	Eine Teilmenge $M$ eines Hilbertraums $X$ hei{\ss}t \begriff{relativ schwach kompakt}, falls jede Folge $(x_{n}) \subseteq M$ eine schwach konvergente Teilfolge besitzt.
 \end{definition}
 
 
@@ -83,7 +83,7 @@
 \end{satz}
 
 \begin{beweis}
-	Sei $(x_{n}) \subseteq M \Rightarrow \| x_{n} \leq C$. Definiere $X_{0} \coloneqq \overline{\ospan(x_{n})} \subseteq X$ als separablen Hilbertraum mit Orthonormalbasis $(h_{j})$.	
+	Sei $(x_{n}) \subseteq M \Rightarrow \| x_{n} \| \leq C$. Definiere $X_{0} \coloneqq \overline{\ospan(x_{n})} \subseteq X$ als separablen Hilbertraum mit Orthonormalbasis $(h_{j})$.	
 		\[ \sup | \< x_{n} , h_{j} \> | \leq c \Rightarrow \< x_{n} , h_{j} \> \in \MdK \text{ hat eine konvergente Teilfolge nach } \hyperref[satz:1.1-BolzanoWeierstrass]{\text{Bolzano-Weierstrass}}. \]
 		Mit Hilfe des Cantor'schen Diagonalverfahrens wähle eine Teilfolge $M_{j+1} \subseteq M_{j}, |M_{j} = \infty$ mit $\lim_{n \in M_{j}} \< x_{n} , h_{j} \> = \alpha_{j}$. Wähle $n_{k} \in M_{k}$ mit $n_{k} \geq k$. \\
 		Dann ist $n_{k} \in M_{j}$ für $k$ gro{\ss} genug und $n_{k} \rightarrow \infty \Rightarrow \lim_{k \rightarrow \infty} \< x_{n_{k}} , h_{j} \> = \alpha_{j}$ für alle $j \in \MdN$. \\
