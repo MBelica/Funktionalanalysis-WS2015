@@ -86,14 +86,14 @@ Grundlegende Aussagen zur Lösungstheorie linearer Gleichungen:
 	$\Rightarrow 0 \in \sigma(K)$. \\ \\
 	Sei $\lambda \in \sigma(K) \setminus \{ 0 \}$, dann gilt nach \hyperref[satz:14.1]{14.1} $\dim \kernn(I - \lambda^{-1}K) = \codim \bild (I- \lambda^{-1}K) \quad (Ü*) \label{eq:14.3.5-lambdaInSigmas}$ \\
 	Entweder ist $I - \lambda^{-1}K$ nicht injektiv oder nicht surjektiv (da $\lambda \in \sigma(K)$). \\
-	Nach \hyperref[eq:14.3.5-lambdaInSigmas]{$(*)$} ist in jedem Fall $\kernn(I - \lambda^{-1}K) \neq \{ 0 \}$, d.h. in jedem Fall ist $\lambda$ ein Eigenwert it endlich dimensionalem Eigenraum $\kernn (I - \lambda^{-1}K)$. \\
+	Nach \hyperref[eq:14.3.5-lambdaInSigmas]{$(*)$} ist in jedem Fall $\kernn(I - \lambda^{-1}K) \neq \{ 0 \}$, d.h. in jedem Fall ist $\lambda$ ein Eigenwert mit endlich dimensionalem Eigenraum $\kernn (I - \lambda^{-1}K)$. \\
 	Zu zeigen bleibt noch, dass für alle $\epsilon > 0$ liegen in $\{ \lambda : |\lambda| \geq \epsilon \}$ höchstens endlich viele Spektralwerte. \\
-	Indirekter Beweis: Zu $\epsilon > 0$ gibt es eine Folge von verschiedenen Eigenwerten $(\lambda_{n})$, wobei $|\lambda_{n} \geq \epsilon$, mit Eigenvektoren $(u_{n})$. \\
+	Indirekter Beweis: Zu $\epsilon > 0$ gibt es eine Folge von verschiedenen Eigenwerten $(\lambda_{n})_{n \geq 1}$, wobei $|\lambda_{n}| \geq \epsilon$, mit zugehörigen Eigenvektoren $(u_{n})_{n \geq 1}$. \\
 	Setze $U_{n} = \ospan(u_{1}, \dotsc, u_{n}), U_{n - 1} \subsetneq U_{n}$, denn Eigenvektoren zu verschiedenen Eigenwerten sind linear unabhängig. \\
-	Nach dem \hyperref[lemma:6.4-Riesz]{Lemma von Riesz 6.3} gibt es Vektoren $u_{n} \in U_{n}$ mit $\| u_{n} \| = 1, \| u_{n} - x\| \geq \frac{1}{2}$, für alle $x \in U_{n - 1}$. \\
+	Nach dem \hyperref[lemma:6.3-Riesz]{Lemma von Riesz 6.3} gibt es Vektoren $u_{n} \in U_{n}$ mit $\| u_{n} \| = 1, \| u_{n} - x\| \geq \frac{1}{2}$, für alle $x \in U_{n - 1}$. \\
 	Sei $m < n: K u_{n} - K u_{m} = \lambda_{n} (v_{n} - x)$ mit $x = \lambda_{n}^{-1} (\lambda_{n} u_{n} - K u_{n} + \underbrace{K u_{m}}_{\in U_{m-1}, \text{ s.u.}})$ \\ \\
-	$K(U_{n}) \subset U_{n}$, d.h. $K U_{m} \in U_{m} \subset U_{n - 1}, m < n$ \\
-	$u_{n} \in U_{n}$ kann man schreiben als $u_{n} = \alpha u_{n} + y, y \in U_{n - 1}, \alpha \in \MdK$
+	$K(U_{n}) \subset U_{n}$, d.h. $K u_{m} \in U_{m} \subset U_{n - 1}, m < n$ mit $u_{m} \in U_{m}$ \\
+	Weiter kann man $u_{n} \in U_{n}$ schreiben als $u_{n} = \alpha u_{n} + y, y \in U_{n - 1}, \alpha \in \MdK$
 	\begin{align*}
 		\Rightarrow \lambda_{n} u_{n} - K u_{n} & = \alpha u_{n} + \lambda_{n} y - K(\alpha u_{n}) - K(y) \\
 			& = \alpha \lambda_{n} u_{n} - \alpha \lambda_{n} u_{n} + \lambda_{n} y - K(y) \in U_{n - 1}
@@ -106,15 +106,20 @@ Grundlegende Aussagen zur Lösungstheorie linearer Gleichungen:
 \begin{beispiel}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $X = \ell^{p}, 1 \leq p < \infty$. Gegeben $\lambda_{} \in \MdC \setminus \{ 0 \}, | \lambda_{n} | \rightarrow 0:$
-			\[ A(x_{n} = (\lambda_{n} x_{n}) \text{ für } (x_{n}) \in \ell^{p} \]
-			Da $| y_{n} | \rightarrow 0$ gilt: $A \in K(\ell^{p})$ $\left( A \left( U_{\ell^{p}} \right) \text{ kompakt} \right)$. \\
-			$\lambda_{n}$ Eigenwerte mit Eigenraum zum Eigenwert $\lambda_{n} = \ospan\{ e_{m}: \lambda = \lambda_{m} \}$ endlich dimensional \\
-			$0 \in \sigma(A)$, aber kein Eigenwert, da $A$ injektiv.
+			\[ A(x_{n}) = (\lambda_{n} x_{n}) \text{ für } (x_{n}) \in \ell^{p} \]
+			Da $| \lambda_{n} | \rightarrow 0$ gilt, ist $A \in K(\ell^{p})$ $\left( A \left( U_{\ell^{p}} \right) \text{ kompakt} \right)$.
+			\begin{itemize}
+				\item $\lambda_{n}$  sind Eigenwerte mit endlich dimensionalem Eigenraum $\ospan\{ e_{m}: \lambda = \lambda_{m} \}$
+				\item $0 \in \sigma(A)$ ist aber kein Eigenwert, da $A$ injektiv ist. 
+			\end{itemize}
+			
+\newpage % todo temporarily for optics
+
 		\item Sei $X = C[0, 1]$, $k: \{ (s, t) \in [0, 1]^{2}: s \leq t \} \rightarrow \MdR_{+}$ stetig. \\
-			\begriff{Volterraoperator}: $V x(t) = \int_{0}^{t} k(t, s) x(s) ds$ komapkt. \\
+			\begriff{Volterraoperator}: $V x(t) = \int_{0}^{t} k(t, s) x(s) ds$ kompakt. \\
 			Nach \hyperref[bsp:13.10]{13.10} $\sigma(V) = \{ 0 \}$.
 			Falls z.B. $k(s, t) \equiv 1$ ist $0$ kein Eigenwert, da 
-			\[ V x(t) = \int_{0}^{t} x(s) ds = 0 x(t) \]
+			\[ V x(t) = \int_{0}^{t} x(s) ds \overset{!}{=} 0 \cdot x(t) \]
 			$\Rightarrow x(t) = 0, t \in [0, 1]$, d.h. $V$ ist injektiv.
 	\end{enumerate}	
 \end{beispiel}

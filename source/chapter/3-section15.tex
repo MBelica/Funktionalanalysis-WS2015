@@ -15,8 +15,7 @@
 	hei{\ss}t \begriff{Skalarprodukt}, falls für $x, y \in X, \lambda \in \MdK$ gilt:
 	\begin{description}
 	 	\label{def:15.1i}
-	 	\item[$\hspace{0.5cm} (S1) \hspace{0.1cm} $] $\< x_{1} + x_{2}, y \> = \< x_{1}, y \> + \< x_{2}, y \>$ \\
-			 $~\hspace{0.6cm} \< x, y_{1} + y_{2} \> = \< x, y_{1} \> + \< x, y_{2} \>$
+	 	\item[$\hspace{0.5cm} (S1) \hspace{0.1cm} $] $\< x_{1} + x_{2}, y \> = \< x_{1}, y \> + \< x_{2}, y \>$, $\< x, y_{1} + y_{2} \> = \< x, y_{1} \> + \< x, y_{2} \>$
  		\label{def:15.1ii}
 	 	\item[$\hspace{0.5cm} (S2) \hspace{0.1cm} $] $\< \lambda x, y \> = \lambda \< x, y \>,$ $\< x, \lambda y \> = \overline{\lambda} \< x, y \>$
  		\label{def:15.1iii}
@@ -151,7 +150,7 @@
 
 \begin{beweis}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Da Aussage invariant ist gegenüber von Translationen ist, sei o.B.d.A. $x = 0$ und $0 \notin K$. \\ \\
+		\item Da die Aussage invariant ist gegenüber von Translationen, sei o.B.d.A. $x = 0$ und $0 \notin K$. \\ \\
 			Existenz: Setze $d \coloneqq \inf \{ \| y \| : y \in K \}$ \\
 			Wähle eine Folge $y_{n} \in K$ mit $\lim_{n} \| y_{n} \| = d$; wir wollen zeigen, dass dann $(y_{n})$ eine Cauchy-Folge in $X$ ist. \\
 			Da $K$ konvex ist, gilt $\frac{y_{n} + y_{m}}{2} \in K: \| \frac{y_{n} + y_{m}}{2} \| \geq d$. Mit \hyperref[eq:15.6-rallelogrammGleichung]{$(P)$} folgt:
@@ -168,14 +167,14 @@
 		\item Annahme: $y_{0} \in K$ erfüllt die Ungleichung. 
 			\begin{align*}
 				\| x - y \|^{2} & = \| x - y_{0} + y_{0} - y \|^{2} \\
-								& = \| x - y_{0} \|^{1} + \| y_{0} - y \|^{2} + \underbrace{2 \Re \< x - y_{0}, y_{0} - y \>}_{ \geq 0} \\
+								& = \| x - y_{0} \|^{2} + \| y_{0} - y \|^{2} + \underbrace{2 \Re \< x - y_{0}, y_{0} - y \>}_{ \geq 0} \\
 								& \geq \| x - y_{0} \|^{2}
 			\end{align*}
 			Also ist $y_{0}$ das Element bester Approximation. \\ \\
 			Sei umgekehrt $y_{0}$ das Element bester Approximation und $y \in K$. \\
 			Für $t \in (0, 1)$ setze $ K \ni y_{t} = ( 1 - t ) y_{0} + t y$.
 			\begin{align*}
-				\| x - y_{0} \|^{2} & \leq \| x - y_{0} \|^{2} \\
+				\| x - y_{0} \|^{2} & \leq \| x - y_{t} \|^{2} \\
 									& = \< x - y_{0} + t ( y_{0} - y ), x - y_{0} + t ( y_{0}  - y ) \> \\
 									& = \| x - y_{0} \|^{2} + 2 \Re \<  x - y_{0}, t ( y_{0} - y ) \> + t^{2} \| y_{0} - y \|^{2}
 			\end{align*}
