@@ -31,7 +31,7 @@
 \end{satz}
 
 \begin{beweis}
-	Falls $x \in U \cap U^{\bot}$, dann $x \bot x \Rightarrow x = 0$. Sei $x \in X$, dazu gibt es eine Element bester Approximation $x_{1} \in U$. Setze $x_{2} \coloneqq x - x_{1}$. \\
+	Falls $x \in U \cap U^{\bot}$, dann $x \bot x \Rightarrow x = 0$. Sei $x \in X$, dazu gibt es eine Element bester Approximation $x_{1} \in U$, setze $x_{2} \coloneqq x - x_{1}$. \\
 	Zu zeigen ist $x_{2} \in U^{\bot}$ \\
 	Nach \hyperref[eq:15.7.5-SkalarproductbestApproximation]{$(w)$} gilt für alle $y \in U: \Re \< x_{2}, y - x_{1} \> \leq 0 \Rightarrow \Re \< x_{2}, y \> \leq 0$ $\forall y \in U$, denn mit $y$ durchläuft auch $y - x_{1}$ ganz $U$ \\
 	$\Rightarrow \< x_{2}, y \> = 0$ $\forall y \in U$, denn mit $y$ durchläuft auch $-y, iy$ und $-iy$ ganz $U$ $\Rightarrow x_{2} \in U^{\bot}$.
@@ -54,18 +54,20 @@
 	\end{enumerate}	
 \end{folgerung}
 
+\newpage % todo temporarily for optics
+
 \begin{definition}
 	Sei $X$ ein Hilbertraum.
 	\begin{itemize}
-		\item Eine Folge $(h_{n}) \subseteq X$ hei{\ss}t \begriff{Orthogonalsystem}, falls $h_{n} \bot h_{m}$ für $m \neq n$.
-		\item $(h_{n})$ hei{\ss}t \begriff{Orthonormalsystem}, falls zusätzlich $\| h_{n} \| = 1$ für alle $n$ gilt.
-		\item Ein Orthonormalsystem $(h_{n}) \subseteq X$ hei{\ss}t \begriff{Orthonormalbasis} von $X$ falls $\overline{\ospan(h_{n})} = X$.
+		\item Eine Folge $(h_{n})_{n \geq 1} \subseteq X$ hei{\ss}t \begriff{Orthogonalsystem}, falls $h_{n} \bot h_{m}$ für $m \neq n$.
+		\item $(h_{n})_{n \geq 1}$ hei{\ss}t \begriff{Orthonormalsystem}, falls zusätzlich $\| h_{n} \| = 1$ für alle $n \in \MdN$ gilt.
+		\item Ein Orthonormalsystem $(h_{n})_{n \geq 1} \subseteq X$ hei{\ss}t \begriff{Orthonormalbasis} von $X$ falls \[ \overline{\ospan(h_{n})} = X \]
 	\end{itemize}
 \end{definition}
 
 
 \begin{beispiel}
-	Sei $X = \ell^{p}$, $h_{n} = e_{n} =$ Einheitsvektor, also $(h_{n}) = ( \delta_{n, m} )_{m \in \MdN}$. \\
+	Sei $X = \ell^{p}$, $h_{n} = e_{n} =$ Einheitsvektor, also $(h_{n}) = ( \delta_{n, m} )_{m \geq 1}$. \\
 	Weiter sei $x = (x_{n}) \in \ell^{p}$, mit $\< x , e_{n} \> = x_{n}$, also 
 	\[ x = \sum_{n \in \MdN} x_{n} e_{n} = \sum_{n \in \MdN} \< x , e_{n} \> e_{n} \text{ und damit } \| x \|^{2} = \sum_{n \in \MdN} |x_{n}|^{2} = \sum_{n \in \MdN} | \< x , e_{n} \> |^{2}. \]
 	Für $y = (\beta_{n}) \in \ell^{2}$ gilt: $ $ $\< x , y \> = \sum_{n} x_{n} \overline{\beta_{n}} = \sum \< x , e_{n} \> \overline{ \< y , e_{n} \> }$.
@@ -80,7 +82,7 @@
 
 
 \begin{kor} \label{kor:16.8}
-	Sei $(h_{n})$ eine Orthonormalbasis von X. Dann ist $x = \sum_{n} \< x, h_{n} \> h_{n}$, $\| x \|^{1} = \sum_{n} | \< x, h_{n} \> |^{2}$ (Parseval) \index{Parseval} und
+	Sei $(h_{n})$ eine Orthonormalbasis von X, dann ist $x = \sum_{n} \< x, h_{n} \> h_{n}$, $\| x \|^{2} = \sum_{n} | \< x, h_{n} \> |^{2}$ (Parseval) \index{Parseval} und
 		\[ \< x , y \> = \sum_{n} \< x, h_{n} \> \overline{\< y , h_{n} \>} \]
 \end{kor}
 
@@ -134,13 +136,13 @@
 	\[ \| h_{n} \|^{2} = \frac{1}{2\pi} \int_{\pi}^{\pi} e^{int} e^{\overline{int}} dt = \frac{1}{2\pi} 2 \pi = 1. \]
 	Für $n \neq m$ gilt weiter
 	\[ \< h_{n} , h_{m} \> = \frac{1}{2 \pi} \int_{- \pi}^{\pi} e^{int} e^{\overline{imt}} dt = \frac{1}{2 \pi} \int_{- \pi}^{\pi} e^{i(n - m)t} dt = \frac{1}{2 \pi} \frac{1}{i(n - m)} [ e^{i(n - m)t} ]_{-\pi}^{\pi} = 0 \]
-	Dabei ist $\mathds{1}_{[0, a]}(t) = \sum_{k \in \MdZ} c_{k} e^{ikt}$ für $t \notin \{ 0, a \}$ ($\Rightarrow$ konv in $L^{2}$) wobei $c_{k} = \frac{1}{2 \pi} \int_{0}^{a} e^{-ikr} dt = \frac{1}{2 \pi k} \left( e^{-ika} - 1 \right)$ für $k \neq 0$ und $c_{0} = \frac{a}{2 \pi}$. \\
+	Dabei ist $\mathds{1}_{[0, a]}(t) = \sum_{k \in \MdZ} c_{k} e^{ikt}$ für $t \notin \{ 0, a \}$ ($\Rightarrow$ konv in $L^{2}$) wobei $c_{k} = \frac{1}{2 \pi} \int_{0}^{a} e^{-ikt} dt = \frac{1}{2 \pi k} \left( e^{-ika} - 1 \right)$ für $k \neq 0$ und $c_{0} = \frac{a}{2 \pi}$. \\
 	Da Linearkombinationen von $\mathds{1}_{[0, a]}, a \in (0, \pi]$ dicht in $L^{2}[-\pi, \pi]$ liegen, folgt $\overline{\ospan\left(e^{in \cdot} \right)} = L^{2}[-\pi, \pi]$.
 \end{beispiel}
 
 
 \begin{beispiel}
-	Sei $S = \{ \frac{1}{\sqrt{2 \pi}}, \frac{cos(nt)}{\sqrt{\pi}}, \frac{sin(nt)}{\sqrt{\pi}}; n \in \MdN \}$ ist eine Orthonormalbasis von $L^{2}[-\pi, \pi]$.	
+	$S = \{ \frac{1}{\sqrt{2 \pi}}, \frac{cos(nt)}{\sqrt{\pi}}, \frac{sin(nt)}{\sqrt{\pi}}; n \in \MdN \}$ ist eine Orthonormalbasis von $L^{2}[-\pi, \pi]$.	
 \end{beispiel}
 
 \begin{beweis}
