@@ -1,0 +1,90 @@
+\subsection*{16 - OGS u. ONB}
+
+
+\begin{karte}{orthogonale Vektoren, Mengen und das orthogonale Komplement}
+	Sei $X$ ein Prähilbertraum
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $x, y \in X$ hei{\ss}en \begriff{orthogonal}, falls $\< x, y \> = 0$. Schreibweise: $x \bot y$
+		\item $A, B \subseteq X$ sind orthogonal, falls $\< x, y \> = 0$ für alle $x \in A, y \in B$. Schreibweise $A \bot B$
+		\item Sei $A \subset X$. $A^{\bot} = \{ y \in X: \< y, x \> = 0$ $\forall x \in A \}$ ist das \begriff{orthogonale Komplement} von $A$ in $X$.
+	\end{enumerate}
+\end{karte}
+
+
+\begin{karte}{3x Eigenschaften des orthogonalen Komplements}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $A \subseteq B \Rightarrow B^{\bot} \subseteq A^{\bot}$
+		\item $A^{\bot}$ ist stets ein abgeschlossener Unterraum von $X$
+		\item $A \subseteq \left( A^{\bot} \right)^{\bot}$, $A^{\bot} = \overline{ \ospan(A) }^{\bot}$
+	\end{enumerate}	
+\end{karte}
+
+
+\begin{karte}{Orthogonalzerlegung}
+	Sei $X$ ein Hilbertraum und $U$ ein abgeschlossener Teilraum von $X$.
+		\[ \text{Dann gilt: } X = U \oplus U^{\bot} \]
+\end{karte}
+
+
+\begin{karte}{Orthogonoalprojektion}
+	Sei $X$ ein Hilbertraum, $U \subseteq X$ abgeschlossen und $X = U \oplus U^{\bot}$. Für $X \ni x = x_{1} + x_{2}$, mit $x_{1} \in U, x_{2} \in U^{\bot}$ definiere
+		\[ P_{U} \colon X \rightarrow U, ~ P x = x_{1} \]
+		$P_{U}$ hei{\ss}t \begriff{Orthogonalprojektion} von $X$ auf $U$.	
+\end{karte}
+
+
+\begin{karte}{3x Eigenschaften der Orthogonoalprojektion}
+	Die Orthogonalprojektion hat folgende Eigenschaften:
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $\bild P_{U} = U$, $\kernn P_{U} = U^{\bot}$
+		\item $\| P_{U} \| = 1$, denn $\| x \|^{2} = \| P_{U} x \|^{2} + \| x_{2} \|^{2} \geq \| P_{U} x \|^{2}$
+		\item $P_{U} + P_{U^{\bot}} = Id_{X}$
+	\end{enumerate}	
+\end{karte}
+
+\begin{karte}{Orthogonalsystem, Orthonormalsystem und ONB}
+	Sei $X$ ein Hilbertraum.
+	\begin{itemize}
+		\item Eine Folge $(h_{n})_{n \geq 1} \subseteq X$ hei{\ss}t \begriff{Orthogonalsystem}, falls $h_{n} \bot h_{m}$ für $m \neq n$.
+		\item $(h_{n})_{n \geq 1}$ hei{\ss}t \begriff{Orthonormalsystem}, falls zusätzlich $\| h_{n} \| = 1$ für alle $n \in \MdN$ gilt.
+		\item Ein Orthonormalsystem $(h_{n})_{n \geq 1} \subseteq X$ hei{\ss}t \begriff{Orthonormalbasis} von $X$ falls \[ \overline{\ospan(h_{n})} = X \]
+	\end{itemize}
+\end{karte}
+
+\begin{karte}{Besselsche Ungleichung}
+	Sei $(h_{n})$ eine Orthonormalbasis. Für $U = \overline{\ospan(h_{n})}$ gilt dann
+		\[ P_{U} x = \sum_{n} \< x, h_{n} \> h_{n} \quad \forall x \in X \]
+	Weiter ist $\| P_{U} x \|^{2} = \sum_{n} | \< x , h_{n} \> |^{2} \leq \| x \|^{2}$ $\forall x \in X$ $ $ (Besselsche Ungleichung) \index{Besselsche Ungleichung}
+\end{karte}
+
+
+\begin{karte}{Parseval}
+	Sei $(h_{n})$ eine Orthonormalbasis von X, dann ist $x = \sum_{n} \< x, h_{n} \> h_{n}$, $\| x \|^{2} = \sum_{n} | \< x, h_{n} \> |^{2}$ (Parseval) \index{Parseval} und
+		\[ \< x , y \> = \sum_{n} \< x, h_{n} \> \overline{\< y , h_{n} \>} \]
+\end{karte}
+
+\begin{karte}{ONS $\gdw$ ONB}
+	Ein Orthonormalsystem $(h_{n})_{n \in J}$ ist genau dann eine Orthonormalbasis, wenn $\< x, h_{n} \> = 0$ für alle $n \in J$ bedeutet $x = 0$. 	
+\end{karte}
+
+\begin{karte}{Gram-Schmidt-Verfahren}
+	Sei $(X, \< \cdot, \cdot \>)$ ein Hilbertraum und $(y_{n}) \subset X$ linear unabhängig. Definiere
+	\begin{description}
+		\item $h_{1} \coloneqq \frac{y_{1}}{\| y_{1} \|}, U_{1} = \ospan \{ h_{1} \} = \ospan \{ y_{1} \}$
+		\item $h_{2} = \frac{\hat{h}_{2}}{\| \hat{h}_{2} \|}$, $\hat{h}_{2} \coloneqq y_{2} - P_{U_{1}} y_{2} = y_{2} - \< y_{2} , h_{1} \> h_{1}$
+		\item $\hat{h}_{n + 1} \coloneqq y_{n + 1} - P_{U_{n}} y_{n + 1 } = y_{n + 1} + \sum_{j = 1}^{n} \< y_{n + 1} , h_{j} \> h_{j}$, $h_{n + 1} \coloneqq \frac{\hat{h}_{n + 1}}{\| \hat{h}_{n + 1} \|}$
+	\end{description}
+	Am Ende: $\overline{\ospan}\{ h_{j} \} = \overline{\ospan}\{ y_{j} \}$
+\end{karte}
+
+
+\begin{karte}{Separable, unendlich dimensionale Hilbertraum und ONB}
+	Jeder separable, unendlich dimensionale Hilbertraum $X$ hat eine Orthonormalbasis $(h_{n})_{n \in \MdN}	$. \\
+	Diese Orthonormalbasis definiert eine Isometrie
+		$\phi \colon \ell^{2} \rightarrow X, \phi( (\alpha_{n}) ) = \sum_{n \in \MdN} \alpha_{n} h_{n}, \quad (\alpha_{n}) \in \ell^{2}$ mit 
+	\begin{itemize}
+		\item $\phi( e_{j} ) = h_{j}$
+		\item $\| \phi( (\alpha_{j}) ) \|_{X} = \< (\alpha_{j}),(\beta_{j}) \>_{\ell^{2}} = \sum_{j \in \MdN} \alpha_{j} \overline{\beta_{j}}$
+		\item $\phi^{-1} \colon X \rightarrow \ell^{2}, \phi^{-1}(x) = \left( \< x, h_{j} \>_{X} \right)_{j \in \MdN} \in \ell^{2}$
+	\end{itemize}
+\end{karte}

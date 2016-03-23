@@ -1,0 +1,80 @@
+\subsection*{Duale Op. auf HR}
+
+\begin{karte}{Adjungierter Operator}
+	Seien $X, Y$ Hilberträume und $T \in B(X, Y)$. Dann gibt es genau ein $T^{*} \in B(Y, X)$ mit
+	\begin{itemize}
+		\item $\< T x , y \> = \< x , T^{*} y \> \quad \forall x \in X, y \in Y$,
+		\item $\| T^{*} \| = \| T \|$,
+		\item $\left(T	^{*}\right)^{*} = T$.
+	\end{itemize}	
+\end{karte}
+
+\begin{karte}{4x Eigenschaften der Adjungierten}
+	Sei $S, T \in B(X), \lambda \in \MdK$
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $\left( S + T \right)^{*} = T^{*} + S^{*}$
+		\item $\left( \lambda S \right)^{*} = \overline{\lambda} S^{*}$
+		\item $\left( T \cdot S \right)^{*} = S^{*} T^{*}$
+		\item $\| S \cdot S^{*} \| = \| S \|^{2} = \| S^{*} \cdot S \|$
+	\end{enumerate}
+\end{karte}
+
+\begin{karte}{Kern von $S$ und $S^{*}$}
+	Für $S \in B(X)$ gilt:
+	\[ \kernn(S) = \left( \bild(S^{*}) \right)^{\bot}, \quad \kernn(S^{*}) = \left( \bild(S) \right)^{\bot} \]	
+\end{karte}
+
+\begin{karte}{unitär, selbstadjungiert und normal}
+	Sei $T \in B(X, Y)$, $X, Y$ Hilberträume
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $T$ hei{\ss}t \begriff{unitär}, falls $T$ invertierbar ist und $T^{-1} = T^{*}$ $\text{d.h. } T \text{ ist surjektiv und } \< Tx , Ty \> = \< x , T^{*} T y \> = \< x , y \> \quad \forall x, y \in X$
+		\item Sei $X = Y$. $T$ ist \begriff{selbstadjungiert}, falls $T^{*} = T$, d.h. $\< Tx , y \> = \< x , T y \> \quad \forall x, y \in X$
+		\item Sei $X = Y$. $T \in B(X)$ hei{\ss}t \begriff{normal}, falls $T^{*} T = T T^{*}$. $\text{d.h. } \< Tx , Ty \> = \< T^{*} x , T^{*} y \> \quad \forall x, y \in X$
+	\end{enumerate}
+\end{karte}
+
+
+\begin{karte}{Welche Operatoren sind normal}
+	Unitäre und selbstadjungierte Operatoren sind normal.	
+\end{karte}
+
+\begin{karte}{$T \in B(X) \text{ ist selbstadjungiert }$ genau dann wenn...}
+	Sei $X$ ein Hilbertraum über $\MdC$. \\
+		\[ T \in B(X) \text{ ist selbstadjungiert } \gdw \< T x , x \> \in \MdR \text{ für alle } x \in X \]
+\end{karte}
+
+\begin{karte}{Norm von $T$, wenn $T$ selbstadjungiert ist}
+	Für $T \in B(X)$ selbstadjungiert, gilt:
+	\[ \| T \| = \sup_{\| x \| \leq 1} |\< T x , x \>| \]	
+\end{karte}
+
+\begin{karte}{$r(T)$ und $\kernn(T)$ wenn $T$ normal ist}
+	Sei $T \in B(X)$ normal
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $r(T) = \sup \{ | \lambda | : \lambda \in \sigma(T) \} = \| T \|$
+		\item $\kernn T = \kernn T^{*}$
+	\end{enumerate}	
+\end{karte}
+
+\begin{karte}{4x: Sei $X$ ein Hilbertraum und $T \in B(X)$ kompakt und normal, d.h.  $T T^{*} = T^{*} T$. Dann gilt}
+	Sei $X$ ein Hilbertraum und $T \in B(X)$ kompakt und normal, d.h.  $T T^{*} = T^{*} T$. Dann gilt
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $T x = \lambda x \gdw T^{*} x = \overline{\lambda} x$
+		\item $T x = \lambda x, T y = \mu y$ mit $\mu \neq \lambda$  dann ist $x \bot y$
+		\item Falls $\MdK = \MdC$, dann gibt es ein $\lambda \in \sigma(T)$ mit $| \lambda | = \| T \|$
+		\item Falls $\MdK = \MdR$, dann ist $\sigma(T) \subset \MdR$ und $\| T \| \in \sigma(T)$ oder $- \| T \| \in \sigma(T)$
+	\end{enumerate}
+\end{karte}
+
+\begin{karte}{Spektralsatz für kompakte, normale Operatoren}
+	Sei $X$ ein Hilbertraum, $T \in B(X)$ kompakt und normal. \\
+	Dann gibt es eine Folge $(\lambda_{n}) \in \MdC \setminus \{ 0 \}$, die entweder endlich oder eine Nullfolge und es gibt ein Orthonormalsystem $(h_{n})$ in $X$, das endlich ist, falls $(\lambda_{n})$ endlich ist, so dass
+	\[ Tx = \sum_{n} \lambda_{n} \< x , h_{n} \> h_{n} \quad \forall x \in X \]
+	Insbesondere: 1. $\sigma(T) \setminus \{ 0 \} = \{ \lambda_{n} \}$, $T h_{n} = \lambda_{n} h_{n}$, 2. $X = \left( \kernn T \right) \oplus \overline{\ospan} \{ h_{n} \}$, orthogonale Komplement, 3. $\| T \| = \sup_{n} | \lambda_{n} |$ 
+\end{karte}
+
+\begin{karte}{Seperabel + ONB \[ => \text{ Darstellung des Operators} \]}
+	Falls $X$ separabel ist, so gibt es eine Orthonormalbasis $(e_{n})$ von $X$, die diese $(h_{n})$ (vom Spektralsatz) und eine orthonormalbasis von $\kernn(T)$ so, dass 
+	\[ T x = \sum_{n = 0}^{\infty} \mu_{n} \< x , e_{n} \> e_{n} \]
+	wobei $\mu_{n} = 0$, falls $e_{n} \in \kernn(T), \mu_{n} = \lambda_{m}$ falls $e_{n} = h_{m}$.
+\end{karte}

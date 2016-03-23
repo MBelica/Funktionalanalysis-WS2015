@@ -1,0 +1,79 @@
+\subsection*{15 -Hilberträume}
+
+
+\begin{karte}{Skalarprodukt}
+	Sei $X$ ein Vektorraum über $\MdK$. Eine Abbildung $\< \cdot, \cdot \> \colon X \times X \rightarrow \MdK$ hei{\ss}t \begriff{Skalarprodukt}, falls für $x, y \in X, \lambda \in \MdK$ gilt:
+	\begin{description}
+	 	\label{def:15.1i}
+	 	\item[$\hspace{0.5cm} (S1) \hspace{0.1cm} $] $\< x_{1} + x_{2}, y \> = \< x_{1}, y \> + \< x_{2}, y \>$, $\< x, y_{1} + y_{2} \> = \< x, y_{1} \> + \< x, y_{2} \>$
+ 		\label{def:15.1ii}
+	 	\item[$\hspace{0.5cm} (S2) \hspace{0.1cm} $] $\< \lambda x, y \> = \lambda \< x, y \>,$ $\< x, \lambda y \> = \overline{\lambda} \< x, y \>$
+ 		\label{def:15.1iii}
+	 	\item[$\hspace{0.5cm} (S3) \hspace{0.1cm} $] $\< x, y \> = \overline{\< y, x \> }$
+ 		\label{def:15.1iv}
+	 	\item[$\hspace{0.5cm} (S4) \hspace{0.1cm} $] $\< x, y \> \geq 0, \quad \< x, x \> = 0 \gdw x = 0$
+	\end{description}
+\end{karte}
+
+
+\begin{karte}{Cauchy-Schwarz-Ungleichung}
+	Sei $X$ ein Vektor mit Skalarprodukt $\< \cdot, \cdot \>$ \\
+	
+	Für $x, y \in X$ gilt die \begriff{Cauchy-Schwarz-Ungleichung}
+			\[ | \< x, y \> |^{2} \leq \< x, x \> \cdot \< y, y \> \]
+\end{karte}
+
+\begin{karte}{Aus Skalarprodukt induzierte Norm}
+	Sei $X$ ein Vektor mit Skalarprodukt $\< \cdot, \cdot \>$ \\
+	
+	$\| x \| = \< x, x \>^{\frac{1}{2}}$ definiert eine Norm auf $X$
+	Insbesondere: 
+	\[ \< x, y \> \leq \| x \| \cdot \| y \| \]
+\end{karte}
+
+\begin{karte}{Verallgemeinerter Pythagoras}
+	\[ \< x + y, x + y \> = \| x\|^{2} + 2 \Re \< x, y \> + \| y \|^{2} \quad (*) \label{eq:15.2-*} \]
+\end{karte}
+
+\begin{karte}{Aus Norm induziertes Skalarprodukt}
+	Man kann aus der in \hyperref[prop:15.2b]{$b)$} definierten Norm das Skalarprodukt zurückgewinnen durch:
+	\begin{align*}
+		\text{Falls } \MdK = \MdR: &  \< x, y \> = \frac{1}{4} \left( \| x + y \|^{2} - \| x - y \|^{2} \right) \\
+		\text{Falls } \MdK = \MdC: &  \< x, y \> = \frac{1}{4} \left( \| x + y \|^{2} - \| x - y \|^{2} + i \| x + i y\|^{2} - i \| x - iy\|^{2} \right)
+	\end{align*}
+\end{karte}
+
+
+\begin{karte}{Prä-Hilbertraum und Hilbertraum}
+	Ein metrischer Raum $(X, \| \cdot \|)$ hei{\ss}t \begriff{Prä-Hilbertraum}, falls es ein Skalarprodukt $\< \cdot, \cdot \>$ auf $X \times X$ gibt mit
+		\[ \| x \| = \< x, x \>^{\frac{1}{2}} \]
+	Falls $(X, \| \cdot \|)$ au{\ss}erdem noch vollständig ist, dann hei{\ss}t $X$ ein \begriff{Hilbertraum}.	
+\end{karte}
+
+
+\begin{karte}{$L^{p}$ Hilbertraum?}
+	$L^{p}(\Omega)$ ist kein Hilbertraum für $n \neq 2$.
+\end{karte}
+
+
+\begin{karte}{Parallelogramm-Gleichung}
+	Ein normierter Raum $(X, \| \cdot \|)$ ist genau dann ein Prä-Hilbertraum, falls die sogenannte \\ 
+	\begriff{Prallelogramm-Gleichung} gilt, d.h.
+	\[ \forall x, y \in X: \quad \|x + y \|^{2} + \| x - y \|^{2} = 2 \| x \|^{2} + 2 \| y \|^{2} \quad (P) \label{eq:15.6-rallelogrammGleichung} \]
+\end{karte}
+
+\begin{karte}{Beste Approximation}
+	Sei $X$ ein Hilbertraum und $K$ eine konvexe und abgeschlossene Teilmenge von $X$.
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Zu jedem $x \in X$ gibt es genau ein $y_{0} \in K$ so, dass
+			\[ \| x - y_{0} \| = \inf \{ \| x - y \|: y \in K \} \]
+		\item Dieses $y_{0} \in K$ ist charakterisiert durch die Ungleichung 
+			\[ \Re \< x - y_{0}, y - y_{0} \> \leq 0 \quad (w) \label{eq:15.7.5-SkalarproductbestApproximation} \]
+	\end{enumerate}
+\end{karte}
+
+
+\begin{karte}{Winkel zwischen Vektoren}
+		Seien $u, v \in H \setminus \{ 0 \}$ und definiere entsprechend $u_{1} = \frac{u}{\| u \|}, v_{1} = \frac{v}{\| v \|}$.
+		\[ \Rightarrow 1 \geq \frac{|\< u, v \>|}{\|u \| \cdot \| v \|} = | \< u_{1}, v_{1} \> | = \cos(\alpha) \] \[ \text{ wobei } \alpha \in [0, \pi) \text{ eindeutig gewählt.} \]
+\end{karte}

@@ -44,11 +44,12 @@
 \end{satz}
 
 \begin{beweis}
-	1. Schritt: sei $\MdK = \MdR$, $\dim \QR{X}{U} = 1$. Wähle $x_{0} \in \QR{X}{U}$, $x = \ospan(x) \oplus U$, d.h. zu $x \in X$ gibt es ein $u \in U, \lambda \in \MdR$ mit $x = u + \lambda x_{0}$ \\
+	Wir gehen in 3 Schritten vor: 1. $\MdK = \MdR, \dim \QR{X}{U} = 1$, 2. $ \MdK = \MdR$, allgemeines $U$, 3. $\MdK = \MdC$ \\ \\
+	1. Schritt: sei $\MdK = \MdR$, $\dim \QR{X}{U} = 1$. Wähle $x_{0} \in \QR{X}{U} \Rightarrow X = \ospan(x_{0}) \oplus U$, d.h. zu $x \in X$ gibt es ein $u \in U, \lambda \in \MdR$ mit $x = u + \lambda x_{0}$ \\
 	Für jedes $r \in \MdR$ erhalten wir eine lineare Abbildung:
-	\[ L_{r} \colon X \rightarrow \MdR, \quad L_{r} (x) = l(u) + \lambda r, \quad L|_{U} = l \]
-	Zeige dass $r$ so gewählt werden kann, dass für alle $x \in X$ gilt $L_{r}(x) \leq p(x)$ und 
-	\[ l(u) + \lambda r \leq p(u + \lambda_{0} x_{0}) \quad \forall u \in U, \lambda \in \MdR \quad (1) \label{eq:20.2.5-1} \]
+	\[ L_{r} \colon X \rightarrow \MdR, \quad L_{r} (x) = l(u) + \lambda r, \quad L_{r}|_{U} = l \]
+	Zeige dass $r$ so gewählt werden kann, dass für alle $x \in X$ gilt
+	\[  L_{r}(x) \leq p(x) \quad \gdw \quad l(u) + \lambda r \leq p(u + \lambda_{0} x_{0}) \quad \forall u \in U, \lambda \in \MdR \quad (1) \label{eq:20.2.5-1} \]
 	Für $\lambda > 0$ bedeutet \hyperref[eq:20.2.5-1]{$(1)$}:
 	\begin{align*}
 		r & \leq p(\frac{u}{\lambda} + x_{0}) - l(\frac{u}{\lambda}) \quad \forall u \in U \\
@@ -57,24 +58,25 @@
 	Für $\lambda < 0$ bedeutet \hyperref[eq:20.2.5-1]{$(1)$}:
 	\begin{align*}
 		- r & \leq p(\frac{u}{- \lambda} - x_{0}) - l(\frac{u}{- \lambda}) \quad \forall u \in U \\
-		\gdw r & \geq \sup \{ - p( w + x_{0}) + l(w) : w \in U \} \quad (3) \label{eq:20.2.5-3}
+		\gdw r & \geq \sup \{ l(w) - p( w + x_{0}) : w \in U \} \quad (3) \label{eq:20.2.5-3}
 	\end{align*}
 	Um \hyperref[eq:20.2.5-2]{$(2)$} und \hyperref[eq:20.2.5-3]{$(3)$} und damit \hyperref[eq:20.2.5-1]{$(1)$} zu erfüllen, benötigt man
 	\begin{align*}
 		l(w) - p(w - x_{0}) & \leq p(v + x_{0}) - l(v) \quad \forall v, w \in U \\
-		\gdw l(w) + l(v) & \leq p(v + x_{0}) + p(w - x_{0}) \quad u, v \in U
+		\gdw l(w) + l(v) & \leq p(v + x_{0}) + p(w - x_{0}) \quad \forall u, v \in U
 	\end{align*}
-	Damit $l(v) + l(w) = l(v + w) \leq p(v + w) \leq p(v) + p(w)$ \\
-	Rückwärts betrachten liefert die erste Behauptung. \\ \\
-	2. Schritt: sei $\MdK = \MdR$ und $U$ allgemein mit $U \subset U_{1} \subset U_{2} \subset \dotsc$ und $\dim \QR{U_{j}}{U_{j - 1}} = 1$ \\
-	Da wir aber keine Topologie haben, können wir nicht annehmen, dass uns diese vollständige Induktion über z.B. $\bigcup_{j \in \MdN} U_{j}$ eine in X dichte Menge liefert.
-	
-	todo % todo rest des beweises
+	Diese Ungleichung gilt wegen $l(v) + l(w) = l(v + w) \leq p(v + w) \leq p(v) + p(w)$ $\forall v, w \in U$ und liefert die erste Behauptung. \\ \\
+	2. Schritt: sei $\MdK = \MdR$ und $U$ allgemein. 
+		\[ \mathcal{A} \coloneqq \{ (V, L_{V}) : U \subseteq V \subseteq X \text{ UVR }, L_{V} \colon V \rightarrow \MdR \text{ linear, mit } L_{V}|_{U} = l, ~ \Re L_{V}(x) \leq p(x) \forall x \in V \} \]
+	Definiere eine Ordnung auf $\mathcal{A}:$ $(V_{1}, L_{1}) \leq (V_{2}, L_{2}) \gdw V_{1} \subseteq V_{2}, L_{2}|_{V_{1}} = L_{1}$. \\
+	Zu zeigen ist: jede total geordnete Teilmenge von $\mathcal{A}$ hat eine obere Schranke. \\
+	Sei $\mathcal{A}_{0}  \subseteq \mathcal{A}$ total geordnet, setze $V_{0} = \bigcup_{V \in \mathcal{A}} V$, dann ist $V_{0}$ ein Untervektorraum von $X$. Definiere $L_{0}(x) = L_{V_{j}}(x)$ falls $x \in V_{j} \in \mathcal{A}_{0}$. Dann ist $L_{0}$ wohldefiniert, linear und erfüllt die Abschätzung $\Rightarrow (V_{0}, L_{0}) \in \mathcal{A}$ und $(\hat{V}, \hat{L}) \leq (V_{0}, L_{0})$ für alle $(\hat{V}, \hat{L}) \in \mathcal{A}_{0} \Rightarrow (V_{0}, L_{0})$ ist eine obere Schranke für $\mathcal{A}_{0} \in \mathcal{A}$. \\ \\
+	3. Sei $\MdK = \MdC$ und sei $X_{\MdR}$ der zu $X$ gehörige reelle Vektorraum. Definiere $l_{\MdR}(x) = \Re l(x) = \frac{1}{2} \left( l(x) + \overline{l(x)} \right)$. Nach $(ii)$ gibt es ein reelles lineares Funktional $L_{\MdR} \colon X_{\MdR} \rightarrow \MdR$ mit $L_{\MdR}|_{U} = l_{\MdR}$ und $L_{\MdR}(x) \leq p(x) ~ \forall x \in X_{\MdR}$. Setze $L(x) = L_{\MdR}(x) - i L_{\MdR}(ix)$, dann ist $L$ additiv und es gilt $L(ix) = L_{\MdR}(ix) - i L_{\MdR}(-x) = i \left( - i L_{\MdR}(ix) + L_{\MdR}(x) \right) = i L(x)$. Somit ist L linear, weiter ist $\Re L(x) = L_{\MdR}(x) \leq p(x) ~ \forall x \in X$ und $L|_{U} = l$.
 \end{beweis}
 
 
 \begin{satz}[Hahn-Banach für normierte Räume] \label{satz:20.3-Hahn-Banach} 
-	Sei $X$ normierter Raum. Sei $U \subset X$ ein linearer Teilraum. \\
+	Sei $X$ normierter Vektorraum. Sei $U \subset X$ ein linearer Teilraum. \\
 	Zu jedem stetigen Funktional $u' \colon U \rightarrow \MdK$, gibt es ein stetiges lineares Funktional $x' \colon X \rightarrow \MdK$ mit 
 		\[ \| x' \|_{X'} = \| u' \|_{U'} \quad \text{und} \quad x'|_{U} = u'. \]	
 \end{satz}
@@ -89,8 +91,8 @@
 
 
 \begin{kor} \label{kor:20.4}
-	Sei $X$ ein normierter Vektorraum. Zu jedem $x \in X, x \neq 0$ gibt es ein $x \in X$ mit 
-		\[ \| x \|_{X'} \quad \text{und} \quad x'(x) = \| x \| \]
+	Sei $X$ ein normierter Vektorraum. Zu jedem $x \in X, x \neq 0$ gibt es ein $x' \in X'$ mit 
+		\[ \| x' \|_{X'} \quad \text{und} \quad x'(x) = \| x \| \]
 \end{kor}
 
 \begin{beweis}
@@ -101,9 +103,9 @@
 
 \begin{folgerung}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item $x \in X, x'(x) = 0$ für alle $x' \in X^{*} \Rightarrow x = 0$
+		\item $x \in X, x'(x) = 0$ für alle $x' \in X' \Rightarrow x = 0$
 		\item Zu $x_{1}, x_{2} \in X$ gibt es $x' \in X'$ mit $x'(x_{1}) \neq x'(x_{2})$ (folgt aus $a)$ mit $x = x_{1} - x_{2}$)
-		\item $\| x \| = \sup \{ x'(x) : \| x' \| = 1, x' \in X' \}$
+		\item $\| x \| = \sup \{ x'(x) : \| x' \| = 1, ~ x' \in X' \}$
 	\end{enumerate}	
 \end{folgerung}
 
@@ -114,20 +116,20 @@
 
 
 \begin{kor} \label{kor:20.6}
-	Sei $X$ ein normierter Raum. $U \subset X$ ein abgeschlossener, linearer Teilraum, $x \in X \setminus U$. \\
-	Dann gibt es ein $x' \in X'$ mit $x'|_{U} = 0, x'(x) =\neq 0$.	
+	Sei $X$ ein normierter Raum. $U \subset X$ ein abgeschlossener Untervektorraum, $x \in X \setminus U$. \\
+	Dann gibt es ein $x' \in X'$ mit $x'|_{U} \equiv 0$ und $x'(x) =\neq 0$.	
 \end{kor}
 
 \begin{beweis}
-	Sei $q \colon X \rightarrow \QR{X}{U}$ Quotientenabbildung $\Rightarrow q(x) \in \QR{X}{X}, q(x) \neq 0 \xRightarrow[]{\ref{kor:20.4}}$ Wähle $l \in \left(\QR{X}{U}\right)'$ mit $l(q(x)) \neq 0$. Setze $x' = l \circ q \colon x \rightarrow \MdK \Rightarrow x' \in X'$ und $x'(x) = l(q(x)) \neq 0$.
+	Sei $q \colon X \rightarrow \QR{X}{U}$ Quotientenabbildung $\Rightarrow q(x) \in \QR{X}{X}, q(x) \neq 0 \xRightarrow[]{\ref{kor:20.4}}$ Wähle $l \in \left(\QR{X}{U}\right)'$ mit $l(q(x)) \neq 0$. Setze $x' = l \circ q \colon xX\rightarrow \MdK \Rightarrow x' \in X'$ und $x'(x) = l(q(x)) \neq 0$.
 \end{beweis}
 
 
 \begin{definition}
 	$X$ sei ein normierter Raum, $U \subset X, V \subset X'$ Teilmenge. Setze
 	\begin{align*}
-		U^{\bot} & \coloneqq \{ x' \in X' : x'(x) = 0 \text{ für alle } x \in X \} \\
-		V_{\bot} & \coloneqq \{ x \in X : x'(x) = 0 \text{ für alle } x \in V \} 
+		U^{\bot} & \coloneqq \{ x' \in X' : x'(x) = 0 \text{ für alle } x \in U \} \\
+		V_{\bot} & \coloneqq \{ x \in X : x'(x) = 0 \text{ für alle } x' \in V \} 
 	\end{align*}
 	Beachte: $X'' \supset V^{\bot} = \{  x'' \in \left( X' \right)' = X'' : x''(x) = 0 \text{ für alle } x' \in V \} \neq V_{\bot} \subset X$
 \end{definition}
@@ -137,12 +139,12 @@
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $U^{\bot}$ ist ein linearer abgeschlossener Teilraum $X'$, $V_{\bot}$ ist ein linearer abgeschlossen Teilraum von $X$.
 		\item $U_{1} \subset U_{2} \Rightarrow U_{2}^{\bot} \subset U_{1}^{\bot}$, $V_{1} \subset V_{2} \Rightarrow (V_{2})_{\bot} \subset (V_{1})_{\bot}$
-		\item $(U^{\bot})_{\bot} = \overline{\ospan } U$
+		\item $(U^{\bot})_{\bot} = \overline{\ospan } \left( U \right)$
 	\end{enumerate}	
 \end{bemerkung}
 
 \begin{beweis}
-	$c)$ $"$$\supseteq$$"$ Nach Definition. $"$$\subseteq$ Sei $x \notin \overline{\ospan}(U) \xRightarrow[]{\ref{kor:20.6}} \exists ~ x' \in X'$ mit $x'|_{\overline{\ospan}(U)} \equiv 0$ und $x'(x) \neq 0$
+	$c)$ $"$$\supseteq$$"$ Nach Definition. $"$$\subseteq$$"$ Sei $x \notin \overline{\ospan}(U) \xRightarrow[]{\ref{kor:20.6}} \exists ~ x' \in X'$ mit $x'|_{\overline{\ospan}(U)} \equiv 0$ und $x'(x) \neq 0$
 	\[ \Rightarrow x' \in U^{\bot} \text{, aber wegen } x'(x) \neq 0 \text{ gilt } x' \notin ( U^{\bot} )_{\bot}\]
 \end{beweis}
 

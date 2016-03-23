@@ -1,0 +1,43 @@
+\subsection*{Schw. Konv. u. Komp.}
+
+
+\begin{karte}{Schwache Konvergenz}
+	Sei $X$ ein Hilbertraum und $x_{n}, x \in X$. Wir sagen $x_{n}$ \begriff{konvergiert schwach} gegen $x$, falls
+		\[ \< x_{n} , y \> \rightarrow \< x , y \> \quad \forall y \in X \]
+	Notation: $x_{n} \xrightarrow[]{w} x$	
+\end{karte}
+
+
+\begin{karte}{Eindeutigkeit des schwachen Limes}
+	Der schwache Limes ist eindeutig bestimmt und linear. Sei $x_{n} \xrightarrow[]{w} x, x_{n} \xrightarrow[]{w} \hat{x}$
+		\[ \Rightarrow \< x - \hat{x} , y \> = \lim_{n \rightarrow \infty} \left( \< x_{n} , y \> - \< x_{n} , y \> \right) = 0 \quad \forall y \in X, \text{ insbesondere für } y = x - \hat{x} \]	
+\end{karte}
+
+
+\begin{karte}{Vgl. von Norm- und schwacher Konvergenz}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Normenkonvergenz impliziert schwache Konvergenz
+		\item $x_{n} \xrightarrow[]{w} x$, dann $\| x \| \leq \lim_{n \rightarrow \infty} \| x_{n} \|$
+		\item Falls $x_{n} \xrightarrow[]{w} x$ und $\| x_{n} \| \rightarrow \| x \|$, dann $\| x - x_{n} \| \rightarrow 0$
+	\end{enumerate}
+\end{karte}
+
+
+\begin{karte}{Schwach konvergente Formen und Beschränktheit}
+	Jede schwach konvergente Folge ist normbeschränkt.
+\end{karte}
+
+\begin{karte}{Schwache Konvergenz in $\ell^{2}$}
+	Sei $X = \ell^{2}$, $x_{n} = (a_{n, j})_{j}, x = (a_{j})$. Dann $x_{n} \xrightarrow[]{w} x \gdw a_{n, j} \rightarrow a_{j}$ für alle $j \in \MdN$.
+\end{karte}
+
+\begin{karte}{Schwache Konvergenz bei ONBs}
+	Sei $X$ ein Hilbertraum mit Orthonormalbasis $(h_{j})$. Dann gilt
+	\[ x_{n} \xrightarrow[]{w} x \gdw \< x_{n} , h_{j} \> \rightarrow \< x , h_{j} \> ~ \forall j \in \MdN \]
+\end{karte}
+
+\begin{karte}{(relativ) schwach kompakt}
+	Eine Teilmenge $M$ eines Hilbertraums $X$ hei{\ss}t \begriff{relativ schwach kompakt}, falls jede Folge $(x_{n}) \subseteq M$ eine schwach konvergente Teilfolge besitzt.
+
+	Eine beschränkte Teilmenge eines Hilbertraums ist relativ schwach kompakt.	
+\end{karte}

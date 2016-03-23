@@ -1,0 +1,52 @@
+\subsection*{13 - Spektr. u. Resolv.}
+
+\begin{karte}{Resolventenmenge, Spektrum und Resolventenfunktion}
+	Sei $X$ ein Banachraum über $\MdC$, $A \colon X \supset D(A) \rightarrow X$ linear und abgeschlossen.
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $\lambda \in \MdC$ gehört zur \begriff{Resolventenmenge} von $A$, $\lambda \in \rho(A)$, falls
+			\[ \lambda I - A \colon D(A) \rightarrow X \text{ bijektiv, d.h. } (\lambda I - A)^{-1} \colon X \rightarrow D(A) \text{ linear} \]
+		\item $\sigma(A) = \MdC \setminus \rho(A)$ hei{\ss}t \begriff{Spektrum} von $A$
+		\item $\lambda \in \rho(A) \rightarrow R(\lambda, A) = (\lambda - A)^{-1}$ hei{\ss}t \begriff{Resolventenfunktion} von A
+	\end{enumerate}	
+\end{karte}
+
+
+\begin{karte}{Zusammenhang $\lambda$ und $R(\lambda, A)$}
+	$A$ ist abgeschlossen, falls $\lambda \in \rho(A)$, so ist $R(\lambda, A) \in B(X)$ und $R(\lambda, A) \colon X \rightarrow (D(A), \| \cdot \|_{A})$ ein Isomorphismus.
+\end{karte}
+
+
+\begin{karte}{Resolventendarstellung}
+	Sei $X \supset D(A) \xrightarrow[]{A} X$ abgeschlossen, $X$ ein Banachraum. \\
+	Für $\lambda_{0} \in \rho(A)$ und $\lambda \in \MdC$ mit $|\lambda - \lambda_{0}| < \frac{1}{\| R(\lambda_{0}, A) \|}$ ist auch \\
+		\[ \lambda \in \rho(A) \text{ und } R(\lambda, A) = \sum_{n \geq 0} (\lambda_{0} - \lambda)^{n} R(\lambda_{0}, A)^{n + 1}. \] \\
+	Insbesondere ist $\rho(A)$ offen und $\sigma(A)$ abgeschlossen.
+\end{karte}
+
+\begin{karte}{Resolventengleichung}
+	Sei $A$ ein abgeschlossener Operator auf $X$. Für $\lambda, \mu \in \rho(A)$ gilt:
+		\[ R(\lambda, A) - R(\mu, A) = (\mu - \lambda) R(\lambda, A) R(\mu, A) \]
+	Insbesondere ist $\lambda \in \rho(A) \rightarrow R(\lambda, A) \in B(X)$ eine komplex differenzierbare Abbildung und 
+		\[ \frac{d}{d \lambda} R(\lambda, A) = - R(\lambda, A)^{2} \]
+\end{karte}
+
+\begin{karte}{Zusammenhang $A \in B(C)$ und $\sigma(A)$}
+	Falls $A \in B(X)$, dann ist $\sigma(A)$ nichtleer und kompakt mit $\sigma(A) \subset \{ \lambda : |\lambda| \leq \| A \| \}$ \\
+	\[ \text{Für } \lambda > \| A \| \text{ gilt: } R(\lambda, A) = \sum_{n \geq 0} \lambda^{-n-1} A^{n} \]
+\end{karte}
+
+\begin{karte}{Zusammenhang Hanh-Banach und Existenz einer dualen nicht-null Abbildung}
+	$(*)$ Nach Bemerkung 8.7 bzw. allgemein aus Hahn-Banach gibt es in jedem Banachraum $X$ $x \in X, x' \in X' mit x'(x) \neq 0$
+\end{karte}
+
+
+\begin{karte}{Spektralradius}
+	Für $A \in B(X)$ hei{\ss}t $r(A) \coloneqq \sup \{ | \lambda |: \lambda \in \sigma(A) \}$ der \begriff{Spektralradius} von $A$.
+\end{karte}
+
+
+\begin{karte}{Berechnung des Spektralraduiuses}
+	Für $A \in B(X)$ ist
+		\[ r(A) = \lim_{n \rightarrow \infty} \| A^{n} \|^{\frac{1}{n}} = \inf_{n \in \MdN} \| A^{n} \|^{\frac{1}{n}} \]
+		Im Allgemeinen gilt $r(A) < \| A \|$.
+\end{karte}
