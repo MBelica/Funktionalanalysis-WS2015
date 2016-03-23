@@ -51,17 +51,42 @@
 	\end{enumerate}	
 \end{eig}
 
+\newpage % todo temporarily for optics
+
+\begin{beweis}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Gelte $x_{n} \xrightarrow[]{w} y_{1}, x_{n} \xrightarrow[]{w} y_{2} \Rightarrow x'(y_{1} = \lim x'(x_{n}) = x'(y_{2})$ für alle $x' \in X'$
+			\[ \Rightarrow x'(y_{1} - y_{2}) = 0 \text{ für alle } x' \in X' \Rightarrow y_{1} = y_{2} \]
+		\item $| x'(x) | \leq \| x' \| \cdot \| x \|$
+		\item $x_{n} \xrightarrow[]{w} x$. Nach \S 20 existiert $x' \in X'$ mit $\| x' \| = 1$ und $x'(x) = \| x \|$
+			\[ \Rightarrow \| x \| = x'(x) = \lim x'(x_{n}) \leq \underbrace{\| x' \|}_{= 1} \| x_{n} \| \Rightarrow \| x \| \leq \liminf \| x_{n} \| \]
+		\item Sei $(x_{n})$ schwach konvergent. Definiere $T_{n} \colon X' \rightarrow \MdK, T_{n}(x') = x'(x_{n})$. Für alle $x'$ ist $\{ T_{n}(x') \}$ beschränkt in $\MdK$. Mit \hyperref[satz:9.5-Banach-Steinhaus]{Banach-Steinhaus} folgt $\sup \| T_{n} \| < \infty$ und wegen $\| T_{n} \| = \| x_{n} \|$ folgt, dass $(x_{n})$ beschränkt ist. \\
+			Für die zweite Behauptung definiere $T_{n} \colon X \rightarrow \MdK, T_{n} x \coloneqq x_{n}'(x)$ (erst hier wird die Vollständigkeit von $X$ benötigt)
+	\end{enumerate}		
+\end{beweis}
+
 
 \begin{lemma}
 	Sei $(x_{n}')$ beschränkt in $X'$ und $D \subset X$ mit $\overline{\ospan D} = X$. \\
 	Falls $x_{n}'(x)$ eine Cauchy-Folge ist für alle $x \in D$, dann konvergiert $x_{n}'$ schwach* gegen ein $x' \in X'$
 \end{lemma}
 
+\begin{beweis}
+	Sei $Y = \ospan(D)$, definiere $y' \colon Y \rightarrow \MdK, y'(\sum_{i = 1}^{n} \alpha_{i} x_{i}) = \lim_{n \rightarrow \infty}(\sum_{i = 1}^{n} \alpha_{i} x_{n}'(x_{i}))$. $y'$ ist beschränkt
+	\[ | y'(x) | \leq \sup \| x_{n}' \| \cdot \| \underbrace{\sum \alpha_{i} x_{i}}_{= x} \| \]
+	$\xRightarrow[]{\S 3}$ Es gibt eine stetige Fortsetzung $x'$ von $y'$ auf ganz $X$.
+	\[ \Rightarrow x_{n}' \xrightarrow[]{w^{*}} x', ~ \| y' \| = \| x' \| \text{ denn } x'|_{Y} = y' \text{ und } \overline{Y} = X \] 
+\end{beweis}
 
-\begin{prop} \label{prop:21.5}
+
+\begin{prop}[Kanonische Einbettung von X nach X''] \label{prop:21.5}
 	Setze $J \colon X \rightarrow X'', J(x)(x') = x'(x)$, für alle $x' \in X$. \\
 	Dann ist $J$ eine isometrische Einbettung von $X$ nach $X''$.	
 \end{prop}
+
+\begin{beweis}
+	$J(x)$ % todo todo
+\end{beweis}
 
 
 \begin{definition}
