@@ -49,21 +49,21 @@
 	dann gibt es ein $x' \in X'$ so, dass $\Re x'(v_{1}) < \Re x'(v_{2})$ für alle $v_{1} \in V_{1}, v_{2} \in V_{2}$.
 \end{satz}
 
-		\begin{figure}[H]
-			\centering		
-			\begin{tikzpicture}
-			 \begin{axis}[axis x line=none, axis y line=none]
-				\addplot[mark=none, black!60, smooth cycle, thick, fill=gray!40] coordinates {(1,2) (2,1.6) (3,2) (3,2.5) (2.2, 2.7) (1.5, 2.8) (0.9, 2.5)};
-				\node[black!75] at (axis cs:2,2.1) [anchor=south] {$V_1$};
-				\addplot[dashed] coordinates {(2.75,1.25) (7.25,2.75)};
-				\node[black!75] at (axis cs:6,2.5) [anchor=south] {$H$};
-				
-				\addplot[mark=none, black!60, smooth cycle, thick, fill=gray!40] coordinates {(5.5,1) (6.5,1.1) (7.5,1.5)  (6.7, 2) (6.1, 1.9) (5.9, 1.75)};
-				\node[black!75] at (axis cs:6.5,1.35) [anchor=south] {$V_2$};
-			 \end{axis}
-			\end{tikzpicture}
-		\end{figure}
-	\[ H = \left\{ x : x'(x) = \inf_{v_{2} \in V_{2}} x'(v_{2}) \right\} \]
+\begin{figure}[H]
+	\centering		
+	\begin{tikzpicture}
+		\begin{axis}[axis x line=none, axis y line=none]
+			\addplot[mark=none, black!60, smooth cycle, thick, fill=gray!40] coordinates {(1,2) (2,1.6) (3,2) (3,2.5) (2.2, 2.7) (1.5, 2.8) (0.9, 2.5)};
+			\node[black!75] at (axis cs:2,2.1) [anchor=south] {$V_1$};
+			\addplot[dashed] coordinates {(2.75,1.25) (7.25,2.75)};
+			\node[black!75] at (axis cs:6,2.5) [anchor=south] {$H$};	
+			\addplot[mark=none, black!60, smooth cycle, thick, fill=gray!40] coordinates {(5.5,1) (6.5,1.1) (7.5,1.5)  (6.7, 2) (6.1, 1.9) (5.9, 1.75)};
+			\node[black!75] at (axis cs:6.5,1.35) [anchor=south] {$V_2$};
+		\end{axis}
+	\end{tikzpicture}
+	\[ H = \left\{ x : x'(x) = \inf_{v_{2} \in V_{2}} x'(v_{2}) \right\} \]	
+\end{figure}
+
 
 \begin{beweis}
 	$(i)$ Sei $V_{2} = \{ 0 \}, \MdK = \MdR$. Wähle ein beliebiges $x_{0} \in V_{1}$ und setze $y_{0} = - x_{0}$. 
@@ -81,6 +81,7 @@
 	Weiter ist $0 \in W_{1}$, denn $V_{1} \cap V_{2} = \emptyset$. \\
 	Nach $(ii)$ gibt es ein $x' \in X'$ mit $\Re x'(v_{1} - v_{2}) < 0 \Rightarrow \Re x'(v_{1}) < \Re x'(v_{2})$ für $v_{1} \in V_{1}, v_{2} \in V_{2}$.
 \end{beweis}
+
 
 \begin{satz}[2. Trennungssatz]
 	Sei $X$ ein normierter Raum, $V \subset X$ konvex und abgeschlossen. Für $x \notin V$ gibt es ein $x' \in X'$ mit:

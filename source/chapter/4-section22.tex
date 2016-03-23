@@ -7,14 +7,14 @@
 \begin{notation}
 	Sei $X$ ein normierter Raum und $X'$ der Dualraum. Für $x \in X, x' \in X'$ setze
 	\[ x'(x) \eqqcolon (x, x'), \]
-	\[  (x, x') \in X \times X' \rightarrow ( x , x') \text{ Bilinearform auf } X \times X'. \]	
+	\[ \text{Dann ist} X \times X' \ni (x, x') \rightarrow ( x , x') \text{ eine Bilinearform auf } X \times X'. \]	
 \end{notation}
 
 
 \begin{bemerkung*}
-	Sei $X$ ein Hilbertraum mit $\< \cdot , \cdot \>$. \\
-	Nach \hyperref[lemma:6.3-Riesz]{Riesz} existiert dann ein $J : X \rightarrow X', J(x)(y) = \< y, x \>$ (antilineare Isometrie)
-	\[ x' = J(x) \Rightarrow (y , x') = (y , J(x)) = \< y , x \> = \< y , J^{-1} y' \>_{X} \]
+	Ist $X$ ein Hilbertraum mit Skalarprodukt $\< \cdot , \cdot \>$, so existiert nach \hyperref[lemma:6.3-Riesz]{Riesz} ein 
+	\[ J : X \rightarrow X', J(x)(y) = \< y, x \> \text{ (antilineare Isometrie)} \]
+	Für $x' = J(x)$ gilt $(y , x') = (y , J(x)) = \< y , x \> = \< y , J^{-1} y' \>$. \\
 	\textbf{Ziele:}
 	\begin{itemize}
 		\item schwache Konvergenz
@@ -25,7 +25,7 @@
 
 
 \begin{definition}
-	Sei $X$ ein normierter Raum und $X'$ der Dualraum
+	Sei $X$ ein normierter Raum und $X'$ der zugehörige Dualraum
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Eine Folge $(x_{n})_{n} \subset X$ \begriff{konvergiert schwach} gegen $x \in X$, falls 
 			\[ (x_{n} , x') \xrightarrow[n \rightarrow \infty]{} (x , x'), \quad \forall x' \in X' \]
@@ -44,11 +44,10 @@
 
 \begin{eig}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item $w$-$\lim$, $w^{*}$-$\lim$ sind (falls existent) eindeutig
+		\item $w$-$\lim$ und $w^{*}$-$\lim$ sind (falls existent) eindeutig bestimmt
 		\item Normkonvergenz in $X$ (oder $X'$) impliziert schwache (bzw. w*-schwache) Konvergenz; nicht umgekehrt.
-		\item $x_{k} \xrightarrow[]{w} x \Rightarrow \| x \| \leq \liminf_{n} \| x_{n} \|$ \\
-			$x_{k} \xrightarrow[]{w^{*}} xÄ \Rightarrow \| x' \| \leq \liminf_{n} \| x_{n} \|$ 
-		\item Falls $X$ ein Banachraum ist und $(x_{n}) \subset X$ schwach konvergiert, dann ist $(x_{n})$ beschränkt; genauso für $(x_{n}') \subset X'$
+		\item Falls $x_{k} \xrightarrow[]{w} x \Rightarrow \| x \| \leq \liminf_{n} \| x_{n} \|$ und falls $x_{k} \xrightarrow[]{w^{*}} xÄ \Rightarrow \| x' \| \leq \liminf_{n} \| x_{n} \|$ 
+		\item Falls $X$ ein Banachraum ist und $(x_{n}) \subset X$ schwach konvergiert, so ist $(x_{n})$ beschränkt; das selbe gilt für $(x_{n}') \subset X'$
 	\end{enumerate}	
 \end{eig}
 
