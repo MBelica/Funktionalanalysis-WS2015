@@ -16,7 +16,7 @@
 \end{beispiel}
 
 
-\begin{prop}
+\begin{prop} \label{prop:21.3}
 	Sei $U \subset X$ konvex und $0$ innerer Punkt von $U$. Dann gilt
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Falls $\epsilon U_{X} \subset U \Rightarrow p_{U}(x) \leq \frac{1}{\epsilon} \| x \|$
@@ -66,7 +66,20 @@
 	\[ H = \left\{ x : x'(x) = \inf_{v_{2} \in V_{2}} x'(v_{2}) \right\} \]
 
 \begin{beweis}
-	todo % todo
+	$(i)$ Sei $V_{2} = \{ 0 \}, \MdK = \MdR$. Wähle ein beliebiges $x_{0} \in V_{1}$ und setze $y_{0} = - x_{0}$. 
+	\[ U \coloneqq \{ v - x_{0} : v \in V_{1} \} \text{ ist offen und konvex; außerdem: } 0 \in U, y_{0} \notin U \]
+	Nach \hyperref[prop:21.3]{Prop. 21.3} gilt $p_{U}(y_{0}) \geq 1$ und $p_{U}(y) \leq C \| y \|$. Auf dem Untervektorraum $y = \ospan \{ y_{0} \}$ def $y' \colon Y \rightarrow \MdR, y'(t y_{0}) \coloneqq t p_{U}(y_{0})$ für $t \in \MdR$ ein Funktional. Dann gilt $y'(t y_{0}) \leq 0 \leq p_{U}(t y_{0})$ für $t < 0$, $y'(t y_{0}) = t p_{U}(y_{0}) = p_{U}(t y_{0})$ für $t \geq 0$ 
+	\[ \Rightarrow y'(y) \leq p_{U}(y) \forall y \in Y \]
+	Nach \hyperref[satz:20.3-HahnBanach]{Hahn-Banach} gibt es eine Fortsetzung $x' \colon X \rightarrow \MdR$ mit $x'(x) \leq p(x) \forall x \in X, x'$ ist linear und stetig, denn 
+	\[ |x'(x)| = \max \{ | x'(x) | , | x'(-x) | \} \leq \max \{ p(x) , p(-x) \} \leq C \| x \| \]
+	Für $x \in V_{1}$ gilt $x + y_{0} \in U$ und $x'(x) = x'(x + y_{0}) - x'(y_{0}) < 0$, denn mit \hyperref[prop:21.3]{Prop. 21.3} folgt
+	\[ x'(y_{0}) = p(y_{0}) \geq 1 \quad \text{und} \quad  p(x + y_{0}) < 1, \text{ da } x + y_{0} \in U, x'(0) = 0 \]
+	$(ii)$ Sei $V_{2} = \{ 0 \}, \MdK = \MdC$. Sei $X_{\MdR}$ der Vektorraum $X$ aufgefasst als reeller Vektorraum. Nach $(i)$ existiert ein $x'_{\MdR} \in X'_{\MdR}$ mit 
+	\[ x'_{\MdR}(v_{1}) < \underbrace{x'_{\MdR}(v_{2}}_{= 0}  \]
+	Wie im Beweis des \hyperref[satz:20.3-Hahn-Banach]{Satzes von Hahn-Banach}: $x'(x) \coloneqq x'_{\MdR}(x) - i x'_{\MdR}(-x) \Rightarrow x'$ $\MdC$-linear, stetig und $\Re x'(x) = x'_{\MdR}(x)$ \\
+	$(iii)$ $V_{1}, V_{2}$ allgemein. Setze $W_{1} \coloneqq V_{1} - V_{2}$ konvex und offen $\left( W_{1} = \bigcup_{v_{1} \in V_{1}} \{ v_{1} - V_{2} \} \right)$.  \\
+	Weiter ist $0 \in W_{1}$, denn $V_{1} \cap V_{2} = \emptyset$. \\
+	Nach $(ii)$ gibt es ein $x' \in X'$ mit $\Re x'(v_{1} - v_{2}) < 0 \Rightarrow \Re x'(v_{1}) < \Re x'(v_{2})$ für $v_{1} \in V_{1}, v_{2} \in V_{2}$.
 \end{beweis}
 
 \begin{satz}[2. Trennungssatz]
