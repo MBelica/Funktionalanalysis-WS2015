@@ -38,7 +38,7 @@
 
 
 \begin{prop}
-	Jede schwach konvergente Folge ist normbeschränkt
+	Jede schwach konvergente Folge ist normbeschränkt.
 \end{prop}
 
 \begin{beweis}
@@ -85,7 +85,7 @@
 \begin{beweis}
 	Sei $(x_{n}) \subseteq M \Rightarrow \| x_{n} \| \leq C$. Definiere $X_{0} \coloneqq \overline{\ospan(x_{n})} \subseteq X$ als separablen Hilbertraum mit Orthonormalbasis $(h_{j})$.	
 		\[ \sup | \< x_{n} , h_{j} \> | \leq c \Rightarrow \< x_{n} , h_{j} \> \in \MdK \text{ hat eine konvergente Teilfolge nach } \hyperref[satz:1.1-BolzanoWeierstrass]{\text{Bolzano-Weierstrass}}. \]
-		Mit Hilfe des Cantor'schen Diagonalverfahrens wähle eine Teilfolge $M_{j+1} \subseteq M_{j}, |M_{j} = \infty$ mit $\lim_{n \in M_{j}} \< x_{n} , h_{j} \> = \alpha_{j}$. Wähle $n_{k} \in M_{k}$ mit $n_{k} \geq k$. \\
+		Mit Hilfe des Cantor'schen Diagonalverfahrens wähle eine Teilfolge $M_{j+1} \subseteq M_{j}, |M_{j}| = \infty$ mit $\lim_{n \in M_{j}} \< x_{n} , h_{j} \> = \alpha_{j}$. Wähle $n_{k} \in M_{k}$ mit $n_{k} \geq k$. \\
 		Dann ist $n_{k} \in M_{j}$ für $k$ gro{\ss} genug und $n_{k} \rightarrow \infty \Rightarrow \lim_{k \rightarrow \infty} \< x_{n_{k}} , h_{j} \> = \alpha_{j}$ für alle $j \in \MdN$. \\
 		Zu zeigen ist noch $x = \sum_{j \in \MdN} \alpha_{j} h_{j} \in X$.
 		\begin{align*}
