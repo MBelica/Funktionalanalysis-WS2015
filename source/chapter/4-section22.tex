@@ -67,8 +67,7 @@
 
 
 \begin{lemma}
-	Sei $(x_{n}')$ beschränkt in $X'$ und $D \subset X$ mit $\overline{\ospan D} = X$. \\
-	Falls $x_{n}'(x)$ eine Cauchy-Folge ist für alle $x \in D$, dann konvergiert $x_{n}'$ schwach* gegen ein $x' \in X'$
+	Sei $(x_{n}')$ beschränkt in $X'$ und $D \subset X$ mit $\overline{\ospan D} = X$. Falls $x_{n}'(x)$ eine Cauchy-Folge ist für alle $x \in D$, dann konvergiert $x_{n}'$ schwach* gegen ein $x' \in X'$
 \end{lemma}
 
 \begin{beweis}
@@ -85,7 +84,10 @@
 \end{prop}
 
 \begin{beweis}
-	$J(x)$ % todo todo
+	$J(x)$ linear, $|J(x)(x')| = |x'(x)| \leq \| x' \| \cdot \| x \|$ $\forall x' \in X'$ 
+	\[ \Rightarrow J(x) \in X'', ~ \| J(x) \|_{X''} \leq \| x \| \]
+	Zu $x \in X$ gibt es ein $x_{0}'$ mit $\| x_{0}' \| = 1$, $x_{0}'(x) = \| x \|$ 
+	\[ \Rightarrow \| J(x) \|_{X''} \geq |J(x)(x_{0}') | = | x_{0}'(x) | = \| x \| \]
 \end{beweis}
 
 
@@ -93,7 +95,88 @@
 	Ein Banachraum hei{\ss}t \begriff{reflexiv}, falls $J \colon X \rightarrow X''$ (in \hyperref[prop:21.5]{21.5}) surjektiv ist ($X \equalhat X''$).
 \end{definition}
 
-\textit{Rest fehlt. Kommt diese Woche noch.}
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Sei $X = H$ HR, $X' = X$ (\hyperref[lemma:6.3]{Riesz}) $\Rightarrow X'' = X' = X$ reflexiv. Schwache Konvergenz im obigen Sinn stimmt überein mit der schwache Konvergenz im Hilbertraum-Sinne.
+		\item $X = \ell^{p}, 1 < p < \infty$, dann ist $\left( \ell^{p} \right)' = \ell^{q}$ mit $\frac{1}{p} + \frac{1}{q} = 1 \Rightarrow \left(\ell^{p}\right)'' = \ell^{p}$ reflexiv
+			\[ x_{n} = (\alpha_{n_{k}})_{k} \xrightarrow[]{w} x = (a_{k})_{k} \gdw \alpha_{n_{k}} \rightarrow \alpha_{k} \quad \forall k \in \MdN \]
+		\item $(c_{0})' = \ell^{1}$, $(\ell^{1})' = \ell^{\infty} \Rightarrow J_{c_{0}} \colon c_{0} \hookrightarrow \ell^{\infty}$ nicht reflexiv
+		\item $X = L^{p}(\Omega), L^{1}(\Omega)' = L^{\infty}(\Omega), L^{p}(\Omega)' = L^{q}(\Omega), \frac{1}{p} + \frac{1}{q} = 1,  p, q \in (1, \infty)$
+			\[ \Rightarrow L^{p}(\Omega) \text{ reflexiv für } p \in (1, \infty) \]
+			Für $x, x_{n} \in L^{p}(\Omega)$ gilt $x_{n} \xrightarrow[]{w} x \gdw \int_{A} x_{n} d\mu \rightarrow \int_{A} x d\mu$ $\forall A \in \mathcal{A}$ (falls $(x_{n})$ beschränkt)
+		\item $X = C(K)$, $K$ kompakt. Sei $(x_{k}) \subseteq C(K)$ beschränkt und $x \in C(K)$. Dann gilt
+			\[ x_{k} \xrightarrow[]{w} x \gdw x_{k}(u) \rightarrow x(u) \text{ für alle } u \in K \]
+	\end{enumerate}
+\end{beispiel}
+
+
+\begin{definition}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item Sei $X$ ein normierter Vektorraum, $U \subseteq X$ hei{\ss}t \begriff{schwach kompakt}, falls zu jeder Folge $(x_{n}) \subseteq U$ eine Teilfolge $x_{n_{k}}$ und ein $x \in U$ existiert mit $x_{n_{k}} \xrightarrow[]{w} x$
+		\item $V \subseteq X'$ hei{\ss}t \begriff{schwach*-kompakt}, falls jede Folge $(x_{n}') \subseteq V$ eine Teilfolge $(x_{n_{k}}')$ besitzt, sodass ein $x' \in V$ existiert mit $x_{n_{k}}' \xrightarrow[]{w^{*}} x'$
+	\end{enumerate}
+\end{definition}
+
+
+\begin{satz}[Alaoglu-Bourbaki] \index{Alaoglu-Bourbaki}
+	Sei $X$ separabel, dann ist $U_{X'}$ w*-kompakt.	
+\end{satz}
+
+\begin{beweis}
+	\textit{todo} % todo todo
+\end{beweis}
+
+
+\begin{prop}
+	\begin{enumerate}
+		\item Ein abgeschlossener Untervektorraum $U$ eines reflexiven Raumes $X$ ist reflexiv.
+		\item Ein Banachraum $X$ ist genau dann reflexiv, falls sein Dualraum $X'$ reflexiv ist.
+	\end{enumerate}
+\end{prop}
+
+\begin{beweis}
+	\textit{todo} % todo todo
+\end{beweis}
+
+
+\begin{lemma}
+	Sei $X$ reflexiv, dann gilt:
+	\[ X \text{ ist separabel } \gdw X' \text{ ist separabel} \]
+\end{lemma}
+
+\begin{beweis}
+	\textit{todo} % todo todo
+\end{beweis}
+
+
+\begin{satz}
+	Sei $X$ reflexiv, dann ist $U_{X}$ schwach folgenkompakt (und umgekehrt).
+\end{satz}
+
+\begin{beweis}
+	\textit{todo} % todo todo
+\end{beweis}
+
+
+\begin{satz}
+	Sei $X$ ein normierter Vektorraum und $V \subseteq X$ konvex und abgeschlossen. Sei $(x_{n}) \subseteq V$ und $x_{n} \xrightarrow[]{w} x$, dann ist $x \in V$.
+\end{satz}
+
+\begin{beweis}
+	\textit{todo} % todo todo
+\end{beweis}
+
+
+\begin{kor}[Satz von Mazur] \index{Mazur}
+	Falls $(x_{n}) \subset X$ ein normierter Vektorraum ist mit $x_{n} \xrightarrow[]{w} x$, dann gibt es eine Folge von Linearkombinationen
+	\[ y_{n} = \sum_{j = 1}^{k_{n}} \lambda_{j} x_{j} \text{ mit } \sum_{j = 1}^{k_{n}} \lambda_{j} = 1 \text{ und } \lambda_{j} \geq 0 \]
+	so dass $\| y_{n} - x \| \rightarrow 0$.
+\end{kor}
+
+\begin{beweis}
+	\textit{todo} % todo todo
+\end{beweis}
 
 
 \newpage
