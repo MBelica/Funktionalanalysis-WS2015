@@ -21,7 +21,7 @@
 \begin{prop}[Vgl. von Norm- und schwacher Konvergenz] \label{prop:18.3}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Normenkonvergenz impliziert schwache Konvergenz
-		\item $x_{n} \xrightarrow[]{w} x$, dann $\| x \| \leq \lim_{n \rightarrow \infty} \| x_{n} \|$
+		\item $x_{n} \xrightarrow[]{w} x$, dann $\| x \| \leq \liminf_{n \rightarrow \infty} \| x_{n} \|$
 		\item Falls $x_{n} \xrightarrow[]{w} x$ und $\| x_{n} \| \rightarrow \| x \|$, dann $\| x - x_{n} \| \rightarrow 0$
 	\end{enumerate}
 \end{prop}
@@ -44,7 +44,7 @@
 \begin{beweis}
 	Sei $x_{n} \xrightarrow[]{w} x$. Setze $l_{n} \in B(X, \MdK) = X' \colon l_{n}(y) \coloneqq \< y, x_{n} \>	$. \\
 	Für jedes $y \in X$ gilt: 
-	\[ \| l_{n}(y) \| = | \< y , x_{n} \> | \leq C y < \infty \quad \Rightarrow \quad \| x_{n} \| \overset{\hyperref[def:13.1]{13.1}}{=} \| l_{n} \|_{X'} < \infty \text{ nach } \hyperref[satz:9.5-Banach-Steinhaus]{\text{Banach-Steinhaus}}. \]
+	\[ \| l_{n}(y) \| = | \< y , x_{n} \> | \leq C \| y  \| < \infty \quad \Rightarrow \quad \| x_{n} \| \overset{\hyperref[def:13.1]{13.1}}{=} \| l_{n} \|_{X'} < \infty \text{ nach } \hyperref[satz:9.5-Banach-Steinhaus]{\text{Banach-Steinhaus}}. \]
 \end{beweis}
 
 
