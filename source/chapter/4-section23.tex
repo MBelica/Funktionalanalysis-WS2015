@@ -4,7 +4,109 @@
 \section{Adjungierte Operatoren}
 
 
-\textit{Rest fehlt. Kommt diese Woche noch.}
+\begin{satz}
+	Seien $X, Y, Z$ normierte Vektorräume. Zu jedem $T \in B(X, Y)$ gibt es genau einen Operatr $T' \in B(Y' X')$ mit 
+	\[ (T' y')(x) = y'(T x) \]
+	und folgende Eigenschaften gelten
+	\begin{enumerate}[label=(\roman*\upshape)]
+		\item $\| T' \| = \| T \|$
+		\item $( \lambda T )' = \lambda T'$ $\forall \lambda \in \MdK$
+		\item $(S + T)' = S' + T'$
+		\item $(S \circ T)' = T' \circ S'$
+	\end{enumerate}	
+	$T'$ hei{\ss}t der \begriff{duale Operator} von $T$.
+\end{satz}
+
+\begin{beweis}
+	\textit{todo} % todo todo
+\end{beweis}
+
+
+\begin{bemerkung}
+	Analogie zur Hilbertraumadjungierten: \\
+	Notation: Für $x' \in X', x \in X$ sei $x'(x) = (x, x')$. Außerdem sei $X$ ein Hilbertraum mit Skalarprodukt $\< \cdot , \cdot \>$.  Nach Definition von ... % todo todo
+\end{bemerkung}
+
+\begin{beweis}
+	\textit{todo} % todo todo
+\end{beweis}
+
+
+\begin{beispiel}
+	\begin{enumerate}[label=\alph*\upshape)]
+		\item $X = Y = L^{p}[0, 1], K \colon [0, 1]^{2} \rightarrow \MdC$ stetig.
+			\[ T x(u) \coloneqq \int_{0}^{1} k(u, v) x(v) dv, ~ \left( T' x \right)(v) = \int_{0}^{1} k(u, v) x(u) du \]
+		  \begin{beweis}
+		  	\textit{todo} % todo todo
+		  \end{beweis}
+		\item $X =Y = \ell^{p}, 1 < p < \infty, \frac{1}{p} + \frac{1}{p'} = 1$. $T \in B(\ell^{p}). T(s_{1}, s_{2}, \cdots) = (s_{2}, s_{3}, \cdots)$, $S \in B(\ell{q}), S(s_{1}, s_{2}, \cdots) = (0, s_{1}, s_{2}, \cdots)$
+			\[ \text{Dann ist } T' = S \]
+		  \begin{beweis}
+		  	\textit{todo} % todo todo
+		  \end{beweis}
+	\end{enumerate}
+\end{beispiel}
+
+\newpage % todo temporarily for optics
+
+\begin{prop}
+	Für $T \in B(X, Y)$ gilt
+	\begin{enumerate}[label=(\roman*\upshape)]
+		\item $\left( \bild T \right)^{\bot} = \kernn T'$
+		\item $\overline{\bild T} = \left( \kernn T' \right)_{\bot}$
+		\item $\kernn T = \left( \bild T' \right)_{\bot}$
+		\item $\left( \kernn T \right)^{\bot} = \overline{\bild T'}$
+	\end{enumerate}
+\end{prop}
+
+\begin{beweis}
+	\textit{todo} % todo todo
+\end{beweis}
+
+
+\begin{prop}
+	Für $T \in B(X, Y)$ gilt
+	\[ J_{Y} T = T'' J_{X} \]
+	Insbesondere, falls $X$ reell ist, so ist für $X = Y$, $T = T''$.
+\end{prop}
+
+\begin{beweis}
+	\textit{todo} % todo todo
+\end{beweis}
+
+
+\begin{satz}
+	\[ T \in B(X, Y) \text{ invertierbar } \gdw T' \in B(Y', X') \text{ invertierbar} \]
+	Insbesondere: $\sigma(T') = \sigma(T)$ für $X = Y$
+\end{satz}
+
+\begin{beweis}
+	\textit{todo} % todo todo
+\end{beweis}
+
+
+\begin{satz}[vom abgeschlossenen Bild] \index{Satz vom abgeschlossenen Bild}
+	Sind $X, Y$ Banachräume, dann sind für $T \in B(X, Y)$  äquivalent:
+	\begin{enumerate}[label=(\roman*\upshape)]
+		\item $\bild T$ abgeschlossen
+		\item $\exists c > 0 : \| y \| \geq c \| x \| ~ \forall y \in T(x), x \in X$ mit $T x = y$
+		\item $\bild T'$ abgeschlossen
+	\end{enumerate}
+\end{satz}
+
+\begin{beweis}
+	\textit{todo} % todo todo
+\end{beweis}
+
+
+\begin{satz}[Schauder] \index{Schauder}
+	Sind $X, Y$,  dann gilt
+	\[ T \in K(X, Y) ~ \gdw ~ T' \in K(Y', X') \]
+\end{satz}
+
+\begin{beweis}
+	\textit{todo} % todo todo
+\end{beweis}
 
 
 \newpage
