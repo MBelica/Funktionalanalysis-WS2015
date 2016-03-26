@@ -84,7 +84,7 @@
 \begin{beweis}
 	Setze $l \coloneqq u'$ und $p(x) \coloneqq \| u'\| \cdot \| x \|$. Dann gilt 
 		\[ \Re l(x) \leq | u'(x) | \leq \| u' \|_{U} \cdot \| x \| = p(x), ~ \forall x \in U \]
-	Nach \hyperref[satz:20.2-Hahn-Banach]{20.2.} gibt es eine Fortsetzung $x'$ von $l$ auf $X$ mit $\Re x'(x) \leq \| u' \| \cdot \| x \|$ und $x'|_{U} = u'$.	Zu $x' \in X'$ und $x \in X$ wähle $\alpha \in \MdC$ mit $|\alpha| = 1$ und 
+	Nach \hyperref[satz:20.2-Hahn-Banach]{20.2.} gibt es eine Fortsetzung $x'$ von $l$ auf $X$ mit $\Re x'(x) \leq \| u' \| \cdot \| x \|$ und $x'|_{U'} = u'$.	Zu $x' \in X'$ und $x \in X$ wähle $\alpha \in \MdC$ mit $|\alpha| = 1$ und 
 	\[ | x'(x) | = \alpha \Re x'(x) \leq \| u' \| \| \alpha x \| = \| u' \| \| x \|\]
 	Somit ist $\| x' \| \leq \| u' \|$.
 \end{beweis}
@@ -92,11 +92,11 @@
 
 \begin{kor} \label{kor:20.4}
 	Sei $X$ ein normierter Vektorraum. Zu jedem $x \in X, x \neq 0$ gibt es ein $x' \in X'$ mit 
-		\[ \| x' \|_{X'} \quad \text{und} \quad x'(x) = \| x \| \]
+		\[ \| x' \|_{X'} = 1 \quad \text{und} \quad x'(x) = \| x \|_{X} \]
 \end{kor}
 
 \begin{beweis}
-	Sei $U = \ospan \{ x \}, u'( \lambda x) \coloneqq \lambda \| x \|$. Dann ist $u'$ linear, $\| u \| \leq 1$, $u'(\frac{x}{\| x \|}) ) 1$, also $\| u' \| = 1$. Sei $x'$ die Fortsetzung von $u'$ auf X wie in \hyperref[satz:20.3-Hahn-Banach]{20.3}, dann folgt
+	Sei $U = \ospan \{ x \}, u'( \lambda x) \coloneqq \lambda \| x \|$. Dann ist $u'$ linear, $\| u \| \leq 1$, $u'(\frac{x}{\| x \|}) = 1$, also $\| u' \| = 1$. Sei $x'$ die Fortsetzung von $u'$ auf X wie in \hyperref[satz:20.3-Hahn-Banach]{20.3}, dann folgt
 	\[ \| x' \| = \| u' \| = 1 \text{ und } x'(x) = u'(x) = \| x \| \]
 \end{beweis}
 
@@ -117,7 +117,7 @@
 
 \begin{kor} \label{kor:20.6}
 	Sei $X$ ein normierter Raum. $U \subset X$ ein abgeschlossener Untervektorraum, $x \in X \setminus U$. \\
-	Dann gibt es ein $x' \in X'$ mit $x'|_{U} \equiv 0$ und $x'(x) =\neq 0$.	
+	Dann gibt es ein $x' \in X'$ mit $x'|_{U} \equiv 0$ und $x'(x) \neq 0$.	
 \end{kor}
 
 \begin{beweis}
