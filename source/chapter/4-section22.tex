@@ -27,9 +27,9 @@
 \begin{definition}
 	Sei $X$ ein normierter Raum und $X'$ der zugehörige Dualraum
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Eine Folge $(x_{n})_{n} \subset X$ \begriff{konvergiert schwach} gegen $x \in X$, falls 
+		\item Eine Folge $(x_{n})_{n \geq 1} \subset X$ \begriff{konvergiert schwach} gegen $x \in X$, falls 
 			\[ (x_{n} , x') \xrightarrow[n \rightarrow \infty]{} (x , x'), \quad \forall x' \in X' \]
-		\item Eine Folge $(x_{n}')_{n} \subset X'$ \begriff{konvergiert schwach*} gegen $y' \in X'$, falls 
+		\item Eine Folge $(x_{n}')_{n \geq 1} \subset X'$ \begriff{konvergiert schwach*} gegen $y' \in X'$, falls 
 			\[ (x , x_{n}') \xrightarrow[n \rightarrow \infty]{} (x, x'), \quad \forall x \in X \]
 	\end{enumerate}
 \end{definition}
@@ -55,7 +55,7 @@
 
 \begin{beweis}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item Gelte $x_{n} \xrightarrow[]{w} y_{1}, x_{n} \xrightarrow[]{w} y_{2} \Rightarrow x'(y_{1} = \lim x'(x_{n}) = x'(y_{2})$ für alle $x' \in X'$
+		\item Gelte $x_{n} \xrightarrow[]{w} y_{1}, x_{n} \xrightarrow[]{w} y_{2} \Rightarrow x'(y_{1}) = \lim x'(x_{n}) = x'(y_{2})$ für alle $x' \in X'$
 			\[ \Rightarrow x'(y_{1} - y_{2}) = 0 \text{ für alle } x' \in X' \Rightarrow y_{1} = y_{2} \]
 		\item $| x'(x) | \leq \| x' \| \cdot \| x \|$
 		\item $x_{n} \xrightarrow[]{w} x$. Nach \S 20 existiert $x' \in X'$ mit $\| x' \| = 1$ und $x'(x) = \| x \|$
