@@ -6,8 +6,8 @@
 
 \begin{notation}
 	Sei $X$ ein normierter Raum und $X'$ der Dualraum. Für $x \in X, x' \in X'$ setze
-	\[ x'(x) \eqqcolon (x, x'), \]
-	\[ \text{Dann ist} X \times X' \ni (x, x') \rightarrow ( x , x') \text{ eine Bilinearform auf } X \times X'. \]	
+	\[ (x, x') \coloneqq x'(x) , \]
+	\[ \text{dann ist } X \times X' \ni (x, x') \rightarrow ( x , x') \text{ eine Bilinearform auf } X \times X'. \]	
 \end{notation}
 
 
@@ -46,7 +46,7 @@
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $w$-$\lim$ und $w^{*}$-$\lim$ sind (falls existent) eindeutig bestimmt
 		\item Normkonvergenz in $X$ (oder $X'$) impliziert schwache (bzw. w*-schwache) Konvergenz; nicht umgekehrt.
-		\item Falls $x_{k} \xrightarrow[]{w} x \Rightarrow \| x \| \leq \liminf_{n} \| x_{n} \|$ und falls $x_{k} \xrightarrow[]{w^{*}} xÄ \Rightarrow \| x' \| \leq \liminf_{n} \| x_{n} \|$ 
+		\item Falls $x_{k} \xrightarrow[]{w} x \Rightarrow \| x \| \leq \liminf_{n} \| x_{n} \|$ und falls $x_{k}' \xrightarrow[]{w^{*}} x' \Rightarrow \| x' \| \leq \liminf_{n} \| x_{n}' \|$ 
 		\item Falls $X$ ein Banachraum ist und $(x_{n}) \subset X$ schwach konvergiert, so ist $(x_{n})$ beschränkt; das selbe gilt für $(x_{n}') \subset X'$
 	\end{enumerate}	
 \end{eig}
