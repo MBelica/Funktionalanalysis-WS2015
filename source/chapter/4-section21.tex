@@ -6,13 +6,13 @@
 
 \begin{definition}
 	Sei $X$ ein Vektorraum mit $A \subset X$. Die Abbildung 
-		\[ p_{A} \colon X \rightarrow [0, \infty], ~ p_{A}(x) \coloneqq \inf \{ \lambda > 0 : \lambda x \in A \} \]
-		hei{\ss}t Minkowski-Funktional von $A$ und $A$ hei{\ss}t \begriff{absorbierend}, falls $p_{A}(x) < \infty, \forall x \in X$, d.h. für alle $ x \in X$ gibt es ein $\lambda \geq 0$, sodass $x \in \lambda A$.
+		\[ p_{A} \colon X \rightarrow [0, \infty], ~ p_{A}(x) \coloneqq \inf \{ \lambda > 0 : x \in \lambda A \} \]
+		hei{\ss}t \begriff{Minkowski-Funktional} von $A$ und $A$ hei{\ss}t \begriff{absorbierend}, falls $p_{A}(x) < \infty, \forall x \in X$, d.h. für alle $ x \in X$ gibt es ein $\lambda \geq 0$, sodass $x \in \lambda A$.
 \end{definition}
 
 
 \begin{beispiel}
-	Für $A = U_{X}$ ist $p_{A}(x) = \| x \|$ $( \| x \| \leq \lambda \gdw x \in \lambda (U_{X})$.	
+	Für $A = U_{X}$ ist $p_{A}(x) = \| x \|$ $\left( \| x \| \leq \lambda \gdw x \in \lambda (U_{X})\right)$.
 \end{beispiel}
 
 
@@ -27,13 +27,13 @@
 
 \begin{beweis}
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item $x \in \epsilon \cdot U_{X} \Rightarrow \frac{1}{\epsilon} \cdot x \in U_{X} \Rightarrow p_{U}(x) \leq \frac{1}{\epsilon} \cdot \| x \|$.
+		\item $x \in \epsilon \cdot U_{X} \Rightarrow \frac{1}{\epsilon} \cdot x \in U \Rightarrow p_{U}(x) \leq \frac{1}{\epsilon} \cdot \| x \|$.
 		\item $p_{U}(\lambda x ) = \lambda \cdot p_{U}(x)$ für $\lambda > 0$, denn 
 			\[ (r \lambda) x \in U \gdw r(\lambda x) \in U \] 
 			Zu $\epsilon > 0$ wähle $\lambda, \mu > 0$ mit  $\lambda \leq p_{U}(x) + \epsilon, ~\mu \leq p_{U}(y) + \epsilon$. Dann $\frac{x}{\lambda} \in U, \frac{y}{\mu} \in U$ 
 			\[ \xRightarrow[]{Konv} \frac{\lambda}{\lambda + \mu} \left( \frac{x}{\lambda} \right) + \frac{\mu}{\mu + \lambda} \left( \frac{y}{\mu} \right) = \frac{x + y}{\lambda + \mu} \in U \]
 			Somit ist $p_{U}(x + y) \leq \lambda + \mu \leq p_{U}(x) + p_{U}(y) + 2 \epsilon \text{ für alle } \epsilon > 0$.
-		\item $x \in p_{U}^{-1}([0, 1]) \Rightarrow p_{U}(x) \leq 1$. Dann existiert ein $\lambda < 1$ mit $\frac{x}{\lambda} \in U$. Da $0 \in U$ und $U$ konvex ist, folgt
+		\item $x \in p_{U}^{-1}([0, 1)) \Rightarrow p_{U}(x) \leq 1$. Dann existiert ein $\lambda < 1$ mit $\frac{x}{\lambda} \in U$. Da $0 \in U$ und $U$ konvex ist, folgt
 			\[ x = \lambda \left( \frac{x}{\lambda} \right) + (1 - \lambda) 0 \in U \]
 			Sei umgekehrt $x \in U$. Da $U$ offen ist, gibt es $\epsilon > 0$ mit $x + \epsilon x \in U \Rightarrow p_{U}(x) \leq \frac{1}{1 + \epsilon}$.
 	\end{enumerate}
