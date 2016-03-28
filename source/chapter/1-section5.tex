@@ -35,13 +35,13 @@
 
 \begin{prop}
 	Sei $X$ ein metrischer Raum, $Y$ ein Banachraum.
-	\[ C(X, Y) = \{ f \colon X \rightarrow Y: f \text{ stetig} \}, \quad \| f \|_{\infty} = \sup_{x \in X} \| f(x) \|_{Y} \]
+	\[ C(X, Y) = \{ f \colon X \rightarrow Y: f \text{ stetig} \}, ~ \| f \|_{\infty} = \sup_{x \in X} \| f(x) \|_{Y} \]
 	Dann ist $C(X, Y)$ ein (linearer) Banachraum.
 \end{prop}
 
 
 \begin{beispiel*}
-	$\Omega \subseteq \MdR^{n}$, $C(\Omega, \MdR)$
+	Sei $\Omega \subseteq \MdR^{n}$, dann ist  $C(\Omega, \MdR)$ ein Banachraum.
 \end{beispiel*}
 
 \begin{beweis}
@@ -61,7 +61,7 @@
 
 
 \begin{beispiel}
-	Sei $\Omega \subseteq \MdR^{n}$ offen und beschränkt. $C^{m}(\bar \Omega)$ ist vollständig bezüglich der Supremums-Norm.	
+	Ist $\Omega \subseteq \MdR^{n}$ offen und beschränkt, so ist $C^{m}(\bar \Omega)$ vollständig bezüglich der Supremumsnorm.	
 \end{beispiel}
 
 \begin{beweis}
@@ -130,7 +130,6 @@
 	\[ \Rightarrow \| T \| \leq \| T_{n} \| + \epsilon, \quad \text{ also } T \in B(X, Y) \]
 \end{beweis}
 
-\newpage % todo temporarily for optics
 
 \begin{bemerkung}[Exponentialfunktion]
 	Sei $A \in B(X)$, mit $X$ Banachraum, dann ist $e^{tA} \in B(X)$ (Idee: $e^{tA} = \sum_{i = 0}^{\infty} \frac{1}{i!} t^{i} A^{i}$).
@@ -191,14 +190,14 @@
 
 \begin{beweis}
 	Zu $x \in X$ wähle eine Folge $(x_{n})_{n \geq 1} \subset D$ mit $\| x_{n} - x \|_{X} \rightarrow 0$, dann ist $(x_{n})_{n \geq 1} \subset X$ auch eine Cauchy-Folge und
-	\[ \| Tx_{n} - Tx_{m} \|_{Y} \leq M \|x_{n} - x_{m} \|_{X} \rightarrow 0,  \]
+	\[ \| T x_{n} - T x_{m} \|_{Y} \leq M \|x_{n} - x_{m} \|_{X} \rightarrow 0,  \]
 	d.h. $(Tx_{n})$ ist eine Cauchy-Folge in $Y$ und da $Y$ ein Banachraum ist, existiert 
 		\[ \hat T x = \lim_{n \rightarrow \infty} T x_{n} \text{ in } Y. \]
-	$\hat T$ wohldefiniert: Sei $y_{n} \in D$ mit $y_{n} \rightarrow x$, dann ist 
-		\[ \| T x_{n} - T y_{n} \| \leq M \| x_{n} - y_{n} \| \leq M \left( \| x_{n} - x \| + \| x - y_{n} \| \right) \rightarrow 0 \]
-	$\hat T$ linear: Ist $x_{n}, y_{n} \in D : x_{n} \rightarrow x, y_{n} \rightarrow y$, so gilt:
+	$\hat T$ wohldefiniert: Sei $(y_{n})_{n \geq 1} \in D$ mit $y_{n} \rightarrow x$, dann ist 
+		\[ \| \hat T x_{n} - \hat T y_{n} \| \leq M \| x_{n} - y_{n} \| \leq M \left( \| x_{n} - x \| + \| x - y_{n} \| \right) \rightarrow 0 \]
+	$\hat T$ linear: Ist $(x_{n})_{n \geq 1}, (y_{n})_{n \geq 1} \in D : x_{n} \rightarrow x, y_{n} \rightarrow y$, so gilt:
 		\[ T(x_{n} + y_{n}) = T(x_{n}) + T(y_{n}) \xRightarrow[]{n \rightarrow \infty} \hat T(x + y) = \hat T(x) + \hat T(y) \]
-	$\hat T$ beschränkt: Sei $(x_{n}) \in D, x_{n} \rightarrow x$,
+	$\hat T$ beschränkt: Sei $(x_{n})_{n \geq 1} \in D, x_{n} \rightarrow x$,
 	\[ \| \hat T x \| = \lim_{n \rightarrow \infty} \| T x_{n} \| \leq M \| x \| \Rightarrow \| \hat T \| \leq M \]
 \end{beweis}
 
@@ -211,14 +210,14 @@
 		Setze für $x \in D$: $Tx = \lim_{n \rightarrow \infty} T_{n}(x)$, da $Y$ vollständig. \\
 		Dieses $T: X \rightarrow Y$ ist linear. \\ 
 		Nach \hyperref[prop:5.10]{5.10} gibt es genau ein $\tilde T \in B(X, Y)$ mit $\tilde T x = T x$ für $x \in D$, $\| \tilde T \| \leq M$, denn für $x \in D$:
-		\[ \| T x \| \leq \limsup \| T_{n} x \| \leq M \| x \| \]
+		\[ \| T x \| \leq \limsup_{n \rightarrow \infty} \| T_{n} x \| \leq M \| x \| \]
 		z. z. $\tilde T x = \lim_{n \rightarrow \infty} T_{n} x$ für alle $x \in X$. \\
 		Zu $\epsilon > 0$ wähle $y \in D$ mit $\| x - y \| \leq \frac{\epsilon}{2 M}$. Dann:
 		\begin{align*}
 			\| \tilde T x - T_{n} x \| & \leq \| \tilde T x - T y \| + \| T y - T_{n} y \| +  \| T_{n} y - T_{n} x \| \\
 				& \leq \| \tilde T \| \| x - y \| + \| T y - T_{n} y \| + \| T_{n} \| \| x - y\| 
 		\end{align*}
-		\[ \limsup_{n \rightarrow \infty}  \| \tilde T x - T_{n} x \| \leq M \frac{\epsilon}{2 M} + \limsup_{n \rightarrow \infty} \| T y - T_{n} y \| + M \frac{\epsilon}{2 M} \leq \epsilon + 0 \]
+		\[ \Rightarrow \limsup_{n \rightarrow \infty}  \| \tilde T x - T_{n} x \| \leq M \frac{\epsilon}{2 M} + \limsup_{n \rightarrow \infty} \| T y - T_{n} y \| + M \frac{\epsilon}{2 M} \leq \epsilon + 0 \]
 	\end{beweis}
 \end{kor}
 
@@ -255,17 +254,17 @@
 \end{lemma}
 
 \begin{beweis}
-	$a) \Rightarrow b)$	$y_{n} = \sum_{m = 1}^{n} x_{m}$ ist eine Cauchy-Folge in $X$, denn für $l > n$:
+	$a) \Rightarrow b)$	$(y_{n})_{n \geq 1}$ mit $y_{n} = \sum_{m = 1}^{n} x_{m}$ ist eine Cauchy-Folge in $X$, denn für $l > n$:
 		\[ \| y_{l} - y_{n} \| = \| \sum_{m = n + 1}^{l} x_{m} \| \leq \sum_{m = n + 1}^{l} \| x_{m} \| \xrightarrow[n, l \rightarrow \infty]{} 0 \]
-	Also ist $(y_{n})$ eine Cauchy-Folge und konvergiert da $X$ vollständig ist. \\ \\
-	$b) \Rightarrow a)$	Sei $(x_{n})$ eine Cauchy-Folge in $X$, d.h. für $\epsilon = 2^{-k} (k \in \MdN)$ gibt es ein $n_{k}$ so, dass:
+	Also ist $(y_{n})_{n \geq 1}$ eine Cauchy-Folge und konvergiert, da $X$ vollständig ist. \\ \\
+	$b) \Rightarrow a)$	Sei $(x_{n})_{n \geq 1}$ eine Cauchy-Folge in $X$, d.h. für $\epsilon = 2^{-k}$ mit $k \in \MdN$ gibt es ein $n_{k}$ so, dass:
 		\[ \| x_{n} - x_{m} \| \leq 2^{-k} \text{ für } n, m \geq n_{k} \]
 		Wähle zu $k \in \MdN$ ein $x_{n_{k}}$ so, dass
 		\[ \| x_{n_{k+1}} - x_{n_{k}} \| \leq 2^{-k}.\]
 		Setze $y_{0} = x_{k_{1}}$ und für $k \in \MdN: y_{k} = y_{n_{k+1}} - y_{n_{k}}$. \\
 		Dann gilt: $\sum_{k \geq 1} \| y_{k} \| \leq \sum_{k \geq 1} 2^{-k} < \infty$. Nach $b)$ konvergiert die Reihe $\sum_{k \geq 1} y_{k}$ in $X$. \\
 		$\sum_{j = 0}^{k} x_{j} \underset{summe}{\overset{Teleskop-}{=}}x_{n_{k}} \Rightarrow $ die Folge $(x_{n_{k}})_{k \in \MdN}$ konvergiert in $X$. \\
-		$(x_{n})$ ist eine Cauchy-Folge $\Rightarrow \lim_{n \rightarrow \infty} x_{n}$ existiert in $X$.
+		Damit ist $(x_{n})_{n \geq 1}$ eine Cauchy-Folge und damit existiert $\lim_{n \rightarrow \infty} x_{n}$ in $X$.
 \end{beweis}
 
 

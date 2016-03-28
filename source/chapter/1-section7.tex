@@ -32,10 +32,10 @@
 	$X = \ell^{p}, 1 \leq p < \infty.$ $Q_{n} \in B(\ell^{p}): Q_{n}(x_{j}) \coloneqq (0, \dotsc, 0, x_{n + 1}, x_{n + 2}, \dotsc)$ \\
 	Behauptung: 
 	\[ T \in B(\ell^{p}) \text{ kompakt  } \gdw \| Q_{n} T \| \xrightarrow[n \rightarrow \infty]{} 0 \]
-	\[ \gdw \sup_{\|x\|_{p} \leq 1} \left( \sum_{j = n + 1}^{\infty} (Tx)_{j} \right)^{\frac{1}{p}} \xrightarrow[n \rightarrow \infty]{} 0 \gdw T(U_{X}) \text{ ist relativ kompakt in } \ell^{p} \text{ nach } \hyperref[bsp:6.4]{6.4} \]
+	\[ \gdw \sup_{\|x\|_{p} \leq 1} \left( \sum_{j = n + 1}^{\infty} \left| (Tx)_{j} \right|^{p} \right)^{\frac{1}{p}} \xrightarrow[n \rightarrow \infty]{} 0 \gdw T(U_{X}) \text{ ist relativ kompakt in } \ell^{p} \text{ nach } \hyperref[bsp:6.4]{6.4} \]
 	
 	\begin{enumerate}[label=\alph*\upshape)]
-		\item $T(x_{j}) = (\lambda_{j} x_{j})_{j \in \MdN}$ mit $\lambda_{j} \in \MdK$ Diagonaloperator \\
+		\item $T(x_{j}) \coloneqq (\lambda_{j} x_{j})_{j \in \MdN}$ mit $\lambda_{j} \in \MdK$ Diagonaloperator \\
 			$T$ ist kompakt $\gdw \lambda_{j} \rightarrow 0$, für $j \rightarrow \infty$.
 			\begin{beweis}
 				Da $Q_{n} \in B(\ell^{p})$ gilt:
@@ -45,17 +45,16 @@
 										 & \leq 	\sup_{j = n + 1}^{\infty} |\lambda_{j}| \|x \|_{\ell^{p}}			
 				\end{align*}
 				\[ \Rightarrow \sup_{\| x \| \leq 1} \| Q_{n} T x \| \xrightarrow[n \rightarrow \infty]{} 0, \text{ falls } \lambda_{j} \rightarrow 0 \]
-				Sei umgekehrt: $\lambda_{j} \rightarrow 0, \text{ dann } \exists \lambda_{j_{k}} \rightarrow \lambda \neq 0 $
-				\[ T(e_{i_{k}}) = \lambda_{i_{k}} e_{i_{k}}, T(\lambda_{j_{k}}) \approx \lambda e_{j_{k}} \text{ hat keine konvergente Teilfolge.} \]
+				Sei umgekehrt: $\lambda_{j} \not\rightarrow 0, \text{ dann } \exists \lambda_{j_{k}} \rightarrow \lambda \neq 0 $
+				\[ T(e_{i_{k}}) = \lambda_{i_{k}} e_{i_{k}}, ~ T(\lambda_{j_{k}}) \approx \lambda e_{j_{k}} \text{ hat keine konvergente Teilfolge.} \]
 			\end{beweis}
-		\item $T(x_{i})= (0, x_{1}, x_{2}, x_{3}, \dotsc)$, $"$Shift$"$ \\
+		\item $T(x_{i}) \coloneqq (0, x_{1}, x_{2}, x_{3}, \dotsc)$ $"$Shift$"$ \\
 			Isometrie! $\| T(x_{j}) \| = \| x_{i} \| \Rightarrow$ nicht kompakt.
-		\item $\left[ T(x_{j}) \right]_{i} = \sum_{j = 1}^{\infty} a_{ij} x_{j},$ $T \in B(\ell^{p})$, falls $\left( \sum_{i} \left( \sum_{j} | a_{ij} |^{p'} \right)^{\frac{p}{p'}} \right)^{\frac{1}{p}} < \infty, \frac{1}{p} + \frac{1}{p^{'}} = 1. $\\
+		\item $\left[ T(x_{j}) \right]_{i} \coloneqq \sum_{j = 1}^{\infty} a_{ij} x_{j}$. Dann ist $T \in B(\ell^{p})$, falls $\left( \sum_{i} \left( \sum_{j} | a_{ij} |^{q} \right)^{\frac{p}{q}} \right)^{\frac{1}{p}} < \infty$, $\frac{1}{p} + \frac{1}{p^{'}} = 1. $\\
 			Diese Hille-Tamerkin-Operatoren sind kompakt.
 			\begin{beweis}
-				\[ \| \left[ Q_{n} T(x_{j}) \right]_{i} \| \leq \left( \sum_{j = n + 1}^{\infty} \left( \sum_{j} |a_{ij}|^{p'} \right)^{\frac{p}{p'}} \right)^{\frac{1}{p}} \rightarrow 0, n \rightarrow \infty \]
+				\[ \| \left[ Q_{n} T(x_{j}) \right]_{i} \| \leq \left( \sum_{j = n + 1}^{\infty} \left( \sum_{j} |a_{ij}|^{q} \right)^{\frac{p}{q}} \right)^{\frac{1}{p}} \rightarrow 0, n \rightarrow \infty \]
 			\end{beweis}
-
 	\end{enumerate}
 \end{beispiel}
 
@@ -113,8 +112,8 @@
 			Sei $x \in U_{X}$. Wähle $j_{0}$ mit $\| T_{n_{0}} x - y_{j_{0}} \|_{Y} \leq \epsilon$.
 			\[ \| T x - y_{j_{0}} \| \leq \underbrace{\| T x - T_{n_{0}} x \|}_{\leq \underbrace{\| T - T_{n_{0}} \| }_{\leq \epsilon} \underbrace{\| x \|}_{\leq 1}} + \underbrace{\| T_{n_{0}} - y_{j_{0}} \|}_{\leq \epsilon} \leq 2 \epsilon \]
 			d.h. $T(U_{X}) \subset \bigcup_{j = 1}^{n} K(y_{j}, 2 \epsilon)$, d.h. $T(U_{X})$ ist relativ kompakt.
-		\item $\| x_{n} \|_{X} \leq 1, S$ kompakt $\Rightarrow \exists n_{k}: S( T x_{n_{k}} ) $ ist eine Cauchy-Folge. 
-			\[ \Rightarrow S( T x_{n_{k}} ) \text{ist Cauchy-Folge, da } S \text{stetig ist.} \] 
+		\item Sei $\| x_{n} \|_{X} \leq 1$ und $S$ kompakt $\Rightarrow \exists n_{k}: S( T x_{n_{k}} )$ ist eine Cauchy-Folge, denn $T x_{n_{k}}$ ist beschränkt. \\
+			Sei $\| x_{n} \|_{X} \leq 1$ und $T$ kompakt $\Rightarrow \exists n_{k}: T x_{n_{k}}$ ist eine Cauchy-Folge, damit ist aber auch $S(T x_{n_{k}})$ eine Cauchy-Folge, da $S$ stetig ist.
 	\end{enumerate}	
 \end{beweis}
 

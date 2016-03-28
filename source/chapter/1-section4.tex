@@ -98,13 +98,13 @@
 			\end{enumerate}	
 		\end{beweis} 
 		\item $\emptyset, M$ sind sowohl offen, als auch abgeschlossen (in $M$)
-		\item Bezüglich der diskreten Metrik $d$ aus \hyperref[bsp:1-diskreteMetrik]{Beispiel 4.2 b)} ist $\{x\} \subset M$ offen für jedes $x \in M$, da
-			\[ K(x, r) = \{ x \} \subset \{ x \} \text{ für } r \in (0, 1] \]
+		\item Bezüglich der diskreten Metrik $d$ aus \hyperref[bsp:1-diskreteMetrik]{Beispiel 4.2 b)} ist $O = \{x\} \subset M$ offen für jedes $x \in M$, da
+			\[ K(x, r) = \{ x \} \subseteq O \text{ für } r \in [0, 1) \]
 	\end{enumerate}	
 \end{bemerkung}
 
 
-Wir fassen als nächstes die grundlegenden Eigenschaften offener und abgeschlossener Mengen zusammen.
+Wir fassen als nächstes die grundlegenden Eigenschaften offener und abgeschlossener Mengen zusammen:
 
 
 \begin{prop}
@@ -120,8 +120,8 @@ Wir fassen als nächstes die grundlegenden Eigenschaften offener und abgeschloss
 	\end{enumerate}
 	\begin{beweis}
 		\begin{enumerate}[label=\alph*\upshape)]
-			\item Sei $U$ nicht offen. Dann existiert ein $x_{0} \in U$ und  ein $x_{n} \in K(x_{0}, \frac{1}{n})$ mit $x_{n} \notin U$, d.h. $x_{n} \in U^{c} = A \forall n \in \MdN$. \\
-				Da $d(x_{n}, x_{0}) \leq \frac{1}{n} \rightarrow 0$ und $x_{0} \notin A$, ist $A$ nicht abgeschlossen. \\ \\
+			\item Sei $U$ nicht offen. Dann existiert ein $x_{0} \in U$ und  ein $x_{n} \in K(x_{0}, \frac{1}{n})$ mit $x_{n} \notin U$, d.h. $x_{n} \in U^{c} = A ~ \forall n \in \MdN$. \\
+				Da $d(x_{n}, x_{0}) \leq \frac{1}{n} \rightarrow 0$ und $x_{0} \notin A$ ist $A$ nicht abgeschlossen. \\ \\
 				Sei umgekehrt $A$ nicht abgeschlossen. Dann existiert eine Folge $(x_{n})_{n \geq 1} \subset A$ mit $\lim_{n \rightarrow \infty} x_{n} = x \notin A$, d.h. $x \in U$. \\
 				Für beliebige $\epsilon > 0$ existiert dann ein $N_{\epsilon} \in \MdN$ mit $d(x_{n}, x) < \epsilon$  $\forall n \geq N_{\epsilon}$ \\	
 				$\Rightarrow (x_{n})_{n \geq N_{\epsilon}} \subset K(x, \epsilon) \cap A = K(x, \epsilon) \cap U^{c} \\
@@ -206,7 +206,7 @@ Hierfür gelten die folgenden Eigenschaften:
 
 
 \begin{definition} \label{def:4.9-DichtSeparabel}
-	Sei $(M, d)$ ein metrischer Raum
+	Sei $(M, d)$ ein metrischer Raum.
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item Eine Menge $V \subset M$ hei{\ss}t \begriff{dicht} in M, falls $\bar V = M$, d.h. jeder Punkt in $M$ ist Grenzwert einer Folge aus $V$.
 		\item $M$ hei{\ss}t \begriff{separabel}, falls es eine abzählbare Teilmenge $V \subset M$ gibt, die dicht in $M$ liegt.
