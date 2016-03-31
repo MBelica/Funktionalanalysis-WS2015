@@ -27,17 +27,16 @@
 
 
 \begin{prop} \label{prop:15.2}
-	Sei $X$ ein Vektor mit Skalarprodukt $\< \cdot, \cdot \>$
+	Sei $X$ ein Vektorraum mit Skalarprodukt $\< \cdot, \cdot \>$
 	\begin{enumerate}[label=\alph*\upshape)] \label{prop:15.2a}
 		\item Für $x, y \in X$ gilt die \begriff{Cauchy-Schwarz-Ungleichung}
-			\[ | \< x, y \> |^{2} \leq \< x, x \> \cdot \< y, y \> \] \label{prop:15.2b}
-		\item $\| x \| = \< x, x \>^{\frac{1}{2}}$ definiert eine Norm auf $X$
-			Insbesondere: $\< x, y \> \leq \| x \| \cdot \| y \|$
+			\[ | \< x, y \> |^{2} \leq \< x, x \> \cdot \< y, y \> \]
+		\item $\| x \| = \< x, x \>^{\frac{1}{2}}$ definiert eine Norm auf $X$. Insbesondere gilt: $\< x, y \> \leq \| x \| \cdot \| y \|$ \label{prop:15.2b}
 	\end{enumerate}	
 \end{prop}
 
 \begin{bemerkung*}
-	\[ \< x + y, x + y \> = \| x\|^{2} + 2 \Re \< x, y \> + \| y \|^{2} \quad (*) \label{eq:15.2-*} \]
+	\[ \| x + y \|^{2} = \< x + y, x + y \> = \| x\|^{2} + 2 \Re \< x, y \> + \| y \|^{2} \quad (*) \label{eq:15.2-*} \]
 \end{bemerkung*}
 
 \begin{beweis}
@@ -72,7 +71,7 @@
 
 
 \begin{definition}
-	Ein metrischer Raum $(X, \| \cdot \|)$ hei{\ss}t \begriff{Prä-Hilbertraum}, falls es ein Skalarprodukt $\< \cdot, \cdot \>$ auf $X \times X$ gibt mit
+	Ein normierter Vektorraum $(X, \| \cdot \|)$ hei{\ss}t \begriff{Prä-Hilbertraum}, falls es ein Skalarprodukt $\< \cdot, \cdot \>$ auf $X \times X$ gibt mit
 		\[ \| x \| = \< x, x \>^{\frac{1}{2}} \]
 	Falls $(X, \| \cdot \|)$ au{\ss}erdem noch vollständig ist, dann hei{\ss}t $X$ ein \begriff{Hilbertraum}.	
 \end{definition}
