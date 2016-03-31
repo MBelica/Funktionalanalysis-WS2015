@@ -7,14 +7,14 @@
 \begin{notation}
 	Sei $X$ ein normierter Raum und $X'$ der Dualraum. Für $x \in X, x' \in X'$ setze
 	\[ (x, x') \coloneqq x'(x) , \]
-	\[ \text{dann ist } X \times X' \ni (x, x') \rightarrow ( x , x') \text{ eine Bilinearform auf } X \times X'. \]	
+	dann ist $X \times X' \ni (x, x') \rightarrow ( x , x') \in \MdK$ eine Bilinearform auf $X \times X'$.
 \end{notation}
 
 
 \begin{bemerkung*}
-	Ist $X$ ein Hilbertraum mit Skalarprodukt $\< \cdot , \cdot \>$, so existiert nach \hyperref[lemma:6.3-Riesz]{Riesz} ein 
-	\[ J : X \rightarrow X', J(x)(y) = \< y, x \> \text{ (antilineare Isometrie)} \]
-	Für $x' = J(x)$ gilt $(y , x') = (y , J(x)) = \< y , x \> = \< y , J^{-1} x' \>$. \\
+	Ist $X$ ein Hilbertraum mit Skalarprodukt $\< \cdot , \cdot \>$, so existiert nach \hyperref[lemma:6.3-Riesz]{Riesz} eine antilineare Isometrie
+	\[ J : X \rightarrow X', J(x)(y) = \< y, x \> \]
+	Für $x' = J(x)$ gilt $(y , x') = (y , J(x)) = \< y , x \> = \< y , J^{-1} x' \>$. \\ \\
 	\textbf{Ziele:}
 	\begin{itemize}
 		\item schwache Konvergenz
@@ -45,7 +45,7 @@
 \begin{eig}
 	\begin{enumerate}[label=\alph*\upshape)]
 		\item $w$-$\lim$ und $w^{*}$-$\lim$ sind (falls existent) eindeutig bestimmt
-		\item Normkonvergenz in $X$ (oder $X'$) impliziert schwache (bzw. w*-schwache) Konvergenz; nicht umgekehrt.
+		\item Normkonvergenz in $X$ (oder $X'$) impliziert schwache (bzw. schwache*) Konvergenz; nicht umgekehrt.
 		\item Falls $x_{k} \xrightarrow[]{w} x \Rightarrow \| x \| \leq \liminf_{n} \| x_{n} \|$ und falls $x_{k}' \xrightarrow[]{w^{*}} x' \Rightarrow \| x' \| \leq \liminf_{n} \| x_{n}' \|$ 
 		\item Falls $X$ ein Banachraum ist und $(x_{n}) \subset X$ schwach konvergiert, so ist $(x_{n})$ beschränkt; das selbe gilt für $(x_{n}') \subset X'$
 	\end{enumerate}	
@@ -168,7 +168,7 @@
 
 
 \begin{kor}[Satz von Mazur] \index{Mazur}
-	Falls $(x_{n}) \subset X$ ein normierter Vektorraum ist mit $x_{n} \xrightarrow[]{w} x$, dann gibt es eine Folge von Linearkombinationen
+	Ist $X$ ein normierter Vektorraum, so gibt es für eine Folge $(x_{n})_{n \geq 1} \subseteq X$ mit $x_{n} \xrightarrow[]{w} x$ eine Folge von Linearkombinationen
 	\[ y_{n} = \sum_{j = 1}^{k_{n}} \lambda_{j} x_{j} \text{ mit } \sum_{j = 1}^{k_{n}} \lambda_{j} = 1 \text{ und } \lambda_{j} \geq 0 \]
 	so dass $\| y_{n} - x \| \rightarrow 0$.
 \end{kor}
