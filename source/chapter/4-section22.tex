@@ -57,7 +57,7 @@
 		\item Gelte $x_{n} \xrightarrow[]{w} y_{1}, x_{n} \xrightarrow[]{w} y_{2} \Rightarrow x'(y_{1}) = \lim x'(x_{n}) = x'(y_{2})$ für alle $x' \in X'$
 			\[ \Rightarrow x'(y_{1} - y_{2}) = 0 \text{ für alle } x' \in X' \Rightarrow y_{1} = y_{2} \]
 		\item $| x'(x) | \leq \| x' \| \cdot \| x \|$
-		\item $x_{n} \xrightarrow[]{w} x$. Nach \S 20 existiert $x' \in X'$ mit $\| x' \| = 1$ und $x'(x) = \| x \|$
+		\item $x_{n} \xrightarrow[]{w} x$. Nach \hyperref[kor:20.4]{Korollar 20.4} existiert $x' \in X'$ mit $\| x' \| = 1$ und $x'(x) = \| x \|$
 			\[ \Rightarrow \| x \| = x'(x) = \lim x'(x_{n}) \leq \underbrace{\| x' \|}_{= 1} \| x_{n} \| \rightarrow \| x \| \leq \liminf \| x_{n} \| \]
 		\item Sei $(x_{n})$ schwach konvergent. Definiere $T_{n} \colon X' \rightarrow \MdK, T_{n}(x') = x'(x_{n})$. Für alle $x'$ ist $\{ T_{n}(x') \}$ beschränkt in $\MdK$. Mit \hyperref[satz:9.5-Banach-Steinhaus]{Banach-Steinhaus} folgt $\sup \| T_{n} \| < \infty$ und wegen $\| T_{n} \| = \| x_{n} \|$ folgt, dass $(x_{n})$ beschränkt ist. \\
 			Für die zweite Behauptung definiere $T_{n} \colon X \rightarrow \MdK, T_{n} x \coloneqq x_{n}'(x)$.
@@ -72,7 +72,7 @@
 \begin{beweis}
 	Sei $Y = \ospan(D)$, definiere $y' \colon Y \rightarrow \MdK, y'(\sum_{i = 1}^{n} \alpha_{i} x_{i}) = \lim_{n \rightarrow \infty}(\sum_{i = 1}^{n} \alpha_{i} x_{n}'(x_{i}))$. $y'$ ist beschränkt
 	\[ | y'(x) | \leq \sup \| x_{n}' \| \cdot \| \underbrace{\sum \alpha_{i} x_{i}}_{= x} \| \]
-	$\xRightarrow[]{\S 3}$ Es gibt eine stetige Fortsetzung $x'$ von $y'$ auf ganz $X$.
+	$\xRightarrow[]{\S 3n }$ Es gibt eine stetige Fortsetzung $x'$ von $y'$ auf ganz $X$.
 	\[ \Rightarrow x_{n}' \xrightarrow[]{w^{*}} x', ~ \| y' \| = \| x' \| \text{ denn } x'|_{Y} = y' \text{ und } \overline{Y} = X \] 
 \end{beweis}
 
