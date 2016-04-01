@@ -58,9 +58,9 @@
 			\[ \Rightarrow x'(y_{1} - y_{2}) = 0 \text{ für alle } x' \in X' \Rightarrow y_{1} = y_{2} \]
 		\item $| x'(x) | \leq \| x' \| \cdot \| x \|$
 		\item $x_{n} \xrightarrow[]{w} x$. Nach \S 20 existiert $x' \in X'$ mit $\| x' \| = 1$ und $x'(x) = \| x \|$
-			\[ \Rightarrow \| x \| = x'(x) = \lim x'(x_{n}) \leq \underbrace{\| x' \|}_{= 1} \| x_{n} \| \Rightarrow \| x \| \leq \liminf \| x_{n} \| \]
+			\[ \Rightarrow \| x \| = x'(x) = \lim x'(x_{n}) \leq \underbrace{\| x' \|}_{= 1} \| x_{n} \| \rightarrow \| x \| \leq \liminf \| x_{n} \| \]
 		\item Sei $(x_{n})$ schwach konvergent. Definiere $T_{n} \colon X' \rightarrow \MdK, T_{n}(x') = x'(x_{n})$. Für alle $x'$ ist $\{ T_{n}(x') \}$ beschränkt in $\MdK$. Mit \hyperref[satz:9.5-Banach-Steinhaus]{Banach-Steinhaus} folgt $\sup \| T_{n} \| < \infty$ und wegen $\| T_{n} \| = \| x_{n} \|$ folgt, dass $(x_{n})$ beschränkt ist. \\
-			Für die zweite Behauptung definiere $T_{n} \colon X \rightarrow \MdK, T_{n} x \coloneqq x_{n}'(x)$ (erst hier wird die Vollständigkeit von $X$ benötigt)
+			Für die zweite Behauptung definiere $T_{n} \colon X \rightarrow \MdK, T_{n} x \coloneqq x_{n}'(x)$.
 	\end{enumerate}		
 \end{beweis}
 
